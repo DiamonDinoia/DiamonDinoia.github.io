@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Personal — Marco Barbone</title>
+  <link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+
+  <div class="title-bar">
+    <div class="traffic-lights">
+      <span class="red"></span><span class="yellow"></span><span class="green"></span>
+    </div>
+    <span class="path" id="title-path">marco_barbone — ~/personal.hpp</span>
+  </div>
+
+  <nav class="tab-bar">
+    <a href="index.html">about.hpp</a>
+    <a href="publications.html">papers.hpp</a>
+    <a href="talks.html">talks.hpp</a>
+    <a href="projects.html">projects.hpp</a>
+    <a href="personal.html" class="active">personal.hpp</a>
+  </nav>
+
+  <main class="editor">
+    <div class="editor-content" id="content"></div>
+  </main>
+
+  <footer class="status-bar" id="status-bar"></footer>
+
+  <script src="assets/render.js"></script>
+  <script>renderPersonal();</script>
+</body>
+</html>

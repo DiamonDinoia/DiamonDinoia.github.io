@@ -1,0 +1,62 @@
+{
+  "name": "Marco Barbone",
+  "role": "Software Engineer",
+  "org": "Flatiron Institute, Simons Foundation",
+  "department": "Center for Computational Mathematics",
+  "department_url": "https://www.simonsfoundation.org/flatiron/center-for-computational-mathematics/",
+  "location": "New York",
+  "photo": "assets/profile.jpg",
+  "bio": [
+    "I'm a Software Engineer at the <a href='https://www.simonsfoundation.org/flatiron/center-for-computational-mathematics/'>Center for Computational Mathematics</a> at the <a href='https://www.simonsfoundation.org/flatiron/'>Flatiron Institute</a> (Simons Foundation), based in New York.",
+    "My work focuses on <span class='kw'>high-performance computing</span>, <span class='kw'>SIMD</span> optimization, <span class='kw'>GPU</span> and <span class='kw'>FPGA</span> programming, and making scientific software run as fast as the hardware allows. I contribute to projects like <a href='https://github.com/flatironinstitute/finufft'>FINUFFT</a> (nonuniform fast Fourier transforms) and <a href='https://github.com/TRIQS/triqs'>TRIQS</a>."
+  ],
+  "education": [
+    {
+      "degree": "Ph.D. in Computing",
+      "institution": "Imperial College London",
+      "location": "London, United Kingdom",
+      "years": "2019–2024",
+      "affiliate": "The Institute of Cancer Research"
+    },
+    {
+      "degree": "M.Sc. in Computer Science and Networking",
+      "institution": "Scuola Superiore Sant'Anna & Università di Pisa",
+      "location": "Pisa, Italy",
+      "years": "2016–2018",
+      "score": "110/110 Cum Laude"
+    },
+    {
+      "degree": "B.Sc. in Computer Science",
+      "institution": "Università di Pisa",
+      "location": "Pisa, Italy",
+      "years": "2013–2016",
+      "score": "103/110"
+    }
+  ],
+  "experience": [
+    { "role": "Software Engineer", "org": "Simons Foundation / Flatiron Institute", "location": "New York, US", "years": "2024–present", "desc": "Performance optimization of FINUFFT" },
+    { "role": "Software Engineer", "org": "Optiver", "location": "Amsterdam, NL", "years": "2023", "desc": "Performance optimisation of option pricing" },
+    { "role": "Software Engineer", "org": "Intel", "location": "Munich, DE", "years": "2022", "desc": "Hardware simulation in SIMICS" },
+    { "role": "Member, CRUK Convergence Science Centre Training Committee", "org": "Imperial College London", "location": "London, UK", "years": "2021–2024", "desc": "Representative of the convergence science PhD cohort" },
+    { "role": "Member, CMS Experiment Research Group", "org": "Imperial College London / CERN", "location": "London, UK", "years": "2020–2024", "desc": "Particle physics research and computing for the CMS experiment" },
+    { "role": "Research Software Engineer", "org": "Maxeler Technologies", "location": "London, UK", "years": "2019–2020", "desc": "R&D of new compiler optimisations" },
+    { "role": "Software Engineer Intern", "org": "Maxeler Technologies", "location": "London, UK", "years": "2019", "desc": "Researching and developing compiler optimisations" },
+    { "role": "Software Engineer Intern", "org": "CERN OpenLab", "location": "Geneva, CH", "years": "2018", "desc": "DEEP-EST: heterogeneous data processing for CMS experiment using GPU/FPGA" }
+  ],
+  "awards": [
+    { "title": "Fundamentals of Accelerated Computing with Modern CUDA C", "year": "2025", "issuer": "NVIDIA" },
+    { "title": "Best Graduation Performance", "year": "2018", "issuer": "Scuola Superiore Sant'Anna" },
+    { "title": "Best Performance Scholarship in Computer Science and Networking", "year": "2017", "issuer": "Scuola Superiore Sant'Anna", "detail": "Highest GPA and number of ECTS" }
+  ],
+  "languages": ["Italian (native)", "English (full professional)"],
+  "links": [
+    { "label": "GitHub",   "url": "https://github.com/DiamonDinoia" },
+    { "label": "Scholar",  "url": "https://scholar.google.com/citations?user=l2dvmUkAAAAJ" },
+    { "label": "LinkedIn", "url": "https://www.linkedin.com/in/marcobarbone/" },
+    { "label": "Flatiron", "url": "https://www.simonsfoundation.org/people/marco-barbone/" },
+    { "label": "Email",    "url": "", "scrambled": "mabn@ltrnnttt.rbroefaioisiueog" }
+  ],
+  "status_left": ["marco_barbone", "main", "UTF-8"],
+  "status_right_label": "github.com/DiamonDinoia",
+  "status_right_url": "https://github.com/DiamonDinoia"
+}

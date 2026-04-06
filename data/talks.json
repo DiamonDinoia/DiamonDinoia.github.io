@@ -1,0 +1,117 @@
+{
+  "talks": [
+    {
+      "title": "Fast Numerics, Small Changes: The Minimal Playbook",
+      "event": "FWAM 2025",
+      "org": "Flatiron Institute",
+      "year": 2025,
+      "type": "conference",
+      "url": "https://www.simonsfoundation.org/event/2025-flatiron-wide-autumn-meeting/",
+      "links": [
+        { "label": "slides", "url": "https://raw.githubusercontent.com/DiamonDinoia/fwam2025/master/slides.pdf", "type": "pdf" },
+        { "label": "code", "url": "https://github.com/DiamonDinoia/fwam2025", "type": "code" }
+      ]
+    },
+    {
+      "title": "Fast NUFFT and SIMD: A journey from better algorithms to SIMD",
+      "event": "BLIS Retreat 2025",
+      "org": "UT Austin",
+      "year": 2025,
+      "type": "conference",
+      "url": "https://www.cs.utexas.edu/~flame/BLISRetreat2025/Program-at-a-glance.html",
+      "links": [
+        { "label": "slides", "url": "https://www.cs.utexas.edu/~flame/BLISRetreat2025/slides/Marco_blis_retreat_2025.pdf", "type": "pdf" }
+      ]
+    },
+    {
+      "title": "NUFFTs and Polynomial Fitting",
+      "event": "SMU Seminar",
+      "org": "Flatiron Institute",
+      "year": 2024,
+      "type": "seminar",
+      "url": "",
+      "links": []
+    },
+    {
+      "title": "Continual Learning for High-Energy Physics",
+      "event": "FastML Meeting",
+      "org": "SLAC",
+      "year": 2023,
+      "type": "talk",
+      "url": "https://indico.slac.stanford.edu/event/8282/",
+      "links": []
+    },
+    {
+      "title": "Continual Learning Methods",
+      "event": "Workshop",
+      "org": "Indico Global",
+      "year": 2023,
+      "type": "talk",
+      "url": "https://indico.global/event/3458/contributions/34404/",
+      "links": [
+        { "label": "slides", "url": "https://indico.global/event/3458/contributions/34404/attachments/17649/28885/2023-11-07%20CL%20methods.pdf", "type": "pdf" }
+      ]
+    },
+    {
+      "title": "Demonstration of FPGA Acceleration of Monte Carlo Simulation",
+      "event": "ACAT 2021",
+      "org": "CERN",
+      "year": 2021,
+      "type": "conference",
+      "url": "https://indico.cern.ch/event/855454/contributions/4605074/",
+      "links": [
+        { "label": "slides", "url": "https://indico.cern.ch/event/855454/contributions/4605074/attachments/2355237/4019278/ACAT%202021.pdf", "type": "pdf" }
+      ]
+    },
+    {
+      "title": "FPGA Acceleration of Monte Carlo Simulation",
+      "event": "HSF Meeting",
+      "org": "CERN",
+      "year": 2021,
+      "type": "talk",
+      "url": "",
+      "links": [
+        { "label": "slides", "url": "https://indico.cern.ch/event/1096432/contributions/4612623/attachments/2363830/4035767/13-12-2021%20HSF%20meeting.pdf", "type": "pdf" }
+      ]
+    },
+    {
+      "title": "Introduction to FPGA Acceleration",
+      "event": "Compute Accelerator Forum",
+      "org": "CERN",
+      "year": 2021,
+      "type": "talk",
+      "url": "https://indico.cern.ch/event/975009/contributions/4105775/",
+      "links": [
+        { "label": "slides", "url": "https://indico.cern.ch/event/975009/contributions/4105775/attachments/2226504/3771510/slides.pdf", "type": "pdf" }
+      ]
+    }
+  ],
+  "lectures": [
+    {
+      "title": "Practical High-Performance Computing",
+      "org": "Flatiron Institute",
+      "location": "New York City, NY",
+      "url": "https://indico.flatironinstitute.org/event/3737/",
+      "links": [
+        { "label": "slides", "url": "https://indico.flatironinstitute.org/event/3737/attachments/767/1143/Barbone2023slides_practical_HPC_FI.pptx", "type": "pdf" }
+      ]
+    },
+    {
+      "title": "Introduction to FPGA Acceleration",
+      "org": "CERN OpenLab",
+      "location": "Geneva, Switzerland",
+      "url": "https://indico.cern.ch/event/1170079/",
+      "links": [
+        { "label": "slides", "url": "https://indico.cern.ch/event/1170079/attachments/2484554/4269719/cern%20openlab%20lecture%2021-07-2022.pdf", "type": "pdf" },
+        { "label": "video", "url": "https://cds.cern.ch/record/2823786", "type": "doi" }
+      ]
+    },
+    {
+      "title": "Introduction to Performance Modelling and Acceleration",
+      "org": "Imperial College London",
+      "location": "London, United Kingdom",
+      "url": "",
+      "links": []
+    }
+  ]
+}

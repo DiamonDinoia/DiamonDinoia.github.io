@@ -1,0 +1,60 @@
+{
+  "github_url": "https://github.com/DiamonDinoia",
+  "total_repos": 86,
+  "projects": [
+    {
+      "name": "FINUFFT",
+      "url": "https://github.com/flatironinstitute/finufft",
+      "langs": ["C++", "CUDA"],
+      "description": "Flatiron Institute Nonuniform Fast Fourier Transform library. High-performance CPU and GPU implementations used across scientific computing."
+    },
+    {
+      "name": "TRIQS / nda / ctint",
+      "url": "https://github.com/TRIQS/triqs",
+      "langs": ["C++", "Python"],
+      "description": "Toolbox for Research on Interacting Quantum Systems. Contributions to the CT-INT impurity solver and the nda multidimensional array library."
+    },
+    {
+      "name": "Simple ANS",
+      "url": "https://github.com/flatironinstitute/simple_ans",
+      "langs": ["C++", "Python"],
+      "description": "ANS (Asymmetric Numeral Systems) integer compression with C++ core and Python bindings."
+    },
+    {
+      "name": "Baobzi",
+      "url": "https://github.com/flatironinstitute/baobzi",
+      "langs": ["C++", "Python"],
+      "description": "Adaptive fast function approximation library using Chebyshev polynomials and tree-based domain decomposition."
+    },
+    {
+      "name": "Polyfit",
+      "url": "https://github.com/DiamonDinoia/polyfit",
+      "langs": ["C++"],
+      "description": "Fast polynomial fitting and evaluation using monomials."
+    },
+    {
+      "name": "POET",
+      "url": "https://github.com/DiamonDinoia/poet",
+      "langs": ["C++"],
+      "description": "Perfectly Over-Engineered Templates. C++ template metaprogramming utilities for high-performance computing."
+    },
+    {
+      "name": "VectorXoshiro",
+      "url": "https://github.com/DiamonDinoia/VectorXoshiro",
+      "langs": ["C++", "SIMD"],
+      "description": "Vectorized (SIMD) implementation of the xoshiro random number generator family for maximum throughput."
+    },
+    {
+      "name": "XSIMD",
+      "url": "https://github.com/xtensor-stack/xsimd",
+      "langs": ["C++", "SIMD"],
+      "description": "Portable C++ SIMD wrappers and optimized math kernels."
+    },
+    {
+      "name": "MWrap",
+      "url": "https://github.com/DiamonDinoia/mwrap",
+      "langs": ["C", "MATLAB"],
+      "description": "MATLAB/Octave MEX gateway generator to wrap C/C++/Fortran libraries."
+    }
+  ]
+}
