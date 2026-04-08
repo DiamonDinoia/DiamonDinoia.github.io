@@ -52,7 +52,7 @@
     "10.4208/cicp.OA-2024-0233": {
       "venue_note": "CiCP",
       "links": [
-        { "label": "PDF", "url": "https://global-sci.com/cicp/article/view/17178/34106", "type": "pdf" },
+        { "label": "PDF", "url": "https://global-sci.com/cicp/article/download/17178/34106/35336", "type": "pdf" },
         { "label": "DOI", "url": "https://doi.org/10.4208/cicp.OA-2024-0233", "type": "doi" }
       ]
     },
@@ -79,7 +79,7 @@
     },
     "10.1016/j.phro.2023.100484": {
       "links": [
-        { "label": "PDF", "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10474606/pdf/main.pdf", "type": "pdf" },
+        { "label": "PDF", "url": "https://spiral.imperial.ac.uk/server/api/core/bitstreams/839fe0fc-0ba0-4ef2-b48e-13eea0cfbc20/content", "type": "pdf" },
         { "label": "DOI", "url": "https://doi.org/10.1016/j.phro.2023.100484", "type": "doi" }
       ]
     },
