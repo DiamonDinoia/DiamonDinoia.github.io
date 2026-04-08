@@ -67,9 +67,16 @@
         "W. Luk"
       ],
       "venue": "EPJ Web of Conferences",
+      "venue_note": "ACAT 2022",
       "year": 2024,
-      "url": "",
-      "links": []
+      "url": "https://indico.cern.ch/event/1106990/contributions/4998133/",
+      "links": [
+        {
+          "label": "PDF",
+          "url": "https://indico.cern.ch/event/1106990/contributions/4998133/attachments/2534566/4361739/ACAT%20poster%20v4.pdf",
+          "type": "pdf"
+        }
+      ]
     },
     {
       "title": "Acceleration of a Deep Neural Network for the Compact Muon Solenoid",
