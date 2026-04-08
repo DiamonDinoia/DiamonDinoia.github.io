@@ -526,17 +526,17 @@ code {
   color: var(--gray);
 }
 
-/* --- OpenCode TUI Intro --- */
+/* --- OpenCode TUI Intro (uses site theme variables) --- */
 .oc {
   position: fixed;
   inset: 0;
   z-index: 1000;
-  background: #0d1117;
+  background: var(--editor);
   display: flex;
   flex-direction: column;
   font-family: var(--font-mono);
   font-size: 0.82rem;
-  color: #8b949e;
+  color: var(--text-muted);
   transition: opacity 0.6s ease;
   overflow: hidden;
 }
@@ -551,22 +551,22 @@ code {
   justify-content: space-between;
   align-items: center;
   padding: 0.3rem 1rem;
-  background: #161b22;
-  border-bottom: 1px solid #30363d;
+  background: var(--chrome);
+  border-bottom: 1px solid var(--border);
   font-size: 0.75rem;
 }
 
 .oc-topbar-left {
-  color: #58a6ff;
+  color: var(--blue);
   font-weight: 600;
 }
 
 .oc-topbar-center {
-  color: #8b949e;
+  color: var(--text-secondary);
 }
 
 .oc-topbar-right {
-  color: #484f58;
+  color: var(--gray);
 }
 
 /* Main area */
@@ -581,39 +581,39 @@ code {
   flex: 1;
   display: flex;
   flex-direction: column;
-  border-right: 1px solid #30363d;
+  border-right: 1px solid var(--border);
   min-width: 0;
 }
 
-/* Panel headers — simulated TUI borders */
+/* Panel headers */
 .oc-panel-header {
   padding: 0.25rem 0.75rem;
-  border-bottom: 1px solid #30363d;
+  border-bottom: 1px solid var(--border);
   font-size: 0.72rem;
-  color: #484f58;
+  color: var(--gray);
   display: flex;
   align-items: center;
   gap: 0.75rem;
-  background: #0d1117;
+  background: var(--editor);
 }
 
 .oc-panel-header-bottom {
-  border-top: 1px solid #30363d;
-  border-bottom: 1px solid #30363d;
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
 }
 
 .oc-panel-label {
-  color: #58a6ff;
+  color: var(--blue);
   font-weight: 500;
 }
 
 .oc-model-badge {
-  background: #1f2937;
-  color: #7ee787;
+  background: var(--chrome);
+  color: var(--green);
   padding: 0.1rem 0.5rem;
   border-radius: 3px;
   font-size: 0.68rem;
-  border: 1px solid #238636;
+  border: 1px solid var(--green);
 }
 
 /* Messages area */
@@ -640,49 +640,49 @@ code {
 }
 
 .oc-msg-role-user {
-  color: #58a6ff;
+  color: var(--blue);
 }
 
 .oc-msg-role-assistant {
-  color: #d2a8ff;
+  color: var(--purple);
 }
 
 .oc-msg-body {
-  color: #c9d1d9;
+  color: var(--text-primary);
   line-height: 1.55;
   padding-left: 0.25rem;
 }
 
 .oc-msg-body .oc-bold {
-  color: #f0f6fc;
+  color: var(--text-primary);
   font-weight: 600;
 }
 
 .oc-msg-body .oc-dim {
-  color: #484f58;
+  color: var(--gray);
 }
 
 .oc-msg-body .oc-green {
-  color: #7ee787;
+  color: var(--green);
 }
 
 .oc-msg-body .oc-yellow {
-  color: #e3b341;
+  color: var(--yellow);
   font-weight: 600;
 }
 
 .oc-msg-body .oc-teal {
-  color: #56d4dd;
+  color: var(--teal);
 }
 
 .oc-msg-body .oc-red {
-  color: #f85149;
+  color: var(--red);
 }
 
 /* Tool call blocks */
 .oc-tool {
-  background: #161b22;
-  border: 1px solid #30363d;
+  background: var(--chrome);
+  border: 1px solid var(--border);
   border-radius: 4px;
   padding: 0.5rem 0.65rem;
   margin: 0.3rem 0;
@@ -690,21 +690,21 @@ code {
 }
 
 .oc-tool-header {
-  color: #d2a8ff;
+  color: var(--purple);
   font-weight: 500;
   margin-bottom: 0.25rem;
 }
 
 .oc-tool-body {
-  color: #8b949e;
+  color: var(--text-muted);
 }
 
 .oc-tool-body .oc-file {
-  color: #58a6ff;
+  color: var(--blue);
 }
 
 .oc-tool-result {
-  color: #7ee787;
+  color: var(--green);
   font-size: 0.72rem;
   margin-top: 0.2rem;
 }
@@ -712,14 +712,6 @@ code {
 /* Spinner */
 .oc-spinner {
   display: inline-block;
-  animation: oc-spin 0.6s steps(4) infinite;
-}
-
-@keyframes oc-spin {
-  0%   { content: '⠋'; }
-  25%  { content: '⠙'; }
-  50%  { content: '⠹'; }
-  75%  { content: '⠸'; }
 }
 
 .oc-spinner::after {
@@ -741,27 +733,27 @@ code {
 /* Input area */
 .oc-input-area {
   padding: 0.5rem 0.75rem;
-  border-top: 1px solid #30363d;
-  background: #0d1117;
+  border-top: 1px solid var(--border);
+  background: var(--editor);
 }
 
 .oc-input-border {
-  border: 1px solid #30363d;
+  border: 1px solid var(--border);
   border-radius: 4px;
   padding: 0.4rem 0.6rem;
   display: flex;
   align-items: center;
-  background: #161b22;
+  background: var(--chrome);
 }
 
 .oc-input-label {
-  color: #7ee787;
+  color: var(--green);
   margin-right: 0.4rem;
   font-weight: 600;
 }
 
 .oc-input-text {
-  color: #c9d1d9;
+  color: var(--text-primary);
   flex: 1;
 }
 
@@ -769,7 +761,7 @@ code {
   display: inline-block;
   width: 0.5rem;
   height: 1.1em;
-  background: #58a6ff;
+  background: var(--blue);
   animation: blink 1s step-end infinite;
 }
 
@@ -778,7 +770,7 @@ code {
   gap: 1.25rem;
   padding: 0.3rem 0.2rem 0;
   font-size: 0.65rem;
-  color: #484f58;
+  color: var(--gray);
 }
 
 /* Sidebar */
@@ -786,7 +778,7 @@ code {
   width: 16rem;
   display: flex;
   flex-direction: column;
-  background: #0d1117;
+  background: var(--editor);
 }
 
 .oc-file-tree {
@@ -798,16 +790,16 @@ code {
 
 .oc-file-tree div {
   padding: 0.1rem 0;
-  color: #8b949e;
+  color: var(--text-muted);
 }
 
 .oc-file-tree .oc-ft-dir {
-  color: #58a6ff;
+  color: var(--blue);
 }
 
 .oc-file-tree .oc-ft-active {
-  color: #f0f6fc;
-  background: rgba(88, 166, 255, 0.1);
+  color: var(--text-primary);
+  background: rgba(98, 173, 238, 0.1);
   margin: 0 -0.75rem;
   padding: 0.1rem 0.75rem;
 }
@@ -822,11 +814,11 @@ code {
 }
 
 .oc-info-key {
-  color: #484f58;
+  color: var(--gray);
 }
 
 .oc-info-val {
-  color: #8b949e;
+  color: var(--text-muted);
 }
 
 /* Status bar */
@@ -834,14 +826,14 @@ code {
   display: flex;
   gap: 1.5rem;
   padding: 0.25rem 1rem;
-  background: #161b22;
-  border-top: 1px solid #30363d;
+  background: var(--chrome);
+  border-top: 1px solid var(--border);
   font-size: 0.68rem;
-  color: #484f58;
+  color: var(--gray);
 }
 
 .oc-status-ok {
-  color: #7ee787;
+  color: var(--green);
 }
 
 /* Responsive: hide sidebar on narrow screens */
