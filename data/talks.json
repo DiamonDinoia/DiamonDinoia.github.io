@@ -28,9 +28,7 @@
       "event": "SMU Seminar",
       "org": "Flatiron Institute",
       "year": 2024,
-      "type": "seminar",
-      "url": "",
-      "links": []
+      "type": "seminar"
     },
     {
       "title": "Continual Learning for High-Energy Physics",
@@ -39,7 +37,9 @@
       "year": 2023,
       "type": "talk",
       "url": "https://indico.slac.stanford.edu/event/8282/",
-      "links": []
+      "links": [
+        { "label": "video", "url": "https://indico.slac.stanford.edu/event/8282/attachments/3433/9491/video1074672244.mp4", "type": "code" }
+      ]
     },
     {
       "title": "Continual Learning Methods",
@@ -60,7 +60,8 @@
       "type": "conference",
       "url": "https://indico.cern.ch/event/855454/contributions/4605074/",
       "links": [
-        { "label": "slides", "url": "https://indico.cern.ch/event/855454/contributions/4605074/attachments/2355237/4019278/ACAT%202021.pdf", "type": "pdf" }
+        { "label": "slides", "url": "https://indico.cern.ch/event/855454/contributions/4605074/attachments/2355237/4019278/ACAT%202021.pdf", "type": "pdf" },
+        { "label": "video", "url": "https://videos.cern.ch/record/2295043", "type": "code" }
       ]
     },
     {
@@ -69,7 +70,6 @@
       "org": "CERN",
       "year": 2021,
       "type": "talk",
-      "url": "",
       "links": [
         { "label": "slides", "url": "https://indico.cern.ch/event/1096432/contributions/4612623/attachments/2363830/4035767/13-12-2021%20HSF%20meeting.pdf", "type": "pdf" }
       ]
@@ -82,7 +82,8 @@
       "type": "talk",
       "url": "https://indico.cern.ch/event/975009/contributions/4105775/",
       "links": [
-        { "label": "slides", "url": "https://indico.cern.ch/event/975009/contributions/4105775/attachments/2226504/3771510/slides.pdf", "type": "pdf" }
+        { "label": "slides", "url": "https://indico.cern.ch/event/975009/contributions/4105775/attachments/2226504/3771510/slides.pdf", "type": "pdf" },
+        { "label": "video", "url": "https://cernbox.cern.ch/index.php/s/5bn4rDEnIkNbZkO", "type": "code" }
       ]
     }
   ],
@@ -109,9 +110,7 @@
     {
       "title": "Introduction to Performance Modelling and Acceleration",
       "org": "Imperial College London",
-      "location": "London, United Kingdom",
-      "url": "",
-      "links": []
+      "location": "London, United Kingdom"
     }
   ]
 }

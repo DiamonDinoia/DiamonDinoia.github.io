@@ -1,0 +1,101 @@
+{
+  "_comment": "Manual entries (no DOI) and per-DOI overrides. Merged into publications.json by build script.",
+  "scholar_url": "https://scholar.google.com/citations?user=l2dvmUkAAAAJ",
+  "manual": [
+    {
+      "title": "Accelerating the DBSCAN clustering algorithm for low-latency primary vertex reconstruction at the HL-LHC",
+      "authors": ["L. Borgna", "M. Barbone", "J. Cao", "A. Rose", "A. Tapper", "R. Bainbridge", "W. Luk"],
+      "venue": "EPJ Web of Conferences",
+      "year": 2024,
+      "url": "",
+      "links": []
+    },
+    {
+      "title": "GPU acceleration of Monte Carlo simulations: particle physics methods applied to medicine",
+      "authors": ["M. Barbone", "R. Brandt", "A. Howard", "M. Novak", "W. Luk", "G. Gaydadjiev", "A. Tapper"],
+      "venue": "Journal of Physics: Conference Series",
+      "venue_note": "ACAT 2022",
+      "year": 2024,
+      "url": "https://indico.cern.ch/event/1106990/contributions/4991264/",
+      "links": [
+        { "label": "PDF", "url": "https://indico.cern.ch/event/1106990/papers/4991264/files/11605-GPU_acceleration_of_Monte_Carlo_simulations__particle_physics_methods_applied_to_medicine.pdf", "type": "pdf" }
+      ]
+    },
+    {
+      "title": "Accelerating Large-Scale Graph Processing with FPGAs: Lessons Learned and Future Directions",
+      "authors": ["M. Procaccini", "A. Sahebi", "M. Barbone", "W. Luk", "G. Gaydadjiev", "R. Giorgi"],
+      "venue": "PARMA-DITAM",
+      "venue_note": "OASIcs, Vol. 116, pp. 6:1–6:12",
+      "year": 2024,
+      "url": "https://doi.org/10.4230/OASIcs.PARMA-DITAM.2024.6",
+      "links": [
+        { "label": "PDF", "url": "https://drops.dagstuhl.de/storage/01oasics/oasics-vol116-parma-ditam2024/OASIcs.PARMA-DITAM.2024.6/OASIcs.PARMA-DITAM.2024.6.pdf", "type": "pdf" },
+        { "label": "DOI", "url": "https://doi.org/10.4230/OASIcs.PARMA-DITAM.2024.6", "type": "doi" }
+      ]
+    }
+  ],
+  "doi_overrides": {
+    "10.1093/ecco-jcc/jjaf200": {
+      "authors": ["et al. incl. M. Barbone"]
+    },
+    "10.4208/cicp.OA-2024-0233": {
+      "venue_note": "CiCP"
+    },
+    "10.1051/epjconf/202429511010": {
+      "venue_note": "CHEP 2024",
+      "links": [
+        { "label": "PDF", "url": "https://www.epj-conferences.org/articles/epjconf/pdf/2024/05/epjconf_chep2024_11010.pdf", "type": "pdf" },
+        { "label": "DOI", "url": "https://doi.org/10.1051/epjconf/202429511010", "type": "doi" }
+      ]
+    },
+    "10.1051/epjconf/202429509037": {
+      "venue_note": "CHEP 2024",
+      "links": [
+        { "label": "PDF", "url": "https://www.epj-conferences.org/articles/epjconf/pdf/2024/05/epjconf_chep2024_09037.pdf", "type": "pdf" },
+        { "label": "DOI", "url": "https://doi.org/10.1051/epjconf/202429509037", "type": "doi" }
+      ]
+    },
+    "10.1051/epjconf/202429509014": {
+      "venue_note": "CHEP 2024",
+      "links": [
+        { "label": "PDF", "url": "https://www.epj-conferences.org/articles/epjconf/pdf/2024/05/epjconf_chep2024_09014.pdf", "type": "pdf" },
+        { "label": "DOI", "url": "https://doi.org/10.1051/epjconf/202429509014", "type": "doi" }
+      ]
+    },
+    "10.1016/j.phro.2023.100484": {
+      "links": [
+        { "label": "PDF", "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10474606/pdf/main.pdf", "type": "pdf" },
+        { "label": "DOI", "url": "https://doi.org/10.1016/j.phro.2023.100484", "type": "doi" }
+      ]
+    },
+    "10.1186/s40537-023-00756-x": {
+      "links": [
+        { "label": "PDF", "url": "https://journalofbigdata.springeropen.com/counter/pdf/10.1186/s40537-023-00756-x.pdf", "type": "pdf" },
+        { "label": "DOI", "url": "https://doi.org/10.1186/s40537-023-00756-x", "type": "doi" }
+      ]
+    },
+    "10.1088/1742-6596/2438/1/012023": {
+      "venue_note": "ACAT 2021",
+      "links": [
+        { "label": "PDF", "url": "https://cds.cern.ch/record/2871806/files/document.pdf", "type": "pdf" },
+        { "label": "DOI", "url": "https://doi.org/10.1088/1742-6596/2438/1/012023", "type": "doi" }
+      ]
+    },
+    "10.1109/ICCD53106.2021.00066": {
+      "venue": "IEEE ICCD",
+      "venue_note": "Storrs, CT, pp. 374–382",
+      "links": [
+        { "label": "PDF", "url": "https://spiral.imperial.ac.uk/server/api/core/bitstreams/5e353228-a46a-4d38-b103-724fe3d65151/content", "type": "pdf" },
+        { "label": "DOI", "url": "https://doi.org/10.1109/ICCD53106.2021.00066", "type": "doi" }
+      ]
+    },
+    "10.1109/SBAC-PAD53543.2021.00029": {
+      "venue": "IEEE SBAC-PAD",
+      "venue_note": "Belo Horizonte, pp. 177–187",
+      "links": [
+        { "label": "PDF", "url": "https://spiral.imperial.ac.uk/server/api/core/bitstreams/136c4f3c-e322-45fa-a374-905c3fe13426/content", "type": "pdf" },
+        { "label": "DOI", "url": "https://doi.org/10.1109/SBAC-PAD53543.2021.00029", "type": "doi" }
+      ]
+    }
+  }
+}

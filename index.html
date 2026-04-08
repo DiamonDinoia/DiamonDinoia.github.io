@@ -23,6 +23,61 @@
     <a href="personal.html">personal.hpp</a>
   </nav>
 
+  <!-- Intro overlay — OpenCode TUI style -->
+  <div class="oc" id="intro-overlay">
+    <!-- Top bar -->
+    <div class="oc-topbar">
+      <span class="oc-topbar-left">opencode</span>
+      <span class="oc-topbar-center">marco-barbone/homepage</span>
+      <span class="oc-topbar-right">session: 4a7f2c</span>
+    </div>
+    <!-- Main area: chat panel + sidebar -->
+    <div class="oc-main">
+      <!-- Chat panel -->
+      <div class="oc-chat">
+        <div class="oc-panel-header">
+          <span class="oc-panel-label"> Chat </span>
+          <span class="oc-model-badge">llm-hold-my-beer-8eb</span>
+        </div>
+        <div class="oc-messages" id="oc-messages"></div>
+        <div class="oc-input-area">
+          <div class="oc-input-border">
+            <span class="oc-input-label"> &gt; </span>
+            <span class="oc-input-text" id="oc-input-text"></span>
+            <span class="oc-input-cursor"></span>
+          </div>
+          <div class="oc-input-hints">
+            <span>enter send</span>
+            <span>ctrl+l clear</span>
+            <span>ctrl+o open file</span>
+            <span>? help</span>
+          </div>
+        </div>
+      </div>
+      <!-- Sidebar -->
+      <div class="oc-sidebar">
+        <div class="oc-panel-header">
+          <span class="oc-panel-label"> Files </span>
+        </div>
+        <div class="oc-file-tree" id="oc-file-tree"></div>
+        <div class="oc-panel-header oc-panel-header-bottom">
+          <span class="oc-panel-label"> Info </span>
+        </div>
+        <div class="oc-info" id="oc-info">
+          <div><span class="oc-info-key">Tokens:</span> <span class="oc-info-val" id="oc-tokens">0</span></div>
+          <div><span class="oc-info-key">Cost:</span> <span class="oc-info-val" id="oc-cost">$0.000</span></div>
+          <div><span class="oc-info-key">Duration:</span> <span class="oc-info-val" id="oc-duration">0.0s</span></div>
+        </div>
+      </div>
+    </div>
+    <!-- Bottom status bar -->
+    <div class="oc-statusbar">
+      <span>~/repos/homepage</span>
+      <span>main</span>
+      <span class="oc-status-ok">ready</span>
+    </div>
+  </div>
+
   <main class="editor">
     <div class="editor-content" id="content"></div>
   </main>
@@ -30,6 +85,7 @@
   <footer class="status-bar" id="status-bar"></footer>
 
   <script src="assets/render.js"></script>
-  <script>renderAbout();</script>
+  <script src="assets/intro.js"></script>
+  <script>runIntro().then(() => renderAbout());</script>
 </body>
 </html>

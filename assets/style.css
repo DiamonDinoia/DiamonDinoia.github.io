@@ -99,7 +99,13 @@ body {
   display: flex;
   border-bottom: 1px solid var(--border);
   overflow-x: auto;
+  overflow-y: hidden;
   -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+}
+
+.tab-bar::-webkit-scrollbar {
+  display: none;
 }
 
 .tab-bar a {
@@ -518,6 +524,330 @@ code {
   font-family: var(--font-mono);
   font-size: 0.7rem;
   color: var(--gray);
+}
+
+/* --- OpenCode TUI Intro --- */
+.oc {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  background: #0d1117;
+  display: flex;
+  flex-direction: column;
+  font-family: var(--font-mono);
+  font-size: 0.82rem;
+  color: #8b949e;
+  transition: opacity 0.6s ease;
+  overflow: hidden;
+}
+
+.oc.oc-fadeout {
+  opacity: 0;
+}
+
+/* Top bar */
+.oc-topbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.3rem 1rem;
+  background: #161b22;
+  border-bottom: 1px solid #30363d;
+  font-size: 0.75rem;
+}
+
+.oc-topbar-left {
+  color: #58a6ff;
+  font-weight: 600;
+}
+
+.oc-topbar-center {
+  color: #8b949e;
+}
+
+.oc-topbar-right {
+  color: #484f58;
+}
+
+/* Main area */
+.oc-main {
+  flex: 1;
+  display: flex;
+  min-height: 0;
+}
+
+/* Chat panel */
+.oc-chat {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  border-right: 1px solid #30363d;
+  min-width: 0;
+}
+
+/* Panel headers — simulated TUI borders */
+.oc-panel-header {
+  padding: 0.25rem 0.75rem;
+  border-bottom: 1px solid #30363d;
+  font-size: 0.72rem;
+  color: #484f58;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  background: #0d1117;
+}
+
+.oc-panel-header-bottom {
+  border-top: 1px solid #30363d;
+  border-bottom: 1px solid #30363d;
+}
+
+.oc-panel-label {
+  color: #58a6ff;
+  font-weight: 500;
+}
+
+.oc-model-badge {
+  background: #1f2937;
+  color: #7ee787;
+  padding: 0.1rem 0.5rem;
+  border-radius: 3px;
+  font-size: 0.68rem;
+  border: 1px solid #238636;
+}
+
+/* Messages area */
+.oc-messages {
+  flex: 1;
+  overflow-y: auto;
+  padding: 0.75rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.oc-msg {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+}
+
+.oc-msg-role {
+  font-size: 0.7rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.oc-msg-role-user {
+  color: #58a6ff;
+}
+
+.oc-msg-role-assistant {
+  color: #d2a8ff;
+}
+
+.oc-msg-body {
+  color: #c9d1d9;
+  line-height: 1.55;
+  padding-left: 0.25rem;
+}
+
+.oc-msg-body .oc-bold {
+  color: #f0f6fc;
+  font-weight: 600;
+}
+
+.oc-msg-body .oc-dim {
+  color: #484f58;
+}
+
+.oc-msg-body .oc-green {
+  color: #7ee787;
+}
+
+.oc-msg-body .oc-yellow {
+  color: #e3b341;
+  font-weight: 600;
+}
+
+.oc-msg-body .oc-teal {
+  color: #56d4dd;
+}
+
+.oc-msg-body .oc-red {
+  color: #f85149;
+}
+
+/* Tool call blocks */
+.oc-tool {
+  background: #161b22;
+  border: 1px solid #30363d;
+  border-radius: 4px;
+  padding: 0.5rem 0.65rem;
+  margin: 0.3rem 0;
+  font-size: 0.78rem;
+}
+
+.oc-tool-header {
+  color: #d2a8ff;
+  font-weight: 500;
+  margin-bottom: 0.25rem;
+}
+
+.oc-tool-body {
+  color: #8b949e;
+}
+
+.oc-tool-body .oc-file {
+  color: #58a6ff;
+}
+
+.oc-tool-result {
+  color: #7ee787;
+  font-size: 0.72rem;
+  margin-top: 0.2rem;
+}
+
+/* Spinner */
+.oc-spinner {
+  display: inline-block;
+  animation: oc-spin 0.6s steps(4) infinite;
+}
+
+@keyframes oc-spin {
+  0%   { content: '⠋'; }
+  25%  { content: '⠙'; }
+  50%  { content: '⠹'; }
+  75%  { content: '⠸'; }
+}
+
+.oc-spinner::after {
+  content: '⠋';
+  animation: oc-braille 0.8s steps(1) infinite;
+}
+
+@keyframes oc-braille {
+  0%   { content: '⠋'; }
+  12%  { content: '⠙'; }
+  25%  { content: '⠹'; }
+  37%  { content: '⠸'; }
+  50%  { content: '⠼'; }
+  62%  { content: '⠴'; }
+  75%  { content: '⠦'; }
+  87%  { content: '⠧'; }
+}
+
+/* Input area */
+.oc-input-area {
+  padding: 0.5rem 0.75rem;
+  border-top: 1px solid #30363d;
+  background: #0d1117;
+}
+
+.oc-input-border {
+  border: 1px solid #30363d;
+  border-radius: 4px;
+  padding: 0.4rem 0.6rem;
+  display: flex;
+  align-items: center;
+  background: #161b22;
+}
+
+.oc-input-label {
+  color: #7ee787;
+  margin-right: 0.4rem;
+  font-weight: 600;
+}
+
+.oc-input-text {
+  color: #c9d1d9;
+  flex: 1;
+}
+
+.oc-input-cursor {
+  display: inline-block;
+  width: 0.5rem;
+  height: 1.1em;
+  background: #58a6ff;
+  animation: blink 1s step-end infinite;
+}
+
+.oc-input-hints {
+  display: flex;
+  gap: 1.25rem;
+  padding: 0.3rem 0.2rem 0;
+  font-size: 0.65rem;
+  color: #484f58;
+}
+
+/* Sidebar */
+.oc-sidebar {
+  width: 16rem;
+  display: flex;
+  flex-direction: column;
+  background: #0d1117;
+}
+
+.oc-file-tree {
+  flex: 1;
+  padding: 0.5rem 0.75rem;
+  font-size: 0.75rem;
+  overflow-y: auto;
+}
+
+.oc-file-tree div {
+  padding: 0.1rem 0;
+  color: #8b949e;
+}
+
+.oc-file-tree .oc-ft-dir {
+  color: #58a6ff;
+}
+
+.oc-file-tree .oc-ft-active {
+  color: #f0f6fc;
+  background: rgba(88, 166, 255, 0.1);
+  margin: 0 -0.75rem;
+  padding: 0.1rem 0.75rem;
+}
+
+.oc-info {
+  padding: 0.5rem 0.75rem;
+  font-size: 0.72rem;
+}
+
+.oc-info div {
+  padding: 0.1rem 0;
+}
+
+.oc-info-key {
+  color: #484f58;
+}
+
+.oc-info-val {
+  color: #8b949e;
+}
+
+/* Status bar */
+.oc-statusbar {
+  display: flex;
+  gap: 1.5rem;
+  padding: 0.25rem 1rem;
+  background: #161b22;
+  border-top: 1px solid #30363d;
+  font-size: 0.68rem;
+  color: #484f58;
+}
+
+.oc-status-ok {
+  color: #7ee787;
+}
+
+/* Responsive: hide sidebar on narrow screens */
+@media (max-width: 640px) {
+  .oc-sidebar { display: none; }
+  .oc-chat { border-right: none; }
 }
 
 /* --- Utility --- */

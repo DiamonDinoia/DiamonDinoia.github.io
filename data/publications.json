@@ -2,153 +2,329 @@
   "scholar_url": "https://scholar.google.com/citations?user=l2dvmUkAAAAJ",
   "papers": [
     {
-      "title": "Automated real-time imaging of intestinal barrier integrity and molecular profiling for early outcome prediction in inflammatory bowel disease",
-      "authors": ["et al. incl. M. Barbone"],
-      "venue": "Journal of Crohn's and Colitis (ECCO-JCC)",
+      "title": "Application of Computational Modelling to Particle Physics",
+      "authors": [
+        "M. Barbone",
+        "A. Howard",
+        "M. Novak",
+        "W. Luk",
+        "G. Gaydadjiev",
+        "A. Tapper"
+      ],
+      "venue": "Communications in Computational Physics",
+      "year": 2025,
+      "url": "https://doi.org/10.4208/cicp.OA-2024-0233",
+      "links": [
+        {
+          "label": "DOI",
+          "url": "https://doi.org/10.4208/cicp.OA-2024-0233",
+          "type": "doi"
+        }
+      ],
+      "venue_note": "CiCP"
+    },
+    {
+      "title": "Automated real-time imaging of intestinal barrier integrity and molecular profiling for early outcome prediction in inflammatory bowel disease: endo-histo-barrier-omics study",
+      "authors": [
+        "et al. incl. M. Barbone"
+      ],
+      "venue": "Journal of Crohn's and Colitis",
       "year": 2025,
       "url": "https://doi.org/10.1093/ecco-jcc/jjaf200",
       "links": [
-        { "label": "PDF", "url": "https://academic.oup.com/ecco-jcc/article-pdf/19/11/jjaf200/65397097/jjaf200.pdf", "type": "pdf" },
-        { "label": "DOI", "url": "https://doi.org/10.1093/ecco-jcc/jjaf200", "type": "doi" }
+        {
+          "label": "PDF",
+          "url": "https://academic.oup.com/ecco-jcc/advance-article-pdf/doi/10.1093/ecco-jcc/jjaf200/65397097/jjaf200.pdf",
+          "type": "pdf"
+        },
+        {
+          "label": "DOI",
+          "url": "https://doi.org/10.1093/ecco-jcc/jjaf200",
+          "type": "doi"
+        }
       ]
     },
     {
-      "title": "Fast, high-quality pseudo random number generators for heterogeneous computing",
-      "authors": ["M. Barbone", "G. Gaydadjiev", "A. Howard", "W. Luk", "G. Savvidy", "K. Savvidy", "A. Rose", "A. Tapper"],
-      "venue": "EPJ Web of Conferences",
-      "venue_note": "CHEP 2024",
+      "title": "Accelerating Large-Scale Graph Processing with FPGAs: Lessons Learned and Future Directions",
+      "authors": [
+        "M. Procaccini",
+        "A. Sahebi",
+        "M. Barbone",
+        "W. Luk",
+        "G. Gaydadjiev",
+        "R. Giorgi"
+      ],
+      "venue": "PARMA-DITAM",
+      "venue_note": "OASIcs, Vol. 116, pp. 6:1–6:12",
       "year": 2024,
-      "url": "https://doi.org/10.1051/epjconf/202429511010",
+      "url": "https://doi.org/10.4230/OASIcs.PARMA-DITAM.2024.6",
       "links": [
-        { "label": "PDF", "url": "https://www.epj-conferences.org/articles/epjconf/pdf/2024/05/epjconf_chep2024_11010.pdf", "type": "pdf" },
-        { "label": "DOI", "url": "https://doi.org/10.1051/epjconf/202429511010", "type": "doi" }
-      ]
-    },
-    {
-      "title": "Deployment of ML in Changing Environments",
-      "authors": ["M. Barbone", "C. Brown", "B. Radburn-Smith", "A. Tapper"],
-      "venue": "EPJ Web of Conferences",
-      "venue_note": "CHEP 2024",
-      "year": 2024,
-      "url": "https://doi.org/10.1051/epjconf/202429509037",
-      "links": [
-        { "label": "PDF", "url": "https://www.epj-conferences.org/articles/epjconf/pdf/2024/05/epjconf_chep2024_09037.pdf", "type": "pdf" },
-        { "label": "DOI", "url": "https://doi.org/10.1051/epjconf/202429509037", "type": "doi" }
-      ]
-    },
-    {
-      "title": "Embedded Continual Learning for High-Energy Physics",
-      "authors": ["M. Barbone", "C. Brown", "G. Gaydadjiev", "T. Maguire", "M. Mieskolainen", "B. Radburn-Smith", "W. Luk", "A. Tapper"],
-      "venue": "EPJ Web of Conferences",
-      "venue_note": "CHEP 2024",
-      "year": 2024,
-      "url": "https://doi.org/10.1051/epjconf/202429509014",
-      "links": [
-        { "label": "PDF", "url": "https://www.epj-conferences.org/articles/epjconf/pdf/2024/05/epjconf_chep2024_09014.pdf", "type": "pdf" },
-        { "label": "DOI", "url": "https://doi.org/10.1051/epjconf/202429509014", "type": "doi" }
-      ]
-    },
-    {
-      "title": "GPU acceleration of Monte Carlo simulations: particle physics methods applied to medicine",
-      "authors": ["M. Barbone", "R. Brandt", "A. Howard", "M. Novak", "W. Luk", "G. Gaydadjiev", "A. Tapper"],
-      "venue": "Journal of Physics: Conference Series",
-      "venue_note": "ACAT 2022",
-      "year": 2024,
-      "url": "https://indico.cern.ch/event/1106990/contributions/4991264/",
-      "links": [
-        { "label": "PDF", "url": "https://indico.cern.ch/event/1106990/papers/4991264/files/11605-GPU_acceleration_of_Monte_Carlo_simulations__particle_physics_methods_applied_to_medicine.pdf", "type": "pdf" },
-        { "label": "DOI", "url": "https://indico.cern.ch/event/1106990/contributions/4991264/", "type": "doi" }
+        {
+          "label": "PDF",
+          "url": "https://drops.dagstuhl.de/storage/01oasics/oasics-vol116-parma-ditam2024/OASIcs.PARMA-DITAM.2024.6/OASIcs.PARMA-DITAM.2024.6.pdf",
+          "type": "pdf"
+        },
+        {
+          "label": "DOI",
+          "url": "https://doi.org/10.4230/OASIcs.PARMA-DITAM.2024.6",
+          "type": "doi"
+        }
       ]
     },
     {
       "title": "Accelerating the DBSCAN clustering algorithm for low-latency primary vertex reconstruction at the HL-LHC",
-      "authors": ["L. Borgna", "M. Barbone", "J. Cao", "A. Rose", "A. Tapper", "R. Bainbridge", "W. Luk"],
+      "authors": [
+        "L. Borgna",
+        "M. Barbone",
+        "J. Cao",
+        "A. Rose",
+        "A. Tapper",
+        "R. Bainbridge",
+        "W. Luk"
+      ],
       "venue": "EPJ Web of Conferences",
       "year": 2024,
       "url": "",
       "links": []
     },
     {
-      "title": "Accelerating Large-Scale Graph Processing with FPGAs: Lessons Learned and Future Directions",
-      "authors": ["M. Procaccini", "A. Sahebi", "M. Barbone", "W. Luk", "G. Gaydadjiev", "R. Giorgi"],
-      "venue": "PARMA-DITAM",
-      "venue_note": "OASIcs, Vol. 116, pp. 6:1–6:12",
+      "title": "Deployment of ML in Changing Environments",
+      "authors": [
+        "M. Barbone",
+        "C. Brown",
+        "B. Radburn-Smith",
+        "A. Tapper"
+      ],
+      "venue": "EPJ Web of Conferences",
       "year": 2024,
-      "url": "https://doi.org/10.4230/OASIcs.PARMA-DITAM.2024.6",
+      "url": "https://doi.org/10.1051/epjconf/202429509037",
       "links": [
-        { "label": "PDF", "url": "https://drops.dagstuhl.de/storage/01oasics/oasics-vol116-parma-ditam2024/OASIcs.PARMA-DITAM.2024.6/OASIcs.PARMA-DITAM.2024.6.pdf", "type": "pdf" },
-        { "label": "DOI", "url": "https://doi.org/10.4230/OASIcs.PARMA-DITAM.2024.6", "type": "doi" }
+        {
+          "label": "PDF",
+          "url": "https://www.epj-conferences.org/articles/epjconf/pdf/2024/05/epjconf_chep2024_09037.pdf",
+          "type": "pdf"
+        },
+        {
+          "label": "DOI",
+          "url": "https://doi.org/10.1051/epjconf/202429509037",
+          "type": "doi"
+        }
+      ],
+      "venue_note": "CHEP 2024"
+    },
+    {
+      "title": "Embedded Continual Learning for High-Energy Physics",
+      "authors": [
+        "M. Barbone",
+        "C. Brown",
+        "G. Gaydadjiev",
+        "T. Maguire",
+        "M. Mieskolainen",
+        "B. Radburn-Smith",
+        "W. Luk",
+        "A. Tapper"
+      ],
+      "venue": "EPJ Web of Conferences",
+      "year": 2024,
+      "url": "https://doi.org/10.1051/epjconf/202429509014",
+      "links": [
+        {
+          "label": "PDF",
+          "url": "https://www.epj-conferences.org/articles/epjconf/pdf/2024/05/epjconf_chep2024_09014.pdf",
+          "type": "pdf"
+        },
+        {
+          "label": "DOI",
+          "url": "https://doi.org/10.1051/epjconf/202429509014",
+          "type": "doi"
+        }
+      ],
+      "venue_note": "CHEP 2024"
+    },
+    {
+      "title": "Fast, high-quality pseudo random number generators for heterogeneous computing",
+      "authors": [
+        "M. Barbone",
+        "G. Gaydadjiev",
+        "A. Howard",
+        "W. Luk",
+        "G. Savvidy",
+        "K. Savvidy",
+        "A. Rose",
+        "A. Tapper"
+      ],
+      "venue": "EPJ Web of Conferences",
+      "year": 2024,
+      "url": "https://doi.org/10.1051/epjconf/202429511010",
+      "links": [
+        {
+          "label": "PDF",
+          "url": "https://www.epj-conferences.org/articles/epjconf/pdf/2024/05/epjconf_chep2024_11010.pdf",
+          "type": "pdf"
+        },
+        {
+          "label": "DOI",
+          "url": "https://doi.org/10.1051/epjconf/202429511010",
+          "type": "doi"
+        }
+      ],
+      "venue_note": "CHEP 2024"
+    },
+    {
+      "title": "GPU acceleration of Monte Carlo simulations: particle physics methods applied to medicine",
+      "authors": [
+        "M. Barbone",
+        "R. Brandt",
+        "A. Howard",
+        "M. Novak",
+        "W. Luk",
+        "G. Gaydadjiev",
+        "A. Tapper"
+      ],
+      "venue": "Journal of Physics: Conference Series",
+      "venue_note": "ACAT 2022",
+      "year": 2024,
+      "url": "https://indico.cern.ch/event/1106990/contributions/4991264/",
+      "links": [
+        {
+          "label": "PDF",
+          "url": "https://indico.cern.ch/event/1106990/papers/4991264/files/11605-GPU_acceleration_of_Monte_Carlo_simulations__particle_physics_methods_applied_to_medicine.pdf",
+          "type": "pdf"
+        }
       ]
     },
     {
-      "title": "Application of computational modelling to particle physics",
-      "authors": ["M. Barbone", "A. Howard", "M. Novak", "W. Luk", "U. Oelfke", "G. Gaydadjiev", "A. Tapper"],
-      "venue": "Communications in Computational Physics",
-      "venue_note": "CiCP",
-      "year": 2024,
-      "url": "https://doi.org/10.4208/cicp.OA-2024-0233",
-      "links": [
-        { "label": "DOI", "url": "https://doi.org/10.4208/cicp.OA-2024-0233", "type": "doi" }
-      ]
-    },
-    {
-      "title": "Accelerating 4D Image Reconstruction for Magnetic Resonance-Guided Radiotherapy",
-      "authors": ["B. Lecoeur", "M. Barbone", "J. Gough", "U. Oelfke", "W. Luk", "G. Gaydadjiev", "A. Wetscherek"],
+      "title": "Accelerating 4D image reconstruction for magnetic resonance-guided radiotherapy",
+      "authors": [
+        "B. Lecoeur",
+        "M. Barbone",
+        "J. Gough",
+        "U. Oelfke",
+        "W. Luk",
+        "G. Gaydadjiev",
+        "A. Wetscherek"
+      ],
       "venue": "Physics and Imaging in Radiation Oncology",
       "year": 2023,
       "url": "https://doi.org/10.1016/j.phro.2023.100484",
       "links": [
-        { "label": "PDF", "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10474606/pdf/main.pdf", "type": "pdf" },
-        { "label": "DOI", "url": "https://doi.org/10.1016/j.phro.2023.100484", "type": "doi" }
-      ]
-    },
-    {
-      "title": "Distributed Large-Scale Graph Processing on FPGAs",
-      "authors": ["A. Sahebi", "M. Barbone", "M. Procaccini", "W. Luk", "G. Gaydadjiev", "R. Giorgi"],
-      "venue": "Journal of Big Data",
-      "venue_note": "Springer",
-      "year": 2023,
-      "url": "https://doi.org/10.1186/s40537-023-00756-x",
-      "links": [
-        { "label": "PDF", "url": "https://journalofbigdata.springeropen.com/counter/pdf/10.1186/s40537-023-00756-x.pdf", "type": "pdf" },
-        { "label": "DOI", "url": "https://doi.org/10.1186/s40537-023-00756-x", "type": "doi" }
+        {
+          "label": "PDF",
+          "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10474606/pdf/main.pdf",
+          "type": "pdf"
+        },
+        {
+          "label": "DOI",
+          "url": "https://doi.org/10.1016/j.phro.2023.100484",
+          "type": "doi"
+        }
       ]
     },
     {
       "title": "Demonstration of FPGA Acceleration of Monte Carlo Simulation",
-      "authors": ["M. Barbone", "A. Howard", "A. Tapper", "D. Chen", "M. Novak", "W. Luk"],
+      "authors": [
+        "M. Barbone",
+        "A. Howard",
+        "A. Tapper",
+        "D. Chen",
+        "M. Novak",
+        "W. Luk"
+      ],
       "venue": "Journal of Physics: Conference Series",
-      "venue_note": "ACAT 2021",
       "year": 2023,
       "url": "https://doi.org/10.1088/1742-6596/2438/1/012023",
       "links": [
-        { "label": "PDF", "url": "https://cds.cern.ch/record/2871806/files/document.pdf", "type": "pdf" },
-        { "label": "DOI", "url": "https://doi.org/10.1088/1742-6596/2438/1/012023", "type": "doi" }
-      ]
+        {
+          "label": "PDF",
+          "url": "https://cds.cern.ch/record/2871806/files/document.pdf",
+          "type": "pdf"
+        },
+        {
+          "label": "DOI",
+          "url": "https://doi.org/10.1088/1742-6596/2438/1/012023",
+          "type": "doi"
+        }
+      ],
+      "venue_note": "ACAT 2021"
     },
     {
-      "title": "Efficient Table-Based Polynomial on FPGA",
-      "authors": ["M. Barbone", "B. W. Kwaadgras", "U. Oelfke", "W. Luk", "G. Gaydadjiev"],
-      "venue": "IEEE ICCD",
-      "venue_note": "Storrs, CT, pp. 374–382",
-      "year": 2021,
-      "url": "https://doi.org/10.1109/ICCD53106.2021.00066",
+      "title": "Distributed large-scale graph processing on FPGAs",
+      "authors": [
+        "A. Sahebi",
+        "M. Barbone",
+        "M. Procaccini",
+        "W. Luk",
+        "G. Gaydadjiev",
+        "R. Giorgi"
+      ],
+      "venue": "Journal of Big Data",
+      "year": 2023,
+      "url": "https://doi.org/10.1186/s40537-023-00756-x",
       "links": [
-        { "label": "PDF", "url": "https://spiral.imperial.ac.uk/server/api/core/bitstreams/5e353228-a46a-4d38-b103-724fe3d65151/content", "type": "pdf" },
-        { "label": "DOI", "url": "https://doi.org/10.1109/ICCD53106.2021.00066", "type": "doi" }
+        {
+          "label": "PDF",
+          "url": "https://journalofbigdata.springeropen.com/counter/pdf/10.1186/s40537-023-00756-x.pdf",
+          "type": "pdf"
+        },
+        {
+          "label": "DOI",
+          "url": "https://doi.org/10.1186/s40537-023-00756-x",
+          "type": "doi"
+        }
       ]
     },
     {
       "title": "Efficient Online 4D Magnetic Resonance Imaging",
-      "authors": ["M. Barbone", "A. Wetscherek", "T. Yung", "U. Oelfke", "W. Luk", "G. Gaydadjiev"],
+      "authors": [
+        "M. Barbone",
+        "A. Wetscherek",
+        "T. Yung",
+        "U. Oelfke",
+        "W. Luk",
+        "G. Gaydadjiev"
+      ],
       "venue": "IEEE SBAC-PAD",
-      "venue_note": "Belo Horizonte, pp. 177–187",
       "year": 2021,
       "url": "https://doi.org/10.1109/SBAC-PAD53543.2021.00029",
       "links": [
-        { "label": "PDF", "url": "https://spiral.imperial.ac.uk/server/api/core/bitstreams/136c4f3c-e322-45fa-a374-905c3fe13426/content", "type": "pdf" },
-        { "label": "DOI", "url": "https://doi.org/10.1109/SBAC-PAD53543.2021.00029", "type": "doi" }
-      ]
+        {
+          "label": "PDF",
+          "url": "https://spiral.imperial.ac.uk/server/api/core/bitstreams/136c4f3c-e322-45fa-a374-905c3fe13426/content",
+          "type": "pdf"
+        },
+        {
+          "label": "DOI",
+          "url": "https://doi.org/10.1109/SBAC-PAD53543.2021.00029",
+          "type": "doi"
+        }
+      ],
+      "venue_note": "Belo Horizonte, pp. 177–187"
+    },
+    {
+      "title": "Efficient Table-Based Polynomial on FPGA",
+      "authors": [
+        "M. Barbone",
+        "B. W. Kwaadgras",
+        "U. Oelfke",
+        "W. Luk",
+        "G. Gaydadjiev"
+      ],
+      "venue": "IEEE ICCD",
+      "year": 2021,
+      "url": "https://doi.org/10.1109/ICCD53106.2021.00066",
+      "links": [
+        {
+          "label": "PDF",
+          "url": "https://spiral.imperial.ac.uk/server/api/core/bitstreams/5e353228-a46a-4d38-b103-724fe3d65151/content",
+          "type": "pdf"
+        },
+        {
+          "label": "DOI",
+          "url": "https://doi.org/10.1109/ICCD53106.2021.00066",
+          "type": "doi"
+        }
+      ],
+      "venue_note": "Storrs, CT, pp. 374–382"
     }
   ]
 }

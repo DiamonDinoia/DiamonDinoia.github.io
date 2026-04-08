@@ -1,0 +1,14 @@
+# Marco Barbone — DOI list
+# One DOI per line. Lines starting with # are comments.
+# Run: python3 scripts/build_publications.py
+
+10.1093/ecco-jcc/jjaf200
+10.1051/epjconf/202429511010
+10.1051/epjconf/202429509037
+10.1051/epjconf/202429509014
+10.4208/cicp.OA-2024-0233
+10.1016/j.phro.2023.100484
+10.1186/s40537-023-00756-x
+10.1088/1742-6596/2438/1/012023
+10.1109/ICCD53106.2021.00066
+10.1109/SBAC-PAD53543.2021.00029
