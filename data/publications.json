@@ -24,27 +24,6 @@
       "venue_note": "CiCP"
     },
     {
-      "title": "Automated real-time imaging of intestinal barrier integrity and molecular profiling for early outcome prediction in inflammatory bowel disease: endo-histo-barrier-omics study",
-      "authors": [
-        "et al. incl. M. Barbone"
-      ],
-      "venue": "Journal of Crohn's and Colitis",
-      "year": 2025,
-      "url": "https://doi.org/10.1093/ecco-jcc/jjaf200",
-      "links": [
-        {
-          "label": "PDF",
-          "url": "https://academic.oup.com/ecco-jcc/advance-article-pdf/doi/10.1093/ecco-jcc/jjaf200/65397097/jjaf200.pdf",
-          "type": "pdf"
-        },
-        {
-          "label": "DOI",
-          "url": "https://doi.org/10.1093/ecco-jcc/jjaf200",
-          "type": "doi"
-        }
-      ]
-    },
-    {
       "title": "Accelerating Large-Scale Graph Processing with FPGAs: Lessons Learned and Future Directions",
       "authors": [
         "M. Procaccini",
@@ -86,6 +65,32 @@
       "year": 2024,
       "url": "",
       "links": []
+    },
+    {
+      "title": "Acceleration of a Deep Neural Network for the Compact Muon Solenoid",
+      "authors": [
+        "T. Ourida",
+        "W. Luk",
+        "A. Tapper",
+        "M. Barbone",
+        "R. Bainbridge"
+      ],
+      "venue": "EPJ Web of Conferences",
+      "year": 2024,
+      "url": "https://doi.org/10.1051/epjconf/202429509002",
+      "links": [
+        {
+          "label": "PDF",
+          "url": "https://www.epj-conferences.org/articles/epjconf/pdf/2024/05/epjconf_chep2024_09002.pdf",
+          "type": "pdf"
+        },
+        {
+          "label": "DOI",
+          "url": "https://doi.org/10.1051/epjconf/202429509002",
+          "type": "doi"
+        }
+      ],
+      "venue_note": "CHEP 2024"
     },
     {
       "title": "Deployment of ML in Changing Environments",
@@ -325,6 +330,23 @@
         }
       ],
       "venue_note": "Storrs, CT, pp. 374–382"
+    },
+    {
+      "title": "Employing HPC for Heterogeneous HEP Data Processing",
+      "authors": [
+        "M. Barbone"
+      ],
+      "venue": "CERN openlab",
+      "venue_note": "Summer Student Report",
+      "year": 2018,
+      "url": "https://doi.org/10.5281/zenodo.1438417",
+      "links": [
+        {
+          "label": "DOI",
+          "url": "https://doi.org/10.5281/zenodo.1438417",
+          "type": "doi"
+        }
+      ]
     }
   ]
 }

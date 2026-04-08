@@ -22,6 +22,17 @@
       ]
     },
     {
+      "title": "Employing HPC for Heterogeneous HEP Data Processing",
+      "authors": ["M. Barbone"],
+      "venue": "CERN openlab",
+      "venue_note": "Summer Student Report",
+      "year": 2018,
+      "url": "https://doi.org/10.5281/zenodo.1438417",
+      "links": [
+        { "label": "DOI", "url": "https://doi.org/10.5281/zenodo.1438417", "type": "doi" }
+      ]
+    },
+    {
       "title": "Accelerating Large-Scale Graph Processing with FPGAs: Lessons Learned and Future Directions",
       "authors": ["M. Procaccini", "A. Sahebi", "M. Barbone", "W. Luk", "G. Gaydadjiev", "R. Giorgi"],
       "venue": "PARMA-DITAM",
@@ -35,9 +46,6 @@
     }
   ],
   "doi_overrides": {
-    "10.1093/ecco-jcc/jjaf200": {
-      "authors": ["et al. incl. M. Barbone"]
-    },
     "10.4208/cicp.OA-2024-0233": {
       "venue_note": "CiCP"
     },
@@ -95,6 +103,13 @@
       "links": [
         { "label": "PDF", "url": "https://spiral.imperial.ac.uk/server/api/core/bitstreams/136c4f3c-e322-45fa-a374-905c3fe13426/content", "type": "pdf" },
         { "label": "DOI", "url": "https://doi.org/10.1109/SBAC-PAD53543.2021.00029", "type": "doi" }
+      ]
+    },
+    "10.1051/epjconf/202429509002": {
+      "venue_note": "CHEP 2024",
+      "links": [
+        { "label": "PDF", "url": "https://www.epj-conferences.org/articles/epjconf/pdf/2024/05/epjconf_chep2024_09002.pdf", "type": "pdf" },
+        { "label": "DOI", "url": "https://doi.org/10.1051/epjconf/202429509002", "type": "doi" }
       ]
     }
   }
