@@ -19,11 +19,6 @@
           "label": "PDF",
           "url": "https://global-sci.com/cicp/article/download/17178/34106/35336",
           "type": "pdf"
-        },
-        {
-          "label": "DOI",
-          "url": "https://doi.org/10.4208/cicp.OA-2024-0233",
-          "type": "doi"
         }
       ],
       "venue_note": "CiCP"
@@ -47,11 +42,6 @@
           "label": "PDF",
           "url": "https://drops.dagstuhl.de/storage/01oasics/oasics-vol116-parma-ditam2024/OASIcs.PARMA-DITAM.2024.6/OASIcs.PARMA-DITAM.2024.6.pdf",
           "type": "pdf"
-        },
-        {
-          "label": "DOI",
-          "url": "https://doi.org/10.4230/OASIcs.PARMA-DITAM.2024.6",
-          "type": "doi"
         }
       ]
     },
@@ -73,7 +63,7 @@
       "links": [
         {
           "label": "PDF",
-          "url": "https://indico.cern.ch/event/1106990/contributions/4998133/attachments/2534566/4361739/ACAT%20poster%20v4.pdf",
+          "url": "https://indico.cern.ch/event/1106990/papers/5097008/files/13451-Fixed.pdf",
           "type": "pdf"
         }
       ]
@@ -95,11 +85,6 @@
           "label": "PDF",
           "url": "https://www.epj-conferences.org/articles/epjconf/pdf/2024/05/epjconf_chep2024_09002.pdf",
           "type": "pdf"
-        },
-        {
-          "label": "DOI",
-          "url": "https://doi.org/10.1051/epjconf/202429509002",
-          "type": "doi"
         }
       ],
       "venue_note": "CHEP 2024"
@@ -120,11 +105,6 @@
           "label": "PDF",
           "url": "https://www.epj-conferences.org/articles/epjconf/pdf/2024/05/epjconf_chep2024_09037.pdf",
           "type": "pdf"
-        },
-        {
-          "label": "DOI",
-          "url": "https://doi.org/10.1051/epjconf/202429509037",
-          "type": "doi"
         }
       ],
       "venue_note": "CHEP 2024"
@@ -149,11 +129,6 @@
           "label": "PDF",
           "url": "https://www.epj-conferences.org/articles/epjconf/pdf/2024/05/epjconf_chep2024_09014.pdf",
           "type": "pdf"
-        },
-        {
-          "label": "DOI",
-          "url": "https://doi.org/10.1051/epjconf/202429509014",
-          "type": "doi"
         }
       ],
       "venue_note": "CHEP 2024"
@@ -178,11 +153,6 @@
           "label": "PDF",
           "url": "https://www.epj-conferences.org/articles/epjconf/pdf/2024/05/epjconf_chep2024_11010.pdf",
           "type": "pdf"
-        },
-        {
-          "label": "DOI",
-          "url": "https://doi.org/10.1051/epjconf/202429511010",
-          "type": "doi"
         }
       ],
       "venue_note": "CHEP 2024"
@@ -229,11 +199,6 @@
           "label": "PDF",
           "url": "https://spiral.imperial.ac.uk/server/api/core/bitstreams/839fe0fc-0ba0-4ef2-b48e-13eea0cfbc20/content",
           "type": "pdf"
-        },
-        {
-          "label": "DOI",
-          "url": "https://doi.org/10.1016/j.phro.2023.100484",
-          "type": "doi"
         }
       ]
     },
@@ -255,11 +220,6 @@
           "label": "PDF",
           "url": "https://cds.cern.ch/record/2871806/files/document.pdf",
           "type": "pdf"
-        },
-        {
-          "label": "DOI",
-          "url": "https://doi.org/10.1088/1742-6596/2438/1/012023",
-          "type": "doi"
         }
       ],
       "venue_note": "ACAT 2021"
@@ -282,11 +242,6 @@
           "label": "PDF",
           "url": "https://journalofbigdata.springeropen.com/counter/pdf/10.1186/s40537-023-00756-x.pdf",
           "type": "pdf"
-        },
-        {
-          "label": "DOI",
-          "url": "https://doi.org/10.1186/s40537-023-00756-x",
-          "type": "doi"
         }
       ]
     },
@@ -308,11 +263,6 @@
           "label": "PDF",
           "url": "https://spiral.imperial.ac.uk/server/api/core/bitstreams/136c4f3c-e322-45fa-a374-905c3fe13426/content",
           "type": "pdf"
-        },
-        {
-          "label": "DOI",
-          "url": "https://doi.org/10.1109/SBAC-PAD53543.2021.00029",
-          "type": "doi"
         }
       ],
       "venue_note": "Belo Horizonte, pp. 177–187"
@@ -334,11 +284,6 @@
           "label": "PDF",
           "url": "https://spiral.imperial.ac.uk/server/api/core/bitstreams/5e353228-a46a-4d38-b103-724fe3d65151/content",
           "type": "pdf"
-        },
-        {
-          "label": "DOI",
-          "url": "https://doi.org/10.1109/ICCD53106.2021.00066",
-          "type": "doi"
         }
       ],
       "venue_note": "Storrs, CT, pp. 374–382"
@@ -352,13 +297,7 @@
       "venue_note": "Summer Student Report",
       "year": 2018,
       "url": "https://doi.org/10.5281/zenodo.1438417",
-      "links": [
-        {
-          "label": "DOI",
-          "url": "https://doi.org/10.5281/zenodo.1438417",
-          "type": "doi"
-        }
-      ]
+      "links": []
     }
   ]
 }

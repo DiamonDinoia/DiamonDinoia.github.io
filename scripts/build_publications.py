@@ -67,15 +67,13 @@ def parse_year(cr: dict) -> int:
     return issued[0][0] if issued and issued[0] else 0
 
 
-def parse_links(doi: str, cr: dict) -> list[dict]:
-    """Build PDF/DOI link badges."""
+def parse_links(cr: dict) -> list[dict]:
+    """Build PDF link badges. DOI is omitted since the paper title links to it."""
     links = []
-    # Try to find an open-access PDF link
     for link in cr.get("link", []):
         if link.get("content-type") == "application/pdf":
             links.append({"label": "PDF", "url": link["URL"], "type": "pdf"})
             break
-    links.append({"label": "DOI", "url": f"https://doi.org/{doi}", "type": "doi"})
     return links
 
 
@@ -89,7 +87,7 @@ def crossref_to_paper(doi: str, cr: dict) -> dict:
         "venue": parse_venue(cr),
         "year": parse_year(cr),
         "url": f"https://doi.org/{doi}",
-        "links": parse_links(doi, cr),
+        "links": parse_links(cr),
     }
 
 
