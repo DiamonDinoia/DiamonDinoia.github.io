@@ -47,7 +47,11 @@
   ],
   "doi_overrides": {
     "10.4208/cicp.OA-2024-0233": {
-      "venue_note": "CiCP"
+      "venue_note": "CiCP",
+      "links": [
+        { "label": "PDF", "url": "https://global-sci.com/cicp/article/view/17178/34106", "type": "pdf" },
+        { "label": "DOI", "url": "https://doi.org/10.4208/cicp.OA-2024-0233", "type": "doi" }
+      ]
     },
     "10.1051/epjconf/202429511010": {
       "venue_note": "CHEP 2024",
