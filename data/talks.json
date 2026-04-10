@@ -9,7 +9,8 @@
       "url": "https://www.simonsfoundation.org/event/2025-flatiron-wide-autumn-meeting/",
       "links": [
         { "label": "slides", "url": "https://raw.githubusercontent.com/DiamonDinoia/fwam2025/master/slides.pdf", "type": "pdf" },
-        { "label": "code", "url": "https://github.com/DiamonDinoia/fwam2025", "type": "code" }
+        { "label": "code", "url": "https://github.com/DiamonDinoia/fwam2025", "type": "code" },
+        { "label": "video", "url": "https://www.youtube.com/watch?v=5ylnZcUyPZo", "type": "video" }
       ]
     },
     {
@@ -20,7 +21,8 @@
       "type": "conference",
       "url": "https://www.cs.utexas.edu/~flame/BLISRetreat2025/Program-at-a-glance.html",
       "links": [
-        { "label": "slides", "url": "https://www.cs.utexas.edu/~flame/BLISRetreat2025/slides/Marco_blis_retreat_2025.pdf", "type": "pdf" }
+        { "label": "slides", "url": "https://www.cs.utexas.edu/~flame/BLISRetreat2025/slides/Marco_blis_retreat_2025.pdf", "type": "pdf" },
+        { "label": "video", "url": "https://www.youtube.com/watch?v=R7nbQdX_lxM", "type": "video" }
       ]
     },
     {
@@ -43,8 +45,8 @@
     },
     {
       "title": "Continual Learning Methods",
-      "event": "Workshop",
-      "org": "Indico Global",
+      "event": "Fortnightly Meeting",
+      "org": "Imperial College London",
       "year": 2023,
       "type": "talk",
       "url": "https://indico.global/event/3458/contributions/34404/",
@@ -61,15 +63,16 @@
       "url": "https://indico.cern.ch/event/855454/contributions/4605074/",
       "links": [
         { "label": "slides", "url": "https://indico.cern.ch/event/855454/contributions/4605074/attachments/2355237/4019278/ACAT%202021.pdf", "type": "pdf" },
-        { "label": "video", "url": "https://videos.cern.ch/record/2295043", "type": "code" }
+        { "label": "video", "url": "https://videos.cern.ch/record/2295043", "type": "video" }
       ]
     },
     {
-      "title": "FPGA Acceleration of Monte Carlo Simulation",
-      "event": "HSF Meeting",
+      "title": "FPGAs for Detector Simulation",
+      "event": "HSF Detector Simulation Meeting",
       "org": "CERN",
       "year": 2021,
       "type": "talk",
+      "url": "https://indico.cern.ch/event/1096432/contributions/4612623/",
       "links": [
         { "label": "slides", "url": "https://indico.cern.ch/event/1096432/contributions/4612623/attachments/2363830/4035767/13-12-2021%20HSF%20meeting.pdf", "type": "pdf" }
       ]
@@ -83,7 +86,7 @@
       "url": "https://indico.cern.ch/event/975009/contributions/4105775/",
       "links": [
         { "label": "slides", "url": "https://indico.cern.ch/event/975009/contributions/4105775/attachments/2226504/3771510/slides.pdf", "type": "pdf" },
-        { "label": "video", "url": "https://cernbox.cern.ch/index.php/s/5bn4rDEnIkNbZkO", "type": "code" }
+        { "label": "video", "url": "https://cernbox.cern.ch/index.php/s/5bn4rDEnIkNbZkO", "type": "video" }
       ]
     }
   ],
@@ -106,11 +109,6 @@
         { "label": "slides", "url": "https://indico.cern.ch/event/1170079/attachments/2484554/4269719/cern%20openlab%20lecture%2021-07-2022.pdf", "type": "pdf" },
         { "label": "video", "url": "https://cds.cern.ch/record/2823786", "type": "doi" }
       ]
-    },
-    {
-      "title": "Introduction to Performance Modelling and Acceleration",
-      "org": "Imperial College London",
-      "location": "London, United Kingdom"
     }
   ]
 }

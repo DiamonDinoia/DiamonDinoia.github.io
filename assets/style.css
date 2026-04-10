@@ -387,6 +387,7 @@ code {
 .badge-doi { background: rgba(86, 181, 194, 0.15); color: var(--teal); }
 .badge-lang { background: rgba(188, 116, 210, 0.15); color: var(--purple); }
 .badge-stars { background: rgba(228, 191, 122, 0.15); color: var(--yellow); }
+.badge-video { background: rgba(223, 107, 117, 0.15); color: var(--red); }
 
 /* --- Publication List --- */
 .pub-list {

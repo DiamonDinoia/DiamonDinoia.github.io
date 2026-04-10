@@ -137,12 +137,12 @@ async function runIntro() {
   await sleep(500);
 
   // User types first message
-  await typeInInput(inputText, 'Make me a personal website. I only know C++.', 40);
+  await typeInInput(inputText, 'Make me a personal website using C++.', 40);
   await sleep(400);
   inputText.textContent = '';
 
   // Message appears in chat
-  addMessage(messages, 'user', 'Make me a personal website. I only know C++.');
+  addMessage(messages, 'user', 'Make me a personal website using C++.');
   bumpTokens(312);
   await sleep(600);
 
