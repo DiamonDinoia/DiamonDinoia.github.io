@@ -131,18 +131,142 @@ body {
   margin-bottom: -1px;
 }
 
+/* --- Global Search (tab bar) --- */
+.tab-search {
+  margin-left: auto;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0 0.75rem;
+  border-left: 1px solid var(--border);
+  flex-shrink: 0;
+}
+
+.tab-search-icon {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  color: var(--gray);
+  white-space: nowrap;
+}
+
+.tab-search input {
+  background: none;
+  border: none;
+  outline: none;
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  color: var(--text-primary);
+  width: 10rem;
+  padding: 0.3rem 0;
+}
+
+.tab-search input::placeholder {
+  color: var(--gray);
+}
+
+.search-results {
+  display: none;
+  position: fixed;
+  top: 5.5rem;
+  left: 0;
+  right: 0;
+  z-index: 200;
+  background: var(--chrome);
+  border-bottom: 1px solid var(--border);
+  max-height: 24rem;
+  overflow-y: auto;
+  font-family: var(--font-mono);
+  font-size: 0.82rem;
+}
+
+.search-results.visible {
+  display: block;
+}
+
+.search-group-title {
+  padding: 0.4rem 1rem;
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--gray);
+  border-bottom: 1px solid var(--border);
+  background: var(--editor);
+}
+
+.search-result-item {
+  display: block;
+  padding: 0.5rem 1rem;
+  color: var(--text-secondary);
+  text-decoration: none;
+  border-bottom: 1px solid var(--border);
+  transition: background 0.1s;
+  cursor: pointer;
+}
+
+.search-result-item:hover {
+  background: rgba(98, 173, 238, 0.08);
+  color: var(--text-primary);
+  text-decoration: none;
+}
+
+.search-result-item .sr-title {
+  color: var(--blue);
+}
+
+.search-result-item .sr-detail {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  margin-top: 0.1rem;
+}
+
+.search-no-results {
+  padding: 1rem;
+  color: var(--gray);
+  text-align: center;
+}
+
 /* --- Editor Area --- */
 .editor {
   background: var(--editor);
   flex: 1;
   display: flex;
-  justify-content: center;
   padding: 2rem 1rem;
 }
 
 .editor-content {
   max-width: var(--content-max-width);
   width: 100%;
+}
+
+/* --- Year filter pills --- */
+.year-filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem;
+  margin-bottom: 1.25rem;
+}
+
+.year-pill {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  padding: 0.2rem 0.6rem;
+  border-radius: 3px;
+  border: 1px solid var(--border);
+  background: none;
+  color: var(--text-muted);
+  cursor: pointer;
+  transition: all 0.15s;
+}
+
+.year-pill:hover {
+  border-color: var(--blue);
+  color: var(--text-secondary);
+}
+
+.year-pill.active {
+  background: rgba(98, 173, 238, 0.15);
+  border-color: var(--blue);
+  color: var(--blue);
 }
 
 /* --- Line-numbered content --- */
@@ -265,10 +389,12 @@ code {
 .cursor {
   display: inline-block;
   width: 0.6rem;
-  height: 1.5rem;
+  height: 1.2em;
   background: var(--blue);
   margin-left: 0.2rem;
-  vertical-align: text-bottom;
+  vertical-align: baseline;
+  position: relative;
+  top: 0.15em;
   animation: blink 1s step-end infinite;
 }
 
@@ -492,6 +618,10 @@ code {
 
   .title-bar {
     font-size: 0.7rem;
+  }
+
+  .tab-search {
+    display: none;
   }
 }
 

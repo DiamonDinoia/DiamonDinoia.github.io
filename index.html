@@ -21,7 +21,12 @@
     <a href="talks.html">talks.hpp</a>
     <a href="projects.html">projects.hpp</a>
     <a href="personal.html">personal.hpp</a>
+    <div class="tab-search">
+      <span class="tab-search-icon">grep</span>
+      <input type="text" id="global-search" placeholder="search all..." autocomplete="off">
+    </div>
   </nav>
+  <div class="search-results" id="search-results"></div>
 
   <!-- Intro overlay — OpenCode TUI style -->
   <div class="oc" id="intro-overlay">
@@ -37,7 +42,7 @@
       <div class="oc-chat">
         <div class="oc-panel-header">
           <span class="oc-panel-label"> Chat </span>
-          <span class="oc-model-badge">llm-hold-my-beer-8eb</span>
+          <span class="oc-model-badge">shannon-opus-4.6</span>
         </div>
         <div class="oc-messages" id="oc-messages"></div>
         <div class="oc-input-area">
@@ -79,6 +84,7 @@
   </div>
 
   <main class="editor">
+
     <div class="editor-content" id="content"></div>
   </main>
 

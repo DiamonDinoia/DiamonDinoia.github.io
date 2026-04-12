@@ -1,60 +1,2699 @@
 {
   "github_url": "https://github.com/DiamonDinoia",
-  "total_repos": 86,
+  "total_repos": 89,
   "projects": [
     {
       "name": "FINUFFT",
       "url": "https://github.com/flatironinstitute/finufft",
-      "langs": ["C++", "CUDA"],
+      "langs": [
+        "C++",
+        "CUDA"
+      ],
       "description": "Flatiron Institute Nonuniform Fast Fourier Transform library. High-performance CPU and GPU implementations used across scientific computing."
     },
     {
       "name": "TRIQS / nda / ctint",
       "url": "https://github.com/TRIQS/triqs",
-      "langs": ["C++", "Python"],
+      "langs": [
+        "C++",
+        "Python"
+      ],
       "description": "Toolbox for Research on Interacting Quantum Systems. Contributions to the CT-INT impurity solver and the nda multidimensional array library."
     },
     {
       "name": "Simple ANS",
       "url": "https://github.com/flatironinstitute/simple_ans",
-      "langs": ["C++", "Python"],
+      "langs": [
+        "C++",
+        "Python"
+      ],
       "description": "ANS (Asymmetric Numeral Systems) integer compression with C++ core and Python bindings."
     },
     {
       "name": "Baobzi",
       "url": "https://github.com/flatironinstitute/baobzi",
-      "langs": ["C++", "Python"],
+      "langs": [
+        "C++",
+        "Python"
+      ],
       "description": "Adaptive fast function approximation library using Chebyshev polynomials and tree-based domain decomposition."
     },
     {
       "name": "Polyfit",
       "url": "https://github.com/DiamonDinoia/polyfit",
-      "langs": ["C++"],
+      "langs": [
+        "C++"
+      ],
       "description": "Fast polynomial fitting and evaluation using monomials."
     },
     {
       "name": "POET",
       "url": "https://github.com/DiamonDinoia/poet",
-      "langs": ["C++"],
+      "langs": [
+        "C++"
+      ],
       "description": "Perfectly Over-Engineered Templates. C++ template metaprogramming utilities for high-performance computing."
     },
     {
       "name": "VectorXoshiro",
       "url": "https://github.com/DiamonDinoia/VectorXoshiro",
-      "langs": ["C++", "SIMD"],
+      "langs": [
+        "C++",
+        "SIMD"
+      ],
       "description": "Vectorized (SIMD) implementation of the xoshiro random number generator family for maximum throughput."
     },
     {
       "name": "XSIMD",
       "url": "https://github.com/xtensor-stack/xsimd",
-      "langs": ["C++", "SIMD"],
+      "langs": [
+        "C++",
+        "SIMD"
+      ],
       "description": "Portable C++ SIMD wrappers and optimized math kernels."
     },
     {
       "name": "MWrap",
       "url": "https://github.com/DiamonDinoia/mwrap",
-      "langs": ["C", "MATLAB"],
+      "langs": [
+        "C",
+        "MATLAB"
+      ],
       "description": "MATLAB/Octave MEX gateway generator to wrap C/C++/Fortran libraries."
+    }
+  ],
+  "other_repos": [
+    {
+      "name": "xtensor",
+      "url": "https://github.com/xtensor-stack/xtensor",
+      "langs": [
+        "C++"
+      ],
+      "description": "C++ tensors with broadcasting and lazy computing",
+      "stars": 3723
+    },
+    {
+      "name": "CaImAn",
+      "url": "https://github.com/flatironinstitute/CaImAn",
+      "langs": [
+        "Python"
+      ],
+      "description": "Computational toolbox for large scale Calcium Imaging Analysis, including movie handling, motion correction, source extraction, spike deconvolution and result visualization.",
+      "stars": 722
+    },
+    {
+      "name": "xtensor-python",
+      "url": "https://github.com/xtensor-stack/xtensor-python",
+      "langs": [
+        "C++"
+      ],
+      "description": "Python bindings for xtensor",
+      "stars": 368
+    },
+    {
+      "name": "DeepFRI",
+      "url": "https://github.com/flatironinstitute/DeepFRI",
+      "langs": [
+        "Python"
+      ],
+      "description": "Deep functional residue identification",
+      "stars": 349
+    },
+    {
+      "name": "xframe",
+      "url": "https://github.com/xtensor-stack/xframe",
+      "langs": [
+        "C++"
+      ],
+      "description": "C++ multi-dimensional labeled arrays and dataframe based on xtensor",
+      "stars": 326
+    },
+    {
+      "name": "CaImAn-MATLAB",
+      "url": "https://github.com/flatironinstitute/CaImAn-MATLAB",
+      "langs": [
+        "MATLAB"
+      ],
+      "description": "Complete Matlab pipeline for large scale calcium imaging data analysis",
+      "stars": 260
+    },
+    {
+      "name": "xtl",
+      "url": "https://github.com/xtensor-stack/xtl",
+      "langs": [
+        "C++"
+      ],
+      "description": "The x template library",
+      "stars": 234
+    },
+    {
+      "name": "xtensor-blas",
+      "url": "https://github.com/xtensor-stack/xtensor-blas",
+      "langs": [
+        "C++"
+      ],
+      "description": "BLAS extension to xtensor",
+      "stars": 172
+    },
+    {
+      "name": "NoRMCorre",
+      "url": "https://github.com/flatironinstitute/NoRMCorre",
+      "langs": [
+        "MATLAB"
+      ],
+      "description": "Matlab routines for online non-rigid motion correction of calcium imaging data",
+      "stars": 157
+    },
+    {
+      "name": "FMM3D",
+      "url": "https://github.com/flatironinstitute/FMM3D",
+      "langs": [
+        "Fortran"
+      ],
+      "description": "Flatiron Institute Fast Multipole Libraries --- This codebase is a set of libraries to compute N-body interactions governed by the Laplace and Helmholtz equations, to a specified precision, in three dimensions, on a multi-core shared-memory machine. ",
+      "stars": 147
+    },
+    {
+      "name": "deepblast",
+      "url": "https://github.com/flatironinstitute/deepblast",
+      "langs": [
+        "Python"
+      ],
+      "description": "Neural Networks for Protein Sequence Alignment",
+      "stars": 136
+    },
+    {
+      "name": "jax-finufft",
+      "url": "https://github.com/flatironinstitute/jax-finufft",
+      "langs": [
+        "C++"
+      ],
+      "description": "JAX bindings to the Flatiron Institute Non-uniform Fast Fourier Transform (FINUFFT) library",
+      "stars": 130
+    },
+    {
+      "name": "nemos",
+      "url": "https://github.com/flatironinstitute/nemos",
+      "langs": [
+        "Python"
+      ],
+      "description": "NEural MOdelS, a statistical modeling framework for neuroscience.",
+      "stars": 130
+    },
+    {
+      "name": "cufinufft",
+      "url": "https://github.com/flatironinstitute/cufinufft",
+      "langs": [
+        "Cuda"
+      ],
+      "description": "Nonuniform fast Fourier transforms of types 1 and 2, in 1D, 2D, and 3D, on the GPU",
+      "stars": 97
+    },
+    {
+      "name": "sciware",
+      "url": "https://github.com/flatironinstitute/sciware",
+      "langs": [
+        "HTML"
+      ],
+      "description": "Learning materials for scientific software development",
+      "stars": 94
+    },
+    {
+      "name": "sparse_dot",
+      "url": "https://github.com/flatironinstitute/sparse_dot",
+      "langs": [
+        "Python"
+      ],
+      "description": "Python wrapper for Intel Math Kernel Library (MKL) matrix multiplication",
+      "stars": 94
+    },
+    {
+      "name": "xtensor-io",
+      "url": "https://github.com/xtensor-stack/xtensor-io",
+      "langs": [
+        "C++"
+      ],
+      "description": "xtensor plugin to read and write images, audio files, numpy (compressed) npz and HDF5",
+      "stars": 92
+    },
+    {
+      "name": "xtensor-r",
+      "url": "https://github.com/xtensor-stack/xtensor-r",
+      "langs": [
+        "C++"
+      ],
+      "description": "R bindings for xtensor",
+      "stars": 90
+    },
+    {
+      "name": "neurosift",
+      "url": "https://github.com/flatironinstitute/neurosift",
+      "langs": [
+        "TypeScript"
+      ],
+      "description": "Browser-based NWB visualization and DANDI exploration",
+      "stars": 64
+    },
+    {
+      "name": "mountainsort5",
+      "url": "https://github.com/flatironinstitute/mountainsort5",
+      "langs": [
+        "Python"
+      ],
+      "description": "MountainSort spike sorting algorithm, version 5",
+      "stars": 59
+    },
+    {
+      "name": "stan-playground",
+      "url": "https://github.com/flatironinstitute/stan-playground",
+      "langs": [
+        "TypeScript"
+      ],
+      "description": "Run Stan models in the browser",
+      "stars": 58
+    },
+    {
+      "name": "inferelator",
+      "url": "https://github.com/flatironinstitute/inferelator",
+      "langs": [
+        "Python"
+      ],
+      "description": "Task-based gene regulatory network inference using single-cell or bulk gene expression data conditioned on a prior network.",
+      "stars": 54
+    },
+    {
+      "name": "nixpack",
+      "url": "https://github.com/flatironinstitute/nixpack",
+      "langs": [
+        "Nix"
+      ],
+      "description": "nix+spack = nixpack (spanix?)",
+      "stars": 51
+    },
+    {
+      "name": "jaxmg",
+      "url": "https://github.com/flatironinstitute/jaxmg",
+      "langs": [
+        "Cuda"
+      ],
+      "description": "JAXMg: A multi-GPU linear solver in JAX",
+      "stars": 48
+    },
+    {
+      "name": "xtensor-fftw",
+      "url": "https://github.com/xtensor-stack/xtensor-fftw",
+      "langs": [
+        "Jupyter Notebook"
+      ],
+      "description": "FFTW bindings for the xtensor C++14 multi-dimensional array library",
+      "stars": 48
+    },
+    {
+      "name": "nifty-ls",
+      "url": "https://github.com/flatironinstitute/nifty-ls",
+      "langs": [
+        "Python"
+      ],
+      "description": "A fast Lomb-Scargle periodogram. It's nifty, and uses a NUFFT!",
+      "stars": 47
+    },
+    {
+      "name": "xtensor-zarr",
+      "url": "https://github.com/xtensor-stack/xtensor-zarr",
+      "langs": [
+        "C++"
+      ],
+      "description": "Implementation of the Zarr core protocol (version 2 and 3) based on xtensor.",
+      "stars": 47
+    },
+    {
+      "name": "disBatch",
+      "url": "https://github.com/flatironinstitute/disBatch",
+      "langs": [
+        "Python"
+      ],
+      "description": "Dynamic dispatch of a list of command-line tasks, locally or on a cluster. Supports retrying failed tasks, and adding/removing compute resources on-the-fly. ",
+      "stars": 46
+    },
+    {
+      "name": "mountainlab-js",
+      "url": "https://github.com/flatironinstitute/mountainlab-js",
+      "langs": [
+        "JavaScript"
+      ],
+      "description": "MountainLab is data processing, sharing and visualization software for scientists. It is built around MountainSort, spike sorting software, but is designed to be more generally applicable.",
+      "stars": 46
+    },
+    {
+      "name": "bayes-kit",
+      "url": "https://github.com/flatironinstitute/bayes-kit",
+      "langs": [
+        "Python"
+      ],
+      "description": "Bayesian inference and posterior analysis for Python",
+      "stars": 46
+    },
+    {
+      "name": "online_psp",
+      "url": "https://github.com/flatironinstitute/online_psp",
+      "langs": [
+        "Python"
+      ],
+      "description": "A collection of computationally efficient algorithms for online subspace learning and principal component analysis",
+      "stars": 43
+    },
+    {
+      "name": "dft_tools",
+      "url": "https://github.com/TRIQS/dft_tools",
+      "langs": [
+        "Python"
+      ],
+      "description": "Interface to DFT codes. Supported by the Flatiron Institute.",
+      "stars": 43
+    },
+    {
+      "name": "Xtensor.jl",
+      "url": "https://github.com/xtensor-stack/Xtensor.jl",
+      "langs": [
+        "Julia"
+      ],
+      "description": "Julia package for xtensor-julia",
+      "stars": 43
+    },
+    {
+      "name": "walnuts",
+      "url": "https://github.com/flatironinstitute/walnuts",
+      "langs": [
+        "C++"
+      ],
+      "description": "Within-orbit Adaptive Leapfrog No-U-Turn Sampler",
+      "stars": 42
+    },
+    {
+      "name": "slurm-prometheus-exporter",
+      "url": "https://github.com/flatironinstitute/slurm-prometheus-exporter",
+      "langs": [
+        "Haskell"
+      ],
+      "description": "Prometheus exporter for slurm job/node data",
+      "stars": 40
+    },
+    {
+      "name": "solid_dmft",
+      "url": "https://github.com/TRIQS/solid_dmft",
+      "langs": [
+        "Python"
+      ],
+      "description": "solid_dmft is a versatile python wrapper to perform DFT+DMFT calculations utilizing the TRIQS software library.",
+      "stars": 40
+    },
+    {
+      "name": "figurl",
+      "url": "https://github.com/flatironinstitute/figurl",
+      "langs": [
+        "Python"
+      ],
+      "description": "Shareable, interactive scientific figures in the cloud",
+      "stars": 38
+    },
+    {
+      "name": "mcmc-monitor",
+      "url": "https://github.com/flatironinstitute/mcmc-monitor",
+      "langs": [
+        "TypeScript"
+      ],
+      "description": "Monitor MCMC runs in the browser",
+      "stars": 37
+    },
+    {
+      "name": "spikeforest2",
+      "url": "https://github.com/flatironinstitute/spikeforest2",
+      "langs": [
+        "Python"
+      ],
+      "description": "SpikeForest -- spike sorting analysis for website -- version 2",
+      "stars": 35
+    },
+    {
+      "name": "spikeforest",
+      "url": "https://github.com/flatironinstitute/spikeforest",
+      "langs": [
+        "Python"
+      ],
+      "description": "Spike sorting benchmarking system",
+      "stars": 34
+    },
+    {
+      "name": "xtensor-sparse",
+      "url": "https://github.com/xtensor-stack/xtensor-sparse",
+      "langs": [
+        "C++"
+      ],
+      "description": "",
+      "stars": 32
+    },
+    {
+      "name": "xtensor-python-cookiecutter",
+      "url": "https://github.com/xtensor-stack/xtensor-python-cookiecutter",
+      "langs": [
+        "Python"
+      ],
+      "description": "Cookiecutter for a Python project making use of xtensor",
+      "stars": 31
+    },
+    {
+      "name": "SkellySim",
+      "url": "https://github.com/flatironinstitute/SkellySim",
+      "langs": [
+        "C++"
+      ],
+      "description": "Hydrodynamic Cytoskeleton Simulator",
+      "stars": 30
+    },
+    {
+      "name": "ironclust",
+      "url": "https://github.com/flatironinstitute/ironclust",
+      "langs": [
+        "Jupyter Notebook"
+      ],
+      "description": "Spike sorting software being developed at Flatiron Institute, based on JRCLUST (Janelia Rocket Cluster)",
+      "stars": 30
+    },
+    {
+      "name": "fmm2d",
+      "url": "https://github.com/flatironinstitute/fmm2d",
+      "langs": [
+        "Fortran"
+      ],
+      "description": "This codebase is a set of libraries to compute N-body interactions governed by the Laplace and Helmholtz equations, to a specified precision, in two dimensions, on a multi-core shared-memory machine.",
+      "stars": 28
+    },
+    {
+      "name": "cpp2py",
+      "url": "https://github.com/TRIQS/cpp2py",
+      "langs": [
+        "Python"
+      ],
+      "description": "Reflection tools based on clang",
+      "stars": 27
+    },
+    {
+      "name": "st_gridnet",
+      "url": "https://github.com/flatironinstitute/st_gridnet",
+      "langs": [
+        "Python"
+      ],
+      "description": "A Python implementation of the model described in our publication \"A convolutional neural network for common-coordinate registration of high-resolution histology images\"  developed principally for applications to registration of spatial transcriptomics image data.",
+      "stars": 25
+    },
+    {
+      "name": "zarray",
+      "url": "https://github.com/xtensor-stack/zarray",
+      "langs": [
+        "C++"
+      ],
+      "description": "Dynamically typed N-D expression system based on xtensor",
+      "stars": 25
+    },
+    {
+      "name": "catvae",
+      "url": "https://github.com/flatironinstitute/catvae",
+      "langs": [
+        "Jupyter Notebook"
+      ],
+      "description": "Categorical Variational Autoencoders",
+      "stars": 24
+    },
+    {
+      "name": "comptools24",
+      "url": "https://github.com/flatironinstitute/comptools24",
+      "langs": [
+        "MATLAB"
+      ],
+      "description": "Computational Tools for PDEs with Complicated Geometries and Interfaces workshop materials, June 10-14, 2024.",
+      "stars": 24
+    },
+    {
+      "name": "nda",
+      "url": "https://github.com/TRIQS/nda",
+      "langs": [
+        "C++"
+      ],
+      "description": "C++ library for multi-dimensional arrays. Supported by the Flatiron Institute.",
+      "stars": 24
+    },
+    {
+      "name": "xtensor-benchmark",
+      "url": "https://github.com/xtensor-stack/xtensor-benchmark",
+      "langs": [
+        "C++"
+      ],
+      "description": "Easy to use benchmarks for linear algebra frameworks",
+      "stars": 24
+    },
+    {
+      "name": "kachery-cloud",
+      "url": "https://github.com/flatironinstitute/kachery-cloud",
+      "langs": [
+        "Python"
+      ],
+      "description": "",
+      "stars": 23
+    },
+    {
+      "name": "online_psp_matlab",
+      "url": "https://github.com/flatironinstitute/online_psp_matlab",
+      "langs": [
+        "Matlab"
+      ],
+      "description": "Benchmark of online PCA algorithms ",
+      "stars": 22
+    },
+    {
+      "name": "tutorials",
+      "url": "https://github.com/TRIQS/tutorials",
+      "langs": [
+        "Jupyter Notebook"
+      ],
+      "description": "A set of ipython and c++ tutorials",
+      "stars": 22
+    },
+    {
+      "name": "cthyb",
+      "url": "https://github.com/TRIQS/cthyb",
+      "langs": [
+        "Jupyter Notebook"
+      ],
+      "description": "A fast and generic hybridization-expansion solver. Supported by the Flatiron Institute.",
+      "stars": 22
+    },
+    {
+      "name": "dmk",
+      "url": "https://github.com/flatironinstitute/dmk",
+      "langs": [
+        "C++"
+      ],
+      "description": "A Dual-space Multilevel Kernel-splitting (DMK) Framework for Discrete and Continuous Convolution",
+      "stars": 21
+    },
+    {
+      "name": "clair",
+      "url": "https://github.com/flatironinstitute/clair",
+      "langs": [
+        "C++"
+      ],
+      "description": "Clair (Clang Introspection and Reflection) tools. A set of clang tools developed for Flatiron/CCQ",
+      "stars": 19
+    },
+    {
+      "name": "tprf",
+      "url": "https://github.com/TRIQS/tprf",
+      "langs": [
+        "Python"
+      ],
+      "description": "TPRF: The Two-Particle Response Function tool box for TRIQS. Supported by the Flatiron Institute.",
+      "stars": 19
+    },
+    {
+      "name": "xtensor-julia",
+      "url": "https://github.com/xtensor-stack/xtensor-julia",
+      "langs": [
+        "C++"
+      ],
+      "description": "Julia bindings for xtensor",
+      "stars": 19
+    },
+    {
+      "name": "Xtensor.R",
+      "url": "https://github.com/xtensor-stack/Xtensor.R",
+      "langs": [
+        "C++"
+      ],
+      "description": "R package for xtensor-r",
+      "stars": 18
+    },
+    {
+      "name": "aLENS",
+      "url": "https://github.com/flatironinstitute/aLENS",
+      "langs": [
+        "C++"
+      ],
+      "description": "a Living ENsemble Simulator -- a lens to help you watch biophysics",
+      "stars": 17
+    },
+    {
+      "name": "maxent",
+      "url": "https://github.com/TRIQS/maxent",
+      "langs": [
+        "Python"
+      ],
+      "description": "Maximum Entropy Codes. Supported by the Flatiron Institute.",
+      "stars": 17
+    },
+    {
+      "name": "figpack",
+      "url": "https://github.com/flatironinstitute/figpack",
+      "langs": [
+        "TypeScript"
+      ],
+      "description": "A Python package for creating shareable, interactive, browser-based visualizations",
+      "stars": 16
+    },
+    {
+      "name": "pytorch-finufft",
+      "url": "https://github.com/flatironinstitute/pytorch-finufft",
+      "langs": [
+        "Python"
+      ],
+      "description": "Pytorch wrappers for the FINUFFT library",
+      "stars": 16
+    },
+    {
+      "name": "ManifoldEM",
+      "url": "https://github.com/flatironinstitute/ManifoldEM",
+      "langs": [
+        "Python"
+      ],
+      "description": "Python package for determination of conformational continua of macromolecules from single-particle cryo-EM data",
+      "stars": 16
+    },
+    {
+      "name": "cryoSBI",
+      "url": "https://github.com/flatironinstitute/cryoSBI",
+      "langs": [
+        "Python"
+      ],
+      "description": "",
+      "stars": 14
+    },
+    {
+      "name": "CryoLike",
+      "url": "https://github.com/flatironinstitute/CryoLike",
+      "langs": [
+        "Python"
+      ],
+      "description": "",
+      "stars": 14
+    },
+    {
+      "name": "neuropixels-data-sep-2020",
+      "url": "https://github.com/flatironinstitute/neuropixels-data-sep-2020",
+      "langs": [
+        "Python"
+      ],
+      "description": "Example neuropixels datasets for purposes of developing spike sorting algorithms",
+      "stars": 14
+    },
+    {
+      "name": "isosplit5",
+      "url": "https://github.com/flatironinstitute/isosplit5",
+      "langs": [
+        "C++"
+      ],
+      "description": "ISO-SPLIT clustering (stand-alone version)",
+      "stars": 14
+    },
+    {
+      "name": "sf_benchmarks",
+      "url": "https://github.com/flatironinstitute/sf_benchmarks",
+      "langs": [
+        "C++"
+      ],
+      "description": "Special function benchmarks",
+      "stars": 13
+    },
+    {
+      "name": "bio-sfa",
+      "url": "https://github.com/flatironinstitute/bio-sfa",
+      "langs": [
+        "Jupyter Notebook"
+      ],
+      "description": "Code for reproducing the experiment from the paper \"A biologically plausible neural network for Slow Feature Analysis\"",
+      "stars": 13
+    },
+    {
+      "name": "Cryo-EM-Heterogeneity-Challenge-1",
+      "url": "https://github.com/flatironinstitute/Cryo-EM-Heterogeneity-Challenge-1",
+      "langs": [
+        "Jupyter Notebook"
+      ],
+      "description": "The Inaugural Flatiron Institute Cryo-EM Heterogeneity Community Challenge",
+      "stars": 12
+    },
+    {
+      "name": "PointCloud_Regression",
+      "url": "https://github.com/flatironinstitute/PointCloud_Regression",
+      "langs": [
+        "Python"
+      ],
+      "description": "Pose regression with new algebraic representation on ModelNet dataset (ICCV 2023)",
+      "stars": 12
+    },
+    {
+      "name": "adapol",
+      "url": "https://github.com/flatironinstitute/adapol",
+      "langs": [
+        "Jupyter Notebook"
+      ],
+      "description": "Adaptive Pole Fitting for Quantum Many-Body Physics",
+      "stars": 12
+    },
+    {
+      "name": "inverse-obstacle-scattering2d",
+      "url": "https://github.com/flatironinstitute/inverse-obstacle-scattering2d",
+      "langs": [
+        "Fortran"
+      ],
+      "description": "This repository contains codes for solving inverse obstacle scattering problems to recover the shape of the obstacle for sound soft, sound hard, and penetrable objects",
+      "stars": 12
+    },
+    {
+      "name": "ccq-software-build",
+      "url": "https://github.com/flatironinstitute/ccq-software-build",
+      "langs": [
+        "Shell"
+      ],
+      "description": "CCQ software build scripts",
+      "stars": 12
+    },
+    {
+      "name": "cppdlr",
+      "url": "https://github.com/flatironinstitute/cppdlr",
+      "langs": [
+        "C++"
+      ],
+      "description": "Discrete Lehmann representation of imaginary time Green's functions",
+      "stars": 12
+    },
+    {
+      "name": "Ensemble-reweighting-using-Cryo-EM-particles",
+      "url": "https://github.com/flatironinstitute/Ensemble-reweighting-using-Cryo-EM-particles",
+      "langs": [
+        "Jupyter Notebook"
+      ],
+      "description": "",
+      "stars": 12
+    },
+    {
+      "name": "xtensor-signal",
+      "url": "https://github.com/xtensor-stack/xtensor-signal",
+      "langs": [
+        "C++"
+      ],
+      "description": "Signal processing features based on xtensor",
+      "stars": 12
+    },
+    {
+      "name": "atan2",
+      "url": "https://github.com/DiamonDinoia/atan2",
+      "langs": [
+        "C++"
+      ],
+      "description": "Testing different implementation of Atan2",
+      "stars": 11
+    },
+    {
+      "name": "public_www",
+      "url": "https://github.com/flatironinstitute/public_www",
+      "langs": [
+        "SCSS"
+      ],
+      "description": "Basic templates for individual user pages in the public/_www directory",
+      "stars": 11
+    },
+    {
+      "name": "nomad",
+      "url": "https://github.com/flatironinstitute/nomad",
+      "langs": [
+        "Python"
+      ],
+      "description": "Non-linear Matrix Decomposition library",
+      "stars": 11
+    },
+    {
+      "name": "triqs_0.x",
+      "url": "https://github.com/TRIQS/triqs_0.x",
+      "langs": [
+        "C++"
+      ],
+      "description": "DEPRECATED -- This is the repository of the older versions of TRIQS",
+      "stars": 11
+    },
+    {
+      "name": "flathub",
+      "url": "https://github.com/flatironinstitute/flathub",
+      "langs": [
+        "Haskell"
+      ],
+      "description": "A simple elasticsearch frontend for serving astrophysical simulation catalog data",
+      "stars": 10
+    },
+    {
+      "name": "ExEnDiff",
+      "url": "https://github.com/flatironinstitute/ExEnDiff",
+      "langs": [
+        "Python"
+      ],
+      "description": "",
+      "stars": 10
+    },
+    {
+      "name": "mantis",
+      "url": "https://github.com/flatironinstitute/mantis",
+      "langs": [
+        "Python"
+      ],
+      "description": "Manifold-tiling Localized Receptive Fields are Optimal in Similarity-preserving Neural Networks",
+      "stars": 10
+    },
+    {
+      "name": "nix-modules",
+      "url": "https://github.com/flatironinstitute/nix-modules",
+      "langs": [
+        "Nix"
+      ],
+      "description": "nixpkgs-based module builds of cluster packages",
+      "stars": 10
+    },
+    {
+      "name": "gp-shootout",
+      "url": "https://github.com/flatironinstitute/gp-shootout",
+      "langs": [
+        "MATLAB"
+      ],
+      "description": "Benchmark and compare large-scale Gaussian process regression methods in 1D, 2D, and 3D, from MATLAB",
+      "stars": 9
+    },
+    {
+      "name": "masala_public",
+      "url": "https://github.com/flatironinstitute/masala_public",
+      "langs": [
+        "C++"
+      ],
+      "description": "The public repository for the Core library of the Masala software suite.  Masala is a set of free and open-source tools for biomolecular modelling, with a plugin-based infrastructure that makes it easy to extend other software.",
+      "stars": 9
+    },
+    {
+      "name": "FlatironMDCourse",
+      "url": "https://github.com/flatironinstitute/FlatironMDCourse",
+      "langs": [
+        "Jupyter Notebook"
+      ],
+      "description": "Flatiron Institute MD Course",
+      "stars": 9
+    },
+    {
+      "name": "inferelator-prior",
+      "url": "https://github.com/flatironinstitute/inferelator-prior",
+      "langs": [
+        "Python"
+      ],
+      "description": "Gene regulatory network inference using DNA-binding motifs and chromatin accessibility data.",
+      "stars": 9
+    },
+    {
+      "name": "boxcodes3d",
+      "url": "https://github.com/flatironinstitute/boxcodes3d",
+      "langs": [
+        "Fortran"
+      ],
+      "description": "This repository contains box codes for evaluating volume potentials for Laplace, Helmholtz, Maxwell, and Stokes",
+      "stars": 9
+    },
+    {
+      "name": "benchmarks",
+      "url": "https://github.com/TRIQS/benchmarks",
+      "langs": [
+        "Jupyter Notebook"
+      ],
+      "description": "A set of impurity solver benchmarks for different physical condensed-matter related systems",
+      "stars": 9
+    },
+    {
+      "name": "xtensor-polyglot",
+      "url": "https://github.com/xtensor-stack/xtensor-polyglot",
+      "langs": [
+        "Jupyter Notebook"
+      ],
+      "description": "An interactive demo of the xtensor language bindings.",
+      "stars": 9
+    },
+    {
+      "name": "numbl",
+      "url": "https://github.com/flatironinstitute/numbl",
+      "langs": [
+        "TypeScript"
+      ],
+      "description": "Numerical computing environment that aims to be compatible with Matlab",
+      "stars": 8
+    },
+    {
+      "name": "capture_lock",
+      "url": "https://github.com/flatironinstitute/capture_lock",
+      "langs": [
+        "C++"
+      ],
+      "description": "Modular Visual-Odometry research platform built on COLMAP for testing our algebraic solvers (e.g., DRaM-LHM, ICCV 2025) in multiview geometry.",
+      "stars": 8
+    },
+    {
+      "name": "DLR_DMFT_scripts",
+      "url": "https://github.com/flatironinstitute/DLR_DMFT_scripts",
+      "langs": [
+        "Python"
+      ],
+      "description": "",
+      "stars": 8
+    },
+    {
+      "name": "bio-nica",
+      "url": "https://github.com/flatironinstitute/bio-nica",
+      "langs": [
+        "Jupyter Notebook"
+      ],
+      "description": "Code for reproducing the experiments in the paper \"Bio-NICA: A biologically inspired single-layer network for Nonnegative Independent Component Analysis\"",
+      "stars": 8
+    },
+    {
+      "name": "hubbardI",
+      "url": "https://github.com/TRIQS/hubbardI",
+      "langs": [
+        "Python"
+      ],
+      "description": "Hubbard I solver. Supported by the Flatiron Institute.",
+      "stars": 8
+    },
+    {
+      "name": "ctint",
+      "url": "https://github.com/TRIQS/ctint",
+      "langs": [
+        "Jupyter Notebook"
+      ],
+      "description": "Continuous-time interaction expansion quantum Monte-Carlo code based on TRIQS. Supported by the Flatiron Institute.",
+      "stars": 8
+    },
+    {
+      "name": "ctseg",
+      "url": "https://github.com/TRIQS/ctseg",
+      "langs": [
+        "Jupyter Notebook"
+      ],
+      "description": "A segment picture impurity solver with spin-spin interactions. Supported by the Flatiron Institute.",
+      "stars": 8
+    },
+    {
+      "name": "fi-slurm-utils",
+      "url": "https://github.com/flatironinstitute/fi-slurm-utils",
+      "langs": [
+        "Rust"
+      ],
+      "description": "Command-line utilities for Slurm HPC clusters",
+      "stars": 7
+    },
+    {
+      "name": "bio-cca",
+      "url": "https://github.com/flatironinstitute/bio-cca",
+      "langs": [
+        "Jupyter Notebook"
+      ],
+      "description": "Code accompanying the paper \"A biologically plausible neural network for multi-channel Canonical Correlation Analysis\"",
+      "stars": 7
+    },
+    {
+      "name": "ccn-template",
+      "url": "https://github.com/flatironinstitute/ccn-template",
+      "langs": [
+        "Python"
+      ],
+      "description": "Template repository for CCN software projects",
+      "stars": 7
+    },
+    {
+      "name": "kbucket",
+      "url": "https://github.com/flatironinstitute/kbucket",
+      "langs": [
+        "JavaScript"
+      ],
+      "description": "System for sharing data for scientific research",
+      "stars": 7
+    },
+    {
+      "name": "modest",
+      "url": "https://github.com/TRIQS/modest",
+      "langs": [
+        "C++"
+      ],
+      "description": "Modular Electronic Structure Toolkit. Supported by the Flatiron Institute.",
+      "stars": 7
+    },
+    {
+      "name": "xtensor-julia-cookiecutter",
+      "url": "https://github.com/xtensor-stack/xtensor-julia-cookiecutter",
+      "langs": [
+        "CMake"
+      ],
+      "description": "Cookiecutter for a Julia project making use of xtensor",
+      "stars": 7
+    },
+    {
+      "name": "cpu-performance-tests",
+      "url": "https://github.com/DiamonDinoia/cpu-performance-tests",
+      "langs": [
+        "Jupyter Notebook"
+      ],
+      "description": "This repository contains the code to benchmark CPU cache miss latency and branch misprediction penalty",
+      "stars": 6
+    },
+    {
+      "name": "c2py",
+      "url": "https://github.com/flatironinstitute/c2py",
+      "langs": [
+        "C++"
+      ],
+      "description": "Clair/c2py low level library",
+      "stars": 6
+    },
+    {
+      "name": "inverse-volume-scattering2d",
+      "url": "https://github.com/flatironinstitute/inverse-volume-scattering2d",
+      "langs": [
+        "MATLAB"
+      ],
+      "description": "This repository contains beta MATLAB codes for data generation of forward medium problems using a hybrid HPS-HBS solver, and an inverse medium solver",
+      "stars": 6
+    },
+    {
+      "name": "least_absolute_regression",
+      "url": "https://github.com/flatironinstitute/least_absolute_regression",
+      "langs": [
+        "Jupyter Notebook"
+      ],
+      "description": "Least absolute error regression implemented using Linear Programming, primarily to illustrate repository structure conventions.",
+      "stars": 6
+    },
+    {
+      "name": "mountainlab",
+      "url": "https://github.com/flatironinstitute/mountainlab",
+      "langs": [
+        "C++"
+      ],
+      "description": "Scientific data analysis, sharing, and visualization",
+      "stars": 6
+    },
+    {
+      "name": "q2-matchmaker",
+      "url": "https://github.com/flatironinstitute/q2-matchmaker",
+      "langs": [
+        "Jupyter Notebook"
+      ],
+      "description": "A qiime2 plugin for case-control differential abundance analysis",
+      "stars": 6
+    },
+    {
+      "name": "h5",
+      "url": "https://github.com/TRIQS/h5",
+      "langs": [
+        "C++"
+      ],
+      "description": "A high-level C++ interface to the hdf5 library. Supported by the Flatiron Institute.",
+      "stars": 6
+    },
+    {
+      "name": "FermiSee",
+      "url": "https://github.com/TRIQS/FermiSee",
+      "langs": [
+        "Python"
+      ],
+      "description": "WebApp for electronic structure visualization and phenomenology",
+      "stars": 6
+    },
+    {
+      "name": "fwam2025",
+      "url": "https://github.com/DiamonDinoia/fwam2025",
+      "langs": [
+        "Jupyter Notebook"
+      ],
+      "description": "Fast Numerics, Small Changes: The Minimal Playbook",
+      "stars": 5
+    },
+    {
+      "name": "cryojax-ensemble-optimization",
+      "url": "https://github.com/flatironinstitute/cryojax-ensemble-optimization",
+      "langs": [
+        "Python"
+      ],
+      "description": "",
+      "stars": 5
+    },
+    {
+      "name": "psyphy",
+      "url": "https://github.com/flatironinstitute/psyphy",
+      "langs": [
+        "Python"
+      ],
+      "description": "Active-learning-driven adaptive experiments in psychophysics.",
+      "stars": 5
+    },
+    {
+      "name": "kvsstcp",
+      "url": "https://github.com/flatironinstitute/kvsstcp",
+      "langs": [
+        "Python"
+      ],
+      "description": "Key value storage server. Light weight (single python module with no non-standard module dependencies). Simple protocol minimizes effort needed to write a client (example for C and FORTRAN provided).",
+      "stars": 5
+    },
+    {
+      "name": "mfa_jupyter_for_programming",
+      "url": "https://github.com/flatironinstitute/mfa_jupyter_for_programming",
+      "langs": [
+        "Jupyter Notebook"
+      ],
+      "description": "Support material for an introduction to using Jupyter to teach computer programming.",
+      "stars": 5
+    },
+    {
+      "name": "caiman_central",
+      "url": "https://github.com/flatironinstitute/caiman_central",
+      "langs": [
+        "Jupyter Notebook"
+      ],
+      "description": "Central hub for resources related to Caiman calcium imaging analysis package.",
+      "stars": 5
+    },
+    {
+      "name": "looking_glass_3d_test",
+      "url": "https://github.com/flatironinstitute/looking_glass_3d_test",
+      "langs": [],
+      "description": "Test of displaying 3d genomic data using webgl in a \"Looking glass\" holographic display",
+      "stars": 5
+    },
+    {
+      "name": "mpi",
+      "url": "https://github.com/TRIQS/mpi",
+      "langs": [
+        "C++"
+      ],
+      "description": "A high-level C++ interface to the Message Passing Interface. Supported by the Flatiron Institute.",
+      "stars": 5
+    },
+    {
+      "name": "xca",
+      "url": "https://github.com/TRIQS/xca",
+      "langs": [
+        "C++"
+      ],
+      "description": "Sum-Of-Exponentials bold HYBridization expansion impurity solver",
+      "stars": 5
+    },
+    {
+      "name": "Nevanlinna",
+      "url": "https://github.com/TRIQS/Nevanlinna",
+      "langs": [
+        "C++"
+      ],
+      "description": "Nevanlinna analytical continuation using TRIQS. Supported by the Flatiron Institute.",
+      "stars": 5
+    },
+    {
+      "name": "mcss",
+      "url": "https://github.com/DiamonDinoia/mcss",
+      "langs": [
+        "C++"
+      ],
+      "description": "",
+      "stars": 4
+    },
+    {
+      "name": "spikeforest_recordings",
+      "url": "https://github.com/flatironinstitute/spikeforest_recordings",
+      "langs": [
+        "Python"
+      ],
+      "description": "Ephys recordings for the SpikeForest project",
+      "stars": 4
+    },
+    {
+      "name": "spike-front",
+      "url": "https://github.com/flatironinstitute/spike-front",
+      "langs": [
+        "JavaScript"
+      ],
+      "description": "Front end tool for benchmarking spike sorting algorithms.",
+      "stars": 4
+    },
+    {
+      "name": "InstaMap",
+      "url": "https://github.com/flatironinstitute/InstaMap",
+      "langs": [
+        "Python"
+      ],
+      "description": "",
+      "stars": 4
+    },
+    {
+      "name": "AnaVox",
+      "url": "https://github.com/flatironinstitute/AnaVox",
+      "langs": [
+        "Jupyter Notebook"
+      ],
+      "description": "",
+      "stars": 4
+    },
+    {
+      "name": "ccn-software-fens-2024",
+      "url": "https://github.com/flatironinstitute/ccn-software-fens-2024",
+      "langs": [
+        "Python"
+      ],
+      "description": "Materials for CCN software workshop at FENS 2024",
+      "stars": 4
+    },
+    {
+      "name": "fgt2d",
+      "url": "https://github.com/flatironinstitute/fgt2d",
+      "langs": [
+        "Fortran"
+      ],
+      "description": "This repository contains codes for evaluating sums and integrals of gaussians in two dimensions",
+      "stars": 4
+    },
+    {
+      "name": "sciware-testing-cpp",
+      "url": "https://github.com/flatironinstitute/sciware-testing-cpp",
+      "langs": [
+        "C++"
+      ],
+      "description": "",
+      "stars": 4
+    },
+    {
+      "name": "Fermi_surface_visualization",
+      "url": "https://github.com/flatironinstitute/Fermi_surface_visualization",
+      "langs": [
+        "Python"
+      ],
+      "description": "Interactive visualization of Fermi surfaces representing electron energies and velocities in crystal structures.",
+      "stars": 4
+    },
+    {
+      "name": "flatiron-coffee",
+      "url": "https://github.com/flatironinstitute/flatiron-coffee",
+      "langs": [
+        "Python"
+      ],
+      "description": "Meet your colleagues across the Institute",
+      "stars": 4
+    },
+    {
+      "name": "FREYA",
+      "url": "https://github.com/flatironinstitute/FREYA",
+      "langs": [
+        "Jupyter Notebook"
+      ],
+      "description": "Canine breast cancer analysis pipeline",
+      "stars": 4
+    },
+    {
+      "name": "ILCnetworks",
+      "url": "https://github.com/flatironinstitute/ILCnetworks",
+      "langs": [
+        "Jupyter Notebook"
+      ],
+      "description": "Gene regulatory networks for intestinal innate lymphoid cells",
+      "stars": 4
+    },
+    {
+      "name": "spikesortercomparison",
+      "url": "https://github.com/flatironinstitute/spikesortercomparison",
+      "langs": [
+        "TeX"
+      ],
+      "description": "Notes on metrics and datasets for community spike sorting comparison and validation",
+      "stars": 4
+    },
+    {
+      "name": "nrgljubljana_interface",
+      "url": "https://github.com/TRIQS/nrgljubljana_interface",
+      "langs": [
+        "C++"
+      ],
+      "description": "An Interface to the Open-Source Code NRGLjubliana. Supported by the Flatiron Institute.",
+      "stars": 4
+    },
+    {
+      "name": "xsimd-algorithm",
+      "url": "https://github.com/xtensor-stack/xsimd-algorithm",
+      "langs": [
+        "C++"
+      ],
+      "description": "STL-like algorithms vectorized with xsimd",
+      "stars": 4
+    },
+    {
+      "name": "simdref",
+      "url": "https://github.com/DiamonDinoia/simdref",
+      "langs": [
+        "Python"
+      ],
+      "description": "Searchable SIMD intrinsic and instruction reference — CLI, TUI, LSP, manpages, and static web UI",
+      "stars": 3
+    },
+    {
+      "name": "Chebyshev",
+      "url": "https://github.com/DiamonDinoia/Chebyshev",
+      "langs": [
+        "C++"
+      ],
+      "description": "",
+      "stars": 3
+    },
+    {
+      "name": "fgt",
+      "url": "https://github.com/flatironinstitute/fgt",
+      "langs": [
+        "Fortran"
+      ],
+      "description": "",
+      "stars": 3
+    },
+    {
+      "name": "DMK-MC",
+      "url": "https://github.com/flatironinstitute/DMK-MC",
+      "langs": [
+        "C++"
+      ],
+      "description": "DMK for Monte Carlo Simulation https://arxiv.org/abs/2601.09288",
+      "stars": 3
+    },
+    {
+      "name": "qt-mountainview",
+      "url": "https://github.com/flatironinstitute/qt-mountainview",
+      "langs": [
+        "C++"
+      ],
+      "description": "Visualization of spike sorting experiments to be used as a plugin package to mountainlab-js",
+      "stars": 3
+    },
+    {
+      "name": "Bio-RRR",
+      "url": "https://github.com/flatironinstitute/Bio-RRR",
+      "langs": [
+        "Jupyter Notebook"
+      ],
+      "description": "Demo code for NeurIPS 2020 paper.",
+      "stars": 3
+    },
+    {
+      "name": "DeepFRI-models",
+      "url": "https://github.com/flatironinstitute/DeepFRI-models",
+      "langs": [
+        "Python"
+      ],
+      "description": "",
+      "stars": 3
+    },
+    {
+      "name": "ftk",
+      "url": "https://github.com/flatironinstitute/ftk",
+      "langs": [
+        "Python"
+      ],
+      "description": "Factorization of the translation kernel for fast rigid image alignment",
+      "stars": 3
+    },
+    {
+      "name": "bio-lda",
+      "url": "https://github.com/flatironinstitute/bio-lda",
+      "langs": [
+        "Jupyter Notebook"
+      ],
+      "description": "Code accompanying the paper \"A linear discriminant analysis model of imbalanced associative learning in the mushroom body compartment\"",
+      "stars": 3
+    },
+    {
+      "name": "Baobzi.jl",
+      "url": "https://github.com/flatironinstitute/Baobzi.jl",
+      "langs": [
+        "Julia"
+      ],
+      "description": "Wrapper library for Baobzi interpolator library",
+      "stars": 3
+    },
+    {
+      "name": "binary_classification_metrics",
+      "url": "https://github.com/flatironinstitute/binary_classification_metrics",
+      "langs": [
+        "Jupyter Notebook"
+      ],
+      "description": "Visualizations and other code for exploring binary classification metrics.",
+      "stars": 3
+    },
+    {
+      "name": "quantum_rosetta_private",
+      "url": "https://github.com/flatironinstitute/quantum_rosetta_private",
+      "langs": [
+        "C#"
+      ],
+      "description": "Playing with quantum computing algorithms for protein and peptide design and structure prediction, with interfaces for the Rosetta software suite.  (Repository created by Vikram K. Mulligan, vmulligan@flatironinstitute.org).",
+      "stars": 3
+    },
+    {
+      "name": "app4triqs",
+      "url": "https://github.com/TRIQS/app4triqs",
+      "langs": [
+        "CMake"
+      ],
+      "description": "A skeleton for TRIQS-based applications",
+      "stars": 3
+    },
+    {
+      "name": "itertools",
+      "url": "https://github.com/TRIQS/itertools",
+      "langs": [
+        "C++"
+      ],
+      "description": "A C++ library that provides functionality to create and adapt C++ ranges. Supported by the Flatiron Institute.",
+      "stars": 3
+    },
+    {
+      "name": "random",
+      "url": "https://github.com/DiamonDinoia/random",
+      "langs": [
+        "C++"
+      ],
+      "description": "",
+      "stars": 2
+    },
+    {
+      "name": "jacobi",
+      "url": "https://github.com/DiamonDinoia/jacobi",
+      "langs": [
+        "C++"
+      ],
+      "description": "This is a parallel implementation of the Jacobi algorithm.",
+      "stars": 2
+    },
+    {
+      "name": "lru-cache",
+      "url": "https://github.com/DiamonDinoia/lru-cache",
+      "langs": [
+        "C++"
+      ],
+      "description": "",
+      "stars": 2
+    },
+    {
+      "name": "cephdu",
+      "url": "https://github.com/flatironinstitute/cephdu",
+      "langs": [
+        "Rust"
+      ],
+      "description": "A ncdu-like TUI for the Ceph File System, using xattrs instead of crawling",
+      "stars": 2
+    },
+    {
+      "name": "inferelator-velocity",
+      "url": "https://github.com/flatironinstitute/inferelator-velocity",
+      "langs": [
+        "Python"
+      ],
+      "description": "Calculate dynamic (time-dependent) latent parameters from single-cell expression data",
+      "stars": 2
+    },
+    {
+      "name": "ParticleMeshEwald.jl",
+      "url": "https://github.com/flatironinstitute/ParticleMeshEwald.jl",
+      "langs": [
+        "Julia"
+      ],
+      "description": "Particle mesh Ewald via NonuniformFFTs.jl",
+      "stars": 2
+    },
+    {
+      "name": "feedWebGL2",
+      "url": "https://github.com/flatironinstitute/feedWebGL2",
+      "langs": [
+        "JavaScript"
+      ],
+      "description": "Tools for implementing WebGL2 feedback processing stages for graphics preprocessing or other purposes",
+      "stars": 2
+    },
+    {
+      "name": "DeterminantRatioMatrix",
+      "url": "https://github.com/flatironinstitute/DeterminantRatioMatrix",
+      "langs": [
+        "Jupyter Notebook"
+      ],
+      "description": "",
+      "stars": 2
+    },
+    {
+      "name": "masala_public_standard_plugins",
+      "url": "https://github.com/flatironinstitute/masala_public_standard_plugins",
+      "langs": [
+        "C++"
+      ],
+      "description": "Public fork of the Standard Masala Plugins library.  The Masala macromolecular modelling suite has a modular, plugin-based architecture; common modelling tasks are handled by the \"standard\" plugins that most users will want.  But they're in a separate repo to ensure that plugin devs don't have to touch the core code.",
+      "stars": 2
+    },
+    {
+      "name": "mountainview",
+      "url": "https://github.com/flatironinstitute/mountainview",
+      "langs": [
+        "C++"
+      ],
+      "description": "Visualization of spike sorting experiments",
+      "stars": 2
+    },
+    {
+      "name": "nbfiddle",
+      "url": "https://github.com/flatironinstitute/nbfiddle",
+      "langs": [
+        "TypeScript"
+      ],
+      "description": "",
+      "stars": 2
+    },
+    {
+      "name": "OpenMM_FI_2025",
+      "url": "https://github.com/flatironinstitute/OpenMM_FI_2025",
+      "langs": [
+        "Jupyter Notebook"
+      ],
+      "description": "",
+      "stars": 2
+    },
+    {
+      "name": "wasmlets",
+      "url": "https://github.com/flatironinstitute/wasmlets",
+      "langs": [
+        "TypeScript"
+      ],
+      "description": "",
+      "stars": 2
+    },
+    {
+      "name": "sciware-intern-mentors",
+      "url": "https://github.com/flatironinstitute/sciware-intern-mentors",
+      "langs": [],
+      "description": "Guidance from sciware for summer intern mentors at Flatiron",
+      "stars": 2
+    },
+    {
+      "name": "scsc-notes",
+      "url": "https://github.com/flatironinstitute/scsc-notes",
+      "langs": [
+        "MATLAB"
+      ],
+      "description": "Notes and code from Scientific Computing Seminar & Concepts (SCSC, 2021) talks and Scientific Computing Discussion Group (SCDG, 2022--) teaching talks. ",
+      "stars": 2
+    },
+    {
+      "name": "polymathic_viz",
+      "url": "https://github.com/flatironinstitute/polymathic_viz",
+      "langs": [
+        "Python"
+      ],
+      "description": "Tools for creating visualizations that are useful for the polymathic project.",
+      "stars": 2
+    },
+    {
+      "name": "sciware-vscode-exercise",
+      "url": "https://github.com/flatironinstitute/sciware-vscode-exercise",
+      "langs": [
+        "Python"
+      ],
+      "description": "Python programming exercise for the SciWare on VS Code",
+      "stars": 2
+    },
+    {
+      "name": "homebrew-ccm",
+      "url": "https://github.com/flatironinstitute/homebrew-ccm",
+      "langs": [
+        "Ruby"
+      ],
+      "description": "",
+      "stars": 2
+    },
+    {
+      "name": "SimToolbox",
+      "url": "https://github.com/flatironinstitute/SimToolbox",
+      "langs": [
+        "C++"
+      ],
+      "description": "",
+      "stars": 2
+    },
+    {
+      "name": "flatiron-usage-vizwall",
+      "url": "https://github.com/flatironinstitute/flatiron-usage-vizwall",
+      "langs": [
+        "TypeScript"
+      ],
+      "description": "An Electron application to display key slurm usage data on the vizwall.",
+      "stars": 2
+    },
+    {
+      "name": "distcc_server",
+      "url": "https://github.com/flatironinstitute/distcc_server",
+      "langs": [
+        "Shell"
+      ],
+      "description": "Simple set of scripts to wrap heavy compilations in distcc on FI clusters",
+      "stars": 2
+    },
+    {
+      "name": "fastqToMat0",
+      "url": "https://github.com/flatironinstitute/fastqToMat0",
+      "langs": [
+        "Python"
+      ],
+      "description": "Tools for extracting and mapping transcriptional barcodes from single-cell sequencing reads",
+      "stars": 2
+    },
+    {
+      "name": "mountainlab-conda",
+      "url": "https://github.com/flatironinstitute/mountainlab-conda",
+      "langs": [
+        "Shell"
+      ],
+      "description": "A collection of recipes for building conda packages for Mountainlab and Mountainsort",
+      "stars": 2
+    },
+    {
+      "name": "sciware-julia",
+      "url": "https://github.com/flatironinstitute/sciware-julia",
+      "langs": [
+        "Jupyter Notebook"
+      ],
+      "description": "",
+      "stars": 2
+    },
+    {
+      "name": "multiomics_network",
+      "url": "https://github.com/flatironinstitute/multiomics_network",
+      "langs": [
+        "Jupyter Notebook"
+      ],
+      "description": "Network visualizations for bacterial species and metabolites from microbiome data",
+      "stars": 2
+    },
+    {
+      "name": "TRIQS.github.io",
+      "url": "https://github.com/TRIQS/TRIQS.github.io",
+      "langs": [
+        "HTML"
+      ],
+      "description": "top github pages site",
+      "stars": 2
+    },
+    {
+      "name": "xtensor-stack.github.io",
+      "url": "https://github.com/xtensor-stack/xtensor-stack.github.io",
+      "langs": [
+        "HTML"
+      ],
+      "description": "Organization and project management for xtensor and related projects https://xtensor-stack.github.io",
+      "stars": 2
+    },
+    {
+      "name": "cpp-learning",
+      "url": "https://github.com/DiamonDinoia/cpp-learning",
+      "langs": [
+        "Jupyter Notebook"
+      ],
+      "description": "In this repo, there are random cpp features tested",
+      "stars": 1
+    },
+    {
+      "name": "morton-span",
+      "url": "https://github.com/DiamonDinoia/morton-span",
+      "langs": [
+        "CMake"
+      ],
+      "description": "This repository implements a morton transform for mdspan",
+      "stars": 1
+    },
+    {
+      "name": "mixmaxCUDA",
+      "url": "https://github.com/DiamonDinoia/mixmaxCUDA",
+      "langs": [
+        "C"
+      ],
+      "description": "",
+      "stars": 1
+    },
+    {
+      "name": "benchmark_arch_optimization_flags",
+      "url": "https://github.com/DiamonDinoia/benchmark_arch_optimization_flags",
+      "langs": [
+        "C++"
+      ],
+      "description": " I'm testing the differences between gcc/llvm with various optimization flags. Both performance and assembly are analyzed.",
+      "stars": 1
+    },
+    {
+      "name": "astore_natcomms_2025_scripts",
+      "url": "https://github.com/flatironinstitute/astore_natcomms_2025_scripts",
+      "langs": [
+        "Python"
+      ],
+      "description": "Assorted scripts for analysing TRPV1 trajectories from Astore et al. 2025",
+      "stars": 1
+    },
+    {
+      "name": "neuroRSE",
+      "url": "https://github.com/flatironinstitute/neuroRSE",
+      "langs": [
+        "CSS"
+      ],
+      "description": "Website for CCN's neuroRSE group",
+      "stars": 1
+    },
+    {
+      "name": "lineage_viewer",
+      "url": "https://github.com/flatironinstitute/lineage_viewer",
+      "langs": [
+        "Python"
+      ],
+      "description": "Graphical interface for editing a lineage and viewing related microscopy images",
+      "stars": 1
+    },
+    {
+      "name": "scc-vscode-jupyterhub",
+      "url": "https://github.com/flatironinstitute/scc-vscode-jupyterhub",
+      "langs": [
+        "HTML"
+      ],
+      "description": "VS Code server launcher for FI JupyterHub",
+      "stars": 1
+    },
+    {
+      "name": "masala_rosetta_patch_public",
+      "url": "https://github.com/flatironinstitute/masala_rosetta_patch_public",
+      "langs": [],
+      "description": "Public repository containing patches for Rosetta permitting Rosetta to link Masala's Core library, and to make use of Masala plugin libraries loaded at runtime.",
+      "stars": 1
+    },
+    {
+      "name": "martini-microtubule",
+      "url": "https://github.com/flatironinstitute/martini-microtubule",
+      "langs": [
+        "Python"
+      ],
+      "description": "Scripts for Iteratively Refined Distance Based Elastic Network adapted for microtubules.",
+      "stars": 1
+    },
+    {
+      "name": "sciware-command-intro",
+      "url": "https://github.com/flatironinstitute/sciware-command-intro",
+      "langs": [],
+      "description": "demo repository for use with Sciware intro to the command line",
+      "stars": 1
+    },
+    {
+      "name": "indico-slack-bot",
+      "url": "https://github.com/flatironinstitute/indico-slack-bot",
+      "langs": [
+        "JavaScript"
+      ],
+      "description": "Bot that sends daily updates of Indico events to Slack. ",
+      "stars": 1
+    },
+    {
+      "name": "rd_webgpu",
+      "url": "https://github.com/flatironinstitute/rd_webgpu",
+      "langs": [
+        "JavaScript"
+      ],
+      "description": "reaction-diffusion using webgpu proof of concept",
+      "stars": 1
+    },
+    {
+      "name": "rockstar-rusty-demo",
+      "url": "https://github.com/flatironinstitute/rockstar-rusty-demo",
+      "langs": [
+        "Shell"
+      ],
+      "description": "An example setup for the Rockstar halo finding code on the Rusty cluster ",
+      "stars": 1
+    },
+    {
+      "name": "wikistyle",
+      "url": "https://github.com/flatironinstitute/wikistyle",
+      "langs": [
+        "CSS"
+      ],
+      "description": "Custom stylesheets for the foswiki FI implementation. ",
+      "stars": 1
+    },
+    {
+      "name": "caiman_use_cases",
+      "url": "https://github.com/flatironinstitute/caiman_use_cases",
+      "langs": [
+        "Jupyter Notebook"
+      ],
+      "description": "Supplementary repo for caiman, contains demos of external use cases",
+      "stars": 1
+    },
+    {
+      "name": "is-LITE1-an-ion-channel",
+      "url": "https://github.com/flatironinstitute/is-LITE1-an-ion-channel",
+      "langs": [
+        "Jupyter Notebook"
+      ],
+      "description": "Models and scripts for manuscript on LITE-1 and related protein modeling.",
+      "stars": 1
+    },
+    {
+      "name": "sciware-testing-python",
+      "url": "https://github.com/flatironinstitute/sciware-testing-python",
+      "langs": [
+        "Python"
+      ],
+      "description": "",
+      "stars": 1
+    },
+    {
+      "name": "mouse_embryo_labeller",
+      "url": "https://github.com/flatironinstitute/mouse_embryo_labeller",
+      "langs": [
+        "Python"
+      ],
+      "description": "A tool for tracking mouse embryo cell nuclei over time using data derived from 4d microscopy",
+      "stars": 1
+    },
+    {
+      "name": "q2-batch",
+      "url": "https://github.com/flatironinstitute/q2-batch",
+      "langs": [
+        "Python"
+      ],
+      "description": "Quick and dirty batch effect estimation in qiime2",
+      "stars": 1
+    },
+    {
+      "name": "flatironinstitute.github.io",
+      "url": "https://github.com/flatironinstitute/flatironinstitute.github.io",
+      "langs": [
+        "HTML"
+      ],
+      "description": "",
+      "stars": 1
+    },
+    {
+      "name": "maxwell-slice",
+      "url": "https://github.com/flatironinstitute/maxwell-slice",
+      "langs": [
+        "Fortran"
+      ],
+      "description": "Placeholder for Ali/Jeremy/Leslie project for visualizing outputs of 3D Maxwell solver",
+      "stars": 1
+    },
+    {
+      "name": "fetal_kidney_clusters",
+      "url": "https://github.com/flatironinstitute/fetal_kidney_clusters",
+      "langs": [
+        "Python"
+      ],
+      "description": "A basic 3d visualization of fetal kidney cell type clusters.",
+      "stars": 1
+    },
+    {
+      "name": "labbox-ephys-widgets-jp",
+      "url": "https://github.com/flatironinstitute/labbox-ephys-widgets-jp",
+      "langs": [
+        "TypeScript"
+      ],
+      "description": "Jupyter widgets for labbox-ephys",
+      "stars": 1
+    },
+    {
+      "name": "cpp2doc_webdemo",
+      "url": "https://github.com/flatironinstitute/cpp2doc_webdemo",
+      "langs": [
+        "SCSS"
+      ],
+      "description": "Documentation site for TRIQS.",
+      "stars": 1
+    },
+    {
+      "name": "radiation_viz",
+      "url": "https://github.com/flatironinstitute/radiation_viz",
+      "langs": [
+        "JavaScript"
+      ],
+      "description": "Visualizations for astrophysical radiation simulation data",
+      "stars": 1
+    },
+    {
+      "name": "athena_3dviz",
+      "url": "https://github.com/flatironinstitute/athena_3dviz",
+      "langs": [
+        "Python"
+      ],
+      "description": "",
+      "stars": 1
+    },
+    {
+      "name": "sciware-swc-2020-09-git",
+      "url": "https://github.com/flatironinstitute/sciware-swc-2020-09-git",
+      "langs": [
+        "HTML"
+      ],
+      "description": "2020-09-24-flatiron-online",
+      "stars": 1
+    },
+    {
+      "name": "dc_network",
+      "url": "https://github.com/flatironinstitute/dc_network",
+      "langs": [
+        "Python"
+      ],
+      "description": "Dendritic call regulatory network explorer",
+      "stars": 1
+    },
+    {
+      "name": "ChemDoodleWidget",
+      "url": "https://github.com/flatironinstitute/ChemDoodleWidget",
+      "langs": [],
+      "description": "Proxy widget embedding of the ChemDoodle web components.",
+      "stars": 1
+    },
+    {
+      "name": "PrometheusSlurm",
+      "url": "https://github.com/flatironinstitute/PrometheusSlurm",
+      "langs": [
+        "Python"
+      ],
+      "description": "",
+      "stars": 1
+    },
+    {
+      "name": "hartree_fock",
+      "url": "https://github.com/TRIQS/hartree_fock",
+      "langs": [
+        "Python"
+      ],
+      "description": "Hartree-Fock lattice and impurity solvers based on the TRIQS library. Supported by the Flatiron Institute.",
+      "stars": 1
+    },
+    {
+      "name": "dftkit",
+      "url": "https://github.com/TRIQS/dftkit",
+      "langs": [
+        "Python"
+      ],
+      "description": "Toolkit connecting TRIQS to DFT codes",
+      "stars": 1
+    },
+    {
+      "name": "omegamaxent_interface",
+      "url": "https://github.com/TRIQS/omegamaxent_interface",
+      "langs": [
+        "C++"
+      ],
+      "description": "TRIQS Interface to the OmegaMaxEnt Code. Supported by the Flatiron Institute.",
+      "stars": 1
+    },
+    {
+      "name": "w2dynamics_interface",
+      "url": "https://github.com/TRIQS/w2dynamics_interface",
+      "langs": [
+        "Python"
+      ],
+      "description": "TRIQS Interface to the w2dynamics Code",
+      "stars": 1
+    },
+    {
+      "name": "docker",
+      "url": "https://github.com/TRIQS/docker",
+      "langs": [
+        "Dockerfile"
+      ],
+      "description": "docker image for TRIQS",
+      "stars": 1
+    },
+    {
+      "name": "binder",
+      "url": "https://github.com/TRIQS/binder",
+      "langs": [
+        "Dockerfile"
+      ],
+      "description": "TRIQS for binder (repo2docker)",
+      "stars": 1
+    },
+    {
+      "name": "ctint_tutorial",
+      "url": "https://github.com/TRIQS/ctint_tutorial",
+      "langs": [
+        "C++"
+      ],
+      "description": "A simple implementation of a single-band interaction-expansion QMC impurity solver",
+      "stars": 1
+    },
+    {
+      "name": "cthyb_matrix",
+      "url": "https://github.com/TRIQS/cthyb_matrix",
+      "langs": [
+        "C++"
+      ],
+      "description": "DEPRECATED -- CTQMC Hybridisation expansion ",
+      "stars": 1
+    },
+    {
+      "name": "DiamonDinoia.github.io",
+      "url": "https://github.com/DiamonDinoia/DiamonDinoia.github.io",
+      "langs": [
+        "JavaScript"
+      ],
+      "description": "",
+      "stars": 0
+    },
+    {
+      "name": "mip-core-test",
+      "url": "https://github.com/DiamonDinoia/mip-core-test",
+      "langs": [
+        "Python"
+      ],
+      "description": "",
+      "stars": 0
+    },
+    {
+      "name": "juno-drivers-debian",
+      "url": "https://github.com/DiamonDinoia/juno-drivers-debian",
+      "langs": [
+        "Shell"
+      ],
+      "description": "Fork of junocomp/juno-drivers-debian with local fixes",
+      "stars": 0
+    },
+    {
+      "name": "numbl-allocator",
+      "url": "https://github.com/DiamonDinoia/numbl-allocator",
+      "langs": [
+        "C"
+      ],
+      "description": "WASM memory allocator for numbl (TLSF backend via FetchContent)",
+      "stars": 0
+    },
+    {
+      "name": "TensorScriptPP",
+      "url": "https://github.com/DiamonDinoia/TensorScriptPP",
+      "langs": [
+        "C++"
+      ],
+      "description": "TensorScript++: C++ BLAS/LAPACK-style linear algebra compiled to WebAssembly with benchmarking and Numbl/MIP packaging.",
+      "stars": 0
+    },
+    {
+      "name": "juno-grub",
+      "url": "https://github.com/DiamonDinoia/juno-grub",
+      "langs": [
+        "Shell"
+      ],
+      "description": "Fork of junocomp/juno-grub with local fixes",
+      "stars": 0
+    },
+    {
+      "name": "gpu-performance-tests",
+      "url": "https://github.com/DiamonDinoia/gpu-performance-tests",
+      "langs": [
+        "Jupyter Notebook"
+      ],
+      "description": "This repository contains the code to test GPU memory",
+      "stars": 0
+    },
+    {
+      "name": "cuda-span",
+      "url": "https://github.com/DiamonDinoia/cuda-span",
+      "langs": [
+        "C++"
+      ],
+      "description": "Implementation of c++20 span for c++11 onwards, but cuda compatible",
+      "stars": 0
+    },
+    {
+      "name": "profiling",
+      "url": "https://github.com/DiamonDinoia/profiling",
+      "langs": [
+        "CMake"
+      ],
+      "description": "",
+      "stars": 0
+    },
+    {
+      "name": "altmin",
+      "url": "https://github.com/DiamonDinoia/altmin",
+      "langs": [
+        "C++"
+      ],
+      "description": "",
+      "stars": 0
+    },
+    {
+      "name": "philox",
+      "url": "https://github.com/DiamonDinoia/philox",
+      "langs": [
+        "C++"
+      ],
+      "description": "Implementation of the Philox RNG for CPU and GPU (CUDA, HIP)",
+      "stars": 0
+    },
+    {
+      "name": "uk-visa-calculator",
+      "url": "https://github.com/DiamonDinoia/uk-visa-calculator",
+      "langs": [
+        "Jupyter Notebook"
+      ],
+      "description": "",
+      "stars": 0
+    },
+    {
+      "name": "benchmark-elementary-functions",
+      "url": "https://github.com/DiamonDinoia/benchmark-elementary-functions",
+      "langs": [
+        "Jupyter Notebook"
+      ],
+      "description": "this repo aims to test the performance and accuracy different elementary functions (e.g. log, sin, cos..)",
+      "stars": 0
+    },
+    {
+      "name": "test-cuda",
+      "url": "https://github.com/DiamonDinoia/test-cuda",
+      "langs": [
+        "Cuda"
+      ],
+      "description": "testing some stuff in cuda",
+      "stars": 0
+    },
+    {
+      "name": "while-snippet",
+      "url": "https://github.com/DiamonDinoia/while-snippet",
+      "langs": [
+        "C++"
+      ],
+      "description": "",
+      "stars": 0
+    },
+    {
+      "name": "parallelIterativeMethods",
+      "url": "https://github.com/DiamonDinoia/parallelIterativeMethods",
+      "langs": [
+        "C++"
+      ],
+      "description": "",
+      "stars": 0
+    },
+    {
+      "name": "test_archs",
+      "url": "https://github.com/DiamonDinoia/test_archs",
+      "langs": [
+        "C++"
+      ],
+      "description": "Testing architectural features",
+      "stars": 0
+    },
+    {
+      "name": "openlab_report",
+      "url": "https://github.com/DiamonDinoia/openlab_report",
+      "langs": [
+        "TeX"
+      ],
+      "description": "",
+      "stars": 0
+    },
+    {
+      "name": "gpu-vector",
+      "url": "https://github.com/DiamonDinoia/gpu-vector",
+      "langs": [
+        "C++"
+      ],
+      "description": "Porting of std::vector on gpu",
+      "stars": 0
+    },
+    {
+      "name": "distributedIterativeMethods",
+      "url": "https://github.com/DiamonDinoia/distributedIterativeMethods",
+      "langs": [
+        "Java"
+      ],
+      "description": "Implementation of some iterative methods on hadoop",
+      "stars": 0
+    },
+    {
+      "name": "chordRouting",
+      "url": "https://github.com/DiamonDinoia/chordRouting",
+      "langs": [
+        "Python"
+      ],
+      "description": "Simple simulator of static chord networks useful to compute some statistics",
+      "stars": 0
+    },
+    {
+      "name": "toyDoodle",
+      "url": "https://github.com/DiamonDinoia/toyDoodle",
+      "langs": [
+        "Java"
+      ],
+      "description": "Simple REST application that allow to create some simple dooles",
+      "stars": 0
+    },
+    {
+      "name": "SoccerAnalytics",
+      "url": "https://github.com/DiamonDinoia/SoccerAnalytics",
+      "langs": [
+        "Python"
+      ],
+      "description": "",
+      "stars": 0
+    },
+    {
+      "name": "wator",
+      "url": "https://github.com/DiamonDinoia/wator",
+      "langs": [
+        "C"
+      ],
+      "description": "Simulator of a sea enviroment written in C",
+      "stars": 0
+    },
+    {
+      "name": "OCamlSDNinterpreter",
+      "url": "https://github.com/DiamonDinoia/OCamlSDNinterpreter",
+      "langs": [
+        "OCaml"
+      ],
+      "description": "Simple OCaml SDN interpreter",
+      "stars": 0
+    },
+    {
+      "name": "pythonSDNinterpreter",
+      "url": "https://github.com/DiamonDinoia/pythonSDNinterpreter",
+      "langs": [
+        "Python"
+      ],
+      "description": "Simple python SDN interpreter and simulator",
+      "stars": 0
+    },
+    {
+      "name": "simpleChat",
+      "url": "https://github.com/DiamonDinoia/simpleChat",
+      "langs": [
+        "Scala"
+      ],
+      "description": "Simple chat implemented in scala",
+      "stars": 0
+    },
+    {
+      "name": "SimpleSocial",
+      "url": "https://github.com/DiamonDinoia/SimpleSocial",
+      "langs": [
+        "Java"
+      ],
+      "description": "Simple chat Server-Client application",
+      "stars": 0
+    },
+    {
+      "name": "tf-idf",
+      "url": "https://github.com/DiamonDinoia/tf-idf",
+      "langs": [
+        "Java"
+      ],
+      "description": "",
+      "stars": 0
+    },
+    {
+      "name": "allcaps",
+      "url": "https://github.com/DiamonDinoia/allcaps",
+      "langs": [
+        "Java"
+      ],
+      "description": "",
+      "stars": 0
+    },
+    {
+      "name": "findBigram",
+      "url": "https://github.com/DiamonDinoia/findBigram",
+      "langs": [
+        "Java"
+      ],
+      "description": "",
+      "stars": 0
+    },
+    {
+      "name": "findWord",
+      "url": "https://github.com/DiamonDinoia/findWord",
+      "langs": [
+        "Java"
+      ],
+      "description": "",
+      "stars": 0
+    },
+    {
+      "name": "alsous_gigantism_2025",
+      "url": "https://github.com/flatironinstitute/alsous_gigantism_2025",
+      "langs": [
+        "C++"
+      ],
+      "description": "Software supporting Alsous et al. The physical consequences of sperm gigantism, Nat. Phys. 2025",
+      "stars": 0
+    },
+    {
+      "name": "BoxDMK",
+      "url": "https://github.com/flatironinstitute/BoxDMK",
+      "langs": [
+        "Fortran"
+      ],
+      "description": "Box DMK for volume integral of Yukawa, Laplace, and square root Laplace.",
+      "stars": 0
+    },
+    {
+      "name": "PyBenchFramework",
+      "url": "https://github.com/flatironinstitute/PyBenchFramework",
+      "langs": [
+        "Python"
+      ],
+      "description": "BenchmarkToolkit is a Python library designed to simplify and streamline benchmarking tasks. This library provides a high-level abstraction over various benchmarking functions, allowing developers to easily perform performance testing and analysis with minimal setup.",
+      "stars": 0
+    },
+    {
+      "name": "neurorse-workshops",
+      "url": "https://github.com/flatironinstitute/neurorse-workshops",
+      "langs": [
+        "Jupyter Notebook"
+      ],
+      "description": "Built workshop materials for the NeuroRSE packages",
+      "stars": 0
+    },
+    {
+      "name": "ccn-software-feb-2026",
+      "url": "https://github.com/flatironinstitute/ccn-software-feb-2026",
+      "langs": [
+        "Python"
+      ],
+      "description": " Materials for CCN software workshop at Flatiron, Feb 2026",
+      "stars": 0
+    },
+    {
+      "name": "GOTO-SWAP",
+      "url": "https://github.com/flatironinstitute/GOTO-SWAP",
+      "langs": [
+        "Python"
+      ],
+      "description": "A unified lightweight API repo for sliced Wasserstein target on images",
+      "stars": 0
+    },
+    {
+      "name": "aLENS_analysis",
+      "url": "https://github.com/flatironinstitute/aLENS_analysis",
+      "langs": [
+        "Jupyter Notebook"
+      ],
+      "description": "Postprocessing & analysis scripts for aLENS data",
+      "stars": 0
+    },
+    {
+      "name": "ccn-software-sfn-2025",
+      "url": "https://github.com/flatironinstitute/ccn-software-sfn-2025",
+      "langs": [
+        "Python"
+      ],
+      "description": " Materials for CCN software workshop at SfN, Nov 2025 ",
+      "stars": 0
+    },
+    {
+      "name": "scc-viswall-prom",
+      "url": "https://github.com/flatironinstitute/scc-viswall-prom",
+      "langs": [
+        "Python"
+      ],
+      "description": "Generates plots of cluster usage data for the Flatiron viswall by scraping Prometheus",
+      "stars": 0
+    },
+    {
+      "name": "septin_AH_analysis",
+      "url": "https://github.com/flatironinstitute/septin_AH_analysis",
+      "langs": [
+        "Jupyter Notebook"
+      ],
+      "description": "Analysis script for septin AH paper.",
+      "stars": 0
+    },
+    {
+      "name": "vintch-v1-model",
+      "url": "https://github.com/flatironinstitute/vintch-v1-model",
+      "langs": [
+        "Python"
+      ],
+      "description": "Implementation of V1 model from Vintch et al., 2015",
+      "stars": 0
+    },
+    {
+      "name": "masala_public_eigen_fork",
+      "url": "https://github.com/flatironinstitute/masala_public_eigen_fork",
+      "langs": [
+        "C++"
+      ],
+      "description": "The fork of the Eigen linear algebra library, used by the Masala project.",
+      "stars": 0
+    },
+    {
+      "name": "masala_public_catch2_fork",
+      "url": "https://github.com/flatironinstitute/masala_public_catch2_fork",
+      "langs": [
+        "C++"
+      ],
+      "description": "The fork of the Catch2 unit testing suite used by the Masala software project.",
+      "stars": 0
+    },
+    {
+      "name": "masala_public_nlohmann_json_fork",
+      "url": "https://github.com/flatironinstitute/masala_public_nlohmann_json_fork",
+      "langs": [
+        "C++"
+      ],
+      "description": "The fork of the Nlohmann_json project used by the Masala software suite.",
+      "stars": 0
+    },
+    {
+      "name": "boxcode2d",
+      "url": "https://github.com/flatironinstitute/boxcode2d",
+      "langs": [
+        "Fortran"
+      ],
+      "description": "",
+      "stars": 0
+    },
+    {
+      "name": "Disk-hospital",
+      "url": "https://github.com/flatironinstitute/Disk-hospital",
+      "langs": [
+        "Python"
+      ],
+      "description": "This is an effort focused on automating disk problem resolution",
+      "stars": 0
+    },
+    {
+      "name": "spreadkernel",
+      "url": "https://github.com/flatironinstitute/spreadkernel",
+      "langs": [
+        "C++"
+      ],
+      "description": "Small library that smears non-uniformly distributed points onto a uniform grid, via a user supplied spreading kernel. This project is supported by the Simons Foundation's Flatiron Institute.",
+      "stars": 0
+    },
+    {
+      "name": "blastoSPIM_web",
+      "url": "https://github.com/flatironinstitute/blastoSPIM_web",
+      "langs": [
+        "JavaScript"
+      ],
+      "description": "Generate a web site supporting the Blastospim mouse embryo research project.",
+      "stars": 0
+    },
+    {
+      "name": "MutantAutoMate",
+      "url": "https://github.com/flatironinstitute/MutantAutoMate",
+      "langs": [
+        "Python"
+      ],
+      "description": "",
+      "stars": 0
+    },
+    {
+      "name": "fasthog",
+      "url": "https://github.com/flatironinstitute/fasthog",
+      "langs": [
+        "C++"
+      ],
+      "description": "Reasonably fast implementation of Histogram of Oriented Gradients with python bindings",
+      "stars": 0
+    },
+    {
+      "name": "ccn-software-jan-2025",
+      "url": "https://github.com/flatironinstitute/ccn-software-jan-2025",
+      "langs": [
+        "Python"
+      ],
+      "description": " Materials for CCN software workshop at Flatiron, Jan 2025",
+      "stars": 0
+    },
+    {
+      "name": "jenkins-webserver-template",
+      "url": "https://github.com/flatironinstitute/jenkins-webserver-template",
+      "langs": [
+        "Python"
+      ],
+      "description": "Template repo to serve as recipient of jenkins documentation build pushes",
+      "stars": 0
+    },
+    {
+      "name": "mcmc-stats.js",
+      "url": "https://github.com/flatironinstitute/mcmc-stats.js",
+      "langs": [
+        "TypeScript"
+      ],
+      "description": "Compute statistics for MCMC chains in Javascript",
+      "stars": 0
+    },
+    {
+      "name": "web-wavelets-benchmarking",
+      "url": "https://github.com/flatironinstitute/web-wavelets-benchmarking",
+      "langs": [
+        "TypeScript"
+      ],
+      "description": "Wasmlets vs Pyodide vs discrete-wavelets benchmark",
+      "stars": 0
+    },
+    {
+      "name": "the_well_web",
+      "url": "https://github.com/flatironinstitute/the_well_web",
+      "langs": [
+        "Jupyter Notebook"
+      ],
+      "description": "Tools for building a website featuring visualizations from polymathic/the_well",
+      "stars": 0
+    },
+    {
+      "name": "Sommerfeld",
+      "url": "https://github.com/flatironinstitute/Sommerfeld",
+      "langs": [
+        "Fortran"
+      ],
+      "description": "Codes for layered dielectric media",
+      "stars": 0
+    },
+    {
+      "name": "sciware_awful_cp",
+      "url": "https://github.com/flatironinstitute/sciware_awful_cp",
+      "langs": [
+        "C++"
+      ],
+      "description": "Example of a small package that won't work with the system libstdc++",
+      "stars": 0
+    },
+    {
+      "name": "ELF3",
+      "url": "https://github.com/flatironinstitute/ELF3",
+      "langs": [
+        "Python"
+      ],
+      "description": "A place to store code used to generate figures.",
+      "stars": 0
+    },
+    {
+      "name": "nemos-workshop-feb-2024",
+      "url": "https://github.com/flatironinstitute/nemos-workshop-feb-2024",
+      "langs": [
+        "Python"
+      ],
+      "description": "Materials for nemos workshop, Feb 2024",
+      "stars": 0
+    },
+    {
+      "name": "log-stretched-basis",
+      "url": "https://github.com/flatironinstitute/log-stretched-basis",
+      "langs": [],
+      "description": "Small package for handling log-stretching of a basis / weighting function for neuroscience",
+      "stars": 0
+    },
+    {
+      "name": "SimToolBox2",
+      "url": "https://github.com/flatironinstitute/SimToolBox2",
+      "langs": [
+        "C++"
+      ],
+      "description": "Fork of SimToolBox with arborX capabilities.",
+      "stars": 0
+    },
+    {
+      "name": "foveated-metamers-browser",
+      "url": "https://github.com/flatironinstitute/foveated-metamers-browser",
+      "langs": [
+        "TypeScript"
+      ],
+      "description": "",
+      "stars": 0
+    },
+    {
+      "name": "elkcat",
+      "url": "https://github.com/flatironinstitute/elkcat",
+      "langs": [
+        "C"
+      ],
+      "description": "Command-line query tool for elk logs",
+      "stars": 0
+    },
+    {
+      "name": "LATTEonline",
+      "url": "https://github.com/flatironinstitute/LATTEonline",
+      "langs": [
+        "Python"
+      ],
+      "description": "",
+      "stars": 0
+    },
+    {
+      "name": "SemiAutomaticLineageConstruction",
+      "url": "https://github.com/flatironinstitute/SemiAutomaticLineageConstruction",
+      "langs": [
+        "MATLAB"
+      ],
+      "description": "Matlab code to register sequences of label images and then verify and fix lineage tracks as needed",
+      "stars": 0
+    },
+    {
+      "name": "lpquad-comparison",
+      "url": "https://github.com/flatironinstitute/lpquad-comparison",
+      "langs": [
+        "Fortran"
+      ],
+      "description": "This repository is a comparison tool for quadrature methods for evaluating layer potentials on surfaces in three dimensions",
+      "stars": 0
+    },
+    {
+      "name": "packaging",
+      "url": "https://github.com/TRIQS/packaging",
+      "langs": [
+        "CMake"
+      ],
+      "description": "Packaging builds for triqs and applications",
+      "stars": 0
+    },
+    {
+      "name": "xsimd-testing-resources",
+      "url": "https://github.com/xtensor-stack/xsimd-testing-resources",
+      "langs": [],
+      "description": "",
+      "stars": 0
+    },
+    {
+      "name": "xtensor-dev-tools",
+      "url": "https://github.com/xtensor-stack/xtensor-dev-tools",
+      "langs": [],
+      "description": "Tools that ease developping xtensor with various IDEs",
+      "stars": 0
     }
   ]
 }

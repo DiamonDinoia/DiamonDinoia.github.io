@@ -8,7 +8,7 @@
   "photo": "assets/profile.jpg",
   "bio": [
     "I'm a Software Engineer at the <a href='https://www.simonsfoundation.org/flatiron/center-for-computational-mathematics/'>Center for Computational Mathematics</a> at the <a href='https://www.simonsfoundation.org/flatiron/'>Flatiron Institute</a> (Simons Foundation), based in New York.",
-    "My work focuses on <span class='kw'>high-performance computing</span>, <span class='kw'>SIMD</span> optimization, <span class='kw'>GPU</span> and <span class='kw'>FPGA</span> programming, and making scientific software run as fast as the hardware allows. I contribute to projects like <a href='https://github.com/flatironinstitute/finufft'>FINUFFT</a> (nonuniform fast Fourier transforms) and <a href='https://github.com/TRIQS/triqs'>TRIQS</a>."
+    "My work focuses on <span class='kw'>high-performance computing</span>, <span class='kw'>SIMD</span> optimization, <span class='kw'>GPU</span> and <span class='kw'>FPGA</span> programming, and making scientific software run as fast as the hardware allows. I contribute to projects like <a href='https://github.com/flatironinstitute/finufft'>FINUFFT</a> (nonuniform fast Fourier transforms), <a href='https://github.com/TRIQS/triqs'>TRIQS</a>, and <a href='https://github.com/xtensor-stack/xsimd'>xsimd</a>."
   ],
   "education": [
     {

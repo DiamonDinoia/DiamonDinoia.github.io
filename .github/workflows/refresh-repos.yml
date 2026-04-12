@@ -1,0 +1,29 @@
+name: Refresh GitHub repos
+
+on:
+  schedule:
+    - cron: '0 4 * * *'   # 4 AM UTC daily
+  workflow_dispatch:        # manual trigger
+
+permissions:
+  contents: write
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Fetch repos from GitHub API
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: bash scripts/fetch-repos.sh
+
+      - name: Commit if changed
+        run: |
+          git diff --quiet data/projects.json && exit 0
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add data/projects.json
+          git commit -m "chore: refresh GitHub repos data"
+          git push

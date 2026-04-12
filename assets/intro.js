@@ -148,7 +148,7 @@ async function runIntro() {
 
   // Assistant responds
   const assistBody = addMessage(messages, 'assistant', '');
-  await streamText(assistBody, 'Hold my beer. ', 35);
+  await streamText(assistBody, 'I got this. ', 35);
   bumpTokens(186);
   await sleep(300);
 
