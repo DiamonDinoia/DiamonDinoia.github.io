@@ -276,7 +276,8 @@ body {
 
 .line {
   display: flex;
-  gap: 1.5rem;
+  align-items: baseline;
+  gap: 1rem;
   padding: 0.1rem 0;
 }
 
@@ -286,15 +287,27 @@ body {
   font-family: var(--font-mono);
   font-size: 0.8rem;
   color: var(--text-muted);
-  min-width: var(--line-number-width);
+  width: var(--line-number-width);
+  flex-shrink: 0;
   text-align: right;
   user-select: none;
   opacity: 0.6;
 }
 
+.line:has(h1)::before { font-size: 1.75rem; }
+.line:has(h2)::before { font-size: 1.25rem; }
+.line:has(h3)::before { font-size: 1.05rem; }
+
 .line-content {
   flex: 1;
   min-width: 0;
+}
+
+.line-content h1,
+.line-content h2,
+.line-content h3,
+.line-content p {
+  margin: 0;
 }
 
 /* --- Typography --- */
@@ -317,8 +330,8 @@ h1::before {
 h2 {
   font-size: 1.25rem;
   color: var(--purple);
-  margin-top: 2rem;
-  margin-bottom: 0.75rem;
+  margin-top: 0;
+  margin-bottom: 0;
 }
 
 h2::before {
@@ -328,8 +341,8 @@ h2::before {
 h3 {
   font-size: 1.05rem;
   color: var(--teal);
-  margin-top: 1.25rem;
-  margin-bottom: 0.5rem;
+  margin-top: 0;
+  margin-bottom: 0;
 }
 
 h3::before {

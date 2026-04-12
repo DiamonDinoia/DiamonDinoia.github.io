@@ -506,7 +506,6 @@ async function renderTalks() {
       });
     });
     lines.appendChild(line(cppSectionClose('Presentations')));
-    lines.appendChild(line(null));
   }
 
   if (d.lectures && d.lectures.length) {
@@ -525,7 +524,6 @@ async function renderTalks() {
       lines.appendChild(line(cppClose()));
     });
     lines.appendChild(line(cppSectionClose('Teaching')));
-    lines.appendChild(line(null));
   }
 
   container.appendChild(lines);
@@ -568,7 +566,6 @@ async function renderPersonal() {
     });
 
     lines.appendChild(line(cppSectionClose(section.title)));
-    lines.appendChild(line(null));
   });
 
   container.appendChild(lines);
