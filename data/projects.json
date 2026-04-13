@@ -354,21 +354,21 @@
       "stars": 46
     },
     {
-      "name": "online_psp",
-      "url": "https://github.com/flatironinstitute/online_psp",
-      "langs": [
-        "Python"
-      ],
-      "description": "A collection of computationally efficient algorithms for online subspace learning and principal component analysis",
-      "stars": 43
-    },
-    {
       "name": "dft_tools",
       "url": "https://github.com/TRIQS/dft_tools",
       "langs": [
         "Python"
       ],
       "description": "Interface to DFT codes. Supported by the Flatiron Institute.",
+      "stars": 44
+    },
+    {
+      "name": "online_psp",
+      "url": "https://github.com/flatironinstitute/online_psp",
+      "langs": [
+        "Python"
+      ],
+      "description": "A collection of computationally efficient algorithms for online subspace learning and principal component analysis",
       "stars": 43
     },
     {
@@ -390,21 +390,21 @@
       "stars": 42
     },
     {
-      "name": "slurm-prometheus-exporter",
-      "url": "https://github.com/flatironinstitute/slurm-prometheus-exporter",
-      "langs": [
-        "Haskell"
-      ],
-      "description": "Prometheus exporter for slurm job/node data",
-      "stars": 40
-    },
-    {
       "name": "solid_dmft",
       "url": "https://github.com/TRIQS/solid_dmft",
       "langs": [
         "Python"
       ],
       "description": "solid_dmft is a versatile python wrapper to perform DFT+DMFT calculations utilizing the TRIQS software library.",
+      "stars": 41
+    },
+    {
+      "name": "slurm-prometheus-exporter",
+      "url": "https://github.com/flatironinstitute/slurm-prometheus-exporter",
+      "langs": [
+        "Haskell"
+      ],
+      "description": "Prometheus exporter for slurm job/node data",
       "stars": 40
     },
     {
