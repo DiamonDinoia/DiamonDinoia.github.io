@@ -90,7 +90,7 @@
         "C++"
       ],
       "description": "C++ tensors with broadcasting and lazy computing",
-      "stars": 3723
+      "stars": 3724
     },
     {
       "name": "CaImAn",
@@ -309,6 +309,15 @@
       "stars": 48
     },
     {
+      "name": "mountainlab-js",
+      "url": "https://github.com/flatironinstitute/mountainlab-js",
+      "langs": [
+        "JavaScript"
+      ],
+      "description": "MountainLab is data processing, sharing and visualization software for scientists. It is built around MountainSort, spike sorting software, but is designed to be more generally applicable.",
+      "stars": 47
+    },
+    {
       "name": "nifty-ls",
       "url": "https://github.com/flatironinstitute/nifty-ls",
       "langs": [
@@ -333,15 +342,6 @@
         "Python"
       ],
       "description": "Dynamic dispatch of a list of command-line tasks, locally or on a cluster. Supports retrying failed tasks, and adding/removing compute resources on-the-fly. ",
-      "stars": 46
-    },
-    {
-      "name": "mountainlab-js",
-      "url": "https://github.com/flatironinstitute/mountainlab-js",
-      "langs": [
-        "JavaScript"
-      ],
-      "description": "MountainLab is data processing, sharing and visualization software for scientists. It is built around MountainSort, spike sorting software, but is designed to be more generally applicable.",
       "stars": 46
     },
     {
@@ -714,6 +714,24 @@
       "stars": 14
     },
     {
+      "name": "adapol",
+      "url": "https://github.com/flatironinstitute/adapol",
+      "langs": [
+        "Jupyter Notebook"
+      ],
+      "description": "Adaptive Pole Fitting for Quantum Many-Body Physics",
+      "stars": 13
+    },
+    {
+      "name": "inverse-obstacle-scattering2d",
+      "url": "https://github.com/flatironinstitute/inverse-obstacle-scattering2d",
+      "langs": [
+        "Fortran"
+      ],
+      "description": "This repository contains codes for solving inverse obstacle scattering problems to recover the shape of the obstacle for sound soft, sound hard, and penetrable objects",
+      "stars": 13
+    },
+    {
       "name": "sf_benchmarks",
       "url": "https://github.com/flatironinstitute/sf_benchmarks",
       "langs": [
@@ -747,24 +765,6 @@
         "Python"
       ],
       "description": "Pose regression with new algebraic representation on ModelNet dataset (ICCV 2023)",
-      "stars": 12
-    },
-    {
-      "name": "adapol",
-      "url": "https://github.com/flatironinstitute/adapol",
-      "langs": [
-        "Jupyter Notebook"
-      ],
-      "description": "Adaptive Pole Fitting for Quantum Many-Body Physics",
-      "stars": 12
-    },
-    {
-      "name": "inverse-obstacle-scattering2d",
-      "url": "https://github.com/flatironinstitute/inverse-obstacle-scattering2d",
-      "langs": [
-        "Fortran"
-      ],
-      "description": "This repository contains codes for solving inverse obstacle scattering problems to recover the shape of the obstacle for sound soft, sound hard, and penetrable objects",
       "stars": 12
     },
     {
