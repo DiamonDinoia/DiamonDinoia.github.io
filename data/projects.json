@@ -90,7 +90,7 @@
         "C++"
       ],
       "description": "C++ tensors with broadcasting and lazy computing",
-      "stars": 3724
+      "stars": 3725
     },
     {
       "name": "CaImAn",
@@ -234,7 +234,7 @@
         "C++"
       ],
       "description": "xtensor plugin to read and write images, audio files, numpy (compressed) npz and HDF5",
-      "stars": 92
+      "stars": 93
     },
     {
       "name": "xtensor-r",
@@ -2348,6 +2348,15 @@
         "Java"
       ],
       "description": "",
+      "stars": 0
+    },
+    {
+      "name": "masala_public_seating_optimization_plugins",
+      "url": "https://github.com/flatironinstitute/masala_public_seating_optimization_plugins",
+      "langs": [
+        "C++"
+      ],
+      "description": "A Masala library demonstrating the use of Masala's plugin CFN optimizers and data representations for a problem different than protein design: wedding reception seating optimization.  Included is a useful benchmark set for testing new optimizers.",
       "stars": 0
     },
     {
