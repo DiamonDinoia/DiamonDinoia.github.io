@@ -90,7 +90,7 @@
         "C++"
       ],
       "description": "C++ tensors with broadcasting and lazy computing",
-      "stars": 3725
+      "stars": 3726
     },
     {
       "name": "CaImAn",
@@ -396,7 +396,7 @@
         "Python"
       ],
       "description": "solid_dmft is a versatile python wrapper to perform DFT+DMFT calculations utilizing the TRIQS software library.",
-      "stars": 41
+      "stars": 42
     },
     {
       "name": "slurm-prometheus-exporter",
