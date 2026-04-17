@@ -90,7 +90,7 @@
         "C++"
       ],
       "description": "C++ tensors with broadcasting and lazy computing",
-      "stars": 3726
+      "stars": 3728
     },
     {
       "name": "CaImAn",
@@ -144,7 +144,7 @@
         "C++"
       ],
       "description": "The x template library",
-      "stars": 234
+      "stars": 233
     },
     {
       "name": "xtensor-blas",
@@ -171,7 +171,7 @@
         "Fortran"
       ],
       "description": "Flatiron Institute Fast Multipole Libraries --- This codebase is a set of libraries to compute N-body interactions governed by the Laplace and Helmholtz equations, to a specified precision, in three dimensions, on a multi-core shared-memory machine. ",
-      "stars": 147
+      "stars": 148
     },
     {
       "name": "deepblast",
@@ -189,7 +189,7 @@
         "C++"
       ],
       "description": "JAX bindings to the Flatiron Institute Non-uniform Fast Fourier Transform (FINUFFT) library",
-      "stars": 130
+      "stars": 131
     },
     {
       "name": "nemos",
@@ -876,6 +876,15 @@
       "stars": 10
     },
     {
+      "name": "numbl",
+      "url": "https://github.com/flatironinstitute/numbl",
+      "langs": [
+        "TypeScript"
+      ],
+      "description": "Numerical computing environment that aims to be compatible with Matlab",
+      "stars": 9
+    },
+    {
       "name": "gp-shootout",
       "url": "https://github.com/flatironinstitute/gp-shootout",
       "langs": [
@@ -939,15 +948,6 @@
       "stars": 9
     },
     {
-      "name": "numbl",
-      "url": "https://github.com/flatironinstitute/numbl",
-      "langs": [
-        "TypeScript"
-      ],
-      "description": "Numerical computing environment that aims to be compatible with Matlab",
-      "stars": 8
-    },
-    {
       "name": "capture_lock",
       "url": "https://github.com/flatironinstitute/capture_lock",
       "langs": [
@@ -972,6 +972,15 @@
         "Jupyter Notebook"
       ],
       "description": "Code for reproducing the experiments in the paper \"Bio-NICA: A biologically inspired single-layer network for Nonnegative Independent Component Analysis\"",
+      "stars": 8
+    },
+    {
+      "name": "modest",
+      "url": "https://github.com/TRIQS/modest",
+      "langs": [
+        "C++"
+      ],
+      "description": "Modular Electronic Structure Toolkit. Supported by the Flatiron Institute.",
       "stars": 8
     },
     {
@@ -1035,15 +1044,6 @@
         "JavaScript"
       ],
       "description": "System for sharing data for scientific research",
-      "stars": 7
-    },
-    {
-      "name": "modest",
-      "url": "https://github.com/TRIQS/modest",
-      "langs": [
-        "C++"
-      ],
-      "description": "Modular Electronic Structure Toolkit. Supported by the Flatiron Institute.",
       "stars": 7
     },
     {
