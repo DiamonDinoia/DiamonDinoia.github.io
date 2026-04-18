@@ -615,6 +615,15 @@
       "stars": 19
     },
     {
+      "name": "Xtensor.R",
+      "url": "https://github.com/xtensor-stack/Xtensor.R",
+      "langs": [
+        "C++"
+      ],
+      "description": "R package for xtensor-r",
+      "stars": 19
+    },
+    {
       "name": "xtensor-julia",
       "url": "https://github.com/xtensor-stack/xtensor-julia",
       "langs": [
@@ -622,15 +631,6 @@
       ],
       "description": "Julia bindings for xtensor",
       "stars": 19
-    },
-    {
-      "name": "Xtensor.R",
-      "url": "https://github.com/xtensor-stack/Xtensor.R",
-      "langs": [
-        "C++"
-      ],
-      "description": "R package for xtensor-r",
-      "stars": 18
     },
     {
       "name": "aLENS",
@@ -675,7 +675,7 @@
         "Python"
       ],
       "description": "Python package for determination of conformational continua of macromolecules from single-particle cryo-EM data",
-      "stars": 16
+      "stars": 15
     },
     {
       "name": "cryoSBI",
@@ -1477,12 +1477,12 @@
       "stars": 3
     },
     {
-      "name": "random",
-      "url": "https://github.com/DiamonDinoia/random",
+      "name": "simdrng",
+      "url": "https://github.com/DiamonDinoia/simdrng",
       "langs": [
         "C++"
       ],
-      "description": "",
+      "description": "Header-only C++20 SIMD random number generators (Xoshiro / SplitMix / ChaCha / Philox) with a numpy.random.Generator-compatible Python API",
       "stars": 2
     },
     {
