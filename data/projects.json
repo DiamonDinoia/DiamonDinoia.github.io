@@ -183,6 +183,15 @@
       "stars": 136
     },
     {
+      "name": "nemos",
+      "url": "https://github.com/flatironinstitute/nemos",
+      "langs": [
+        "Python"
+      ],
+      "description": "NEural MOdelS, a statistical modeling framework for neuroscience.",
+      "stars": 131
+    },
+    {
       "name": "jax-finufft",
       "url": "https://github.com/flatironinstitute/jax-finufft",
       "langs": [
@@ -190,15 +199,6 @@
       ],
       "description": "JAX bindings to the Flatiron Institute Non-uniform Fast Fourier Transform (FINUFFT) library",
       "stars": 131
-    },
-    {
-      "name": "nemos",
-      "url": "https://github.com/flatironinstitute/nemos",
-      "langs": [
-        "Python"
-      ],
-      "description": "NEural MOdelS, a statistical modeling framework for neuroscience.",
-      "stars": 130
     },
     {
       "name": "cufinufft",
@@ -948,15 +948,6 @@
       "stars": 9
     },
     {
-      "name": "capture_lock",
-      "url": "https://github.com/flatironinstitute/capture_lock",
-      "langs": [
-        "C++"
-      ],
-      "description": "Modular Visual-Odometry research platform built on COLMAP for testing our algebraic solvers (e.g., DRaM-LHM, ICCV 2025) in multiview geometry.",
-      "stars": 8
-    },
-    {
       "name": "DLR_DMFT_scripts",
       "url": "https://github.com/flatironinstitute/DLR_DMFT_scripts",
       "langs": [
@@ -1009,6 +1000,15 @@
       ],
       "description": "A segment picture impurity solver with spin-spin interactions. Supported by the Flatiron Institute.",
       "stars": 8
+    },
+    {
+      "name": "capture_lock",
+      "url": "https://github.com/flatironinstitute/capture_lock",
+      "langs": [
+        "C++"
+      ],
+      "description": "Modular Visual-Odometry research platform built on COLMAP for testing our algebraic solvers (e.g., DRaM-LHM, ICCV 2025) in multiview geometry.",
+      "stars": 7
     },
     {
       "name": "fi-slurm-utils",
