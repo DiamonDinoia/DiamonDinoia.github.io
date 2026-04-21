@@ -453,6 +453,15 @@
       "stars": 32
     },
     {
+      "name": "SkellySim",
+      "url": "https://github.com/flatironinstitute/SkellySim",
+      "langs": [
+        "C++"
+      ],
+      "description": "Hydrodynamic Cytoskeleton Simulator",
+      "stars": 31
+    },
+    {
       "name": "xtensor-python-cookiecutter",
       "url": "https://github.com/xtensor-stack/xtensor-python-cookiecutter",
       "langs": [
@@ -460,15 +469,6 @@
       ],
       "description": "Cookiecutter for a Python project making use of xtensor",
       "stars": 31
-    },
-    {
-      "name": "SkellySim",
-      "url": "https://github.com/flatironinstitute/SkellySim",
-      "langs": [
-        "C++"
-      ],
-      "description": "Hydrodynamic Cytoskeleton Simulator",
-      "stars": 30
     },
     {
       "name": "ironclust",
@@ -885,21 +885,21 @@
       "stars": 9
     },
     {
-      "name": "gp-shootout",
-      "url": "https://github.com/flatironinstitute/gp-shootout",
-      "langs": [
-        "MATLAB"
-      ],
-      "description": "Benchmark and compare large-scale Gaussian process regression methods in 1D, 2D, and 3D, from MATLAB",
-      "stars": 9
-    },
-    {
       "name": "masala_public",
       "url": "https://github.com/flatironinstitute/masala_public",
       "langs": [
         "C++"
       ],
       "description": "The public repository for the Core library of the Masala software suite.  Masala is a set of free and open-source tools for biomolecular modelling, with a plugin-based infrastructure that makes it easy to extend other software.",
+      "stars": 9
+    },
+    {
+      "name": "gp-shootout",
+      "url": "https://github.com/flatironinstitute/gp-shootout",
+      "langs": [
+        "MATLAB"
+      ],
+      "description": "Benchmark and compare large-scale Gaussian process regression methods in 1D, 2D, and 3D, from MATLAB",
       "stars": 9
     },
     {
