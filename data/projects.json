@@ -561,6 +561,15 @@
       "stars": 23
     },
     {
+      "name": "dmk",
+      "url": "https://github.com/flatironinstitute/dmk",
+      "langs": [
+        "C++"
+      ],
+      "description": "A Dual-space Multilevel Kernel-splitting (DMK) Framework for Discrete and Continuous Convolution",
+      "stars": 22
+    },
+    {
       "name": "online_psp_matlab",
       "url": "https://github.com/flatironinstitute/online_psp_matlab",
       "langs": [
@@ -586,15 +595,6 @@
       ],
       "description": "A fast and generic hybridization-expansion solver. Supported by the Flatiron Institute.",
       "stars": 22
-    },
-    {
-      "name": "dmk",
-      "url": "https://github.com/flatironinstitute/dmk",
-      "langs": [
-        "C++"
-      ],
-      "description": "A Dual-space Multilevel Kernel-splitting (DMK) Framework for Discrete and Continuous Convolution",
-      "stars": 21
     },
     {
       "name": "clair",
