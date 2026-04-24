@@ -90,7 +90,7 @@
         "C++"
       ],
       "description": "C++ tensors with broadcasting and lazy computing",
-      "stars": 3729
+      "stars": 3728
     },
     {
       "name": "CaImAn",
@@ -135,7 +135,7 @@
         "MATLAB"
       ],
       "description": "Complete Matlab pipeline for large scale calcium imaging data analysis",
-      "stars": 260
+      "stars": 261
     },
     {
       "name": "xtl",
@@ -714,6 +714,15 @@
       "stars": 14
     },
     {
+      "name": "Ensemble-reweighting-using-Cryo-EM-particles",
+      "url": "https://github.com/flatironinstitute/Ensemble-reweighting-using-Cryo-EM-particles",
+      "langs": [
+        "Jupyter Notebook"
+      ],
+      "description": "",
+      "stars": 13
+    },
+    {
       "name": "adapol",
       "url": "https://github.com/flatironinstitute/adapol",
       "langs": [
@@ -783,15 +792,6 @@
         "C++"
       ],
       "description": "Discrete Lehmann representation of imaginary time Green's functions",
-      "stars": 12
-    },
-    {
-      "name": "Ensemble-reweighting-using-Cryo-EM-particles",
-      "url": "https://github.com/flatironinstitute/Ensemble-reweighting-using-Cryo-EM-particles",
-      "langs": [
-        "Jupyter Notebook"
-      ],
-      "description": "",
       "stars": 12
     },
     {
@@ -1137,6 +1137,15 @@
       "stars": 5
     },
     {
+      "name": "flatiron-coffee",
+      "url": "https://github.com/flatironinstitute/flatiron-coffee",
+      "langs": [
+        "Python"
+      ],
+      "description": "Meet your colleagues across the Institute",
+      "stars": 5
+    },
+    {
       "name": "cryojax-ensemble-optimization",
       "url": "https://github.com/flatironinstitute/cryojax-ensemble-optimization",
       "langs": [
@@ -1294,15 +1303,6 @@
         "Python"
       ],
       "description": "Interactive visualization of Fermi surfaces representing electron energies and velocities in crystal structures.",
-      "stars": 4
-    },
-    {
-      "name": "flatiron-coffee",
-      "url": "https://github.com/flatironinstitute/flatiron-coffee",
-      "langs": [
-        "Python"
-      ],
-      "description": "Meet your colleagues across the Institute",
       "stars": 4
     },
     {
