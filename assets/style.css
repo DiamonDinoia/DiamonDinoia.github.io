@@ -131,6 +131,11 @@ body {
   margin-bottom: -1px;
 }
 
+.tab-bar a.tab-intro {
+  color: var(--green);
+  font-style: italic;
+}
+
 /* --- Global Search (tab bar) --- */
 .tab-search {
   margin-left: auto;
@@ -978,6 +983,43 @@ code {
 
 .oc-status-ok {
   color: var(--green);
+}
+
+.oc-skip {
+  position: absolute;
+  top: 2.2rem;
+  right: 1rem;
+  z-index: 10;
+  background: var(--editor);
+  border: 2px solid var(--green);
+  color: var(--green);
+  font-family: var(--font-mono);
+  font-size: 0.95rem;
+  font-weight: 700;
+  padding: 0.5rem 1.1rem;
+  cursor: pointer;
+  border-radius: 4px;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  animation: oc-skip-pulse 1.1s ease-in-out infinite;
+}
+
+@keyframes oc-skip-pulse {
+  0%, 100% {
+    box-shadow: 0 0 0 0 rgba(152, 195, 121, 0.7);
+    opacity: 1;
+  }
+  50% {
+    box-shadow: 0 0 0 10px rgba(152, 195, 121, 0);
+    opacity: 0.6;
+  }
+}
+
+.oc-skip:hover {
+  animation: none;
+  background: var(--green);
+  color: var(--editor);
+  opacity: 1;
 }
 
 /* Responsive: hide sidebar on narrow screens */

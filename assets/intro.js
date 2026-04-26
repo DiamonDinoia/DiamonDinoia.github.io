@@ -118,11 +118,19 @@ function populateFileTree() {
 
 /* === Main intro sequence === */
 async function runIntro() {
+  // Force-replay when arriving via the intro.sh tab (?intro=1).
+  var forceIntro = /[?&]intro=1\b/.test(window.location.search);
+  if (forceIntro) {
+    sessionStorage.removeItem('intro-seen');
+    // Clean up the URL so a refresh doesn't replay forever.
+    history.replaceState(null, '', window.location.pathname);
+  }
+
   // Skip on refresh (type === 'reload'), show on fresh navigation (type === 'navigate')
   var navEntry = performance.getEntriesByType('navigation')[0];
   var isReload = navEntry && navEntry.type === 'reload';
 
-  if (isReload || sessionStorage.getItem('intro-seen')) {
+  if (!forceIntro && (isReload || sessionStorage.getItem('intro-seen'))) {
     document.getElementById('intro-overlay').remove();
     return;
   }
@@ -134,7 +142,16 @@ async function runIntro() {
   populateFileTree();
   startDurationTimer();
 
-  await sleep(500);
+  // Skip button — resolves a sentinel so the main sequence can bail out.
+  let skipped = false;
+  const skipPromise = new Promise(resolve => {
+    const btn = document.getElementById('oc-skip');
+    if (!btn) { return; }
+    btn.addEventListener('click', () => { skipped = true; resolve(); }, { once: true });
+  });
+
+  const runSequence = async () => {
+    await sleep(500);
 
   // User types first message
   await typeInInput(inputText, 'Make me a personal website using C++.', 40);
@@ -210,12 +227,15 @@ async function runIntro() {
     bumpTokens(Math.floor(Math.random() * 50) + 20);
   }
 
-  await sleep(800);
+    await sleep(800);
+  };
+
+  await Promise.race([runSequence(), skipPromise]);
   stopDurationTimer();
 
   // Fade out
   overlay.classList.add('oc-fadeout');
-  await sleep(700);
+  await sleep(skipped ? 200 : 700);
   overlay.remove();
 
   sessionStorage.setItem('intro-seen', '1');
