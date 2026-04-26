@@ -2,8 +2,18 @@
   "headline": "Beyond the terminal",
   "sections": [
     {
+      "title": "Investing & Trading",
+      "content": "A short series of educational talks I gave to friends and colleagues on how to think about investing. Educational only — not financial advice.",
+      "items": [
+        { "type": "link", "url": "personal/2025_05_08/index.html", "text": "2025-05-08 · Investing & Trading — foundations" },
+        { "type": "link", "url": "personal/2025_05_22/index.html", "text": "2025-05-22 · Assets — from safer to riskier" },
+        { "type": "link", "url": "personal/2025_06_12/index.html", "text": "2025-06-12 · Equity allocation — geography, size, factors" },
+        { "type": "quote", "text": "Use ←/→ to navigate. Each deck opens in a new tab as a self-contained HTML presentation." }
+      ]
+    },
+    {
       "title": "Coming Soon",
-      "content": "This section is under construction. Check back soon for hobbies, interests, and the things that happen when the compiler isn't running.",
+      "content": "More to come — hobbies, interests, and the things that happen when the compiler isn't running.",
       "items": []
     }
   ]
