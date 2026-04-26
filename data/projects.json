@@ -297,7 +297,7 @@
         "Cuda"
       ],
       "description": "JAXMg: A multi-GPU linear solver in JAX",
-      "stars": 48
+      "stars": 49
     },
     {
       "name": "xtensor-fftw",
@@ -2066,7 +2066,7 @@
       "name": "DiamonDinoia.github.io",
       "url": "https://github.com/DiamonDinoia/DiamonDinoia.github.io",
       "langs": [
-        "JavaScript"
+        "HTML"
       ],
       "description": "",
       "stars": 0
