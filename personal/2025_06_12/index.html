@@ -29,7 +29,6 @@ body{
     radial-gradient(ellipse at 110% 110%, #2a1d10 0%, transparent 55%),
     var(--bg);
 }
-/* deck container */
 .deck{position:relative;width:100vw;height:100vh;height:100dvh;overflow:hidden}
 .slide{
   position:absolute;inset:0;
@@ -43,8 +42,6 @@ body{
 }
 .slide.is-active{opacity:1;visibility:visible;transform:none}
 .slide.is-prev{transform:translateY(-24px)}
-
-/* shared chrome */
 .slide-num{
   position:absolute;top:1.4rem;right:1.6rem;
   font-family:var(--mono);font-size:.72rem;letter-spacing:.18em;
@@ -59,8 +56,6 @@ body{
   content:'M·B';position:absolute;left:1.6rem;bottom:1.2rem;
   font-family:var(--serif);font-style:italic;font-size:.78rem;color:var(--ink-dim);letter-spacing:.1em;
 }
-
-/* cover */
 .cover-wrap{display:flex;flex-direction:column;gap:1.4rem;max-width:min(90vw,1100px)}
 .eyebrow{
   font-family:var(--mono);font-size:.78rem;letter-spacing:.32em;color:var(--gold);
@@ -79,17 +74,14 @@ body{
   margin-top:.6rem;
 }
 .cover-meta{font-family:var(--mono);font-size:.72rem;letter-spacing:.18em;color:var(--ink-dim);margin-top:.3rem}
-
-/* disclaimer */
 .disclaimer-wrap{max-width:min(80ch,90vw);display:flex;flex-direction:column;gap:1.2rem}
 .disclaimer-wrap .eyebrow{color:var(--gold-soft);font-size:.85rem}
 .disclaimer-text{
   font-family:var(--serif);font-size:clamp(1.1rem,2vw,1.7rem);line-height:1.55;
   color:var(--ink);font-weight:300;
 }
-
-/* big title */
-.big-wrap{display:flex;align-items:center;height:100%;width:100%}
+.big-wrap{display:flex;flex-direction:column;align-items:flex-start;justify-content:center;height:100%;width:100%;gap:.8rem}
+.big-section-meta{font-family:var(--mono);font-size:.76rem;letter-spacing:.28em;color:var(--gold);text-transform:uppercase}
 .big-title{
   font-family:var(--serif);font-style:italic;font-weight:300;
   font-size:clamp(3rem,11vw,9.5rem);line-height:1.15;letter-spacing:-.02em;
@@ -99,8 +91,7 @@ body{
   -webkit-text-fill-color:transparent;
   display:inline-block;max-width:100%;
 }
-
-/* content */
+.big-teaser{font-family:var(--serif);font-style:italic;color:var(--ink-dim);font-size:clamp(1rem,1.6vw,1.4rem);max-width:60ch;font-weight:300}
 .content-wrap{display:flex;flex-direction:column;gap:1.4rem;max-width:min(75ch,90vw)}
 .slide-title{
   font-family:var(--serif);font-weight:400;font-style:italic;
@@ -122,14 +113,27 @@ body{
 .bullets li::before{
   content:'';position:absolute;left:0;top:.7em;width:.7rem;height:1px;background:var(--gold);
 }
+.bullets li.bullets__sub{padding-left:3rem;color:var(--ink-dim);font-size:clamp(.9rem,1.2vw,1.08rem)}
+.bullets li.bullets__sub::before{left:1.6rem;width:.5rem;background:var(--ink-dim)}
+.bullets li.bullets__heading{padding-left:0;font-family:var(--serif);font-style:italic;font-size:clamp(1rem,1.4vw,1.25rem);color:var(--gold-soft);margin-top:.4rem}
+.bullets li.bullets__heading::before{display:none}
 .src-link{
   font-family:var(--mono);font-size:.74rem;letter-spacing:.06em;color:var(--ink-dim);
   text-decoration:none;border-bottom:1px dashed var(--line);padding-bottom:2px;
   align-self:flex-start;word-break:break-all;max-width:90vw;
 }
 .src-link:hover{color:var(--gold);border-color:var(--gold)}
-
-/* image full */
+.btn-row{display:flex;flex-direction:column;gap:.8rem;margin-top:.4rem}
+.btn-link{
+  font-family:var(--sans);font-size:clamp(.92rem,1.2vw,1.05rem);
+  display:inline-flex;align-items:center;gap:.6rem;
+  padding:.7rem 1rem;border:1px solid var(--line);border-radius:4px;
+  background:rgba(255,255,255,.015);color:var(--ink);text-decoration:none;
+  transition:all .25s ease;align-self:flex-start;max-width:100%;
+}
+.btn-link:hover{border-color:var(--gold);background:rgba(212,162,76,.06);transform:translateX(3px)}
+.btn-link .btn-tag{font-family:var(--mono);font-size:.7rem;letter-spacing:.18em;color:var(--gold);text-transform:uppercase}
+.btn-link .btn-arrow{margin-left:auto;color:var(--ink-dim)}
 .img-full-wrap{
   display:flex;flex-direction:column;align-items:center;justify-content:center;
   width:100%;height:100%;gap:.8rem;
@@ -141,15 +145,13 @@ body{
 }
 .img-caption{
   font-family:var(--serif);font-style:italic;color:var(--ink-dim);
-  font-size:clamp(.95rem,1.3vw,1.2rem);
+  font-size:clamp(.95rem,1.3vw,1.2rem);max-width:80ch;text-align:center;
 }
 .img-source{
   font-family:var(--mono);font-size:.7rem;color:var(--ink-dim);text-decoration:none;
   letter-spacing:.04em;word-break:break-all;max-width:80vw;text-align:center;
 }
 .img-source:hover{color:var(--gold)}
-
-/* split */
 .split-wrap{
   display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.2fr);
   gap:clamp(1.2rem,3vw,3rem);align-items:center;height:100%;
@@ -165,16 +167,35 @@ body{
   border:1px solid var(--line);border-radius:6px;background:#fff;
   box-shadow:0 24px 60px -25px rgba(0,0,0,.7);
 }
-
-/* small logos pinned next to the slide title */
 .slide-logo{
   position:absolute;top:clamp(1.4rem,3.5vw,3.2rem);right:clamp(1.6rem,5vw,5rem);
   width:clamp(46px,5vw,76px);height:clamp(46px,5vw,76px);
   object-fit:contain;opacity:.85;z-index:3;
 }
 .slide--cover .slide-logo,.slide--disclaimer .slide-logo{display:none}
-
-/* progress + nav */
+.end-wrap{display:flex;flex-direction:column;gap:1.6rem;max-width:min(80ch,90vw)}
+.end-eyebrow{font-family:var(--mono);font-size:.78rem;letter-spacing:.32em;color:var(--gold);text-transform:uppercase}
+.end-title{font-family:var(--serif);font-style:italic;font-weight:300;font-size:clamp(2.4rem,6vw,4.6rem);line-height:1.05;letter-spacing:-.02em}
+.end-nav{display:flex;flex-wrap:wrap;gap:1rem;margin-top:.8rem}
+.end-nav a{
+  flex:1 1 320px;min-width:280px;
+  display:flex;flex-direction:column;gap:.4rem;
+  padding:1.2rem 1.4rem;border:1px solid var(--line);border-radius:6px;
+  text-decoration:none;color:var(--ink);background:rgba(255,255,255,.015);
+  transition:all .25s ease;
+}
+.end-nav a:hover{border-color:var(--gold);background:rgba(212,162,76,.06);transform:translateY(-3px)}
+.end-nav .label{font-family:var(--mono);font-size:.7rem;letter-spacing:.2em;color:var(--gold);text-transform:uppercase}
+.end-nav .title{font-family:var(--serif);font-style:italic;font-size:1.4rem}
+.end-nav .meta{font-family:var(--mono);font-size:.7rem;color:var(--ink-dim);letter-spacing:.1em}
+.end-nav a.is-disabled{opacity:.45;pointer-events:none}
+.factor-bars{display:flex;flex-direction:column;gap:1rem;margin-top:.6rem;max-width:60ch}
+.factor-bar{display:flex;align-items:center;gap:1rem}
+.factor-bar .lbl{font-family:var(--sans);font-size:.95rem;width:18ch;color:var(--ink-dim)}
+.factor-bar .track{flex:1;height:14px;background:var(--bg-2);border:1px solid var(--line);border-radius:3px;overflow:hidden;position:relative}
+.factor-bar .fill{height:100%;background:linear-gradient(90deg,var(--gold),var(--gold-soft))}
+.factor-bar .fill.is-extra{background:linear-gradient(90deg,#5fb6ff,#a3d6ff);opacity:.75}
+.factor-bar .pct{font-family:var(--mono);font-size:.85rem;color:var(--gold);width:5ch;text-align:right}
 .progress{
   position:fixed;bottom:0;left:0;right:0;height:2px;background:transparent;z-index:50;
 }
@@ -191,441 +212,537 @@ body{
   font-family:var(--mono);font-size:.68rem;background:var(--bg-2);
   border:1px solid var(--line);padding:.05rem .3rem;border-radius:3px;color:var(--ink);
 }
-
-/* enter animations */
 @media (prefers-reduced-motion: no-preference){
   .slide.is-active .cover-title,
   .slide.is-active .big-title,
-  .slide.is-active .slide-title{animation:rise .8s cubic-bezier(.2,.7,.2,1) both}
+  .slide.is-active .slide-title,
+  .slide.is-active .end-title{animation:rise .8s cubic-bezier(.2,.7,.2,1) both}
   .slide.is-active .body-para,
   .slide.is-active .bullets li,
   .slide.is-active .body-line,
+  .slide.is-active .btn-link,
+  .slide.is-active .factor-bar,
   .slide.is-active .disclaimer-text{animation:rise .7s ease both;animation-delay:.18s}
-  .slide.is-active .bullets li:nth-child(1){animation-delay:.18s}
-  .slide.is-active .bullets li:nth-child(2){animation-delay:.26s}
-  .slide.is-active .bullets li:nth-child(3){animation-delay:.34s}
+  .slide.is-active .bullets li:nth-child(1),
+  .slide.is-active .factor-bar:nth-child(1){animation-delay:.18s}
+  .slide.is-active .bullets li:nth-child(2),
+  .slide.is-active .factor-bar:nth-child(2){animation-delay:.26s}
+  .slide.is-active .bullets li:nth-child(3),
+  .slide.is-active .factor-bar:nth-child(3){animation-delay:.34s}
   .slide.is-active .bullets li:nth-child(4){animation-delay:.42s}
   .slide.is-active .bullets li:nth-child(5){animation-delay:.50s}
   .slide.is-active .bullets li:nth-child(6){animation-delay:.58s}
   .slide.is-active img{animation:fade .9s ease both;animation-delay:.1s}
+  .slide.is-active .factor-bar .fill{animation:grow 1.1s cubic-bezier(.2,.7,.2,1) both;animation-delay:.4s;transform-origin:left center}
 }
 @keyframes rise{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:none}}
 @keyframes fade{from{opacity:0}to{opacity:1}}
-
+@keyframes grow{from{transform:scaleX(0)}to{transform:scaleX(1)}}
 @media (prefers-reduced-motion: reduce){
   .slide{transition:opacity .15s linear}
   *{animation:none!important}
+}
+@media print{
+  html,body{overflow:visible;height:auto;background:#fff;color:#111}
+  body{background:#fff}
+  .deck{position:static;width:auto;height:auto;overflow:visible}
+  .slide{
+    position:relative;inset:auto;width:100%;height:100vh;
+    page-break-after:always;break-after:page;
+    opacity:1!important;visibility:visible!important;transform:none!important;
+    color:#111;background:#fff;
+  }
+  .slide:last-child{page-break-after:auto;break-after:auto}
+  .slide::before,.slide::after,.slide-num,.help,.progress{display:none!important}
+  .cover-title,.big-title,.slide-title,.end-title{
+    color:#111!important;background:none!important;-webkit-text-fill-color:#111!important;
+  }
+  .body-para,.bullets li,.body-line,.disclaimer-text,.cover-sub,.img-caption,.eyebrow,.cover-meta,.big-section-meta,.big-teaser,.end-eyebrow,.btn-link,.src-link,.img-source,.factor-bar .lbl,.factor-bar .pct{color:#111!important}
+  .img-full,.split-image img{box-shadow:none;border-color:#ccc;max-height:80vh}
+  *{animation:none!important;transition:none!important}
 }
 </style>
 </head>
 <body>
 <main class="deck">
-<section class="slide slide--cover" data-idx="1">
-<div class="slide-num">01 / 39</div>
+<section class="slide slide--cover">
+<div class="slide-num"></div>
 <img class="slide-logo" src="assets/10000201000001930000008D107DE959C2A820B3.png" alt="" loading="lazy">
 <div class="cover-wrap">
 <div class="eyebrow">Marco Barbone</div>
-<h1 class="cover-title">Investing &amp; Trading</h1>
+<h1 class="cover-title">Equity Allocation</h1>
 <div class="cover-sub">Geography, size, factors · June 12, 2025</div>
 <div class="cover-rule"></div>
-<div class="cover-meta">An educational deck · not financial advice</div>
+<div class="cover-meta">Part 3 of 3 · An educational deck · not financial advice</div>
+<a class="cover-license" href="https://creativecommons.org/licenses/by/4.0/" target="_blank" rel="noopener" style="font-family:var(--mono);font-size:.7rem;letter-spacing:.12em;color:var(--ink-dim);text-decoration:none;border-bottom:1px dashed var(--line);padding-bottom:2px;align-self:flex-start;margin-top:.6rem">CC BY 4.0 · share &amp; adapt with credit</a>
 </div>
 </section>
-<section class="slide slide--disclaimer" data-idx="2">
-<div class="slide-num">02 / 39</div>
+
+<section class="slide slide--disclaimer">
+<div class="slide-num"></div>
 <div class="disclaimer-wrap">
 <div class="eyebrow">Disclaimer</div>
 <p class="disclaimer-text">The information provided is for educational and informational purposes only and should not be considered financial or investment advice. Always consult with a qualified financial advisor or professional before making any investment decisions.</p>
 </div>
 </section>
-<section class="slide slide--content" data-idx="3">
-<div class="slide-num">03 / 39</div>
+
+<section class="slide slide--content">
+<div class="slide-num"></div>
 <div class="content-wrap">
 <h2 class="slide-title">Equity allocation</h2>
 <ul class="bullets">
-<li>International diversification: national, developed, emerging, frontier market</li>
-<li>Size: small, mid, large, mega cap</li>
-<li>Style: growth, blend, value</li>
-<li>That is 4x4x3 total combinations!</li>
+<li><strong>International diversification:</strong> national, developed, emerging, frontier</li>
+<li><strong>Size:</strong> small, mid, large, mega cap</li>
+<li><strong>Style:</strong> growth, blend, value</li>
+<li>That’s 4 × 4 × 3 = 48 combinations.</li>
 </ul>
 </div>
 </section>
-<section class="slide slide--big-title" data-idx="4">
-<div class="slide-num">04 / 39</div>
+
+<section class="slide slide--big-title">
+<div class="slide-num"></div>
 <div class="big-wrap">
-<h2 class="big-title">International Diversification</h2>
+<div class="big-section-meta">Part 1 / 3 — Geography</div>
+<h2 class="big-title">International diversification</h2>
+<p class="big-teaser">Why home-country bias is the default — and the reason it’s a problem.</p>
 </div>
 </section>
-<section class="slide slide--image-split" data-idx="5">
-<div class="slide-num">05 / 39</div>
+
+<section class="slide slide--image-split">
+<div class="slide-num"></div>
 <div class="split-wrap">
 <div class="split-text">
 <h2 class="slide-title">International diversification</h2>
+<p class="body-line">Most investors hold a portfolio that is heavily concentrated in their home market.</p>
 </div>
 <div class="split-image">
 <img src="assets/100002010000050C000000B854A0BDE29D9FC42E.png" alt="" loading="lazy">
 </div>
 </div>
 </section>
-<section class="slide slide--content" data-idx="6">
-<div class="slide-num">06 / 39</div>
+
+<section class="slide slide--content">
+<div class="slide-num"></div>
 <div class="content-wrap">
-<h2 class="slide-title">Home Country Bias</h2>
+<h2 class="slide-title">Home-country bias</h2>
+<p class="body-para">Home-country bias is the persistent tendency to allocate a disproportionately large share of a portfolio to securities issued in one’s own country — far in excess of that country’s weight in the global market-cap universe.</p>
 <ul class="bullets">
-<li>Home-country bias is the persistent tendency for investors to allocate a disproportionately large share of their portfolios to securities issued in their own country—far in excess of that country’s weight in the global market-capitalisation universe.</li>
-<li>Over-exposure to domestic assets: Investors routinely hold 60-90 % of their equity in local stocks even when their domestic market may represent only a fraction of world market value.</li>
-<li>Driven by familiarity and perceived safety: Comfort with local brands, accounting rules, currency and regulations makes domestic investments feel less risky, reinforcing the bias.</li>
-<li>Leads to under-diversification: Concentrating in one economy raises portfolio volatility and the risk of country-specific downturns or “lost decades,” which broader global exposure could mitigate.</li>
+<li><strong>Over-exposure to domestic assets</strong> — investors routinely hold 60–90% of equity in local stocks even when their domestic market represents only a fraction of world market value.</li>
+<li><strong>Driven by familiarity and perceived safety</strong> — local brands, accounting rules, currency and regulations all <em>feel</em> less risky.</li>
+<li><strong>Leads to under-diversification</strong> — concentration raises portfolio volatility and the risk of country-specific downturns or “lost decades”.</li>
 </ul>
 </div>
 </section>
-<section class="slide slide--image-split" data-idx="7">
-<div class="slide-num">07 / 39</div>
+
+<section class="slide slide--image-split">
+<div class="slide-num"></div>
 <div class="split-wrap">
 <div class="split-text">
-<h2 class="slide-title">Countries by Stock market capitalization</h2>
+<h2 class="slide-title">Countries by stock-market capitalisation</h2>
+<p class="body-line">The US dominates the global equity universe — but it doesn’t exhaust it.</p>
 </div>
 <div class="split-image">
 <img src="assets/1000020100000800000003FB031DA954C15EFBC0.png" alt="" loading="lazy">
 </div>
 </div>
 </section>
-<section class="slide slide--image-split" data-idx="8">
-<div class="slide-num">08 / 39</div>
+
+<section class="slide slide--image-split">
+<div class="slide-num"></div>
 <div class="split-wrap">
 <div class="split-text">
 <h2 class="slide-title">Categories</h2>
+<p class="body-line">Developed, emerging, frontier — a coarse but useful taxonomy.</p>
 </div>
 <div class="split-image">
 <img src="assets/10000000000007BB0000049CFE9DDDD1AC21515F.png" alt="" loading="lazy">
 </div>
 </div>
 </section>
-<section class="slide slide--content" data-idx="9">
-<div class="slide-num">09 / 39</div>
+
+<section class="slide slide--content">
+<div class="slide-num"></div>
 <div class="content-wrap">
-<h2 class="slide-title">International diversification – Benefits</h2>
-<p class="body-para">International diversification is a double-edged sword: adding foreign equities, bonds or real-assets usually lowers portfolio volatility, broadens return drivers and guards against “lost decades” in any one market, but it also introduces new layers of risk—currency moves, higher costs, unfamiliar regulations and the possibility that political shocks (sanctions, capital-controls or outright market closures) temporarily negate the benefit. A sound policy is therefore to diversify enough to avoid a home-market accident, yet not so far that incremental risks and frictions overwhelm the gain.</p>
+<h2 class="slide-title">International diversification — benefits</h2>
+<p class="body-para">Adding foreign equities, bonds, or real assets usually <em>lowers</em> portfolio volatility, broadens return drivers, and guards against “lost decades” in any one market — but it also introduces new layers of risk: currency moves, higher costs, unfamiliar regulations, and the possibility that political shocks (sanctions, capital controls, market closures) temporarily negate the benefit.</p>
+<p class="body-para">A sound policy: diversify enough to avoid a home-market accident, but not so far that incremental risks and frictions overwhelm the gain.</p>
 </div>
 </section>
-<section class="slide slide--big-title" data-idx="10">
-<div class="slide-num">10 / 39</div>
+
+<section class="slide slide--big-title">
+<div class="slide-num"></div>
 <div class="big-wrap">
-<h2 class="big-title">International diversification – Risks</h2>
+<div class="big-section-meta">Cautionary tale</div>
+<h2 class="big-title">— Risks</h2>
+<p class="big-teaser">Cycles, sanctions, and the case where your foreign exposure goes to zero.</p>
 </div>
 </section>
-<section class="slide slide--image-split" data-idx="11">
-<div class="slide-num">11 / 39</div>
+
+<section class="slide slide--image-split">
+<div class="slide-num"></div>
 <div class="split-wrap">
 <div class="split-text">
-<h2 class="slide-title">US and International Markets Have Moved in Cycles</h2>
+<h2 class="slide-title">US and international markets move in cycles</h2>
+<p class="body-line">Multi-decade leadership rotates between US and ex-US equities.</p>
 </div>
 <div class="split-image">
 <img src="assets/10000201000007F20000031D2627E305EEBA00AD.png" alt="" loading="lazy">
 </div>
 </div>
 </section>
-<section class="slide slide--content" data-idx="12">
-<div class="slide-num">12 / 39</div>
+
+<section class="slide slide--content">
+<div class="slide-num"></div>
 <div class="content-wrap">
-<h2 class="slide-title">Summary</h2>
+<h2 class="slide-title">A reasonable target</h2>
 <ul class="bullets">
 <li>US: 60%</li>
-<li>Developed: 40%</li>
+<li>Developed (ex-US): 40%</li>
 <li>Emerging: 0%</li>
 </ul>
+<p class="body-para">A starting point, not a recommendation — adjust to risk tolerance and tax situation.</p>
 </div>
 </section>
-<section class="slide slide--image-full" data-idx="13">
-<div class="slide-num">13 / 39</div>
+
+<section class="slide slide--image-full">
+<div class="slide-num"></div>
 <div class="img-full-wrap">
-<img class="img-full" src="assets/10000201000003EE000001BE3BDACDF0AF3E83DF.png" alt="" loading="lazy">
-<a class="img-source" href="https://www.ishares.com/us/products/239677/ishares-msci-russia-capped-etf" target="_blank" rel="noopener">https://www.ishares.com/us/products/239677/ishares-msci-russia-capped-etf</a>
+<img class="img-full" src="assets/10000201000003EE000001BE3BDACDF0AF3E83DF.png" alt="iShares MSCI Russia Capped ETF page" loading="lazy">
+<div class="img-caption">iShares MSCI Russia Capped ETF (ERUS) — fund page after the 2022 trading halt</div>
+<a class="img-source" href="https://www.ishares.com/us/products/239677/ishares-msci-russia-capped-etf" target="_blank" rel="noopener">ishares.com — ERUS</a>
 </div>
 </section>
-<section class="slide slide--content" data-idx="14">
-<div class="slide-num">14 / 39</div>
+
+<section class="slide slide--content">
+<div class="slide-num"></div>
 <img class="slide-logo" src="assets/10000201000002D1000002D18A33F23CA4313D7C.png" alt="" loading="lazy">
 <div class="content-wrap">
 <h2 class="slide-title">What happened?</h2>
+<p class="body-para">Following the Russian invasion of Ukraine in February 2022, the iShares MSCI Russia Capped ETF (ERUS) was caught between sanctions and market closures. NYSE Arca halted trading on March 4, 2022.</p>
 <ul class="bullets">
-<li>The iShares MSCI Russia Capped ETF (ERUS), managed by BlackRock, faced significant challenges following the Russian invasion of Ukraine in February 2022. Due to international sanctions and market disruptions, trading of ERUS was halted on March 4, 2022, by NYSE Arca, Inc.</li>
-<li>Impact on ERUS ETF Holders:</li>
-<li>Trading Halt and Illiquidity: With the suspension of trading, investors were unable to buy or sell shares of ERUS on the open market.</li>
-<li>Valuation Challenges: The fund&#x27;s holdings in Russian securities became illiquid and difficult to value accurately due to market closures and sanctions.</li>
-<li>Liquidation Process: BlackRock initiated a plan to liquidate the fund&#x27;s assets. However, the process was complicated by the inability to sell Russian securities. As a result, the fund remained in a state of suspension, and investors faced uncertainty regarding the recovery of their investments.</li>
+<li class="bullets__heading">Impact on ERUS holders</li>
+<li><strong>Trading halt &amp; illiquidity:</strong> investors couldn’t buy or sell shares on the open market.</li>
+<li><strong>Valuation challenges:</strong> Russian holdings became illiquid and difficult to value.</li>
+<li><strong>Liquidation:</strong> BlackRock initiated a wind-down, but the inability to sell Russian securities left the fund in a state of suspension.</li>
 </ul>
 </div>
 </section>
-<section class="slide slide--big-title" data-idx="15">
-<div class="slide-num">15 / 39</div>
+
+<section class="slide slide--big-title">
+<div class="slide-num"></div>
 <div class="big-wrap">
+<div class="big-section-meta">Part 2 / 3 — Size</div>
 <h2 class="big-title">Size</h2>
+<p class="big-teaser">Market-cap weighting, the small-cap premium, and what an index actually buys you.</p>
 </div>
 </section>
-<section class="slide slide--content" data-idx="16">
-<div class="slide-num">16 / 39</div>
+
+<section class="slide slide--content">
+<div class="slide-num"></div>
 <div class="content-wrap">
-<h2 class="slide-title">Market-Cap Weighting</h2>
+<h2 class="slide-title">Market-cap weighting</h2>
 <ul class="bullets">
-<li>Market-cap weighting means that the weight of each company in an index fund matches the weight of that company in the market</li>
-<li>This leads up owning a lot of large-cap stocks, because they make up most of the market</li>
-<li>There is nothing wrong with capturing market returns by investing in a market-cap weighted index fund</li>
+<li>The weight of each company in an index fund matches its weight in the market.</li>
+<li>You end up owning a lot of large-cap stocks, because they make up most of the market.</li>
+<li>There’s nothing wrong with capturing market returns through a market-cap-weighted index fund — it’s the default for good reasons.</li>
 </ul>
 </div>
 </section>
-<section class="slide slide--image-split" data-idx="17">
-<div class="slide-num">17 / 39</div>
+
+<section class="slide slide--image-split">
+<div class="slide-num"></div>
 <div class="split-wrap">
 <div class="split-text">
 <h2 class="slide-title">Remember this?</h2>
+<p class="body-line">Country weights in the global market-cap universe.</p>
 </div>
 <div class="split-image">
 <img src="assets/1000020100000800000007DB0BFEEE721758654D.png" alt="" loading="lazy">
 </div>
 </div>
 </section>
-<section class="slide slide--big-title" data-idx="18">
-<div class="slide-num">18 / 39</div>
+
+<section class="slide slide--big-title">
+<div class="slide-num"></div>
 <div class="big-wrap">
+<div class="big-section-meta">Plot twist</div>
 <h2 class="big-title">I lied…</h2>
+<p class="big-teaser">…that was large-cap only. Here’s what small-caps look like.</p>
 </div>
 </section>
-<section class="slide slide--image-split" data-idx="19">
-<div class="slide-num">19 / 39</div>
+
+<section class="slide slide--image-split">
+<div class="slide-num"></div>
 <div class="split-wrap">
 <div class="split-text">
 <h2 class="slide-title">Small cap</h2>
+<p class="body-line">Country weights look quite different once small-caps are added.</p>
 </div>
 <div class="split-image">
 <img src="assets/1000020100000800000007DB99B73C02B5A5FA8C.png" alt="" loading="lazy">
 </div>
 </div>
 </section>
-<section class="slide slide--image-split" data-idx="20">
-<div class="slide-num">20 / 39</div>
+
+<section class="slide slide--image-split">
+<div class="slide-num"></div>
 <div class="split-wrap">
 <div class="split-text">
-<h2 class="slide-title">Return of investment (log scale)</h2>
+<h2 class="slide-title">Return on investment (log scale)</h2>
+<p class="body-line">Long-run growth of $1 — small-caps vs. the broad market.</p>
 </div>
 <div class="split-image">
 <img src="assets/10000201000008000000047D3130F9DA4C3EFD19.png" alt="" loading="lazy">
 </div>
 </div>
 </section>
-<section class="slide slide--content" data-idx="21">
-<div class="slide-num">21 / 39</div>
+
+<section class="slide slide--content">
+<div class="slide-num"></div>
 <div class="content-wrap">
-<h2 class="slide-title">Small cap and value stocks</h2>
-<p class="body-para">There is evidence that certain types of stocks within the market should be expected to do even better over time. Two examples are small cap and value stocks.</p>
+<h2 class="slide-title">Small-cap and value stocks</h2>
+<p class="body-para">There is evidence that <em>certain types</em> of stocks within the market should be expected to do even better over time. Two examples are <em>small-cap</em> and <em>value</em> stocks.</p>
 </div>
 </section>
-<section class="slide slide--content" data-idx="22">
-<div class="slide-num">22 / 39</div>
+
+<section class="slide slide--big-title">
+<div class="slide-num"></div>
+<div class="big-wrap">
+<div class="big-section-meta">Part 3 / 3 — Factors</div>
+<h2 class="big-title">Risk factors</h2>
+<p class="big-teaser">Higher expected return doesn’t come for free — it’s compensation for a measurable risk.</p>
+</div>
+</section>
+
+<section class="slide slide--content">
+<div class="slide-num"></div>
 <div class="content-wrap">
-<h2 class="slide-title">Risks and Returns</h2>
+<h2 class="slide-title">Risks and returns</h2>
 <ul class="bullets">
-<li>Higher risk generally indicates higher expected returns</li>
-<li>Risk factors</li>
-<li>A risk factor in asset‐pricing is a measurable characteristic (or return series) that captures exposure to a particular source of systematic risk for which investors expect to be compensated.</li>
+<li>Higher risk generally implies higher expected return.</li>
+<li>A <em>risk factor</em> in asset pricing is a measurable characteristic — or return series — that captures exposure to a specific source of systematic risk for which investors expect to be compensated.</li>
 </ul>
 </div>
 </section>
-<section class="slide slide--content" data-idx="23">
-<div class="slide-num">23 / 39</div>
+
+<section class="slide slide--content">
+<div class="slide-num"></div>
 <div class="content-wrap">
-<h2 class="slide-title">Risk factors</h2>
+<h2 class="slide-title">Two portfolios</h2>
 <ul class="bullets">
-<li>Portfolio A: 50% cash and 50% stocks</li>
-<li>Portfolio B: 100% stocks</li>
-<li>They have different returns. How can it be quantified?</li>
+<li><strong>Portfolio A:</strong> 50% cash + 50% stocks</li>
+<li><strong>Portfolio B:</strong> 100% stocks</li>
+<li>They have different returns. <em>How can the difference be quantified?</em></li>
 </ul>
 </div>
 </section>
-<section class="slide slide--content" data-idx="24">
-<div class="slide-num">24 / 39</div>
+
+<section class="slide slide--content">
+<div class="slide-num"></div>
 <div class="content-wrap">
 <h2 class="slide-title">Market beta</h2>
 <ul class="bullets">
-<li>Market beta is the stock market risk factor</li>
-<li>A “beta” of 1.0 means your portfolio moves in lock-step with the market; a beta of 0.5 means it moves half as much</li>
-<li>If the stock market moves by x the portfolio moves by x*beta.</li>
+<li>Market beta is the stock-market risk factor.</li>
+<li>A beta of 1.0 means the portfolio moves in lock-step with the market; a beta of 0.5 means it moves half as much.</li>
+<li>If the market moves by <em>x</em>, the portfolio moves by <em>x · β</em>.</li>
+<li>So Portfolio A above (50% cash + 50% stocks) has β ≈ 0.5 — when the market moves +10%, it moves +5%.</li>
 </ul>
 </div>
 </section>
-<section class="slide slide--content" data-idx="25">
-<div class="slide-num">25 / 39</div>
-<div class="content-wrap">
-<h2 class="slide-title">Risk factors</h2>
-<ul class="bullets">
-<li>Portfolio A: 50% cash and 50% stocks</li>
-<li>Portfolio B: 100% stocks</li>
-<li>They have different returns. How can it be quantified?</li>
-</ul>
-</div>
-</section>
-<section class="slide slide--content" data-idx="26">
-<div class="slide-num">26 / 39</div>
-<div class="content-wrap">
-<h2 class="slide-title">Risk factors</h2>
-<ul class="bullets">
-<li>Portfolio A: 50% cash and 50% stocks</li>
-<li>Portfolio B: 100% stocks</li>
-<li>They have different returns. How can it be quantified?</li>
-<li>With beta = 0.5 if the market moves by 10% the portfolio moves by 5%</li>
-</ul>
-</div>
-</section>
-<section class="slide slide--content" data-idx="27">
-<div class="slide-num">27 / 39</div>
+
+<section class="slide slide--content">
+<div class="slide-num"></div>
 <div class="content-wrap">
 <h2 class="slide-title">Almost</h2>
-<p class="body-para">Market beta (the stock market risk factor) explains about two-thirds of the difference in returns between different portfolios.</p>
-<p class="body-para">E.g. if one portfolio delivered a 10% return and another delivered a 16% return, their relative exposure to market beta would explain about 4% (two-thirds) of that 6% return difference.</p>
+<p class="body-para">Market beta alone — the CAPM — explains <strong>about 70%</strong> of the difference in returns across well-diversified portfolios.</p>
+<p class="body-para">If one portfolio delivered 10% and another 16%, roughly two-thirds to three-quarters of that 6% gap is explained by their relative exposure to market beta. The rest needs another story.</p>
+<a class="src-link" href="https://www.bauer.uh.edu/rsusmel/phd/Fama-French_JFE93.pdf" target="_blank" rel="noopener">Source: Fama &amp; French (1993), JFE 33: 3–56, Table 4</a>
 </div>
 </section>
-<section class="slide slide--content" data-idx="28">
-<div class="slide-num">28 / 39</div>
+
+<section class="slide slide--content">
+<div class="slide-num"></div>
 <div class="content-wrap">
 <h2 class="slide-title">Alpha</h2>
-<p class="body-para">The idea of a portfolio manager bearing the same amount of risk while delivering a higher return is, of course, desirable. It’s too bad additional evidence has continued to whittle away at the likelihood that much, if any alpha actually exists. As such, alpha is like The Holy Grail of investing: Highly sought-after, but rarely seen.</p>
+<p class="body-para">A portfolio manager bearing the same amount of risk while delivering a higher return is, of course, desirable. It’s too bad the evidence has continued to whittle away at the likelihood that much — if any — alpha actually exists. Alpha is like the Holy Grail of investing: highly sought-after, but rarely seen.</p>
 </div>
 </section>
-<section class="slide slide--content" data-idx="29">
-<div class="slide-num">29 / 39</div>
+
+<section class="slide slide--content">
+<div class="slide-num"></div>
 <div class="content-wrap">
 <h2 class="slide-title">Three-Factor Model</h2>
-<p class="body-para">In 1992, Nobel laureate Eugene Fama and Professor Kenneth French pulled together various anomalies that seemed to leave a lot of room for investment alpha</p>
-<p class="body-para">They discovered additional risk factors, independent of general market risk</p>
-</div>
-</section>
-<section class="slide slide--content" data-idx="30">
-<div class="slide-num">30 / 39</div>
-<div class="content-wrap">
-<h2 class="slide-title">Three-Factor Model</h2>
-<p class="body-para">In 1992, Nobel laureate Eugene Fama and Professor Kenneth French pulled together various anomalies that seemed to leave a lot of room for investment alpha</p>
-<p class="body-para">They discovered additional risk factors, independent of general market risk</p>
-</div>
-</section>
-<section class="slide slide--content" data-idx="31">
-<div class="slide-num">31 / 39</div>
-<div class="content-wrap">
-<h2 class="slide-title">Three-Factor Model</h2>
+<p class="body-para">In 1992, Eugene Fama and Kenneth French pulled together the various anomalies that seemed to leave room for investment alpha — and showed they were better explained by additional <em>risk factors</em>, independent of the general market.</p>
 <ul class="bullets">
-<li>Fama and French proposed a three–factor model:</li>
-<li>Market risk (market beta)</li>
-<li>Size (small-cap stocks are riskier than large-cap stocks)</li>
-<li>Relative price (value stocks are riskier than growth stocks)</li>
+<li><strong>Market</strong> (MKT) — market beta</li>
+<li><strong>Size</strong> (SMB, <em>small minus big</em>) — small-cap stocks are riskier than large-cap stocks</li>
+<li><strong>Value</strong> (HML, <em>high minus low</em>) — value stocks (high book-to-market) are riskier than growth stocks</li>
 </ul>
 </div>
 </section>
-<section class="slide slide--content" data-idx="32">
-<div class="slide-num">32 / 39</div>
+
+<section class="slide slide--content">
+<div class="slide-num"></div>
 <div class="content-wrap">
-<h2 class="slide-title">I.e they did not simply offer higher returns without any increased risk!</h2>
+<h2 class="slide-title">Not free returns — paid risk</h2>
+<p class="body-para">The three-factor model showed that the higher average return from small-cap and value stocks is <em>not</em> active alpha. It’s compensation for exposure to different kinds of risk, independent of the general market.</p>
+</div>
+</section>
+
+<section class="slide slide--content">
+<div class="slide-num"></div>
+<div class="content-wrap">
+<h2 class="slide-title">How much variation does each model explain?</h2>
+<div class="factor-bars">
+<div class="factor-bar">
+  <span class="lbl">Market alone (CAPM)</span>
+  <span class="track"><span class="fill" style="width:70%"></span></span>
+  <span class="pct">~70%</span>
+</div>
+<div class="factor-bar">
+  <span class="lbl">+ Size + Value (3-factor)</span>
+  <span class="track"><span class="fill" style="width:70%"></span><span class="fill is-extra" style="position:absolute;left:70%;width:20%;top:0;height:100%"></span></span>
+  <span class="pct">~90%</span>
+</div>
+</div>
+<p class="body-para">Across the 25 size/BE-ME-sorted portfolios in Fama &amp; French (1993), CAPM gives an average R² ≈ 0.70 (range 0.61–0.91). Adding SMB and HML brings R² ≥ 0.90 for 21 of 25 portfolios; the lowest is 0.83. <em>Jointly</em>, size and value add roughly 20 percentage points.</p>
+<p class="body-para"><em>Note:</em> the paper reports SMB and HML jointly because the two factors are correlated and entangled with the market — a clean per-factor split isn’t in the source, so we don’t invent one.</p>
+<a class="src-link" href="https://www.bauer.uh.edu/rsusmel/phd/Fama-French_JFE93.pdf" target="_blank" rel="noopener">Source: Fama &amp; French (1993), JFE 33: 3–56, Tables 4 &amp; 6</a>
+</div>
+</section>
+
+<section class="slide slide--content">
+<div class="slide-num"></div>
+<div class="content-wrap">
+<h2 class="slide-title">Average annual return premiums (US, 1926–2018)</h2>
 <ul class="bullets">
-<li>The three factor model showed that higher average return from small-cap and value stocks were not a result of active alpha!</li>
-<li>The model showed that they were exposed to different kinds risk, independent of general market risk</li>
-<li>The three factor model explains 90% of the difference in return between portfolios</li>
+<li><strong>Market</strong> (MKT) — market return minus 1-month T-bills: <strong>6.28% / yr</strong></li>
+<li><strong>Size</strong> (SMB) — small minus big: <strong>1.88% / yr</strong></li>
+<li><strong>Value</strong> (HML) — high book-to-market minus low: <strong>0.78% / yr</strong></li>
+</ul>
+<p class="body-para">These are <em>return</em> premiums, not the explanatory-power figures from the previous slide — different things.</p>
+<a class="src-link" href="https://pwlcapital.com/common-sense-confession-unfaithful-market-cap-weighting/" target="_blank" rel="noopener">Source: PWL Capital — Common-sense confessions of an unfaithful market-cap weighter (Felix)</a>
+</div>
+</section>
+
+<section class="slide slide--content">
+<div class="slide-num"></div>
+<div class="content-wrap">
+<h2 class="slide-title">If you’re in a market-cap-weighted index fund…</h2>
+<p class="body-para">…you won’t receive those extra expected small-cap and value premiums. To get them, you need a fund that explicitly tilts toward those factors.</p>
+</div>
+</section>
+
+<section class="slide slide--content">
+<div class="slide-num"></div>
+<div class="content-wrap">
+<h2 class="slide-title">Premiums (global, since 1990)</h2>
+<ul class="bullets">
+<li>Market premium: 2.31% / yr</li>
+<li>Size premium: 0.08% / yr</li>
+<li>Value premium: 4.29% / yr</li>
+<li>All positive on average — but not equally so, and the size premium in particular has been small.</li>
 </ul>
 </div>
 </section>
-<section class="slide slide--content" data-idx="33">
-<div class="slide-num">33 / 39</div>
+
+<section class="slide slide--content">
+<div class="slide-num"></div>
 <div class="content-wrap">
-<h2 class="slide-title">Risk premiums</h2>
-<ul class="bullets">
-<li>Market beta is the return of the market (a market-cap weighted index), minus the return of one-month Treasury bills (a risk-free asset). From July 1926–December 2018, the S. market premium was 6.28% per year on average.</li>
-<li>Size is measured by the return of small stocks minus the returns of large stock (SMB, or small minus big). For the same time period, the U.S. size premium was 1.88% per year on average.</li>
-<li>Value is measured by stocks with a high book value relative to market price, minus stocks with a low book value relative to market price. That’s why it is referred to in the research as HML, or high minus low. For the same time period, the U.S. value premium was 78% per year on average.</li>
-</ul>
+<h2 class="slide-title">The problem with small-cap stocks</h2>
+<p class="body-para">Small-cap <em>growth</em> stocks with weak profitability have made small-caps as a whole look bad on average.</p>
+<p class="body-para">If you take those out and focus on small-cap <em>value</em> stocks (which the right index fund will let you do), the picture looks much better.</p>
 </div>
 </section>
-<section class="slide slide--content" data-idx="34">
-<div class="slide-num">34 / 39</div>
-<div class="content-wrap">
-<h2 class="slide-title">If you’re invested in a market-cap weighted index fund,</h2>
-<p class="body-para">you won’t receive those extra expected small-cap and value premiums.</p>
-</div>
-</section>
-<section class="slide slide--content" data-idx="35">
-<div class="slide-num">35 / 39</div>
-<div class="content-wrap">
-<h2 class="slide-title">Premiums</h2>
-<ul class="bullets">
-<li>From 1990, per year on average globally:</li>
-<li>the market premium has been 2.31%</li>
-<li>the size premium has been 0.08%</li>
-<li>the value premium has been 4.29%</li>
-<li>In all cases, the premiums are positive, though clearly, some are more positive than others.</li>
-</ul>
-</div>
-</section>
-<section class="slide slide--content" data-idx="36">
-<div class="slide-num">36 / 39</div>
-<div class="content-wrap">
-<h2 class="slide-title">The Problem with Small Cap Stocks</h2>
-<p class="body-para">Small-cap growth stocks with weak profitability have made small-caps as a whole look bad</p>
-<p class="body-para">If you take them out and focus on small-cap value stocks (which you can do with the right index fund), small-caps look much better.</p>
-</div>
-</section>
-<section class="slide slide--image-split" data-idx="37">
-<div class="slide-num">37 / 39</div>
+
+<section class="slide slide--image-split">
+<div class="slide-num"></div>
 <div class="split-wrap">
 <div class="split-text">
 <h2 class="slide-title">Ben Felix allocation</h2>
-<p class="body-line">42% U.S. Stock Market</p>
-<p class="body-line">24% International (ex-US) Developed Markets</p>
-<p class="body-line">12% Emerging Markets</p>
-<p class="body-line">14% U.S. Small Cap Value</p>
-<p class="body-line">8% International (ex-US) Small Cap Value</p>
+<p class="body-line">42% U.S. stock market</p>
+<p class="body-line">24% International (ex-US) developed markets</p>
+<p class="body-line">12% Emerging markets</p>
+<p class="body-line">14% U.S. small-cap value</p>
+<p class="body-line">8% International (ex-US) small-cap value</p>
 </div>
 <div class="split-image">
 <img src="assets/1000000000000400000002629607BAE5F4297336.png" alt="" loading="lazy">
 </div>
 </div>
 </section>
-<section class="slide slide--image-split" data-idx="38">
-<div class="slide-num">38 / 39</div>
+
+<section class="slide slide--image-split">
+<div class="slide-num"></div>
 <div class="split-wrap">
 <div class="split-text">
 <h2 class="slide-title">My personal allocation</h2>
 <p class="body-line">US large 29%</p>
 <p class="body-line">Global large 24%</p>
-<p class="body-line">US Small 14%</p>
-<p class="body-line">GLOBAL Small 9%</p>
-<p class="body-line">SMH 10%</p>
+<p class="body-line">US small 14%</p>
+<p class="body-line">Global small 9%</p>
+<p class="body-line">SMH (semis) 10%</p>
 </div>
 <div class="split-image">
 <img src="assets/10000000000005450000049CFE2CB1609C1DF89D.png" alt="" loading="lazy">
 </div>
 </div>
 </section>
-<section class="slide slide--image-split" data-idx="39">
-<div class="slide-num">39 / 39</div>
+
+<section class="slide slide--image-split">
+<div class="slide-num"></div>
 <div class="split-wrap">
 <div class="split-text">
 <h2 class="slide-title">Comparison</h2>
+<p class="body-line">Side-by-side of the two allocations.</p>
 </div>
 <div class="split-image">
 <img src="assets/1000020100000800000002DDB696E6BFF118E3DC.png" alt="" loading="lazy">
 </div>
 </div>
 </section>
+
+<section class="slide slide--end">
+<div class="slide-num"></div>
+<div class="end-wrap">
+<div class="end-eyebrow">End of Part 3 of 3</div>
+<h2 class="end-title">That’s the series.</h2>
+<p class="body-para">Three decks: foundations, asset classes, equity allocation. Educational only — not financial advice. Thanks for sitting through it.</p>
+<div class="end-nav">
+<a href="../2025_05_22/index.html">
+  <span class="label">← Previous</span>
+  <span class="title">Assets</span>
+  <span class="meta">From safer to riskier · May 22, 2025</span>
+</a>
+<a href="../2026_04_25/index.html">
+  <span class="label">Next →</span>
+  <span class="title">Indexing, Liquidity, and the SpaceX Question</span>
+  <span class="meta">Part 4 · April 25, 2026</span>
+</a>
+<a href="../index.html">
+  <span class="label">↺ Series</span>
+  <span class="title">Back to series index</span>
+  <span class="meta">All four decks</span>
+</a>
+</div>
+</div>
+</section>
 </main>
 <div class="progress"><div class="progress__bar"></div></div>
-<div class="help"><kbd>←</kbd> <kbd>→</kbd> navigate</div>
+<div class="help"><kbd>←</kbd> <kbd>→</kbd> navigate · <kbd>P</kbd> print</div>
 <script>
 class Deck{
   constructor(){
     this.slides=[...document.querySelectorAll('.slide')];
     this.idx=0;this.bar=document.querySelector('.progress__bar');
+    this.numberSlides();
     this.show(0);
     addEventListener('keydown',e=>{
       if(['ArrowRight','PageDown',' '].includes(e.key)){e.preventDefault();this.next()}
       else if(['ArrowLeft','PageUp'].includes(e.key)){e.preventDefault();this.prev()}
       else if(e.key==='Home'){this.show(0)}
       else if(e.key==='End'){this.show(this.slides.length-1)}
+      else if(e.key==='p'||e.key==='P'){window.print()}
     });
     let wheelLock=false;
     addEventListener('wheel',e=>{
@@ -641,6 +758,14 @@ class Deck{
       const dx=e.changedTouches[0].clientX-sx;
       if(Math.abs(dx)>40){dx<0?this.next():this.prev()}
     },{passive:true});
+  }
+  numberSlides(){
+    const total=this.slides.length;
+    this.slides.forEach((s,k)=>{
+      const n=s.querySelector('.slide-num');
+      if(n)n.textContent=String(k+1).padStart(2,'0')+' / '+String(total).padStart(2,'0');
+      s.dataset.idx=k+1;
+    });
   }
   show(i){
     i=Math.max(0,Math.min(this.slides.length-1,i));

@@ -29,7 +29,6 @@ body{
     radial-gradient(ellipse at 110% 110%, #2a1d10 0%, transparent 55%),
     var(--bg);
 }
-/* deck container */
 .deck{position:relative;width:100vw;height:100vh;height:100dvh;overflow:hidden}
 .slide{
   position:absolute;inset:0;
@@ -43,8 +42,6 @@ body{
 }
 .slide.is-active{opacity:1;visibility:visible;transform:none}
 .slide.is-prev{transform:translateY(-24px)}
-
-/* shared chrome */
 .slide-num{
   position:absolute;top:1.4rem;right:1.6rem;
   font-family:var(--mono);font-size:.72rem;letter-spacing:.18em;
@@ -59,8 +56,6 @@ body{
   content:'M·B';position:absolute;left:1.6rem;bottom:1.2rem;
   font-family:var(--serif);font-style:italic;font-size:.78rem;color:var(--ink-dim);letter-spacing:.1em;
 }
-
-/* cover */
 .cover-wrap{display:flex;flex-direction:column;gap:1.4rem;max-width:min(90vw,1100px)}
 .eyebrow{
   font-family:var(--mono);font-size:.78rem;letter-spacing:.32em;color:var(--gold);
@@ -79,17 +74,14 @@ body{
   margin-top:.6rem;
 }
 .cover-meta{font-family:var(--mono);font-size:.72rem;letter-spacing:.18em;color:var(--ink-dim);margin-top:.3rem}
-
-/* disclaimer */
 .disclaimer-wrap{max-width:min(80ch,90vw);display:flex;flex-direction:column;gap:1.2rem}
 .disclaimer-wrap .eyebrow{color:var(--gold-soft);font-size:.85rem}
 .disclaimer-text{
   font-family:var(--serif);font-size:clamp(1.1rem,2vw,1.7rem);line-height:1.55;
   color:var(--ink);font-weight:300;
 }
-
-/* big title */
-.big-wrap{display:flex;align-items:center;height:100%;width:100%}
+.big-wrap{display:flex;flex-direction:column;align-items:flex-start;justify-content:center;height:100%;width:100%;gap:.8rem}
+.big-section-meta{font-family:var(--mono);font-size:.76rem;letter-spacing:.28em;color:var(--gold);text-transform:uppercase}
 .big-title{
   font-family:var(--serif);font-style:italic;font-weight:300;
   font-size:clamp(3rem,11vw,9.5rem);line-height:1.15;letter-spacing:-.02em;
@@ -99,8 +91,7 @@ body{
   -webkit-text-fill-color:transparent;
   display:inline-block;max-width:100%;
 }
-
-/* content */
+.big-teaser{font-family:var(--serif);font-style:italic;color:var(--ink-dim);font-size:clamp(1rem,1.6vw,1.4rem);max-width:60ch;font-weight:300}
 .content-wrap{display:flex;flex-direction:column;gap:1.4rem;max-width:min(75ch,90vw)}
 .slide-title{
   font-family:var(--serif);font-weight:400;font-style:italic;
@@ -122,14 +113,27 @@ body{
 .bullets li::before{
   content:'';position:absolute;left:0;top:.7em;width:.7rem;height:1px;background:var(--gold);
 }
+.bullets li.bullets__sub{padding-left:3rem;color:var(--ink-dim);font-size:clamp(.9rem,1.2vw,1.08rem)}
+.bullets li.bullets__sub::before{left:1.6rem;width:.5rem;background:var(--ink-dim)}
+.bullets li.bullets__heading{padding-left:0;font-family:var(--serif);font-style:italic;font-size:clamp(1rem,1.4vw,1.25rem);color:var(--gold-soft);margin-top:.4rem}
+.bullets li.bullets__heading::before{display:none}
 .src-link{
   font-family:var(--mono);font-size:.74rem;letter-spacing:.06em;color:var(--ink-dim);
   text-decoration:none;border-bottom:1px dashed var(--line);padding-bottom:2px;
   align-self:flex-start;word-break:break-all;max-width:90vw;
 }
 .src-link:hover{color:var(--gold);border-color:var(--gold)}
-
-/* image full */
+.btn-row{display:flex;flex-direction:column;gap:.8rem;margin-top:.4rem}
+.btn-link{
+  font-family:var(--sans);font-size:clamp(.92rem,1.2vw,1.05rem);
+  display:inline-flex;align-items:center;gap:.6rem;
+  padding:.7rem 1rem;border:1px solid var(--line);border-radius:4px;
+  background:rgba(255,255,255,.015);color:var(--ink);text-decoration:none;
+  transition:all .25s ease;align-self:flex-start;max-width:100%;
+}
+.btn-link:hover{border-color:var(--gold);background:rgba(212,162,76,.06);transform:translateX(3px)}
+.btn-link .btn-tag{font-family:var(--mono);font-size:.7rem;letter-spacing:.18em;color:var(--gold);text-transform:uppercase}
+.btn-link .btn-arrow{margin-left:auto;color:var(--ink-dim)}
 .img-full-wrap{
   display:flex;flex-direction:column;align-items:center;justify-content:center;
   width:100%;height:100%;gap:.8rem;
@@ -141,15 +145,13 @@ body{
 }
 .img-caption{
   font-family:var(--serif);font-style:italic;color:var(--ink-dim);
-  font-size:clamp(.95rem,1.3vw,1.2rem);
+  font-size:clamp(.95rem,1.3vw,1.2rem);max-width:80ch;text-align:center;
 }
 .img-source{
   font-family:var(--mono);font-size:.7rem;color:var(--ink-dim);text-decoration:none;
   letter-spacing:.04em;word-break:break-all;max-width:80vw;text-align:center;
 }
 .img-source:hover{color:var(--gold)}
-
-/* split */
 .split-wrap{
   display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.2fr);
   gap:clamp(1.2rem,3vw,3rem);align-items:center;height:100%;
@@ -165,16 +167,28 @@ body{
   border:1px solid var(--line);border-radius:6px;background:#fff;
   box-shadow:0 24px 60px -25px rgba(0,0,0,.7);
 }
-
-/* small logos pinned next to the slide title */
 .slide-logo{
   position:absolute;top:clamp(1.4rem,3.5vw,3.2rem);right:clamp(1.6rem,5vw,5rem);
   width:clamp(46px,5vw,76px);height:clamp(46px,5vw,76px);
   object-fit:contain;opacity:.85;z-index:3;
 }
 .slide--cover .slide-logo,.slide--disclaimer .slide-logo{display:none}
-
-/* progress + nav */
+.end-wrap{display:flex;flex-direction:column;gap:1.6rem;max-width:min(80ch,90vw)}
+.end-eyebrow{font-family:var(--mono);font-size:.78rem;letter-spacing:.32em;color:var(--gold);text-transform:uppercase}
+.end-title{font-family:var(--serif);font-style:italic;font-weight:300;font-size:clamp(2.4rem,6vw,4.6rem);line-height:1.05;letter-spacing:-.02em}
+.end-nav{display:flex;flex-wrap:wrap;gap:1rem;margin-top:.8rem}
+.end-nav a{
+  flex:1 1 320px;min-width:280px;
+  display:flex;flex-direction:column;gap:.4rem;
+  padding:1.2rem 1.4rem;border:1px solid var(--line);border-radius:6px;
+  text-decoration:none;color:var(--ink);background:rgba(255,255,255,.015);
+  transition:all .25s ease;
+}
+.end-nav a:hover{border-color:var(--gold);background:rgba(212,162,76,.06);transform:translateY(-3px)}
+.end-nav .label{font-family:var(--mono);font-size:.7rem;letter-spacing:.2em;color:var(--gold);text-transform:uppercase}
+.end-nav .title{font-family:var(--serif);font-style:italic;font-size:1.4rem}
+.end-nav .meta{font-family:var(--mono);font-size:.7rem;color:var(--ink-dim);letter-spacing:.1em}
+.end-nav a.is-disabled{opacity:.45;pointer-events:none}
 .progress{
   position:fixed;bottom:0;left:0;right:0;height:2px;background:transparent;z-index:50;
 }
@@ -191,243 +205,362 @@ body{
   font-family:var(--mono);font-size:.68rem;background:var(--bg-2);
   border:1px solid var(--line);padding:.05rem .3rem;border-radius:3px;color:var(--ink);
 }
-
-/* enter animations */
 @media (prefers-reduced-motion: no-preference){
   .slide.is-active .cover-title,
   .slide.is-active .big-title,
-  .slide.is-active .slide-title{animation:rise .8s cubic-bezier(.2,.7,.2,1) both}
+  .slide.is-active .slide-title,
+  .slide.is-active .end-title{animation:rise .8s cubic-bezier(.2,.7,.2,1) both}
   .slide.is-active .body-para,
   .slide.is-active .bullets li,
   .slide.is-active .body-line,
+  .slide.is-active .btn-link,
   .slide.is-active .disclaimer-text{animation:rise .7s ease both;animation-delay:.18s}
-  .slide.is-active .bullets li:nth-child(1){animation-delay:.18s}
-  .slide.is-active .bullets li:nth-child(2){animation-delay:.26s}
-  .slide.is-active .bullets li:nth-child(3){animation-delay:.34s}
-  .slide.is-active .bullets li:nth-child(4){animation-delay:.42s}
+  .slide.is-active .bullets li:nth-child(1),
+  .slide.is-active .btn-link:nth-child(1){animation-delay:.18s}
+  .slide.is-active .bullets li:nth-child(2),
+  .slide.is-active .btn-link:nth-child(2){animation-delay:.26s}
+  .slide.is-active .bullets li:nth-child(3),
+  .slide.is-active .btn-link:nth-child(3){animation-delay:.34s}
+  .slide.is-active .bullets li:nth-child(4),
+  .slide.is-active .btn-link:nth-child(4){animation-delay:.42s}
   .slide.is-active .bullets li:nth-child(5){animation-delay:.50s}
   .slide.is-active .bullets li:nth-child(6){animation-delay:.58s}
   .slide.is-active img{animation:fade .9s ease both;animation-delay:.1s}
 }
 @keyframes rise{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:none}}
 @keyframes fade{from{opacity:0}to{opacity:1}}
-
 @media (prefers-reduced-motion: reduce){
   .slide{transition:opacity .15s linear}
   *{animation:none!important}
+}
+@media print{
+  html,body{overflow:visible;height:auto;background:#fff;color:#111}
+  body{background:#fff}
+  .deck{position:static;width:auto;height:auto;overflow:visible}
+  .slide{
+    position:relative;inset:auto;width:100%;height:100vh;
+    page-break-after:always;break-after:page;
+    opacity:1!important;visibility:visible!important;transform:none!important;
+    color:#111;background:#fff;
+  }
+  .slide:last-child{page-break-after:auto;break-after:auto}
+  .slide::before,.slide::after,.slide-num,.help,.progress{display:none!important}
+  .cover-title,.big-title,.slide-title,.end-title{
+    color:#111!important;background:none!important;-webkit-text-fill-color:#111!important;
+  }
+  .body-para,.bullets li,.body-line,.disclaimer-text,.cover-sub,.img-caption,.eyebrow,.cover-meta,.big-section-meta,.big-teaser,.end-eyebrow,.btn-link,.src-link,.img-source{color:#111!important}
+  .img-full,.split-image img{box-shadow:none;border-color:#ccc;max-height:80vh}
+  *{animation:none!important;transition:none!important}
 }
 </style>
 </head>
 <body>
 <main class="deck">
-<section class="slide slide--cover" data-idx="1">
-<div class="slide-num">01 / 26</div>
+<section class="slide slide--cover">
+<div class="slide-num"></div>
 <img class="slide-logo" src="assets/10000201000001930000008D107DE959C2A820B3.png" alt="" loading="lazy">
 <div class="cover-wrap">
 <div class="eyebrow">Marco Barbone</div>
 <h1 class="cover-title">Investing &amp; Trading</h1>
 <div class="cover-sub">Foundations · May 8, 2025</div>
 <div class="cover-rule"></div>
-<div class="cover-meta">An educational deck · not financial advice</div>
+<div class="cover-meta">Part 1 of 3 · An educational deck · not financial advice</div>
+<a class="cover-license" href="https://creativecommons.org/licenses/by/4.0/" target="_blank" rel="noopener" style="font-family:var(--mono);font-size:.7rem;letter-spacing:.12em;color:var(--ink-dim);text-decoration:none;border-bottom:1px dashed var(--line);padding-bottom:2px;align-self:flex-start;margin-top:.6rem">CC BY 4.0 · share &amp; adapt with credit</a>
 </div>
 </section>
-<section class="slide slide--disclaimer" data-idx="2">
-<div class="slide-num">02 / 26</div>
+
+<section class="slide slide--disclaimer">
+<div class="slide-num"></div>
 <div class="disclaimer-wrap">
 <div class="eyebrow">Disclaimer</div>
 <p class="disclaimer-text">The information provided is for educational and informational purposes only and should not be considered financial or investment advice. Always consult with a qualified financial advisor or professional before making any investment decisions.</p>
 </div>
 </section>
-<section class="slide slide--content" data-idx="3">
-<div class="slide-num">03 / 26</div>
+
+<section class="slide slide--content">
+<div class="slide-num"></div>
 <div class="content-wrap">
 <h2 class="slide-title">Definitions</h2>
-<p class="body-para">Investing: A long-term strategy of purchasing assets—such as stocks or real estate—and holding them over time, regardless of short-term market fluctuations, with the goal of building wealth gradually.</p>
-<p class="body-para">Trading: The buying and selling of financial assets like stocks, currencies, or commodities, typically with the goal of making short-term profits from price changes.</p>
+<p class="body-para"><em>Investing:</em> A long-term strategy of purchasing assets — such as stocks or real estate — and holding them over time, regardless of short-term market fluctuations, with the goal of building wealth gradually.</p>
+<p class="body-para"><em>Trading:</em> The buying and selling of financial assets like stocks, currencies, or commodities, typically with the goal of making short-term profits from price changes.</p>
 </div>
 </section>
-<section class="slide slide--big-title" data-idx="4">
-<div class="slide-num">04 / 26</div>
+
+<section class="slide slide--big-title">
+<div class="slide-num"></div>
 <div class="big-wrap">
+<div class="big-section-meta">Part 1 / 3 — Investing</div>
 <h2 class="big-title">Investing</h2>
+<p class="big-teaser">What it is, why inflation makes it necessary, and how to start.</p>
 </div>
 </section>
-<section class="slide slide--image-full" data-idx="5">
-<div class="slide-num">05 / 26</div>
+
+<section class="slide slide--image-full">
+<div class="slide-num"></div>
 <div class="img-full-wrap">
-<img class="img-full" src="assets/1000020100000378000002304E78D612F03D17AE.png" alt="" loading="lazy">
-<div class="img-caption">S&amp;P</div>
-<a class="img-source" href="https://www.macrotrends.net/2324/sp-500-historical-chart-data" target="_blank" rel="noopener">https://www.macrotrends.net/2324/sp-500-historical-chart-data</a>
+<img class="img-full" src="assets/1000020100000378000002304E78D612F03D17AE.png" alt="S&amp;P 500 long-run price chart" loading="lazy">
+<div class="img-caption">S&amp;P 500 — long-run price history</div>
+<a class="img-source" href="https://www.macrotrends.net/2324/sp-500-historical-chart-data" target="_blank" rel="noopener">macrotrends.net/2324/sp-500-historical-chart-data</a>
 </div>
 </section>
-<section class="slide slide--image-full" data-idx="6">
-<div class="slide-num">06 / 26</div>
+
+<section class="slide slide--image-full">
+<div class="slide-num"></div>
 <div class="img-full-wrap">
-<img class="img-full" src="assets/10000201000003780000023079DF99A60B8EF661.png" alt="" loading="lazy">
-<div class="img-caption">S&amp;P</div>
+<img class="img-full" src="assets/10000201000003780000023079DF99A60B8EF661.png" alt="S&amp;P 500 inflation-adjusted chart" loading="lazy">
+<div class="img-caption">S&amp;P 500 — same series, on an alternative scale</div>
+<a class="img-source" href="https://www.macrotrends.net/2324/sp-500-historical-chart-data" target="_blank" rel="noopener">macrotrends.net/2324/sp-500-historical-chart-data</a>
 </div>
 </section>
-<section class="slide slide--content" data-idx="7">
-<div class="slide-num">07 / 26</div>
+
+<section class="slide slide--content">
+<div class="slide-num"></div>
 <div class="content-wrap">
 <h2 class="slide-title">Inflation</h2>
 <p class="body-para">The rate at which the general level of prices for goods and services rises over time, reducing the purchasing power of money.</p>
 </div>
 </section>
-<section class="slide slide--image-full" data-idx="8">
-<div class="slide-num">08 / 26</div>
+
+<section class="slide slide--image-full">
+<div class="slide-num"></div>
 <div class="img-full-wrap">
-<img class="img-full" src="assets/10000000000003490000024284E66B772223BA74.png" alt="" loading="lazy">
-<a class="img-source" href="https://www.crews.bank/charts/inflation-vs-stocks" target="_blank" rel="noopener">https://www.crews.bank/charts/inflation-vs-stocks</a>
+<img class="img-full" src="assets/10000000000003490000024284E66B772223BA74.png" alt="Inflation vs stocks" loading="lazy">
+<div class="img-caption">Inflation vs. stocks — long-horizon comparison</div>
+<a class="img-source" href="https://www.crews.bank/charts/inflation-vs-stocks" target="_blank" rel="noopener">crews.bank/charts/inflation-vs-stocks</a>
 </div>
 </section>
-<section class="slide slide--image-full" data-idx="9">
-<div class="slide-num">09 / 26</div>
+
+<section class="slide slide--image-full">
+<div class="slide-num"></div>
 <div class="img-full-wrap">
-<img class="img-full" src="assets/1000020100000447000002B0817DFFB1CD09DFB9.png" alt="" loading="lazy">
-<a class="img-source" href="https://www.investopedia.com/ask/answers/12/inflation-interest-rate-relationship.asp" target="_blank" rel="noopener">https://www.investopedia.com/ask/answers/12/inflation-interest-rate-relationship.asp</a>
+<img class="img-full" src="assets/1000020100000447000002B0817DFFB1CD09DFB9.png" alt="Inflation vs interest rate" loading="lazy">
+<div class="img-caption">Inflation and interest rates — the policy lever</div>
+<a class="img-source" href="https://www.investopedia.com/ask/answers/12/inflation-interest-rate-relationship.asp" target="_blank" rel="noopener">investopedia.com — inflation/interest-rate relationship</a>
 </div>
 </section>
-<section class="slide slide--big-title" data-idx="10">
-<div class="slide-num">10 / 26</div>
+
+<section class="slide slide--big-title">
+<div class="slide-num"></div>
 <div class="big-wrap">
+<div class="big-section-meta">Part 2 / 3 — How?</div>
 <h2 class="big-title">How?</h2>
+<p class="big-teaser">Brokers, paper-money practice, and where to start without paying for it.</p>
 </div>
 </section>
-<section class="slide slide--content" data-idx="11">
-<div class="slide-num">11 / 26</div>
+
+<section class="slide slide--content">
+<div class="slide-num"></div>
 <div class="content-wrap">
 <h2 class="slide-title">Resources</h2>
-<ul class="bullets">
-<li>Lowest fees:</li>
-<li>Robinhood: https://robinhood.com/creditcard?referral_code=e716559b</li>
-<li>Practise account with paper money:</li>
-<li>IKBR: https://ibkr.com/referral/marco4632</li>
-</ul>
+<div class="btn-row">
+<a class="btn-link" href="https://robinhood.com/creditcard?referral_code=e716559b" target="_blank" rel="noopener noreferrer">
+  <span class="btn-tag">Lowest fees</span>
+  <span>Robinhood</span>
+  <span class="btn-arrow">↗</span>
+</a>
+<a class="btn-link" href="https://ibkr.com/referral/marco4632" target="_blank" rel="noopener noreferrer">
+  <span class="btn-tag">Practice / paper money</span>
+  <span>Interactive Brokers (IBKR)</span>
+  <span class="btn-arrow">↗</span>
+</a>
+</div>
 </div>
 </section>
-<section class="slide slide--big-title" data-idx="12">
-<div class="slide-num">12 / 26</div>
+
+<section class="slide slide--big-title">
+<div class="slide-num"></div>
 <div class="big-wrap">
+<div class="big-section-meta">Part 3 / 3 — Funds</div>
 <h2 class="big-title">Funds</h2>
+<p class="big-teaser">Index funds, mutual funds, ETFs — and a look at why fees and incentives matter.</p>
 </div>
 </section>
-<section class="slide slide--content" data-idx="13">
-<div class="slide-num">13 / 26</div>
+
+<section class="slide slide--content">
+<div class="slide-num"></div>
 <div class="content-wrap">
 <h2 class="slide-title">Funds</h2>
-<p class="body-para">Index Fund: A type of investment fund designed to track the performance of a specific market index, such as the S&amp;P 500. It’s passively managed, typically has low fees, and aims to mirror the returns of the index it follows.</p>
-<p class="body-para">Mutual Fund: An investment fund that pools money from many investors to buy a diversified portfolio of stocks, bonds, or other securities. It is actively or passively managed by professionals, and investors buy shares in the fund rather than owning the underlying assets directly.</p>
+<p class="body-para"><em>Index Fund:</em> A type of investment fund designed to track the performance of a specific market index, such as the S&amp;P 500. It’s passively managed, typically has low fees, and aims to mirror the returns of the index it follows.</p>
+<p class="body-para"><em>Mutual Fund:</em> An investment fund that pools money from many investors to buy a diversified portfolio of stocks, bonds, or other securities. It is actively or passively managed by professionals, and investors buy shares in the fund rather than owning the underlying assets directly.</p>
 </div>
 </section>
-<section class="slide slide--content" data-idx="14">
-<div class="slide-num">14 / 26</div>
+
+<section class="slide slide--content">
+<div class="slide-num"></div>
 <div class="content-wrap">
 <h2 class="slide-title">JPMorgan Large Cap Growth Fund</h2>
-<p class="body-para">JPMorgan Large Cap Growth Fund-R6 | JLGMX | J.P. Morgan Asset Management</p>
-<p class="body-para">SEEGX – Performance – JPMorgan Large Cap Growth I | Morningstar</p>
+<div class="btn-row">
+<a class="btn-link" href="https://am.jpmorgan.com/us/en/asset-management/adv/products/jpmorgan-large-cap-growth-fund-r6-4812c1814" target="_blank" rel="noopener noreferrer">
+  <span class="btn-tag">Fund page</span>
+  <span>JLGMX — JPMorgan (R6 share class)</span>
+  <span class="btn-arrow">↗</span>
+</a>
+<a class="btn-link" href="https://www.morningstar.com/funds/xnas/seegx/performance" target="_blank" rel="noopener noreferrer">
+  <span class="btn-tag">Performance</span>
+  <span>SEEGX — Morningstar (I share class)</span>
+  <span class="btn-arrow">↗</span>
+</a>
+</div>
 </div>
 </section>
-<section class="slide slide--image-full" data-idx="15">
-<div class="slide-num">15 / 26</div>
+
+<section class="slide slide--image-full">
+<div class="slide-num"></div>
 <div class="img-full-wrap">
-<img class="img-full" src="assets/10000201000003E800000258E50B2F3C7B456E6B.png" alt="" loading="lazy">
+<img class="img-full" src="assets/10000201000003E800000258E50B2F3C7B456E6B.png" alt="JLGMX fund snapshot" loading="lazy">
+<div class="img-caption">JPMorgan Large Cap Growth (JLGMX) — fund overview</div>
 </div>
 </section>
-<section class="slide slide--image-full" data-idx="16">
-<div class="slide-num">16 / 26</div>
+
+<section class="slide slide--image-full">
+<div class="slide-num"></div>
 <div class="img-full-wrap">
-<img class="img-full" src="assets/10000201000003E800000258287B39670CE1F71B.png" alt="" loading="lazy">
+<img class="img-full" src="assets/10000201000003E800000258287B39670CE1F71B.png" alt="JLGMX fees and expense ratio" loading="lazy">
+<div class="img-caption">JPMorgan Large Cap Growth (JLGMX) — fees / expense ratio</div>
 </div>
 </section>
-<section class="slide slide--image-full" data-idx="17">
-<div class="slide-num">17 / 26</div>
+
+<section class="slide slide--image-full">
+<div class="slide-num"></div>
 <div class="img-full-wrap">
-<img class="img-full" src="assets/10000201000003E8000002582D770DC564FA6E08.png" alt="" loading="lazy">
+<img class="img-full" src="assets/10000201000003E8000002582D770DC564FA6E08.png" alt="JLGMX performance vs benchmark" loading="lazy">
+<div class="img-caption">JPMorgan Large Cap Growth (JLGMX) — performance vs. benchmark</div>
 </div>
 </section>
-<section class="slide slide--image-split" data-idx="18">
-<div class="slide-num">18 / 26</div>
+
+<section class="slide slide--image-split">
+<div class="slide-num"></div>
 <div class="split-wrap">
 <div class="split-text">
 <h2 class="slide-title">Scams, Damn Scams, and Investors</h2>
-<a class="src-link" href="https://ofdollarsanddata.com/scams-damn-scams-and-investors/" target="_blank" rel="noopener">https://ofdollarsanddata.com/scams-damn-scams-and-investors/</a>
+<p class="body-line">Why fees and active-management promises are usually worse than they look on the brochure.</p>
+<a class="src-link" href="https://ofdollarsanddata.com/scams-damn-scams-and-investors/" target="_blank" rel="noopener">ofdollarsanddata.com — Scams, Damn Scams, and Investors</a>
 </div>
 <div class="split-image">
 <img src="assets/1000020100000493000002D47DBD05A768810E32.png" alt="" loading="lazy">
 </div>
 </div>
 </section>
-<section class="slide slide--content" data-idx="19">
-<div class="slide-num">19 / 26</div>
+
+<section class="slide slide--content">
+<div class="slide-num"></div>
 <div class="content-wrap">
 <h2 class="slide-title">Vanguard S&amp;P 500 ETF</h2>
-<p class="body-para">VOO S&amp;P 500 ETF</p>
-<p class="body-para">The Web&#x27;s Best ETF Screener | ETF Database</p>
+<div class="btn-row">
+<a class="btn-link" href="https://investor.vanguard.com/investment-products/etfs/profile/voo" target="_blank" rel="noopener noreferrer">
+  <span class="btn-tag">Fund page</span>
+  <span>VOO — Vanguard S&amp;P 500 ETF</span>
+  <span class="btn-arrow">↗</span>
+</a>
+<a class="btn-link" href="https://etfdb.com/screener/" target="_blank" rel="noopener noreferrer">
+  <span class="btn-tag">Screener</span>
+  <span>ETF Database</span>
+  <span class="btn-arrow">↗</span>
+</a>
+</div>
 </div>
 </section>
-<section class="slide slide--image-full" data-idx="20">
-<div class="slide-num">20 / 26</div>
+
+<section class="slide slide--image-full">
+<div class="slide-num"></div>
 <div class="img-full-wrap">
-<img class="img-full" src="assets/10000201000003E8000002581C8497AF017FD83A.png" alt="" loading="lazy">
+<img class="img-full" src="assets/10000201000003E8000002581C8497AF017FD83A.png" alt="VOO fund snapshot" loading="lazy">
+<div class="img-caption">Vanguard S&amp;P 500 (VOO) — fund overview</div>
 </div>
 </section>
-<section class="slide slide--image-full" data-idx="21">
-<div class="slide-num">21 / 26</div>
+
+<section class="slide slide--image-full">
+<div class="slide-num"></div>
 <div class="img-full-wrap">
-<img class="img-full" src="assets/10000201000003E8000002580EF135511CC072CE.png" alt="" loading="lazy">
+<img class="img-full" src="assets/10000201000003E800000258F2F9B3B99739986D.png" alt="VOO fees and expense ratio" loading="lazy">
+<div class="img-caption">Vanguard S&amp;P 500 (VOO) — fees / expense ratio</div>
 </div>
 </section>
-<section class="slide slide--image-full" data-idx="22">
-<div class="slide-num">22 / 26</div>
+
+<section class="slide slide--image-full">
+<div class="slide-num"></div>
 <div class="img-full-wrap">
-<img class="img-full" src="assets/10000201000003E800000258F2F9B3B99739986D.png" alt="" loading="lazy">
+<img class="img-full" src="assets/10000201000003E8000002580EF135511CC072CE.png" alt="VOO performance" loading="lazy">
+<div class="img-caption">Vanguard S&amp;P 500 (VOO) — long-run performance</div>
 </div>
 </section>
-<section class="slide slide--big-title" data-idx="23">
-<div class="slide-num">23 / 26</div>
+
+<section class="slide slide--big-title">
+<div class="slide-num"></div>
 <div class="big-wrap">
+<div class="big-section-meta">Coda — ETFs &amp; screening</div>
 <h2 class="big-title">ETF</h2>
+<p class="big-teaser">A wrapper that trades like a stock, holds a basket like a fund.</p>
 </div>
 </section>
-<section class="slide slide--content" data-idx="24">
-<div class="slide-num">24 / 26</div>
+
+<section class="slide slide--content">
+<div class="slide-num"></div>
 <div class="content-wrap">
 <h2 class="slide-title">ETF</h2>
-<p class="body-para">Exchange-Traded Fund (ETF): A type of investment fund that holds a collection of assets—like stocks or bonds—and is traded on stock exchanges, just like individual stocks. ETFs aim to track the performance of an index or sector and offer diversification, low fees, and liquidity.</p>
+<p class="body-para"><em>Exchange-Traded Fund (ETF):</em> A type of investment fund that holds a collection of assets — like stocks or bonds — and is traded on stock exchanges, just like individual stocks. ETFs aim to track the performance of an index or sector and offer diversification, low fees, and liquidity.</p>
 </div>
 </section>
-<section class="slide slide--big-title" data-idx="25">
-<div class="slide-num">25 / 26</div>
+
+<section class="slide slide--big-title">
+<div class="slide-num"></div>
 <div class="big-wrap">
+<div class="big-section-meta">Tool</div>
 <h2 class="big-title">Screener</h2>
+<p class="big-teaser">Filter the universe of ETFs by exposure, fees, and structure.</p>
 </div>
 </section>
-<section class="slide slide--image-split" data-idx="26">
-<div class="slide-num">26 / 26</div>
+
+<section class="slide slide--image-split">
+<div class="slide-num"></div>
 <div class="split-wrap">
 <div class="split-text">
 <h2 class="slide-title">Bonus</h2>
+<p class="body-line">A long-run reminder of what compounding looks like at scale.</p>
 </div>
 <div class="split-image">
 <img src="assets/10000000000004DA0000069F8D901795292557ED.png" alt="" loading="lazy">
 </div>
 </div>
 </section>
+
+<section class="slide slide--end">
+<div class="slide-num"></div>
+<div class="end-wrap">
+<div class="end-eyebrow">End of Part 1 of 3</div>
+<h2 class="end-title">Continue the series →</h2>
+<p class="body-para">Next we step back from individual securities and look at what counts as an asset class — from bonds and real estate to crypto — ranked roughly from safer to riskier.</p>
+<div class="end-nav">
+<a class="is-disabled" aria-disabled="true">
+  <span class="label">← Previous</span>
+  <span class="title">— first deck —</span>
+  <span class="meta">Start of series</span>
+</a>
+<a href="../2025_05_22/index.html">
+  <span class="label">Next →</span>
+  <span class="title">Assets</span>
+  <span class="meta">From safer to riskier · May 22, 2025</span>
+</a>
+</div>
+<a class="src-link" href="../index.html">← Back to series index</a>
+</div>
+</section>
 </main>
 <div class="progress"><div class="progress__bar"></div></div>
-<div class="help"><kbd>←</kbd> <kbd>→</kbd> navigate</div>
+<div class="help"><kbd>←</kbd> <kbd>→</kbd> navigate · <kbd>P</kbd> print</div>
 <script>
 class Deck{
   constructor(){
     this.slides=[...document.querySelectorAll('.slide')];
     this.idx=0;this.bar=document.querySelector('.progress__bar');
+    this.numberSlides();
     this.show(0);
     addEventListener('keydown',e=>{
       if(['ArrowRight','PageDown',' '].includes(e.key)){e.preventDefault();this.next()}
       else if(['ArrowLeft','PageUp'].includes(e.key)){e.preventDefault();this.prev()}
       else if(e.key==='Home'){this.show(0)}
       else if(e.key==='End'){this.show(this.slides.length-1)}
+      else if(e.key==='p'||e.key==='P'){window.print()}
     });
     let wheelLock=false;
     addEventListener('wheel',e=>{
@@ -443,6 +576,14 @@ class Deck{
       const dx=e.changedTouches[0].clientX-sx;
       if(Math.abs(dx)>40){dx<0?this.next():this.prev()}
     },{passive:true});
+  }
+  numberSlides(){
+    const total=this.slides.length;
+    this.slides.forEach((s,k)=>{
+      const n=s.querySelector('.slide-num');
+      if(n)n.textContent=String(k+1).padStart(2,'0')+' / '+String(total).padStart(2,'0');
+      s.dataset.idx=k+1;
+    });
   }
   show(i){
     i=Math.max(0,Math.min(this.slides.length-1,i));

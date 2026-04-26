@@ -1,0 +1,1258 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Indexing, Liquidity, and the SpaceX Question · April 25, 2026</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;1,9..144,300;1,9..144,400&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#0b0f17;
+  --bg-2:#11172452;
+  --ink:#eef2f7;
+  --ink-dim:#9aa6b8;
+  --gold:#d4a24c;
+  --gold-soft:#e6c98a;
+  --line:#1f2a3d;
+  --accent:#5fb6ff;
+  --accent-2:#a3d6ff;
+  --warn:#e07a5f;
+  --serif:'Fraunces','Source Serif 4',Georgia,serif;
+  --sans:'Inter','Helvetica Neue',system-ui,sans-serif;
+  --mono:'JetBrains Mono','SFMono-Regular',ui-monospace,monospace;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{background:var(--bg);color:var(--ink);font-family:var(--sans);overflow:hidden;height:100vh;height:100dvh}
+body{
+  background:
+    radial-gradient(ellipse at 20% -10%, #1b2640 0%, transparent 55%),
+    radial-gradient(ellipse at 110% 110%, #2a1d10 0%, transparent 55%),
+    var(--bg);
+}
+.deck{position:relative;width:100vw;height:100vh;height:100dvh;overflow:hidden}
+.slide{
+  position:absolute;inset:0;
+  width:100vw;height:100vh;height:100dvh;
+  padding:clamp(1.6rem,3.4vw,3.4rem) clamp(2.2rem,5.5vw,6rem);
+  display:flex;flex-direction:column;justify-content:center;
+  opacity:0;visibility:hidden;
+  transition:opacity .55s ease, transform .65s cubic-bezier(.2,.7,.2,1);
+  transform:translateY(24px);
+  overflow:hidden;
+}
+.slide.is-active{opacity:1;visibility:visible;transform:none}
+.slide.is-prev{transform:translateY(-24px)}
+.slide-num{
+  position:absolute;top:1.4rem;right:1.6rem;
+  font-family:var(--mono);font-size:.72rem;letter-spacing:.18em;
+  color:var(--ink-dim);
+}
+.slide::before{
+  content:'';position:absolute;left:0;right:0;top:0;height:1px;
+  background:linear-gradient(90deg,transparent,var(--line),transparent);
+  opacity:.6;
+}
+.slide::after{
+  content:'M·B';position:absolute;left:1.6rem;bottom:1.2rem;
+  font-family:var(--serif);font-style:italic;font-size:.78rem;color:var(--ink-dim);letter-spacing:.1em;
+}
+.cover-wrap{display:flex;flex-direction:column;gap:1.4rem;max-width:min(94vw,1200px)}
+.eyebrow{font-family:var(--mono);font-size:.78rem;letter-spacing:.32em;color:var(--gold);text-transform:uppercase}
+.cover-title{
+  font-family:var(--serif);font-weight:300;
+  font-size:clamp(2.6rem,7.6vw,7rem);line-height:.98;letter-spacing:-.02em;
+  font-style:italic;
+}
+.cover-title::first-letter{color:var(--gold);font-style:normal}
+.cover-sub{font-size:clamp(1rem,1.4vw,1.4rem);color:var(--ink-dim);max-width:48ch}
+.cover-rule{width:clamp(80px,14vw,180px);height:2px;background:linear-gradient(90deg,var(--gold),transparent);margin-top:.6rem}
+.cover-meta{font-family:var(--mono);font-size:.72rem;letter-spacing:.18em;color:var(--ink-dim);margin-top:.3rem}
+.disclaimer-wrap{max-width:min(80ch,90vw);display:flex;flex-direction:column;gap:1.2rem}
+.disclaimer-wrap .eyebrow{color:var(--gold-soft);font-size:.85rem}
+.disclaimer-text{font-family:var(--serif);font-size:clamp(1.05rem,1.8vw,1.5rem);line-height:1.55;color:var(--ink);font-weight:300}
+.big-wrap{display:flex;flex-direction:column;align-items:flex-start;justify-content:center;height:100%;width:100%;gap:.8rem}
+.big-section-meta{font-family:var(--mono);font-size:.76rem;letter-spacing:.28em;color:var(--gold);text-transform:uppercase}
+.big-title{
+  font-family:var(--serif);font-style:italic;font-weight:300;
+  font-size:clamp(2.4rem,8.5vw,7.5rem);line-height:1.08;letter-spacing:-.02em;
+  padding:.18em 0 .25em;
+  background:linear-gradient(180deg,var(--ink) 0%,var(--gold-soft) 115%);
+  -webkit-background-clip:text;background-clip:text;color:transparent;
+  -webkit-text-fill-color:transparent;
+  display:inline-block;max-width:100%;
+}
+.big-teaser{font-family:var(--serif);font-style:italic;color:var(--ink-dim);font-size:clamp(1rem,1.6vw,1.4rem);max-width:60ch;font-weight:300}
+.content-wrap{display:flex;flex-direction:column;gap:1rem;max-width:min(82ch,94vw)}
+.content-wide{max-width:min(120ch,96vw)}
+.slide-title{
+  font-family:var(--serif);font-weight:400;font-style:italic;
+  font-size:clamp(1.7rem,3.6vw,2.9rem);line-height:1.05;letter-spacing:-.01em;
+}
+.slide-title::after{content:'';display:block;margin-top:.55rem;width:48px;height:2px;background:var(--gold)}
+.body-para{font-family:var(--serif);font-weight:300;font-size:clamp(.95rem,1.4vw,1.25rem);line-height:1.5;color:var(--ink)}
+.bullets{list-style:none;display:flex;flex-direction:column;gap:.55rem}
+.bullets li{font-family:var(--sans);font-size:clamp(.88rem,1.15vw,1.08rem);line-height:1.45;color:var(--ink);padding-left:1.4rem;position:relative}
+.bullets li::before{content:'';position:absolute;left:0;top:.7em;width:.7rem;height:1px;background:var(--gold)}
+.bullets li.bullets__sub{padding-left:2.6rem;color:var(--ink-dim);font-size:clamp(.82rem,1.05vw,.98rem)}
+.bullets li.bullets__sub::before{left:1.4rem;width:.5rem;background:var(--ink-dim)}
+.bullets li.bullets__heading{padding-left:0;font-family:var(--serif);font-style:italic;font-size:clamp(.95rem,1.3vw,1.18rem);color:var(--gold-soft);margin-top:.35rem}
+.bullets li.bullets__heading::before{display:none}
+.cite{
+  display:block;font-family:var(--mono);font-size:.7rem;letter-spacing:.04em;color:var(--ink-dim);
+  margin-top:.7rem;border-top:1px dashed var(--line);padding-top:.5rem;line-height:1.6;
+}
+.cite a{color:var(--ink-dim);text-decoration:none;border-bottom:1px dotted var(--line)}
+.cite a:hover{color:var(--gold);border-color:var(--gold)}
+.cite .sep{color:var(--line);margin:0 .55rem}
+.tag{font-family:var(--mono);font-size:.66rem;letter-spacing:.2em;color:var(--gold);text-transform:uppercase;margin-right:.4rem}
+.kbd-quote{font-family:var(--serif);font-style:italic;color:var(--gold-soft);font-size:clamp(1.05rem,1.6vw,1.4rem);line-height:1.5;border-left:2px solid var(--gold);padding-left:1rem;margin:.4rem 0}
+
+/* Chart container */
+.chart-wrap{display:flex;flex-direction:column;gap:.4rem;width:100%}
+.chart-host{width:100%;height:clamp(260px,42vh,460px);position:relative}
+.chart-host svg{width:100%;height:100%;display:block;overflow:visible}
+.chart-axis{font-family:var(--mono);font-size:clamp(.55rem,.78vw,.72rem);fill:var(--ink-dim)}
+.chart-axis-line{stroke:var(--line);stroke-width:1}
+.chart-grid{stroke:var(--line);stroke-width:1;stroke-dasharray:2 4;opacity:.55}
+.chart-line{fill:none;stroke-width:2;stroke-linejoin:round;stroke-linecap:round}
+.chart-line.is-dim{opacity:.18}
+.chart-area{opacity:.85}
+.chart-area.is-dim{opacity:.15}
+.chart-bar{transition:opacity .2s ease}
+.chart-bar.is-dim{opacity:.3}
+.chart-dot{fill:var(--bg);stroke-width:2}
+.chart-crosshair{stroke:var(--ink-dim);stroke-width:1;stroke-dasharray:3 3;opacity:0;pointer-events:none}
+.chart-crosshair.is-active{opacity:.55}
+.chart-label{font-family:var(--mono);font-size:clamp(.6rem,.85vw,.78rem);fill:var(--ink)}
+.chart-tooltip{
+  position:absolute;pointer-events:none;background:rgba(11,15,23,.95);border:1px solid var(--line);
+  border-radius:4px;padding:.45rem .6rem;font-family:var(--mono);font-size:.72rem;color:var(--ink);
+  white-space:nowrap;z-index:5;opacity:0;transition:opacity .15s ease;box-shadow:0 6px 20px -8px rgba(0,0,0,.8);
+}
+.chart-tooltip.is-active{opacity:1}
+.chart-tooltip .tt-row{display:flex;align-items:center;gap:.4rem}
+.chart-tooltip .tt-sw{width:8px;height:8px;border-radius:1px;display:inline-block}
+.chart-tooltip .tt-d{color:var(--ink-dim);margin-bottom:.2rem;letter-spacing:.06em}
+.chart-legend{display:flex;flex-wrap:wrap;gap:.8rem 1.2rem;font-family:var(--mono);font-size:.72rem;color:var(--ink-dim);letter-spacing:.04em}
+.chart-legend .lg{display:inline-flex;align-items:center;gap:.4rem;cursor:pointer;user-select:none;transition:opacity .2s ease}
+.chart-legend .lg.is-off{opacity:.35;text-decoration:line-through}
+.chart-legend .sw{width:14px;height:3px;border-radius:1px;display:inline-block}
+.chart-caption{font-family:var(--serif);font-style:italic;color:var(--ink-dim);font-size:clamp(.85rem,1.15vw,1.05rem);max-width:80ch}
+
+/* Series-style bar layout (compatible with Part 3) */
+.factor-bars{display:flex;flex-direction:column;gap:.7rem;margin-top:.4rem;max-width:64ch}
+.factor-bar{display:flex;align-items:center;gap:1rem}
+.factor-bar .lbl{font-family:var(--sans);font-size:.92rem;width:22ch;color:var(--ink-dim)}
+.factor-bar .track{flex:1;height:14px;background:var(--bg-2);border:1px solid var(--line);border-radius:3px;overflow:hidden;position:relative}
+.factor-bar .fill{height:100%;background:linear-gradient(90deg,var(--gold),var(--gold-soft))}
+.factor-bar .fill.is-blue{background:linear-gradient(90deg,#5fb6ff,#a3d6ff)}
+.factor-bar .fill.is-warn{background:linear-gradient(90deg,#e07a5f,#f4a48a)}
+.factor-bar .pct{font-family:var(--mono);font-size:.85rem;color:var(--gold);width:8ch;text-align:right}
+
+.split-wrap{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.2fr);gap:clamp(1.2rem,3vw,3rem);align-items:center;height:100%}
+.split-text{display:flex;flex-direction:column;gap:.8rem}
+.split-text .body-line{font-family:var(--serif);font-size:clamp(.95rem,1.3vw,1.18rem);line-height:1.5;color:var(--ink);font-weight:300}
+.split-image{display:flex;align-items:center;justify-content:center;height:100%;min-width:0}
+
+.end-wrap{display:flex;flex-direction:column;gap:1.4rem;max-width:min(82ch,90vw)}
+.end-eyebrow{font-family:var(--mono);font-size:.78rem;letter-spacing:.32em;color:var(--gold);text-transform:uppercase}
+.end-title{font-family:var(--serif);font-style:italic;font-weight:300;font-size:clamp(2.2rem,5.5vw,4.4rem);line-height:1.05;letter-spacing:-.02em}
+.end-nav{display:flex;flex-wrap:wrap;gap:1rem;margin-top:.6rem}
+.end-nav a{flex:1 1 280px;min-width:240px;display:flex;flex-direction:column;gap:.4rem;padding:1.1rem 1.3rem;border:1px solid var(--line);border-radius:6px;text-decoration:none;color:var(--ink);background:rgba(255,255,255,.015);transition:all .25s ease}
+.end-nav a:hover{border-color:var(--gold);background:rgba(212,162,76,.06);transform:translateY(-3px)}
+.end-nav .label{font-family:var(--mono);font-size:.7rem;letter-spacing:.2em;color:var(--gold);text-transform:uppercase}
+.end-nav .title{font-family:var(--serif);font-style:italic;font-size:1.3rem}
+.end-nav .meta{font-family:var(--mono);font-size:.7rem;color:var(--ink-dim);letter-spacing:.1em}
+.end-nav a.is-disabled{opacity:.45;pointer-events:none}
+
+.progress{position:fixed;bottom:0;left:0;right:0;height:2px;background:transparent;z-index:50}
+.progress__bar{height:100%;background:linear-gradient(90deg,var(--gold),var(--gold-soft));width:0%;transition:width .4s ease}
+.help{position:fixed;bottom:1rem;right:1.2rem;font-family:var(--mono);font-size:.68rem;color:var(--ink-dim);letter-spacing:.12em;z-index:40;opacity:.55;pointer-events:none}
+.help kbd{font-family:var(--mono);font-size:.68rem;background:var(--bg-2);border:1px solid var(--line);padding:.05rem .3rem;border-radius:3px;color:var(--ink)}
+
+.expand-btn{
+  align-self:flex-start;margin-top:.4rem;
+  font-family:var(--mono);font-size:.78rem;letter-spacing:.06em;color:var(--gold);
+  background:rgba(212,162,76,.06);border:1px solid var(--gold);border-radius:4px;
+  padding:.55rem .9rem;cursor:pointer;transition:all .2s ease;
+}
+.expand-btn:hover{background:rgba(212,162,76,.14);transform:translateX(3px)}
+.expand-btn .expand-hint{color:var(--ink-dim);margin-left:.4rem}
+.slide--detail{background:rgba(11,15,23,.985);z-index:60}
+.slide--detail::before{background:linear-gradient(90deg,transparent,var(--gold),transparent);opacity:.4}
+.slide--detail .slide-title::after{background:var(--gold-soft)}
+.detail-close{
+  position:absolute;top:1.2rem;left:1.6rem;z-index:3;
+  font-family:var(--mono);font-size:.74rem;letter-spacing:.12em;color:var(--ink-dim);
+  background:transparent;border:1px solid var(--line);border-radius:4px;
+  padding:.4rem .7rem;cursor:pointer;transition:all .2s ease;
+}
+.detail-close:hover{color:var(--gold);border-color:var(--gold);transform:translateX(-3px)}
+.slide .step{opacity:0;transform:translateY(10px);transition:opacity .4s ease,transform .4s cubic-bezier(.2,.7,.2,1);pointer-events:none}
+.slide .step.is-revealed{opacity:1;transform:none;pointer-events:auto}
+.slide .step--inline{display:inline-block;transform:translateX(-6px);color:var(--gold)}
+.slide .step--inline.is-revealed{transform:none}
+@media (prefers-reduced-motion: reduce){.slide .step{transition:opacity .15s linear;transform:none}}
+@media print{.slide .step{opacity:1!important;transform:none!important;pointer-events:auto!important}}
+
+.two-col{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(1.2rem,3vw,2.4rem);align-items:start}
+.two-col h3{font-family:var(--serif);font-style:italic;color:var(--gold-soft);font-size:clamp(1rem,1.4vw,1.2rem);margin-bottom:.4rem;font-weight:400}
+
+@media (prefers-reduced-motion: no-preference){
+  .slide.is-active .cover-title,
+  .slide.is-active .big-title,
+  .slide.is-active .slide-title,
+  .slide.is-active .end-title{animation:rise .8s cubic-bezier(.2,.7,.2,1) both}
+  .slide.is-active .body-para,
+  .slide.is-active .bullets li,
+  .slide.is-active .body-line,
+  .slide.is-active .factor-bar,
+  .slide.is-active .chart-wrap,
+  .slide.is-active .kbd-quote,
+  .slide.is-active .disclaimer-text{animation:rise .7s ease both;animation-delay:.18s}
+  .slide.is-active .bullets li:nth-child(1),
+  .slide.is-active .factor-bar:nth-child(1){animation-delay:.18s}
+  .slide.is-active .bullets li:nth-child(2),
+  .slide.is-active .factor-bar:nth-child(2){animation-delay:.24s}
+  .slide.is-active .bullets li:nth-child(3),
+  .slide.is-active .factor-bar:nth-child(3){animation-delay:.30s}
+  .slide.is-active .bullets li:nth-child(4),
+  .slide.is-active .factor-bar:nth-child(4){animation-delay:.36s}
+  .slide.is-active .bullets li:nth-child(5),
+  .slide.is-active .factor-bar:nth-child(5){animation-delay:.42s}
+  .slide.is-active .bullets li:nth-child(6){animation-delay:.48s}
+  .slide.is-active .bullets li:nth-child(7){animation-delay:.54s}
+  .slide.is-active .factor-bar .fill{animation:grow 1.1s cubic-bezier(.2,.7,.2,1) both;animation-delay:.4s;transform-origin:left center}
+}
+@keyframes rise{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:none}}
+@keyframes fade{from{opacity:0}to{opacity:1}}
+@keyframes grow{from{transform:scaleX(0)}to{transform:scaleX(1)}}
+@media (prefers-reduced-motion: reduce){
+  .slide{transition:opacity .15s linear}
+  *{animation:none!important}
+  .chart-line,.chart-area,.chart-bar{transition:none!important}
+}
+@media print{
+  html,body{overflow:visible;height:auto;background:#fff;color:#111}
+  body{background:#fff}
+  .deck{position:static;width:auto;height:auto;overflow:visible}
+  .slide{position:relative;inset:auto;width:100%;height:100vh;page-break-after:always;break-after:page;opacity:1!important;visibility:visible!important;transform:none!important;color:#111;background:#fff}
+  .slide:last-child{page-break-after:auto;break-after:auto}
+  .slide::before,.slide::after,.slide-num,.help,.progress{display:none!important}
+  .cover-title,.big-title,.slide-title,.end-title{color:#111!important;background:none!important;-webkit-text-fill-color:#111!important}
+  .body-para,.bullets li,.body-line,.disclaimer-text,.cover-sub,.cite,.eyebrow,.cover-meta,.big-section-meta,.big-teaser,.end-eyebrow,.factor-bar .lbl,.factor-bar .pct,.chart-axis,.chart-legend,.chart-caption,.tag,.kbd-quote{color:#111!important}
+  .chart-axis{fill:#111!important}
+  *{animation:none!important;transition:none!important}
+}
+</style>
+</head>
+<body>
+
+<!-- Embedded data; pulled by build_data.py and approximated where noted. -->
+<script id="deck-data" type="application/json">
+{
+  "magWeights": {
+    "_note": "S&P 500 top-tier weight history. Sources: SPDJI factsheets, Slickcharts cross-check.",
+    "years": [2014,2015,2016,2017,2018,2019,2020,2021,2022,2023,2024,2025,2026],
+    "mag7":  [10.8,11.4,11.0,12.5,14.2,16.1,22.8,24.0,19.5,28.0,32.5,33.8,33.7],
+    "next3": [4.2, 4.0, 3.8, 3.6, 3.5, 3.2, 2.9, 2.6, 2.7, 2.4, 2.1, 2.0, 1.9],
+    "rest":  [85.0,84.6,85.2,83.9,82.3,80.7,74.3,73.4,77.8,69.6,65.4,64.2,64.4]
+  },
+  "spacexValuation": {
+    "_note": "Reported tender / round prices. Sources: TechCrunch, Bloomberg, CNBC, Fortune.",
+    "points":[
+      {"d":"2020-08","v":46,"label":"Aug 2020 round"},
+      {"d":"2021-02","v":74,"label":"Feb 2021"},
+      {"d":"2021-10","v":100,"label":"Oct 2021"},
+      {"d":"2022-05","v":127,"label":"May 2022"},
+      {"d":"2023-01","v":137,"label":"Jan 2023 tender"},
+      {"d":"2023-12","v":175,"label":"Dec 2023 tender"},
+      {"d":"2024-06","v":210,"label":"Jun 2024 tender"},
+      {"d":"2024-12","v":350,"label":"Dec 2024 tender"},
+      {"d":"2025-07","v":400,"label":"Jul 2025"},
+      {"d":"2025-12","v":460,"label":"Dec 2025 ($421/share)"},
+      {"d":"2026-04","v":850,"label":"Apr 2026 (post-xAI merger)"},
+      {"d":"2026-06","v":1500,"label":"Jun 2026 reported IPO target"}
+    ]
+  },
+  "psMultiples": {
+    "_note": "Trailing P/S at IPO / current. Sources: S-1 filings, SPDJI.",
+    "items":[
+      {"k":"SpaceX (reported IPO)","v":94,"hl":true},
+      {"k":"Palantir (current)","v":73,"hl":true},
+      {"k":"Facebook IPO (2012)","v":11},
+      {"k":"Google IPO (2004)","v":6},
+      {"k":"S&P 500 (Apr 2026)","v":3.1}
+    ]
+  },
+  "starlink": {
+    "_note": "Subs in millions. Sources: Advanced Television, Teslarati, Quilty Space, Payload, MS 2018.",
+    "actualSubs":   [{"d":"2021","v":0.15},{"d":"2022","v":1.0},{"d":"2023","v":2.3},{"d":"2024","v":5.0},{"d":"2025","v":9.0},{"d":"2026Q1","v":10.2}],
+    "actualRev":    [{"d":"2022","v":1.4},{"d":"2023","v":4.2},{"d":"2024","v":9.0},{"d":"2025","v":13.5},{"d":"2026E","v":17.0}],
+    "msForecastSubs":[{"d":"2021","v":0.5},{"d":"2022","v":1.2},{"d":"2023","v":2.4},{"d":"2024","v":3.8},{"d":"2025","v":6.0},{"d":"2026Q1","v":7.2}],
+    "msForecastRev": [{"d":"2022","v":3.0},{"d":"2023","v":7.5},{"d":"2024","v":12.0},{"d":"2025","v":19.0},{"d":"2026E","v":25.0}]
+  },
+  "inclusionSpx": {
+    "_note":"S&P 500 top-7 concentration scenarios. Slickcharts Apr 2026.",
+    "items":[
+      {"k":"Today (Mag 7)","v":33.7},
+      {"k":"+ SpaceX","v":36.5,"hl":true},
+      {"k":"+ SpaceX + OpenAI + Anthropic","v":38.0,"hl":true}
+    ]
+  },
+  "inclusionNdx": {
+    "_note":"NDX top-7 concentration scenarios under old vs new float rule.",
+    "items":[
+      {"k":"Today (top 7)","v":50.0},
+      {"k":"+ SpaceX (full cap)","v":54.7,"hl":true},
+      {"k":"+ SpaceX (5% float, capped)","v":50.7,"hl":true}
+    ]
+  },
+  "spaceWorldShare": {
+    "_note": "Approx weight in S&P World Index, full free-float assumption. Source: Zurita, S&P Indexology, Mar 17, 2026.",
+    "items":[
+      {"k":"SpaceX (~$1.5T)","v":1.6,"hl":true},
+      {"k":"OpenAI (~$500B)","v":0.7,"hl":true},
+      {"k":"Anthropic (~$350B)","v":0.6,"hl":true},
+      {"k":"Three privates combined","v":2.9,"hl":true},
+      {"k":"Canada (S&P World)","v":3.1}
+    ]
+  },
+  "samShim": {
+    "_note":"Sammon & Shim 2026, JFE 177:104229. Annualised drag.",
+    "items":[
+      {"k":"Index rebalancing drag (low estimate)","v":47},
+      {"k":"Index rebalancing drag (high estimate)","v":70}
+    ]
+  },
+  "ritterLowFloat": {
+    "_note":"Ritter 2026 low-float subset: IPOs <5% float, >$100M TTM sales since 1980. 11 names; 10/11 underperformed.",
+    "items":[
+      {"k":"vs. offer price (3-yr)","v":-50},
+      {"k":"vs. first-day close (3-yr)","v":-60}
+    ]
+  },
+  "factorPremia": {
+    "_note":"Fama-French data library. Annualised excess returns.",
+    "items":[
+      {"k":"Market (MKT-RF)","v":6.3},
+      {"k":"Size (SMB)","v":1.9},
+      {"k":"Value (HML)","v":3.0},
+      {"k":"Profitability (RMW)","v":3.4}
+    ]
+  },
+  "ipoVsVti": {
+    "_note":"yfinance via build_data.py · monthly cumulative TR (auto_adjust=True), since 2013-10-15",
+    "since":"2013-10-15",
+    "labels":["2013-10", "2013-11", "2013-12", "2014-01", "2014-02", "2014-03", "2014-04", "2014-05", "2014-06", "2014-07", "2014-08", "2014-09", "2014-10", "2014-11", "2014-12", "2015-01", "2015-02", "2015-03", "2015-04", "2015-05", "2015-06", "2015-07", "2015-08", "2015-09", "2015-10", "2015-11", "2015-12", "2016-01", "2016-02", "2016-03", "2016-04", "2016-05", "2016-06", "2016-07", "2016-08", "2016-09", "2016-10", "2016-11", "2016-12", "2017-01", "2017-02", "2017-03", "2017-04", "2017-05", "2017-06", "2017-07", "2017-08", "2017-09", "2017-10", "2017-11", "2017-12", "2018-01", "2018-02", "2018-03", "2018-04", "2018-05", "2018-06", "2018-07", "2018-08", "2018-09", "2018-10", "2018-11", "2018-12", "2019-01", "2019-02", "2019-03", "2019-04", "2019-05", "2019-06", "2019-07", "2019-08", "2019-09", "2019-10", "2019-11", "2019-12", "2020-01", "2020-02", "2020-03", "2020-04", "2020-05", "2020-06", "2020-07", "2020-08", "2020-09", "2020-10", "2020-11", "2020-12", "2021-01", "2021-02", "2021-03", "2021-04", "2021-05", "2021-06", "2021-07", "2021-08", "2021-09", "2021-10", "2021-11", "2021-12", "2022-01", "2022-02", "2022-03", "2022-04", "2022-05", "2022-06", "2022-07", "2022-08", "2022-09", "2022-10", "2022-11", "2022-12", "2023-01", "2023-02", "2023-03", "2023-04", "2023-05", "2023-06", "2023-07", "2023-08", "2023-09", "2023-10", "2023-11", "2023-12", "2024-01", "2024-02", "2024-03", "2024-04", "2024-05", "2024-06", "2024-07", "2024-08", "2024-09", "2024-10", "2024-11", "2024-12", "2025-01", "2025-02", "2025-03", "2025-04", "2025-05", "2025-06", "2025-07", "2025-08", "2025-09", "2025-10", "2025-11", "2025-12", "2026-01", "2026-02", "2026-03", "2026-04"],
+    "VTI":[0.0, 2.7, 5.51, 2.17, 7.14, 7.68, 7.75, 10.01, 12.9, 10.65, 15.24, 12.82, 15.92, 18.8, 18.75, 15.5, 22.13, 20.71, 21.46, 23.03, 20.97, 23.03, 15.53, 12.16, 21.03, 21.76, 19.17, 12.35, 12.34, 20.33, 21.12, 23.22, 23.56, 28.47, 28.73, 28.99, 26.16, 31.83, 34.45, 36.94, 42.0, 42.08, 43.59, 45.04, 46.42, 49.17, 49.39, 53.04, 56.36, 61.1, 62.97, 71.49, 65.05, 61.81, 62.53, 66.96, 68.13, 73.71, 79.67, 80.03, 66.68, 70.04, 54.44, 67.63, 73.59, 76.05, 82.96, 71.16, 83.28, 85.86, 81.99, 85.23, 89.13, 96.3, 101.8, 101.68, 85.55, 59.78, 80.77, 90.52, 94.9, 106.09, 120.74, 112.93, 108.78, 133.42, 144.33, 143.52, 151.16, 160.32, 173.44, 174.68, 181.5, 186.39, 194.58, 181.43, 200.25, 195.86, 207.08, 188.48, 181.3, 190.47, 163.95, 163.28, 141.61, 164.2, 154.34, 130.87, 149.6, 162.5, 147.13, 164.24, 157.9, 164.88, 167.73, 168.88, 186.97, 197.48, 191.74, 177.73, 170.38, 195.84, 211.5, 214.98, 231.67, 242.48, 227.6, 243.19, 253.76, 260.45, 268.13, 275.61, 272.78, 297.76, 285.67, 297.37, 289.86, 267.03, 264.34, 287.12, 307.11, 316.43, 326.22, 340.8, 350.54, 351.73, 351.61, 358.75, 356.33, 333.49, 375.7],
+    "IPO":[0.0, 2.46, 7.77, 7.91, 16.15, 9.97, 4.64, 5.23, 13.06, 10.35, 16.02, 13.51, 13.55, 17.51, 15.68, 12.39, 22.17, 23.85, 22.07, 24.91, 22.48, 21.92, 10.61, 0.92, 8.89, 9.19, 6.01, -10.74, -8.71, -2.16, 1.34, 2.5, -2.36, 2.87, 6.28, 7.69, 3.01, 5.86, 5.15, 8.96, 14.97, 17.73, 21.19, 28.16, 27.99, 31.61, 33.35, 35.99, 43.35, 42.12, 44.22, 44.83, 45.19, 46.92, 46.46, 49.02, 52.63, 51.5, 57.6, 55.38, 35.68, 35.11, 19.36, 40.81, 55.64, 56.88, 61.35, 52.82, 62.48, 66.65, 57.54, 44.93, 52.5, 61.55, 60.4, 69.01, 61.38, 36.19, 59.56, 89.91, 109.1, 129.16, 150.46, 170.32, 162.04, 233.4, 233.45, 251.91, 245.34, 221.5, 222.23, 218.14, 242.29, 224.45, 245.55, 232.52, 254.49, 225.95, 199.06, 140.48, 137.22, 127.92, 84.02, 60.75, 55.69, 68.51, 65.97, 46.84, 44.72, 42.86, 27.82, 48.14, 45.96, 51.34, 43.53, 54.7, 69.13, 89.4, 69.03, 65.3, 53.88, 74.51, 94.98, 76.06, 102.89, 114.68, 92.19, 102.84, 108.47, 108.1, 116.02, 121.81, 131.43, 138.31, 125.54, 142.89, 118.09, 94.76, 98.96, 121.57, 133.37, 139.03, 158.56, 158.22, 154.99, 140.4, 137.84, 132.63, 126.8, 118.36, 158.98],
+    "IPOS":[null, null, null, null, null, null, null, null, null, null, null, null, 0.0, 1.3, 0.96, -0.19, 7.38, 7.31, 13.19, 15.43, 9.08, 10.09, 1.92, -2.74, 1.15, -0.56, -1.31, -8.59, -11.39, -2.78, -2.98, -6.07, -9.0, -3.51, -2.47, 2.18, -1.43, -5.51, -7.35, -2.18, -2.18, 1.11, 3.9, 7.96, 8.46, 13.56, 16.41, 18.28, 17.76, 22.96, 26.77, 32.84, 34.24, 31.4, 27.78, 22.11, 20.57, 19.6, 21.11, 17.96, 6.07, 4.5, 2.7, 9.21, 15.01, 14.41, 19.99, 14.58, 19.6, 16.13, 17.59, 19.11, 25.68, 27.36, 34.47, 35.31, 34.29, 18.1, 29.1, 47.91, 57.13, 69.42, 89.88, 78.61, 78.1, 88.83, 102.66, 110.42, 104.32, 92.6, 101.26, 100.68, 99.89, 84.65, 82.05, 65.84, 61.98, 49.29, 40.61, 25.19, 17.36, 8.62, -0.94, 2.53, 0.75, -2.55, -8.07, -19.88, -27.74, -7.91, -6.43, -1.04, -8.47, -8.87, -10.38, -15.27, -15.4, -7.92, -18.84, -23.99, -29.16, -22.81, -21.87, -30.41, -24.92, -23.82, -22.29, -21.93, -27.09, -28.21, -25.36, -26.0, -30.67, -30.45, -31.51, -27.12, -26.47, -28.18, -25.25, -20.38, -16.76, -13.56, -6.65, -0.66, -0.77, -7.29, -4.16, 9.21, 13.18, 3.42, 18.94]
+  },
+  "tslaVsSpy": {
+    "_note":"yfinance via build_data.py · monthly cumulative TR since 2020-12-21 (TSLA S&P 500 inclusion)",
+    "since":"2020-12-21",
+    "labels":["2020-12", "2021-01", "2021-02", "2021-03", "2021-04", "2021-05", "2021-06", "2021-07", "2021-08", "2021-09", "2021-10", "2021-11", "2021-12", "2022-01", "2022-02", "2022-03", "2022-04", "2022-05", "2022-06", "2022-07", "2022-08", "2022-09", "2022-10", "2022-11", "2022-12", "2023-01", "2023-02", "2023-03", "2023-04", "2023-05", "2023-06", "2023-07", "2023-08", "2023-09", "2023-10", "2023-11", "2023-12", "2024-01", "2024-02", "2024-03", "2024-04", "2024-05", "2024-06", "2024-07", "2024-08", "2024-09", "2024-10", "2024-11", "2024-12", "2025-01", "2025-02", "2025-03", "2025-04", "2025-05", "2025-06", "2025-07", "2025-08", "2025-09", "2025-10", "2025-11", "2025-12", "2026-01", "2026-02", "2026-03", "2026-04"],
+    "TSLA":[0.0, 12.45, -4.28, -5.35, 0.53, -11.4, -3.68, -2.62, 4.26, 9.89, 57.86, 62.22, 49.76, 32.74, 23.35, 52.71, 23.39, 7.45, -4.57, 26.33, 17.17, 12.77, -3.27, -17.23, -47.63, -26.36, -12.55, -11.8, -30.15, -13.3, 11.29, 13.69, 9.72, 6.38, -14.62, 2.06, 5.64, -20.38, -14.18, -25.27, -22.08, -24.29, -15.88, -1.34, -8.98, 11.23, 6.22, 46.74, 71.68, 72.01, 24.55, 10.18, 19.95, 47.29, 35.05, 31.05, 41.94, 89.06, 94.1, 82.88, 91.19, 82.98, 71.12, 58.04, 59.98],
+    "SPY":[0.0, -1.02, 1.73, 6.35, 11.98, 12.71, 15.24, 18.06, 21.57, 15.9, 24.04, 23.04, 28.73, 21.94, 18.34, 22.79, 12.01, 12.26, 3.01, 12.49, 7.9, -2.07, 5.89, 11.77, 5.33, 11.96, 9.14, 13.19, 15.0, 15.53, 23.01, 27.04, 24.97, 19.05, 16.46, 27.1, 32.9, 35.02, 42.07, 46.71, 40.8, 47.92, 53.14, 54.99, 58.61, 61.94, 60.5, 70.07, 65.98, 70.44, 68.27, 58.9, 57.52, 67.42, 76.02, 80.07, 83.77, 90.32, 94.85, 95.23, 95.39, 98.27, 96.55, 86.85, 105.12]
+  }
+}
+</script>
+
+<main class="deck">
+
+<!-- 1: Title -->
+<section class="slide slide--cover">
+<div class="slide-num"></div>
+<div class="cover-wrap">
+<div class="eyebrow">Marco Barbone · Investing &amp; Trading IV</div>
+<h1 class="cover-title">Indexing, Liquidity, and the SpaceX Question</h1>
+<div class="cover-sub">If everyone buys the market, who sets the price — and who is the index buying from <em>next</em>?</div>
+<div class="cover-rule"></div>
+<div class="cover-meta">Part 4 · April 25, 2026 · Educational · Not financial advice</div>
+<a class="cover-license" href="https://creativecommons.org/licenses/by/4.0/" target="_blank" rel="noopener" style="font-family:var(--mono);font-size:.7rem;letter-spacing:.12em;color:var(--ink-dim);text-decoration:none;border-bottom:1px dashed var(--line);padding-bottom:2px;align-self:flex-start;margin-top:.6rem">CC BY 4.0 · share &amp; adapt with credit</a>
+</div>
+</section>
+
+<!-- 2: Recap & hook -->
+<section class="slide slide--content">
+<div class="slide-num"></div>
+<div class="content-wrap">
+<h2 class="slide-title">Recap, and the hook</h2>
+<p class="body-para">Three decks so far. Foundations. Asset classes. Equity allocation, with size, value, and profitability factors paying for themselves over decades of data.</p>
+<p class="body-para">A reasonable conclusion was: <em>buy a broad market-cap-weighted index fund, possibly tilted to factors, sit still</em>. That conclusion has a sharp edge that this deck is about.</p>
+<p class="kbd-quote">If everyone is buying the market, who sets the price — and who is the index buying from next?</p>
+</div>
+</section>
+
+<!-- 4: Steel-man indexing -->
+<section class="slide slide--content">
+<div class="slide-num"></div>
+<div class="content-wrap">
+<h2 class="slide-title">Why indexing won — the steel-man</h2>
+<p class="body-para">Before the critique, the case must be stated honestly. Bogle's argument has held up for fifty years.</p>
+<ul class="bullets">
+<li><strong>Costs:</strong> total-market index funds at 3 bps versus active mutual funds at 50–100 bps compound into a multi-decade gap.</li>
+<li><strong>Tax efficiency:</strong> low turnover means few capital-gains distributions.</li>
+<li><strong>Diversification:</strong> thousands of names, no single-stock idiosyncratic risk.</li>
+<li><strong>Empirics:</strong> SPIVA scorecards, year after year, ~85% of active large-cap managers underperform their benchmark over 10 years.</li>
+</ul>
+</div>
+</section>
+
+<!-- 5: Concentration today (chart) -->
+<section class="slide slide--content">
+<div class="slide-num"></div>
+<div class="content-wrap content-wide">
+<h2 class="slide-title">Concentration today</h2>
+<p class="body-para">The Magnificent Seven now sit at <strong>~33.7% of the S&amp;P 500</strong>; the top ten clear <strong>~35.6%</strong>. That is the highest single-decile concentration since the data series begins.</p>
+<div class="chart-wrap">
+  <div class="chart-host" id="chart-mag7"></div>
+  <div class="chart-legend" id="legend-mag7"></div>
+</div>
+<div class="cite"><span class="tag">Source</span>S&amp;P U.S. Indices Methodology · Feb 2026<span class="sep">·</span><a href="https://www.slickcharts.com/sp500" target="_blank" rel="noopener">Slickcharts S&amp;P 500</a></div>
+</div>
+</section>
+
+<!-- 6: Inelastic markets -->
+<section class="slide slide--content">
+<div class="slide-num"></div>
+<div class="content-wrap">
+<h2 class="slide-title">Inelastic markets</h2>
+<p class="body-para">If you put $1 into the stock market, how much market cap is created?</p>
+<p class="body-para">Naively: $1. The Gabaix–Koijen "Inelastic Markets Hypothesis" estimates the answer is closer to <strong>$5</strong> — because the marginal seller of equity is rare. Demand curves are steep; flows move prices.</p>
+<p class="body-para">Implication: a forced buyer (an index fund taking inflows) does not just rebalance prices, it <em>raises</em> them.</p>
+<div class="cite"><span class="tag">Source</span>Gabaix &amp; Koijen <span class="sep">·</span><a href="https://www.nber.org/papers/w28967" target="_blank" rel="noopener">NBER w28967 — In Search of the Origins of Financial Fluctuations: The Inelastic Markets Hypothesis</a></div>
+</div>
+</section>
+
+<!-- Hidden detail: primary-market channel — opened from slide 8 via expand button -->
+<section class="slide slide--content slide--detail" id="detail-primary-channel" data-hidden="true">
+<div class="slide-num"></div>
+<button class="detail-close" type="button" aria-label="Close detail" data-detail-close>← back</button>
+<div class="content-wrap">
+<h2 class="slide-title">The primary-market channel</h2>
+<p class="body-para">Index-fund demand is usually framed as a <em>secondary-market</em> story — index funds buying already-listed shares from other investors. Murray &amp; Sammon (2026) show that the demand also reaches the <em>primary</em> market — the moment new shares are first issued.</p>
+<ul class="bullets">
+<li class="bullets__heading">Primary vs. secondary, briefly</li>
+<li><strong>Primary market:</strong> the company itself sells <em>newly created</em> shares for cash — IPOs (initial public offerings), SEOs (seasoned equity offerings, i.e. follow-on sales by an already-public company), and direct follow-ons.</li>
+<li><strong>Underwriters:</strong> investment banks (Goldman, Morgan Stanley, JPM…) that price the new shares, line up institutional buyers, and — in a traditional IPO — temporarily buy the shares from the company before reselling them to the market.</li>
+<li class="bullets__heading">"The same channel" — what I mean</li>
+<li>Steady passive inflows (401(k) contributions, target-date funds, ETF buys) → forced buying of every index member → demand that is largely <em>price-insensitive</em>. That is the channel that has compounded the Mag 7's weight in the S&amp;P 500.</li>
+<li>The moment a newly-public company is admitted to an index, that <em>same</em> price-insensitive demand turns on for its shares — at whatever price the underwriters and early holders chose to set. The flow does not check valuation.</li>
+<li>Issuers and underwriters know this and time issuance to passive demand. Index inclusion becomes a deliberate exit window, not a side effect.</li>
+</ul>
+<div class="cite"><span class="tag">Source</span>Murray &amp; Sammon (2026) · <em>Review of Asset Pricing Studies</em> raaf013 <span class="sep">·</span><a href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4099819" target="_blank" rel="noopener">SSRN: Primary Capital Market Transactions and Index Funds</a></div>
+</div>
+</section>
+
+<!-- 8: Indexes time the market badly (chart) -->
+<section class="slide slide--content">
+<div class="slide-num"></div>
+<div class="content-wrap content-wide">
+<h2 class="slide-title">Indexes time the market <span class="step step--inline">— badly</span></h2>
+<div class="step">
+<p class="body-para">At reconstitution dates, passive funds <em>buy stocks that have just risen</em> and <em>sell stocks that have just fallen</em>. Sammon &amp; Shim (2026) put a number on it.</p>
+<div class="factor-bars">
+  <div class="factor-bar"><span class="lbl">Drag — low estimate</span><span class="track"><span class="fill" style="width:67%"></span></span><span class="pct">47 bps/yr</span></div>
+  <div class="factor-bar"><span class="lbl">Drag — high estimate</span><span class="track"><span class="fill is-warn" style="width:100%"></span></span><span class="pct">70 bps/yr</span></div>
+</div>
+<p class="body-para">Range: <strong>47–70 bps per year</strong> in foregone return — the cost of buying high and selling low at index reconstitutions, measured across major US benchmarks.</p>
+<button class="expand-btn" type="button" data-expand="detail-primary-channel">+ How does this demand reach the primary market? <span class="expand-hint">(detail)</span></button>
+<div class="cite"><span class="tag">Source</span>Sammon &amp; Shim (2026) · <em>Journal of Financial Economics</em> 177:104229 <span class="sep">·</span><a href="https://doi.org/10.1016/j.jfineco.2025.104229" target="_blank" rel="noopener">Index Rebalancing and Stock Market Composition</a></div>
+</div>
+</div>
+</section>
+
+<!-- 9: Mega-IPO pipeline (chart) -->
+<section class="slide slide--content">
+<div class="slide-num"></div>
+<div class="content-wrap content-wide">
+<h2 class="slide-title">The mega-IPO pipeline</h2>
+<p class="body-para">Concentration plus a forced primary-market channel raises one question: <em>what's coming through it next?</em></p>
+<p class="body-para">If SpaceX, OpenAI, and Anthropic listed at reported full valuations, their combined weight in the S&amp;P World Index would be <strong>~2.9%</strong> — almost as much as Canada.</p>
+<div class="chart-wrap">
+  <div class="chart-host" id="chart-spaceworld"></div>
+</div>
+<p class="body-para">MSCI's scenario analysis: at a 5% free-float threshold, only 4 of 10 large privates would qualify; at 25% the dollar flows into broad benchmarks become structurally significant.</p>
+<div class="cite"><span class="tag">Source</span>Zurita · S&amp;P Indexology · Mar 17, 2026 <span class="sep">·</span><a href="https://www.indexologyblog.com/2026/03/17/unicorns-at-the-gate/" target="_blank" rel="noopener">Unicorns at the Gate</a><span class="sep">·</span>MSCI · <em>How Megacap IPOs in 2026 Could Reshape Global Benchmarks</em> (Apr 2026)</div>
+</div>
+</section>
+
+<!-- What inclusion would do to S&P 500 -->
+<section class="slide slide--content">
+<div class="slide-num"></div>
+<div class="content-wrap content-wide">
+<h2 class="slide-title">Impact on the S&amp;P 500</h2>
+<p class="body-para">Sizing exercise. <strong>S&amp;P 500 ≈ $54T</strong> (Apr 2026). SpaceX $1.5T, OpenAI $0.5T, Anthropic $0.35T at reported full caps. Top-7 ("Mag 7") concentration today: 33.7%.</p>
+<div class="chart-wrap">
+  <div class="chart-host" id="chart-inclusion-spx"></div>
+</div>
+<ul class="bullets">
+<li>SpaceX alone would slot in around <strong>#7–#8</strong> of the index — ~2.8% weight.</li>
+<li>Adding all three privates raises top-tier concentration by ~4.3 pp in a single rebalancing window.</li>
+<li class="bullets__sub">Caveat: actual S&amp;P 500 inclusion still requires 12-month seasoning and four quarters of GAAP profitability.</li>
+</ul>
+<div class="cite"><span class="tag">Sources</span>Slickcharts S&amp;P 500 weights · Apr 2026<span class="sep">·</span>SPDJI methodology</div>
+</div>
+</section>
+
+<!-- Impact on Nasdaq-100 -->
+<section class="slide slide--content">
+<div class="slide-num"></div>
+<div class="content-wrap content-wide">
+<h2 class="slide-title">Impact on the Nasdaq-100</h2>
+<p class="body-para"><strong>NDX ≈ $32T</strong>; smaller and more concentrated than the S&amp;P 500 — top-7 already ~50%. The May 2026 free-float rule changes the size of the inclusion shock dramatically.</p>
+<div class="chart-wrap">
+  <div class="chart-host" id="chart-inclusion-ndx"></div>
+</div>
+<ul class="bullets">
+<li>SpaceX at <strong>full cap</strong> would land as a top-3 weight (~4.7%); combined three privates add ~7.4 pp.</li>
+<li>Under the new <strong>3× free-float cap</strong>: if SpaceX lists 5% float, its weighting cap collapses from $1.5T to $225B — about <strong>0.7%</strong> instead of 4.7%. Same company, very different forced-buy flow.</li>
+</ul>
+<div class="cite"><span class="tag">Sources</span>Slickcharts NDX weights · Apr 2026<span class="sep">·</span>Nasdaq NDX Consultation · Feb 2026</div>
+</div>
+</section>
+
+<!-- 12: Why a company IPOs -->
+<section class="slide slide--content">
+<div class="slide-num"></div>
+<div class="content-wrap">
+<h2 class="slide-title">Why a company IPOs — and why later</h2>
+<ul class="bullets">
+<li class="bullets__heading">Two motives, often confused</li>
+<li><strong>Capital raise:</strong> the company sells primary shares for cash to fund operations or capex.</li>
+<li><strong>Liquidity for insiders:</strong> existing equity holders — founders, employees, VCs — sell secondary shares.</li>
+<li class="bullets__heading">The trend: companies are public later</li>
+<li>Median age at IPO: <strong>~4 yrs (1980–2000) → ~13.5 yrs (2024)</strong>. The 1999–2000 dot-com bubble is the visible exception — median age dipped to ~3 yrs and unprofitable software companies listed within months of founding.</li>
+<li>Three structural shifts since 2000 made staying private the default:</li>
+<li class="bullets__sub"><strong>More late-stage private capital.</strong> SoftBank Vision Fund, Tiger Global, Coatue, sovereign wealth funds — multi-billion-dollar checks that didn't exist in the 1990s now do the job a public listing used to do.</li>
+<li class="bullets__sub"><strong>Private credit, ~$2T.</strong> Direct lenders (Ares, Blackstone, Apollo) provide debt without the disclosure or covenants public bond markets demand. Companies can lever up while staying private.</li>
+<li class="bullets__sub"><strong>Secondary liquidity without listing.</strong> Tender offers, Forge / EquityZen / Hiive marketplaces, and SPV wrappers let employees and early VCs cash out without the company filing an S-1.</li>
+<li class="bullets__sub"><strong>Higher cost of being public.</strong> Sarbanes-Oxley (2002) and Dodd-Frank disclosure raised the fixed cost of a US listing; quarterly-earnings short-termism and activist exposure raised the soft cost.</li>
+<li class="bullets__heading">Consequence</li>
+<li>By the time the public sees an S-1, most of the value creation has already accrued to private investors. The IPO is increasingly an <em>exit</em> for early holders, not a financing event for the company.</li>
+</ul>
+<div class="cite"><span class="tag">Sources</span>Ritter · IPO Data · Mar 9, 2026 <span class="sep">·</span><a href="https://site.warrington.ufl.edu/ritter/ipo-data/" target="_blank" rel="noopener">University of Florida — IPO Data</a><span class="sep">·</span>BIS &amp; IMF on private credit growth (2024–2025)</div>
+</div>
+</section>
+
+<!-- 13: Mechanics -->
+<section class="slide slide--content">
+<div class="slide-num"></div>
+<div class="content-wrap">
+<h2 class="slide-title">Mechanics — the standard book-built IPO</h2>
+<ul class="bullets">
+<li><strong>1. Underwriters.</strong> The company hires a lead investment bank (Goldman, Morgan Stanley, JPM…) and a syndicate. In a "firm-commitment" IPO, they buy the new shares from the company and resell them to investors.</li>
+<li><strong>2. S-1 filing.</strong> The company files audited financials and risk factors with the SEC; the public can read them.</li>
+<li><strong>3. Roadshow.</strong> Management presents to institutional investors (mutual funds, pensions, hedge funds) over ~2 weeks.</li>
+<li><strong>4. Book-building &amp; price discovery.</strong> Underwriters collect non-binding indications of interest at various prices, build a "book," and the night before listing set an <em>offer price</em> calibrated to clear the book with modest excess demand.</li>
+<li><strong>5. Allocation.</strong> Shares are handed to favoured institutional clients at the offer price — retail rarely gets in at this stage.</li>
+<li><strong>6. First trade.</strong> The stock opens on the exchange. A first-day "pop" of 15–30% is the norm — the gap between offer and opening price is value left on the table by the issuing company.</li>
+<li><strong>7. Lock-up.</strong> 180 days standard, 90 for some recent issues; insiders cannot sell during the window.</li>
+<li><strong>8. Staggered selling &amp; follow-ons.</strong> After lock-up, insider shares dribble out in tranches; the company can issue more shares ("follow-on offerings"). Each release adds supply that weighs on the price.</li>
+</ul>
+<div class="cite"><span class="tag">Source</span><a href="https://www.sec.gov/education/smallbusiness/goingpublic" target="_blank" rel="noopener">SEC — Going Public</a></div>
+</div>
+</section>
+
+<!-- Exceptions to the standard path -->
+<section class="slide slide--content">
+<div class="slide-num"></div>
+<div class="content-wrap">
+<h2 class="slide-title">Exceptions to the standard path</h2>
+<ul class="bullets">
+<li class="bullets__heading">Direct listing</li>
+<li>Spotify (2018), Slack (2019), Coinbase (2021): <em>no underwriter book-building, no new shares issued</em>. Existing shares simply start trading; the opening price is set entirely by the market on day one.</li>
+<li>Cuts the underwriter fee and the first-day pop, but only works for companies that don't need to raise primary capital and already have name recognition.</li>
+<li class="bullets__heading">Tender offer — the modern substitute for staying private</li>
+<li>The company stays private. Specific buyers purchase existing shares from employees and early investors at a negotiated price.</li>
+<li>Establishes a private mark without filing an S-1 — no public disclosure, no quarterly earnings, no Sarbanes-Oxley overhead.</li>
+<li><strong>Stripe</strong> priced a <strong>$159B</strong> tender in Feb 2026; <strong>SpaceX</strong> runs biannual tenders.</li>
+</ul>
+<div class="cite"><span class="tag">Sources</span><a href="https://stripe.com/newsroom" target="_blank" rel="noopener">Stripe Newsroom · Feb 24, 2026</a><span class="sep">·</span>SEC — direct listing rules</div>
+</div>
+</section>
+
+<!-- 14: Index inclusion rules -->
+<section class="slide slide--content">
+<div class="slide-num"></div>
+<div class="content-wrap content-wide">
+<h2 class="slide-title">Index inclusion — the 2026 changes</h2>
+<div class="two-col">
+<div>
+<h3>Nasdaq-100 (NDX)</h3>
+<ul class="bullets">
+<li>Fast-entry rule effective <strong>May 1, 2026</strong>.</li>
+<li>Previously: securities with &lt;10% public float <em>excluded outright</em>.</li>
+<li>New rule: <em>no minimum float</em>, but &lt;20% float gets weight reduced — the cap used for index weighting is set to <strong>3× the value of the publicly-floated shares</strong>, not the full company market cap.</li>
+<li class="bullets__sub">Example: $1T company, 10% public float ($100B floated). Weight is computed as if the cap were 3 × $100B = $300B — a 70% cut versus the full valuation.</li>
+<li>Whole-company market cap (listed + non-listed shares) is also factored into eligibility checks.</li>
+</ul>
+<h3>CRSP US Total Market (VTI)</h3>
+<ul class="bullets">
+<li>Admits qualifying IPOs in <strong>~5 trading days</strong>.</li>
+<li>Means VTI takes mega-IPOs <em>faster</em> than SPY.</li>
+</ul>
+</div>
+<div>
+<h3>S&amp;P 500</h3>
+<ul class="bullets">
+<li>Still: 12-month seasoning, four quarters GAAP profitability.</li>
+<li>Multi-class share ban (2017) <strong>partially reopened in April 2023</strong>; S&amp;P retains discretion.</li>
+<li>Bloomberg (Mar 12, 2026): S&amp;P weighing rule changes that would <em>speed SpaceX's S&amp;P 500 entry</em>.</li>
+</ul>
+</div>
+</div>
+<div class="cite"><span class="tag">Sources</span>Nasdaq NDX Consultation · Feb 2026<span class="sep">·</span>CRSP Methodology Guide · Jan 2026<span class="sep">·</span>SPDJI Methodology · Feb 2026<span class="sep">·</span>Almeida, Porter &amp; Gould · Bloomberg · Mar 12, 2026<span class="sep">·</span>Davis Polk · 2023 multi-class reopening</div>
+</div>
+</section>
+
+<!-- 15: SpaceX valuation arc (chart) -->
+<section class="slide slide--content">
+<div class="slide-num"></div>
+<div class="content-wrap content-wide">
+<h2 class="slide-title">Case study — SpaceX valuation arc</h2>
+<div class="chart-wrap">
+  <div class="chart-host" id="chart-spacex"></div>
+</div>
+<p class="body-para">Reported tender pricing climbed from ~$46B (Aug 2020) to <strong>$421/share — ≈$460B (Dec 2025, up to $2.56B in shares)</strong>. Post-xAI merger marks ~$1.25T combined. Reported 2026 IPO target: <strong>$1.5–1.75T, ~$30B+ raise, rumored June 2026</strong>. <em>No S-1 filed; numbers are reported, not audited.</em></p>
+<div class="cite"><span class="tag">Sources</span><a href="https://techcrunch.com/" target="_blank" rel="noopener">TechCrunch · Jul 8, 2025</a><span class="sep">·</span>CNBC / Bloomberg · Dec 13, 2025<span class="sep">·</span>Bloomberg / TechCrunch · Dec 9, 2025<span class="sep">·</span>Fortune · 2026 IPO reporting</div>
+</div>
+</section>
+
+<!-- P/S multiples (chart) -->
+<section class="slide slide--content">
+<div class="slide-num"></div>
+<div class="content-wrap content-wide">
+<h2 class="slide-title">Valuation problem</h2>
+<p class="body-para">We use <strong>price-to-sales</strong> (P/S = market cap ÷ trailing revenue), not price-to-earnings. P/E is undefined when earnings are negative and erratic when they are thin or lumpy — exactly the regime SpaceX, Palantir-at-IPO, and most pre-IPO mega-caps live in. Revenue is positive, smoother, and harder to manipulate, so P/S is the only multiple that puts everyone on the same axis.</p>
+<div class="chart-wrap">
+  <div class="chart-host" id="chart-ps"></div>
+</div>
+<p class="body-para">SpaceX at the reported IPO range trades at <strong>~94× sales</strong>. For comparison, the S&amp;P 500 sits near 3.1×; Facebook went public at ~11× and Google at ~5–6×.</p>
+<div class="cite"><span class="tag">Sources</span>Public filings (Palantir, Meta S-1, Google S-1) <span class="sep">·</span>SPDJI · Apr 2026 <span class="sep">·</span>Felix / PWL Capital commentary</div>
+</div>
+</section>
+
+<!-- 18: New Issues Puzzle (chart) -->
+<section class="slide slide--content">
+<div class="slide-num"></div>
+<div class="content-wrap content-wide">
+<h2 class="slide-title">The New Issues Puzzle</h2>
+<p class="body-para">Loughran &amp; Ritter (1995): IPOs from 1970–1990 returned ~5% / yr versus ~12% for size-matched seasoned firms — investors needed <strong>44% more capital</strong> to retire on the same number of shares.</p>
+<div class="chart-wrap">
+  <div class="chart-host" id="chart-ipo"></div>
+  <div class="chart-legend" id="legend-ipo"></div>
+</div>
+<ul class="bullets">
+<li>Renaissance US IPO ETF (<strong>IPO</strong>) since Oct 2013: VTI <strong>+376%</strong>, IPO <strong>+159%</strong> — a <strong>~5.4 pp/yr</strong> annualised gap.</li>
+<li>Green &amp; Black (Dimensional, 2019): ~2 pp/yr underperformance 1991–2018.</li>
+<li>Ritter (2026): 3-year buy-and-hold IPO underperformance ≈ 19 pp, 1980–2023.</li>
+</ul>
+<div class="cite"><span class="tag">Sources</span>Loughran &amp; Ritter (1995) · <em>JoF</em> 50:23<span class="sep">·</span>Green &amp; Black · Dimensional · 2019<span class="sep">·</span>Ritter (2026)<span class="sep">·</span>Renaissance Capital — Yahoo data via <code>build_data.py</code></div>
+</div>
+</section>
+
+<!-- 19: Low-float worse (chart) -->
+<section class="slide slide--content">
+<div class="slide-num"></div>
+<div class="content-wrap content-wide">
+<h2 class="slide-title">Low-float IPOs are worse</h2>
+<p class="body-para">Ritter's low-float subset: <strong>11 IPOs since 1980 with &lt;5% public float and &gt;$100M trailing sales</strong>. Three-year returns:</p>
+<div class="factor-bars">
+  <div class="factor-bar"><span class="lbl">vs. offer price</span><span class="track"><span class="fill is-warn" style="width:50%"></span></span><span class="pct">−50%</span></div>
+  <div class="factor-bar"><span class="lbl">vs. first-day close</span><span class="track"><span class="fill is-warn" style="width:60%"></span></span><span class="pct">−60%</span></div>
+</div>
+<p class="body-para"><strong>10 of 11</strong> underperformed the broad market over the three years following listing. Recent precedent: Instacart (2023) — initial pop, multi-year drift down. Mega-IPO + tiny float + index inclusion is the exact shape that has historically lost money.</p>
+<div class="cite"><span class="tag">Source</span>Ritter (2026) · low-float subset, low-float &lt;5% / TTM sales &gt;$100M, 1980–2023</div>
+</div>
+</section>
+
+<!-- 20: Shadow tax & Tesla precedent (chart) -->
+<section class="slide slide--content">
+<div class="slide-num"></div>
+<div class="content-wrap content-wide">
+<h2 class="slide-title">The shadow tax — and the Tesla precedent</h2>
+<p class="body-para">When a stock is announced for index inclusion, hedge funds front-run the forced buying. Fast-tracked index entrants outperform non-fast-track by ~5 pp <em>peaking at the inclusion date</em>, then revert.</p>
+<div class="chart-wrap">
+  <div class="chart-host" id="chart-tsla"></div>
+  <div class="chart-legend" id="legend-tsla"></div>
+</div>
+<p class="body-para">Tesla joined the S&amp;P 500 on <strong>Dec 21, 2020</strong>. Since then, SPY <strong>+105%</strong> vs TSLA <strong>+60%</strong> — TSLA has underperformed the index it joined by <strong>~45 pp</strong> cumulative. The first-day-of-inclusion price was the front-run peak.</p>
+<div class="cite"><span class="tag">Source</span>yfinance computation · TSLA vs SPY total return since 2020-12-21 (rebuild via <code>build_data.py</code>)</div>
+</div>
+</section>
+
+<!-- 22: Frame the move -->
+<section class="slide slide--content">
+<div class="slide-num"></div>
+<div class="content-wrap">
+<h2 class="slide-title">A personal playbook</h2>
+<p class="body-para">You can't change index methodology. You <em>can</em> shape your exposure.</p>
+<ul class="bullets">
+<li class="bullets__heading">Four levers</li>
+<li><strong>Lever 1.</strong> Tilt away from cap-weighted concentration with evidence-based factor funds.</li>
+<li><strong>Lever 2.</strong> Avoid the obvious traps — pre-IPO ETFs, SPVs, fund-of-funds private equity.</li>
+<li><strong>Lever 3.</strong> Behave well around inclusion events.</li>
+<li><strong>Lever 4.</strong> What is actually in your control — costs, taxes, contributions, time.</li>
+</ul>
+</div>
+</section>
+
+<!-- Lever 1a — funds and tickers -->
+<section class="slide slide--content">
+<div class="slide-num"></div>
+<div class="content-wrap content-wide">
+<h2 class="slide-title">Lever 1 — Tilt with evidence-based funds</h2>
+<div class="two-col">
+<div>
+<h3>Avantis (factor tilts, profitability-aware)</h3>
+<ul class="bullets">
+<li><code>AVUS</code> · US broad equity</li>
+<li><code>AVUV</code> · US small-cap value</li>
+<li><code>AVDE</code> · developed ex-US</li>
+<li><code>AVDV</code> · developed ex-US small-cap value</li>
+<li><code>AVEM</code> · emerging markets</li>
+<li><code>AVGE</code> · all-equity fund-of-funds</li>
+</ul>
+<h3>Total-market &amp; equal-weight</h3>
+<ul class="bullets">
+<li><code>VTI</code> — CRSP US TMI (note: 5-day fast-track on IPOs)</li>
+<li><code>RSP</code> — equal-weight S&amp;P 500</li>
+</ul>
+</div>
+<div>
+<h3>Dimensional (DFA)</h3>
+<ul class="bullets">
+<li><code>DFUS</code>, <code>DFAC</code> · US core</li>
+<li><code>DFSV</code> · US small-cap value</li>
+<li><code>DFAX</code> · World ex-US Core Equity 2 (developed + EM)</li>
+<li><code>DFEM</code> · emerging markets core</li>
+</ul>
+<h3>Why these specifically</h3>
+<ul class="bullets">
+<li>Both shops staff academics — Eugene Fama on DFA's board; Avantis founded by ex-DFA team.</li>
+<li>Mechanical, rules-based, low fee.</li>
+<li>Implement size + value + profitability factors from Part 3.</li>
+<li><em>Do not</em> buy newly-public low-float IPOs at index-inclusion prices the way cap-weighted indexes do.</li>
+</ul>
+</div>
+</div>
+<div class="cite"><span class="tag">Sources</span>Avantis methodology / fact sheets<span class="sep">·</span>Dimensional methodology / fact sheets</div>
+</div>
+</section>
+
+<!-- Lever 1b — the factors these funds harvest -->
+<section class="slide slide--content">
+<div class="slide-num"></div>
+<div class="content-wrap content-wide">
+<h2 class="slide-title">What those funds are actually harvesting</h2>
+<p class="body-para">Annualised historical excess returns of the standard academic factor portfolios — what evidence-based funds tilt toward (Part 3 recap):</p>
+<ul class="bullets">
+<li><strong>MKT−RF</strong> — equity risk premium: stock market return minus the risk-free rate. The base reward for owning equities at all.</li>
+<li><strong>SMB</strong> ("Small Minus Big") — small-cap stocks minus large-cap stocks. Small companies have historically paid extra return for the extra risk.</li>
+<li><strong>HML</strong> ("High Minus Low") — value stocks (high book-to-market) minus growth stocks. Cheap stocks have historically beaten expensive ones.</li>
+<li><strong>RMW</strong> ("Robust Minus Weak") — highly profitable companies minus weakly profitable ones. Quality compounds.</li>
+</ul>
+<div class="chart-wrap" style="margin-top:.6rem">
+  <div class="chart-host" id="chart-factors" style="height:clamp(160px,22vh,240px)"></div>
+</div>
+<div class="cite"><span class="tag">Source</span>Fama–French Data Library — annualised excess returns</div>
+</div>
+</section>
+
+<!-- Hiding in plain sight (now positioned to set up Lever 2) -->
+<section class="slide slide--content">
+<div class="slide-num"></div>
+<div class="content-wrap">
+<h2 class="slide-title">Hiding in plain sight</h2>
+<p class="body-para">Before deciding what private-market vehicles to avoid, the premise of the pitch is worth checking. The claim — <em>"you have no AI or space exposure unless you own SpaceX"</em> — is <strong>empirically false</strong>.</p>
+<p class="body-para">Most "private-asset themes" sold to retail investors are already available through public markets, more cheaply and with daily liquidity.</p>
+<ul class="bullets">
+<li class="bullets__heading">Where the exposure already lives</li>
+<li><strong>AI compute</strong> — NVDA, AMD, AVGO, TSM, ASML. The picks-and-shovels of every private AI lab are public; OpenAI's compute spend ultimately flows to these names' P&amp;Ls.</li>
+<li><strong>Space &amp; defense</strong> — LMT, RTX, NOC, BA cover launch, satellites, and prime contracts; RKLB and LUNR are public small-cap pure-plays.</li>
+<li><strong>SaaS / growth</strong> — public small- and mid-cap value and quality factor funds already span the same business models VCs sell as "exclusive."</li>
+<li class="bullets__heading">Why the public route is usually better</li>
+<li>Daily liquidity, transparent NAV, audited financials, lower headline fees, no SPV layer.</li>
+<li>Dimensional: when researchers map private-asset return drivers onto public-market factor exposures, most of the variance is captured without paying private-market fees.</li>
+</ul>
+<div class="cite"><span class="tag">Source</span>Ahn, Hendrix &amp; Saito · Dimensional · Jan 2, 2026 <span class="sep">·</span><a href="https://www.dimensional.com/us-en/insights/hiding-in-plain-sight-private-asset-exposure-through-public-equities" target="_blank" rel="noopener">Hiding in Plain Sight: Private Asset Exposure Through Public Equities</a></div>
+</div>
+</section>
+
+<!-- Lever 2 — what to avoid -->
+<section class="slide slide--content">
+<div class="slide-num"></div>
+<div class="content-wrap">
+<h2 class="slide-title">Lever 2 — What to avoid</h2>
+<p class="body-para">If the public route already covers the themes (previous slide), the next question is which "access products" charge a premium for exposure you can already get cheaply.</p>
+<ul class="bullets">
+<li class="bullets__heading">Pre-IPO ETFs and SPVs</li>
+<li><strong>XOVR / ERShares Crossover:</strong> NAV has lagged SpaceX's reported markups; ETF.com and Morningstar attribute this to opaque SPV economics. ERShares disputes specific fee characterisations.</li>
+<li class="bullets__heading">Renaissance IPO ETF</li>
+<li><code>IPO</code> underperforms VTI by ~5.4 pp/yr over 12.5 years (yfinance, monthly).</li>
+<li class="bullets__heading">PE at fund-of-funds fees</li>
+<li>Phalippou (2020): PE returns roughly match public equity <em>net of fees</em> over the long run — and the headline IRRs flatter the experience for LPs.</li>
+</ul>
+<div class="cite"><span class="tag">Sources</span>Morningstar · Feb 23, 2026 — <em>Lessons from a Private Markets Bust</em><span class="sep">·</span>ETF.com on XOVR<span class="sep">·</span>ERShares · PR Newswire clarification<span class="sep">·</span>Phalippou (2020) <em>JoI</em> 30(1):11–39</div>
+</div>
+</section>
+
+<!-- 25: Lever 3 + 4 -->
+<section class="slide slide--content">
+<div class="slide-num"></div>
+<div class="content-wrap">
+<h2 class="slide-title">Levers 3 &amp; 4 — Behaviour around inclusion</h2>
+<ul class="bullets">
+<li>Don't trade the inclusion event. It has already been front-run; the shadow tax peaks at inclusion and reverts.</li>
+<li>Don't sell on a single mega-cap drawdown. The Sammon–Shim drag is <em>minimised by holding through</em>.</li>
+<li>The mega-IPO is an emotional trap: famous company, small float, high price, forced index buyer. Your job is to do nothing.</li>
+</ul>
+<p class="kbd-quote">"The more you covet something, the more you should probably question your desire to own it." — Jeff Ptak, Morningstar</p>
+<p class="body-para"><strong>One-line summary.</strong> Pick the right rules-based fund (DFA / Avantis / total-market). Avoid IPO ETFs and SPVs. Sit still during inclusion drama.</p>
+<div class="cite"><span class="tag">Source</span>Ptak · Morningstar · 2026</div>
+</div>
+</section>
+
+<!-- 26: Synthesis -->
+<section class="slide slide--content">
+<div class="slide-num"></div>
+<div class="content-wrap">
+<h2 class="slide-title">The loop, restated</h2>
+<ol class="bullets">
+<li>Passive flows raise mega-cap valuations.</li>
+<li>2026 rule changes (NDX fast-entry, CRSP 5-day, S&amp;P 500 review) accelerate the inclusion of new mega-caps.</li>
+<li>Primary issuance lands directly into indexes via the Murray–Sammon channel.</li>
+<li>Forced buyers absorb low-float IPOs at inclusion prices.</li>
+<li>The underperformance shows up as a slow drag — 47–70 bps/yr at the index level, much more at the individual-issue level.</li>
+</ol>
+<p class="body-para">SpaceX is the test case at $1.5–1.75T. <strong>The personal playbook (slides 22–25) is what an individual investor can actually control.</strong></p>
+</div>
+</section>
+
+<!-- 27: Closing -->
+<section class="slide slide--end">
+<div class="slide-num"></div>
+<div class="end-wrap">
+<div class="end-eyebrow">End of Part 4</div>
+<h2 class="end-title">Pick a rule. Sit still.</h2>
+<p class="body-para">Educational only — not financial advice. Tickers named are exemplars of evidence-based, rules-based factor funds, not endorsements.</p>
+<div class="end-nav">
+<a href="../2025_06_12/index.html">
+  <span class="label">← Previous</span>
+  <span class="title">Equity Allocation</span>
+  <span class="meta">Geography, size, factors · Jun 12, 2025</span>
+</a>
+<a href="../index.html">
+  <span class="label">↺ Series</span>
+  <span class="title">Back to series index</span>
+  <span class="meta">All four decks</span>
+</a>
+</div>
+</div>
+</section>
+
+</main>
+
+<div class="progress"><div class="progress__bar"></div></div>
+<div class="help"><kbd>←</kbd> <kbd>→</kbd> navigate · <kbd>P</kbd> print</div>
+
+<script>
+/* ──────────────────────────────────────────────────────────────────────────
+   Tiny zero-dependency interactive SVG chart engine.
+   Three primitives: lineChart, stackedAreaChart, barChart.
+   ────────────────────────────────────────────────────────────────────────── */
+const NS='http://www.w3.org/2000/svg';
+const PALETTE={gold:'#d4a24c',goldSoft:'#e6c98a',blue:'#5fb6ff',blueSoft:'#a3d6ff',warn:'#e07a5f',ink:'#eef2f7',dim:'#9aa6b8',line:'#1f2a3d'};
+function el(name,attrs={}){const n=document.createElementNS(NS,name);for(const k in attrs)n.setAttribute(k,attrs[k]);return n}
+function fmtVal(v,suffix=''){if(Math.abs(v)>=1000)return (v/1000).toFixed(2)+'K'+suffix;if(Math.abs(v)>=100)return v.toFixed(0)+suffix;if(Math.abs(v)>=10)return v.toFixed(1)+suffix;return v.toFixed(2)+suffix}
+function ensureTooltip(host){
+  let tt=host.querySelector('.chart-tooltip');
+  if(!tt){tt=document.createElement('div');tt.className='chart-tooltip';host.appendChild(tt)}
+  return tt;
+}
+
+/* lineChart: opts={xLabels, series:[{name,values,color,dash?}], yFmt, xFmt, hostId} */
+function lineChart(host,opts){
+  const W=800,H=380,P={l:54,r:18,t:14,b:36};
+  const svg=el('svg',{viewBox:`0 0 ${W} ${H}`,preserveAspectRatio:'none'});
+  const xs=opts.xLabels;
+  const allVals=opts.series.flatMap(s=>s.values.filter(v=>v!=null));
+  let yMin=Math.min(0,Math.min(...allVals)),yMax=Math.max(...allVals);
+  const pad=(yMax-yMin)*.08;yMax+=pad;if(yMin<0)yMin-=pad*0.5;
+  const xAt=i=>P.l+(W-P.l-P.r)*(i/(xs.length-1||1));
+  const yAt=v=>P.t+(H-P.t-P.b)*(1-(v-yMin)/(yMax-yMin||1));
+  // Grid + Y axis ticks
+  const ticks=5;
+  for(let i=0;i<=ticks;i++){
+    const v=yMin+(yMax-yMin)*i/ticks;
+    const y=yAt(v);
+    svg.appendChild(el('line',{x1:P.l,x2:W-P.r,y1:y,y2:y,class:'chart-grid'}));
+    const t=el('text',{x:P.l-8,y:y+4,'text-anchor':'end',class:'chart-axis'});t.textContent=opts.yFmt?opts.yFmt(v):fmtVal(v);svg.appendChild(t);
+  }
+  svg.appendChild(el('line',{x1:P.l,x2:W-P.r,y1:H-P.b,y2:H-P.b,class:'chart-axis-line'}));
+  // X labels (downsampled)
+  const step=Math.max(1,Math.ceil(xs.length/8));
+  xs.forEach((lab,i)=>{
+    if(i%step!==0&&i!==xs.length-1)return;
+    const t=el('text',{x:xAt(i),y:H-P.b+18,'text-anchor':'middle',class:'chart-axis'});t.textContent=lab;svg.appendChild(t);
+  });
+  // Series state
+  const state=opts.series.map(s=>({...s,visible:true,path:null}));
+  function draw(){
+    state.forEach(s=>{
+      let d='';let started=false;
+      s.values.forEach((v,i)=>{
+        if(v==null)return;
+        const x=xAt(i),y=yAt(v);
+        d+=(started?' L':'M')+x.toFixed(1)+' '+y.toFixed(1);started=true;
+      });
+      if(!s.path){
+        s.path=el('path',{d,class:'chart-line',stroke:s.color||PALETTE.gold,fill:'none'});
+        if(s.dash)s.path.setAttribute('stroke-dasharray',s.dash);
+        svg.appendChild(s.path);
+      }else{s.path.setAttribute('d',d)}
+      s.path.classList.toggle('is-dim',!s.visible);
+    });
+  }
+  draw();
+  // Crosshair + hover
+  const cross=el('line',{x1:0,x2:0,y1:P.t,y2:H-P.b,class:'chart-crosshair'});svg.appendChild(cross);
+  const dotsGrp=el('g',{});svg.appendChild(dotsGrp);
+  const dots=state.map(s=>{const c=el('circle',{r:4,class:'chart-dot',stroke:s.color||PALETTE.gold,'fill-opacity':0,'stroke-opacity':0});dotsGrp.appendChild(c);return c});
+  const hit=el('rect',{x:P.l,y:P.t,width:W-P.l-P.r,height:H-P.t-P.b,fill:'transparent'});svg.appendChild(hit);
+  const tt=ensureTooltip(host);
+  function onMove(ev){
+    const r=svg.getBoundingClientRect();
+    const sx=(ev.clientX-r.left)*(W/r.width);
+    const idx=Math.round(((sx-P.l)/(W-P.l-P.r))*(xs.length-1));
+    if(idx<0||idx>=xs.length){onLeave();return}
+    cross.setAttribute('x1',xAt(idx));cross.setAttribute('x2',xAt(idx));cross.classList.add('is-active');
+    let html='<div class="tt-d">'+xs[idx]+'</div>';
+    state.forEach((s,k)=>{
+      const v=s.values[idx];
+      if(v==null||!s.visible){dots[k].setAttribute('fill-opacity',0);dots[k].setAttribute('stroke-opacity',0);return}
+      dots[k].setAttribute('cx',xAt(idx));dots[k].setAttribute('cy',yAt(v));
+      dots[k].setAttribute('fill-opacity',1);dots[k].setAttribute('stroke-opacity',1);
+      const fmt=opts.yFmt?opts.yFmt(v):fmtVal(v);
+      html+='<div class="tt-row"><span class="tt-sw" style="background:'+(s.color||PALETTE.gold)+'"></span>'+s.name+': <strong>'+fmt+'</strong></div>';
+    });
+    tt.innerHTML=html;tt.classList.add('is-active');
+    const hostR=host.getBoundingClientRect();
+    let tx=ev.clientX-hostR.left+12,ty=ev.clientY-hostR.top+12;
+    if(tx+tt.offsetWidth>hostR.width)tx=ev.clientX-hostR.left-tt.offsetWidth-12;
+    tt.style.left=tx+'px';tt.style.top=ty+'px';
+  }
+  function onLeave(){cross.classList.remove('is-active');tt.classList.remove('is-active');dots.forEach(d=>{d.setAttribute('fill-opacity',0);d.setAttribute('stroke-opacity',0)})}
+  hit.addEventListener('mousemove',onMove);hit.addEventListener('mouseleave',onLeave);
+  hit.addEventListener('touchmove',e=>{if(e.touches[0])onMove(e.touches[0])},{passive:true});
+  host.appendChild(svg);
+  // Legend
+  if(opts.legendId){
+    const lg=document.getElementById(opts.legendId);
+    if(lg){state.forEach(s=>{
+      const node=document.createElement('span');node.className='lg';
+      node.innerHTML='<span class="sw" style="background:'+(s.color||PALETTE.gold)+'"></span>'+s.name;
+      node.addEventListener('click',()=>{s.visible=!s.visible;node.classList.toggle('is-off',!s.visible);draw()});
+      lg.appendChild(node);
+    })}
+  }
+  return {redraw:draw};
+}
+
+/* stackedAreaChart: opts={xLabels, layers:[{name,values,color}], yFmt} */
+function stackedAreaChart(host,opts){
+  const W=800,H=380,P={l:54,r:18,t:14,b:36};
+  const svg=el('svg',{viewBox:`0 0 ${W} ${H}`,preserveAspectRatio:'none'});
+  const xs=opts.xLabels;
+  const layers=opts.layers;
+  // Cumulate
+  const cum=xs.map((_,i)=>0);
+  const stacks=layers.map(l=>{const arr=[];l.values.forEach((v,i)=>{arr.push({base:cum[i],top:cum[i]+v});cum[i]+=v});return arr});
+  let yMax=Math.max(...cum);
+  const pad=yMax*.05;yMax+=pad;
+  const xAt=i=>P.l+(W-P.l-P.r)*(i/(xs.length-1||1));
+  const yAt=v=>P.t+(H-P.t-P.b)*(1-v/yMax);
+  // Y grid
+  const ticks=5;
+  for(let i=0;i<=ticks;i++){
+    const v=yMax*i/ticks,y=yAt(v);
+    svg.appendChild(el('line',{x1:P.l,x2:W-P.r,y1:y,y2:y,class:'chart-grid'}));
+    const t=el('text',{x:P.l-8,y:y+4,'text-anchor':'end',class:'chart-axis'});t.textContent=(opts.yFmt?opts.yFmt(v):fmtVal(v));svg.appendChild(t);
+  }
+  svg.appendChild(el('line',{x1:P.l,x2:W-P.r,y1:H-P.b,y2:H-P.b,class:'chart-axis-line'}));
+  const step=Math.max(1,Math.ceil(xs.length/9));
+  xs.forEach((lab,i)=>{
+    if(i%step!==0&&i!==xs.length-1)return;
+    const t=el('text',{x:xAt(i),y:H-P.b+18,'text-anchor':'middle',class:'chart-axis'});t.textContent=lab;svg.appendChild(t);
+  });
+  const state=layers.map((l,k)=>({...l,visible:true,stack:stacks[k]}));
+  const paths=[];
+  function recompute(){
+    const c=xs.map(()=>0);
+    state.forEach(s=>{
+      if(!s.visible){s.stack=xs.map((_,i)=>({base:c[i],top:c[i]}));return}
+      s.stack=xs.map((_,i)=>{const b=c[i];c[i]+=s.values[i];return{base:b,top:c[i]}});
+    });
+  }
+  function pathFor(stack){
+    let top='M',bot='';
+    stack.forEach((p,i)=>{const x=xAt(i);top+=(i?' L':'')+x.toFixed(1)+' '+yAt(p.top).toFixed(1)});
+    for(let i=stack.length-1;i>=0;i--){const x=xAt(i);bot+=' L'+x.toFixed(1)+' '+yAt(stack[i].base).toFixed(1)}
+    return top+bot+' Z';
+  }
+  state.forEach((s,k)=>{const p=el('path',{d:pathFor(s.stack),fill:s.color,class:'chart-area'});svg.appendChild(p);paths[k]=p});
+  function draw(){recompute();state.forEach((s,k)=>{paths[k].setAttribute('d',pathFor(s.stack));paths[k].classList.toggle('is-dim',!s.visible)})}
+  // Hover
+  const cross=el('line',{x1:0,x2:0,y1:P.t,y2:H-P.b,class:'chart-crosshair'});svg.appendChild(cross);
+  const hit=el('rect',{x:P.l,y:P.t,width:W-P.l-P.r,height:H-P.t-P.b,fill:'transparent'});svg.appendChild(hit);
+  const tt=ensureTooltip(host);
+  hit.addEventListener('mousemove',ev=>{
+    const r=svg.getBoundingClientRect();
+    const sx=(ev.clientX-r.left)*(W/r.width);
+    const idx=Math.round(((sx-P.l)/(W-P.l-P.r))*(xs.length-1));
+    if(idx<0||idx>=xs.length)return;
+    cross.setAttribute('x1',xAt(idx));cross.setAttribute('x2',xAt(idx));cross.classList.add('is-active');
+    let html='<div class="tt-d">'+xs[idx]+'</div>';
+    state.forEach(s=>{if(!s.visible)return;html+='<div class="tt-row"><span class="tt-sw" style="background:'+s.color+'"></span>'+s.name+': <strong>'+(opts.yFmt?opts.yFmt(s.values[idx]):s.values[idx])+'</strong></div>'});
+    tt.innerHTML=html;tt.classList.add('is-active');
+    const hostR=host.getBoundingClientRect();
+    let tx=ev.clientX-hostR.left+12,ty=ev.clientY-hostR.top+12;
+    if(tx+tt.offsetWidth>hostR.width)tx=ev.clientX-hostR.left-tt.offsetWidth-12;
+    tt.style.left=tx+'px';tt.style.top=ty+'px';
+  });
+  hit.addEventListener('mouseleave',()=>{cross.classList.remove('is-active');tt.classList.remove('is-active')});
+  host.appendChild(svg);
+  if(opts.legendId){
+    const lg=document.getElementById(opts.legendId);
+    if(lg){state.forEach(s=>{
+      const node=document.createElement('span');node.className='lg';
+      node.innerHTML='<span class="sw" style="background:'+s.color+'"></span>'+s.name;
+      node.addEventListener('click',()=>{s.visible=!s.visible;node.classList.toggle('is-off',!s.visible);draw()});
+      lg.appendChild(node);
+    })}
+  }
+  return {redraw:draw};
+}
+
+/* barChart: horizontal. opts={items:[{k,v,hl?,color?}], unit, max?} */
+function barChart(host,opts){
+  const items=opts.items;
+  const longestLabel=Math.max(...items.map(i=>i.k.length));
+  const labelGutter=Math.min(360,Math.max(180,longestLabel*7+30));
+  const W=Math.max(800,labelGutter+520),rowH=36,P={l:labelGutter,r:64,t:8,b:8};
+  const H=P.t+P.b+items.length*rowH;
+  const svg=el('svg',{viewBox:`0 0 ${W} ${H}`,preserveAspectRatio:'none'});
+  const max=opts.max||Math.max(...items.map(i=>Math.abs(i.v)))*1.05;
+  const min=Math.min(0,Math.min(...items.map(i=>i.v)));
+  const xAt=v=>P.l+((v-min)/(max-min||1))*(W-P.l-P.r);
+  const zero=xAt(0);
+  // Zero line
+  svg.appendChild(el('line',{x1:zero,x2:zero,y1:P.t,y2:H-P.b,class:'chart-axis-line'}));
+  const tt=ensureTooltip(host);
+  items.forEach((it,k)=>{
+    const y=P.t+k*rowH+4;
+    const labelText=el('text',{x:P.l-10,y:y+rowH/2,'text-anchor':'end',class:'chart-axis'});labelText.textContent=it.k;svg.appendChild(labelText);
+    const x0=Math.min(zero,xAt(it.v)),x1=Math.max(zero,xAt(it.v));
+    const colour=it.color||(it.v<0?PALETTE.warn:(it.hl?PALETTE.gold:PALETTE.blue));
+    const r=el('rect',{x:x0,y:y+6,width:Math.max(1,x1-x0),height:rowH-16,fill:colour,class:'chart-bar',rx:2});
+    svg.appendChild(r);
+    const valTxt=el('text',{x:xAt(it.v)+(it.v<0?-6:6),y:y+rowH/2+4,'text-anchor':it.v<0?'end':'start',class:'chart-axis',fill:PALETTE.ink});
+    valTxt.textContent=(opts.unit==='%'?(it.v>0?'+':'')+it.v+'%':fmtVal(it.v)+(opts.unit||''));
+    svg.appendChild(valTxt);
+    r.addEventListener('mousemove',ev=>{
+      const hostR=host.getBoundingClientRect();
+      tt.innerHTML='<div class="tt-row"><span class="tt-sw" style="background:'+colour+'"></span>'+it.k+': <strong>'+(opts.unit==='%'?(it.v>0?'+':'')+it.v+'%':fmtVal(it.v)+(opts.unit||''))+'</strong></div>';
+      tt.classList.add('is-active');
+      tt.style.left=(ev.clientX-hostR.left+12)+'px';tt.style.top=(ev.clientY-hostR.top+12)+'px';
+    });
+    r.addEventListener('mouseleave',()=>tt.classList.remove('is-active'));
+  });
+  host.appendChild(svg);
+}
+
+/* ──────────────────────────────────────────────────────────────────────────
+   Wire up charts on first slide-activation, lazily, via IntersectionObserver
+   ────────────────────────────────────────────────────────────────────────── */
+const DATA=JSON.parse(document.getElementById('deck-data').textContent);
+const built=new Set();
+function buildChart(id){
+  if(built.has(id))return;
+  built.add(id);
+  const host=document.getElementById(id);
+  if(!host)return;
+  if(id==='chart-mag7'){
+    const d=DATA.magWeights;
+    stackedAreaChart(host,{
+      xLabels:d.years.map(String),
+      layers:[
+        {name:'Magnificent 7',values:d.mag7,color:PALETTE.gold},
+        {name:'Next 3 (top 8–10)',values:d.next3,color:PALETTE.goldSoft},
+        {name:'Rest of S&P 500',values:d.rest,color:PALETTE.line}
+      ],
+      yFmt:v=>v.toFixed(0)+'%',
+      legendId:'legend-mag7'
+    });
+  }else if(id==='chart-spaceworld'){
+    barChart(host,{items:DATA.spaceWorldShare.items,unit:'%'});
+  }else if(id==='chart-inclusion-spx'){
+    barChart(host,{items:DATA.inclusionSpx.items,unit:'%'});
+  }else if(id==='chart-inclusion-ndx'){
+    barChart(host,{items:DATA.inclusionNdx.items,unit:'%'});
+  }else if(id==='chart-spacex'){
+    const d=DATA.spacexValuation.points;
+    lineChart(host,{
+      xLabels:d.map(p=>p.d),
+      series:[{name:'SpaceX valuation ($B, reported)',values:d.map(p=>p.v),color:PALETTE.gold}],
+      yFmt:v=>'$'+(v>=1000?(v/1000).toFixed(1)+'T':v.toFixed(0)+'B')
+    });
+  }else if(id==='chart-ps'){
+    barChart(host,{items:DATA.psMultiples.items,unit:'×'});
+  }else if(id==='chart-starlink'){
+    const s=DATA.starlink;
+    lineChart(host,{
+      xLabels:s.actualRev.map(p=>p.d),
+      series:[
+        {name:'Revenue — actual ($B)',values:s.actualRev.map(p=>p.v),color:PALETTE.gold},
+        {name:'Revenue — MS 2018 forecast ($B)',values:s.msForecastRev.map(p=>p.v),color:PALETTE.dim,dash:'4 4'},
+        {name:'Subs — actual (M)',values:s.actualSubs.slice(1).map(p=>p.v),color:PALETTE.blue},
+        {name:'Subs — MS 2018 forecast (M)',values:s.msForecastSubs.slice(1).map(p=>p.v),color:PALETTE.blueSoft,dash:'4 4'}
+      ],
+      yFmt:v=>v.toFixed(1),
+      legendId:'legend-starlink'
+    });
+  }else if(id==='chart-ipo'){
+    const d=DATA.ipoVsVti;
+    lineChart(host,{
+      xLabels:d.labels,
+      series:[
+        {name:'VTI cumulative TR (%)',values:d.VTI,color:PALETTE.gold},
+        {name:'IPO ETF cumulative TR (%)',values:d.IPO,color:PALETTE.blue}
+      ],
+      yFmt:v=>(v>0?'+':'')+v.toFixed(0)+'%',
+      legendId:'legend-ipo'
+    });
+  }else if(id==='chart-tsla'){
+    const d=DATA.tslaVsSpy;
+    lineChart(host,{
+      xLabels:d.labels,
+      series:[
+        {name:'TSLA cumulative TR (%)',values:d.TSLA,color:PALETTE.warn},
+        {name:'SPY cumulative TR (%)',values:d.SPY,color:PALETTE.gold}
+      ],
+      yFmt:v=>(v>0?'+':'')+v.toFixed(0)+'%',
+      legendId:'legend-tsla'
+    });
+  }else if(id==='chart-factors'){
+    barChart(host,{items:DATA.factorPremia.items,unit:'%'});
+  }
+}
+
+class Deck{
+  constructor(){
+    this.allSlides=[...document.querySelectorAll('.slide')];
+    this.slides=this.allSlides.filter(s=>!s.dataset.hidden);
+    this.hiddenSlides=this.allSlides.filter(s=>s.dataset.hidden);
+    this.idx=0;this.returnIdx=null;
+    this.bar=document.querySelector('.progress__bar');
+    this.numberSlides();
+    this.show(0);
+    addEventListener('keydown',e=>{
+      if(this.returnIdx!==null){
+        if(e.key==='Escape'||e.key==='ArrowLeft'||e.key==='Backspace'){e.preventDefault();this.closeHidden();}
+        else if(e.key==='p'||e.key==='P'){window.print()}
+        return;
+      }
+      if(['ArrowRight','PageDown',' '].includes(e.key)){e.preventDefault();this.next()}
+      else if(['ArrowLeft','PageUp'].includes(e.key)){e.preventDefault();this.prev()}
+      else if(e.key==='Home'){this.show(0)}
+      else if(e.key==='End'){this.show(this.slides.length-1)}
+      else if(e.key==='p'||e.key==='P'){window.print()}
+    });
+    let wheelLock=false;
+    addEventListener('wheel',e=>{
+      if(wheelLock||this.returnIdx!==null)return;
+      if(Math.abs(e.deltaY)<25)return;
+      wheelLock=true;
+      if(e.deltaY>0)this.next();else this.prev();
+      setTimeout(()=>wheelLock=false,650);
+    },{passive:true});
+    let sx=0;
+    addEventListener('touchstart',e=>{sx=e.touches[0].clientX},{passive:true});
+    addEventListener('touchend',e=>{
+      if(this.returnIdx!==null)return;
+      const dx=e.changedTouches[0].clientX-sx;
+      if(Math.abs(dx)>40){dx<0?this.next():this.prev()}
+    },{passive:true});
+    document.querySelectorAll('[data-expand]').forEach(btn=>{
+      btn.addEventListener('click',()=>this.openHidden(btn.dataset.expand));
+    });
+    document.querySelectorAll('[data-detail-close]').forEach(btn=>{
+      btn.addEventListener('click',()=>this.closeHidden());
+    });
+  }
+  numberSlides(){
+    const total=this.slides.length;
+    this.slides.forEach((s,k)=>{
+      const n=s.querySelector('.slide-num');
+      if(n)n.textContent=String(k+1).padStart(2,'0')+' / '+String(total).padStart(2,'0');
+      s.dataset.idx=k+1;
+    });
+    this.hiddenSlides.forEach(s=>{
+      const n=s.querySelector('.slide-num');
+      if(n)n.textContent='DETAIL';
+    });
+  }
+  show(i){
+    i=Math.max(0,Math.min(this.slides.length-1,i));
+    this.allSlides.forEach(s=>{
+      s.classList.remove('is-active');s.classList.remove('is-prev');
+      s.querySelectorAll('.step.is-revealed').forEach(el=>el.classList.remove('is-revealed'));
+    });
+    this.slides.forEach((s,k)=>{
+      s.classList.toggle('is-active',k===i);
+      s.classList.toggle('is-prev',k<i);
+    });
+    this.idx=i;
+    if(this.bar)this.bar.style.width=((i+1)/this.slides.length*100)+'%';
+    history.replaceState(null,'',`#${i+1}`);
+    this.slides[i].querySelectorAll('.chart-host[id]').forEach(h=>buildChart(h.id));
+  }
+  openHidden(id){
+    const target=document.getElementById(id);
+    if(!target)return;
+    this.returnIdx=this.idx;
+    this.allSlides.forEach(s=>s.classList.remove('is-active'));
+    target.classList.add('is-active');
+    target.querySelectorAll('.chart-host[id]').forEach(h=>buildChart(h.id));
+  }
+  closeHidden(){
+    if(this.returnIdx===null)return;
+    const r=this.returnIdx;this.returnIdx=null;
+    this.show(r);
+  }
+  next(){
+    const cur=this.slides[this.idx];
+    const pending=cur&&cur.querySelector('.step:not(.is-revealed)');
+    if(pending){pending.classList.add('is-revealed');return}
+    this.show(this.idx+1);
+  }
+  prev(){
+    const cur=this.slides[this.idx];
+    const revealed=cur&&[...cur.querySelectorAll('.step.is-revealed')];
+    if(revealed&&revealed.length){revealed[revealed.length-1].classList.remove('is-revealed');return}
+    this.show(this.idx-1);
+  }
+}
+addEventListener('DOMContentLoaded',()=>{
+  window.deck=new Deck();
+  const m=location.hash.match(/#(\d+)/);
+  if(m){window.deck.show(parseInt(m[1])-1)}
+});
+</script>
+</body>
+</html>

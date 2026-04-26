@@ -29,7 +29,6 @@ body{
     radial-gradient(ellipse at 110% 110%, #2a1d10 0%, transparent 55%),
     var(--bg);
 }
-/* deck container */
 .deck{position:relative;width:100vw;height:100vh;height:100dvh;overflow:hidden}
 .slide{
   position:absolute;inset:0;
@@ -43,8 +42,6 @@ body{
 }
 .slide.is-active{opacity:1;visibility:visible;transform:none}
 .slide.is-prev{transform:translateY(-24px)}
-
-/* shared chrome */
 .slide-num{
   position:absolute;top:1.4rem;right:1.6rem;
   font-family:var(--mono);font-size:.72rem;letter-spacing:.18em;
@@ -59,8 +56,6 @@ body{
   content:'M·B';position:absolute;left:1.6rem;bottom:1.2rem;
   font-family:var(--serif);font-style:italic;font-size:.78rem;color:var(--ink-dim);letter-spacing:.1em;
 }
-
-/* cover */
 .cover-wrap{display:flex;flex-direction:column;gap:1.4rem;max-width:min(90vw,1100px)}
 .eyebrow{
   font-family:var(--mono);font-size:.78rem;letter-spacing:.32em;color:var(--gold);
@@ -79,17 +74,14 @@ body{
   margin-top:.6rem;
 }
 .cover-meta{font-family:var(--mono);font-size:.72rem;letter-spacing:.18em;color:var(--ink-dim);margin-top:.3rem}
-
-/* disclaimer */
 .disclaimer-wrap{max-width:min(80ch,90vw);display:flex;flex-direction:column;gap:1.2rem}
 .disclaimer-wrap .eyebrow{color:var(--gold-soft);font-size:.85rem}
 .disclaimer-text{
   font-family:var(--serif);font-size:clamp(1.1rem,2vw,1.7rem);line-height:1.55;
   color:var(--ink);font-weight:300;
 }
-
-/* big title */
-.big-wrap{display:flex;align-items:center;height:100%;width:100%}
+.big-wrap{display:flex;flex-direction:column;align-items:flex-start;justify-content:center;height:100%;width:100%;gap:.8rem}
+.big-section-meta{font-family:var(--mono);font-size:.76rem;letter-spacing:.28em;color:var(--gold);text-transform:uppercase}
 .big-title{
   font-family:var(--serif);font-style:italic;font-weight:300;
   font-size:clamp(3rem,11vw,9.5rem);line-height:1.15;letter-spacing:-.02em;
@@ -99,8 +91,7 @@ body{
   -webkit-text-fill-color:transparent;
   display:inline-block;max-width:100%;
 }
-
-/* content */
+.big-teaser{font-family:var(--serif);font-style:italic;color:var(--ink-dim);font-size:clamp(1rem,1.6vw,1.4rem);max-width:60ch;font-weight:300}
 .content-wrap{display:flex;flex-direction:column;gap:1.4rem;max-width:min(75ch,90vw)}
 .slide-title{
   font-family:var(--serif);font-weight:400;font-style:italic;
@@ -122,14 +113,27 @@ body{
 .bullets li::before{
   content:'';position:absolute;left:0;top:.7em;width:.7rem;height:1px;background:var(--gold);
 }
+.bullets li.bullets__sub{padding-left:3rem;color:var(--ink-dim);font-size:clamp(.9rem,1.2vw,1.08rem)}
+.bullets li.bullets__sub::before{left:1.6rem;width:.5rem;background:var(--ink-dim)}
+.bullets li.bullets__heading{padding-left:0;font-family:var(--serif);font-style:italic;font-size:clamp(1rem,1.4vw,1.25rem);color:var(--gold-soft);margin-top:.4rem}
+.bullets li.bullets__heading::before{display:none}
 .src-link{
   font-family:var(--mono);font-size:.74rem;letter-spacing:.06em;color:var(--ink-dim);
   text-decoration:none;border-bottom:1px dashed var(--line);padding-bottom:2px;
   align-self:flex-start;word-break:break-all;max-width:90vw;
 }
 .src-link:hover{color:var(--gold);border-color:var(--gold)}
-
-/* image full */
+.btn-row{display:flex;flex-direction:column;gap:.8rem;margin-top:.4rem}
+.btn-link{
+  font-family:var(--sans);font-size:clamp(.92rem,1.2vw,1.05rem);
+  display:inline-flex;align-items:center;gap:.6rem;
+  padding:.7rem 1rem;border:1px solid var(--line);border-radius:4px;
+  background:rgba(255,255,255,.015);color:var(--ink);text-decoration:none;
+  transition:all .25s ease;align-self:flex-start;max-width:100%;
+}
+.btn-link:hover{border-color:var(--gold);background:rgba(212,162,76,.06);transform:translateX(3px)}
+.btn-link .btn-tag{font-family:var(--mono);font-size:.7rem;letter-spacing:.18em;color:var(--gold);text-transform:uppercase}
+.btn-link .btn-arrow{margin-left:auto;color:var(--ink-dim)}
 .img-full-wrap{
   display:flex;flex-direction:column;align-items:center;justify-content:center;
   width:100%;height:100%;gap:.8rem;
@@ -141,15 +145,13 @@ body{
 }
 .img-caption{
   font-family:var(--serif);font-style:italic;color:var(--ink-dim);
-  font-size:clamp(.95rem,1.3vw,1.2rem);
+  font-size:clamp(.95rem,1.3vw,1.2rem);max-width:80ch;text-align:center;
 }
 .img-source{
   font-family:var(--mono);font-size:.7rem;color:var(--ink-dim);text-decoration:none;
   letter-spacing:.04em;word-break:break-all;max-width:80vw;text-align:center;
 }
 .img-source:hover{color:var(--gold)}
-
-/* split */
 .split-wrap{
   display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.2fr);
   gap:clamp(1.2rem,3vw,3rem);align-items:center;height:100%;
@@ -165,16 +167,28 @@ body{
   border:1px solid var(--line);border-radius:6px;background:#fff;
   box-shadow:0 24px 60px -25px rgba(0,0,0,.7);
 }
-
-/* small logos pinned next to the slide title */
 .slide-logo{
   position:absolute;top:clamp(1.4rem,3.5vw,3.2rem);right:clamp(1.6rem,5vw,5rem);
   width:clamp(46px,5vw,76px);height:clamp(46px,5vw,76px);
   object-fit:contain;opacity:.85;z-index:3;
 }
 .slide--cover .slide-logo,.slide--disclaimer .slide-logo{display:none}
-
-/* progress + nav */
+.end-wrap{display:flex;flex-direction:column;gap:1.6rem;max-width:min(80ch,90vw)}
+.end-eyebrow{font-family:var(--mono);font-size:.78rem;letter-spacing:.32em;color:var(--gold);text-transform:uppercase}
+.end-title{font-family:var(--serif);font-style:italic;font-weight:300;font-size:clamp(2.4rem,6vw,4.6rem);line-height:1.05;letter-spacing:-.02em}
+.end-nav{display:flex;flex-wrap:wrap;gap:1rem;margin-top:.8rem}
+.end-nav a{
+  flex:1 1 320px;min-width:280px;
+  display:flex;flex-direction:column;gap:.4rem;
+  padding:1.2rem 1.4rem;border:1px solid var(--line);border-radius:6px;
+  text-decoration:none;color:var(--ink);background:rgba(255,255,255,.015);
+  transition:all .25s ease;
+}
+.end-nav a:hover{border-color:var(--gold);background:rgba(212,162,76,.06);transform:translateY(-3px)}
+.end-nav .label{font-family:var(--mono);font-size:.7rem;letter-spacing:.2em;color:var(--gold);text-transform:uppercase}
+.end-nav .title{font-family:var(--serif);font-style:italic;font-size:1.4rem}
+.end-nav .meta{font-family:var(--mono);font-size:.7rem;color:var(--ink-dim);letter-spacing:.1em}
+.end-nav a.is-disabled{opacity:.45;pointer-events:none}
 .progress{
   position:fixed;bottom:0;left:0;right:0;height:2px;background:transparent;z-index:50;
 }
@@ -191,55 +205,80 @@ body{
   font-family:var(--mono);font-size:.68rem;background:var(--bg-2);
   border:1px solid var(--line);padding:.05rem .3rem;border-radius:3px;color:var(--ink);
 }
-
-/* enter animations */
 @media (prefers-reduced-motion: no-preference){
   .slide.is-active .cover-title,
   .slide.is-active .big-title,
-  .slide.is-active .slide-title{animation:rise .8s cubic-bezier(.2,.7,.2,1) both}
+  .slide.is-active .slide-title,
+  .slide.is-active .end-title{animation:rise .8s cubic-bezier(.2,.7,.2,1) both}
   .slide.is-active .body-para,
   .slide.is-active .bullets li,
   .slide.is-active .body-line,
+  .slide.is-active .btn-link,
   .slide.is-active .disclaimer-text{animation:rise .7s ease both;animation-delay:.18s}
-  .slide.is-active .bullets li:nth-child(1){animation-delay:.18s}
-  .slide.is-active .bullets li:nth-child(2){animation-delay:.26s}
-  .slide.is-active .bullets li:nth-child(3){animation-delay:.34s}
-  .slide.is-active .bullets li:nth-child(4){animation-delay:.42s}
+  .slide.is-active .bullets li:nth-child(1),
+  .slide.is-active .btn-link:nth-child(1){animation-delay:.18s}
+  .slide.is-active .bullets li:nth-child(2),
+  .slide.is-active .btn-link:nth-child(2){animation-delay:.26s}
+  .slide.is-active .bullets li:nth-child(3),
+  .slide.is-active .btn-link:nth-child(3){animation-delay:.34s}
+  .slide.is-active .bullets li:nth-child(4),
+  .slide.is-active .btn-link:nth-child(4){animation-delay:.42s}
   .slide.is-active .bullets li:nth-child(5){animation-delay:.50s}
   .slide.is-active .bullets li:nth-child(6){animation-delay:.58s}
   .slide.is-active img{animation:fade .9s ease both;animation-delay:.1s}
 }
 @keyframes rise{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:none}}
 @keyframes fade{from{opacity:0}to{opacity:1}}
-
 @media (prefers-reduced-motion: reduce){
   .slide{transition:opacity .15s linear}
   *{animation:none!important}
+}
+@media print{
+  html,body{overflow:visible;height:auto;background:#fff;color:#111}
+  body{background:#fff}
+  .deck{position:static;width:auto;height:auto;overflow:visible}
+  .slide{
+    position:relative;inset:auto;width:100%;height:100vh;
+    page-break-after:always;break-after:page;
+    opacity:1!important;visibility:visible!important;transform:none!important;
+    color:#111;background:#fff;
+  }
+  .slide:last-child{page-break-after:auto;break-after:auto}
+  .slide::before,.slide::after,.slide-num,.help,.progress{display:none!important}
+  .cover-title,.big-title,.slide-title,.end-title{
+    color:#111!important;background:none!important;-webkit-text-fill-color:#111!important;
+  }
+  .body-para,.bullets li,.body-line,.disclaimer-text,.cover-sub,.img-caption,.eyebrow,.cover-meta,.big-section-meta,.big-teaser,.end-eyebrow,.btn-link,.src-link,.img-source{color:#111!important}
+  .img-full,.split-image img{box-shadow:none;border-color:#ccc;max-height:80vh}
+  *{animation:none!important;transition:none!important}
 }
 </style>
 </head>
 <body>
 <main class="deck">
-<section class="slide slide--cover" data-idx="1">
-<div class="slide-num">01 / 28</div>
+<section class="slide slide--cover">
+<div class="slide-num"></div>
 <img class="slide-logo" src="assets/10000201000001930000008D107DE959C2A820B3.png" alt="" loading="lazy">
 <div class="cover-wrap">
 <div class="eyebrow">Marco Barbone</div>
 <h1 class="cover-title">Assets</h1>
 <div class="cover-sub">From safer to riskier · May 22, 2025</div>
 <div class="cover-rule"></div>
-<div class="cover-meta">An educational deck · not financial advice</div>
+<div class="cover-meta">Part 2 of 3 · An educational deck · not financial advice</div>
+<a class="cover-license" href="https://creativecommons.org/licenses/by/4.0/" target="_blank" rel="noopener" style="font-family:var(--mono);font-size:.7rem;letter-spacing:.12em;color:var(--ink-dim);text-decoration:none;border-bottom:1px dashed var(--line);padding-bottom:2px;align-self:flex-start;margin-top:.6rem">CC BY 4.0 · share &amp; adapt with credit</a>
 </div>
 </section>
-<section class="slide slide--disclaimer" data-idx="2">
-<div class="slide-num">02 / 28</div>
+
+<section class="slide slide--disclaimer">
+<div class="slide-num"></div>
 <div class="disclaimer-wrap">
 <div class="eyebrow">Disclaimer</div>
 <p class="disclaimer-text">The information provided is for educational and informational purposes only and should not be considered financial or investment advice. Always consult with a qualified financial advisor or professional before making any investment decisions.</p>
 </div>
 </section>
-<section class="slide slide--content" data-idx="3">
-<div class="slide-num">03 / 28</div>
+
+<section class="slide slide--content">
+<div class="slide-num"></div>
 <div class="content-wrap">
 <h2 class="slide-title">Assets (from safer to riskier)</h2>
 <ul class="bullets">
@@ -254,36 +293,23 @@ body{
 </ul>
 </div>
 </section>
-<section class="slide slide--content" data-idx="4">
-<div class="slide-num">04 / 28</div>
-<div class="content-wrap">
-<h2 class="slide-title">Assets (from safer to riskier)</h2>
-<ul class="bullets">
-<li>Bonds</li>
-<li>Real estate</li>
-<li>Equities</li>
-<li>Commodities</li>
-<li>Cash</li>
-<li>Collectables</li>
-<li>Venture capital</li>
-<li>Crypto</li>
-</ul>
-</div>
-</section>
-<section class="slide slide--image-split" data-idx="5">
-<div class="slide-num">05 / 28</div>
+
+<section class="slide slide--image-split">
+<div class="slide-num"></div>
 <div class="split-wrap">
 <div class="split-text">
-<h2 class="slide-title">Assets (from safer to riskier)</h2>
-<a class="src-link" href="https://pages.stern.nyu.edu/~adamodar/New_Home_Page/datafile/histretSP.html" target="_blank" rel="noopener">https://pages.stern.nyu.edu/~adamodar/New_Home_Page/datafile/histretSP.html</a>
+<h2 class="slide-title">Long-run historical returns</h2>
+<p class="body-line">Annualised returns by asset class — Damodaran (NYU Stern) historical-return dataset.</p>
+<a class="src-link" href="https://pages.stern.nyu.edu/~adamodar/New_Home_Page/datafile/histretSP.html" target="_blank" rel="noopener">pages.stern.nyu.edu/~adamodar — histretSP</a>
 </div>
 <div class="split-image">
 <img src="assets/10000201000004B0000002E6DC93086F2635C065.png" alt="" loading="lazy">
 </div>
 </div>
 </section>
-<section class="slide slide--content" data-idx="6">
-<div class="slide-num">06 / 28</div>
+
+<section class="slide slide--content">
+<div class="slide-num"></div>
 <div class="content-wrap">
 <h2 class="slide-title">Historical returns</h2>
 <ul class="bullets">
@@ -294,216 +320,269 @@ body{
 <li>Real estate +4.23%</li>
 <li>3-month T-bills +3.31%</li>
 </ul>
+<a class="src-link" href="https://pages.stern.nyu.edu/~adamodar/New_Home_Page/datafile/histretSP.html" target="_blank" rel="noopener">Source: Damodaran (NYU Stern), histretSP</a>
 </div>
 </section>
-<section class="slide slide--image-full" data-idx="7">
-<div class="slide-num">07 / 28</div>
+
+<section class="slide slide--image-full">
+<div class="slide-num"></div>
 <div class="img-full-wrap">
-<img class="img-full" src="assets/10000000000006D5000003D85AEC9D976D2E51D6.png" alt="" loading="lazy">
+<img class="img-full" src="assets/10000000000006D5000003D85AEC9D976D2E51D6.png" alt="Asset-class returns table" loading="lazy">
+<div class="img-caption">Asset-class returns — extended table</div>
+<a class="img-source" href="https://pages.stern.nyu.edu/~adamodar/New_Home_Page/datafile/histretSP.html" target="_blank" rel="noopener">pages.stern.nyu.edu/~adamodar — histretSP</a>
 </div>
 </section>
-<section class="slide slide--image-full" data-idx="8">
-<div class="slide-num">08 / 28</div>
+
+<section class="slide slide--image-full">
+<div class="slide-num"></div>
 <div class="img-full-wrap">
-<img class="img-full" src="assets/10000201000004B0000002E628345223E196FCEE.png" alt="" loading="lazy">
+<img class="img-full" src="assets/10000201000004B0000002E628345223E196FCEE.png" alt="Asset-class chart" loading="lazy">
+<div class="img-caption">Asset-class growth-of-$1 chart</div>
 </div>
 </section>
-<section class="slide slide--image-full" data-idx="9">
-<div class="slide-num">09 / 28</div>
-<div class="img-full-wrap">
-<img class="img-full" src="assets/10000201000004B0000002E628345223E196FCEE.png" alt="" loading="lazy">
-</div>
-</section>
-<section class="slide slide--content" data-idx="10">
-<div class="slide-num">10 / 28</div>
+
+<section class="slide slide--content">
+<div class="slide-num"></div>
 <div class="content-wrap">
 <h2 class="slide-title">Why not 100% stocks?</h2>
-<p class="body-para">Investing in bonds offers stability, income, and diversification, making them a core component of many portfolios—especially for risk-conscious investors or those nearing retirement.</p>
+<p class="body-para">Bonds offer stability, income, and diversification, making them a core component of many portfolios — especially for risk-conscious investors or those nearing retirement.</p>
 </div>
 </section>
-<section class="slide slide--content" data-idx="11">
-<div class="slide-num">11 / 28</div>
+
+<section class="slide slide--content">
+<div class="slide-num"></div>
 <div class="content-wrap">
 <h2 class="slide-title">Bonds</h2>
+<p class="body-para">A bond is a type of loan from an investor to a borrower — typically a corporation, municipality, or government. In return, the issuer agrees to:</p>
 <ul class="bullets">
-<li>A bond is a type of loan made by an investor to a borrower—typically a corporation, municipality, or government. In return for the loan, the issuer agrees to:</li>
-<li>Pay periodic interest (called the coupon), and</li>
-<li>Repay the principal (the original loan amount, or face/par value) at a specified future date (maturity).</li>
-<li>A bond is a fixed-income instrument!</li>
+<li class="bullets__sub">Pay periodic interest (the <em>coupon</em>), and</li>
+<li class="bullets__sub">Repay the principal (the original loan, or <em>face/par value</em>) at a specified future date (<em>maturity</em>).</li>
 </ul>
+<p class="body-para">A bond is a fixed-income instrument.</p>
 </div>
 </section>
-<section class="slide slide--content" data-idx="12">
-<div class="slide-num">12 / 28</div>
+
+<section class="slide slide--content">
+<div class="slide-num"></div>
 <div class="content-wrap">
 <h2 class="slide-title">Issuers</h2>
 <ul class="bullets">
-<li>Governments: US treasuries, Bunds</li>
-<li>Municipal: MTA</li>
-<li>Corporate: Any company</li>
+<li><strong>Governments:</strong> US Treasuries, German Bunds</li>
+<li><strong>Municipal:</strong> e.g. NY MTA</li>
+<li><strong>Corporate:</strong> any company</li>
 </ul>
 </div>
 </section>
-<section class="slide slide--content" data-idx="13">
-<div class="slide-num">13 / 28</div>
+
+<section class="slide slide--content">
+<div class="slide-num"></div>
 <div class="content-wrap">
 <h2 class="slide-title">Maturity</h2>
 <ul class="bullets">
-<li>Short-term: &lt; 3 years</li>
-<li>Medium-term: 3–10 years</li>
-<li>Long-term: 10+ years</li>
-<li>Perpetual bonds: No maturity date (rare; some bank instruments)</li>
+<li><strong>Short-term:</strong> &lt; 3 years</li>
+<li><strong>Medium-term:</strong> 3–10 years</li>
+<li><strong>Long-term:</strong> 10+ years</li>
+<li><strong>Perpetual:</strong> no maturity (rare; some bank instruments)</li>
 </ul>
 </div>
 </section>
-<section class="slide slide--image-split" data-idx="14">
-<div class="slide-num">14 / 28</div>
+
+<section class="slide slide--image-split">
+<div class="slide-num"></div>
 <div class="split-wrap">
 <div class="split-text">
 <h2 class="slide-title">iShares Core US Aggregate Bond ETF</h2>
+<p class="body-line">Broad-market US investment-grade bond exposure (AGG).</p>
+<a class="src-link" href="https://www.ishares.com/us/products/239458/ishares-core-total-us-bond-market-etf" target="_blank" rel="noopener">ishares.com — AGG fund page</a>
 </div>
 <div class="split-image">
 <img src="assets/10000201000005C5000002DB86BFCF3F5297C5AC.png" alt="" loading="lazy">
 </div>
 </div>
 </section>
-<section class="slide slide--image-full" data-idx="15">
-<div class="slide-num">15 / 28</div>
+
+<section class="slide slide--image-full">
+<div class="slide-num"></div>
 <div class="img-full-wrap">
-<img class="img-full" src="assets/10000201000005C70000025C076C36CE6F13E421.png" alt="" loading="lazy">
+<img class="img-full" src="assets/10000201000005C70000025C076C36CE6F13E421.png" alt="AGG holdings or composition" loading="lazy">
+<div class="img-caption">iShares AGG — composition / holdings snapshot</div>
 </div>
 </section>
-<section class="slide slide--image-full" data-idx="16">
-<div class="slide-num">16 / 28</div>
+
+<section class="slide slide--image-full">
+<div class="slide-num"></div>
 <div class="img-full-wrap">
-<img class="img-full" src="assets/10000201000005C00000026557F11FC547BFBD5F.png" alt="" loading="lazy">
+<img class="img-full" src="assets/10000201000005C00000026557F11FC547BFBD5F.png" alt="AGG performance" loading="lazy">
+<div class="img-caption">iShares AGG — performance / yield snapshot</div>
 </div>
 </section>
-<section class="slide slide--image-full" data-idx="17">
-<div class="slide-num">17 / 28</div>
+
+<section class="slide slide--image-full">
+<div class="slide-num"></div>
 <div class="img-full-wrap">
-<img class="img-full" src="assets/100002010000058E000002C4E643FCA19DB37C39.png" alt="" loading="lazy">
-<a class="img-source" href="https://home.treasury.gov/resource-center/data-chart-center/interest-rates/TextView?type=daily_treasury_yield_curve&amp;field_tdr_date_value_month=202505" target="_blank" rel="noopener">https://home.treasury.gov/resource-center/data-chart-center/interest-rates/TextView?type=daily_treasury_yield_curve&amp;field_tdr_date_value_month=202505</a>
+<img class="img-full" src="assets/100002010000058E000002C4E643FCA19DB37C39.png" alt="US Treasury yield curve" loading="lazy">
+<div class="img-caption">US Treasury yield curve — May 2025</div>
+<a class="img-source" href="https://home.treasury.gov/resource-center/data-chart-center/interest-rates/TextView?type=daily_treasury_yield_curve&amp;field_tdr_date_value_month=202505" target="_blank" rel="noopener">treasury.gov — daily treasury yield curve, May 2025</a>
 </div>
 </section>
-<section class="slide slide--image-full" data-idx="18">
-<div class="slide-num">18 / 28</div>
+
+<section class="slide slide--image-full">
+<div class="slide-num"></div>
 <div class="img-full-wrap">
-<img class="img-full" src="assets/100002010000058E000002C4E643FCA19DB37C39.png" alt="" loading="lazy">
-<a class="img-source" href="https://home.treasury.gov/resource-center/data-chart-center/interest-rates/TextView?type=daily_treasury_yield_curve&amp;field_tdr_date_value_month=202505" target="_blank" rel="noopener">https://home.treasury.gov/resource-center/data-chart-center/interest-rates/TextView?type=daily_treasury_yield_curve&amp;field_tdr_date_value_month=202505</a>
+<img class="img-full" src="assets/10000201000005BE00000461F2ADAFA378149E13.png" alt="TreasuryDirect Series I/EE growth" loading="lazy">
+<div class="img-caption">Savings-bond growth calculator (TreasuryDirect)</div>
+<a class="img-source" href="https://treasurydirect.gov/BC/SBCGrw" target="_blank" rel="noopener">treasurydirect.gov/BC/SBCGrw</a>
 </div>
 </section>
-<section class="slide slide--image-full" data-idx="19">
-<div class="slide-num">19 / 28</div>
+
+<section class="slide slide--image-full">
+<div class="slide-num"></div>
 <div class="img-full-wrap">
-<img class="img-full" src="assets/10000201000005BE00000461F2ADAFA378149E13.png" alt="" loading="lazy">
-<a class="img-source" href="https://treasurydirect.gov/BC/SBCGrw" target="_blank" rel="noopener">https://treasurydirect.gov/BC/SBCGrw</a>
+<img class="img-full" src="assets/10000201000007DB00000304E671E24FC6E10A59.png" alt="NerdWallet treasuries calculator" loading="lazy">
+<div class="img-caption">Treasury yield / income calculator</div>
+<a class="img-source" href="https://www.nerdwallet.com/calculator/treasurys" target="_blank" rel="noopener">nerdwallet.com/calculator/treasurys</a>
 </div>
 </section>
-<section class="slide slide--image-full" data-idx="20">
-<div class="slide-num">20 / 28</div>
+
+<section class="slide slide--image-full">
+<div class="slide-num"></div>
 <div class="img-full-wrap">
-<img class="img-full" src="assets/10000201000007DB00000304E671E24FC6E10A59.png" alt="" loading="lazy">
-<a class="img-source" href="https://www.nerdwallet.com/calculator/treasurys" target="_blank" rel="noopener">https://www.nerdwallet.com/calculator/treasurys</a>
+<img class="img-full" src="assets/10000201000005CE000002D9E32D55A102DF2B07.png" alt="Bond price/yield illustration" loading="lazy">
+<div class="img-caption">Bonds — price / yield relationship</div>
 </div>
 </section>
-<section class="slide slide--image-full" data-idx="21">
-<div class="slide-num">21 / 28</div>
-<div class="img-full-wrap">
-<img class="img-full" src="assets/10000201000005CE000002D9E32D55A102DF2B07.png" alt="" loading="lazy">
-</div>
-</section>
-<section class="slide slide--content" data-idx="22">
-<div class="slide-num">22 / 28</div>
+
+<section class="slide slide--content">
+<div class="slide-num"></div>
 <div class="content-wrap">
 <h2 class="slide-title">Equities</h2>
-<p class="body-para">Equities are financial instruments that represent ownership in a company. When you own equity in a company, you own a piece of that business and are entitled to a share of its profits (usually in the form of dividends) and potential capital gains if the company&#x27;s value increases.</p>
+<p class="body-para">Equities represent ownership in a company. When you own equity, you own a piece of the business and are entitled to a share of its profits (typically as dividends) and to potential capital gains if the company’s value increases.</p>
 </div>
 </section>
-<section class="slide slide--content" data-idx="23">
-<div class="slide-num">23 / 28</div>
+
+<section class="slide slide--content">
+<div class="slide-num"></div>
 <div class="content-wrap">
-<h2 class="slide-title">Equities Offer Strong Long-Term Growth</h2>
+<h2 class="slide-title">Equities offer strong long-term growth</h2>
 <ul class="bullets">
 <li>Historical data shows equities outperform bonds and cash over long horizons</li>
 <li>Investors are compensated for taking on more volatility and risk</li>
 <li>Growth potential makes equities a core part of most portfolios</li>
-<li>Reads:</li>
-<li>Fama, E. F. (1965). The behavior of stock-market prices</li>
-<li>Markowitz, H. (1952). Portfolio Selection</li>
+<li class="bullets__heading">Reads</li>
+<li class="bullets__sub">Fama, E. F. (1965). <em>The Behavior of Stock-Market Prices.</em></li>
+<li class="bullets__sub">Markowitz, H. (1952). <em>Portfolio Selection.</em></li>
 </ul>
 </div>
 </section>
-<section class="slide slide--content" data-idx="24">
-<div class="slide-num">24 / 28</div>
+
+<section class="slide slide--content">
+<div class="slide-num"></div>
 <div class="content-wrap">
-<h2 class="slide-title">Diversification Enhances Risk-Adjusted Returns</h2>
+<h2 class="slide-title">Diversification enhances risk-adjusted returns</h2>
 <ul class="bullets">
 <li>Combining uncorrelated assets reduces portfolio risk</li>
 <li>Enables more consistent performance even in downturns</li>
 <li>Foundation of Modern Portfolio Theory (MPT)</li>
-<li>Reads:</li>
-<li>Markowitz, H. (1952). Portfolio Selection</li>
+<li class="bullets__heading">Reads</li>
+<li class="bullets__sub">Markowitz, H. (1952). <em>Portfolio Selection.</em></li>
 </ul>
 </div>
 </section>
-<section class="slide slide--content" data-idx="25">
-<div class="slide-num">25 / 28</div>
+
+<section class="slide slide--content">
+<div class="slide-num"></div>
 <div class="content-wrap">
-<h2 class="slide-title">Passive Investing Has Proven Reliable</h2>
+<h2 class="slide-title">Passive investing has proven reliable</h2>
 <ul class="bullets">
 <li>Index funds consistently outperform most active managers after fees</li>
 <li>Low-cost, diversified exposure to the entire market</li>
 <li>Ideal for long-term investors seeking consistent participation in equity growth</li>
-<li>Reads:</li>
-<li>Wigglesworth, R. (2021). Trillions</li>
+<li class="bullets__heading">Reads</li>
+<li class="bullets__sub">Wigglesworth, R. (2021). <em>Trillions.</em></li>
 </ul>
 </div>
 </section>
-<section class="slide slide--content" data-idx="26">
-<div class="slide-num">26 / 28</div>
+
+<section class="slide slide--content">
+<div class="slide-num"></div>
 <div class="content-wrap">
-<h2 class="slide-title">Stock bond allocation</h2>
-<p class="body-para">Static strategies: 60/40, 80/20, 50/50</p>
-<p class="body-para">Dynamic strategies: “Glidepaths&quot; (100-age)</p>
-<a class="src-link" href="https://corporatefinanceinstitute.com/resources/wealth-management/glide-path/" target="_blank" rel="noopener">https://corporatefinanceinstitute.com/resources/wealth-management/glide-path/</a>
+<h2 class="slide-title">Stock / bond allocation</h2>
+<p class="body-para"><em>Static strategies:</em> 60/40, 80/20, 50/50.</p>
+<p class="body-para"><em>Dynamic strategies:</em> “glidepaths” (e.g. 100 − age in equities).</p>
+<a class="src-link" href="https://corporatefinanceinstitute.com/resources/wealth-management/glide-path/" target="_blank" rel="noopener">corporatefinanceinstitute.com — glide-path explainer</a>
 </div>
 </section>
-<section class="slide slide--content" data-idx="27">
-<div class="slide-num">27 / 28</div>
+
+<section class="slide slide--content">
+<div class="slide-num"></div>
 <div class="content-wrap">
 <h2 class="slide-title">In practice</h2>
-<p class="body-para">Target Date funds https://investor.vanguard.com/investment-products/mutual-funds/target-retirement-funds</p>
-<p class="body-para">Manual rebalance</p>
-<a class="src-link" href="https://investor.vanguard.com/investor-resources-education/taxes/how-government-bonds-are-taxed" target="_blank" rel="noopener">https://investor.vanguard.com/investor-resources-education/taxes/how-government-bonds-are-taxed</a>
+<p class="body-para">Hands-off: buy a target-date fund. Hands-on: hold a 2-fund or 3-fund mix and rebalance manually.</p>
+<div class="btn-row">
+<a class="btn-link" href="https://investor.vanguard.com/investment-products/mutual-funds/target-retirement-funds" target="_blank" rel="noopener noreferrer">
+  <span class="btn-tag">Target-date funds</span>
+  <span>Vanguard Target Retirement Funds</span>
+  <span class="btn-arrow">↗</span>
+</a>
+<a class="btn-link" href="https://investor.vanguard.com/investor-resources-education/taxes/how-government-bonds-are-taxed" target="_blank" rel="noopener noreferrer">
+  <span class="btn-tag">Tax</span>
+  <span>How government bonds are taxed (Vanguard)</span>
+  <span class="btn-arrow">↗</span>
+</a>
+</div>
 </div>
 </section>
-<section class="slide slide--content" data-idx="28">
-<div class="slide-num">28 / 28</div>
+
+<section class="slide slide--content">
+<div class="slide-num"></div>
 <div class="content-wrap">
-<h2 class="slide-title">Further read</h2>
+<h2 class="slide-title">Further reading</h2>
 <ul class="bullets">
-<li>The Ultimate Guide to Safe Withdrawal Rates – Part 19: Equity Glidepaths in Retirement</li>
-<li>Professor Scott Cederburg: Challenging the Status Quo on Lifecycle Asset Allocation | RR 284</li>
-<li>Why It Might Be Time To Rethink Lifecycle Asset Allocation</li>
-<li>Beyond the Status Quo: A Critical Assessment of Lifecycle Investment Advice</li>
+<li>Karsten, “The Ultimate Guide to Safe Withdrawal Rates – Part 19: Equity Glidepaths in Retirement”</li>
+<li>Rational Reminder #284 — Prof. Scott Cederburg: Challenging the Status Quo on Lifecycle Asset Allocation</li>
+<li>“Why It Might Be Time To Rethink Lifecycle Asset Allocation”</li>
+<li>Cederburg et al. — “Beyond the Status Quo: A Critical Assessment of Lifecycle Investment Advice”</li>
 </ul>
+</div>
+</section>
+
+<section class="slide slide--end">
+<div class="slide-num"></div>
+<div class="end-wrap">
+<div class="end-eyebrow">End of Part 2 of 3</div>
+<h2 class="end-title">Continue the series →</h2>
+<p class="body-para">Next we drill into equities specifically: international diversification, market-cap weighting, and the Fama–French risk factors that explain most of the difference between portfolio returns.</p>
+<div class="end-nav">
+<a href="../2025_05_08/index.html">
+  <span class="label">← Previous</span>
+  <span class="title">Investing &amp; Trading</span>
+  <span class="meta">Foundations · May 8, 2025</span>
+</a>
+<a href="../2025_06_12/index.html">
+  <span class="label">Next →</span>
+  <span class="title">Equity Allocation</span>
+  <span class="meta">Geography, size, factors · June 12, 2025</span>
+</a>
+</div>
+<a class="src-link" href="../index.html">← Back to series index</a>
 </div>
 </section>
 </main>
 <div class="progress"><div class="progress__bar"></div></div>
-<div class="help"><kbd>←</kbd> <kbd>→</kbd> navigate</div>
+<div class="help"><kbd>←</kbd> <kbd>→</kbd> navigate · <kbd>P</kbd> print</div>
 <script>
 class Deck{
   constructor(){
     this.slides=[...document.querySelectorAll('.slide')];
     this.idx=0;this.bar=document.querySelector('.progress__bar');
+    this.numberSlides();
     this.show(0);
     addEventListener('keydown',e=>{
       if(['ArrowRight','PageDown',' '].includes(e.key)){e.preventDefault();this.next()}
       else if(['ArrowLeft','PageUp'].includes(e.key)){e.preventDefault();this.prev()}
       else if(e.key==='Home'){this.show(0)}
       else if(e.key==='End'){this.show(this.slides.length-1)}
+      else if(e.key==='p'||e.key==='P'){window.print()}
     });
     let wheelLock=false;
     addEventListener('wheel',e=>{
@@ -519,6 +598,14 @@ class Deck{
       const dx=e.changedTouches[0].clientX-sx;
       if(Math.abs(dx)>40){dx<0?this.next():this.prev()}
     },{passive:true});
+  }
+  numberSlides(){
+    const total=this.slides.length;
+    this.slides.forEach((s,k)=>{
+      const n=s.querySelector('.slide-num');
+      if(n)n.textContent=String(k+1).padStart(2,'0')+' / '+String(total).padStart(2,'0');
+      s.dataset.idx=k+1;
+    });
   }
   show(i){
     i=Math.max(0,Math.min(this.slides.length-1,i));
