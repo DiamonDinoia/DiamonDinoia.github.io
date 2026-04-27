@@ -669,6 +669,15 @@
       "stars": 16
     },
     {
+      "name": "cryoSBI",
+      "url": "https://github.com/flatironinstitute/cryoSBI",
+      "langs": [
+        "Python"
+      ],
+      "description": "",
+      "stars": 15
+    },
+    {
       "name": "ManifoldEM",
       "url": "https://github.com/flatironinstitute/ManifoldEM",
       "langs": [
@@ -676,15 +685,6 @@
       ],
       "description": "Python package for determination of conformational continua of macromolecules from single-particle cryo-EM data",
       "stars": 15
-    },
-    {
-      "name": "cryoSBI",
-      "url": "https://github.com/flatironinstitute/cryoSBI",
-      "langs": [
-        "Python"
-      ],
-      "description": "",
-      "stars": 14
     },
     {
       "name": "CryoLike",
@@ -1504,6 +1504,15 @@
       "stars": 2
     },
     {
+      "name": "masala_public_standard_plugins",
+      "url": "https://github.com/flatironinstitute/masala_public_standard_plugins",
+      "langs": [
+        "C++"
+      ],
+      "description": "Public fork of the Standard Masala Plugins library.  The Masala macromolecular modelling suite has a modular, plugin-based architecture; common modelling tasks are handled by the \"standard\" plugins that most users will want.  But they're in a separate repo to ensure that plugin devs don't have to touch the core code.",
+      "stars": 2
+    },
+    {
       "name": "cephdu",
       "url": "https://github.com/flatironinstitute/cephdu",
       "langs": [
@@ -1546,15 +1555,6 @@
         "Jupyter Notebook"
       ],
       "description": "",
-      "stars": 2
-    },
-    {
-      "name": "masala_public_standard_plugins",
-      "url": "https://github.com/flatironinstitute/masala_public_standard_plugins",
-      "langs": [
-        "C++"
-      ],
-      "description": "Public fork of the Standard Masala Plugins library.  The Masala macromolecular modelling suite has a modular, plugin-based architecture; common modelling tasks are handled by the \"standard\" plugins that most users will want.  But they're in a separate repo to ensure that plugin devs don't have to touch the core code.",
       "stars": 2
     },
     {
