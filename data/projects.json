@@ -297,7 +297,7 @@
         "Cuda"
       ],
       "description": "JAXMg: A multi-GPU linear solver in JAX",
-      "stars": 49
+      "stars": 50
     },
     {
       "name": "xtensor-fftw",
@@ -307,6 +307,15 @@
       ],
       "description": "FFTW bindings for the xtensor C++14 multi-dimensional array library",
       "stars": 48
+    },
+    {
+      "name": "disBatch",
+      "url": "https://github.com/flatironinstitute/disBatch",
+      "langs": [
+        "Python"
+      ],
+      "description": "Dynamic dispatch of a list of command-line tasks, locally or on a cluster. Supports retrying failed tasks, and adding/removing compute resources on-the-fly. ",
+      "stars": 47
     },
     {
       "name": "mountainlab-js",
@@ -334,15 +343,6 @@
       ],
       "description": "Implementation of the Zarr core protocol (version 2 and 3) based on xtensor.",
       "stars": 47
-    },
-    {
-      "name": "disBatch",
-      "url": "https://github.com/flatironinstitute/disBatch",
-      "langs": [
-        "Python"
-      ],
-      "description": "Dynamic dispatch of a list of command-line tasks, locally or on a cluster. Supports retrying failed tasks, and adding/removing compute resources on-the-fly. ",
-      "stars": 46
     },
     {
       "name": "bayes-kit",
@@ -486,7 +486,7 @@
         "Fortran"
       ],
       "description": "This codebase is a set of libraries to compute N-body interactions governed by the Laplace and Helmholtz equations, to a specified precision, in two dimensions, on a multi-core shared-memory machine.",
-      "stars": 28
+      "stars": 29
     },
     {
       "name": "cpp2py",
@@ -1137,6 +1137,15 @@
       "stars": 5
     },
     {
+      "name": "psyphy",
+      "url": "https://github.com/flatironinstitute/psyphy",
+      "langs": [
+        "Python"
+      ],
+      "description": "Active-learning-driven adaptive experiments in psychophysics.",
+      "stars": 5
+    },
+    {
       "name": "flatiron-coffee",
       "url": "https://github.com/flatironinstitute/flatiron-coffee",
       "langs": [
@@ -1152,15 +1161,6 @@
         "Python"
       ],
       "description": "",
-      "stars": 5
-    },
-    {
-      "name": "psyphy",
-      "url": "https://github.com/flatironinstitute/psyphy",
-      "langs": [
-        "Python"
-      ],
-      "description": "Active-learning-driven adaptive experiments in psychophysics.",
       "stars": 5
     },
     {
@@ -1223,6 +1223,15 @@
       ],
       "description": "Nevanlinna analytical continuation using TRIQS. Supported by the Flatiron Institute.",
       "stars": 5
+    },
+    {
+      "name": "simdref",
+      "url": "https://github.com/DiamonDinoia/simdref",
+      "langs": [
+        "Python"
+      ],
+      "description": "Searchable SIMD intrinsic and instruction reference — CLI, TUI, LSP, manpages, and static web UI",
+      "stars": 4
     },
     {
       "name": "mcss",
@@ -1349,15 +1358,6 @@
       ],
       "description": "STL-like algorithms vectorized with xsimd",
       "stars": 4
-    },
-    {
-      "name": "simdref",
-      "url": "https://github.com/DiamonDinoia/simdref",
-      "langs": [
-        "Python"
-      ],
-      "description": "Searchable SIMD intrinsic and instruction reference — CLI, TUI, LSP, manpages, and static web UI",
-      "stars": 3
     },
     {
       "name": "Chebyshev",
@@ -2351,6 +2351,24 @@
       "stars": 0
     },
     {
+      "name": "jenkins-example",
+      "url": "https://github.com/flatironinstitute/jenkins-example",
+      "langs": [
+        "Dockerfile"
+      ],
+      "description": "Example and test repository for jenkins builds",
+      "stars": 0
+    },
+    {
+      "name": "neurorse-jenkins-webserver-template",
+      "url": "https://github.com/flatironinstitute/neurorse-jenkins-webserver-template",
+      "langs": [
+        "Python"
+      ],
+      "description": "Template repo to serve as recipient of jenkins documentation build pushes",
+      "stars": 0
+    },
+    {
       "name": "masala_public_seating_optimization_plugins",
       "url": "https://github.com/flatironinstitute/masala_public_seating_optimization_plugins",
       "langs": [
@@ -2546,15 +2564,6 @@
         "Python"
       ],
       "description": " Materials for CCN software workshop at Flatiron, Jan 2025",
-      "stars": 0
-    },
-    {
-      "name": "jenkins-webserver-template",
-      "url": "https://github.com/flatironinstitute/jenkins-webserver-template",
-      "langs": [
-        "Python"
-      ],
-      "description": "Template repo to serve as recipient of jenkins documentation build pushes",
       "stars": 0
     },
     {
