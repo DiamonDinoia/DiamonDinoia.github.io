@@ -90,7 +90,7 @@
         "C++"
       ],
       "description": "C++ tensors with broadcasting and lazy computing",
-      "stars": 3727
+      "stars": 3728
     },
     {
       "name": "CaImAn",
@@ -603,7 +603,7 @@
         "C++"
       ],
       "description": "Clair (Clang Introspection and Reflection) tools. A set of clang tools developed for Flatiron/CCQ",
-      "stars": 19
+      "stars": 20
     },
     {
       "name": "tprf",
@@ -612,7 +612,7 @@
         "Python"
       ],
       "description": "TPRF: The Two-Particle Response Function tool box for TRIQS. Supported by the Flatiron Institute.",
-      "stars": 19
+      "stars": 20
     },
     {
       "name": "Xtensor.R",
