@@ -90,7 +90,7 @@
         "C++"
       ],
       "description": "C++ tensors with broadcasting and lazy computing",
-      "stars": 3728
+      "stars": 3729
     },
     {
       "name": "CaImAn",
@@ -279,7 +279,16 @@
         "Python"
       ],
       "description": "Task-based gene regulatory network inference using single-cell or bulk gene expression data conditioned on a prior network.",
-      "stars": 54
+      "stars": 55
+    },
+    {
+      "name": "jaxmg",
+      "url": "https://github.com/flatironinstitute/jaxmg",
+      "langs": [
+        "Cuda"
+      ],
+      "description": "JAXMg: A multi-GPU linear solver in JAX",
+      "stars": 51
     },
     {
       "name": "nixpack",
@@ -289,15 +298,6 @@
       ],
       "description": "nix+spack = nixpack (spanix?)",
       "stars": 51
-    },
-    {
-      "name": "jaxmg",
-      "url": "https://github.com/flatironinstitute/jaxmg",
-      "langs": [
-        "Cuda"
-      ],
-      "description": "JAXMg: A multi-GPU linear solver in JAX",
-      "stars": 50
     },
     {
       "name": "xtensor-fftw",
@@ -2351,10 +2351,10 @@
       "stars": 0
     },
     {
-      "name": "jenkins-example",
-      "url": "https://github.com/flatironinstitute/jenkins-example",
+      "name": "jenkins-template",
+      "url": "https://github.com/flatironinstitute/jenkins-template",
       "langs": [
-        "Dockerfile"
+        "Groovy"
       ],
       "description": "Example and test repository for jenkins builds",
       "stars": 0
