@@ -183,21 +183,21 @@
       "stars": 136
     },
     {
-      "name": "nemos",
-      "url": "https://github.com/flatironinstitute/nemos",
-      "langs": [
-        "Python"
-      ],
-      "description": "NEural MOdelS, a statistical modeling framework for neuroscience.",
-      "stars": 131
-    },
-    {
       "name": "jax-finufft",
       "url": "https://github.com/flatironinstitute/jax-finufft",
       "langs": [
         "C++"
       ],
       "description": "JAX bindings to the Flatiron Institute Non-uniform Fast Fourier Transform (FINUFFT) library",
+      "stars": 131
+    },
+    {
+      "name": "nemos",
+      "url": "https://github.com/flatironinstitute/nemos",
+      "langs": [
+        "Python"
+      ],
+      "description": "NEural MOdelS, a statistical modeling framework for neuroscience.",
       "stars": 131
     },
     {
@@ -309,6 +309,15 @@
       "stars": 48
     },
     {
+      "name": "nifty-ls",
+      "url": "https://github.com/flatironinstitute/nifty-ls",
+      "langs": [
+        "Python"
+      ],
+      "description": "A fast Lomb-Scargle periodogram. It's nifty, and uses a NUFFT!",
+      "stars": 47
+    },
+    {
       "name": "disBatch",
       "url": "https://github.com/flatironinstitute/disBatch",
       "langs": [
@@ -324,15 +333,6 @@
         "JavaScript"
       ],
       "description": "MountainLab is data processing, sharing and visualization software for scientists. It is built around MountainSort, spike sorting software, but is designed to be more generally applicable.",
-      "stars": 47
-    },
-    {
-      "name": "nifty-ls",
-      "url": "https://github.com/flatironinstitute/nifty-ls",
-      "langs": [
-        "Python"
-      ],
-      "description": "A fast Lomb-Scargle periodogram. It's nifty, and uses a NUFFT!",
       "stars": 47
     },
     {
@@ -498,6 +498,15 @@
       "stars": 27
     },
     {
+      "name": "comptools24",
+      "url": "https://github.com/flatironinstitute/comptools24",
+      "langs": [
+        "MATLAB"
+      ],
+      "description": "Computational Tools for PDEs with Complicated Geometries and Interfaces workshop materials, June 10-14, 2024.",
+      "stars": 25
+    },
+    {
       "name": "st_gridnet",
       "url": "https://github.com/flatironinstitute/st_gridnet",
       "langs": [
@@ -522,15 +531,6 @@
         "Jupyter Notebook"
       ],
       "description": "Categorical Variational Autoencoders",
-      "stars": 24
-    },
-    {
-      "name": "comptools24",
-      "url": "https://github.com/flatironinstitute/comptools24",
-      "langs": [
-        "MATLAB"
-      ],
-      "description": "Computational Tools for PDEs with Complicated Geometries and Interfaces workshop materials, June 10-14, 2024.",
       "stars": 24
     },
     {
