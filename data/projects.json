@@ -90,7 +90,7 @@
         "C++"
       ],
       "description": "C++ tensors with broadcasting and lazy computing",
-      "stars": 3731
+      "stars": 3732
     },
     {
       "name": "CaImAn",
@@ -99,7 +99,7 @@
         "Python"
       ],
       "description": "Computational toolbox for large scale Calcium Imaging Analysis, including movie handling, motion correction, source extraction, spike deconvolution and result visualization.",
-      "stars": 722
+      "stars": 721
     },
     {
       "name": "xtensor-python",
@@ -162,7 +162,7 @@
         "MATLAB"
       ],
       "description": "Matlab routines for online non-rigid motion correction of calcium imaging data",
-      "stars": 157
+      "stars": 156
     },
     {
       "name": "FMM3D",
