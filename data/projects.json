@@ -183,21 +183,21 @@
       "stars": 136
     },
     {
-      "name": "jax-finufft",
-      "url": "https://github.com/flatironinstitute/jax-finufft",
-      "langs": [
-        "C++"
-      ],
-      "description": "JAX bindings to the Flatiron Institute Non-uniform Fast Fourier Transform (FINUFFT) library",
-      "stars": 131
-    },
-    {
       "name": "nemos",
       "url": "https://github.com/flatironinstitute/nemos",
       "langs": [
         "Python"
       ],
       "description": "NEural MOdelS, a statistical modeling framework for neuroscience.",
+      "stars": 132
+    },
+    {
+      "name": "jax-finufft",
+      "url": "https://github.com/flatironinstitute/jax-finufft",
+      "langs": [
+        "C++"
+      ],
+      "description": "JAX bindings to the Flatiron Institute Non-uniform Fast Fourier Transform (FINUFFT) library",
       "stars": 131
     },
     {
@@ -261,7 +261,7 @@
         "Python"
       ],
       "description": "MountainSort spike sorting algorithm, version 5",
-      "stars": 59
+      "stars": 60
     },
     {
       "name": "stan-playground",
@@ -354,6 +354,15 @@
       "stars": 46
     },
     {
+      "name": "online_psp",
+      "url": "https://github.com/flatironinstitute/online_psp",
+      "langs": [
+        "Python"
+      ],
+      "description": "A collection of computationally efficient algorithms for online subspace learning and principal component analysis",
+      "stars": 44
+    },
+    {
       "name": "dft_tools",
       "url": "https://github.com/TRIQS/dft_tools",
       "langs": [
@@ -361,15 +370,6 @@
       ],
       "description": "Interface to DFT codes. Supported by the Flatiron Institute.",
       "stars": 44
-    },
-    {
-      "name": "online_psp",
-      "url": "https://github.com/flatironinstitute/online_psp",
-      "langs": [
-        "Python"
-      ],
-      "description": "A collection of computationally efficient algorithms for online subspace learning and principal component analysis",
-      "stars": 43
     },
     {
       "name": "Xtensor.jl",
@@ -714,6 +714,15 @@
       "stars": 14
     },
     {
+      "name": "ccq-software-build",
+      "url": "https://github.com/flatironinstitute/ccq-software-build",
+      "langs": [
+        "Shell"
+      ],
+      "description": "CCQ software build scripts",
+      "stars": 13
+    },
+    {
       "name": "Ensemble-reweighting-using-Cryo-EM-particles",
       "url": "https://github.com/flatironinstitute/Ensemble-reweighting-using-Cryo-EM-particles",
       "langs": [
@@ -774,15 +783,6 @@
         "Python"
       ],
       "description": "Pose regression with new algebraic representation on ModelNet dataset (ICCV 2023)",
-      "stars": 12
-    },
-    {
-      "name": "ccq-software-build",
-      "url": "https://github.com/flatironinstitute/ccq-software-build",
-      "langs": [
-        "Shell"
-      ],
-      "description": "CCQ software build scripts",
       "stars": 12
     },
     {
@@ -2348,6 +2348,15 @@
         "Java"
       ],
       "description": "",
+      "stars": 0
+    },
+    {
+      "name": "mip-flatironinstitute",
+      "url": "https://github.com/flatironinstitute/mip-flatironinstitute",
+      "langs": [
+        "Python"
+      ],
+      "description": "Flatiron Institute mip channel",
       "stars": 0
     },
     {
