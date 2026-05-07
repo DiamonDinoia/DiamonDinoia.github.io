@@ -198,7 +198,7 @@
         "C++"
       ],
       "description": "JAX bindings to the Flatiron Institute Non-uniform Fast Fourier Transform (FINUFFT) library",
-      "stars": 131
+      "stars": 130
     },
     {
       "name": "cufinufft",
@@ -561,6 +561,15 @@
       "stars": 23
     },
     {
+      "name": "tutorials",
+      "url": "https://github.com/TRIQS/tutorials",
+      "langs": [
+        "Jupyter Notebook"
+      ],
+      "description": "A set of ipython and c++ tutorials",
+      "stars": 23
+    },
+    {
       "name": "dmk",
       "url": "https://github.com/flatironinstitute/dmk",
       "langs": [
@@ -576,15 +585,6 @@
         "Matlab"
       ],
       "description": "Benchmark of online PCA algorithms ",
-      "stars": 22
-    },
-    {
-      "name": "tutorials",
-      "url": "https://github.com/TRIQS/tutorials",
-      "langs": [
-        "Jupyter Notebook"
-      ],
-      "description": "A set of ipython and c++ tutorials",
       "stars": 22
     },
     {
@@ -687,6 +687,15 @@
       "stars": 15
     },
     {
+      "name": "ccq-software-build",
+      "url": "https://github.com/flatironinstitute/ccq-software-build",
+      "langs": [
+        "Shell"
+      ],
+      "description": "CCQ software build scripts",
+      "stars": 14
+    },
+    {
       "name": "CryoLike",
       "url": "https://github.com/flatironinstitute/CryoLike",
       "langs": [
@@ -712,15 +721,6 @@
       ],
       "description": "ISO-SPLIT clustering (stand-alone version)",
       "stars": 14
-    },
-    {
-      "name": "ccq-software-build",
-      "url": "https://github.com/flatironinstitute/ccq-software-build",
-      "langs": [
-        "Shell"
-      ],
-      "description": "CCQ software build scripts",
-      "stars": 13
     },
     {
       "name": "Ensemble-reweighting-using-Cryo-EM-particles",
@@ -1065,6 +1065,15 @@
       "stars": 6
     },
     {
+      "name": "flatiron-coffee",
+      "url": "https://github.com/flatironinstitute/flatiron-coffee",
+      "langs": [
+        "Python"
+      ],
+      "description": "Meet your colleagues across the Institute",
+      "stars": 6
+    },
+    {
       "name": "c2py",
       "url": "https://github.com/flatironinstitute/c2py",
       "langs": [
@@ -1143,15 +1152,6 @@
         "Python"
       ],
       "description": "Active-learning-driven adaptive experiments in psychophysics.",
-      "stars": 5
-    },
-    {
-      "name": "flatiron-coffee",
-      "url": "https://github.com/flatironinstitute/flatiron-coffee",
-      "langs": [
-        "Python"
-      ],
-      "description": "Meet your colleagues across the Institute",
       "stars": 5
     },
     {
@@ -2351,21 +2351,21 @@
       "stars": 0
     },
     {
-      "name": "mip-flatironinstitute",
-      "url": "https://github.com/flatironinstitute/mip-flatironinstitute",
-      "langs": [
-        "Python"
-      ],
-      "description": "Flatiron Institute mip channel",
-      "stars": 0
-    },
-    {
       "name": "jenkins-template",
       "url": "https://github.com/flatironinstitute/jenkins-template",
       "langs": [
         "Groovy"
       ],
       "description": "Example and test repository for jenkins builds",
+      "stars": 0
+    },
+    {
+      "name": "mip-flatironinstitute",
+      "url": "https://github.com/flatironinstitute/mip-flatironinstitute",
+      "langs": [
+        "Python"
+      ],
+      "description": "Flatiron Institute mip channel",
       "stars": 0
     },
     {
