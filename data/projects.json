@@ -90,7 +90,7 @@
         "C++"
       ],
       "description": "C++ tensors with broadcasting and lazy computing",
-      "stars": 3731
+      "stars": 3732
     },
     {
       "name": "CaImAn",
@@ -288,7 +288,7 @@
         "Cuda"
       ],
       "description": "JAXMg: A multi-GPU linear solver in JAX",
-      "stars": 51
+      "stars": 52
     },
     {
       "name": "nixpack",
@@ -1504,6 +1504,13 @@
       "stars": 2
     },
     {
+      "name": "sciware-intern-mentors",
+      "url": "https://github.com/flatironinstitute/sciware-intern-mentors",
+      "langs": [],
+      "description": "Guidance from Sciware for summer intern mentors at Flatiron",
+      "stars": 2
+    },
+    {
       "name": "masala_public_standard_plugins",
       "url": "https://github.com/flatironinstitute/masala_public_standard_plugins",
       "langs": [
@@ -1591,13 +1598,6 @@
         "TypeScript"
       ],
       "description": "",
-      "stars": 2
-    },
-    {
-      "name": "sciware-intern-mentors",
-      "url": "https://github.com/flatironinstitute/sciware-intern-mentors",
-      "langs": [],
-      "description": "Guidance from sciware for summer intern mentors at Flatiron",
       "stars": 2
     },
     {
