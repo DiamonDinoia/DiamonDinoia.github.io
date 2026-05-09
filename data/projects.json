@@ -117,7 +117,7 @@
         "Python"
       ],
       "description": "Deep functional residue identification",
-      "stars": 350
+      "stars": 349
     },
     {
       "name": "xframe",
@@ -930,6 +930,15 @@
       "stars": 9
     },
     {
+      "name": "ctseg",
+      "url": "https://github.com/TRIQS/ctseg",
+      "langs": [
+        "Jupyter Notebook"
+      ],
+      "description": "A segment picture impurity solver with spin-spin interactions. Supported by the Flatiron Institute.",
+      "stars": 9
+    },
+    {
       "name": "benchmarks",
       "url": "https://github.com/TRIQS/benchmarks",
       "langs": [
@@ -990,15 +999,6 @@
         "Jupyter Notebook"
       ],
       "description": "Continuous-time interaction expansion quantum Monte-Carlo code based on TRIQS. Supported by the Flatiron Institute.",
-      "stars": 8
-    },
-    {
-      "name": "ctseg",
-      "url": "https://github.com/TRIQS/ctseg",
-      "langs": [
-        "Jupyter Notebook"
-      ],
-      "description": "A segment picture impurity solver with spin-spin interactions. Supported by the Flatiron Institute.",
       "stars": 8
     },
     {
@@ -1146,21 +1146,21 @@
       "stars": 5
     },
     {
+      "name": "cryojax-ensemble-optimization",
+      "url": "https://github.com/flatironinstitute/cryojax-ensemble-optimization",
+      "langs": [
+        "Jupyter Notebook"
+      ],
+      "description": "",
+      "stars": 5
+    },
+    {
       "name": "psyphy",
       "url": "https://github.com/flatironinstitute/psyphy",
       "langs": [
         "Python"
       ],
       "description": "Active-learning-driven adaptive experiments in psychophysics.",
-      "stars": 5
-    },
-    {
-      "name": "cryojax-ensemble-optimization",
-      "url": "https://github.com/flatironinstitute/cryojax-ensemble-optimization",
-      "langs": [
-        "Python"
-      ],
-      "description": "",
       "stars": 5
     },
     {
