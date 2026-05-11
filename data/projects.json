@@ -180,7 +180,7 @@
         "Python"
       ],
       "description": "Neural Networks for Protein Sequence Alignment",
-      "stars": 136
+      "stars": 137
     },
     {
       "name": "nemos",
@@ -372,6 +372,15 @@
       "stars": 44
     },
     {
+      "name": "walnuts",
+      "url": "https://github.com/flatironinstitute/walnuts",
+      "langs": [
+        "C++"
+      ],
+      "description": "Within-orbit Adaptive Leapfrog No-U-Turn Sampler",
+      "stars": 43
+    },
+    {
       "name": "Xtensor.jl",
       "url": "https://github.com/xtensor-stack/Xtensor.jl",
       "langs": [
@@ -379,15 +388,6 @@
       ],
       "description": "Julia package for xtensor-julia",
       "stars": 43
-    },
-    {
-      "name": "walnuts",
-      "url": "https://github.com/flatironinstitute/walnuts",
-      "langs": [
-        "C++"
-      ],
-      "description": "Within-orbit Adaptive Leapfrog No-U-Turn Sampler",
-      "stars": 42
     },
     {
       "name": "solid_dmft",
@@ -2348,6 +2348,15 @@
         "Java"
       ],
       "description": "",
+      "stars": 0
+    },
+    {
+      "name": "pfmm2d",
+      "url": "https://github.com/flatironinstitute/pfmm2d",
+      "langs": [
+        "Fortran"
+      ],
+      "description": "Periodic FMM in 2D — Laplace, Yukawa, Stokes, and modified Stokes kernels on arbitrarily-shaped 2D lattices. Companion code to Pei, Askham, Greengard, Jiang, JCP 474:111792 (2023).",
       "stars": 0
     },
     {
