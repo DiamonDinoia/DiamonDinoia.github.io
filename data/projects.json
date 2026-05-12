@@ -90,7 +90,7 @@
         "C++"
       ],
       "description": "C++ tensors with broadcasting and lazy computing",
-      "stars": 3732
+      "stars": 3733
     },
     {
       "name": "CaImAn",
@@ -117,7 +117,7 @@
         "Python"
       ],
       "description": "Deep functional residue identification",
-      "stars": 350
+      "stars": 349
     },
     {
       "name": "xframe",
@@ -453,15 +453,6 @@
       "stars": 32
     },
     {
-      "name": "SkellySim",
-      "url": "https://github.com/flatironinstitute/SkellySim",
-      "langs": [
-        "C++"
-      ],
-      "description": "Hydrodynamic Cytoskeleton Simulator",
-      "stars": 31
-    },
-    {
       "name": "xtensor-python-cookiecutter",
       "url": "https://github.com/xtensor-stack/xtensor-python-cookiecutter",
       "langs": [
@@ -469,6 +460,15 @@
       ],
       "description": "Cookiecutter for a Python project making use of xtensor",
       "stars": 31
+    },
+    {
+      "name": "SkellySim",
+      "url": "https://github.com/flatironinstitute/SkellySim",
+      "langs": [
+        "C++"
+      ],
+      "description": "Hydrodynamic Cytoskeleton Simulator",
+      "stars": 30
     },
     {
       "name": "ironclust",
@@ -1065,6 +1065,15 @@
       "stars": 6
     },
     {
+      "name": "cryojax-ensemble-optimization",
+      "url": "https://github.com/flatironinstitute/cryojax-ensemble-optimization",
+      "langs": [
+        "Jupyter Notebook"
+      ],
+      "description": "",
+      "stars": 6
+    },
+    {
       "name": "flatiron-coffee",
       "url": "https://github.com/flatironinstitute/flatiron-coffee",
       "langs": [
@@ -1143,15 +1152,6 @@
         "Jupyter Notebook"
       ],
       "description": "Fast Numerics, Small Changes: The Minimal Playbook",
-      "stars": 5
-    },
-    {
-      "name": "cryojax-ensemble-optimization",
-      "url": "https://github.com/flatironinstitute/cryojax-ensemble-optimization",
-      "langs": [
-        "Jupyter Notebook"
-      ],
-      "description": "",
       "stars": 5
     },
     {
@@ -2351,21 +2351,21 @@
       "stars": 0
     },
     {
-      "name": "pfmm2d",
-      "url": "https://github.com/flatironinstitute/pfmm2d",
-      "langs": [
-        "Fortran"
-      ],
-      "description": "Periodic FMM in 2D — Laplace, Yukawa, Stokes, and modified Stokes kernels on arbitrarily-shaped 2D lattices. Companion code to Pei, Askham, Greengard, Jiang, JCP 474:111792 (2023).",
-      "stars": 0
-    },
-    {
       "name": "jenkins-template",
       "url": "https://github.com/flatironinstitute/jenkins-template",
       "langs": [
         "Groovy"
       ],
       "description": "Example and test repository for jenkins builds",
+      "stars": 0
+    },
+    {
+      "name": "pfmm2d",
+      "url": "https://github.com/flatironinstitute/pfmm2d",
+      "langs": [
+        "Fortran"
+      ],
+      "description": "Periodic FMM in 2D — Laplace, Yukawa, Stokes, and modified Stokes kernels on arbitrarily-shaped 2D lattices. Companion code to Pei, Askham, Greengard, Jiang, JCP 474:111792 (2023).",
       "stars": 0
     },
     {
