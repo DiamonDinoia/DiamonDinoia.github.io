@@ -189,7 +189,7 @@
         "Python"
       ],
       "description": "NEural MOdelS, a statistical modeling framework for neuroscience.",
-      "stars": 132
+      "stars": 133
     },
     {
       "name": "jax-finufft",
@@ -354,6 +354,15 @@
       "stars": 46
     },
     {
+      "name": "walnuts",
+      "url": "https://github.com/flatironinstitute/walnuts",
+      "langs": [
+        "C++"
+      ],
+      "description": "Within-orbit Adaptive Leapfrog No-U-Turn Sampler",
+      "stars": 44
+    },
+    {
       "name": "online_psp",
       "url": "https://github.com/flatironinstitute/online_psp",
       "langs": [
@@ -370,15 +379,6 @@
       ],
       "description": "Interface to DFT codes. Supported by the Flatiron Institute.",
       "stars": 44
-    },
-    {
-      "name": "walnuts",
-      "url": "https://github.com/flatironinstitute/walnuts",
-      "langs": [
-        "C++"
-      ],
-      "description": "Within-orbit Adaptive Leapfrog No-U-Turn Sampler",
-      "stars": 43
     },
     {
       "name": "Xtensor.jl",
@@ -1065,6 +1065,15 @@
       "stars": 6
     },
     {
+      "name": "c2py",
+      "url": "https://github.com/flatironinstitute/c2py",
+      "langs": [
+        "C++"
+      ],
+      "description": "Clair/c2py low level library",
+      "stars": 6
+    },
+    {
       "name": "cryojax-ensemble-optimization",
       "url": "https://github.com/flatironinstitute/cryojax-ensemble-optimization",
       "langs": [
@@ -1080,15 +1089,6 @@
         "Python"
       ],
       "description": "Meet your colleagues across the Institute",
-      "stars": 6
-    },
-    {
-      "name": "c2py",
-      "url": "https://github.com/flatironinstitute/c2py",
-      "langs": [
-        "C++"
-      ],
-      "description": "Clair/c2py low level library",
       "stars": 6
     },
     {
@@ -1369,6 +1369,15 @@
       "stars": 3
     },
     {
+      "name": "cephdu",
+      "url": "https://github.com/flatironinstitute/cephdu",
+      "langs": [
+        "Rust"
+      ],
+      "description": "A ncdu-like TUI for the Ceph File System, using xattrs instead of crawling",
+      "stars": 3
+    },
+    {
       "name": "fgt",
       "url": "https://github.com/flatironinstitute/fgt",
       "langs": [
@@ -1517,15 +1526,6 @@
         "C++"
       ],
       "description": "Public fork of the Standard Masala Plugins library.  The Masala macromolecular modelling suite has a modular, plugin-based architecture; common modelling tasks are handled by the \"standard\" plugins that most users will want.  But they're in a separate repo to ensure that plugin devs don't have to touch the core code.",
-      "stars": 2
-    },
-    {
-      "name": "cephdu",
-      "url": "https://github.com/flatironinstitute/cephdu",
-      "langs": [
-        "Rust"
-      ],
-      "description": "A ncdu-like TUI for the Ceph File System, using xattrs instead of crawling",
       "stars": 2
     },
     {
