@@ -360,7 +360,7 @@
         "C++"
       ],
       "description": "Within-orbit Adaptive Leapfrog No-U-Turn Sampler",
-      "stars": 44
+      "stars": 45
     },
     {
       "name": "online_psp",
@@ -1002,6 +1002,15 @@
       "stars": 8
     },
     {
+      "name": "cryojax-ensemble-optimization",
+      "url": "https://github.com/flatironinstitute/cryojax-ensemble-optimization",
+      "langs": [
+        "Jupyter Notebook"
+      ],
+      "description": "",
+      "stars": 7
+    },
+    {
       "name": "capture_lock",
       "url": "https://github.com/flatironinstitute/capture_lock",
       "langs": [
@@ -1071,15 +1080,6 @@
         "C++"
       ],
       "description": "Clair/c2py low level library",
-      "stars": 6
-    },
-    {
-      "name": "cryojax-ensemble-optimization",
-      "url": "https://github.com/flatironinstitute/cryojax-ensemble-optimization",
-      "langs": [
-        "Jupyter Notebook"
-      ],
-      "description": "",
       "stars": 6
     },
     {
@@ -2351,6 +2351,15 @@
       "stars": 0
     },
     {
+      "name": "mip-flatironinstitute",
+      "url": "https://github.com/flatironinstitute/mip-flatironinstitute",
+      "langs": [
+        "Python"
+      ],
+      "description": "Flatiron Institute mip channel",
+      "stars": 0
+    },
+    {
       "name": "jenkins-template",
       "url": "https://github.com/flatironinstitute/jenkins-template",
       "langs": [
@@ -2366,15 +2375,6 @@
         "Fortran"
       ],
       "description": "Periodic FMM in 2D — Laplace, Yukawa, Stokes, and modified Stokes kernels on arbitrarily-shaped 2D lattices. Companion code to Pei, Askham, Greengard, Jiang, JCP 474:111792 (2023).",
-      "stars": 0
-    },
-    {
-      "name": "mip-flatironinstitute",
-      "url": "https://github.com/flatironinstitute/mip-flatironinstitute",
-      "langs": [
-        "Python"
-      ],
-      "description": "Flatiron Institute mip channel",
       "stars": 0
     },
     {
