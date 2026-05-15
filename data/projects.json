@@ -90,7 +90,7 @@
         "C++"
       ],
       "description": "C++ tensors with broadcasting and lazy computing",
-      "stars": 3733
+      "stars": 3734
     },
     {
       "name": "CaImAn",
@@ -198,7 +198,7 @@
         "C++"
       ],
       "description": "JAX bindings to the Flatiron Institute Non-uniform Fast Fourier Transform (FINUFFT) library",
-      "stars": 130
+      "stars": 131
     },
     {
       "name": "cufinufft",
@@ -1369,21 +1369,21 @@
       "stars": 3
     },
     {
-      "name": "cephdu",
-      "url": "https://github.com/flatironinstitute/cephdu",
-      "langs": [
-        "Rust"
-      ],
-      "description": "A ncdu-like TUI for the Ceph File System, using xattrs instead of crawling",
-      "stars": 3
-    },
-    {
       "name": "fgt",
       "url": "https://github.com/flatironinstitute/fgt",
       "langs": [
         "Fortran"
       ],
       "description": "",
+      "stars": 3
+    },
+    {
+      "name": "cephdu",
+      "url": "https://github.com/flatironinstitute/cephdu",
+      "langs": [
+        "Rust"
+      ],
+      "description": "A ncdu-like TUI for the Ceph File System, using xattrs instead of crawling",
       "stars": 3
     },
     {
