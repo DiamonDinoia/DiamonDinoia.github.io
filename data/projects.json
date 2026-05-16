@@ -345,6 +345,15 @@
       "stars": 47
     },
     {
+      "name": "walnuts",
+      "url": "https://github.com/flatironinstitute/walnuts",
+      "langs": [
+        "C++"
+      ],
+      "description": "Within-orbit Adaptive Leapfrog No-U-Turn Sampler",
+      "stars": 46
+    },
+    {
       "name": "bayes-kit",
       "url": "https://github.com/flatironinstitute/bayes-kit",
       "langs": [
@@ -352,15 +361,6 @@
       ],
       "description": "Bayesian inference and posterior analysis for Python",
       "stars": 46
-    },
-    {
-      "name": "walnuts",
-      "url": "https://github.com/flatironinstitute/walnuts",
-      "langs": [
-        "C++"
-      ],
-      "description": "Within-orbit Adaptive Leapfrog No-U-Turn Sampler",
-      "stars": 45
     },
     {
       "name": "online_psp",
@@ -552,6 +552,15 @@
       "stars": 24
     },
     {
+      "name": "dmk",
+      "url": "https://github.com/flatironinstitute/dmk",
+      "langs": [
+        "C++"
+      ],
+      "description": "A Dual-space Multilevel Kernel-splitting (DMK) Framework for Discrete and Continuous Convolution",
+      "stars": 23
+    },
+    {
       "name": "kachery-cloud",
       "url": "https://github.com/flatironinstitute/kachery-cloud",
       "langs": [
@@ -568,15 +577,6 @@
       ],
       "description": "A set of ipython and c++ tutorials",
       "stars": 23
-    },
-    {
-      "name": "dmk",
-      "url": "https://github.com/flatironinstitute/dmk",
-      "langs": [
-        "C++"
-      ],
-      "description": "A Dual-space Multilevel Kernel-splitting (DMK) Framework for Discrete and Continuous Convolution",
-      "stars": 22
     },
     {
       "name": "online_psp_matlab",
@@ -2357,6 +2357,15 @@
         "Python"
       ],
       "description": "Flatiron Institute mip channel",
+      "stars": 0
+    },
+    {
+      "name": "BacNav-Cterm-regulation",
+      "url": "https://github.com/flatironinstitute/BacNav-Cterm-regulation",
+      "langs": [
+        "Jupyter Notebook"
+      ],
+      "description": "Models, simulations, and scripts to go along with Zavala-Custodio et al temperature sensitive bacterial sodium channel paper.",
       "stars": 0
     },
     {
