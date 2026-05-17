@@ -2360,6 +2360,15 @@
       "stars": 0
     },
     {
+      "name": "quantum_tic_tac_toe_public",
+      "url": "https://github.com/flatironinstitute/quantum_tic_tac_toe_public",
+      "langs": [
+        "Python"
+      ],
+      "description": "Public repository for code that accompanies https://arxiv.org/abs/2604.23819, to allow the D-Wave Advantage 2 quantum annealer to play tic-tac-toe.",
+      "stars": 0
+    },
+    {
       "name": "BacNav-Cterm-regulation",
       "url": "https://github.com/flatironinstitute/BacNav-Cterm-regulation",
       "langs": [
