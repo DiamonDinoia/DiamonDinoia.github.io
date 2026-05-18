@@ -216,7 +216,7 @@
         "HTML"
       ],
       "description": "Learning materials for scientific software development",
-      "stars": 94
+      "stars": 95
     },
     {
       "name": "sparse_dot",
@@ -279,7 +279,7 @@
         "Python"
       ],
       "description": "Task-based gene regulatory network inference using single-cell or bulk gene expression data conditioned on a prior network.",
-      "stars": 55
+      "stars": 56
     },
     {
       "name": "jaxmg",
