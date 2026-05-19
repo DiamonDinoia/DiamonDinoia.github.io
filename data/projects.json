@@ -90,7 +90,7 @@
         "C++"
       ],
       "description": "C++ tensors with broadcasting and lazy computing",
-      "stars": 3734
+      "stars": 3733
     },
     {
       "name": "CaImAn",
@@ -930,6 +930,15 @@
       "stars": 9
     },
     {
+      "name": "modest",
+      "url": "https://github.com/TRIQS/modest",
+      "langs": [
+        "C++"
+      ],
+      "description": "Modular Electronic Structure Toolkit. Supported by the Flatiron Institute.",
+      "stars": 9
+    },
+    {
       "name": "ctseg",
       "url": "https://github.com/TRIQS/ctseg",
       "langs": [
@@ -972,15 +981,6 @@
         "Jupyter Notebook"
       ],
       "description": "Code for reproducing the experiments in the paper \"Bio-NICA: A biologically inspired single-layer network for Nonnegative Independent Component Analysis\"",
-      "stars": 8
-    },
-    {
-      "name": "modest",
-      "url": "https://github.com/TRIQS/modest",
-      "langs": [
-        "C++"
-      ],
-      "description": "Modular Electronic Structure Toolkit. Supported by the Flatiron Institute.",
       "stars": 8
     },
     {
