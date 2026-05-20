@@ -171,7 +171,7 @@
         "Fortran"
       ],
       "description": "Flatiron Institute Fast Multipole Libraries --- This codebase is a set of libraries to compute N-body interactions governed by the Laplace and Helmholtz equations, to a specified precision, in three dimensions, on a multi-core shared-memory machine. ",
-      "stars": 149
+      "stars": 150
     },
     {
       "name": "deepblast",
@@ -189,7 +189,7 @@
         "Python"
       ],
       "description": "NEural MOdelS, a statistical modeling framework for neuroscience.",
-      "stars": 133
+      "stars": 134
     },
     {
       "name": "jax-finufft",
@@ -198,7 +198,7 @@
         "C++"
       ],
       "description": "JAX bindings to the Flatiron Institute Non-uniform Fast Fourier Transform (FINUFFT) library",
-      "stars": 131
+      "stars": 132
     },
     {
       "name": "cufinufft",
@@ -300,6 +300,15 @@
       "stars": 51
     },
     {
+      "name": "disBatch",
+      "url": "https://github.com/flatironinstitute/disBatch",
+      "langs": [
+        "Python"
+      ],
+      "description": "Dynamic dispatch of a list of command-line tasks, locally or on a cluster. Supports retrying failed tasks, and adding/removing compute resources on-the-fly. ",
+      "stars": 48
+    },
+    {
       "name": "xtensor-fftw",
       "url": "https://github.com/xtensor-stack/xtensor-fftw",
       "langs": [
@@ -309,21 +318,21 @@
       "stars": 48
     },
     {
+      "name": "walnuts",
+      "url": "https://github.com/flatironinstitute/walnuts",
+      "langs": [
+        "C++"
+      ],
+      "description": "Within-orbit Adaptive Leapfrog No-U-Turn Sampler",
+      "stars": 47
+    },
+    {
       "name": "nifty-ls",
       "url": "https://github.com/flatironinstitute/nifty-ls",
       "langs": [
         "Python"
       ],
       "description": "A fast Lomb-Scargle periodogram. It's nifty, and uses a NUFFT!",
-      "stars": 47
-    },
-    {
-      "name": "disBatch",
-      "url": "https://github.com/flatironinstitute/disBatch",
-      "langs": [
-        "Python"
-      ],
-      "description": "Dynamic dispatch of a list of command-line tasks, locally or on a cluster. Supports retrying failed tasks, and adding/removing compute resources on-the-fly. ",
       "stars": 47
     },
     {
@@ -343,15 +352,6 @@
       ],
       "description": "Implementation of the Zarr core protocol (version 2 and 3) based on xtensor.",
       "stars": 47
-    },
-    {
-      "name": "walnuts",
-      "url": "https://github.com/flatironinstitute/walnuts",
-      "langs": [
-        "C++"
-      ],
-      "description": "Within-orbit Adaptive Leapfrog No-U-Turn Sampler",
-      "stars": 46
     },
     {
       "name": "bayes-kit",
@@ -1754,12 +1754,12 @@
       "stars": 1
     },
     {
-      "name": "astore_natcomms_2025_scripts",
-      "url": "https://github.com/flatironinstitute/astore_natcomms_2025_scripts",
+      "name": "quantum_tic_tac_toe_public",
+      "url": "https://github.com/flatironinstitute/quantum_tic_tac_toe_public",
       "langs": [
         "Python"
       ],
-      "description": "Assorted scripts for analysing TRPV1 trajectories from Astore et al. 2025",
+      "description": "Public repository for code that accompanies https://arxiv.org/abs/2604.23819, to allow the D-Wave Advantage 2 quantum annealer to play tic-tac-toe.",
       "stars": 1
     },
     {
@@ -1769,6 +1769,24 @@
         "CSS"
       ],
       "description": "Website for CCN's neuroRSE group",
+      "stars": 1
+    },
+    {
+      "name": "GOTO-SWAP",
+      "url": "https://github.com/flatironinstitute/GOTO-SWAP",
+      "langs": [
+        "Python"
+      ],
+      "description": "A unified lightweight API repo for sliced Wasserstein target on images",
+      "stars": 1
+    },
+    {
+      "name": "astore_natcomms_2025_scripts",
+      "url": "https://github.com/flatironinstitute/astore_natcomms_2025_scripts",
+      "langs": [
+        "Python"
+      ],
+      "description": "Assorted scripts for analysing TRPV1 trajectories from Astore et al. 2025",
       "stars": 1
     },
     {
@@ -1991,24 +2009,6 @@
       "stars": 1
     },
     {
-      "name": "hartree_fock",
-      "url": "https://github.com/TRIQS/hartree_fock",
-      "langs": [
-        "Python"
-      ],
-      "description": "Hartree-Fock lattice and impurity solvers based on the TRIQS library. Supported by the Flatiron Institute.",
-      "stars": 1
-    },
-    {
-      "name": "dftkit",
-      "url": "https://github.com/TRIQS/dftkit",
-      "langs": [
-        "Python"
-      ],
-      "description": "Toolkit connecting TRIQS to DFT codes",
-      "stars": 1
-    },
-    {
       "name": "omegamaxent_interface",
       "url": "https://github.com/TRIQS/omegamaxent_interface",
       "langs": [
@@ -2024,6 +2024,24 @@
         "Python"
       ],
       "description": "TRIQS Interface to the w2dynamics Code",
+      "stars": 1
+    },
+    {
+      "name": "hartree_fock",
+      "url": "https://github.com/TRIQS/hartree_fock",
+      "langs": [
+        "Python"
+      ],
+      "description": "Hartree-Fock lattice and impurity solvers based on the TRIQS library. Supported by the Flatiron Institute.",
+      "stars": 1
+    },
+    {
+      "name": "dftkit",
+      "url": "https://github.com/TRIQS/dftkit",
+      "langs": [
+        "Python"
+      ],
+      "description": "Toolkit connecting TRIQS to DFT codes",
       "stars": 1
     },
     {
@@ -2360,15 +2378,6 @@
       "stars": 0
     },
     {
-      "name": "quantum_tic_tac_toe_public",
-      "url": "https://github.com/flatironinstitute/quantum_tic_tac_toe_public",
-      "langs": [
-        "Python"
-      ],
-      "description": "Public repository for code that accompanies https://arxiv.org/abs/2604.23819, to allow the D-Wave Advantage 2 quantum annealer to play tic-tac-toe.",
-      "stars": 0
-    },
-    {
       "name": "BacNav-Cterm-regulation",
       "url": "https://github.com/flatironinstitute/BacNav-Cterm-regulation",
       "langs": [
@@ -2456,15 +2465,6 @@
         "Python"
       ],
       "description": " Materials for CCN software workshop at Flatiron, Feb 2026",
-      "stars": 0
-    },
-    {
-      "name": "GOTO-SWAP",
-      "url": "https://github.com/flatironinstitute/GOTO-SWAP",
-      "langs": [
-        "Python"
-      ],
-      "description": "A unified lightweight API repo for sliced Wasserstein target on images",
       "stars": 0
     },
     {
