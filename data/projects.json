@@ -99,7 +99,7 @@
         "Python"
       ],
       "description": "Computational toolbox for large scale Calcium Imaging Analysis, including movie handling, motion correction, source extraction, spike deconvolution and result visualization.",
-      "stars": 721
+      "stars": 722
     },
     {
       "name": "xtensor-python",
@@ -282,6 +282,15 @@
       "stars": 56
     },
     {
+      "name": "nixpack",
+      "url": "https://github.com/flatironinstitute/nixpack",
+      "langs": [
+        "Nix"
+      ],
+      "description": "nix+spack = nixpack (spanix?)",
+      "stars": 52
+    },
+    {
       "name": "jaxmg",
       "url": "https://github.com/flatironinstitute/jaxmg",
       "langs": [
@@ -289,15 +298,6 @@
       ],
       "description": "JAXMg: A multi-GPU linear solver in JAX",
       "stars": 52
-    },
-    {
-      "name": "nixpack",
-      "url": "https://github.com/flatironinstitute/nixpack",
-      "langs": [
-        "Nix"
-      ],
-      "description": "nix+spack = nixpack (spanix?)",
-      "stars": 51
     },
     {
       "name": "disBatch",
@@ -498,6 +498,15 @@
       "stars": 27
     },
     {
+      "name": "zarray",
+      "url": "https://github.com/xtensor-stack/zarray",
+      "langs": [
+        "C++"
+      ],
+      "description": "Dynamically typed N-D expression system based on xtensor",
+      "stars": 26
+    },
+    {
       "name": "comptools24",
       "url": "https://github.com/flatironinstitute/comptools24",
       "langs": [
@@ -513,15 +522,6 @@
         "Python"
       ],
       "description": "A Python implementation of the model described in our publication \"A convolutional neural network for common-coordinate registration of high-resolution histology images\"  developed principally for applications to registration of spatial transcriptomics image data.",
-      "stars": 25
-    },
-    {
-      "name": "zarray",
-      "url": "https://github.com/xtensor-stack/zarray",
-      "langs": [
-        "C++"
-      ],
-      "description": "Dynamically typed N-D expression system based on xtensor",
       "stars": 25
     },
     {
@@ -966,6 +966,15 @@
       "stars": 9
     },
     {
+      "name": "cryojax-ensemble-optimization",
+      "url": "https://github.com/flatironinstitute/cryojax-ensemble-optimization",
+      "langs": [
+        "Jupyter Notebook"
+      ],
+      "description": "",
+      "stars": 8
+    },
+    {
       "name": "DLR_DMFT_scripts",
       "url": "https://github.com/flatironinstitute/DLR_DMFT_scripts",
       "langs": [
@@ -1000,15 +1009,6 @@
       ],
       "description": "Continuous-time interaction expansion quantum Monte-Carlo code based on TRIQS. Supported by the Flatiron Institute.",
       "stars": 8
-    },
-    {
-      "name": "cryojax-ensemble-optimization",
-      "url": "https://github.com/flatironinstitute/cryojax-ensemble-optimization",
-      "langs": [
-        "Jupyter Notebook"
-      ],
-      "description": "",
-      "stars": 7
     },
     {
       "name": "capture_lock",
@@ -1345,7 +1345,7 @@
       "name": "nrgljubljana_interface",
       "url": "https://github.com/TRIQS/nrgljubljana_interface",
       "langs": [
-        "C++"
+        "Python"
       ],
       "description": "An Interface to the Open-Source Code NRGLjubliana. Supported by the Flatiron Institute.",
       "stars": 4
@@ -1510,6 +1510,15 @@
         "C++"
       ],
       "description": "",
+      "stars": 2
+    },
+    {
+      "name": "quantum_tic_tac_toe_public",
+      "url": "https://github.com/flatironinstitute/quantum_tic_tac_toe_public",
+      "langs": [
+        "Python"
+      ],
+      "description": "Public repository for code that accompanies https://arxiv.org/abs/2604.23819, to allow the D-Wave Advantage 2 quantum annealer to play tic-tac-toe.",
       "stars": 2
     },
     {
@@ -1751,15 +1760,6 @@
         "C++"
       ],
       "description": " I'm testing the differences between gcc/llvm with various optimization flags. Both performance and assembly are analyzed.",
-      "stars": 1
-    },
-    {
-      "name": "quantum_tic_tac_toe_public",
-      "url": "https://github.com/flatironinstitute/quantum_tic_tac_toe_public",
-      "langs": [
-        "Python"
-      ],
-      "description": "Public repository for code that accompanies https://arxiv.org/abs/2604.23819, to allow the D-Wave Advantage 2 quantum annealer to play tic-tac-toe.",
       "stars": 1
     },
     {
@@ -2012,7 +2012,7 @@
       "name": "omegamaxent_interface",
       "url": "https://github.com/TRIQS/omegamaxent_interface",
       "langs": [
-        "C++"
+        "Jupyter Notebook"
       ],
       "description": "TRIQS Interface to the OmegaMaxEnt Code. Supported by the Flatiron Institute.",
       "stars": 1
