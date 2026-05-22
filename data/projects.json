@@ -90,7 +90,7 @@
         "C++"
       ],
       "description": "C++ tensors with broadcasting and lazy computing",
-      "stars": 3733
+      "stars": 3734
     },
     {
       "name": "CaImAn",
@@ -189,7 +189,7 @@
         "Python"
       ],
       "description": "NEural MOdelS, a statistical modeling framework for neuroscience.",
-      "stars": 134
+      "stars": 135
     },
     {
       "name": "jax-finufft",
@@ -534,6 +534,15 @@
       "stars": 24
     },
     {
+      "name": "tutorials",
+      "url": "https://github.com/TRIQS/tutorials",
+      "langs": [
+        "Jupyter Notebook"
+      ],
+      "description": "A set of ipython and c++ tutorials",
+      "stars": 24
+    },
+    {
       "name": "nda",
       "url": "https://github.com/TRIQS/nda",
       "langs": [
@@ -567,15 +576,6 @@
         "Python"
       ],
       "description": "",
-      "stars": 23
-    },
-    {
-      "name": "tutorials",
-      "url": "https://github.com/TRIQS/tutorials",
-      "langs": [
-        "Jupyter Notebook"
-      ],
-      "description": "A set of ipython and c++ tutorials",
       "stars": 23
     },
     {
@@ -966,6 +966,15 @@
       "stars": 9
     },
     {
+      "name": "capture_lock",
+      "url": "https://github.com/flatironinstitute/capture_lock",
+      "langs": [
+        "C++"
+      ],
+      "description": "Modular Visual-Odometry research platform built on COLMAP for testing our algebraic solvers (e.g., DRaM-LHM, ICCV 2025) in multiview geometry.",
+      "stars": 8
+    },
+    {
       "name": "cryojax-ensemble-optimization",
       "url": "https://github.com/flatironinstitute/cryojax-ensemble-optimization",
       "langs": [
@@ -1009,15 +1018,6 @@
       ],
       "description": "Continuous-time interaction expansion quantum Monte-Carlo code based on TRIQS. Supported by the Flatiron Institute.",
       "stars": 8
-    },
-    {
-      "name": "capture_lock",
-      "url": "https://github.com/flatironinstitute/capture_lock",
-      "langs": [
-        "C++"
-      ],
-      "description": "Modular Visual-Odometry research platform built on COLMAP for testing our algebraic solvers (e.g., DRaM-LHM, ICCV 2025) in multiview geometry.",
-      "stars": 7
     },
     {
       "name": "fi-slurm-utils",
