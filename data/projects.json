@@ -90,7 +90,7 @@
         "C++"
       ],
       "description": "C++ tensors with broadcasting and lazy computing",
-      "stars": 3736
+      "stars": 3735
     },
     {
       "name": "CaImAn",
@@ -282,21 +282,21 @@
       "stars": 56
     },
     {
-      "name": "nixpack",
-      "url": "https://github.com/flatironinstitute/nixpack",
-      "langs": [
-        "Nix"
-      ],
-      "description": "nix+spack = nixpack (spanix?)",
-      "stars": 52
-    },
-    {
       "name": "jaxmg",
       "url": "https://github.com/flatironinstitute/jaxmg",
       "langs": [
         "Cuda"
       ],
       "description": "JAXMg: A multi-GPU linear solver in JAX",
+      "stars": 52
+    },
+    {
+      "name": "nixpack",
+      "url": "https://github.com/flatironinstitute/nixpack",
+      "langs": [
+        "Nix"
+      ],
+      "description": "nix+spack = nixpack (spanix?)",
       "stars": 52
     },
     {
