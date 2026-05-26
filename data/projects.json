@@ -117,7 +117,7 @@
         "Python"
       ],
       "description": "Deep functional residue identification",
-      "stars": 349
+      "stars": 350
     },
     {
       "name": "xframe",
@@ -336,15 +336,6 @@
       "stars": 47
     },
     {
-      "name": "mountainlab-js",
-      "url": "https://github.com/flatironinstitute/mountainlab-js",
-      "langs": [
-        "JavaScript"
-      ],
-      "description": "MountainLab is data processing, sharing and visualization software for scientists. It is built around MountainSort, spike sorting software, but is designed to be more generally applicable.",
-      "stars": 47
-    },
-    {
       "name": "xtensor-zarr",
       "url": "https://github.com/xtensor-stack/xtensor-zarr",
       "langs": [
@@ -352,6 +343,15 @@
       ],
       "description": "Implementation of the Zarr core protocol (version 2 and 3) based on xtensor.",
       "stars": 47
+    },
+    {
+      "name": "mountainlab-js",
+      "url": "https://github.com/flatironinstitute/mountainlab-js",
+      "langs": [
+        "JavaScript"
+      ],
+      "description": "MountainLab is data processing, sharing and visualization software for scientists. It is built around MountainSort, spike sorting software, but is designed to be more generally applicable.",
+      "stars": 46
     },
     {
       "name": "bayes-kit",
