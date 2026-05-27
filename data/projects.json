@@ -90,7 +90,7 @@
         "C++"
       ],
       "description": "C++ tensors with broadcasting and lazy computing",
-      "stars": 3735
+      "stars": 3736
     },
     {
       "name": "CaImAn",
@@ -171,7 +171,7 @@
         "Fortran"
       ],
       "description": "Flatiron Institute Fast Multipole Libraries --- This codebase is a set of libraries to compute N-body interactions governed by the Laplace and Helmholtz equations, to a specified precision, in three dimensions, on a multi-core shared-memory machine. ",
-      "stars": 151
+      "stars": 152
     },
     {
       "name": "deepblast",
@@ -1709,21 +1709,21 @@
       "stars": 2
     },
     {
-      "name": "omegamaxent_interface",
-      "url": "https://github.com/TRIQS/omegamaxent_interface",
-      "langs": [
-        "Jupyter Notebook"
-      ],
-      "description": "TRIQS Interface to the OmegaMaxEnt Code. Supported by the Flatiron Institute.",
-      "stars": 2
-    },
-    {
       "name": "TRIQS.github.io",
       "url": "https://github.com/TRIQS/TRIQS.github.io",
       "langs": [
         "HTML"
       ],
       "description": "top github pages site",
+      "stars": 2
+    },
+    {
+      "name": "omegamaxent_interface",
+      "url": "https://github.com/TRIQS/omegamaxent_interface",
+      "langs": [
+        "Jupyter Notebook"
+      ],
+      "description": "TRIQS Interface to the OmegaMaxEnt Code. Supported by the Flatiron Institute.",
       "stars": 2
     },
     {
@@ -1772,19 +1772,19 @@
       "stars": 1
     },
     {
-      "name": "masala_rosetta_patch_public",
-      "url": "https://github.com/flatironinstitute/masala_rosetta_patch_public",
-      "langs": [],
-      "description": "Public repository containing patches for Rosetta permitting Rosetta to link Masala's Core library, and to make use of Masala plugin libraries loaded at runtime.",
-      "stars": 1
-    },
-    {
       "name": "neuroRSE",
       "url": "https://github.com/flatironinstitute/neuroRSE",
       "langs": [
         "CSS"
       ],
       "description": "Website for CCN's neuroRSE group",
+      "stars": 1
+    },
+    {
+      "name": "masala_rosetta_patch_public",
+      "url": "https://github.com/flatironinstitute/masala_rosetta_patch_public",
+      "langs": [],
+      "description": "Public repository containing patches for Rosetta permitting Rosetta to link Masala's Core library, and to make use of Masala plugin libraries loaded at runtime.",
       "stars": 1
     },
     {
@@ -2366,6 +2366,15 @@
         "Java"
       ],
       "description": "",
+      "stars": 0
+    },
+    {
+      "name": "ccn-software-fens-2026",
+      "url": "https://github.com/flatironinstitute/ccn-software-fens-2026",
+      "langs": [
+        "Python"
+      ],
+      "description": "Materials for CCN software workshop at FENS, July 2026",
       "stars": 0
     },
     {
