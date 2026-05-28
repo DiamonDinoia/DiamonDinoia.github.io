@@ -90,7 +90,7 @@
         "C++"
       ],
       "description": "C++ tensors with broadcasting and lazy computing",
-      "stars": 3736
+      "stars": 3737
     },
     {
       "name": "CaImAn",
@@ -117,7 +117,7 @@
         "Python"
       ],
       "description": "Deep functional residue identification",
-      "stars": 350
+      "stars": 351
     },
     {
       "name": "xframe",
@@ -171,7 +171,7 @@
         "Fortran"
       ],
       "description": "Flatiron Institute Fast Multipole Libraries --- This codebase is a set of libraries to compute N-body interactions governed by the Laplace and Helmholtz equations, to a specified precision, in three dimensions, on a multi-core shared-memory machine. ",
-      "stars": 152
+      "stars": 153
     },
     {
       "name": "deepblast",
@@ -198,7 +198,7 @@
         "C++"
       ],
       "description": "JAX bindings to the Flatiron Institute Non-uniform Fast Fourier Transform (FINUFFT) library",
-      "stars": 132
+      "stars": 133
     },
     {
       "name": "cufinufft",
@@ -669,21 +669,21 @@
       "stars": 16
     },
     {
+      "name": "ManifoldEM",
+      "url": "https://github.com/flatironinstitute/ManifoldEM",
+      "langs": [
+        "Jupyter Notebook"
+      ],
+      "description": "Python package for determination of conformational continua of macromolecules from single-particle cryo-EM data",
+      "stars": 15
+    },
+    {
       "name": "cryoSBI",
       "url": "https://github.com/flatironinstitute/cryoSBI",
       "langs": [
         "Python"
       ],
       "description": "",
-      "stars": 15
-    },
-    {
-      "name": "ManifoldEM",
-      "url": "https://github.com/flatironinstitute/ManifoldEM",
-      "langs": [
-        "Python"
-      ],
-      "description": "Python package for determination of conformational continua of macromolecules from single-particle cryo-EM data",
       "stars": 15
     },
     {
@@ -2378,6 +2378,24 @@
       "stars": 0
     },
     {
+      "name": "jenkins-template",
+      "url": "https://github.com/flatironinstitute/jenkins-template",
+      "langs": [
+        "Groovy"
+      ],
+      "description": "Example and test repository for jenkins builds",
+      "stars": 0
+    },
+    {
+      "name": "neurorse-workshops",
+      "url": "https://github.com/flatironinstitute/neurorse-workshops",
+      "langs": [
+        "Jupyter Notebook"
+      ],
+      "description": "Built workshop materials for the NeuroRSE packages",
+      "stars": 0
+    },
+    {
       "name": "mip-flatironinstitute",
       "url": "https://github.com/flatironinstitute/mip-flatironinstitute",
       "langs": [
@@ -2393,15 +2411,6 @@
         "Jupyter Notebook"
       ],
       "description": "Models, simulations, and scripts to go along with Zavala-Custodio et al temperature sensitive bacterial sodium channel paper.",
-      "stars": 0
-    },
-    {
-      "name": "jenkins-template",
-      "url": "https://github.com/flatironinstitute/jenkins-template",
-      "langs": [
-        "Groovy"
-      ],
-      "description": "Example and test repository for jenkins builds",
       "stars": 0
     },
     {
@@ -2456,15 +2465,6 @@
         "Python"
       ],
       "description": "BenchmarkToolkit is a Python library designed to simplify and streamline benchmarking tasks. This library provides a high-level abstraction over various benchmarking functions, allowing developers to easily perform performance testing and analysis with minimal setup.",
-      "stars": 0
-    },
-    {
-      "name": "neurorse-workshops",
-      "url": "https://github.com/flatironinstitute/neurorse-workshops",
-      "langs": [
-        "Jupyter Notebook"
-      ],
-      "description": "Built workshop materials for the NeuroRSE packages",
       "stars": 0
     },
     {
