@@ -99,7 +99,7 @@
         "Python"
       ],
       "description": "Computational toolbox for large scale Calcium Imaging Analysis, including movie handling, motion correction, source extraction, spike deconvolution and result visualization.",
-      "stars": 722
+      "stars": 723
     },
     {
       "name": "xtensor-python",
@@ -2018,6 +2018,15 @@
       "stars": 1
     },
     {
+      "name": "dftkit",
+      "url": "https://github.com/TRIQS/dftkit",
+      "langs": [
+        "Python"
+      ],
+      "description": "Toolkit connecting TRIQS to DFT codes",
+      "stars": 1
+    },
+    {
       "name": "w2dynamics_interface",
       "url": "https://github.com/TRIQS/w2dynamics_interface",
       "langs": [
@@ -2033,15 +2042,6 @@
         "Python"
       ],
       "description": "Hartree-Fock lattice and impurity solvers based on the TRIQS library. Supported by the Flatiron Institute.",
-      "stars": 1
-    },
-    {
-      "name": "dftkit",
-      "url": "https://github.com/TRIQS/dftkit",
-      "langs": [
-        "Python"
-      ],
-      "description": "Toolkit connecting TRIQS to DFT codes",
       "stars": 1
     },
     {
