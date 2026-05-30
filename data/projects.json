@@ -90,7 +90,7 @@
         "C++"
       ],
       "description": "C++ tensors with broadcasting and lazy computing",
-      "stars": 3737
+      "stars": 3739
     },
     {
       "name": "CaImAn",
@@ -171,7 +171,7 @@
         "Fortran"
       ],
       "description": "Flatiron Institute Fast Multipole Libraries --- This codebase is a set of libraries to compute N-body interactions governed by the Laplace and Helmholtz equations, to a specified precision, in three dimensions, on a multi-core shared-memory machine. ",
-      "stars": 153
+      "stars": 154
     },
     {
       "name": "deepblast",
@@ -1772,6 +1772,15 @@
       "stars": 1
     },
     {
+      "name": "lineage_viewer",
+      "url": "https://github.com/flatironinstitute/lineage_viewer",
+      "langs": [
+        "Python"
+      ],
+      "description": "Graphical interface for editing a lineage and viewing related microscopy images",
+      "stars": 1
+    },
+    {
       "name": "neuroRSE",
       "url": "https://github.com/flatironinstitute/neuroRSE",
       "langs": [
@@ -1803,15 +1812,6 @@
         "Python"
       ],
       "description": "Assorted scripts for analysing TRPV1 trajectories from Astore et al. 2025",
-      "stars": 1
-    },
-    {
-      "name": "lineage_viewer",
-      "url": "https://github.com/flatironinstitute/lineage_viewer",
-      "langs": [
-        "Python"
-      ],
-      "description": "Graphical interface for editing a lineage and viewing related microscopy images",
       "stars": 1
     },
     {
@@ -2369,15 +2369,6 @@
       "stars": 0
     },
     {
-      "name": "ccn-software-fens-2026",
-      "url": "https://github.com/flatironinstitute/ccn-software-fens-2026",
-      "langs": [
-        "Python"
-      ],
-      "description": "Materials for CCN software workshop at FENS, July 2026",
-      "stars": 0
-    },
-    {
       "name": "jenkins-template",
       "url": "https://github.com/flatironinstitute/jenkins-template",
       "langs": [
@@ -2393,6 +2384,24 @@
         "Jupyter Notebook"
       ],
       "description": "Built workshop materials for the NeuroRSE packages",
+      "stars": 0
+    },
+    {
+      "name": "aLENS_analysis",
+      "url": "https://github.com/flatironinstitute/aLENS_analysis",
+      "langs": [
+        "Jupyter Notebook"
+      ],
+      "description": "Postprocessing & analysis scripts for aLENS data",
+      "stars": 0
+    },
+    {
+      "name": "ccn-software-fens-2026",
+      "url": "https://github.com/flatironinstitute/ccn-software-fens-2026",
+      "langs": [
+        "Python"
+      ],
+      "description": "Materials for CCN software workshop at FENS, July 2026",
       "stars": 0
     },
     {
@@ -2474,15 +2483,6 @@
         "Python"
       ],
       "description": " Materials for CCN software workshop at Flatiron, Feb 2026",
-      "stars": 0
-    },
-    {
-      "name": "aLENS_analysis",
-      "url": "https://github.com/flatironinstitute/aLENS_analysis",
-      "langs": [
-        "Jupyter Notebook"
-      ],
-      "description": "Postprocessing & analysis scripts for aLENS data",
       "stars": 0
     },
     {
