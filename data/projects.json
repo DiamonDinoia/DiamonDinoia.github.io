@@ -270,7 +270,7 @@
         "TypeScript"
       ],
       "description": "Run Stan models in the browser",
-      "stars": 58
+      "stars": 59
     },
     {
       "name": "inferelator",
@@ -813,6 +813,15 @@
       "stars": 11
     },
     {
+      "name": "flathub",
+      "url": "https://github.com/flatironinstitute/flathub",
+      "langs": [
+        "Haskell"
+      ],
+      "description": "A simple elasticsearch frontend for serving astrophysical simulation catalog data",
+      "stars": 11
+    },
+    {
       "name": "public_www",
       "url": "https://github.com/flatironinstitute/public_www",
       "langs": [
@@ -838,15 +847,6 @@
       ],
       "description": "DEPRECATED -- This is the repository of the older versions of TRIQS",
       "stars": 11
-    },
-    {
-      "name": "flathub",
-      "url": "https://github.com/flatironinstitute/flathub",
-      "langs": [
-        "Haskell"
-      ],
-      "description": "A simple elasticsearch frontend for serving astrophysical simulation catalog data",
-      "stars": 10
     },
     {
       "name": "ExEnDiff",
