@@ -318,21 +318,21 @@
       "stars": 48
     },
     {
-      "name": "walnuts",
-      "url": "https://github.com/flatironinstitute/walnuts",
-      "langs": [
-        "C++"
-      ],
-      "description": "Within-orbit Adaptive Leapfrog No-U-Turn Sampler",
-      "stars": 47
-    },
-    {
       "name": "nifty-ls",
       "url": "https://github.com/flatironinstitute/nifty-ls",
       "langs": [
         "Python"
       ],
       "description": "A fast Lomb-Scargle periodogram. It's nifty, and uses a NUFFT!",
+      "stars": 47
+    },
+    {
+      "name": "walnuts",
+      "url": "https://github.com/flatironinstitute/walnuts",
+      "langs": [
+        "C++"
+      ],
+      "description": "Within-orbit Adaptive Leapfrog No-U-Turn Sampler",
       "stars": 47
     },
     {
