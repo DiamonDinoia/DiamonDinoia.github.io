@@ -1,6 +1,6 @@
 {
   "github_url": "https://github.com/DiamonDinoia",
-  "total_repos": 89,
+  "total_repos": 90,
   "projects": [
     {
       "name": "FINUFFT",
@@ -180,7 +180,7 @@
         "Python"
       ],
       "description": "Neural Networks for Protein Sequence Alignment",
-      "stars": 137
+      "stars": 138
     },
     {
       "name": "nemos",
@@ -2081,6 +2081,15 @@
       "stars": 1
     },
     {
+      "name": "canopy",
+      "url": "https://github.com/DiamonDinoia/canopy",
+      "langs": [
+        "C++"
+      ],
+      "description": "Canopy — fast N-dimensional function approximation via adaptive polynomial fitting (baobzi rebuilt on polyfit + POET)",
+      "stars": 0
+    },
+    {
       "name": "DiamonDinoia.github.io",
       "url": "https://github.com/DiamonDinoia/DiamonDinoia.github.io",
       "langs": [
@@ -2369,21 +2378,21 @@
       "stars": 0
     },
     {
+      "name": "mip-flatironinstitute",
+      "url": "https://github.com/flatironinstitute/mip-flatironinstitute",
+      "langs": [
+        "Python"
+      ],
+      "description": "Flatiron Institute mip channel",
+      "stars": 0
+    },
+    {
       "name": "jenkins-template",
       "url": "https://github.com/flatironinstitute/jenkins-template",
       "langs": [
         "Groovy"
       ],
       "description": "Example and test repository for jenkins builds",
-      "stars": 0
-    },
-    {
-      "name": "neurorse-workshops",
-      "url": "https://github.com/flatironinstitute/neurorse-workshops",
-      "langs": [
-        "Jupyter Notebook"
-      ],
-      "description": "Built workshop materials for the NeuroRSE packages",
       "stars": 0
     },
     {
@@ -2396,21 +2405,21 @@
       "stars": 0
     },
     {
+      "name": "neurorse-workshops",
+      "url": "https://github.com/flatironinstitute/neurorse-workshops",
+      "langs": [
+        "Jupyter Notebook"
+      ],
+      "description": "Built workshop materials for the NeuroRSE packages",
+      "stars": 0
+    },
+    {
       "name": "ccn-software-fens-2026",
       "url": "https://github.com/flatironinstitute/ccn-software-fens-2026",
       "langs": [
         "Python"
       ],
       "description": "Materials for CCN software workshop at FENS, July 2026",
-      "stars": 0
-    },
-    {
-      "name": "mip-flatironinstitute",
-      "url": "https://github.com/flatironinstitute/mip-flatironinstitute",
-      "langs": [
-        "Python"
-      ],
-      "description": "Flatiron Institute mip channel",
       "stars": 0
     },
     {
