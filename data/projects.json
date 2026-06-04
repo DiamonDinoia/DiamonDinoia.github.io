@@ -162,7 +162,7 @@
         "MATLAB"
       ],
       "description": "Matlab routines for online non-rigid motion correction of calcium imaging data",
-      "stars": 156
+      "stars": 157
     },
     {
       "name": "FMM3D",
@@ -300,6 +300,15 @@
       "stars": 52
     },
     {
+      "name": "nifty-ls",
+      "url": "https://github.com/flatironinstitute/nifty-ls",
+      "langs": [
+        "Python"
+      ],
+      "description": "A fast Lomb-Scargle periodogram. It's nifty, and uses a NUFFT!",
+      "stars": 48
+    },
+    {
       "name": "disBatch",
       "url": "https://github.com/flatironinstitute/disBatch",
       "langs": [
@@ -316,15 +325,6 @@
       ],
       "description": "FFTW bindings for the xtensor C++14 multi-dimensional array library",
       "stars": 48
-    },
-    {
-      "name": "nifty-ls",
-      "url": "https://github.com/flatironinstitute/nifty-ls",
-      "langs": [
-        "Python"
-      ],
-      "description": "A fast Lomb-Scargle periodogram. It's nifty, and uses a NUFFT!",
-      "stars": 47
     },
     {
       "name": "walnuts",
@@ -1513,19 +1513,19 @@
       "stars": 2
     },
     {
+      "name": "sciware-intern-mentors",
+      "url": "https://github.com/flatironinstitute/sciware-intern-mentors",
+      "langs": [],
+      "description": "Guidance from Sciware for summer intern mentors at Flatiron",
+      "stars": 2
+    },
+    {
       "name": "quantum_tic_tac_toe_public",
       "url": "https://github.com/flatironinstitute/quantum_tic_tac_toe_public",
       "langs": [
         "Python"
       ],
       "description": "Public repository for code that accompanies https://arxiv.org/abs/2604.23819, to allow the D-Wave Advantage 2 quantum annealer to play tic-tac-toe.",
-      "stars": 2
-    },
-    {
-      "name": "sciware-intern-mentors",
-      "url": "https://github.com/flatironinstitute/sciware-intern-mentors",
-      "langs": [],
-      "description": "Guidance from Sciware for summer intern mentors at Flatiron",
       "stars": 2
     },
     {
@@ -2081,21 +2081,21 @@
       "stars": 1
     },
     {
-      "name": "canopy",
-      "url": "https://github.com/DiamonDinoia/canopy",
-      "langs": [
-        "C++"
-      ],
-      "description": "Canopy — fast N-dimensional function approximation via adaptive polynomial fitting (baobzi rebuilt on polyfit + POET)",
-      "stars": 0
-    },
-    {
       "name": "DiamonDinoia.github.io",
       "url": "https://github.com/DiamonDinoia/DiamonDinoia.github.io",
       "langs": [
         "HTML"
       ],
       "description": "",
+      "stars": 0
+    },
+    {
+      "name": "canopy",
+      "url": "https://github.com/DiamonDinoia/canopy",
+      "langs": [
+        "C++"
+      ],
+      "description": "Canopy — fast N-dimensional function approximation via adaptive polynomial fitting (baobzi rebuilt on polyfit + POET)",
       "stars": 0
     },
     {
@@ -2378,6 +2378,24 @@
       "stars": 0
     },
     {
+      "name": "neurorse-workshops",
+      "url": "https://github.com/flatironinstitute/neurorse-workshops",
+      "langs": [
+        "Jupyter Notebook"
+      ],
+      "description": "Built workshop materials for the NeuroRSE packages",
+      "stars": 0
+    },
+    {
+      "name": "ccn-software-fens-2026",
+      "url": "https://github.com/flatironinstitute/ccn-software-fens-2026",
+      "langs": [
+        "Python"
+      ],
+      "description": "Materials for CCN software workshop at FENS, July 2026",
+      "stars": 0
+    },
+    {
       "name": "mip-flatironinstitute",
       "url": "https://github.com/flatironinstitute/mip-flatironinstitute",
       "langs": [
@@ -2402,24 +2420,6 @@
         "Jupyter Notebook"
       ],
       "description": "Postprocessing & analysis scripts for aLENS data",
-      "stars": 0
-    },
-    {
-      "name": "neurorse-workshops",
-      "url": "https://github.com/flatironinstitute/neurorse-workshops",
-      "langs": [
-        "Jupyter Notebook"
-      ],
-      "description": "Built workshop materials for the NeuroRSE packages",
-      "stars": 0
-    },
-    {
-      "name": "ccn-software-fens-2026",
-      "url": "https://github.com/flatironinstitute/ccn-software-fens-2026",
-      "langs": [
-        "Python"
-      ],
-      "description": "Materials for CCN software workshop at FENS, July 2026",
       "stars": 0
     },
     {
