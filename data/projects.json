@@ -207,7 +207,7 @@
         "Cuda"
       ],
       "description": "Nonuniform fast Fourier transforms of types 1 and 2, in 1D, 2D, and 3D, on the GPU",
-      "stars": 98
+      "stars": 99
     },
     {
       "name": "sciware",
@@ -288,7 +288,7 @@
         "Cuda"
       ],
       "description": "JAXMg: A multi-GPU linear solver in JAX",
-      "stars": 52
+      "stars": 53
     },
     {
       "name": "nixpack",
@@ -597,21 +597,21 @@
       "stars": 22
     },
     {
-      "name": "clair",
-      "url": "https://github.com/flatironinstitute/clair",
-      "langs": [
-        "C++"
-      ],
-      "description": "Clair (Clang Introspection and Reflection) tools. A set of clang tools developed for Flatiron/CCQ",
-      "stars": 20
-    },
-    {
       "name": "tprf",
       "url": "https://github.com/TRIQS/tprf",
       "langs": [
         "Python"
       ],
       "description": "TPRF: The Two-Particle Response Function tool box for TRIQS. Supported by the Flatiron Institute.",
+      "stars": 21
+    },
+    {
+      "name": "clair",
+      "url": "https://github.com/flatironinstitute/clair",
+      "langs": [
+        "C++"
+      ],
+      "description": "Clair (Clang Introspection and Reflection) tools. A set of clang tools developed for Flatiron/CCQ",
       "stars": 20
     },
     {
@@ -1772,6 +1772,15 @@
       "stars": 1
     },
     {
+      "name": "awi",
+      "url": "https://github.com/flatironinstitute/awi",
+      "langs": [
+        "Python"
+      ],
+      "description": "Rigid-body protein thermodynamics at a flat air–water interface. Predicts single-protein PMFs in (z, θ, ψ) and orientation distributions p(θ, ψ | c) for cryo-EM grid preparation.",
+      "stars": 1
+    },
+    {
       "name": "lineage_viewer",
       "url": "https://github.com/flatironinstitute/lineage_viewer",
       "langs": [
@@ -2081,12 +2090,21 @@
       "stars": 1
     },
     {
-      "name": "DiamonDinoia.github.io",
-      "url": "https://github.com/DiamonDinoia/DiamonDinoia.github.io",
+      "name": "juno-grub",
+      "url": "https://github.com/DiamonDinoia/juno-grub",
       "langs": [
-        "HTML"
+        "Shell"
       ],
-      "description": "",
+      "description": "Fork of junocomp/juno-grub with local fixes",
+      "stars": 0
+    },
+    {
+      "name": "juno-drivers-debian",
+      "url": "https://github.com/DiamonDinoia/juno-drivers-debian",
+      "langs": [
+        "Shell"
+      ],
+      "description": "Fork of junocomp/juno-drivers-debian with local fixes",
       "stars": 0
     },
     {
@@ -2099,21 +2117,21 @@
       "stars": 0
     },
     {
+      "name": "DiamonDinoia.github.io",
+      "url": "https://github.com/DiamonDinoia/DiamonDinoia.github.io",
+      "langs": [
+        "HTML"
+      ],
+      "description": "",
+      "stars": 0
+    },
+    {
       "name": "mip-core-test",
       "url": "https://github.com/DiamonDinoia/mip-core-test",
       "langs": [
         "Python"
       ],
       "description": "",
-      "stars": 0
-    },
-    {
-      "name": "juno-drivers-debian",
-      "url": "https://github.com/DiamonDinoia/juno-drivers-debian",
-      "langs": [
-        "Shell"
-      ],
-      "description": "Fork of junocomp/juno-drivers-debian with local fixes",
       "stars": 0
     },
     {
@@ -2132,15 +2150,6 @@
         "C++"
       ],
       "description": "TensorScript++: C++ BLAS/LAPACK-style linear algebra compiled to WebAssembly with benchmarking and Numbl/MIP packaging.",
-      "stars": 0
-    },
-    {
-      "name": "juno-grub",
-      "url": "https://github.com/DiamonDinoia/juno-grub",
-      "langs": [
-        "Shell"
-      ],
-      "description": "Fork of junocomp/juno-grub with local fixes",
       "stars": 0
     },
     {
