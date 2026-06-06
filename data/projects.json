@@ -99,7 +99,7 @@
         "Python"
       ],
       "description": "Computational toolbox for large scale Calcium Imaging Analysis, including movie handling, motion correction, source extraction, spike deconvolution and result visualization.",
-      "stars": 723
+      "stars": 724
     },
     {
       "name": "xtensor-python",
@@ -651,6 +651,15 @@
       "stars": 17
     },
     {
+      "name": "cryoSBI",
+      "url": "https://github.com/flatironinstitute/cryoSBI",
+      "langs": [
+        "Python"
+      ],
+      "description": "",
+      "stars": 16
+    },
+    {
       "name": "figpack",
       "url": "https://github.com/flatironinstitute/figpack",
       "langs": [
@@ -675,15 +684,6 @@
         "Jupyter Notebook"
       ],
       "description": "Python package for determination of conformational continua of macromolecules from single-particle cryo-EM data",
-      "stars": 15
-    },
-    {
-      "name": "cryoSBI",
-      "url": "https://github.com/flatironinstitute/cryoSBI",
-      "langs": [
-        "Python"
-      ],
-      "description": "",
       "stars": 15
     },
     {
@@ -813,21 +813,21 @@
       "stars": 11
     },
     {
-      "name": "flathub",
-      "url": "https://github.com/flatironinstitute/flathub",
-      "langs": [
-        "Haskell"
-      ],
-      "description": "A simple elasticsearch frontend for serving astrophysical simulation catalog data",
-      "stars": 11
-    },
-    {
       "name": "public_www",
       "url": "https://github.com/flatironinstitute/public_www",
       "langs": [
         "SCSS"
       ],
       "description": "Basic templates for individual user pages in the public/_www directory",
+      "stars": 11
+    },
+    {
+      "name": "flathub",
+      "url": "https://github.com/flatironinstitute/flathub",
+      "langs": [
+        "Haskell"
+      ],
+      "description": "A simple elasticsearch frontend for serving astrophysical simulation catalog data",
       "stars": 11
     },
     {
@@ -1468,6 +1468,15 @@
       "stars": 3
     },
     {
+      "name": "gem",
+      "url": "https://github.com/TRIQS/gem",
+      "langs": [
+        "Python"
+      ],
+      "description": "Ghost Gutzwiller Approximation implemented in TRIQS",
+      "stars": 3
+    },
+    {
       "name": "app4triqs",
       "url": "https://github.com/TRIQS/app4triqs",
       "langs": [
@@ -2090,24 +2099,6 @@
       "stars": 1
     },
     {
-      "name": "juno-grub",
-      "url": "https://github.com/DiamonDinoia/juno-grub",
-      "langs": [
-        "Shell"
-      ],
-      "description": "Fork of junocomp/juno-grub with local fixes",
-      "stars": 0
-    },
-    {
-      "name": "juno-drivers-debian",
-      "url": "https://github.com/DiamonDinoia/juno-drivers-debian",
-      "langs": [
-        "Shell"
-      ],
-      "description": "Fork of junocomp/juno-drivers-debian with local fixes",
-      "stars": 0
-    },
-    {
       "name": "canopy",
       "url": "https://github.com/DiamonDinoia/canopy",
       "langs": [
@@ -2123,6 +2114,24 @@
         "HTML"
       ],
       "description": "",
+      "stars": 0
+    },
+    {
+      "name": "juno-grub",
+      "url": "https://github.com/DiamonDinoia/juno-grub",
+      "langs": [
+        "Shell"
+      ],
+      "description": "Fork of junocomp/juno-grub with local fixes",
+      "stars": 0
+    },
+    {
+      "name": "juno-drivers-debian",
+      "url": "https://github.com/DiamonDinoia/juno-drivers-debian",
+      "langs": [
+        "Shell"
+      ],
+      "description": "Fork of junocomp/juno-drivers-debian with local fixes",
       "stars": 0
     },
     {
@@ -2405,21 +2414,21 @@
       "stars": 0
     },
     {
-      "name": "mip-flatironinstitute",
-      "url": "https://github.com/flatironinstitute/mip-flatironinstitute",
-      "langs": [
-        "Python"
-      ],
-      "description": "Flatiron Institute mip channel",
-      "stars": 0
-    },
-    {
       "name": "jenkins-template",
       "url": "https://github.com/flatironinstitute/jenkins-template",
       "langs": [
         "Groovy"
       ],
       "description": "Example and test repository for jenkins builds",
+      "stars": 0
+    },
+    {
+      "name": "mip-flatironinstitute",
+      "url": "https://github.com/flatironinstitute/mip-flatironinstitute",
+      "langs": [
+        "Python"
+      ],
+      "description": "Flatiron Institute mip channel",
       "stars": 0
     },
     {
