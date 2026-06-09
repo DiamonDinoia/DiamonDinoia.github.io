@@ -90,7 +90,7 @@
         "C++"
       ],
       "description": "C++ tensors with broadcasting and lazy computing",
-      "stars": 3739
+      "stars": 3740
     },
     {
       "name": "CaImAn",
@@ -162,7 +162,7 @@
         "MATLAB"
       ],
       "description": "Matlab routines for online non-rigid motion correction of calcium imaging data",
-      "stars": 157
+      "stars": 158
     },
     {
       "name": "FMM3D",
@@ -2099,21 +2099,21 @@
       "stars": 1
     },
     {
+      "name": "treeweave",
+      "url": "https://github.com/DiamonDinoia/treeweave",
+      "langs": [
+        "C++"
+      ],
+      "description": "treeweave — fast N-dimensional function approximation via adaptive polynomial fitting (baobzi rebuilt on polyfit + POET)",
+      "stars": 0
+    },
+    {
       "name": "DiamonDinoia.github.io",
       "url": "https://github.com/DiamonDinoia/DiamonDinoia.github.io",
       "langs": [
         "HTML"
       ],
       "description": "",
-      "stars": 0
-    },
-    {
-      "name": "canopy",
-      "url": "https://github.com/DiamonDinoia/canopy",
-      "langs": [
-        "C++"
-      ],
-      "description": "Canopy — fast N-dimensional function approximation via adaptive polynomial fitting (baobzi rebuilt on polyfit + POET)",
       "stars": 0
     },
     {
