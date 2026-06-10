@@ -90,7 +90,7 @@
         "C++"
       ],
       "description": "C++ tensors with broadcasting and lazy computing",
-      "stars": 3740
+      "stars": 3742
     },
     {
       "name": "CaImAn",
@@ -99,7 +99,7 @@
         "Python"
       ],
       "description": "Computational toolbox for large scale Calcium Imaging Analysis, including movie handling, motion correction, source extraction, spike deconvolution and result visualization.",
-      "stars": 724
+      "stars": 723
     },
     {
       "name": "xtensor-python",
@@ -171,7 +171,7 @@
         "Fortran"
       ],
       "description": "Flatiron Institute Fast Multipole Libraries --- This codebase is a set of libraries to compute N-body interactions governed by the Laplace and Helmholtz equations, to a specified precision, in three dimensions, on a multi-core shared-memory machine. ",
-      "stars": 154
+      "stars": 155
     },
     {
       "name": "deepblast",
@@ -189,7 +189,7 @@
         "Python"
       ],
       "description": "NEural MOdelS, a statistical modeling framework for neuroscience.",
-      "stars": 135
+      "stars": 136
     },
     {
       "name": "jax-finufft",
@@ -687,6 +687,15 @@
       "stars": 15
     },
     {
+      "name": "inverse-obstacle-scattering2d",
+      "url": "https://github.com/flatironinstitute/inverse-obstacle-scattering2d",
+      "langs": [
+        "Fortran"
+      ],
+      "description": "This repository contains codes for solving inverse obstacle scattering problems to recover the shape of the obstacle for sound soft, sound hard, and penetrable objects",
+      "stars": 14
+    },
+    {
       "name": "ccq-software-build",
       "url": "https://github.com/flatironinstitute/ccq-software-build",
       "langs": [
@@ -738,15 +747,6 @@
         "Jupyter Notebook"
       ],
       "description": "Adaptive Pole Fitting for Quantum Many-Body Physics",
-      "stars": 13
-    },
-    {
-      "name": "inverse-obstacle-scattering2d",
-      "url": "https://github.com/flatironinstitute/inverse-obstacle-scattering2d",
-      "langs": [
-        "Fortran"
-      ],
-      "description": "This repository contains codes for solving inverse obstacle scattering problems to recover the shape of the obstacle for sound soft, sound hard, and penetrable objects",
       "stars": 13
     },
     {
@@ -1020,6 +1020,15 @@
       "stars": 8
     },
     {
+      "name": "inverse-volume-scattering2d",
+      "url": "https://github.com/flatironinstitute/inverse-volume-scattering2d",
+      "langs": [
+        "MATLAB"
+      ],
+      "description": "This repository contains beta MATLAB codes for data generation of forward medium problems using a hybrid HPS-HBS solver, and an inverse medium solver",
+      "stars": 7
+    },
+    {
       "name": "fi-slurm-utils",
       "url": "https://github.com/flatironinstitute/fi-slurm-utils",
       "langs": [
@@ -1089,15 +1098,6 @@
         "Python"
       ],
       "description": "Meet your colleagues across the Institute",
-      "stars": 6
-    },
-    {
-      "name": "inverse-volume-scattering2d",
-      "url": "https://github.com/flatironinstitute/inverse-volume-scattering2d",
-      "langs": [
-        "MATLAB"
-      ],
-      "description": "This repository contains beta MATLAB codes for data generation of forward medium problems using a hybrid HPS-HBS solver, and an inverse medium solver",
       "stars": 6
     },
     {
@@ -1342,6 +1342,15 @@
       "stars": 4
     },
     {
+      "name": "gem",
+      "url": "https://github.com/TRIQS/gem",
+      "langs": [
+        "Python"
+      ],
+      "description": "Ghost Gutzwiller Approximation implemented in TRIQS",
+      "stars": 4
+    },
+    {
       "name": "nrgljubljana_interface",
       "url": "https://github.com/TRIQS/nrgljubljana_interface",
       "langs": [
@@ -1465,15 +1474,6 @@
         "C#"
       ],
       "description": "Playing with quantum computing algorithms for protein and peptide design and structure prediction, with interfaces for the Rosetta software suite.  (Repository created by Vikram K. Mulligan, vmulligan@flatironinstitute.org).",
-      "stars": 3
-    },
-    {
-      "name": "gem",
-      "url": "https://github.com/TRIQS/gem",
-      "langs": [
-        "Python"
-      ],
-      "description": "Ghost Gutzwiller Approximation implemented in TRIQS",
       "stars": 3
     },
     {
@@ -2396,6 +2396,15 @@
       "stars": 0
     },
     {
+      "name": "jenkins-template",
+      "url": "https://github.com/flatironinstitute/jenkins-template",
+      "langs": [
+        "Groovy"
+      ],
+      "description": "Example and test repository for jenkins builds",
+      "stars": 0
+    },
+    {
       "name": "neurorse-workshops",
       "url": "https://github.com/flatironinstitute/neurorse-workshops",
       "langs": [
@@ -2411,15 +2420,6 @@
         "Python"
       ],
       "description": "Materials for CCN software workshop at FENS, July 2026",
-      "stars": 0
-    },
-    {
-      "name": "jenkins-template",
-      "url": "https://github.com/flatironinstitute/jenkins-template",
-      "langs": [
-        "Groovy"
-      ],
-      "description": "Example and test repository for jenkins builds",
       "stars": 0
     },
     {
