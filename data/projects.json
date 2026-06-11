@@ -1,6 +1,6 @@
 {
   "github_url": "https://github.com/DiamonDinoia",
-  "total_repos": 90,
+  "total_repos": 89,
   "projects": [
     {
       "name": "FINUFFT",
@@ -90,7 +90,7 @@
         "C++"
       ],
       "description": "C++ tensors with broadcasting and lazy computing",
-      "stars": 3742
+      "stars": 3744
     },
     {
       "name": "CaImAn",
@@ -198,7 +198,7 @@
         "C++"
       ],
       "description": "JAX bindings to the Flatiron Institute Non-uniform Fast Fourier Transform (FINUFFT) library",
-      "stars": 134
+      "stars": 135
     },
     {
       "name": "cufinufft",
@@ -225,7 +225,7 @@
         "Python"
       ],
       "description": "Python wrapper for Intel Math Kernel Library (MKL) matrix multiplication",
-      "stars": 94
+      "stars": 95
     },
     {
       "name": "xtensor-io",
@@ -288,7 +288,7 @@
         "Cuda"
       ],
       "description": "JAXMg: A multi-GPU linear solver in JAX",
-      "stars": 53
+      "stars": 54
     },
     {
       "name": "nixpack",
@@ -1375,6 +1375,15 @@
         "C++"
       ],
       "description": "",
+      "stars": 3
+    },
+    {
+      "name": "poet",
+      "url": "https://github.com/flatironinstitute/poet",
+      "langs": [
+        "C++"
+      ],
+      "description": "Perfectly Over Engineered Templates",
       "stars": 3
     },
     {
