@@ -493,9 +493,10 @@ async function renderTalks() {
       byYear[year].forEach(talk => {
         lines.appendChild(line(cppOpen(null, 'Talk')));
         lines.appendChild(line(cppField('title', talk.title)));
-        lines.appendChild(line(cppField('event', talk.event)));
-        lines.appendChild(line(cppField('org', talk.org)));
-        lines.appendChild(line(cppField('type', talk.type)));
+        if (talk.date) lines.appendChild(line(cppField('date', talk.date)));
+        if (talk.event) lines.appendChild(line(cppField('event', talk.event)));
+        if (talk.org) lines.appendChild(line(cppField('org', talk.org)));
+        if (talk.type) lines.appendChild(line(cppField('type', talk.type)));
         if (talk.url) lines.appendChild(line(cppField('url', { url: talk.url, text: 'link' }, true)));
         if (talk.links && talk.links.length) {
           talk.links.forEach(link => {
