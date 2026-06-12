@@ -4,7 +4,10 @@
       "title": "Practical HPC NUFFTs",
       "date": "June 26, 2026",
       "year": 2026,
-      "type": "talk"
+      "type": "talk",
+      "links": [
+        { "label": "slides", "url": "talks/practical-hpc-nuffts/index.html", "type": "slides" }
+      ]
     },
     {
       "title": "Fast Numerics, Small Changes: The Minimal Playbook",
