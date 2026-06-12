@@ -1,0 +1,1475 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Practical HPC NUFFTs · Marco Barbone</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700;800&display=swap" rel="stylesheet">
+<!-- KaTeX — proper LaTeX math rendering (CDN, zero build) -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css" crossorigin="anonymous">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js" crossorigin="anonymous"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js" crossorigin="anonymous"></script>
+<style>
+/* ===========================================================================
+   THEME — "Signal Lab × Terminal"  (oscilloscope atmosphere + code windows)
+   Change these variables to retune the whole deck.
+   =========================================================================== */
+:root{
+  --stage-bg:#000;
+  --bg:#060b0e; --bg-2:#081218; --grid:#0d2228;
+  --ink:#dbeef0; --dim:#5f8085; --dim-2:#3c565b;
+  --cyan:#2ff3e0; --cyan-soft:#7ffff2; --cyan-deep:#0e8c84;
+  /* terminal-window syntax palette (only ever used INSIDE code/demo screens) */
+  --term-bg:#0a0e13; --term-bar:#0d1117; --term-border:#1c2b31;
+  --s-kw:#ff7b9c; --s-ty:#58a6ff; --s-fn:#5bd6c0; --s-str:#7ee787;
+  --s-num:#e3b341; --s-com:#5f8085; --s-pp:#bc8cff;
+  --disp:'Chakra Petch',sans-serif;
+  --mono:'JetBrains Mono',monospace;
+  --ease:cubic-bezier(.16,1,.3,1);
+}
+*{margin:0;padding:0;box-sizing:border-box}
+
+/* ===========================================================================
+   FIXED 16:9 STAGE — mandatory base (verbatim from viewport-base.css)
+   =========================================================================== */
+html,body{width:100%;height:100%;margin:0;overflow:hidden;background:var(--stage-bg,#000)}
+.deck-viewport{position:fixed;inset:0;overflow:hidden;background:var(--stage-bg,#000)}
+.deck-stage{position:absolute;left:0;top:0;width:1920px;height:1080px;overflow:hidden;transform-origin:0 0;background:var(--bg)}
+.slide{position:absolute;inset:0;width:1920px;height:1080px;overflow:hidden;display:block;visibility:hidden;opacity:0;pointer-events:none;background:var(--bg)}
+.slide.active,.slide.visible{visibility:visible;opacity:1;pointer-events:auto;z-index:1}
+img,video,canvas,svg{max-width:100%;max-height:100%}
+.deck-controls{position:fixed;left:50%;bottom:22px;transform:translateX(-50%);z-index:1000}
+@media print{
+  html,body{width:1920px;height:auto;overflow:visible;background:#000}
+  .deck-viewport{position:static;overflow:visible}
+  .deck-stage{position:static;width:auto;height:auto;transform:none!important}
+  .slide{position:relative;display:block!important;visibility:visible!important;opacity:1!important;pointer-events:auto!important;width:1920px;height:1080px;break-after:page;page-break-after:always}
+  .slide:last-child{break-after:auto;page-break-after:auto}
+  .deck-controls{display:none!important}
+}
+@media (prefers-reduced-motion: reduce){*,*::before,*::after{animation-duration:.01ms!important;transition-duration:.2s!important}}
+
+/* ===========================================================================
+   SLIDE ATMOSPHERE — graph-paper grid + scope glow + faint scanlines
+   =========================================================================== */
+.slide{
+  background:
+    radial-gradient(ellipse at 28% -8%, #0c2329 0%, transparent 58%),
+    radial-gradient(ellipse at 108% 112%, #0a191e 0%, transparent 52%),
+    var(--bg);
+  padding:96px 130px;
+}
+.slide::before{ /* graph-paper grid */
+  content:'';position:absolute;inset:0;z-index:0;
+  background-image:linear-gradient(var(--grid) 1px,transparent 1px),linear-gradient(90deg,var(--grid) 1px,transparent 1px);
+  background-size:80px 80px;
+  -webkit-mask-image:radial-gradient(ellipse at 50% 42%,#000 60%,transparent 100%);
+  mask-image:radial-gradient(ellipse at 50% 42%,#000 60%,transparent 100%);
+  opacity:.5;
+}
+.slide::after{ /* faint scanlines + corner mark */
+  content:'M·B';position:absolute;left:130px;bottom:54px;z-index:6;
+  font-family:var(--disp);font-size:20px;letter-spacing:.1em;color:var(--dim-2);
+}
+.slide-inner{position:relative;z-index:2;width:100%;height:100%;display:flex;flex-direction:column;justify-content:center;gap:30px}
+
+/* chrome */
+.kicker{font-family:var(--mono);font-size:21px;letter-spacing:.42em;text-transform:uppercase;color:var(--cyan);display:flex;align-items:center;gap:18px}
+.kicker .blip{width:13px;height:13px;border-radius:50%;background:var(--cyan);box-shadow:0 0 14px var(--cyan);animation:pulse 1.7s infinite}
+.counter{position:absolute;top:60px;right:130px;z-index:6;font-family:var(--mono);font-size:19px;letter-spacing:.2em;color:var(--dim)}
+.toprule{position:absolute;top:54px;left:130px;right:130px;height:1px;background:linear-gradient(90deg,var(--cyan-deep),transparent);z-index:5;opacity:.6}
+
+/* typography */
+.h-display{font-family:var(--disp);font-weight:700;text-transform:uppercase;letter-spacing:-.02em;font-size:150px;line-height:.94;color:var(--ink)}
+.h-display .ac{color:var(--cyan);text-shadow:0 0 40px rgba(47,243,224,.4)}
+.h1{font-family:var(--disp);font-weight:700;text-transform:uppercase;letter-spacing:-.015em;font-size:104px;line-height:.98;color:var(--ink)}
+.h1 .ac{color:var(--cyan)}
+.h2{font-family:var(--disp);font-weight:600;font-size:76px;line-height:1.04;color:var(--ink);letter-spacing:-.01em}
+.h2 .ac{color:var(--cyan)}
+.lead{font-family:var(--disp);font-weight:400;font-size:46px;line-height:1.4;color:var(--cyan-soft);max-width:42ch}
+.body{font-family:var(--disp);font-weight:400;font-size:36px;line-height:1.55;color:var(--ink);max-width:48ch}
+.note{font-family:var(--mono);font-size:21px;letter-spacing:.04em;color:var(--dim);line-height:1.6}
+
+/* em-dash bullets */
+.bul{list-style:none;display:flex;flex-direction:column;gap:36px;max-width:none}
+.bul li{font-family:var(--disp);font-size:46px;line-height:1.32;color:var(--ink);padding-left:62px;position:relative}
+.bul li::before{content:'—';position:absolute;left:0;color:var(--cyan);font-weight:600}
+.bul li b{color:var(--cyan-soft);font-weight:600}
+.bul li small{display:block;font-family:var(--mono);font-size:25px;color:var(--dim);letter-spacing:.02em;margin-top:8px}
+
+/* formula block */
+.formula{font-family:var(--mono);font-weight:500;font-size:84px;color:var(--ink);letter-spacing:.01em;line-height:1.3}
+.formula .ac{color:var(--cyan)}
+.formula sub,.formula sup{font-size:.55em}
+.formula-cap{font-family:var(--mono);font-size:28px;color:var(--dim);letter-spacing:.04em;margin-top:14px;max-width:none}
+/* three-flavors equation grid (uses full slide width) */
+.flavors{display:flex;flex-direction:column;gap:30px;width:100%;margin-top:8px}
+.flavor{display:grid;grid-template-columns:380px 1fr;align-items:center;gap:54px;border-top:1px solid var(--term-border);padding-top:26px}
+.flavor-l{font-family:var(--disp);font-weight:600;font-size:48px;color:var(--cyan);text-transform:uppercase;line-height:1}
+.flavor-l span{display:block;font-family:var(--mono);font-size:22px;color:var(--dim);letter-spacing:.12em;margin-top:10px}
+.flavor .katex-display{margin:0;text-align:left}
+
+/* tags */
+.tags{display:flex;gap:18px;margin-top:14px}
+.tag{font-family:var(--mono);font-size:20px;letter-spacing:.14em;text-transform:uppercase;color:var(--cyan);border:1px solid var(--cyan-deep);padding:10px 18px}
+
+/* image placeholder */
+.ph{border:1.5px dashed var(--term-border);background:repeating-linear-gradient(45deg,transparent 0 18px,rgba(47,243,224,.02) 18px 36px);
+  display:flex;align-items:center;justify-content:center;text-align:center;font-family:var(--mono);font-size:20px;letter-spacing:.06em;color:var(--dim);padding:40px}
+
+/* ===========================================================================
+   TERMINAL WINDOW — code + demo screens
+   =========================================================================== */
+.term{background:var(--term-bg);border:1px solid var(--term-border);border-radius:12px;overflow:hidden;
+  box-shadow:0 50px 130px -50px rgba(0,0,0,.9), 0 0 0 1px rgba(47,243,224,.04), 0 0 80px -40px rgba(47,243,224,.25);
+  display:flex;flex-direction:column;width:100%}
+.term-bar{display:flex;align-items:center;gap:12px;padding:16px 22px;border-bottom:1px solid var(--term-border);background:var(--term-bar)}
+.term-bar .dot{width:14px;height:14px;border-radius:50%}
+.dot.r{background:#ff5f56}.dot.y{background:#ffbd2e}.dot.g{background:#27c93f}
+.term-tab{margin-left:14px;font-family:var(--mono);font-size:19px;color:var(--dim)}
+.term-tab b{color:var(--ink);font-weight:500}
+.term-body{padding:30px 36px;position:relative}
+.term-body::after{content:'';position:absolute;inset:0;pointer-events:none;background:repeating-linear-gradient(0deg,rgba(255,255,255,.012) 0 1px,transparent 1px 3px)}
+pre.code{font-family:var(--mono);font-size:25px;line-height:1.62;color:var(--ink);overflow:auto;max-height:560px;white-space:pre}
+pre.code .c-kw{color:var(--s-kw)} pre.code .c-ty{color:var(--s-ty)} pre.code .c-fn{color:var(--s-fn)}
+pre.code .c-str{color:var(--s-str)} pre.code .c-num{color:var(--s-num)} pre.code .c-com{color:var(--s-com);font-style:italic}
+pre.code .c-pp{color:var(--s-pp)}
+
+/* code/demo slide scaffolding */
+.screen-head{display:flex;align-items:flex-end;justify-content:space-between;gap:30px;margin-bottom:26px}
+.screen-head .h2{font-size:54px}
+.screen-sub{font-family:var(--mono);font-size:21px;color:var(--dim);letter-spacing:.03em;text-align:right;max-width:40ch}
+.actions{display:flex;align-items:center;gap:16px;margin-top:24px;flex-wrap:wrap}
+.btn{font-family:var(--mono);font-size:19px;letter-spacing:.08em;text-transform:uppercase;cursor:pointer;
+  display:inline-flex;align-items:center;gap:12px;padding:14px 22px;border-radius:7px;border:1px solid var(--term-border);
+  background:rgba(47,243,224,.05);color:var(--ink);transition:all .2s ease}
+.btn:hover{border-color:var(--cyan);background:rgba(47,243,224,.13);transform:translateY(-1px)}
+.btn .dot-run{width:11px;height:11px;border-radius:50%;background:#27c93f;box-shadow:0 0 10px #27c93f}
+.btn.gh{background:rgba(88,166,255,.05)} .btn.gh:hover{border-color:var(--s-ty);background:rgba(88,166,255,.12)}
+.hint{font-family:var(--mono);font-size:18px;color:var(--dim);letter-spacing:.04em}
+
+/* demo controls */
+.demo-stage{margin-top:6px}
+.demo-stage canvas{display:block;width:100%;height:auto;border-radius:8px;background:#070c10}
+.controls{display:flex;align-items:center;gap:30px;flex-wrap:wrap;margin-top:22px;font-family:var(--mono);font-size:20px;color:var(--dim)}
+.controls label{display:flex;align-items:center;gap:12px}
+.controls input[type=range]{accent-color:var(--cyan);width:200px}
+.controls .seg{display:inline-flex;border:1px solid var(--term-border);border-radius:7px;overflow:hidden}
+.controls .seg button,.controls>button{font-family:var(--mono);font-size:18px;letter-spacing:.06em;text-transform:uppercase;cursor:pointer;
+  padding:12px 20px;border:0;background:transparent;color:var(--ink);transition:all .2s ease}
+.controls>button{border:1px solid var(--term-border);border-radius:7px;background:rgba(47,243,224,.05)}
+.controls>button:hover{border-color:var(--cyan);background:rgba(47,243,224,.13)}
+.controls .seg button.on{background:rgba(47,243,224,.18);color:var(--cyan-soft)}
+.readout{font-family:var(--mono);font-size:21px;color:var(--cyan-soft);letter-spacing:.02em}
+.readout b{color:var(--s-ty);font-weight:500}
+
+/* SIMD lane visualizer */
+.lanes{display:flex;flex-direction:column;gap:20px;font-family:var(--mono);padding:14px 6px}
+.lane-row{display:flex;align-items:center;gap:24px}
+.lane-row .tag-l{width:200px;font-size:24px;color:var(--dim);text-align:right;flex:0 0 auto}
+.lane-cells{display:flex;gap:10px}
+.cell{min-width:84px;height:72px;border:1px solid var(--term-border);border-radius:7px;display:flex;align-items:center;justify-content:center;font-size:26px;color:var(--ink);background:var(--bg-2);transition:all .35s var(--ease)}
+.cell.re{color:var(--s-ty)} .cell.im{color:var(--cyan-soft)} .cell.ker{color:var(--s-str);border-color:#244a2c}
+.cell.hot{box-shadow:0 0 0 2px var(--cyan),0 0 22px rgba(47,243,224,.5);transform:translateY(-5px)}
+.cell.dim{opacity:.25}
+.lane-cap{font-family:var(--disp);font-size:30px;color:var(--cyan-soft);min-height:1.5em;margin-top:14px}
+
+/* full-screen swizzle stepper (intentionally breaks the theme: terminal fills the stage) */
+.term.swz{position:absolute;inset:30px 44px 104px;display:flex;flex-direction:column;z-index:3;
+  box-shadow:0 0 0 2px var(--cyan),0 0 150px -30px rgba(47,243,224,.6),0 60px 160px -50px rgba(0,0,0,.9)}
+.slide.active .term.swz{animation:swzExpand .7s var(--ease) both}
+@keyframes swzExpand{from{transform:scale(.85);opacity:0}to{transform:scale(1);opacity:1}}
+.swz-body{flex:1;display:flex;flex-direction:column;gap:22px;justify-content:center;padding:26px 54px}
+.swz-code{font-family:var(--mono);font-size:30px;color:var(--cyan-soft);letter-spacing:.01em;min-height:1.4em;
+  border-left:3px solid var(--cyan);padding-left:20px;white-space:pre}
+.swz .lanes{gap:14px;padding:0}
+.swz .lane-row{gap:30px}
+.swz .lane-row .tag-l{width:250px;font-size:30px;color:var(--ink)}
+.swz .lane-cells{gap:12px}
+.swz .cell{min-width:156px;height:90px;font-size:30px;border-radius:9px}
+.swz .cell.ph{opacity:.16} .swz .lane-row.dim .tag-l{opacity:.4}
+.swz .lane-cap{font-family:var(--disp);font-size:34px;color:var(--ink);min-height:1.4em;margin-top:4px}
+.swz-controls{position:absolute;left:0;right:0;bottom:34px;display:flex;align-items:center;justify-content:center;gap:34px;z-index:5}
+.swz-controls button{font-family:var(--mono);font-size:22px;text-transform:uppercase;letter-spacing:.07em;
+  padding:14px 30px;border:1px solid var(--cyan-deep);border-radius:8px;background:rgba(47,243,224,.07);color:var(--ink);cursor:pointer;transition:all .2s ease}
+.swz-controls button:hover{border-color:var(--cyan);background:rgba(47,243,224,.16);transform:translateY(-1px)}
+.swz-controls button:disabled{opacity:.3;cursor:default;transform:none}
+.swz-step{font-family:var(--mono);font-size:22px;color:var(--cyan-soft);min-width:140px;text-align:center}
+
+/* stat cards */
+.stats{display:grid;grid-template-columns:1fr 1fr;gap:60px;max-width:1200px}
+.stat{border-top:2px solid var(--cyan);padding:24px 24px 0 0}
+.stat .v{font-family:var(--disp);font-weight:700;font-size:120px;line-height:.9;color:var(--cyan);letter-spacing:-.02em}
+.stat .l{font-family:var(--disp);font-size:32px;color:var(--ink);margin-top:14px}
+.stat .n{font-family:var(--mono);font-size:19px;color:var(--dim);margin-top:8px}
+
+/* scope trace svg (cover + dividers) */
+.scope{position:absolute;inset:0;width:100%;height:100%;z-index:1;pointer-events:none}
+.scope path{fill:none;stroke:var(--cyan);stroke-width:2.5;filter:drop-shadow(0 0 8px rgba(47,243,224,.6))}
+
+/* end links */
+.endnav{display:flex;flex-wrap:wrap;gap:26px;margin-top:18px}
+.endnav a{flex:1 1 380px;min-width:340px;display:flex;flex-direction:column;gap:10px;padding:30px 34px;
+  border:1px solid var(--term-border);border-radius:10px;text-decoration:none;color:var(--ink);background:var(--term-bg);transition:all .25s var(--ease)}
+.endnav a:hover{border-color:var(--cyan);background:rgba(47,243,224,.05);transform:translateY(-4px)}
+.endnav .label{font-family:var(--mono);font-size:19px;letter-spacing:.2em;color:var(--cyan);text-transform:uppercase}
+.endnav .title{font-family:var(--disp);font-weight:600;font-size:42px}
+.endnav .meta{font-family:var(--mono);font-size:18px;color:var(--dim);word-break:break-all}
+
+/* layout helpers */
+.two{display:grid;grid-template-columns:1fr 1fr;gap:70px;align-items:center;height:100%}
+.center{align-items:center;text-align:center}
+.center .bul,.center .body,.center .lead{margin-left:auto;margin-right:auto}
+
+/* reveal animations (triggered by .active) */
+.reveal{opacity:0;transform:translateY(34px);transition:opacity .6s var(--ease),transform .6s var(--ease)}
+.slide.active .reveal{opacity:1;transform:none}
+.slide.active .reveal:nth-child(1){transition-delay:.08s}
+.slide.active .reveal:nth-child(2){transition-delay:.18s}
+.slide.active .reveal:nth-child(3){transition-delay:.28s}
+.slide.active .reveal:nth-child(4){transition-delay:.38s}
+.slide.active .reveal:nth-child(5){transition-delay:.48s}
+.slide.active .reveal:nth-child(6){transition-delay:.58s}
+.slide.active .scope path{stroke-dasharray:2800;stroke-dashoffset:2800;animation:sweep 2.2s var(--ease) .2s forwards}
+@keyframes sweep{to{stroke-dashoffset:0}}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:.25}}
+
+/* deck chrome */
+.progress{position:fixed;left:0;bottom:0;height:3px;background:transparent;z-index:1000;width:100%}
+.progress .bar{height:100%;width:0;background:linear-gradient(90deg,var(--cyan-deep),var(--cyan));transition:width .4s ease;box-shadow:0 0 12px var(--cyan)}
+.help{position:fixed;right:18px;bottom:14px;z-index:1000;font-family:var(--mono);font-size:13px;color:var(--dim);opacity:.6}
+.help kbd{border:1px solid var(--term-border);border-radius:4px;padding:1px 6px;color:var(--ink)}
+.edit-hotzone{position:fixed;top:0;left:0;width:80px;height:80px;z-index:10000;cursor:pointer}
+.edit-toggle{position:fixed;top:14px;left:14px;z-index:10001;opacity:0;pointer-events:none;transition:opacity .3s ease;
+  font-family:var(--mono);font-size:18px;background:var(--term-bg);color:var(--ink);border:1px solid var(--term-border);border-radius:6px;padding:8px 12px;cursor:pointer}
+.edit-toggle.show,.edit-toggle.active{opacity:1;pointer-events:auto}
+.edit-toggle.active{border-color:var(--cyan);color:var(--cyan)}
+[contenteditable=true]{outline:1px dashed var(--cyan);outline-offset:4px;cursor:text}
+
+/* click-to-expand lightbox for benchmark charts (lives outside the scaled stage) */
+img.zoomable{cursor:zoom-in;transition:filter .2s ease}
+img.zoomable:hover{filter:brightness(1.04)}
+.lightbox{position:fixed;inset:0;z-index:20000;display:none;align-items:center;justify-content:center;
+  background:rgba(3,9,11,.95);cursor:zoom-out;padding:40px}
+.lightbox.open{display:flex}
+.lightbox img{max-width:96vw;max-height:92vh;background:#fff;border-radius:10px;padding:20px;
+  box-shadow:0 0 0 2px var(--cyan),0 40px 160px -40px rgba(0,0,0,.9)}
+.lightbox .lb-hint{position:fixed;bottom:22px;left:50%;transform:translateX(-50%);
+  font-family:var(--mono);font-size:16px;color:var(--dim);letter-spacing:.05em}
+</style>
+</head>
+<body>
+<div class="deck-viewport">
+<main class="deck-stage" id="deckStage">
+
+<!-- ===================== 1 · COVER ===================== -->
+<section class="slide title-slide active">
+  <svg class="scope" viewBox="0 0 1920 1080" preserveAspectRatio="none"><path d="M0,640 C160,640 200,360 320,360 C440,360 470,820 600,820 C720,820 760,480 900,480 C1040,480 1080,720 1240,720 C1380,720 1420,420 1560,420 C1700,420 1760,640 1920,640"/></svg>
+  <div class="slide-inner">
+    <div class="kicker reveal"><span class="blip"></span>Marco Barbone — Flatiron Institute / CCM</div>
+    <h1 class="h-display reveal">Practical <span class="ac">HPC</span><br><span class="ac">NUFFTs</span></h1>
+    <div class="lead reveal">From function approximation to a SIMD spreading trick</div>
+    <div class="tags reveal"><span class="tag">FINUFFT</span><span class="tag">xsimd</span><span class="tag">POET</span><span class="tag">treeweave</span></div>
+  </div>
+</section>
+
+<!-- ===================== 2 · HOOK ===================== -->
+<section class="slide">
+  <div class="counter"></div><div class="toprule"></div>
+  <div class="slide-inner"><div class="two">
+    <div>
+      <div class="kicker reveal" style="margin-bottom:30px"><span class="blip"></span>Why this matters</div>
+      <h2 class="h1 reveal">One inner<br>loop, <span class="ac">everywhere</span></h2>
+      <div class="note reveal" style="margin-top:30px;max-width:30ch">The first image of a black hole was reconstructed with a NUFFT. So was your last MRI.</div>
+    </div>
+    <figure class="reveal" style="margin:0">
+      <img src="assets/m87.jpg" alt="Event Horizon Telescope image of the M87 black hole" style="width:100%;border:1px solid var(--term-border);border-radius:10px;box-shadow:0 44px 120px -50px rgba(0,0,0,.9),0 0 80px -40px rgba(47,243,224,.32)">
+      <figcaption style="font-family:var(--mono);font-size:16px;color:var(--dim);margin-top:16px;letter-spacing:.03em">Credit: EHT Collaboration · ESO (eso1907a) · CC BY 4.0</figcaption>
+    </figure>
+  </div></div>
+</section>
+
+<!-- ===================== 3 · IMPACT ===================== -->
+<section class="slide">
+  <div class="counter"></div><div class="toprule"></div>
+  <div class="slide-inner">
+    <div class="kicker reveal"><span class="blip"></span>Where it shows up</div>
+    <ul class="bul reveal">
+      <li><b>Medical imaging</b> — 4D-MRI, ~17× faster on GPU</li>
+      <li><b>Cryo-EM</b> — alignment &amp; reconstruction of 3D volumes</li>
+      <li><b>Exoplanets</b> — power spectra of unevenly-sampled time series</li>
+      <li><b>X-ray FEL</b> — single-particle reconstruction, 5–12×</li>
+      <li><b>Optics</b> — Fresnel diffraction, 10⁴× over pre-2021 methods</li>
+    </ul>
+  </div>
+</section>
+
+<!-- ===================== 4 · SECTION 1 ===================== -->
+<section class="slide">
+  <svg class="scope" viewBox="0 0 1920 1080" preserveAspectRatio="none"><path d="M0,540 L760,540 L780,540 L800,300 L820,780 L840,540 L1120,540 L1140,360 L1160,720 L1180,540 L1920,540"/></svg>
+  <div class="slide-inner">
+    <div class="kicker reveal"><span class="blip"></span>Part 1</div>
+    <h2 class="h-display reveal" style="font-size:130px">What is a<br><span class="ac">NUFFT?</span></h2>
+  </div>
+</section>
+
+<!-- ===================== 5 · DFT vs NUFFT ===================== -->
+<section class="slide">
+  <div class="counter"></div><div class="toprule"></div>
+  <div class="slide-inner center">
+    <h2 class="h1 reveal" style="font-size:88px">The FFT needs a<br><span class="ac">uniform grid.</span></h2>
+    <div class="lead reveal" style="margin-top:20px">Real-world data rarely sits on one.</div>
+  </div>
+</section>
+
+<!-- ===================== 6 · type-1 formula ===================== -->
+<section class="slide">
+  <div class="counter"></div><div class="toprule"></div>
+  <div class="slide-inner center">
+    <div class="kicker reveal"><span class="blip"></span>Type-1 · nonuniform → uniform</div>
+    <div class="formula reveal" style="font-size:92px">\[ f_k = \textcolor{#2ff3e0}{\sum_{j=1}^{M}} c_j\, e^{\,i k x_j}, \quad -\tfrac{N}{2}\le k\lt\tfrac{N}{2} \]</div>
+    <div class="formula-cap reveal">M nonuniform points x<sub>j</sub> ∈ [0, 2π) with complex strengths c<sub>j</sub> · N output modes k</div>
+    <div class="body reveal" style="margin-top:24px;max-width:48ch">The Fourier coefficients of a sum of point masses — a NUFFT generalizes the DFT to points that land anywhere.</div>
+  </div>
+</section>
+
+<!-- ===================== 7 · three flavors ===================== -->
+<section class="slide">
+  <div class="counter"></div><div class="toprule"></div>
+  <div class="slide-inner">
+    <div class="kicker reveal"><span class="blip"></span>Three flavors</div>
+    <div class="flavors reveal">
+      <div class="flavor"><div class="flavor-l">Type 1<span>nonuniform → uniform</span></div><div class="formula" style="font-size:58px">\[ f_k=\sum_{j=1}^{M} c_j\,e^{\,ikx_j} \]</div></div>
+      <div class="flavor"><div class="flavor-l">Type 2<span>uniform → nonuniform</span></div><div class="formula" style="font-size:58px">\[ c_j=\sum_{-N/2\le k\lt N/2} f_k\,e^{\,ikx_j} \]</div></div>
+      <div class="flavor"><div class="flavor-l">Type 3<span>nonuniform → nonuniform</span></div><div class="formula" style="font-size:58px">\[ f_k=\sum_{j=1}^{M} c_j\,e^{\,is_k x_j} \]</div></div>
+    </div>
+    <div class="formula-cap reveal">type 2 is the adjoint of type 1 · type 3 runs a type-2 inside · in 2D/3D, \(k\,x_j \to k_1 x_j + k_2 y_j\)</div>
+  </div>
+</section>
+
+<!-- ===================== 8 · DEMO nufft ===================== -->
+<section class="slide" data-demo="nufft">
+  <div class="counter"></div><div class="toprule"></div>
+  <div class="slide-inner">
+    <div class="screen-head"><h2 class="h2 reveal">Spread → FFT → deconvolve</h2><div class="screen-sub reveal">live · the three-step kernel method</div></div>
+    <div class="term reveal">
+      <div class="term-bar"><span class="dot r"></span><span class="dot y"></span><span class="dot g"></span><span class="term-tab"><b>nufft</b> — type-1 · Nf = 64</span></div>
+      <div class="term-body"><div class="demo-stage"><canvas id="nufftCanvas" width="1520" height="470"></canvas></div></div>
+    </div>
+    <div class="controls reveal">
+      <div class="seg" id="nufftSteps">
+        <button data-step="0" class="on">1 · points</button><button data-step="1">2 · spread</button>
+        <button data-step="2">3 · FFT</button><button data-step="3">4 · truncate</button>
+      </div>
+      <button id="nufftShuffle">new points</button>
+      <span class="readout" id="nufftReadout"></span>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== 9 · FFT statement ===================== -->
+<section class="slide">
+  <div class="counter"></div><div class="toprule"></div>
+  <div class="slide-inner center">
+    <h2 class="h1 reveal" style="font-size:88px">Two costs:<br>the <span class="ac">FFT</span> and the <span class="ac">spreading.</span></h2>
+    <div class="lead reveal" style="margin-top:26px;margin-left:auto;margin-right:auto">The spreading is the part we control.</div>
+  </div>
+</section>
+
+<!-- ===================== 10 · spreading statement ===================== -->
+<section class="slide">
+  <div class="counter"></div><div class="toprule"></div>
+  <div class="slide-inner center">
+    <h2 class="h-display reveal" style="font-size:104px">Spreading often<br><span class="ac">dominates</span> —<br>50%+ of the run.</h2>
+  </div>
+</section>
+
+<!-- ===================== 11 · CODE scalar loop ===================== -->
+<section class="slide">
+  <div class="counter"></div><div class="toprule"></div>
+  <div class="slide-inner">
+    <div class="screen-head"><h2 class="h2 reveal">The critical loop</h2><div class="screen-sub reveal">every nonuniform point smears onto ~ns grid cells through a kernel</div></div>
+    <div class="term reveal"><div class="term-bar"><span class="dot r"></span><span class="dot y"></span><span class="dot g"></span><span class="term-tab"><b>spreadinterp.cpp</b> — FINUFFT v2.2.0 · spread_subproblem_1d</span></div>
+    <div class="term-body"><pre class="code" data-lang="cpp">for (BIGINT i = 0; i &lt; M; i++) {           // loop over nonuniform points
+  FLT re0 = dd[2*i], im0 = dd[2*i+1];       // strengths are complex
+  BIGINT i1 = (BIGINT)std::ceil(kx[i] - ns2);
+  FLT x1 = (FLT)i1 - kx[i];                  // kernel argument
+  eval_kernel_vec_Horner(ker, x1, ns, opts);
+  BIGINT j = i1 - off1;
+  for (int dx = 0; dx &lt; ns; ++dx) {          // critical inner loop
+    FLT k = ker[dx];
+    du[2*j]   += re0 * k;                     // kernel value used twice:
+    du[2*j+1] += im0 * k;                     // once real, once imaginary
+    ++j;
+  }
+}</pre></div></div>
+    <div class="actions reveal">
+      <a class="btn gh" href="https://github.com/flatironinstitute/finufft/blob/v2.2.0/src/spreadinterp.cpp#L938" target="_blank" rel="noopener">View real source ↗</a>
+      <span class="hint">the scalar reference · v2.2.0 · the SIMD version comes later</span>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== 12 · the exact kernel ===================== -->
+<section class="slide">
+  <div class="counter"></div><div class="toprule"></div>
+  <div class="slide-inner center">
+    <div class="kicker reveal"><span class="blip"></span>The optimal kernel · FINUFFT today</div>
+    <div class="formula reveal" style="font-size:62px">\[ \int_{-1}^{1} e^{\,i c\,z t}\,\psi_0(t)\,dt = \textcolor{#2ff3e0}{\lambda_0}\,\psi_0(z), \quad z\in[-1,1] \]</div>
+    <div class="formula-cap reveal">the order-0 prolate spheroidal wavefunction Ψ₀ (“prolate0”) — replaces the ES kernel used through 2025</div>
+    <div class="body reveal" style="margin-top:26px;max-width:54ch">Provably optimal — and genuinely expensive to evaluate.</div>
+  </div>
+</section>
+
+<!-- ===================== 13 · kernel is expensive ===================== -->
+<section class="slide">
+  <div class="counter"></div><div class="toprule"></div>
+  <div class="slide-inner center">
+    <h2 class="h1 reveal" style="font-size:80px">Exact — but <span class="ac">expensive</span>,<br>and called millions of times.</h2>
+    <div class="lead reveal" style="margin-top:18px">Every point. Every grid cell. Every dimension.</div>
+  </div>
+</section>
+
+<!-- ===================== 14 · SECTION 2 ===================== -->
+<section class="slide">
+  <svg class="scope" viewBox="0 0 1920 1080" preserveAspectRatio="none"><path d="M0,720 C300,720 360,260 600,260 C840,260 900,720 960,720 C1020,720 1080,360 1320,360 C1560,360 1620,640 1920,640"/></svg>
+  <div class="slide-inner">
+    <div class="kicker reveal"><span class="blip"></span>Part 2</div>
+    <h2 class="h-display reveal" style="font-size:120px">Evaluate it<br><span class="ac">cheaply</span></h2>
+  </div>
+</section>
+
+<!-- ===================== 15 · the recipe ===================== -->
+<section class="slide">
+  <div class="counter"></div><div class="toprule"></div>
+  <div class="slide-inner">
+    <div class="kicker reveal"><span class="blip"></span>The general recipe</div>
+    <ul class="bul reveal">
+      <li><b>Approximate</b> the expensive function with simple polynomials</li>
+      <li><b>Evaluate the polynomials</b> instead — a handful of multiply-adds</li>
+      <li><b>Pay once</b> at fit time; the <em>how</em> decides fast-and-stable vs. slow-and-hopeless</li>
+    </ul>
+  </div>
+</section>
+
+<!-- ===================== 16 · Vandermonde math ===================== -->
+<section class="slide">
+  <div class="counter"></div><div class="toprule"></div>
+  <div class="slide-inner center" style="gap:22px">
+    <div class="kicker reveal"><span class="blip"></span>The math · monomial fit</div>
+    <div class="formula reveal" style="font-size:50px">\[ p(x)=\sum_{k=0}^{n-1} c_k\, x^{k}, \quad p(x_j)=f_j \]</div>
+    <div class="formula reveal" style="font-size:38px;margin-top:0">\[ \underbrace{\begin{bmatrix} 1 & x_1 & x_1^2 & \cdots & x_1^{n-1}\\ 1 & x_2 & x_2^2 & \cdots & x_2^{n-1}\\ \vdots & \vdots & \vdots & & \vdots\\ 1 & x_n & x_n^2 & \cdots & x_n^{n-1}\end{bmatrix}}_{\textcolor{#2ff3e0}{V}} \begin{bmatrix} c_0\\ c_1\\ \vdots\\ c_{n-1}\end{bmatrix} = \begin{bmatrix} f_1\\ f_2\\ \vdots\\ f_n\end{bmatrix} \]</div>
+    <div class="formula-cap reveal">one Vandermonde system \(V c = f\) — sample f at n nodes, solve once for the coefficients. Simple, fast — and a trap if you are not careful.</div>
+  </div>
+</section>
+
+<!-- ===================== 17a · falls apart (thesis before the demo) ===================== -->
+<section class="slide">
+  <div class="counter"></div><div class="toprule"></div>
+  <div class="slide-inner center">
+    <h2 class="h1 reveal" style="font-size:96px">Done naively,<br>it <span class="ac">falls apart.</span></h2>
+    <div class="note reveal" style="margin-top:26px;max-width:54ch;margin-left:auto;margin-right:auto">in the monomial basis the coefficients grow and cancel · equispaced nodes add Runge blow-up</div>
+  </div>
+</section>
+
+<!-- ===================== 17 · DEMO Vandermonde solver ===================== -->
+<section class="slide" data-demo="vander">
+  <div class="counter"></div><div class="toprule"></div>
+  <div class="slide-inner">
+    <div class="screen-head"><h2 class="h2 reveal">More nodes should help — watch what happens</h2><div class="screen-sub reveal">it improves slowly, then |cₖ| explodes and rounding destroys it</div></div>
+    <div class="term reveal"><div class="term-bar"><span class="dot r"></span><span class="dot y"></span><span class="dot g"></span><span class="term-tab"><b>monomial fit</b> — expensive f(x) = Σ k⁻ˣ on [1.1, 5] · equispaced nodes</span></div>
+    <div class="term-body"><div class="demo-stage"><canvas id="vanderCanvas" width="1520" height="470"></canvas></div></div></div>
+    <div class="controls reveal">
+      <label>nodes n <input type="range" id="vanderN" min="2" max="100" value="2" step="1"><span class="readout" id="vanderNval">2</span></label>
+      <span class="readout" id="vanderReadout"></span>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== 19 · DEMO approx playground ===================== -->
+<section class="slide" data-demo="approx">
+  <div class="counter"></div><div class="toprule"></div>
+  <div class="slide-inner">
+    <div class="screen-head"><h2 class="h2 reveal">The fix, visualized</h2><div class="screen-sub reveal">same degree — only the node placement changes</div></div>
+    <div class="term reveal"><div class="term-bar"><span class="dot r"></span><span class="dot y"></span><span class="dot g"></span><span class="term-tab"><b>interpolate</b> — Runge function 1/(1+25x²)</span></div>
+    <div class="term-body"><div class="demo-stage"><canvas id="approxCanvas" width="1520" height="440"></canvas></div></div></div>
+    <div class="controls reveal">
+      <label>nodes <input type="range" id="approxN" min="4" max="40" value="12" step="1"><span class="readout" id="approxNval">12</span></label>
+      <div class="seg" id="approxType"><button data-type="equi" class="on">equispaced</button><button data-type="cheb">Chebyshev</button></div>
+      <span class="readout" id="approxReadout"></span>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== 20 · why chebyshev ===================== -->
+<section class="slide">
+  <div class="counter"></div><div class="toprule"></div>
+  <div class="slide-inner">
+    <div class="kicker reveal"><span class="blip"></span>Why Chebyshev nodes</div>
+    <ul class="bul reveal">
+      <li><b>Exponential convergence</b> — error \(\sim \rho^{-n}\) for analytic \(f\)</li>
+      <li><b>Stable evaluation</b> — barycentric form reaches near machine precision</li>
+      <li><b>Adaptive panels</b> — low degree per panel, refine only where it’s hard</li>
+    </ul>
+  </div>
+</section>
+
+<!-- ===================== 20b · panelization (adaptive panels demo) ===================== -->
+<section class="slide" data-demo="panels">
+  <div class="counter"></div><div class="toprule"></div>
+  <div class="slide-inner">
+    <div class="screen-head"><h2 class="h2 reveal">Piecewise panels, refined where it's hard</h2><div class="screen-sub reveal">a global polynomial plateaus near 1e-4 — so use many low-degree panels</div></div>
+    <div class="term reveal"><div class="term-bar"><span class="dot r"></span><span class="dot y"></span><span class="dot g"></span><span class="term-tab"><b>panels</b> — degree-6 Chebyshev per panel · 1/(1+25x²) on [−1,1]</span></div>
+    <div class="term-body"><div class="demo-stage"><canvas id="panelsCanvas" width="1520" height="430"></canvas></div></div></div>
+    <div class="controls reveal">
+      <label>tolerance <input type="range" id="panelsTol" min="2" max="12" value="6" step="1"><span class="readout" id="panelsTolval">1e-6</span></label>
+      <span class="readout" id="panelsReadout"></span>
+      <span class="hint">adaptive Chebyshev panels — baobzi · HChebInterp.jl · Chebfun · treeweave</span>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== 21 · low order statement ===================== -->
+<section class="slide">
+  <div class="counter"></div><div class="toprule"></div>
+  <div class="slide-inner center">
+    <h2 class="h-display reveal" style="font-size:104px">Low order.<br>Many panels.<br><span class="ac">Vector-friendly.</span></h2>
+  </div>
+</section>
+
+<!-- ===================== Part 3 · treeweave (moved to before the SIMD section) ===================== -->
+<section class="slide">
+  <svg class="scope" viewBox="0 0 1920 1080" preserveAspectRatio="none"><path d="M0,640 C200,640 240,400 400,400 C560,400 600,640 760,640 C920,640 960,420 1120,420 C1280,420 1320,640 1480,640 C1640,640 1680,460 1920,460"/></svg>
+  <div class="slide-inner">
+    <div class="kicker reveal"><span class="blip"></span>Part 3</div>
+    <h2 class="h-display reveal" style="font-size:118px">Don’t rewrite<br>it <span class="ac">every time</span></h2>
+  </div>
+</section>
+
+<!-- treeweave · intro -->
+<section class="slide">
+  <div class="counter"></div><div class="toprule"></div>
+  <div class="slide-inner">
+    <div class="kicker reveal"><span class="blip"></span>treeweave</div>
+    <div class="formula reveal" style="font-size:52px">fit(f, lo, hi, tol)</div>
+    <ul class="bul reveal" style="margin-top:20px">
+      <li><b>Fit once, evaluate forever</b> — every later call is a cheap polynomial lookup</li>
+      <li><b>Adaptive Chebyshev panels</b> + Horner + SIMD dispatch (built on polyfit &amp; POET)</li>
+      <li><b>Thread-safe</b> — a fitted object is immutable</li>
+    </ul>
+  </div>
+</section>
+
+<!-- treeweave · how it works (NEW) -->
+<section class="slide">
+  <div class="counter"></div><div class="toprule"></div>
+  <div class="slide-inner">
+    <div class="kicker reveal"><span class="blip"></span>How it works</div>
+    <h2 class="h2 reveal" style="font-size:54px;margin-top:4px">Adaptive panels, then constant-time lookup</h2>
+    <ul class="bul reveal" style="margin-top:18px">
+      <li><b>Split the domain</b> into panels and fit a low-degree Chebyshev polynomial on each</li>
+      <li><b>Refine where it's hard</b> — keep bisecting a panel while its error exceeds <code>tol</code>; dense near sharp features, sparse where f is smooth</li>
+      <li><b>Evaluate fast</b> — locate the panel, run Horner on its stored coefficients, vectorized through POET dispatch</li>
+      <li><b>Cost is flat</b> — the same handful of FLOPs per call, however expensive the original f was</li>
+    </ul>
+  </div>
+</section>
+
+<!-- treeweave · race demo (moved) -->
+<section class="slide" data-demo="race">
+  <div class="counter"></div><div class="toprule"></div>
+  <div class="slide-inner">
+    <div class="screen-head"><h2 class="h2 reveal">Fit once, evaluate forever</h2><div class="screen-sub reveal">live race · expensive f vs. its polynomial surrogate</div></div>
+    <div class="term reveal"><div class="term-bar"><span class="dot r"></span><span class="dot y"></span><span class="dot g"></span><span class="term-tab"><b>race</b> — same N evaluations, two ways</span></div>
+    <div class="term-body"><div class="demo-stage"><canvas id="raceCanvas" width="1520" height="400"></canvas></div></div></div>
+    <div class="controls reveal">
+      <button id="raceRun">run the race ▸</button>
+      <label>calls <input type="range" id="raceN" min="100000" max="3000000" value="1000000" step="100000"><span class="readout" id="raceNval">1,000,000</span></label>
+      <span class="readout" id="raceReadout"></span>
+    </div>
+  </div>
+</section>
+
+<!-- treeweave · one stable C ABI, six languages (one per slide) -->
+<section class="slide">
+  <div class="counter"></div><div class="toprule"></div>
+  <div class="slide-inner center">
+    <h2 class="h-display reveal" style="font-size:96px">One call,<br><span class="ac">six languages</span></h2>
+    <div class="note reveal" style="margin-top:24px;max-width:56ch;margin-left:auto;margin-right:auto">one stable C ABI underneath · C++ is header-only · C · Fortran · Python · Julia · MATLAB / Octave</div>
+  </div>
+</section>
+
+<!-- C++ -->
+<section class="slide">
+  <div class="counter"></div><div class="toprule"></div>
+  <div class="slide-inner">
+    <div class="screen-head"><h2 class="h2 reveal">treeweave — C++</h2><div class="screen-sub reveal">the native, header-only API</div></div>
+    <div class="term reveal"><div class="term-bar"><span class="dot r"></span><span class="dot y"></span><span class="dot g"></span><span class="term-tab"><b>main.cpp</b></span></div>
+    <div class="term-body"><pre class="code" data-lang="cpp" style="font-size:28px;line-height:1.6;max-height:none">#include &lt;treeweave/treeweave.hpp&gt;
+
+auto runge = [](double x){ return 1.0 / (1.0 + 25.0*x*x); };
+
+auto fn = treeweave::fit(runge, -1.0, 1.0, 1e-10);
+double y = fn(0.3);            // call it like the original</pre></div></div>
+    <div class="actions reveal"><span class="tag">install</span><span class="hint">header-only — <code>FetchContent</code> or <code>find_package(treeweave)</code></span></div>
+  </div>
+</section>
+
+<!-- C -->
+<section class="slide">
+  <div class="counter"></div><div class="toprule"></div>
+  <div class="slide-inner">
+    <div class="screen-head"><h2 class="h2 reveal">treeweave — C</h2><div class="screen-sub reveal">the stable C ABI every wrapper is built on</div></div>
+    <div class="term reveal"><div class="term-bar"><span class="dot r"></span><span class="dot y"></span><span class="dot g"></span><span class="term-tab"><b>simple.c</b></span></div>
+    <div class="term-body"><pre class="code" data-lang="cpp" style="font-size:26px;line-height:1.55;max-height:none">#include &lt;treeweave.h&gt;
+
+void f(const double *x, double *y, void *ctx){ y[0] = exp(x[0]); }
+
+const double a[1] = {0.0}, b[1] = {1.0};
+treeweave_t fn = treeweave_fit(f, 1, 1, a, b, 1e-10, NULL, NULL);
+
+double x = 0.3, y;
+treeweave_eval(fn, &amp;x, &amp;y);
+treeweave_free(fn);</pre></div></div>
+    <div class="actions reveal"><span class="tag">install</span><span class="hint">link <code>libtreeweave_c</code> · <code>#include &lt;treeweave.h&gt;</code></span></div>
+  </div>
+</section>
+
+<!-- Python -->
+<section class="slide">
+  <div class="counter"></div><div class="toprule"></div>
+  <div class="slide-inner">
+    <div class="screen-head"><h2 class="h2 reveal">treeweave — Python</h2><div class="screen-sub reveal">drop-in, NumPy-native</div></div>
+    <div class="term reveal"><div class="term-bar"><span class="dot r"></span><span class="dot y"></span><span class="dot g"></span><span class="term-tab"><b>demo.py</b></span></div>
+    <div class="term-body"><pre class="code" data-lang="py" style="font-size:28px;line-height:1.6;max-height:none">import numpy as np, treeweave
+
+approx = treeweave.fit(lambda x: np.exp(x[0]), 0.0, 1.0, tol=1e-10)
+ys = approx(np.linspace(0, 1, 11))   # vectorized: NumPy in, NumPy out</pre></div></div>
+    <div class="actions reveal"><span class="tag">install</span><span class="hint"><code>pip install treeweave</code></span></div>
+  </div>
+</section>
+
+<!-- Julia -->
+<section class="slide">
+  <div class="counter"></div><div class="toprule"></div>
+  <div class="slide-inner">
+    <div class="screen-head"><h2 class="h2 reveal">treeweave — Julia</h2><div class="screen-sub reveal">fit returns a callable handle</div></div>
+    <div class="term reveal"><div class="term-bar"><span class="dot r"></span><span class="dot y"></span><span class="dot g"></span><span class="term-tab"><b>demo.jl</b></span></div>
+    <div class="term-body"><pre class="code" data-lang="jl" style="font-size:28px;line-height:1.6;max-height:none">using Treeweave
+
+f = x -> exp(0.5x) + sin(3x)
+approx = fit(f, 0.0, 2.0, 1e-10)
+ys = approx(range(0, 2; length=1001))   # call the handle directly</pre></div></div>
+    <div class="actions reveal"><span class="tag">install</span><span class="hint"><code>Pkg.add(url="https://github.com/DiamonDinoia/treeweave", subdir="bindings/julia/Treeweave")</code></span></div>
+  </div>
+</section>
+
+<!-- MATLAB / Octave -->
+<section class="slide">
+  <div class="counter"></div><div class="toprule"></div>
+  <div class="slide-inner">
+    <div class="screen-head"><h2 class="h2 reveal">treeweave — MATLAB / Octave</h2><div class="screen-sub reveal">one source builds for both</div></div>
+    <div class="term reveal"><div class="term-bar"><span class="dot r"></span><span class="dot y"></span><span class="dot g"></span><span class="term-tab"><b>demo.m</b></span></div>
+    <div class="term-body"><pre class="code" data-lang="m" style="font-size:27px;line-height:1.6;max-height:none">f   = @(x) exp(0.5*x(1)) + sin(3*x(1));
+obj = treeweave(f, [0], [1], 1e-8, 'dim', 1, 'out_dim', 1);
+
+Yhat = obj.eval(linspace(0, 1, 500)');
+delete(obj);</pre></div></div>
+    <div class="actions reveal"><span class="tag">install</span><span class="hint">build with <code>-DTREEWEAVE_BUILD_MATLAB=ON</code>, then <code>addpath(build)</code></span></div>
+  </div>
+</section>
+
+<!-- Fortran -->
+<section class="slide">
+  <div class="counter"></div><div class="toprule"></div>
+  <div class="slide-inner">
+    <div class="screen-head"><h2 class="h2 reveal">treeweave — Fortran</h2><div class="screen-sub reveal">the C ABI with bind(C) callbacks</div></div>
+    <div class="term reveal"><div class="term-bar"><span class="dot r"></span><span class="dot y"></span><span class="dot g"></span><span class="term-tab"><b>example.f90</b></span></div>
+    <div class="term-body"><pre class="code" data-lang="f" style="font-size:25px;line-height:1.5;max-height:none">use treeweave
+use iso_c_binding
+! the callback must be a bind(C) procedure (no captures)
+
+real(c_double) :: a(1) = 0, b(1) = 1, x(1) = 0.3_c_double, y(1)
+type(c_ptr)    :: h
+
+h = treeweave_fit(c_funloc(kernel_exp), 1, 1, a, b, 1.0e-10_c_double, &amp;
+                  c_null_ptr, c_null_ptr)
+call treeweave_eval(h, x, y)
+h = treeweave_free(h)</pre></div></div>
+    <div class="actions reveal"><span class="tag">install</span><span class="hint">build with <code>-DTREEWEAVE_BUILD_FORTRAN=ON</code> · <code>use treeweave</code></span></div>
+  </div>
+</section>
+
+<!-- treeweave · benchmark placeholder (NEW · numbers to come) -->
+<section class="slide">
+  <div class="counter"></div><div class="toprule"></div>
+  <div class="slide-inner">
+    <div class="screen-head"><h2 class="h2 reveal">How fast is “evaluate forever”?</h2><div class="screen-sub reveal">surrogate throughput vs. calling the original f</div></div>
+    <div class="two reveal" style="margin-top:8px;grid-template-columns:1.4fr 1fr;gap:48px;height:auto;align-items:center">
+      <figure style="margin:0">
+        <div class="term"><div class="term-bar"><span class="dot r"></span><span class="dot y"></span><span class="dot g"></span><span class="term-tab"><b>benchmark</b> — treeweave surrogate · evals/s</span></div>
+        <div class="term-body"><div class="ph" style="height:420px">benchmark chart — numbers coming soon</div></div></div>
+      </figure>
+      <div style="display:flex;flex-direction:column;gap:30px">
+        <div class="stat"><div class="v" style="font-size:84px">—×</div><div class="l">faster per call</div><div class="n">surrogate vs. the original function</div></div>
+        <div class="stat"><div class="v" style="font-size:84px">—</div><div class="l">fit time</div><div class="n">one-off, amortized over every call</div></div>
+        <div class="note">numbers to be filled in</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== Part 4 · SECTION · make it fit the machine (SIMD) ===================== -->
+<section class="slide">
+  <svg class="scope" viewBox="0 0 1920 1080" preserveAspectRatio="none"><path d="M0,540 L300,540 L320,300 L340,540 L360,780 L380,540 L660,540 L680,300 L700,540 L720,780 L740,540 L1020,540 L1040,300 L1060,540 L1080,780 L1100,540 L1920,540"/></svg>
+  <div class="slide-inner">
+    <div class="kicker reveal"><span class="blip"></span>Part 4</div>
+    <h2 class="h-display reveal" style="font-size:118px">Make it fit<br>the <span class="ac">machine</span></h2>
+  </div>
+</section>
+
+<!-- (SIMD 101 moved to a standalone primer just before the conclusion) -->
+
+<!-- ===================== 23 · map the math to the CPU ===================== -->
+<section class="slide">
+  <div class="counter"></div><div class="toprule"></div>
+  <div class="slide-inner center">
+    <h2 class="h-display reveal" style="font-size:104px">Now map the math<br>to the <span class="ac">CPU.</span></h2>
+    <div class="note reveal" style="margin-top:24px;max-width:60ch;margin-left:auto;margin-right:auto">we have a fast, accurate kernel — what's left is making the hot loop run at the speed the hardware allows</div>
+  </div>
+</section>
+
+<!-- ===================== 24 · scalar critical loop ===================== -->
+<section class="slide">
+  <div class="counter"></div><div class="toprule"></div>
+  <div class="slide-inner">
+    <div class="screen-head"><h2 class="h2 reveal">The spreading loop, in full</h2><div class="screen-sub reveal">1D type-1 · scatter each point onto ns grid cells</div></div>
+    <div class="term reveal"><div class="term-bar"><span class="dot r"></span><span class="dot y"></span><span class="dot g"></span><span class="term-tab"><b>spreadinterp.cpp</b> — FINUFFT</span></div>
+    <div class="term-body"><pre class="code" data-lang="cpp" style="font-size:23px;line-height:1.45;max-height:none">T kernel_values[MAX_NSPREAD];
+for (BIGINT i = 0; i &lt; M; ++i) {              // loop over all points
+  const T re0 = dd[2 * i];                    // pts are complex
+  const T im0 = dd[2 * i + 1];
+  BIGINT i1   = (BIGINT)std::ceil(kx[i] - ns2);
+  T x1        = T(i1) - kx[i];
+  ker_eval&lt;T&gt;(kernel_values, ns, opts, x1);
+  BIGINT j = i1 - off1;
+  for (int dx = 0; dx &lt; int(ns); ++dx) {       // critical loop
+    const T k = kernel_values[dx];
+    du[2 * j]     += re0 * k;
+    du[2 * j + 1] += im0 * k;
+    ++j;
+  }
+}</pre></div></div>
+    <div class="actions reveal">
+      <a class="btn gh" href="https://github.com/flatironinstitute/finufft/blob/v2.2.0/src/spreadinterp.cpp#L938" target="_blank" rel="noopener">View real source ↗</a>
+      <span class="hint">the inner loop runs billions of times</span>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== 25 · scalar, but the CPU is SIMD ===================== -->
+<section class="slide">
+  <div class="counter"></div><div class="toprule"></div>
+  <div class="slide-inner center">
+    <h2 class="h1 reveal" style="font-size:80px">This loop is <span class="ac">scalar</span>.<br>The CPU is <span class="ac">SIMD</span>.</h2>
+    <div class="note reveal" style="margin-top:26px;max-width:58ch;margin-left:auto;margin-right:auto">one lane working, the rest idle — we're leaving most of the machine's throughput on the table</div>
+  </div>
+</section>
+
+<!-- ===================== 26 · why the compiler can't fix it ===================== -->
+<section class="slide">
+  <div class="counter"></div><div class="toprule"></div>
+  <div class="slide-inner">
+    <div class="kicker reveal"><span class="blip"></span>Why auto-vectorization isn't enough</div>
+    <ul class="bul reveal" style="margin-top:10px">
+      <li><b>ns is a runtime value</b> — the inner trip count is unknown at compile time, so the vectorizer stays conservative</li>
+      <li><b>auto-vectorization is unreliable</b> — it shifts with the compiler, its version and flags; you can't count on it</li>
+      <li><b>but ns ∈ [2, 16]</b> — small and bounded, so we can <span class="ac">generate one specialized kernel per width</span></li>
+    </ul>
+  </div>
+</section>
+
+<!-- ===================== 27 · POET API ===================== -->
+<section class="slide">
+  <div class="counter"></div><div class="toprule"></div>
+  <div class="slide-inner">
+    <div class="screen-head"><h2 class="h2 reveal">POET: promote ns to compile-time</h2><div class="screen-sub reveal">a C++20 templated lambda — no functor boilerplate, just declare the ranges</div></div>
+    <div class="term reveal"><div class="term-bar"><span class="dot r"></span><span class="dot y"></span><span class="dot g"></span><span class="term-tab"><b>dispatch.cpp</b> — POET</span></div>
+    <div class="term-body"><pre class="code" data-lang="cpp" style="font-size:24px;line-height:1.5;max-height:none">// C++20: a generic lambda with an explicit template parameter list
+auto spread = [&amp;]&lt;int ns, int kerevalmeth&gt;() {
+  spread_subproblem_1d_kernel&lt;T, ns, kerevalmeth&gt;(off1, size1, du, M, kx, dd, opts);
+};
+
+using NsSeq  = poet::make_range&lt;MIN_NSPREAD, MAX_NSPREAD&gt;;
+using KerSeq = std::make_integer_sequence&lt;int, KEREVAL_METHODS&gt;;
+auto params  = std::make_tuple(poet::dispatch_param&lt;NsSeq&gt;{opts.nspread},
+                               poet::dispatch_param&lt;KerSeq&gt;{opts.kerevalmeth});
+
+poet::dispatch(spread, params);   // runtime (ns, meth) -> compile-time template args
+// inside the lambda: ns is constexpr — full unroll, constant-folded coeffs, clean vectors.</pre></div></div>
+    <div class="actions reveal">
+      <a class="btn gh" href="https://github.com/DiamonDinoia/poet" target="_blank" rel="noopener">POET on GitHub ↗</a>
+      <span class="hint">one instantiation per value — keep the range small or compile times explode</span>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== 28 · POET result (compiler vectorizes better) ===================== -->
+<section class="slide">
+  <div class="counter"></div><div class="toprule"></div>
+  <div class="slide-inner">
+    <div class="kicker reveal"><span class="blip"></span>Compile-time ns alone — no hand-written SIMD yet</div>
+    <div class="two reveal" style="margin-top:18px;gap:60px">
+      <div style="display:flex;flex-direction:column;gap:30px;justify-content:center">
+        <div class="body" style="max-width:34ch">With <code>ns</code> fixed at compile time the inner loop has a constant trip count, so the compiler can unroll it and emit clean vector code.</div>
+        <div class="body" style="max-width:34ch">We get a speedup <em>before</em> writing a single intrinsic — just from telling the compiler what it couldn't infer.</div>
+      </div>
+      <figure style="margin:0">
+        <div class="term"><div class="term-bar"><span class="dot r"></span><span class="dot y"></span><span class="dot g"></span><span class="term-tab"><b>benchmark</b> — POET dispatch vs runtime loop</span></div>
+        <div class="term-body" style="background:#fff;padding:18px"><img class="zoomable" src="assets/poet_dynamic_for.svg" alt="POET dispatch speedup benchmark" style="width:100%;display:block"></div></div>
+        <figcaption style="font-family:var(--mono);font-size:15px;color:var(--dim);margin-top:12px;letter-spacing:.03em">POET microbenchmark · github.com/DiamonDinoia/poet · MIT</figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== 29 · introduce xsimd ===================== -->
+<section class="slide">
+  <div class="counter"></div><div class="toprule"></div>
+  <div class="slide-inner">
+    <div class="kicker reveal"><span class="blip"></span>We know the math and the hardware — we can do better</div>
+    <h2 class="h2 reveal" style="font-size:58px;margin-top:8px">Hand-vectorize with <span class="ac">xsimd</span></h2>
+    <ul class="bul reveal" style="margin-top:20px">
+      <li><b>Header-only C++</b> — one API over SSE / AVX / AVX-512 / NEON, no raw intrinsics</li>
+      <li><b><code>batch&lt;T&gt;</code></b> — a register full of values; <code>load</code>, <code>store</code>, <code>fma</code>, <code>swizzle</code> each map to a single instruction</li>
+      <li><b>Lane width is a compile-time constant</b> — it pairs perfectly with POET's now-fixed ns</li>
+    </ul>
+  </div>
+</section>
+
+<!-- ===================== 30 · SIMD main idea (the critical loop) ===================== -->
+<section class="slide">
+  <div class="counter"></div><div class="toprule"></div>
+  <div class="slide-inner">
+    <div class="screen-head"><h2 class="h2 reveal">Vectorize the critical loop</h2><div class="screen-sub reveal">each kernel value is used twice — once for re, once for im</div></div>
+    <div class="term reveal"><div class="term-bar"><span class="dot r"></span><span class="dot y"></span><span class="dot g"></span><span class="term-tab"><b>critical loop</b></span></div>
+    <div class="term-body"><pre class="code" data-lang="cpp" style="font-size:30px;line-height:1.7;max-height:none">for (int dx = 0; dx &lt; int(ns); ++dx) {   // critical loop
+  const T k = kernel_values[dx];
+  du[2 * j]     += re0 * k;             // real
+  du[2 * j + 1] += im0 * k;             // imag
+  ++j;
+}</pre></div></div>
+    <div class="body reveal" style="margin-top:22px;max-width:58ch">The grid is interleaved <code>[re, im, re, im]</code>; the kernel is real. So we must feed one real kernel value into <em>both</em> complex lanes.</div>
+  </div>
+</section>
+
+<!-- ===================== SIMD v1 · first cut (one swizzle, one FMA) ===================== -->
+<section class="slide">
+  <div class="counter"></div><div class="toprule"></div>
+  <div class="slide-inner">
+    <div class="screen-head"><h2 class="h2 reveal">First cut: one swizzle, one FMA</h2><div class="screen-sub reveal">broadcast the point · duplicate each tap into its (re, im) pair</div></div>
+    <div class="term reveal"><div class="term-bar"><span class="dot r"></span><span class="dot y"></span><span class="dot g"></span><span class="term-tab"><b>spread.hpp</b> — xsimd</span></div>
+    <div class="term-body"><pre class="code" data-lang="cpp" style="font-size:27px;line-height:1.6;max-height:none">const auto dd_pt = complex_register&lt;simd_type&gt;(dd[2*i], dd[2*i+1]); // [re im re im ...]
+
+for (int dx = 0; dx &lt; int(ns); dx += simd_size) {
+  auto ker_v = simd_type::load_unaligned(ker.data() + dx/2);   // [k0 k1 k2 k3 ...]
+  ker_v      = xsimd::swizzle(ker_v, zip_low_index&lt;arch_t,T&gt;);  // [k0 k0 k1 k1 ...]
+  const auto du_pt = simd_type::load_unaligned(trg + dx);
+  const auto res   = xsimd::fma(ker_v, dd_pt, du_pt);
+  res.store_unaligned(trg + dx);
+}</pre></div></div>
+    <div class="body reveal" style="margin-top:22px;max-width:60ch">One <code>zip_low</code> lines the real kernel up with the interleaved complex grid — then a single fused multiply-add spreads the point.</div>
+  </div>
+</section>
+
+<!-- ===================== DEMO swizzle · full-screen animated stepper ===================== -->
+<section class="slide swz-slide" data-demo="swizzle">
+  <div class="counter"></div><div class="toprule"></div>
+  <div class="term swz" id="swzTerm">
+    <div class="term-bar"><span class="dot r"></span><span class="dot y"></span><span class="dot g"></span><span class="term-tab"><b>swizzle</b> — one aligned load → two FMAs · 8 lanes (AVX2, float)</span></div>
+    <div class="term-body swz-body">
+      <div class="swz-code" id="swzCode"></div>
+      <div class="lanes" id="laneStage"></div>
+      <div class="lane-cap" id="laneCap"></div>
+    </div>
+  </div>
+  <div class="swz-controls">
+    <button id="lanePrev">◂ back</button>
+    <span class="swz-step" id="swzStep"></span>
+    <button id="laneStep">next ▸</button>
+  </div>
+</section>
+
+<!-- ===================== SIMD · memory bound ===================== -->
+<section class="slide">
+  <div class="counter"></div><div class="toprule"></div>
+  <div class="slide-inner">
+    <div class="kicker reveal"><span class="blip"></span>But look at the instruction mix</div>
+    <h2 class="h2 reveal" style="font-size:56px;margin-top:6px">This loop is memory-bound</h2>
+    <ul class="bul reveal" style="margin-top:18px">
+      <li><b>2 loads + 1 store + 1 scalar load</b> &nbsp;vs&nbsp; <b>1 swizzle + 1 FMA</b> — data movement dominates the arithmetic</li>
+      <li><b>Not fatal</b> — the kernel is ≤ 16 elements, lives on the stack, and is hot in L1</li>
+      <li>Still — there's a load we can avoid</li>
+    </ul>
+  </div>
+</section>
+
+<!-- ===================== SIMD · throwing away half ===================== -->
+<section class="slide">
+  <div class="counter"></div><div class="toprule"></div>
+  <div class="slide-inner center">
+    <h2 class="h1 reveal" style="font-size:74px">We load the kernel<br>and use <span class="ac">half of it.</span></h2>
+    <div class="note reveal" style="margin-top:26px;max-width:58ch;margin-left:auto;margin-right:auto">zip_low keeps the low lanes — the high half of every load is thrown away. Reuse it for a second iteration.</div>
+  </div>
+</section>
+
+<!-- ===================== SIMD v2 · two iterations at once ===================== -->
+<section class="slide">
+  <div class="counter"></div><div class="toprule"></div>
+  <div class="slide-inner">
+    <div class="screen-head"><h2 class="h2 reveal">Two iterations at once</h2><div class="screen-sub reveal">one aligned load → zip_low + zip_high → two FMAs</div></div>
+    <div class="term reveal"><div class="term-bar"><span class="dot r"></span><span class="dot y"></span><span class="dot g"></span><span class="term-tab"><b>spread.hpp</b> — FINUFFT</span></div>
+    <div class="term-body"><pre class="code" data-lang="cpp" style="font-size:25px;line-height:1.55;max-height:none">static constexpr auto regular_part = (2*ns + padding) &amp; (-(2*simd_size));
+
+for (uint8_t dx = 0; dx &lt; regular_part; dx += 2*simd_size) {
+  const auto ker_v   = simd_type::load_aligned(ker.data() + dx/2);
+  const auto ker_low = xsimd::swizzle(ker_v, zip_low_index&lt;arch_t,T&gt;); // [k0 k0 k1 k1 ...]
+  const auto ker_hi  = xsimd::swizzle(ker_v, zip_hi_index&lt;arch_t,T&gt;);  // [k4 k4 k5 k5 ...]
+  const auto du_pt0  = simd_type::load_unaligned(trg + dx);
+  const auto du_pt1  = simd_type::load_unaligned(trg + dx + simd_size);
+  xsimd::fma(ker_low, dd_pt, du_pt0).store_unaligned(trg + dx);
+  xsimd::fma(ker_hi , dd_pt, du_pt1).store_unaligned(trg + dx + simd_size);
+}</pre></div></div>
+    <div class="actions reveal">
+      <a class="btn gh" href="https://github.com/flatironinstitute/finufft/blob/bee3997c/include/finufft/spread.hpp#L120" target="_blank" rel="noopener">View real source ↗</a>
+      <span class="hint">one ker_v load now feeds two FMAs</span>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== SIMD · the constexpr tail ===================== -->
+<section class="slide">
+  <div class="counter"></div><div class="toprule"></div>
+  <div class="slide-inner">
+    <div class="screen-head"><h2 class="h2 reveal">The tail, handled at compile time</h2><div class="screen-sub reveal">when ns is not a multiple of the vector width</div></div>
+    <div class="term reveal"><div class="term-bar"><span class="dot r"></span><span class="dot y"></span><span class="dot g"></span><span class="term-tab"><b>spread.hpp</b> — constexpr tail</span></div>
+    <div class="term-body"><pre class="code" data-lang="cpp" style="font-size:26px;line-height:1.6;max-height:none">if constexpr (regular_part &lt; 2 * ns) {
+  const auto ker_v   = simd_type::load_unaligned(ker.data() + regular_part/2);
+  const auto ker_low = xsimd::swizzle(ker_v, zip_low_index&lt;arch_t,T&gt;);
+  const auto du_pt   = simd_type::load_unaligned(trg + regular_part);
+  xsimd::fma(ker_low, dd_pt, du_pt).store_unaligned(trg + regular_part);
+}                              // no zip_high → one swizzle + one FMA cheaper</pre></div></div>
+    <div class="body reveal" style="margin-top:22px;max-width:62ch"><code>if constexpr</code> emits the tail <em>only</em> when ns isn't a multiple of the vector width — and with no high half, it's a swizzle and an FMA cheaper.</div>
+  </div>
+</section>
+
+<!-- ===================== SIMD result · was it all worth it ===================== -->
+<section class="slide">
+  <div class="counter"></div><div class="toprule"></div>
+  <div class="slide-inner">
+    <div class="screen-head"><h2 class="h2 reveal">Was it all worth it?</h2><div class="screen-sub reveal">spreading throughput · manual SIMD vs auto-vectorization</div></div>
+    <div class="two reveal" style="margin-top:6px;grid-template-columns:1.55fr 1fr;gap:48px;height:auto;align-items:center">
+      <figure style="margin:0">
+        <div class="term"><div class="term-bar"><span class="dot r"></span><span class="dot y"></span><span class="dot g"></span><span class="term-tab"><b>benchmark</b> — Intel Xeon w5-3435X · pts/s, higher is better</span></div>
+        <div class="term-body" style="background:#fff;padding:14px"><img class="zoomable" src="assets/simd_performance.svg" alt="SIMD spreading throughput benchmark" style="width:100%;display:block"></div></div>
+        <figcaption style="font-family:var(--mono);font-size:15px;color:var(--dim);margin-top:12px;letter-spacing:.03em">FINUFFT spreading microbenchmark · each group = a kernel width · bars = compilers / SIMD strategies</figcaption>
+      </figure>
+      <div style="display:flex;flex-direction:column;gap:32px">
+        <div class="stat"><div class="v" style="font-size:84px">10–100%</div><div class="l">faster spreading</div><div class="n">vs. compiler auto-vectorization</div></div>
+        <div class="stat"><div class="v" style="font-size:84px">30–100%</div><div class="l">faster whole transforms</div><div class="n">end-to-end type-1 / type-2</div></div>
+        <div class="note">consistent across GCC, Clang &amp; CPUs — and the code is still (sort of) maintainable</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== Aside · SIMD primer (standalone topic, pre-conclusion) ===================== -->
+<section class="slide">
+  <svg class="scope" viewBox="0 0 1920 1080" preserveAspectRatio="none"><path d="M0,540 L820,540 L840,300 L860,780 L880,540 L1040,540 L1060,300 L1080,780 L1100,540 L1920,540"/></svg>
+  <div class="slide-inner">
+    <div class="kicker reveal"><span class="blip"></span>Aside · a 60-second primer</div>
+    <h2 class="h-display reveal" style="font-size:108px">How to<br><span class="ac">vectorize</span> a loop</h2>
+  </div>
+</section>
+
+<!-- step 0 · scalar -->
+<section class="slide">
+  <div class="counter"></div><div class="toprule"></div>
+  <div class="slide-inner">
+    <div class="screen-head"><h2 class="h2 reveal">Step 0 — the scalar loop</h2><div class="screen-sub reveal">SAXPY: y ← a·x + y, one element per iteration</div></div>
+    <div class="term reveal"><div class="term-bar"><span class="dot r"></span><span class="dot y"></span><span class="dot g"></span><span class="term-tab"><b>saxpy.cpp</b></span></div>
+    <div class="term-body"><pre class="code" data-lang="cpp" style="font-size:29px;line-height:1.65;max-height:none">void saxpy(std::size_t N, float a, const float* x, float* y) {
+  for (std::size_t i = 0; i &lt; N; ++i)
+    y[i] = a * x[i] + y[i];
+}</pre></div></div>
+    <div class="body reveal" style="margin-top:24px;max-width:60ch">Each iteration touches one element. A SIMD register holds many — let's rewrite this to work a whole register at a time.</div>
+  </div>
+</section>
+
+<!-- step 1 · the register width -->
+<section class="slide">
+  <div class="counter"></div><div class="toprule"></div>
+  <div class="slide-inner">
+    <div class="screen-head"><h2 class="h2 reveal">Step 1 — one register, many lanes</h2><div class="screen-sub reveal">a batch is W elements wide, fixed at compile time</div></div>
+    <div class="term reveal"><div class="term-bar"><span class="dot r"></span><span class="dot y"></span><span class="dot g"></span><span class="term-tab"><b>saxpy.cpp</b> — xsimd</span></div>
+    <div class="term-body"><pre class="code" data-lang="cpp" style="font-size:29px;line-height:1.65;max-height:none">using batch = xsimd::batch&lt;float&gt;;
+constexpr std::size_t W = batch::size;   // 8 on AVX2, 16 on AVX-512</pre></div></div>
+    <div class="body reveal" style="margin-top:24px;max-width:62ch">The plan: a <b>vector body</b> that strides by W, then a <b>scalar tail</b> for the leftover elements.</div>
+  </div>
+</section>
+
+<!-- step 2 · load / store -->
+<section class="slide">
+  <div class="counter"></div><div class="toprule"></div>
+  <div class="slide-inner">
+    <div class="screen-head"><h2 class="h2 reveal">Step 2 — load &amp; store a register</h2><div class="screen-sub reveal">one instruction moves W contiguous elements</div></div>
+    <div class="term reveal"><div class="term-bar"><span class="dot r"></span><span class="dot y"></span><span class="dot g"></span><span class="term-tab"><b>saxpy.cpp</b> — load / store</span></div>
+    <div class="term-body"><pre class="code" data-lang="cpp" style="font-size:29px;line-height:1.65;max-height:none">batch vx = batch::load_unaligned(x + i);   // x[i] … x[i+W-1]
+batch vy = batch::load_unaligned(y + i);
+
+//            ... compute on vx, vy ...
+
+vy.store_unaligned(y + i);                 // write all W back</pre></div></div>
+    <div class="body reveal" style="margin-top:22px;max-width:60ch"><code>load_unaligned</code> / <code>store_unaligned</code> are the primitives that move data between memory and a register.</div>
+  </div>
+</section>
+
+<!-- step 3 · broadcast -->
+<section class="slide">
+  <div class="counter"></div><div class="toprule"></div>
+  <div class="slide-inner">
+    <div class="screen-head"><h2 class="h2 reveal">Step 3 — broadcast the scalar</h2><div class="screen-sub reveal">the same a multiplies every lane</div></div>
+    <div class="term reveal"><div class="term-bar"><span class="dot r"></span><span class="dot y"></span><span class="dot g"></span><span class="term-tab"><b>saxpy.cpp</b> — splat</span></div>
+    <div class="term-body"><pre class="code" data-lang="cpp" style="font-size:30px;line-height:1.65;max-height:none">batch va(a);   // [a, a, a, a, a, a, a, a]</pre></div></div>
+    <div class="body reveal" style="margin-top:24px;max-width:60ch">A scalar becomes a register with that value in every lane — so one multiply hits all W elements with the same a.</div>
+  </div>
+</section>
+
+<!-- step 4 · arithmetic / fma -->
+<section class="slide">
+  <div class="counter"></div><div class="toprule"></div>
+  <div class="slide-inner">
+    <div class="screen-head"><h2 class="h2 reveal">Step 4 — arithmetic is just operators</h2><div class="screen-sub reveal">+ − × ÷ are overloaded lane-wise; fuse the multiply-add</div></div>
+    <div class="term reveal"><div class="term-bar"><span class="dot r"></span><span class="dot y"></span><span class="dot g"></span><span class="term-tab"><b>saxpy.cpp</b> — fma</span></div>
+    <div class="term-body"><pre class="code" data-lang="cpp" style="font-size:29px;line-height:1.65;max-height:none">vy = va * vx + vy;            // per-lane: W multiply-adds at once
+
+// better — one fused instruction, no intermediate rounding:
+vy = xsimd::fma(va, vx, vy);</pre></div></div>
+    <div class="body reveal" style="margin-top:22px;max-width:60ch">Operator overloads make vector code read like scalar code. <code>fma</code> folds the multiply and the add into a single instruction.</div>
+  </div>
+</section>
+
+<!-- step 5 · the vector body -->
+<section class="slide">
+  <div class="counter"></div><div class="toprule"></div>
+  <div class="slide-inner">
+    <div class="screen-head"><h2 class="h2 reveal">Step 5 — the vector body</h2><div class="screen-sub reveal">stride by W over the largest multiple of W</div></div>
+    <div class="term reveal"><div class="term-bar"><span class="dot r"></span><span class="dot y"></span><span class="dot g"></span><span class="term-tab"><b>saxpy.cpp</b> — vector body</span></div>
+    <div class="term-body"><pre class="code" data-lang="cpp" style="font-size:28px;line-height:1.6;max-height:none">const std::size_t n_simd = N &amp; ~(W - 1);   // largest multiple of W
+batch va(a);
+std::size_t i = 0;
+for (; i &lt; n_simd; i += W) {
+  batch vy = xsimd::fma(va, batch::load_unaligned(x + i),
+                            batch::load_unaligned(y + i));
+  vy.store_unaligned(y + i);
+}</pre></div></div>
+  </div>
+</section>
+
+<!-- step 6 · the scalar tail -->
+<section class="slide">
+  <div class="counter"></div><div class="toprule"></div>
+  <div class="slide-inner">
+    <div class="screen-head"><h2 class="h2 reveal">Step 6 — the scalar tail</h2><div class="screen-sub reveal">the leftover &lt; W elements, handled like Step 0</div></div>
+    <div class="term reveal"><div class="term-bar"><span class="dot r"></span><span class="dot y"></span><span class="dot g"></span><span class="term-tab"><b>saxpy.cpp</b> — tail</span></div>
+    <div class="term-body"><pre class="code" data-lang="cpp" style="font-size:29px;line-height:1.65;max-height:none">for (; i &lt; N; ++i)          // i picks up where the vector body stopped
+  y[i] = a * x[i] + y[i];</pre></div></div>
+    <div class="body reveal" style="margin-top:24px;max-width:60ch">The same scalar code we started with — now just for the final handful of elements that don't fill a register.</div>
+  </div>
+</section>
+
+<!-- step 7 · reductions -->
+<section class="slide">
+  <div class="counter"></div><div class="toprule"></div>
+  <div class="slide-inner">
+    <div class="screen-head"><h2 class="h2 reveal">Step 7 — reductions need one more move</h2><div class="screen-sub reveal">sums (dot products, type-2 interpolation) accumulate across lanes</div></div>
+    <div class="term reveal"><div class="term-bar"><span class="dot r"></span><span class="dot y"></span><span class="dot g"></span><span class="term-tab"><b>norm.cpp</b> — reduce_add</span></div>
+    <div class="term-body"><pre class="code" data-lang="cpp" style="font-size:28px;line-height:1.6;max-height:none">batch acc(0.0f);                              // W partial sums
+for (; i &lt; n_simd; i += W) {
+  batch v = batch::load_unaligned(x + i);
+  acc = xsimd::fma(v, v, acc);                // Σ xᵢ²
+}
+float s = xsimd::reduce_add(acc);             // collapse W lanes → 1
+for (; i &lt; N; ++i) s += x[i] * x[i];          // scalar tail</pre></div></div>
+    <div class="actions reveal">
+      <a class="btn gh" href="https://github.com/xtensor-stack/xsimd" target="_blank" rel="noopener">xsimd on GitHub ↗</a>
+      <span class="hint">reduce_add is exactly what interpolation (type-2) needs</span>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== 34 · closing statement ===================== -->
+<section class="slide">
+  <div class="counter"></div><div class="toprule"></div>
+  <div class="slide-inner center">
+    <h2 class="h-display reveal" style="font-size:96px">Pick the right<br>approximation.<br><span class="ac">Then make it fit<br>the machine.</span></h2>
+  </div>
+</section>
+
+<!-- ===================== 35 · END ===================== -->
+<section class="slide">
+  <div class="counter"></div><div class="toprule"></div>
+  <div class="slide-inner">
+    <div class="kicker reveal"><span class="blip"></span>Thank you</div>
+    <div class="endnav reveal" style="margin-top:30px">
+      <a href="https://github.com/flatironinstitute/finufft" target="_blank" rel="noopener"><span class="label">Library</span><span class="title">FINUFFT</span><span class="meta">github.com/flatironinstitute/finufft</span></a>
+      <a href="https://github.com/DiamonDinoia/treeweave" target="_blank" rel="noopener"><span class="label">Fast eval</span><span class="title">treeweave</span><span class="meta">github.com/DiamonDinoia/treeweave</span></a>
+      <a href="https://github.com/DiamonDinoia/poet" target="_blank" rel="noopener"><span class="label">Dispatch</span><span class="title">POET</span><span class="meta">github.com/DiamonDinoia/poet</span></a>
+    </div>
+    <div class="note reveal" style="margin-top:44px;font-size:15px">Image credits — M87: EHT Collaboration / ESO (eso1907a), CC&nbsp;BY&nbsp;4.0 · benchmark: POET (MIT) · math typeset with KaTeX.</div>
+  </div>
+</section>
+
+<!-- ===================== Appendix · references (SIMD-in-depth slides removed) ===================== -->
+<section class="slide">
+  <div class="counter"></div><div class="toprule"></div>
+  <div class="slide-inner">
+    <div class="kicker reveal"><span class="blip"></span>Further</div>
+    <ul class="bul reveal">
+      <li><b>Horizontal reductions</b> — xsimd::reduce_add finalizes partial-lane sums (interpolation / type-2)</li>
+      <li><b>ES-kernel error</b> — \(\varepsilon = \mathcal{O}\!\left(\sqrt{w}\,e^{-\pi w\sqrt{1-1/\sigma}}\right)\) &nbsp;<small>Barnett et al. 2020, arXiv:2001.09405</small></li>
+      <li><b>Future</b> — better swizzle, runtime kernel fitting via treeweave</li>
+    </ul>
+  </div>
+</section>
+
+</main>
+</div>
+
+<!-- benchmark lightbox (outside the scaled stage so it fills the real screen) -->
+<div class="lightbox" id="lightbox"><img alt="enlarged benchmark"><div class="lb-hint">click anywhere or press Esc to close</div></div>
+
+<!-- deck chrome -->
+<div class="progress"><div class="bar" id="progressBar"></div></div>
+<div class="help"><kbd>←</kbd><kbd>→</kbd> nav · <kbd>P</kbd> print · <kbd>E</kbd> edit</div>
+<div class="edit-hotzone"></div>
+<button class="edit-toggle" id="editToggle" title="Edit mode (E)">✏ edit</button>
+
+<script>
+/* ===========================================================================
+   SYNTAX HIGHLIGHTING — lightweight C++/Python tokenizer for terminal windows
+   =========================================================================== */
+const CPP_KW=new Set("for if else return using const constexpr auto void int double float bool struct class template typename namespace include static inline std size_t uint64_t while do break continue import lambda".split(" "));
+const CPP_TY=new Set("batch simd_type complex_register arch_t T BIGINT NsSeq SpreadSubproblem1dCaller np treeweave".split(" "));
+function esc(s){return s.replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;");}
+function highlight(raw,lang){
+  const txt=raw.replace(/&lt;/g,"<").replace(/&gt;/g,">").replace(/&amp;/g,"&");
+  let out="",i=0,n=txt.length;const cm=(lang==="py"||lang==="jl")?"#":lang==="m"?"%":lang==="f"?"!":"//";
+  while(i<n){const c=txt[i];
+    if(txt.startsWith(cm,i)){let j=txt.indexOf("\n",i);if(j<0)j=n;out+='<span class="c-com">'+esc(txt.slice(i,j))+'</span>';i=j;continue;}
+    if(c==="#"&&lang!=="py"&&(i===0||txt[i-1]==="\n")){let j=txt.indexOf("\n",i);if(j<0)j=n;out+='<span class="c-pp">'+esc(txt.slice(i,j))+'</span>';i=j;continue;}
+    if(c==='"'){let j=i+1;while(j<n&&txt[j]!=='"'){if(txt[j]==="\\")j++;j++;}j++;out+='<span class="c-str">'+esc(txt.slice(i,j))+'</span>';i=j;continue;}
+    if(/[0-9]/.test(c)&&!/[A-Za-z_]/.test(txt[i-1]||"")){let j=i;while(j<n&&/[0-9eE.\-xa-fA-F]/.test(txt[j]))j++;out+='<span class="c-num">'+esc(txt.slice(i,j))+'</span>';i=j;continue;}
+    if(/[A-Za-z_]/.test(c)){let j=i;while(j<n&&/[A-Za-z0-9_]/.test(txt[j]))j++;const w=txt.slice(i,j);
+      let cls=CPP_KW.has(w)?"c-kw":CPP_TY.has(w)?"c-ty":(txt[j]==="("?"c-fn":null);
+      out+=cls?'<span class="'+cls+'">'+esc(w)+'</span>':esc(w);i=j;continue;}
+    out+=esc(c);i++;}
+  return out;
+}
+document.querySelectorAll("pre.code").forEach(p=>{p.innerHTML=highlight(p.innerHTML,p.dataset.lang||"cpp");});
+
+/* ===========================================================================
+   INTERACTIVE DEMOS  (self-contained; recolored to the Signal-Lab palette)
+   =========================================================================== */
+const COL={cyan:"#2ff3e0",cyansoft:"#7ffff2",blue:"#58a6ff",green:"#56d364",dim:"#5f8085",grid:"#13262b",dimbar:"#2b4248"};
+const demos={};
+
+/* --- NUFFT: spread -> FFT -> deconvolve --- */
+(function(){const cv=document.getElementById("nufftCanvas");if(!cv)return;const ctx=cv.getContext("2d");
+  const Nf=64;let pts=[],step=0;
+  function shuffle(){pts=[];for(let i=0;i<10;i++)pts.push({x:Math.random()*2*Math.PI,c:.4+Math.random()});}
+  function spread(){const b=new Float64Array(Nf),w=5,h=2*Math.PI/Nf;
+    for(const p of pts){const c=Math.round(p.x/h);for(let d=-w;d<=w;d++){const idx=((c+d)%Nf+Nf)%Nf;const dx=(c+d)*h-p.x;b[idx]+=p.c*Math.exp(-.5*(dx/h/1.5)**2);}}return b;}
+  function dft(b){const m=new Float64Array(Nf);for(let k=0;k<Nf;k++){let r=0,im=0;for(let n=0;n<Nf;n++){const a=-2*Math.PI*k*n/Nf;r+=b[n]*Math.cos(a);im+=b[n]*Math.sin(a);}m[k]=Math.hypot(r,im);}return m;}
+  function draw(){const W=cv.width,H=cv.height,pad=40;ctx.clearRect(0,0,W,H);
+    ctx.strokeStyle=COL.grid;ctx.beginPath();ctx.moveTo(pad,H-pad);ctx.lineTo(W-pad,H-pad);ctx.stroke();
+    ctx.font="20px JetBrains Mono";ctx.fillStyle=COL.dim;const ro=document.getElementById("nufftReadout");
+    if(step===0){ctx.fillText("nonuniform points on [0, 2π) with complex strengths",pad,30);
+      for(const p of pts){const X=pad+p.x/(2*Math.PI)*(W-2*pad),Y=H-pad-p.c*(H-2*pad)/1.6;ctx.strokeStyle=COL.blue;ctx.lineWidth=3;ctx.beginPath();ctx.moveTo(X,H-pad);ctx.lineTo(X,Y);ctx.stroke();ctx.fillStyle=COL.blue;ctx.beginPath();ctx.arc(X,Y,5,0,7);ctx.fill();}
+      ro.innerHTML="<b>"+pts.length+"</b> points";}
+    else if(step===1){const b=spread(),mx=Math.max(...b),bw=(W-2*pad)/Nf,h=2*Math.PI/Nf;ctx.fillText("overlay the kernel at each point — values add where they overlap",pad,30);
+      const Xx=x=>pad+x/(2*Math.PI)*(W-2*pad),Hy=v=>v/mx*(H-2*pad)/1.4;
+      // each nonuniform point contributes one real kernel bump; they sum on the grid
+      for(const p of pts){ctx.strokeStyle="rgba(227,179,65,.7)";ctx.lineWidth=2;ctx.beginPath();let pen=false;
+        for(let s=-7;s<=7;s+=0.2){const x=p.x+s*h;if(x<0||x>2*Math.PI){pen=false;continue;}const py=H-pad-Hy(p.c*Math.exp(-.5*(s/1.5)**2));pen?ctx.lineTo(Xx(x),py):ctx.moveTo(Xx(x),py);pen=true;}ctx.stroke();
+        ctx.fillStyle=COL.blue;ctx.beginPath();ctx.arc(Xx(p.x),H-pad,4,0,7);ctx.fill();}
+      // resulting summed fine grid
+      ctx.fillStyle=COL.cyan;for(let k=0;k<Nf;k++){const hb=Hy(b[k]);ctx.fillRect(pad+k*bw+1,H-pad-hb,bw-2,hb);}ro.innerHTML="fine grid: <b>"+Nf+"</b> cells";}
+    else if(step===2){const m=dft(spread()),sh=[...m.slice(Nf/2),...m.slice(0,Nf/2)],mx=Math.max(...sh),bw=(W-2*pad)/Nf;ctx.fillText("FFT of the fine grid → full spectrum",pad,30);
+      ctx.fillStyle=COL.green;for(let k=0;k<Nf;k++){const hb=sh[k]/mx*(H-2*pad)/1.3;ctx.fillRect(pad+k*bw+1,H-pad-hb,bw-2,hb);}ro.innerHTML="size-<b>"+Nf+"</b> FFT";}
+    else{const m=dft(spread()),sh=[...m.slice(Nf/2),...m.slice(0,Nf/2)],mx=Math.max(...sh),bw=(W-2*pad)/Nf,lo=Nf/4,hi=3*Nf/4;
+      ctx.fillText("deconvolve & keep the target band  −N/2 ≤ k < N/2",pad,30);
+      ctx.fillStyle="rgba(47,243,224,.10)";ctx.fillRect(pad+lo*bw,pad,(hi-lo)*bw,H-2*pad);
+      for(let k=0;k<Nf;k++){const hb=sh[k]/mx*(H-2*pad)/1.3;ctx.fillStyle=(k>=lo&&k<hi)?COL.cyan:COL.dimbar;ctx.fillRect(pad+k*bw+1,H-pad-hb,bw-2,hb);}ro.innerHTML="kept <b>"+(hi-lo)+"</b> modes · the output";}
+    // axis labels (per step)
+    const XL=["position  x ∈ [0, 2π)","fine grid  x ∈ [0, 2π)","mode index  k  (−N/2 … N/2)","mode index  k  (−N/2 … N/2)"][step];
+    const YL=["strength","grid value","|spectrum|","|spectrum|"][step];
+    ctx.textAlign="center";ctx.font="17px JetBrains Mono";ctx.fillStyle="#dbeef0";ctx.fillText(XL,W/2,H-10);
+    ctx.save();ctx.translate(15,H/2);ctx.rotate(-Math.PI/2);ctx.textAlign="center";ctx.fillStyle=COL.dim;ctx.font="16px JetBrains Mono";ctx.fillText(YL,0,0);ctx.restore();
+  }
+  document.querySelectorAll("#nufftSteps button").forEach(b=>b.addEventListener("click",()=>{document.querySelectorAll("#nufftSteps button").forEach(x=>x.classList.remove("on"));b.classList.add("on");step=+b.dataset.step;draw();}));
+  document.getElementById("nufftShuffle").addEventListener("click",()=>{shuffle();draw();});
+  shuffle();demos.nufft=draw;
+})();
+
+/* --- shared interpolation helpers --- */
+function nodesOf(n,type){const xs=[];for(let j=0;j<n;j++)xs.push(type==="cheb"?Math.cos(Math.PI*j/(n-1)):-1+2*j/(n-1));return xs;}
+function baryW(xs){const n=xs.length,w=[];for(let j=0;j<n;j++){let p=1;for(let k=0;k<n;k++)if(k!==j)p*=(xs[j]-xs[k]);w.push(1/p);}return w;}
+function baryEval(x,xs,fs,w){let num=0,den=0;for(let j=0;j<xs.length;j++){if(x===xs[j])return fs[j];const t=w[j]/(x-xs[j]);num+=t*fs[j];den+=t;}return num/den;}
+
+/* --- Vandermonde worked example (after Barnett): equispaced monomial fit of an
+       expensive smooth f on [1.1,5]; plot the residual error across the domain --- */
+(function(){const cv=document.getElementById("vanderCanvas");if(!cv)return;const ctx=cv.getContext("2d");
+  const a=1.1,b=5.0,f=x=>{let s=0;for(let k=1;k<=400;k++)s+=Math.pow(1/k,x);return s;};   // ≈ Riemann zeta partial sum
+  // Gaussian elimination with partial pivoting
+  function solve(A,bb){const n=bb.length,M=A.map((r,i)=>r.concat(bb[i]));
+    for(let c=0;c<n;c++){let p=c;for(let r=c+1;r<n;r++)if(Math.abs(M[r][c])>Math.abs(M[p][c]))p=r;const t=M[c];M[c]=M[p];M[p]=t;
+      const piv=M[c][c]||1e-300;for(let r=0;r<n;r++){if(r===c)continue;const fr=M[r][c]/piv;for(let k=c;k<=n;k++)M[r][k]-=fr*M[c][k];}}
+    return M.map((r,i)=>r[n]/(r[i]||1e-300));}
+  function vlabel(txt,yc){ctx.save();ctx.translate(30,yc);ctx.rotate(-Math.PI/2);ctx.textAlign="center";ctx.fillStyle=COL.dim;ctx.font="17px JetBrains Mono";ctx.fillText(txt,0,0);ctx.restore();}
+  function draw(){const n=+document.getElementById("vanderN").value;
+    document.getElementById("vanderNval").textContent=n;
+    const xs=[],fs=[];for(let j=0;j<n;j++){const x=a+(b-a)*j/(n-1);xs.push(x);fs.push(f(x));}   // equispaced nodes
+    const V=xs.map(x=>{const r=[];let p=1;for(let k=0;k<n;k++){r.push(p);p*=x;}return r;});       // V[j][k]=xj^k
+    const c=solve(V,fs);const maxc=Math.max(...c.map(Math.abs),1e-300);
+    const peval=x=>{let y=0;for(let k=n-1;k>=0;k--)y=y*x+c[k];return y;};
+    const Mg=700,pv=new Float64Array(Mg+1),er=new Float64Array(Mg+1);let maxe=0,overflow=false;
+    for(let t=0;t<=Mg;t++){const x=a+(b-a)*t/Mg,y=peval(x),e=y-f(x);pv[t]=y;er[t]=e;if(isFinite(e))maxe=Math.max(maxe,Math.abs(e));else overflow=true;}
+    const errTxt=overflow?"overflow":maxe.toExponential(2),cTxt=isFinite(maxc)?maxc.toExponential(1):"∞";
+    const exploding=overflow||(maxc>1e3&&maxe>1e-2),bad=exploding;
+    const verdict=exploding?" — coefficients explode, rounding wins":(maxe<1e-3?" — sweet spot, near machine ε":" — coarse fit, error shrinks as n grows");
+    const W=cv.width,H=cv.height,padL=126,padR=48;ctx.clearRect(0,0,W,H);
+    const X=x=>padL+(x-a)/(b-a)*(W-padL-padR),plotW=W-padL-padR,pcol=bad?"#ff5f56":COL.cyan;
+    ctx.textAlign="left";ctx.font="19px JetBrains Mono";ctx.fillStyle=COL.dim;
+    ctx.fillText("fitting the expensive  f(x) = Σₖ₌₁ k⁻ˣ ≈ ζ(x)  with the monomial polynomial  p(x) = Σ cₖ xᵏ",padL,24);
+    // ===== TOP panel: f(x) (true) vs p(x) (fit) =====
+    const fa=f(a),Vhi=Math.ceil(fa)+1,t1=42,t2=246,Yt=v=>t2-(v/Vhi)*(t2-t1);
+    ctx.strokeStyle=COL.grid;ctx.lineWidth=1;ctx.strokeRect(padL,t1,plotW,t2-t1);
+    ctx.textAlign="right";ctx.font="15px JetBrains Mono";ctx.fillStyle=COL.dim;
+    for(let v=0;v<=Vhi;v+=Math.max(1,Math.round(Vhi/3))){ctx.fillText(v.toFixed(0),padL-10,Yt(v)+5);ctx.strokeStyle="#0e1c20";ctx.beginPath();ctx.moveTo(padL,Yt(v));ctx.lineTo(W-padR,Yt(v));ctx.stroke();}
+    ctx.strokeStyle=COL.dim;ctx.lineWidth=2.5;ctx.beginPath();for(let t=0;t<=Mg;t++){const x=a+(b-a)*t/Mg;t?ctx.lineTo(X(x),Yt(f(x))):ctx.moveTo(X(x),Yt(f(x)));}ctx.stroke();
+    ctx.save();ctx.beginPath();ctx.rect(padL,t1,plotW,t2-t1);ctx.clip();
+    ctx.strokeStyle=pcol;ctx.lineWidth=2.5;ctx.beginPath();let s1=false;
+    for(let t=0;t<=Mg;t++){const x=a+(b-a)*t/Mg,y=pv[t];if(!isFinite(y)){s1=false;continue;}s1?ctx.lineTo(X(x),Yt(y)):ctx.moveTo(X(x),Yt(y));s1=true;}ctx.stroke();ctx.restore();
+    ctx.fillStyle=COL.blue;for(let j=0;j<n;j++){ctx.beginPath();ctx.arc(X(xs[j]),Yt(fs[j]),3.5,0,7);ctx.fill();}
+    ctx.textAlign="left";ctx.font="17px JetBrains Mono";ctx.fillStyle=COL.dim;ctx.fillText("━ f(x) true",W-padR-280,t1+22);ctx.fillStyle=pcol;ctx.fillText("━ p(x) fit",W-padR-140,t1+22);ctx.fillStyle=COL.blue;ctx.fillText("● nodes",W-padR-280,t1+44);
+    vlabel("f(x)",(t1+t2)/2);
+    // ===== BOTTOM panel: residual p(x) − f(x) =====
+    const b1=296,b2=414,sc=maxe>0&&isFinite(maxe)?maxe:1,Yb=e=>(b1+b2)/2-(e/sc)*((b2-b1)/2);
+    ctx.strokeStyle=COL.grid;ctx.lineWidth=1;ctx.strokeRect(padL,b1,plotW,b2-b1);
+    ctx.strokeStyle="#0e1c20";ctx.beginPath();ctx.moveTo(padL,Yb(0));ctx.lineTo(W-padR,Yb(0));ctx.stroke();
+    ctx.textAlign="right";ctx.fillStyle=COL.dim;ctx.font="15px JetBrains Mono";
+    ctx.fillText("+"+sc.toExponential(0),padL-10,Yb(sc)+5);ctx.fillText("0",padL-10,Yb(0)+5);ctx.fillText("−"+sc.toExponential(0),padL-10,Yb(-sc)+5);
+    ctx.save();ctx.beginPath();ctx.rect(padL,b1-1,plotW,b2-b1+2);ctx.clip();
+    ctx.strokeStyle=pcol;ctx.lineWidth=2.5;ctx.beginPath();let s2=false;
+    for(let t=0;t<=Mg;t++){const x=a+(b-a)*t/Mg,e=er[t];if(!isFinite(e)){s2=false;continue;}s2?ctx.lineTo(X(x),Yb(e)):ctx.moveTo(X(x),Yb(e));s2=true;}ctx.stroke();ctx.restore();
+    vlabel("p(x) − f(x)",(b1+b2)/2);
+    // ===== shared x axis =====
+    ctx.textAlign="center";ctx.fillStyle=COL.dim;ctx.font="16px JetBrains Mono";
+    ctx.fillText("1.1",X(a),b2+26);for(let xv=2;xv<=5;xv++)ctx.fillText(xv.toFixed(0),X(xv),b2+26);
+    ctx.font="18px JetBrains Mono";ctx.fillStyle=COL.ink||"#dbeef0";ctx.fillText("x   (input to f)",(padL+W-padR)/2,b2+50);
+    document.getElementById("vanderReadout").innerHTML="n=<b>"+n+"</b> · max|cₖ| <b>"+cTxt+"</b> · err <b>"+errTxt+"</b>"+verdict;
+  }
+  document.getElementById("vanderN").addEventListener("input",draw);
+  demos.vander=draw;
+})();
+
+/* --- function-approximation playground --- */
+(function(){const cv=document.getElementById("approxCanvas");if(!cv)return;const ctx=cv.getContext("2d");
+  const f=x=>1/(1+25*x*x);
+  const vlabel=(t,yc)=>{ctx.save();ctx.translate(26,yc);ctx.rotate(-Math.PI/2);ctx.textAlign="center";ctx.fillStyle=COL.dim;ctx.font="17px JetBrains Mono";ctx.fillText(t,0,0);ctx.restore();};
+  function draw(){const n=+document.getElementById("approxN").value,type=document.querySelector("#approxType .on").dataset.type;
+    document.getElementById("approxNval").textContent=n;
+    const xs=nodesOf(n,type),fs=xs.map(f),w=baryW(xs);
+    const W=cv.width,H=cv.height,padL=82,padR=44,padT=40,padB=54,X=x=>padL+(x+1)/2*(W-padL-padR),Ylo=-.5,Yhi=1.5,Y=y=>H-padB-(y-Ylo)/(Yhi-Ylo)*(H-padT-padB),cl=y=>Math.max(Ylo,Math.min(Yhi,y));
+    ctx.clearRect(0,0,W,H);
+    ctx.strokeStyle=COL.grid;ctx.lineWidth=1;ctx.strokeRect(padL,padT,W-padL-padR,H-padT-padB);
+    ctx.strokeStyle="#0e1c20";ctx.beginPath();ctx.moveTo(padL,Y(0));ctx.lineTo(W-padR,Y(0));ctx.stroke();
+    ctx.textAlign="right";ctx.font="15px JetBrains Mono";ctx.fillStyle=COL.dim;for(const v of[0,0.5,1])ctx.fillText(v.toFixed(1),padL-10,Y(v)+5);
+    ctx.strokeStyle=COL.dim;ctx.lineWidth=2;ctx.beginPath();for(let p=0;p<=600;p++){const x=-1+2*p/600;p?ctx.lineTo(X(x),Y(f(x))):ctx.moveTo(X(x),Y(f(x)));}ctx.stroke();
+    let maxerr=0;ctx.strokeStyle=COL.cyan;ctx.lineWidth=3;ctx.beginPath();
+    for(let p=0;p<=600;p++){const x=-1+2*p/600,y=baryEval(x,xs,fs,w);maxerr=Math.max(maxerr,Math.abs(y-f(x)));p?ctx.lineTo(X(x),Y(cl(y))):ctx.moveTo(X(x),Y(cl(y)));}ctx.stroke();
+    ctx.fillStyle=COL.blue;for(let j=0;j<n;j++){ctx.beginPath();ctx.arc(X(xs[j]),Y(cl(fs[j])),5,0,7);ctx.fill();}
+    ctx.textAlign="center";ctx.fillStyle=COL.dim;ctx.font="15px JetBrains Mono";for(const xl of[-1,-0.5,0,0.5,1])ctx.fillText(xl.toFixed(1),X(xl),H-padB+22);
+    ctx.font="17px JetBrains Mono";ctx.fillStyle="#dbeef0";ctx.fillText("x",(padL+W-padR)/2,H-padB+44);vlabel("f(x)",(padT+H-padB)/2);
+    ctx.textAlign="left";ctx.font="17px JetBrains Mono";ctx.fillStyle=COL.dim;ctx.fillText("━ f(x) = 1/(1+25x²)",padL+12,padT+24);ctx.fillStyle=COL.cyan;ctx.fillText("━ interpolant",padL+12,padT+46);
+    document.getElementById("approxReadout").innerHTML="max error: <b>"+maxerr.toExponential(2)+"</b>"+(type==="equi"&&maxerr>.5?" — Runge blow-up":"");
+  }
+  document.getElementById("approxN").addEventListener("input",draw);
+  document.querySelectorAll("#approxType button").forEach(b=>b.addEventListener("click",()=>{document.querySelectorAll("#approxType button").forEach(x=>x.classList.remove("on"));b.classList.add("on");draw();}));
+  demos.approx=draw;
+})();
+
+/* --- adaptive panels: piecewise low-degree Chebyshev, refined to tolerance --- */
+(function(){const cv=document.getElementById("panelsCanvas");if(!cv)return;const ctx=cv.getContext("2d");
+  const f=x=>1/(1+25*x*x),D=6;
+  // recursively split [a,b] until a degree-D Chebyshev panel meets tol
+  function build(tol){const out=[];
+    (function rec(a,b,depth){const xs=[],fs=[];for(let j=0;j<=D;j++){const x=(a+b)/2+(b-a)/2*Math.cos(Math.PI*j/D);xs.push(x);fs.push(f(x));}
+      const w=baryW(xs);let e=0;for(let t=1;t<12;t++){const x=a+(b-a)*t/12;e=Math.max(e,Math.abs(baryEval(x,xs,fs,w)-f(x)));}
+      if(e>tol&&(b-a)>4e-3&&depth<12){const m=(a+b)/2;rec(a,m,depth+1);rec(m,b,depth+1);}else out.push({a,b,xs,fs,w});})(-1,1,0);
+    return out;}
+  const vlabel=(t,yc)=>{ctx.save();ctx.translate(26,yc);ctx.rotate(-Math.PI/2);ctx.textAlign="center";ctx.fillStyle=COL.dim;ctx.font="17px JetBrains Mono";ctx.fillText(t,0,0);ctx.restore();};
+  function draw(){const ex=+document.getElementById("panelsTol").value,tol=Math.pow(10,-ex);
+    document.getElementById("panelsTolval").textContent="1e-"+ex;
+    const P=build(tol),W=cv.width,H=cv.height,padL=78,padR=44,padT=58,padB=52;ctx.clearRect(0,0,W,H);
+    const X=x=>padL+(x+1)/2*(W-padL-padR),Ylo=-.12,Yhi=1.16,Y=y=>H-padB-(y-Ylo)/(Yhi-Ylo)*(H-padT-padB);
+    // alternate panel shading + dashed boundaries (narrow where f bends)
+    P.forEach((p,i)=>{if(i%2){ctx.fillStyle="rgba(47,243,224,.05)";ctx.fillRect(X(p.a),padT,X(p.b)-X(p.a),H-padT-padB);}});
+    ctx.strokeStyle="#2b4248";ctx.lineWidth=1;ctx.setLineDash([4,5]);
+    P.forEach(p=>{ctx.beginPath();ctx.moveTo(X(p.a),padT);ctx.lineTo(X(p.a),H-padB);ctx.stroke();});
+    ctx.beginPath();ctx.moveTo(X(1),padT);ctx.lineTo(X(1),H-padB);ctx.stroke();ctx.setLineDash([]);
+    ctx.strokeStyle=COL.grid;ctx.lineWidth=1;ctx.strokeRect(padL,padT,W-padL-padR,H-padT-padB);
+    ctx.textAlign="right";ctx.font="15px JetBrains Mono";ctx.fillStyle=COL.dim;for(const v of[0,0.5,1])ctx.fillText(v.toFixed(1),padL-10,Y(v)+5);
+    // true function (dim) then piecewise interpolant (cyan)
+    ctx.strokeStyle=COL.dim;ctx.lineWidth=2;ctx.beginPath();for(let t=0;t<=700;t++){const x=-1+2*t/700;t?ctx.lineTo(X(x),Y(f(x))):ctx.moveTo(X(x),Y(f(x)));}ctx.stroke();
+    let maxe=0;ctx.strokeStyle=COL.cyan;ctx.lineWidth=3;
+    P.forEach(p=>{ctx.beginPath();const steps=Math.max(8,Math.round((p.b-p.a)*200));for(let t=0;t<=steps;t++){const x=p.a+(p.b-p.a)*t/steps,y=baryEval(x,p.xs,p.fs,p.w);maxe=Math.max(maxe,Math.abs(y-f(x)));t?ctx.lineTo(X(x),Y(y)):ctx.moveTo(X(x),Y(y));}ctx.stroke();});
+    ctx.fillStyle=COL.blue;P.forEach(p=>p.xs.forEach((x,j)=>{ctx.beginPath();ctx.arc(X(x),Y(p.fs[j]),3,0,7);ctx.fill();}));
+    ctx.textAlign="center";ctx.fillStyle=COL.dim;ctx.font="15px JetBrains Mono";for(const xl of[-1,-0.5,0,0.5,1])ctx.fillText(xl.toFixed(1),X(xl),H-padB+22);
+    ctx.font="17px JetBrains Mono";ctx.fillStyle="#dbeef0";ctx.fillText("x",(padL+W-padR)/2,H-padB+44);vlabel("f(x)",(padT+H-padB)/2);
+    ctx.textAlign="left";ctx.font="17px JetBrains Mono";ctx.fillStyle=COL.dim;ctx.fillText("━ f(x) = 1/(1+25x²)",padL+12,padT-14);ctx.fillStyle=COL.cyan;ctx.fillText("━ piecewise interpolant",padL+260,padT-14);
+    document.getElementById("panelsReadout").innerHTML="<b>"+P.length+"</b> panels · deg "+D+" · max error <b>"+maxe.toExponential(1)+"</b>";
+  }
+  document.getElementById("panelsTol").addEventListener("input",draw);
+  demos.panels=draw;
+})();
+
+/* --- SIMD swizzle stepper (full-screen, 8 lanes, forward/back) --- */
+(function(){const stage=document.getElementById("laneStage");if(!stage)return;
+  const cap=document.getElementById("laneCap"),codeEl=document.getElementById("swzCode"),stepEl=document.getElementById("swzStep");
+  const C=(v,cls)=>({v,cls:cls||""});
+  // Six persistent rows = the whole "one load → two FMAs" dataflow, drawn at full height
+  // and lit up one stage at a time so the prior stages stay on screen (no wasted vertical space).
+  const rows=[
+    {tag:"dd_pt",    cells:[C("re","re"),C("im","im"),C("re","re"),C("im","im"),C("re","re"),C("im","im"),C("re","re"),C("im","im")]},
+    {tag:"ker_v",    cells:[0,1,2,3,4,5,6,7].map(i=>C("k"+i,"ker"))},
+    {tag:"ker_low",  cells:[C("k0","ker"),C("k0","ker"),C("k1","ker"),C("k1","ker"),C("k2","ker"),C("k2","ker"),C("k3","ker"),C("k3","ker")]},
+    {tag:"trg +=",   cells:[C("k0·re","re"),C("k0·im","im"),C("k1·re","re"),C("k1·im","im"),C("k2·re","re"),C("k2·im","im"),C("k3·re","re"),C("k3·im","im")]},
+    {tag:"ker_hi",   cells:[C("k4","ker"),C("k4","ker"),C("k5","ker"),C("k5","ker"),C("k6","ker"),C("k6","ker"),C("k7","ker"),C("k7","ker")]},
+    {tag:"trg+8 +=", cells:[C("k4·re","re"),C("k4·im","im"),C("k5·re","re"),C("k5·im","im"),C("k6·re","re"),C("k6·im","im"),C("k7·re","re"),C("k7·im","im")]},
+  ];
+  // reveal = how many of the six rows are lit; hot = the row this step is acting on (-1 = none)
+  const steps=[
+    {code:"dd_pt = complex_register(dd[2i], dd[2i+1])", cap:"Broadcast the one complex point across all four lane-pairs.", reveal:1, hot:0},
+    {code:"ker_v = load_aligned(ker.data() + dx/2)", cap:"A single aligned load pulls eight real kernel taps.", reveal:2, hot:1},
+    {code:"ker_low = swizzle(ker_v, zip_low)", cap:"zip_low duplicates the low four taps → each meets its (re, im) pair.", reveal:3, hot:2},
+    {code:"fma(ker_low, dd_pt, trg)  →  trg[dx ..]", cap:"FMA #1 spreads onto the first four grid cells — one instruction.", reveal:4, hot:3},
+    {code:"ker_hi = swizzle(ker_v, zip_high)", cap:"Reuse the SAME load — zip_high duplicates the high four taps.", reveal:5, hot:4},
+    {code:"fma(ker_hi, dd_pt, trg+8)  →  trg[dx+8 ..]", cap:"FMA #2 spreads onto the next four — still just the one load.", reveal:6, hot:5},
+    {code:"// one load · two swizzles · two FMAs", cap:"Eight grid cells updated from a single kernel load.", reveal:6, hot:-1},
+  ];
+  let idx=0;const prev=document.getElementById("lanePrev"),next=document.getElementById("laneStep");
+  function render(){const s=steps[idx];stage.innerHTML="";
+    rows.forEach((r,ri)=>{const revealed=ri<s.reveal,isHot=ri===s.hot;
+      const rd=document.createElement("div");rd.className="lane-row"+(revealed?"":" dim");
+      const t=document.createElement("div");t.className="tag-l";t.textContent=r.tag;rd.appendChild(t);
+      const lc=document.createElement("div");lc.className="lane-cells";
+      r.cells.forEach(c=>{const d=document.createElement("div");
+        d.className="cell "+c.cls+(isHot?" hot":revealed?"":" ph");d.textContent=c.v;lc.appendChild(d);});
+      rd.appendChild(lc);stage.appendChild(rd);});
+    codeEl.textContent=s.code;cap.textContent=s.cap;stepEl.textContent=(idx+1)+" / "+steps.length;
+    prev.disabled=idx===0;next.disabled=idx===steps.length-1;}
+  next.addEventListener("click",()=>{if(idx<steps.length-1){idx++;render();}});
+  prev.addEventListener("click",()=>{if(idx>0){idx--;render();}});
+  demos.swizzle=()=>{idx=0;render();};render();
+})();
+
+/* --- fit once / eval forever race --- */
+(function(){const cv=document.getElementById("raceCanvas");if(!cv)return;const ctx=cv.getContext("2d");
+  const lo=1.1,hi=5.0,fcostly=x=>{let s=0;for(let k=1;k<=400;k++)s+=Math.pow(1/k,x);return s;};
+  const PAN=8,DEG=8;let panels=[];
+  function build(){panels=[];const pw=(hi-lo)/PAN;for(let p=0;p<PAN;p++){const a=lo+p*pw,b=a+pw,xs=[],fs=[];
+    for(let j=0;j<=DEG;j++){const x=(a+b)/2+(b-a)/2*Math.cos(Math.PI*j/DEG);xs.push(x);fs.push(fcostly(x));}panels.push({a,b,xs,fs,w:baryW(xs)});}}
+  function surr(x){const pw=(hi-lo)/PAN,p=Math.min(PAN-1,Math.max(0,Math.floor((x-lo)/pw))),P=panels[p];return baryEval(x,P.xs,P.fs,P.w);}
+  function nf(n){return n.toLocaleString();}
+  function setN(){document.getElementById("raceNval").textContent=nf(+document.getElementById("raceN").value);}
+  function draw(s){const W=cv.width,H=cv.height;ctx.clearRect(0,0,W,H);ctx.font="22px JetBrains Mono";
+    const x0=300,maxW=W-x0-300,bh=66,y1=110,y2=230;
+    ctx.fillStyle=COL.dim;ctx.fillText("expensive  f(x)",40,y1-18);ctx.fillText("polynomial surrogate",40,y2-18);
+    const bar=(y,fr,col,lbl)=>{ctx.fillStyle="#0e1a1e";ctx.fillRect(x0,y,maxW,bh);ctx.fillStyle=col;ctx.fillRect(x0,y,maxW*fr,bh);ctx.fillStyle="#dbeef0";ctx.font="26px JetBrains Mono";if(lbl)ctx.fillText(lbl,x0+maxW*Math.min(fr,.8)+14,y+bh/2+9);};
+    if(!s){ctx.fillStyle=COL.dim;ctx.font="24px JetBrains Mono";ctx.fillText("press run — times the same N evaluations both ways",x0,180);return;}
+    bar(y1,1,COL.dimbar,s.te.toFixed(1)+" ms");bar(y2,s.fr,COL.cyan,s.ts.toFixed(1)+" ms");
+    ctx.fillStyle=COL.green;ctx.font="48px JetBrains Mono";ctx.fillText(s.sp.toFixed(0)+"× faster",x0,y2+150);
+    ctx.fillStyle=COL.blue;ctx.font="22px JetBrains Mono";ctx.fillText("max error vs f:  "+s.err.toExponential(2),x0+360,y2+150);}
+  function run(){if(!panels.length)build();const N=+document.getElementById("raceN").value;const X=new Float64Array(N);for(let i=0;i<N;i++)X[i]=lo+(hi-lo)*Math.random();
+    let t=performance.now(),a=0;for(let i=0;i<N;i++)a+=fcostly(X[i]);const te=performance.now()-t;
+    t=performance.now();let b=0;for(let i=0;i<N;i++)b+=surr(X[i]);const ts=performance.now()-t;
+    let err=0;for(let i=0;i<2000;i++){const x=lo+(hi-lo)*i/2000;err=Math.max(err,Math.abs(surr(x)-fcostly(x)));}
+    draw({te,ts,fr:Math.max(.012,ts/te),sp:te/ts,err});
+    document.getElementById("raceReadout").innerHTML="N = <b>"+nf(N)+"</b> · fit once, then "+nf(N)+" cheap evals";}
+  document.getElementById("raceN").addEventListener("input",setN);
+  document.getElementById("raceRun").addEventListener("click",run);
+  setN();demos.race=()=>draw(null);
+})();
+
+/* ===========================================================================
+   SLIDE CONTROLLER — fixed-stage scaling + nav + per-slide demo init + editing
+   =========================================================================== */
+class Deck{
+  constructor(){
+    this.slides=[...document.querySelectorAll(".slide")];
+    this.i=0;this.stage=document.getElementById("deckStage");this.bar=document.getElementById("progressBar");
+    this.scale();addEventListener("resize",()=>this.scale());
+    addEventListener("keydown",e=>{
+      if(e.target.getAttribute&&e.target.getAttribute("contenteditable")==="true")return;
+      if(["ArrowRight","PageDown"," "].includes(e.key)){e.preventDefault();this.go(this.i+1);}
+      else if(["ArrowLeft","PageUp"].includes(e.key)){e.preventDefault();this.go(this.i-1);}
+      else if(e.key==="Home")this.go(0);else if(e.key==="End")this.go(this.slides.length-1);
+      else if(e.key==="p"||e.key==="P")window.print();
+      else if(e.key==="e"||e.key==="E")editor.toggle();
+    });
+    let wl=false;addEventListener("wheel",e=>{if(wl)return;if(Math.abs(e.deltaY)<28)return;if(e.target.closest(".term-body,pre.code"))return;wl=true;this.go(this.i+(e.deltaY>0?1:-1));setTimeout(()=>wl=false,650);},{passive:true});
+    let sx=0;addEventListener("touchstart",e=>sx=e.touches[0].clientX,{passive:true});
+    addEventListener("touchend",e=>{const dx=e.changedTouches[0].clientX-sx;if(Math.abs(dx)>44)this.go(this.i+(dx<0?1:-1));},{passive:true});
+    this.go(parseInt((location.hash.match(/#(\d+)/)||[])[1])-1||0);
+  }
+  scale(){const f=Math.min(innerWidth/1920,innerHeight/1080);this.stage.style.transform=`translate(${(innerWidth-1920*f)/2}px,${(innerHeight-1080*f)/2}px) scale(${f})`;}
+  go(n){this.i=Math.max(0,Math.min(n,this.slides.length-1));
+    this.slides.forEach((s,k)=>{s.classList.toggle("active",k===this.i);s.classList.toggle("visible",k===this.i);});
+    this.bar.style.width=((this.i+1)/this.slides.length*100)+"%";history.replaceState(null,"","#"+(this.i+1));
+    const d=this.slides[this.i].dataset.demo;if(d&&demos[d])requestAnimationFrame(()=>demos[d]());}
+}
+/* inline editing (lightweight; persists to localStorage) */
+const editor={isActive:false,
+  toggle(){this.isActive=!this.isActive;const t=document.getElementById("editToggle");t.classList.toggle("active",this.isActive);t.classList.toggle("show",this.isActive);
+    document.querySelectorAll(".slide [class*='h-'],.slide .h1,.slide .h2,.slide .lead,.slide .body,.slide .bul li,.slide .note,.slide .kicker,.slide .formula").forEach(el=>{el.contentEditable=this.isActive;});
+    if(!this.isActive)try{localStorage.setItem("nufft-deck",document.querySelector(".deck-stage").innerHTML);}catch(e){}}
+};
+document.getElementById("editToggle").addEventListener("click",()=>editor.toggle());
+(function(){const hz=document.querySelector(".edit-hotzone"),tg=document.getElementById("editToggle");let to=null;
+  hz.addEventListener("mouseenter",()=>{clearTimeout(to);tg.classList.add("show");});
+  hz.addEventListener("mouseleave",()=>{to=setTimeout(()=>{if(!editor.isActive)tg.classList.remove("show");},400);});
+  tg.addEventListener("mouseenter",()=>clearTimeout(to));
+  tg.addEventListener("mouseleave",()=>{to=setTimeout(()=>{if(!editor.isActive)tg.classList.remove("show");},400);});
+  hz.addEventListener("click",()=>editor.toggle());})();
+/* benchmark lightbox: click a .zoomable chart to enlarge, click/Esc to close */
+(function(){const lb=document.getElementById("lightbox");if(!lb)return;const lbImg=lb.querySelector("img");
+  function open(src,alt){lbImg.src=src;lbImg.alt=alt||"";lb.classList.add("open");}
+  function close(){lb.classList.remove("open");lbImg.removeAttribute("src");}
+  document.querySelectorAll("img.zoomable").forEach(img=>{
+    img.addEventListener("click",e=>{e.stopPropagation();open(img.currentSrc||img.src,img.alt);});});
+  lb.addEventListener("click",close);
+  addEventListener("keydown",e=>{if(e.key==="Escape"&&lb.classList.contains("open")){e.preventDefault();close();}});
+})();
+addEventListener("DOMContentLoaded",()=>{
+  window.deck=new Deck();
+  if(window.renderMathInElement){renderMathInElement(document.querySelector(".deck-stage"),{
+    delimiters:[{left:"\\[",right:"\\]",display:true},{left:"\\(",right:"\\)",display:false},{left:"$$",right:"$$",display:true}],
+    throwOnError:false});}
+});
+</script>
+</body>
+</html>
