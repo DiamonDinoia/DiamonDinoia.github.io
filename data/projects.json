@@ -90,7 +90,7 @@
         "C++"
       ],
       "description": "C++ tensors with broadcasting and lazy computing",
-      "stars": 3744
+      "stars": 3745
     },
     {
       "name": "CaImAn",
@@ -99,7 +99,7 @@
         "Python"
       ],
       "description": "Computational toolbox for large scale Calcium Imaging Analysis, including movie handling, motion correction, source extraction, spike deconvolution and result visualization.",
-      "stars": 723
+      "stars": 722
     },
     {
       "name": "xtensor-python",
@@ -135,7 +135,7 @@
         "MATLAB"
       ],
       "description": "Complete Matlab pipeline for large scale calcium imaging data analysis",
-      "stars": 261
+      "stars": 262
     },
     {
       "name": "xtl",
@@ -2045,6 +2045,24 @@
       "stars": 1
     },
     {
+      "name": "cthyb_matrix",
+      "url": "https://github.com/TRIQS/cthyb_matrix",
+      "langs": [
+        "C++"
+      ],
+      "description": "DEPRECATED -- CTQMC Hybridisation expansion ",
+      "stars": 1
+    },
+    {
+      "name": "binder",
+      "url": "https://github.com/TRIQS/binder",
+      "langs": [
+        "Dockerfile"
+      ],
+      "description": "TRIQS for binder (repo2docker)",
+      "stars": 1
+    },
+    {
       "name": "dftkit",
       "url": "https://github.com/TRIQS/dftkit",
       "langs": [
@@ -2081,30 +2099,12 @@
       "stars": 1
     },
     {
-      "name": "binder",
-      "url": "https://github.com/TRIQS/binder",
-      "langs": [
-        "Dockerfile"
-      ],
-      "description": "TRIQS for binder (repo2docker)",
-      "stars": 1
-    },
-    {
       "name": "ctint_tutorial",
       "url": "https://github.com/TRIQS/ctint_tutorial",
       "langs": [
         "C++"
       ],
       "description": "A simple implementation of a single-band interaction-expansion QMC impurity solver",
-      "stars": 1
-    },
-    {
-      "name": "cthyb_matrix",
-      "url": "https://github.com/TRIQS/cthyb_matrix",
-      "langs": [
-        "C++"
-      ],
-      "description": "DEPRECATED -- CTQMC Hybridisation expansion ",
       "stars": 1
     },
     {
