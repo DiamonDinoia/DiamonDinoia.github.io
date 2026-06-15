@@ -99,7 +99,7 @@
         "Python"
       ],
       "description": "Computational toolbox for large scale Calcium Imaging Analysis, including movie handling, motion correction, source extraction, spike deconvolution and result visualization.",
-      "stars": 721
+      "stars": 723
     },
     {
       "name": "xtensor-python",
@@ -363,21 +363,21 @@
       "stars": 46
     },
     {
-      "name": "online_psp",
-      "url": "https://github.com/flatironinstitute/online_psp",
-      "langs": [
-        "Python"
-      ],
-      "description": "A collection of computationally efficient algorithms for online subspace learning and principal component analysis",
-      "stars": 44
-    },
-    {
       "name": "dft_tools",
       "url": "https://github.com/TRIQS/dft_tools",
       "langs": [
         "Python"
       ],
       "description": "Interface to DFT codes. Supported by the Flatiron Institute.",
+      "stars": 45
+    },
+    {
+      "name": "online_psp",
+      "url": "https://github.com/flatironinstitute/online_psp",
+      "langs": [
+        "Python"
+      ],
+      "description": "A collection of computationally efficient algorithms for online subspace learning and principal component analysis",
       "stars": 44
     },
     {
