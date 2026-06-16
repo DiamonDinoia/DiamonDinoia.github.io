@@ -836,14 +836,15 @@ delete(obj);</pre></div></div>
 <section class="slide">
   <div class="counter"></div><div class="toprule"></div>
   <div class="slide-inner">
-    <div class="screen-head"><h2 class="h2 reveal">Run it live</h2><div class="screen-sub reveal">the real treeweave WASM build, fetched from a CDN · this exact code runs in your browser</div></div>
+    <div class="screen-head"><h2 class="h2 reveal">Run it live</h2><div class="screen-sub reveal">edit the code → it really runs · the treeweave WASM build is fetched from a CDN</div></div>
     <div class="two reveal" style="grid-template-columns:1fr 1fr;gap:40px;height:auto;align-items:stretch;margin-top:4px">
-      <div class="term"><div class="term-bar"><span class="dot r"></span><span class="dot y"></span><span class="dot g"></span><span class="term-tab"><b>demo.js</b> — the source</span></div>
-      <div class="term-body"><pre class="code" data-lang="cpp" style="font-size:21px;line-height:1.5;max-height:none">import { Treeweave } from
+      <div class="term"><div class="term-bar"><span class="dot r"></span><span class="dot y"></span><span class="dot g"></span><span class="term-tab"><b>demo.js</b> — editable · runs for real</span></div>
+      <div class="term-body" style="padding:0"><textarea id="wasmSrc" spellcheck="false" style="display:block;width:100%;height:440px;resize:none;border:0;outline:none;background:transparent;color:var(--cyan-soft);font-family:var(--mono);font-size:20px;line-height:1.5;padding:24px 30px;white-space:pre;overflow:auto;tab-size:2">import { Treeweave } from
   "https://unpkg.com/@flatironinstitute/treeweave";
 
-// ζ(s) = Σ_{k=1..160} k⁻ˢ   (early-stop)
-const zeta = s =&gt; {
+// edit me — the function to approximate on [a, b)
+// here: ζ(s) = Σ_{k=1..160} k⁻ˢ   (early-stop)
+export const f = s =&gt; {
   let a = 0;
   for (let k = 1; k &lt;= 160; k++) {
     const t = k ** -s; a += t;
@@ -852,19 +853,16 @@ const zeta = s =&gt; {
   return a;
 };
 
-// fit once on [2, 10] to 1e-10
-const approx =
-  await Treeweave.fit(x =&gt; zeta(x[0]), 2, 10, 1e-10);
-
-// then race: surrogate vs. calling zeta(x) directly
-const ys = approx.batch(xs);</pre></div></div>
+export const domain = [2, 10];   // [a, b)
+export const tol    = 1e-10;     // fit tolerance</textarea></div></div>
       <div class="term"><div class="term-bar"><span class="dot r"></span><span class="dot y"></span><span class="dot g"></span><span class="term-tab"><b>output</b> — ζ(s) fit · WASM vs native JS</span></div>
-      <div class="term-body"><pre class="code" id="wasmOut" style="font-size:23px;max-height:none;min-height:420px;white-space:pre-wrap">press “Fit ζ(s) and race it” to run the live WASM demo…</pre></div></div>
+      <div class="term-body"><pre class="code" id="wasmOut" style="font-size:23px;max-height:none;min-height:440px;white-space:pre-wrap">edit demo.js on the left, then press “Run” — your code is compiled and executed live…</pre></div></div>
     </div>
     <div class="actions reveal">
-      <button class="btn" id="wasmRun"><span class="dot-run"></span>▶ Fit ζ(s) and race it (WASM)</button>
+      <button class="btn" id="wasmRun"><span class="dot-run"></span>▶ Run demo.js (fit + race, WASM)</button>
+      <button class="btn" id="wasmReset">↺ reset code</button>
       <label style="font-family:var(--mono);font-size:18px;color:var(--dim);display:flex;align-items:center;gap:12px">points <input type="range" id="wasmN" min="100000" max="1000000" value="500000" step="100000"><span class="readout" id="wasmNval">500,000</span></label>
-      <span class="hint">imports @flatironinstitute/treeweave from unpkg — needs an online (HTTPS) origin</span>
+      <span class="hint">your edits to f / domain / tol run for real · treeweave fetched from unpkg (needs an online origin)</span>
     </div>
   </div>
 </section>
@@ -1611,47 +1609,56 @@ function baryEval(x,xs,fs,w){let num=0,den=0;for(let j=0;j<xs.length;j++){if(x==
   demos.swizzle=()=>{idx=0;render();};render();
 })();
 
-/* --- live treeweave WASM: fit ζ(s) in the browser, race vs native JS ---
-   Imports the real @flatironinstitute/treeweave build from a CDN (unpkg serves
-   the emscripten glue + .wasm unmodified). Needs an HTTPS/HTTP origin — works on
-   GitHub Pages; falls back to the published numbers if the CDN can't be reached. */
+/* --- live, EDITABLE treeweave WASM demo ---
+   The demo.js textarea is real source: on Run we compile it to an ES module via a
+   Blob URL, import it, and use its exported f / domain / tol to drive a genuine
+   treeweave WASM fit + race. The package is fetched from a CDN (unpkg serves the
+   emscripten glue + .wasm unmodified), so it works on GitHub Pages with nothing
+   hosted locally; falls back to published numbers if the CDN can't be reached. */
 (function(){const btn=document.getElementById("wasmRun");if(!btn)return;
-  const out=document.getElementById("wasmOut"),nEl=document.getElementById("wasmN"),nVal=document.getElementById("wasmNval");
+  const out=document.getElementById("wasmOut"),src=document.getElementById("wasmSrc");
+  const nEl=document.getElementById("wasmN"),nVal=document.getElementById("wasmNval"),reset=document.getElementById("wasmReset");
   const fmt=n=>n.toLocaleString();const setN=()=>nVal.textContent=fmt(+nEl.value);nEl.addEventListener("input",setN);setN();
-  // brute-force ζ(s) = Σ k⁻ˢ, ≤160 terms, early-stop (matches the README baseline)
-  const zetaJS=s=>{let a=0;for(let k=1;k<=160;k++){const t=Math.pow(k,-s);a+=t;if(t<1e-10*a)break;}return a;};
+  const DEFAULT=src.value;
+  if(reset)reset.addEventListener("click",()=>{src.value=DEFAULT;out.textContent="code reset — press “Run” to execute it.";});
   const FALLBACK="couldn't reach the WASM CDN — showing published numbers:\n\n"+
     "fit time         one-off (ms), amortized over every call\n"+
     "treeweave        ~3,700 Mevals/s   (Python batch)\n"+
-    "speedup          up to 10,900× vs. native ζ(s)  (sorted batch)\n"+
-    "max rel error    ≤ 1e-10  across [2, 10]";
+    "speedup          up to 10,900× vs. native f  (sorted batch)\n"+
+    "max rel error    ≤ 1e-10  across the domain";
   let busy=false;
   btn.addEventListener("click",async()=>{if(busy)return;busy=true;btn.style.opacity=".6";
-    const log=s=>out.textContent=s;
+    const log=s=>out.textContent=s;let blobUrl=null;
     try{
-      log("loading treeweave WASM from unpkg…");
-      const mod=await import("https://unpkg.com/@flatironinstitute/treeweave@0.0.0/dist/index.js");
-      const Treeweave=mod.Treeweave||mod.default;
-      log("fitting ζ(s) on [2, 10] to 1e-10…");
+      log("compiling your demo.js + loading treeweave WASM…");
+      // compile the editor contents into a real ES module
+      blobUrl=URL.createObjectURL(new Blob([src.value],{type:"text/javascript"}));
+      const mod=await import(blobUrl);
+      const f=mod.f, dom=(Array.isArray(mod.domain)&&mod.domain.length===2)?mod.domain:[2,10], tol=(typeof mod.tol==="number")?mod.tol:1e-10;
+      if(typeof f!=="function")throw new Error('demo.js must `export const f = x => …`');
+      const lib=await import("https://unpkg.com/@flatironinstitute/treeweave@0.0.0/dist/index.js");
+      const Treeweave=lib.Treeweave||lib.default;
+      log("fitting f on ["+dom[0]+", "+dom[1]+") to "+tol+" …");
       const t0=performance.now();
-      const approx=await Treeweave.fit(x=>zetaJS(x[0]),2,10,1e-10,{backend:"wasm"});
+      const approx=await Treeweave.fit(x=>f(x[0]),dom[0],dom[1],tol,{backend:"wasm"});
       const fitMs=performance.now()-t0;
       const N=+nEl.value,xs=new Float64Array(N),ys=new Float64Array(N);
-      for(let i=0;i<N;i++)xs[i]=2+8*Math.random();
+      for(let i=0;i<N;i++)xs[i]=dom[0]+(dom[1]-dom[0])*Math.random();
       approx.batch(xs.subarray(0,2000),{out:ys.subarray(0,2000)});         // warm
       let t=performance.now();approx.batch(xs,{out:ys});const twMs=performance.now()-t;
-      t=performance.now();let acc=0;for(let i=0;i<N;i++)acc+=zetaJS(xs[i]);const jsMs=performance.now()-t;
-      let maxerr=0;for(let i=0;i<5000;i++){const z=zetaJS(xs[i]);maxerr=Math.max(maxerr,Math.abs(ys[i]-z)/Math.abs(z));}
+      t=performance.now();let acc=0;for(let i=0;i<N;i++)acc+=f(xs[i]);const jsMs=performance.now()-t;
+      let maxerr=0;for(let i=0;i<5000;i++){const z=f(xs[i]);if(z)maxerr=Math.max(maxerr,Math.abs(ys[i]-z)/Math.abs(z));}
       const twM=N/twMs/1e3,jsM=N/jsMs/1e3;
       log("fit time         "+fitMs.toFixed(1)+" ms   (one-off)\n"+
+          "domain           ["+dom[0]+", "+dom[1]+")   tol "+tol+"\n"+
           "points           "+fmt(N)+"\n"+
           "treeweave WASM   "+twMs.toFixed(1)+" ms   ·  "+twM.toFixed(0)+" Mevals/s\n"+
-          "native JS ζ(s)   "+jsMs.toFixed(1)+" ms   ·  "+jsM.toFixed(1)+" Mevals/s\n"+
+          "native JS f      "+jsMs.toFixed(1)+" ms   ·  "+jsM.toFixed(1)+" Mevals/s\n"+
           "speedup          "+(jsMs/twMs).toFixed(0)+"×\n"+
-          "max rel error    "+maxerr.toExponential(2)+"   (acc "+acc.toFixed(2)+")");
+          "max rel error    "+maxerr.toExponential(2));
       approx.free();
-    }catch(e){log(FALLBACK);console.warn("treeweave WASM demo failed:",e);}
-    finally{busy=false;btn.style.opacity="";}
+    }catch(e){log(FALLBACK+"\n\n("+(e&&e.message||e)+")");console.warn("treeweave WASM demo failed:",e);}
+    finally{if(blobUrl)URL.revokeObjectURL(blobUrl);busy=false;btn.style.opacity="";}
   });
 })();
 
@@ -1685,7 +1692,8 @@ class Deck{
     this.i=0;this.stage=document.getElementById("deckStage");this.bar=document.getElementById("progressBar");
     this.scale();addEventListener("resize",()=>this.scale());
     addEventListener("keydown",e=>{
-      if(e.target.getAttribute&&e.target.getAttribute("contenteditable")==="true")return;
+      const tn=e.target.tagName;
+      if((e.target.getAttribute&&e.target.getAttribute("contenteditable")==="true")||tn==="TEXTAREA"||tn==="INPUT"||tn==="SELECT")return;
       if(["ArrowRight","PageDown"," "].includes(e.key)){e.preventDefault();this.go(this.i+1);}
       else if(["ArrowLeft","PageUp"].includes(e.key)){e.preventDefault();this.go(this.i-1);}
       else if(e.key==="Home")this.go(0);else if(e.key==="End")this.go(this.slides.length-1);
