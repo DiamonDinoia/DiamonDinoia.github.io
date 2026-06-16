@@ -340,7 +340,7 @@ img.zoomable:hover{filter:brightness(1.04)}
       <div class="person"><img src="assets/people/barbone.jpg" alt="Marco Barbone"><div><div class="nm">Marco Barbone</div><div class="aff">Flatiron Institute · CCM</div></div></div>
       <div class="person"><img src="assets/people/lu.jpg" alt="Libin Lu"><div><div class="nm">Libin Lu</div><div class="aff">Flatiron Institute · CCM</div></div></div>
       <div class="person"><img src="assets/people/blackwell.jpg" alt="Robert Blackwell"><div><div class="nm">Robert Blackwell</div><div class="aff">Flatiron Institute · CCM</div></div></div>
-      <div class="person"><img src="assets/people/anden.jpg" alt="Joakim Andén"><div><div class="nm">Joakim Andén</div><div class="aff">Flatiron Institute · CCM</div></div></div>
+      <div class="person"><img src="assets/people/anden.jpg" alt="Joakim Andén"><div><div class="nm">Joakim Andén</div><div class="aff">KTH Royal Institute<br>of Technology</div></div></div>
       <div class="person"><img src="assets/people/reinecke.jpg" alt="Martin Reinecke"><div><div class="nm">Martin Reinecke</div><div class="aff">Max Planck Institute<br>for Astrophysics</div></div></div>
     </div>
   </div>
@@ -710,21 +710,6 @@ img.zoomable:hover{filter:brightness(1.04)}
   </div>
 </section>
 
-<!-- treeweave · race demo (moved) -->
-<section class="slide" data-demo="race">
-  <div class="counter"></div><div class="toprule"></div>
-  <div class="slide-inner">
-    <div class="screen-head"><h2 class="h2 reveal">Fit once, evaluate forever</h2><div class="screen-sub reveal">live race · expensive f vs. its polynomial surrogate</div></div>
-    <div class="term reveal"><div class="term-bar"><span class="dot r"></span><span class="dot y"></span><span class="dot g"></span><span class="term-tab"><b>race</b> — same N evaluations, two ways</span></div>
-    <div class="term-body"><div class="demo-stage"><canvas id="raceCanvas" width="1520" height="400"></canvas></div></div></div>
-    <div class="controls reveal">
-      <button id="raceRun">run the race ▸</button>
-      <label>calls <input type="range" id="raceN" min="100000" max="3000000" value="1000000" step="100000"><span class="readout" id="raceNval">1,000,000</span></label>
-      <span class="readout" id="raceReadout"></span>
-    </div>
-  </div>
-</section>
-
 <!-- treeweave · one stable C ABI, six languages — interactive picker -->
 <section class="slide">
   <div class="counter"></div><div class="toprule"></div>
@@ -851,9 +836,31 @@ delete(obj);</pre></div></div>
 <section class="slide">
   <div class="counter"></div><div class="toprule"></div>
   <div class="slide-inner">
-    <div class="screen-head"><h2 class="h2 reveal">Run it live</h2><div class="screen-sub reveal">the real treeweave WASM build, fetched from a CDN · fits ζ(s) in your browser</div></div>
-    <div class="term reveal"><div class="term-bar"><span class="dot r"></span><span class="dot y"></span><span class="dot g"></span><span class="term-tab"><b>treeweave.wasm</b> — ζ(s) = Σ<sub>k=1..160</sub> k⁻ˢ on [2, 10] · tol 1e-10</span></div>
-    <div class="term-body"><pre class="code" id="wasmOut" style="max-height:none;min-height:300px;white-space:pre-wrap">press “Fit ζ(s) and race it” to run the live WASM demo…</pre></div></div>
+    <div class="screen-head"><h2 class="h2 reveal">Run it live</h2><div class="screen-sub reveal">the real treeweave WASM build, fetched from a CDN · this exact code runs in your browser</div></div>
+    <div class="two reveal" style="grid-template-columns:1fr 1fr;gap:40px;height:auto;align-items:stretch;margin-top:4px">
+      <div class="term"><div class="term-bar"><span class="dot r"></span><span class="dot y"></span><span class="dot g"></span><span class="term-tab"><b>demo.js</b> — the source</span></div>
+      <div class="term-body"><pre class="code" data-lang="cpp" style="font-size:21px;line-height:1.5;max-height:none">import { Treeweave } from
+  "https://unpkg.com/@flatironinstitute/treeweave";
+
+// ζ(s) = Σ_{k=1..160} k⁻ˢ   (early-stop)
+const zeta = s =&gt; {
+  let a = 0;
+  for (let k = 1; k &lt;= 160; k++) {
+    const t = k ** -s; a += t;
+    if (t &lt; 1e-10 * a) break;
+  }
+  return a;
+};
+
+// fit once on [2, 10] to 1e-10
+const approx =
+  await Treeweave.fit(x =&gt; zeta(x[0]), 2, 10, 1e-10);
+
+// then race: surrogate vs. calling zeta(x) directly
+const ys = approx.batch(xs);</pre></div></div>
+      <div class="term"><div class="term-bar"><span class="dot r"></span><span class="dot y"></span><span class="dot g"></span><span class="term-tab"><b>output</b> — ζ(s) fit · WASM vs native JS</span></div>
+      <div class="term-body"><pre class="code" id="wasmOut" style="font-size:23px;max-height:none;min-height:420px;white-space:pre-wrap">press “Fit ζ(s) and race it” to run the live WASM demo…</pre></div></div>
+    </div>
     <div class="actions reveal">
       <button class="btn" id="wasmRun"><span class="dot-run"></span>▶ Fit ζ(s) and race it (WASM)</button>
       <label style="font-family:var(--mono);font-size:18px;color:var(--dim);display:flex;align-items:center;gap:12px">points <input type="range" id="wasmN" min="100000" max="1000000" value="500000" step="100000"><span class="readout" id="wasmNval">500,000</span></label>
@@ -893,6 +900,109 @@ delete(obj);</pre></div></div>
 
 <!-- (SIMD 101 moved to a standalone primer just before the conclusion) -->
 
+<!-- ===================== 23 · map the math to the CPU ===================== -->
+<section class="slide">
+  <div class="counter"></div><div class="toprule"></div>
+  <div class="slide-inner center">
+    <h2 class="h-display reveal" style="font-size:104px">Now map the math<br>to the <span class="ac">CPU.</span></h2>
+    <div class="note reveal" style="margin-top:24px;max-width:60ch;margin-left:auto;margin-right:auto">we have a fast, accurate kernel — what's left is making the hot loop run at the speed the hardware allows</div>
+  </div>
+</section>
+
+<!-- ===================== 24 · scalar critical loop ===================== -->
+<section class="slide">
+  <div class="counter"></div><div class="toprule"></div>
+  <div class="slide-inner">
+    <div class="screen-head"><h2 class="h2 reveal">The spreading loop, in full</h2><div class="screen-sub reveal">1D type-1 · scatter each point onto ns grid cells</div></div>
+    <div class="term reveal"><div class="term-bar"><span class="dot r"></span><span class="dot y"></span><span class="dot g"></span><span class="term-tab"><b>spreadinterp.cpp</b> — FINUFFT</span></div>
+    <div class="term-body"><pre class="code" data-lang="cpp" style="font-size:23px;line-height:1.45;max-height:none">T kernel_values[MAX_NSPREAD];
+for (BIGINT i = 0; i &lt; M; ++i) {              // loop over all points
+  const T re0 = dd[2 * i];                    // pts are complex
+  const T im0 = dd[2 * i + 1];
+  BIGINT i1   = (BIGINT)std::ceil(kx[i] - ns2);
+  T x1        = T(i1) - kx[i];
+  ker_eval&lt;T&gt;(kernel_values, ns, opts, x1);
+  BIGINT j = i1 - off1;
+  for (int dx = 0; dx &lt; int(ns); ++dx) {       // critical loop
+    const T k = kernel_values[dx];
+    du[2 * j]     += re0 * k;
+    du[2 * j + 1] += im0 * k;
+    ++j;
+  }
+}</pre></div></div>
+    <div class="actions reveal">
+      <a class="btn gh" href="https://github.com/flatironinstitute/finufft/blob/v2.2.0/src/spreadinterp.cpp#L938" target="_blank" rel="noopener">View real source ↗</a>
+      <span class="hint">the inner loop runs billions of times</span>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== 25 · scalar, but the CPU is SIMD ===================== -->
+<section class="slide">
+  <div class="counter"></div><div class="toprule"></div>
+  <div class="slide-inner center">
+    <h2 class="h1 reveal" style="font-size:80px">This loop is <span class="ac">scalar</span>.<br>The CPU is <span class="ac">SIMD</span>.</h2>
+    <div class="note reveal" style="margin-top:26px;max-width:58ch;margin-left:auto;margin-right:auto">one lane working, the rest idle — we're leaving most of the machine's throughput on the table</div>
+  </div>
+</section>
+
+<!-- ===================== 26 · why the compiler can't fix it ===================== -->
+<section class="slide">
+  <div class="counter"></div><div class="toprule"></div>
+  <div class="slide-inner">
+    <div class="kicker reveal"><span class="blip"></span>Why auto-vectorization isn't enough</div>
+    <ul class="bul reveal" style="margin-top:10px">
+      <li><b>ns is a runtime value</b> — the inner trip count is unknown at compile time, so the vectorizer stays conservative</li>
+      <li><b>auto-vectorization is unreliable</b> — it shifts with the compiler, its version and flags; you can't count on it</li>
+      <li><b>but ns ∈ [2, 16]</b> — small and bounded, so we can <span class="ac">generate one specialized kernel per width</span></li>
+    </ul>
+  </div>
+</section>
+
+<!-- ===================== 27 · POET API ===================== -->
+<section class="slide">
+  <div class="counter"></div><div class="toprule"></div>
+  <div class="slide-inner">
+    <div class="screen-head"><h2 class="h2 reveal">POET: promote ns to compile-time</h2><div class="screen-sub reveal">a C++20 templated lambda — no functor boilerplate, just declare the ranges</div></div>
+    <div class="term reveal"><div class="term-bar"><span class="dot r"></span><span class="dot y"></span><span class="dot g"></span><span class="term-tab"><b>dispatch.cpp</b> — POET</span></div>
+    <div class="term-body"><pre class="code" data-lang="cpp" style="font-size:24px;line-height:1.5;max-height:none">// C++20: a generic lambda with an explicit template parameter list
+auto spread = [&amp;]&lt;int ns, int kerevalmeth&gt;() {
+  spread_subproblem_1d_kernel&lt;T, ns, kerevalmeth&gt;(off1, size1, du, M, kx, dd, opts);
+};
+
+using NsSeq  = poet::make_range&lt;MIN_NSPREAD, MAX_NSPREAD&gt;;
+using KerSeq = std::make_integer_sequence&lt;int, KEREVAL_METHODS&gt;;
+auto params  = std::make_tuple(poet::dispatch_param&lt;NsSeq&gt;{opts.nspread},
+                               poet::dispatch_param&lt;KerSeq&gt;{opts.kerevalmeth});
+
+poet::dispatch(spread, params);   // runtime (ns, meth) -> compile-time template args
+// inside the lambda: ns is constexpr — full unroll, constant-folded coeffs, clean vectors.</pre></div></div>
+    <div class="actions reveal">
+      <a class="btn gh" href="https://github.com/DiamonDinoia/poet" target="_blank" rel="noopener">POET on GitHub ↗</a>
+      <span class="hint">one instantiation per value — keep the range small or compile times explode</span>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== 28 · POET result (compiler vectorizes better) ===================== -->
+<section class="slide">
+  <div class="counter"></div><div class="toprule"></div>
+  <div class="slide-inner">
+    <div class="kicker reveal"><span class="blip"></span>Compile-time ns alone — no hand-written SIMD yet</div>
+    <div class="two reveal" style="margin-top:18px;gap:60px">
+      <div style="display:flex;flex-direction:column;gap:30px;justify-content:center">
+        <div class="body" style="max-width:34ch">With <code>ns</code> fixed at compile time the inner loop has a constant trip count, so the compiler can unroll it and emit clean vector code.</div>
+        <div class="body" style="max-width:34ch">We get a speedup <em>before</em> writing a single intrinsic — just from telling the compiler what it couldn't infer.</div>
+      </div>
+      <figure style="margin:0">
+        <div class="term"><div class="term-bar"><span class="dot r"></span><span class="dot y"></span><span class="dot g"></span><span class="term-tab"><b>benchmark</b> — POET dispatch vs runtime loop</span></div>
+        <div class="term-body" style="background:#fff;padding:18px"><img class="zoomable" src="assets/poet_dynamic_for.svg" alt="POET dispatch speedup benchmark" style="width:100%;display:block"></div></div>
+        <figcaption style="font-family:var(--mono);font-size:15px;color:var(--dim);margin-top:12px;letter-spacing:.03em">POET microbenchmark · github.com/DiamonDinoia/poet · MIT</figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
 <!-- ===================== Part 4 · SIMD path selector ===================== -->
 <section class="slide">
   <div class="counter"></div><div class="toprule"></div>
@@ -900,8 +1010,8 @@ delete(obj);</pre></div></div>
     <div class="kicker reveal"><span class="blip"></span>Two ways in</div>
     <h2 class="h2 reveal" style="font-size:58px;margin-top:4px">How deep do you want to go on SIMD?</h2>
     <div class="endnav reveal" style="margin-top:26px">
-      <a onclick="deck.go(35)" style="cursor:pointer"><span class="label">Start here</span><span class="title">Simple SIMD</span><span class="meta">a plain vectorized loop — SAXPY, step by step</span></a>
-      <a onclick="deck.go(44)" style="cursor:pointer"><span class="label">Skip ahead</span><span class="title">Advanced SIMD</span><span class="meta">what FINUFFT actually does — POET · xsimd · swizzle</span></a>
+      <a onclick="deck.go(40)" style="cursor:pointer"><span class="label">Start here</span><span class="title">Simple SIMD</span><span class="meta">a plain vectorized loop — SAXPY, step by step</span></a>
+      <a onclick="deck.go(49)" style="cursor:pointer"><span class="label">Skip ahead</span><span class="title">Advanced SIMD</span><span class="meta">FINUFFT's hand-written xsimd — the swizzle spreading trick</span></a>
     </div>
     <div class="note reveal" style="margin-top:30px">new to SIMD? take the primer first · otherwise jump straight to the FINUFFT spreading path</div>
   </div>
@@ -1028,109 +1138,6 @@ for (; i &lt; N; ++i) s += x[i] * x[i];          // scalar tail</pre></div></div
     <div class="actions reveal">
       <a class="btn gh" href="https://github.com/xtensor-stack/xsimd" target="_blank" rel="noopener">xsimd on GitHub ↗</a>
       <span class="hint">reduce_add is exactly what interpolation (type-2) needs</span>
-    </div>
-  </div>
-</section>
-
-<!-- ===================== 23 · map the math to the CPU ===================== -->
-<section class="slide">
-  <div class="counter"></div><div class="toprule"></div>
-  <div class="slide-inner center">
-    <h2 class="h-display reveal" style="font-size:104px">Now map the math<br>to the <span class="ac">CPU.</span></h2>
-    <div class="note reveal" style="margin-top:24px;max-width:60ch;margin-left:auto;margin-right:auto">we have a fast, accurate kernel — what's left is making the hot loop run at the speed the hardware allows</div>
-  </div>
-</section>
-
-<!-- ===================== 24 · scalar critical loop ===================== -->
-<section class="slide">
-  <div class="counter"></div><div class="toprule"></div>
-  <div class="slide-inner">
-    <div class="screen-head"><h2 class="h2 reveal">The spreading loop, in full</h2><div class="screen-sub reveal">1D type-1 · scatter each point onto ns grid cells</div></div>
-    <div class="term reveal"><div class="term-bar"><span class="dot r"></span><span class="dot y"></span><span class="dot g"></span><span class="term-tab"><b>spreadinterp.cpp</b> — FINUFFT</span></div>
-    <div class="term-body"><pre class="code" data-lang="cpp" style="font-size:23px;line-height:1.45;max-height:none">T kernel_values[MAX_NSPREAD];
-for (BIGINT i = 0; i &lt; M; ++i) {              // loop over all points
-  const T re0 = dd[2 * i];                    // pts are complex
-  const T im0 = dd[2 * i + 1];
-  BIGINT i1   = (BIGINT)std::ceil(kx[i] - ns2);
-  T x1        = T(i1) - kx[i];
-  ker_eval&lt;T&gt;(kernel_values, ns, opts, x1);
-  BIGINT j = i1 - off1;
-  for (int dx = 0; dx &lt; int(ns); ++dx) {       // critical loop
-    const T k = kernel_values[dx];
-    du[2 * j]     += re0 * k;
-    du[2 * j + 1] += im0 * k;
-    ++j;
-  }
-}</pre></div></div>
-    <div class="actions reveal">
-      <a class="btn gh" href="https://github.com/flatironinstitute/finufft/blob/v2.2.0/src/spreadinterp.cpp#L938" target="_blank" rel="noopener">View real source ↗</a>
-      <span class="hint">the inner loop runs billions of times</span>
-    </div>
-  </div>
-</section>
-
-<!-- ===================== 25 · scalar, but the CPU is SIMD ===================== -->
-<section class="slide">
-  <div class="counter"></div><div class="toprule"></div>
-  <div class="slide-inner center">
-    <h2 class="h1 reveal" style="font-size:80px">This loop is <span class="ac">scalar</span>.<br>The CPU is <span class="ac">SIMD</span>.</h2>
-    <div class="note reveal" style="margin-top:26px;max-width:58ch;margin-left:auto;margin-right:auto">one lane working, the rest idle — we're leaving most of the machine's throughput on the table</div>
-  </div>
-</section>
-
-<!-- ===================== 26 · why the compiler can't fix it ===================== -->
-<section class="slide">
-  <div class="counter"></div><div class="toprule"></div>
-  <div class="slide-inner">
-    <div class="kicker reveal"><span class="blip"></span>Why auto-vectorization isn't enough</div>
-    <ul class="bul reveal" style="margin-top:10px">
-      <li><b>ns is a runtime value</b> — the inner trip count is unknown at compile time, so the vectorizer stays conservative</li>
-      <li><b>auto-vectorization is unreliable</b> — it shifts with the compiler, its version and flags; you can't count on it</li>
-      <li><b>but ns ∈ [2, 16]</b> — small and bounded, so we can <span class="ac">generate one specialized kernel per width</span></li>
-    </ul>
-  </div>
-</section>
-
-<!-- ===================== 27 · POET API ===================== -->
-<section class="slide">
-  <div class="counter"></div><div class="toprule"></div>
-  <div class="slide-inner">
-    <div class="screen-head"><h2 class="h2 reveal">POET: promote ns to compile-time</h2><div class="screen-sub reveal">a C++20 templated lambda — no functor boilerplate, just declare the ranges</div></div>
-    <div class="term reveal"><div class="term-bar"><span class="dot r"></span><span class="dot y"></span><span class="dot g"></span><span class="term-tab"><b>dispatch.cpp</b> — POET</span></div>
-    <div class="term-body"><pre class="code" data-lang="cpp" style="font-size:24px;line-height:1.5;max-height:none">// C++20: a generic lambda with an explicit template parameter list
-auto spread = [&amp;]&lt;int ns, int kerevalmeth&gt;() {
-  spread_subproblem_1d_kernel&lt;T, ns, kerevalmeth&gt;(off1, size1, du, M, kx, dd, opts);
-};
-
-using NsSeq  = poet::make_range&lt;MIN_NSPREAD, MAX_NSPREAD&gt;;
-using KerSeq = std::make_integer_sequence&lt;int, KEREVAL_METHODS&gt;;
-auto params  = std::make_tuple(poet::dispatch_param&lt;NsSeq&gt;{opts.nspread},
-                               poet::dispatch_param&lt;KerSeq&gt;{opts.kerevalmeth});
-
-poet::dispatch(spread, params);   // runtime (ns, meth) -> compile-time template args
-// inside the lambda: ns is constexpr — full unroll, constant-folded coeffs, clean vectors.</pre></div></div>
-    <div class="actions reveal">
-      <a class="btn gh" href="https://github.com/DiamonDinoia/poet" target="_blank" rel="noopener">POET on GitHub ↗</a>
-      <span class="hint">one instantiation per value — keep the range small or compile times explode</span>
-    </div>
-  </div>
-</section>
-
-<!-- ===================== 28 · POET result (compiler vectorizes better) ===================== -->
-<section class="slide">
-  <div class="counter"></div><div class="toprule"></div>
-  <div class="slide-inner">
-    <div class="kicker reveal"><span class="blip"></span>Compile-time ns alone — no hand-written SIMD yet</div>
-    <div class="two reveal" style="margin-top:18px;gap:60px">
-      <div style="display:flex;flex-direction:column;gap:30px;justify-content:center">
-        <div class="body" style="max-width:34ch">With <code>ns</code> fixed at compile time the inner loop has a constant trip count, so the compiler can unroll it and emit clean vector code.</div>
-        <div class="body" style="max-width:34ch">We get a speedup <em>before</em> writing a single intrinsic — just from telling the compiler what it couldn't infer.</div>
-      </div>
-      <figure style="margin:0">
-        <div class="term"><div class="term-bar"><span class="dot r"></span><span class="dot y"></span><span class="dot g"></span><span class="term-tab"><b>benchmark</b> — POET dispatch vs runtime loop</span></div>
-        <div class="term-body" style="background:#fff;padding:18px"><img class="zoomable" src="assets/poet_dynamic_for.svg" alt="POET dispatch speedup benchmark" style="width:100%;display:block"></div></div>
-        <figcaption style="font-family:var(--mono);font-size:15px;color:var(--dim);margin-top:12px;letter-spacing:.03em">POET microbenchmark · github.com/DiamonDinoia/poet · MIT</figcaption>
-      </figure>
     </div>
   </div>
 </section>
@@ -1602,34 +1609,6 @@ function baryEval(x,xs,fs,w){let num=0,den=0;for(let j=0;j<xs.length;j++){if(x==
   next.addEventListener("click",()=>{if(idx<steps.length-1){idx++;render();}});
   prev.addEventListener("click",()=>{if(idx>0){idx--;render();}});
   demos.swizzle=()=>{idx=0;render();};render();
-})();
-
-/* --- fit once / eval forever race --- */
-(function(){const cv=document.getElementById("raceCanvas");if(!cv)return;const ctx=cv.getContext("2d");
-  const lo=1.1,hi=5.0,fcostly=x=>{let s=0;for(let k=1;k<=400;k++)s+=Math.pow(1/k,x);return s;};
-  const PAN=8,DEG=8;let panels=[];
-  function build(){panels=[];const pw=(hi-lo)/PAN;for(let p=0;p<PAN;p++){const a=lo+p*pw,b=a+pw,xs=[],fs=[];
-    for(let j=0;j<=DEG;j++){const x=(a+b)/2+(b-a)/2*Math.cos(Math.PI*j/DEG);xs.push(x);fs.push(fcostly(x));}panels.push({a,b,xs,fs,w:baryW(xs)});}}
-  function surr(x){const pw=(hi-lo)/PAN,p=Math.min(PAN-1,Math.max(0,Math.floor((x-lo)/pw))),P=panels[p];return baryEval(x,P.xs,P.fs,P.w);}
-  function nf(n){return n.toLocaleString();}
-  function setN(){document.getElementById("raceNval").textContent=nf(+document.getElementById("raceN").value);}
-  function draw(s){const W=cv.width,H=cv.height;ctx.clearRect(0,0,W,H);ctx.font="22px JetBrains Mono";
-    const x0=300,maxW=W-x0-300,bh=66,y1=110,y2=230;
-    ctx.fillStyle=COL.dim;ctx.fillText("expensive  f(x)",40,y1-18);ctx.fillText("polynomial surrogate",40,y2-18);
-    const bar=(y,fr,col,lbl)=>{ctx.fillStyle="#0e1a1e";ctx.fillRect(x0,y,maxW,bh);ctx.fillStyle=col;ctx.fillRect(x0,y,maxW*fr,bh);ctx.fillStyle="#dbeef0";ctx.font="26px JetBrains Mono";if(lbl)ctx.fillText(lbl,x0+maxW*Math.min(fr,.8)+14,y+bh/2+9);};
-    if(!s){ctx.fillStyle=COL.dim;ctx.font="24px JetBrains Mono";ctx.fillText("press run — times the same N evaluations both ways",x0,180);return;}
-    bar(y1,1,COL.dimbar,s.te.toFixed(1)+" ms");bar(y2,s.fr,COL.cyan,s.ts.toFixed(1)+" ms");
-    ctx.fillStyle=COL.green;ctx.font="48px JetBrains Mono";ctx.fillText(s.sp.toFixed(0)+"× faster",x0,y2+150);
-    ctx.fillStyle=COL.blue;ctx.font="22px JetBrains Mono";ctx.fillText("max error vs f:  "+s.err.toExponential(2),x0+360,y2+150);}
-  function run(){if(!panels.length)build();const N=+document.getElementById("raceN").value;const X=new Float64Array(N);for(let i=0;i<N;i++)X[i]=lo+(hi-lo)*Math.random();
-    let t=performance.now(),a=0;for(let i=0;i<N;i++)a+=fcostly(X[i]);const te=performance.now()-t;
-    t=performance.now();let b=0;for(let i=0;i<N;i++)b+=surr(X[i]);const ts=performance.now()-t;
-    let err=0;for(let i=0;i<2000;i++){const x=lo+(hi-lo)*i/2000;err=Math.max(err,Math.abs(surr(x)-fcostly(x)));}
-    draw({te,ts,fr:Math.max(.012,ts/te),sp:te/ts,err});
-    document.getElementById("raceReadout").innerHTML="N = <b>"+nf(N)+"</b> · fit once, then "+nf(N)+" cheap evals";}
-  document.getElementById("raceN").addEventListener("input",setN);
-  document.getElementById("raceRun").addEventListener("click",run);
-  setN();demos.race=()=>draw(null);
 })();
 
 /* --- live treeweave WASM: fit ζ(s) in the browser, race vs native JS ---
