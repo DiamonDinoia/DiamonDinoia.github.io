@@ -108,7 +108,7 @@ img,video,canvas,svg{max-width:100%;max-height:100%}
 .flavors{display:flex;flex-direction:column;gap:30px;width:100%;margin-top:8px}
 .flavor{display:grid;grid-template-columns:380px 1fr;align-items:center;gap:54px;border-top:1px solid var(--term-border);padding-top:26px}
 .flavor-l{font-family:var(--disp);font-weight:600;font-size:48px;color:var(--cyan);text-transform:uppercase;line-height:1}
-.flavor-l span{display:block;font-family:var(--mono);font-size:22px;color:var(--dim);letter-spacing:.12em;margin-top:10px}
+.flavor-l span{display:block;font-family:var(--mono);font-size:22px;color:var(--dim);letter-spacing:.12em;margin-top:10px;text-transform:uppercase}
 .flavor .katex-display{margin:0;text-align:left}
 
 /* tags */
@@ -258,6 +258,60 @@ img.zoomable:hover{filter:brightness(1.04)}
   box-shadow:0 0 0 2px var(--cyan),0 40px 160px -40px rgba(0,0,0,.9)}
 .lightbox .lb-hint{position:fixed;bottom:22px;left:50%;transform:translateX(-50%);
   font-family:var(--mono);font-size:16px;color:var(--dim);letter-spacing:.05em}
+
+/* ===========================================================================
+   CLICK-TO-EXPAND — question chips + full-slide overlay panels
+   (reuses the .term.swz full-screen pattern: a panel fills the stage on demand)
+   =========================================================================== */
+.qchips{display:flex;gap:24px;flex-wrap:wrap;margin-top:14px}
+.center .qchips{justify-content:center}
+.qchip{display:inline-flex;align-items:center;gap:16px;cursor:pointer;
+  font-family:var(--mono);font-size:25px;letter-spacing:.02em;color:var(--cyan);
+  border:1px solid var(--cyan-deep);border-radius:999px;padding:16px 30px;background:rgba(47,243,224,.05);
+  transition:all .2s ease}
+.qchip:hover{border-color:var(--cyan);background:rgba(47,243,224,.14);transform:translateY(-2px)}
+.qchip::before{content:'?';font-weight:700;flex:0 0 auto;width:32px;height:32px;border-radius:50%;
+  background:rgba(47,243,224,.16);display:inline-flex;align-items:center;justify-content:center;color:var(--cyan-soft)}
+.qchip .arrow{color:var(--dim)}
+/* inline answer reveal (the cost slide) */
+.answer{display:none;margin-top:8px}
+.answer.open{display:block;animation:swzExpand .45s var(--ease) both}
+/* full-slide overlay panel (kernel deep-dives, language examples) */
+.expand-panel{position:absolute;inset:30px 44px 104px;z-index:7;display:none;flex-direction:column;
+  justify-content:center;gap:26px;overflow:auto;padding:60px 78px;
+  background:var(--bg-2);border:1px solid var(--term-border);border-radius:14px;
+  box-shadow:0 0 0 2px var(--cyan),0 0 150px -30px rgba(47,243,224,.6),0 60px 160px -50px rgba(0,0,0,.9)}
+.expand-panel.open{display:flex;animation:swzExpand .55s var(--ease) both}
+.expand-panel.code-panel{justify-content:flex-start;gap:18px}
+.expand-panel .panel-h{font-family:var(--disp);font-weight:600;font-size:58px;color:var(--ink);letter-spacing:-.01em}
+.expand-panel .panel-h .ac{color:var(--cyan)}
+.panel-close{position:absolute;top:24px;right:28px;z-index:9;font-family:var(--mono);font-size:20px;letter-spacing:.06em;
+  text-transform:uppercase;cursor:pointer;padding:11px 22px;border:1px solid var(--cyan-deep);border-radius:8px;
+  background:rgba(47,243,224,.07);color:var(--ink);transition:all .2s ease}
+.panel-close:hover{border-color:var(--cyan);background:rgba(47,243,224,.16);transform:translateY(-1px)}
+
+/* ===========================================================================
+   COLLABORATORS — circular headshots
+   =========================================================================== */
+.people{display:grid;grid-template-columns:repeat(3,1fr);gap:54px 70px;margin-top:20px}
+.person{display:flex;flex-direction:column;align-items:center;text-align:center;gap:18px}
+.person img{width:230px;height:230px;border-radius:50%;object-fit:cover;border:1px solid var(--cyan-deep);
+  box-shadow:0 0 0 1px rgba(47,243,224,.15),0 0 60px -20px rgba(47,243,224,.55),0 30px 70px -40px rgba(0,0,0,.9)}
+.person .nm{font-family:var(--disp);font-weight:600;font-size:38px;color:var(--ink);line-height:1.05}
+.person .aff{font-family:var(--mono);font-size:20px;color:var(--dim);letter-spacing:.02em;line-height:1.35}
+
+/* ===========================================================================
+   LANGUAGE PICKER + live-demo / benchmark helpers
+   =========================================================================== */
+.lang-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:30px;margin-top:26px}
+.lang-btn{display:flex;flex-direction:column;gap:10px;cursor:pointer;padding:34px 38px;text-align:left;
+  border:1px solid var(--term-border);border-radius:12px;background:var(--term-bg);transition:all .25s var(--ease)}
+.lang-btn:hover{border-color:var(--cyan);background:rgba(47,243,224,.05);transform:translateY(-4px)}
+.lang-btn .lname{font-family:var(--disp);font-weight:600;font-size:46px;color:var(--ink)}
+.lang-btn .lsub{font-family:var(--mono);font-size:20px;color:var(--dim);letter-spacing:.02em}
+.lang-btn .arrow{font-family:var(--mono);font-size:20px;color:var(--cyan)}
+.install-line{font-family:var(--mono);font-size:23px;color:var(--cyan-soft);letter-spacing:.02em;margin-top:6px}
+.install-line .lbl{color:var(--cyan);text-transform:uppercase;letter-spacing:.14em;font-size:18px;margin-right:14px}
 </style>
 </head>
 <body>
@@ -275,14 +329,31 @@ img.zoomable:hover{filter:brightness(1.04)}
   </div>
 </section>
 
-<!-- ===================== 2 · HOOK ===================== -->
+<!-- ===================== 2 · COLLABORATORS ===================== -->
+<section class="slide">
+  <div class="counter"></div><div class="toprule"></div>
+  <div class="slide-inner">
+    <div class="kicker reveal"><span class="blip"></span>Built with</div>
+    <h2 class="h1 reveal" style="font-size:78px">Collaborators</h2>
+    <div class="people reveal">
+      <div class="person"><img src="assets/people/barnett.jpg" alt="Alex Barnett"><div><div class="nm">Alex Barnett</div><div class="aff">Flatiron Institute · CCM</div></div></div>
+      <div class="person"><img src="assets/people/barbone.jpg" alt="Marco Barbone"><div><div class="nm">Marco Barbone</div><div class="aff">Flatiron Institute · CCM</div></div></div>
+      <div class="person"><img src="assets/people/lu.jpg" alt="Libin Lu"><div><div class="nm">Libin Lu</div><div class="aff">Flatiron Institute · CCM</div></div></div>
+      <div class="person"><img src="assets/people/blackwell.jpg" alt="Robert Blackwell"><div><div class="nm">Robert Blackwell</div><div class="aff">Flatiron Institute · CCM</div></div></div>
+      <div class="person"><img src="assets/people/anden.jpg" alt="Joakim Andén"><div><div class="nm">Joakim Andén</div><div class="aff">Flatiron Institute · CCM</div></div></div>
+      <div class="person"><img src="assets/people/reinecke.jpg" alt="Martin Reinecke"><div><div class="nm">Martin Reinecke</div><div class="aff">Max Planck Institute<br>for Astrophysics</div></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== 3 · HOOK ===================== -->
 <section class="slide">
   <div class="counter"></div><div class="toprule"></div>
   <div class="slide-inner"><div class="two">
     <div>
       <div class="kicker reveal" style="margin-bottom:30px"><span class="blip"></span>Why this matters</div>
       <h2 class="h1 reveal">One inner<br>loop, <span class="ac">everywhere</span></h2>
-      <div class="note reveal" style="margin-top:30px;max-width:30ch">The first image of a black hole was reconstructed with a NUFFT. So was your last MRI.</div>
+      <div class="note reveal" style="margin-top:30px;max-width:30ch">The first image of a black hole was reconstructed with a NUFFT — maybe even your last MRI.</div>
     </div>
     <figure class="reveal" style="margin:0">
       <img src="assets/m87.jpg" alt="Event Horizon Telescope image of the M87 black hole" style="width:100%;border:1px solid var(--term-border);border-radius:10px;box-shadow:0 44px 120px -50px rgba(0,0,0,.9),0 0 80px -40px rgba(47,243,224,.32)">
@@ -349,6 +420,22 @@ img.zoomable:hover{filter:brightness(1.04)}
   </div>
 </section>
 
+<!-- ===================== 7b · naive cost O(MN) ===================== -->
+<section class="slide">
+  <div class="counter"></div><div class="toprule"></div>
+  <div class="slide-inner center">
+    <div class="kicker reveal"><span class="blip"></span>The naive cost</div>
+    <div class="formula reveal" style="font-size:78px">\[ f_k=\sum_{j=1}^{M} c_j\,e^{\,ikx_j} \]</div>
+    <div class="qchips reveal"><span class="qchip" data-toggle="costAnswer">How much does it cost?<span class="arrow">▾</span></span></div>
+    <div class="answer" id="costAnswer">
+      <div class="formula" style="font-size:64px;margin-top:22px">\[ \Rightarrow\;\; \textcolor{#2ff3e0}{\mathcal{O}(MN)} \]</div>
+      <div class="formula-cap">N modes × M points — evaluating the sum directly is quadratic when M ∼ N</div>
+      <div class="body" style="margin:24px auto 0;max-width:58ch">The NUFFT gets the same answer in \( \mathcal{O}\!\left(\sigma^{d} N\log N + M\,|\log\varepsilon|^{d}\right) \) — <b>spread</b> to a fine grid, <b>FFT</b>, <b>deconvolve</b>.</div>
+      <div class="formula-cap" style="margin-top:16px">σ = upsampling · d = dimension · ε = tolerance · kernel width \(w \sim |\log\varepsilon|\), so each point touches \(w^{d}\) cells</div>
+    </div>
+  </div>
+</section>
+
 <!-- ===================== 8 · DEMO nufft ===================== -->
 <section class="slide" data-demo="nufft">
   <div class="counter"></div><div class="toprule"></div>
@@ -361,11 +448,25 @@ img.zoomable:hover{filter:brightness(1.04)}
     <div class="controls reveal">
       <div class="seg" id="nufftSteps">
         <button data-step="0" class="on">1 · points</button><button data-step="1">2 · spread</button>
-        <button data-step="2">3 · FFT</button><button data-step="3">4 · truncate</button>
+        <button data-step="2">3 · FFT</button><button data-step="3">4 · truncate</button><button data-step="4">5 · deconvolve</button>
       </div>
       <button id="nufftShuffle">new points</button>
       <span class="readout" id="nufftReadout"></span>
     </div>
+  </div>
+</section>
+
+<!-- ===================== 8b · the knobs (ε, σ, ns) ===================== -->
+<section class="slide">
+  <div class="counter"></div><div class="toprule"></div>
+  <div class="slide-inner">
+    <div class="kicker reveal"><span class="blip"></span>Three knobs set everything</div>
+    <div class="flavors reveal">
+      <div class="flavor"><div class="flavor-l" style="text-transform:none">ε<span>tolerance</span></div><div class="body" style="margin:0;max-width:none">the accuracy you ask for — every other choice follows from it</div></div>
+      <div class="flavor"><div class="flavor-l" style="text-transform:none">σ<span>upsampling</span></div><div class="body" style="margin:0;max-width:none">the fine grid has σN cells (here σ = 2) — room for the kernel to live</div></div>
+      <div class="flavor"><div class="flavor-l" style="text-transform:none">w = n<sub>s</sub><span>kernel width</span></div><div class="body" style="margin:0;max-width:none">cells each point touches — grows like w ∼ |log ε|</div></div>
+    </div>
+    <div class="formula-cap reveal">tighter ε → wider kernel → more spreading work · σ trades grid size against kernel width</div>
   </div>
 </section>
 
@@ -412,14 +513,46 @@ img.zoomable:hover{filter:brightness(1.04)}
   </div>
 </section>
 
-<!-- ===================== 12 · the exact kernel ===================== -->
+<!-- ===================== 12 · the exact kernel (with opt-in deep dives) ===================== -->
 <section class="slide">
   <div class="counter"></div><div class="toprule"></div>
   <div class="slide-inner center">
     <div class="kicker reveal"><span class="blip"></span>The optimal kernel · FINUFFT today</div>
-    <div class="formula reveal" style="font-size:62px">\[ \int_{-1}^{1} e^{\,i c\,z t}\,\psi_0(t)\,dt = \textcolor{#2ff3e0}{\lambda_0}\,\psi_0(z), \quad z\in[-1,1] \]</div>
-    <div class="formula-cap reveal">the order-0 prolate spheroidal wavefunction Ψ₀ (“prolate0”) — replaces the ES kernel used through 2025</div>
-    <div class="body reveal" style="margin-top:26px;max-width:54ch">Provably optimal — and genuinely expensive to evaluate.</div>
+    <div class="formula reveal" style="font-size:62px">\[ \int_{-1}^{1} e^{\,i \textcolor{#e3b341}{c}\,z t}\,\psi_0(t)\,dt = \textcolor{#2ff3e0}{\lambda_0}\,\psi_0(z), \quad z\in[-1,1] \]</div>
+    <div class="formula-cap reveal">\(\psi_0\) the order-0 prolate spheroidal wavefunction (“prolate0”) · \(\lambda_0\) its eigenvalue · \(\textcolor{#e3b341}{c}\) the time–bandwidth product (kernel half-width × half-bandwidth) — distinct from the strengths \(c_j\)</div>
+    <div class="body reveal" style="margin-top:24px;max-width:56ch">The spreading kernel is a rescaling, \( \varphi(x)=\psi_0(2x/w) \). Provably optimal — and genuinely expensive to evaluate. <span style="color:var(--dim)">Replaces the ES kernel used through 2025.</span></div>
+    <div class="qchips reveal">
+      <span class="qchip" data-expand="panelOptimal">Why is it the optimal kernel?<span class="arrow">↗</span></span>
+      <span class="qchip" data-expand="panelDeconv">Why do we deconvolve?<span class="arrow">↗</span></span>
+    </div>
+  </div>
+  <!-- deep dive 1: L² energy concentration -->
+  <div class="expand-panel" id="panelOptimal">
+    <button class="panel-close">✕ back</button>
+    <div class="panel-h">Why it is the <span class="ac">optimal</span> kernel</div>
+    <div class="formula" style="font-size:50px">\[ \psi_0=\arg\max_{\psi}\;\frac{\displaystyle\int_{-1}^{1}\!|\psi(t)|^{2}\,dt}{\displaystyle\int_{-\infty}^{\infty}\!|\psi(t)|^{2}\,dt}\quad\text{subject to }\ \widehat\psi\ \text{band-limited to }[-c,c] \]</div>
+    <div class="formula-cap">among all band-limited functions, ψ₀ packs the largest fraction \(\lambda_0\) of its \(L^2\) energy into [−1, 1]</div>
+    <div class="body" style="max-width:64ch">Maximal energy concentration = minimal spill outside the kernel's support — and that spill is exactly the spreading error.</div>
+  </div>
+  <!-- deep dive 2: φ̂ and deconvolution (draws #phihatCanvas on open) -->
+  <div class="expand-panel code-panel" id="panelDeconv" data-demo="phihat">
+    <button class="panel-close">✕ back</button>
+    <div class="panel-h">φ̂ — and why we <span class="ac">deconvolve</span></div>
+    <div class="formula" style="font-size:42px;margin:0">\[ \widehat\varphi(k)=\int \varphi(x)\,e^{-ikx}\,dx, \qquad \hat f_k=\frac{(\text{FFT of fine grid})_k}{\widehat\varphi(k)} \]</div>
+    <div class="term"><div class="term-bar"><span class="dot r"></span><span class="dot y"></span><span class="dot g"></span><span class="term-tab"><b>phihat</b> — kernel spectrum over the target band</span></div>
+      <div class="term-body"><div class="demo-stage"><canvas id="phihatCanvas" width="1520" height="350"></canvas></div></div></div>
+    <div class="note" style="max-width:72ch">φ̂ rolls off toward the band edges, so those modes come out attenuated — the deconvolve step divides by φ̂ to flatten them back.</div>
+  </div>
+</section>
+
+<!-- ===================== 12b · prolate0, plotted ===================== -->
+<section class="slide" data-demo="prolate">
+  <div class="counter"></div><div class="toprule"></div>
+  <div class="slide-inner">
+    <div class="screen-head"><h2 class="h2 reveal">prolate0, plotted</h2><div class="screen-sub reveal">ψ₀(t) on [−1, 1] · the kernel φ is a rescaling of this</div></div>
+    <div class="term reveal"><div class="term-bar"><span class="dot r"></span><span class="dot y"></span><span class="dot g"></span><span class="term-tab"><b>prolate0</b> — order-0 PSWF, c = 6 (power iteration on the sinc operator)</span></div>
+      <div class="term-body"><div class="demo-stage"><canvas id="prolateCanvas" width="1520" height="440"></canvas></div></div></div>
+    <div class="note reveal" style="margin-top:18px;max-width:66ch">Smooth, even, concentrated — it tapers toward 0 at the ends, so a point's energy stays inside its \(w\) cells. The hot loop evaluates \( \varphi(x)=\psi_0(2x/w) \).</div>
   </div>
 </section>
 
@@ -592,130 +725,158 @@ img.zoomable:hover{filter:brightness(1.04)}
   </div>
 </section>
 
-<!-- treeweave · one stable C ABI, six languages (one per slide) -->
-<section class="slide">
-  <div class="counter"></div><div class="toprule"></div>
-  <div class="slide-inner center">
-    <h2 class="h-display reveal" style="font-size:96px">One call,<br><span class="ac">six languages</span></h2>
-    <div class="note reveal" style="margin-top:24px;max-width:56ch;margin-left:auto;margin-right:auto">one stable C ABI underneath · C++ is header-only · C · Fortran · Python · Julia · MATLAB / Octave</div>
-  </div>
-</section>
-
-<!-- C++ -->
+<!-- treeweave · one stable C ABI, six languages — interactive picker -->
 <section class="slide">
   <div class="counter"></div><div class="toprule"></div>
   <div class="slide-inner">
-    <div class="screen-head"><h2 class="h2 reveal">treeweave — C++</h2><div class="screen-sub reveal">the native, header-only API</div></div>
-    <div class="term reveal"><div class="term-bar"><span class="dot r"></span><span class="dot y"></span><span class="dot g"></span><span class="term-tab"><b>main.cpp</b></span></div>
-    <div class="term-body"><pre class="code" data-lang="cpp" style="font-size:28px;line-height:1.6;max-height:none">#include &lt;treeweave/treeweave.hpp&gt;
-
-auto runge = [](double x){ return 1.0 / (1.0 + 25.0*x*x); };
-
-auto fn = treeweave::fit(runge, -1.0, 1.0, 1e-10);
-double y = fn(0.3);            // call it like the original</pre></div></div>
-    <div class="actions reveal"><span class="tag">install</span><span class="hint">header-only — <code>FetchContent</code> or <code>find_package(treeweave)</code></span></div>
+    <div class="kicker reveal"><span class="blip"></span>One call, six languages</div>
+    <h2 class="h2 reveal" style="font-size:60px;margin-top:4px">Same target — <span class="ac">ζ(s) = Σ<sub>k=1..N</sub> k⁻ˢ</span> on [2, 10] to 1e-10</h2>
+    <div class="note reveal" style="margin-top:6px">one stable C ABI underneath · pick a language to see the self-contained example + install</div>
+    <div class="lang-grid reveal">
+      <div class="lang-btn" data-expand="langCpp"><div class="lname">C++</div><div class="lsub">header-only, native API</div><div class="arrow">view example ↗</div></div>
+      <div class="lang-btn" data-expand="langC"><div class="lname">C</div><div class="lsub">the stable ABI everything is built on</div><div class="arrow">view example ↗</div></div>
+      <div class="lang-btn" data-expand="langFortran"><div class="lname">Fortran</div><div class="lsub">bind(C) callbacks</div><div class="arrow">view example ↗</div></div>
+      <div class="lang-btn" data-expand="langPy"><div class="lname">Python</div><div class="lsub">NumPy-native</div><div class="arrow">view example ↗</div></div>
+      <div class="lang-btn" data-expand="langJl"><div class="lname">Julia</div><div class="lsub">fit returns a callable</div><div class="arrow">view example ↗</div></div>
+      <div class="lang-btn" data-expand="langM"><div class="lname">MATLAB / Octave</div><div class="lsub">one source builds for both</div><div class="arrow">view example ↗</div></div>
+    </div>
   </div>
-</section>
 
-<!-- C -->
-<section class="slide">
-  <div class="counter"></div><div class="toprule"></div>
-  <div class="slide-inner">
-    <div class="screen-head"><h2 class="h2 reveal">treeweave — C</h2><div class="screen-sub reveal">the stable C ABI every wrapper is built on</div></div>
-    <div class="term reveal"><div class="term-bar"><span class="dot r"></span><span class="dot y"></span><span class="dot g"></span><span class="term-tab"><b>simple.c</b></span></div>
-    <div class="term-body"><pre class="code" data-lang="cpp" style="font-size:26px;line-height:1.55;max-height:none">#include &lt;treeweave.h&gt;
+  <!-- C++ -->
+  <div class="expand-panel code-panel" id="langCpp">
+    <button class="panel-close">✕ back</button>
+    <div class="panel-h">treeweave — <span class="ac">C++</span></div>
+    <div class="term"><div class="term-bar"><span class="dot r"></span><span class="dot y"></span><span class="dot g"></span><span class="term-tab"><b>zeta.cpp</b></span></div>
+    <div class="term-body"><pre class="code" data-lang="cpp" style="font-size:26px;line-height:1.55;max-height:none">#include &lt;treeweave/treeweave.hpp&gt;
+#include &lt;cmath&gt;
 
-void f(const double *x, double *y, void *ctx){ y[0] = exp(x[0]); }
+constexpr int N = 50;
+auto zeta = [](double s){                 // ζ(s) = Σ_{k=1..N} k^(-s)
+  double a = 0.0;
+  for (int k = 1; k &lt;= N; ++k) a += std::pow(k, -s);
+  return a;
+};
 
-const double a[1] = {0.0}, b[1] = {1.0};
-treeweave_t fn = treeweave_fit(f, 1, 1, a, b, 1e-10, NULL, NULL);
+auto approx = treeweave::fit(zeta, 2., 10., 1e-10);
+double y = approx(3.5);                    // call it like the original</pre></div></div>
+    <div class="install-line"><span class="lbl">install</span>header-only — <code>FetchContent</code> from github.com/DiamonDinoia/treeweave, or <code>find_package(treeweave)</code></div>
+  </div>
 
-double x = 0.3, y;
+  <!-- C -->
+  <div class="expand-panel code-panel" id="langC">
+    <button class="panel-close">✕ back</button>
+    <div class="panel-h">treeweave — <span class="ac">C</span></div>
+    <div class="term"><div class="term-bar"><span class="dot r"></span><span class="dot y"></span><span class="dot g"></span><span class="term-tab"><b>zeta.c</b></span></div>
+    <div class="term-body"><pre class="code" data-lang="cpp" style="font-size:25px;line-height:1.5;max-height:none">#include &lt;treeweave.h&gt;
+#include &lt;math.h&gt;
+
+static void kernel(const double *x, double *y, void *ctx){
+  double a = 0.0;                          /* ζ(s) = Σ_{k=1..N} k^(-s) */
+  for (int k = 1; k &lt;= 50; ++k) a += pow(k, -x[0]);
+  y[0] = a;
+}
+
+const double a[1] = {2.0}, b[1] = {10.0};
+treeweave_t fn = treeweave_fit(kernel, 1, 1, a, b, 1e-10, NULL, NULL);
+
+double x = 3.5, y;
 treeweave_eval(fn, &amp;x, &amp;y);
 treeweave_free(fn);</pre></div></div>
-    <div class="actions reveal"><span class="tag">install</span><span class="hint">link <code>libtreeweave_c</code> · <code>#include &lt;treeweave.h&gt;</code></span></div>
+    <div class="install-line"><span class="lbl">install</span>grab the prebuilt release archive, link <code>libtreeweave_c</code>, <code>#include &lt;treeweave.h&gt;</code></div>
   </div>
-</section>
 
-<!-- Python -->
-<section class="slide">
-  <div class="counter"></div><div class="toprule"></div>
-  <div class="slide-inner">
-    <div class="screen-head"><h2 class="h2 reveal">treeweave — Python</h2><div class="screen-sub reveal">drop-in, NumPy-native</div></div>
-    <div class="term reveal"><div class="term-bar"><span class="dot r"></span><span class="dot y"></span><span class="dot g"></span><span class="term-tab"><b>demo.py</b></span></div>
-    <div class="term-body"><pre class="code" data-lang="py" style="font-size:28px;line-height:1.6;max-height:none">import numpy as np, treeweave
-
-approx = treeweave.fit(lambda x: np.exp(x[0]), 0.0, 1.0, tol=1e-10)
-ys = approx(np.linspace(0, 1, 11))   # vectorized: NumPy in, NumPy out</pre></div></div>
-    <div class="actions reveal"><span class="tag">install</span><span class="hint"><code>pip install treeweave</code></span></div>
-  </div>
-</section>
-
-<!-- Julia -->
-<section class="slide">
-  <div class="counter"></div><div class="toprule"></div>
-  <div class="slide-inner">
-    <div class="screen-head"><h2 class="h2 reveal">treeweave — Julia</h2><div class="screen-sub reveal">fit returns a callable handle</div></div>
-    <div class="term reveal"><div class="term-bar"><span class="dot r"></span><span class="dot y"></span><span class="dot g"></span><span class="term-tab"><b>demo.jl</b></span></div>
-    <div class="term-body"><pre class="code" data-lang="jl" style="font-size:28px;line-height:1.6;max-height:none">using Treeweave
-
-f = x -> exp(0.5x) + sin(3x)
-approx = fit(f, 0.0, 2.0, 1e-10)
-ys = approx(range(0, 2; length=1001))   # call the handle directly</pre></div></div>
-    <div class="actions reveal"><span class="tag">install</span><span class="hint"><code>Pkg.add(url="https://github.com/DiamonDinoia/treeweave", subdir="bindings/julia/Treeweave")</code></span></div>
-  </div>
-</section>
-
-<!-- MATLAB / Octave -->
-<section class="slide">
-  <div class="counter"></div><div class="toprule"></div>
-  <div class="slide-inner">
-    <div class="screen-head"><h2 class="h2 reveal">treeweave — MATLAB / Octave</h2><div class="screen-sub reveal">one source builds for both</div></div>
-    <div class="term reveal"><div class="term-bar"><span class="dot r"></span><span class="dot y"></span><span class="dot g"></span><span class="term-tab"><b>demo.m</b></span></div>
-    <div class="term-body"><pre class="code" data-lang="m" style="font-size:27px;line-height:1.6;max-height:none">f   = @(x) exp(0.5*x(1)) + sin(3*x(1));
-obj = treeweave(f, [0], [1], 1e-8, 'dim', 1, 'out_dim', 1);
-
-Yhat = obj.eval(linspace(0, 1, 500)');
-delete(obj);</pre></div></div>
-    <div class="actions reveal"><span class="tag">install</span><span class="hint">build with <code>-DTREEWEAVE_BUILD_MATLAB=ON</code>, then <code>addpath(build)</code></span></div>
-  </div>
-</section>
-
-<!-- Fortran -->
-<section class="slide">
-  <div class="counter"></div><div class="toprule"></div>
-  <div class="slide-inner">
-    <div class="screen-head"><h2 class="h2 reveal">treeweave — Fortran</h2><div class="screen-sub reveal">the C ABI with bind(C) callbacks</div></div>
-    <div class="term reveal"><div class="term-bar"><span class="dot r"></span><span class="dot y"></span><span class="dot g"></span><span class="term-tab"><b>example.f90</b></span></div>
-    <div class="term-body"><pre class="code" data-lang="f" style="font-size:25px;line-height:1.5;max-height:none">use treeweave
+  <!-- Fortran -->
+  <div class="expand-panel code-panel" id="langFortran">
+    <button class="panel-close">✕ back</button>
+    <div class="panel-h">treeweave — <span class="ac">Fortran</span></div>
+    <div class="term"><div class="term-bar"><span class="dot r"></span><span class="dot y"></span><span class="dot g"></span><span class="term-tab"><b>zeta.f90</b></span></div>
+    <div class="term-body"><pre class="code" data-lang="f" style="font-size:24px;line-height:1.45;max-height:none">use treeweave
 use iso_c_binding
-! the callback must be a bind(C) procedure (no captures)
+! kernel_zeta is a bind(C) procedure: y(1) = Σ_{k=1..N} x(1)^(-k)
 
-real(c_double) :: a(1) = 0, b(1) = 1, x(1) = 0.3_c_double, y(1)
+real(c_double) :: a(1) = 2, b(1) = 10, x(1) = 3.5_c_double, y(1)
 type(c_ptr)    :: h
 
-h = treeweave_fit(c_funloc(kernel_exp), 1, 1, a, b, 1.0e-10_c_double, &amp;
+h = treeweave_fit(c_funloc(kernel_zeta), 1, 1, a, b, 1.0d-10, &amp;
                   c_null_ptr, c_null_ptr)
 call treeweave_eval(h, x, y)
 h = treeweave_free(h)</pre></div></div>
-    <div class="actions reveal"><span class="tag">install</span><span class="hint">build with <code>-DTREEWEAVE_BUILD_FORTRAN=ON</code> · <code>use treeweave</code></span></div>
+    <div class="install-line"><span class="lbl">install</span>build with <code>-DTREEWEAVE_BUILD_FORTRAN=ON</code> · <code>use treeweave</code></div>
+  </div>
+
+  <!-- Python -->
+  <div class="expand-panel code-panel" id="langPy">
+    <button class="panel-close">✕ back</button>
+    <div class="panel-h">treeweave — <span class="ac">Python</span></div>
+    <div class="term"><div class="term-bar"><span class="dot r"></span><span class="dot y"></span><span class="dot g"></span><span class="term-tab"><b>zeta.py</b></span></div>
+    <div class="term-body"><pre class="code" data-lang="py" style="font-size:26px;line-height:1.55;max-height:none">import numpy as np, treeweave
+
+N = 50                                    # ζ(s) = Σ_{k=1..N} k^(-s)
+approx = treeweave.fit(lambda x: np.sum(np.arange(1., N+1.)**(-x[0])),
+                       2., 10., tol=1e-10)
+
+ys = approx(np.linspace(2, 10, 1000))     # vectorized: NumPy in, NumPy out</pre></div></div>
+    <div class="install-line"><span class="lbl">install</span><code>pip install treeweave</code></div>
+  </div>
+
+  <!-- Julia -->
+  <div class="expand-panel code-panel" id="langJl">
+    <button class="panel-close">✕ back</button>
+    <div class="panel-h">treeweave — <span class="ac">Julia</span></div>
+    <div class="term"><div class="term-bar"><span class="dot r"></span><span class="dot y"></span><span class="dot g"></span><span class="term-tab"><b>zeta.jl</b></span></div>
+    <div class="term-body"><pre class="code" data-lang="jl" style="font-size:26px;line-height:1.55;max-height:none">using Treeweave
+
+N = 50                                    # ζ(s) = Σ_{k=1..N} k^(-s)
+approx = fit(s -> sum(k -> k^(-s), 1:N), 2., 10., 1e-10)
+
+ys = approx(range(2, 10; length=1000))    # call the handle directly</pre></div></div>
+    <div class="install-line"><span class="lbl">install</span><code>Pkg.add(url="https://github.com/DiamonDinoia/treeweave", subdir="bindings/julia/Treeweave")</code></div>
+  </div>
+
+  <!-- MATLAB / Octave -->
+  <div class="expand-panel code-panel" id="langM">
+    <button class="panel-close">✕ back</button>
+    <div class="panel-h">treeweave — <span class="ac">MATLAB / Octave</span></div>
+    <div class="term"><div class="term-bar"><span class="dot r"></span><span class="dot y"></span><span class="dot g"></span><span class="term-tab"><b>zeta.m</b></span></div>
+    <div class="term-body"><pre class="code" data-lang="m" style="font-size:26px;line-height:1.55;max-height:none">N   = 50;                                 % ζ(s) = Σ_{k=1..N} k^(-s)
+obj = treeweave(@(x) sum((1:N).^(-x(1))), 2, 10, 1e-10);
+
+Yhat = obj.eval(linspace(2, 10, 1000)');
+delete(obj);</pre></div></div>
+    <div class="install-line"><span class="lbl">install</span>download the prebuilt build, then <code>addpath(folder)</code> — one source builds for both</div>
   </div>
 </section>
 
-<!-- treeweave · benchmark placeholder (NEW · numbers to come) -->
+<!-- treeweave · live WASM demo (real build, fetched from a CDN) -->
 <section class="slide">
   <div class="counter"></div><div class="toprule"></div>
   <div class="slide-inner">
-    <div class="screen-head"><h2 class="h2 reveal">How fast is “evaluate forever”?</h2><div class="screen-sub reveal">surrogate throughput vs. calling the original f</div></div>
-    <div class="two reveal" style="margin-top:8px;grid-template-columns:1.4fr 1fr;gap:48px;height:auto;align-items:center">
+    <div class="screen-head"><h2 class="h2 reveal">Run it live</h2><div class="screen-sub reveal">the real treeweave WASM build, fetched from a CDN · fits ζ(s) in your browser</div></div>
+    <div class="term reveal"><div class="term-bar"><span class="dot r"></span><span class="dot y"></span><span class="dot g"></span><span class="term-tab"><b>treeweave.wasm</b> — ζ(s) = Σ<sub>k=1..160</sub> k⁻ˢ on [2, 10] · tol 1e-10</span></div>
+    <div class="term-body"><pre class="code" id="wasmOut" style="max-height:none;min-height:300px;white-space:pre-wrap">press “Fit ζ(s) and race it” to run the live WASM demo…</pre></div></div>
+    <div class="actions reveal">
+      <button class="btn" id="wasmRun"><span class="dot-run"></span>▶ Fit ζ(s) and race it (WASM)</button>
+      <label style="font-family:var(--mono);font-size:18px;color:var(--dim);display:flex;align-items:center;gap:12px">points <input type="range" id="wasmN" min="100000" max="1000000" value="500000" step="100000"><span class="readout" id="wasmNval">500,000</span></label>
+      <span class="hint">imports @flatironinstitute/treeweave from unpkg — needs an online (HTTPS) origin</span>
+    </div>
+  </div>
+</section>
+
+<!-- treeweave · benchmark numbers (real README data) -->
+<section class="slide" data-demo="twbench">
+  <div class="counter"></div><div class="toprule"></div>
+  <div class="slide-inner">
+    <div class="screen-head"><h2 class="h2 reveal">How fast is “evaluate forever”?</h2><div class="screen-sub reveal">batch speedup vs. each language's own native ζ(s) baseline</div></div>
+    <div class="two reveal" style="margin-top:8px;grid-template-columns:1.5fr 1fr;gap:48px;height:auto;align-items:center">
       <figure style="margin:0">
-        <div class="term"><div class="term-bar"><span class="dot r"></span><span class="dot y"></span><span class="dot g"></span><span class="term-tab"><b>benchmark</b> — treeweave surrogate · evals/s</span></div>
-        <div class="term-body"><div class="ph" style="height:420px">benchmark chart — numbers coming soon</div></div></div>
+        <div class="term"><div class="term-bar"><span class="dot r"></span><span class="dot y"></span><span class="dot g"></span><span class="term-tab"><b>benchmark</b> — batch speedup per language (log scale) · GitHub ubuntu-24.04</span></div>
+        <div class="term-body"><div class="demo-stage"><canvas id="twbenchCanvas" width="1180" height="430"></canvas></div></div></div>
+        <figcaption style="font-family:var(--mono);font-size:15px;color:var(--dim);margin-top:12px;letter-spacing:.03em">absolute throughput isn't comparable across languages (different CI runners) — each bar is vs. its own native baseline · sorted batch adds ~2.5–3×</figcaption>
       </figure>
       <div style="display:flex;flex-direction:column;gap:30px">
-        <div class="stat"><div class="v" style="font-size:84px">—×</div><div class="l">faster per call</div><div class="n">surrogate vs. the original function</div></div>
-        <div class="stat"><div class="v" style="font-size:84px">—</div><div class="l">fit time</div><div class="n">one-off, amortized over every call</div></div>
-        <div class="note">numbers to be filled in</div>
+        <div class="stat"><div class="v" style="font-size:80px">10,900×</div><div class="l">up to — faster per call</div><div class="n">sorted batch · Python vs. native ζ(s)</div></div>
+        <div class="stat"><div class="v" style="font-size:80px">≤ 1e-10</div><div class="l">max relative error</div><div class="n">across the whole [2, 10] domain</div></div>
+        <div class="note">one fit, amortized over every call</div>
       </div>
     </div>
   </div>
@@ -731,6 +892,145 @@ h = treeweave_free(h)</pre></div></div>
 </section>
 
 <!-- (SIMD 101 moved to a standalone primer just before the conclusion) -->
+
+<!-- ===================== Part 4 · SIMD path selector ===================== -->
+<section class="slide">
+  <div class="counter"></div><div class="toprule"></div>
+  <div class="slide-inner">
+    <div class="kicker reveal"><span class="blip"></span>Two ways in</div>
+    <h2 class="h2 reveal" style="font-size:58px;margin-top:4px">How deep do you want to go on SIMD?</h2>
+    <div class="endnav reveal" style="margin-top:26px">
+      <a onclick="deck.go(35)" style="cursor:pointer"><span class="label">Start here</span><span class="title">Simple SIMD</span><span class="meta">a plain vectorized loop — SAXPY, step by step</span></a>
+      <a onclick="deck.go(44)" style="cursor:pointer"><span class="label">Skip ahead</span><span class="title">Advanced SIMD</span><span class="meta">what FINUFFT actually does — POET · xsimd · swizzle</span></a>
+    </div>
+    <div class="note reveal" style="margin-top:30px">new to SIMD? take the primer first · otherwise jump straight to the FINUFFT spreading path</div>
+  </div>
+</section>
+
+<!-- ===================== Aside · SIMD primer (standalone topic, pre-conclusion) ===================== -->
+<section class="slide">
+  <svg class="scope" viewBox="0 0 1920 1080" preserveAspectRatio="none"><path d="M0,540 L820,540 L840,300 L860,780 L880,540 L1040,540 L1060,300 L1080,780 L1100,540 L1920,540"/></svg>
+  <div class="slide-inner">
+    <div class="kicker reveal"><span class="blip"></span>Aside · a 60-second primer</div>
+    <h2 class="h-display reveal" style="font-size:108px">How to<br><span class="ac">vectorize</span> a loop</h2>
+  </div>
+</section>
+
+<!-- step 0 · scalar -->
+<section class="slide">
+  <div class="counter"></div><div class="toprule"></div>
+  <div class="slide-inner">
+    <div class="screen-head"><h2 class="h2 reveal">Step 0 — the scalar loop</h2><div class="screen-sub reveal">SAXPY: y ← a·x + y, one element per iteration</div></div>
+    <div class="term reveal"><div class="term-bar"><span class="dot r"></span><span class="dot y"></span><span class="dot g"></span><span class="term-tab"><b>saxpy.cpp</b></span></div>
+    <div class="term-body"><pre class="code" data-lang="cpp" style="font-size:29px;line-height:1.65;max-height:none">void saxpy(std::size_t N, float a, const float* x, float* y) {
+  for (std::size_t i = 0; i &lt; N; ++i)
+    y[i] = a * x[i] + y[i];
+}</pre></div></div>
+    <div class="body reveal" style="margin-top:24px;max-width:60ch">Each iteration touches one element. A SIMD register holds many — let's rewrite this to work a whole register at a time.</div>
+  </div>
+</section>
+
+<!-- step 1 · the register width -->
+<section class="slide">
+  <div class="counter"></div><div class="toprule"></div>
+  <div class="slide-inner">
+    <div class="screen-head"><h2 class="h2 reveal">Step 1 — one register, many lanes</h2><div class="screen-sub reveal">a batch is W elements wide, fixed at compile time</div></div>
+    <div class="term reveal"><div class="term-bar"><span class="dot r"></span><span class="dot y"></span><span class="dot g"></span><span class="term-tab"><b>saxpy.cpp</b> — xsimd</span></div>
+    <div class="term-body"><pre class="code" data-lang="cpp" style="font-size:29px;line-height:1.65;max-height:none">using batch = xsimd::batch&lt;float&gt;;
+constexpr std::size_t W = batch::size;   // 8 on AVX2, 16 on AVX-512</pre></div></div>
+    <div class="body reveal" style="margin-top:24px;max-width:62ch">The plan: a <b>vector body</b> that strides by W, then a <b>scalar tail</b> for the leftover elements.</div>
+  </div>
+</section>
+
+<!-- step 2 · load / store -->
+<section class="slide">
+  <div class="counter"></div><div class="toprule"></div>
+  <div class="slide-inner">
+    <div class="screen-head"><h2 class="h2 reveal">Step 2 — load &amp; store a register</h2><div class="screen-sub reveal">one instruction moves W contiguous elements</div></div>
+    <div class="term reveal"><div class="term-bar"><span class="dot r"></span><span class="dot y"></span><span class="dot g"></span><span class="term-tab"><b>saxpy.cpp</b> — load / store</span></div>
+    <div class="term-body"><pre class="code" data-lang="cpp" style="font-size:29px;line-height:1.65;max-height:none">batch vx = batch::load_unaligned(x + i);   // x[i] … x[i+W-1]
+batch vy = batch::load_unaligned(y + i);
+
+//            ... compute on vx, vy ...
+
+vy.store_unaligned(y + i);                 // write all W back</pre></div></div>
+    <div class="body reveal" style="margin-top:22px;max-width:60ch"><code>load_unaligned</code> / <code>store_unaligned</code> are the primitives that move data between memory and a register.</div>
+  </div>
+</section>
+
+<!-- step 3 · broadcast -->
+<section class="slide">
+  <div class="counter"></div><div class="toprule"></div>
+  <div class="slide-inner">
+    <div class="screen-head"><h2 class="h2 reveal">Step 3 — broadcast the scalar</h2><div class="screen-sub reveal">the same a multiplies every lane</div></div>
+    <div class="term reveal"><div class="term-bar"><span class="dot r"></span><span class="dot y"></span><span class="dot g"></span><span class="term-tab"><b>saxpy.cpp</b> — splat</span></div>
+    <div class="term-body"><pre class="code" data-lang="cpp" style="font-size:30px;line-height:1.65;max-height:none">batch va(a);   // [a, a, a, a, a, a, a, a]</pre></div></div>
+    <div class="body reveal" style="margin-top:24px;max-width:60ch">A scalar becomes a register with that value in every lane — so one multiply hits all W elements with the same a.</div>
+  </div>
+</section>
+
+<!-- step 4 · arithmetic / fma -->
+<section class="slide">
+  <div class="counter"></div><div class="toprule"></div>
+  <div class="slide-inner">
+    <div class="screen-head"><h2 class="h2 reveal">Step 4 — arithmetic is just operators</h2><div class="screen-sub reveal">+ − × ÷ are overloaded lane-wise; fuse the multiply-add</div></div>
+    <div class="term reveal"><div class="term-bar"><span class="dot r"></span><span class="dot y"></span><span class="dot g"></span><span class="term-tab"><b>saxpy.cpp</b> — fma</span></div>
+    <div class="term-body"><pre class="code" data-lang="cpp" style="font-size:29px;line-height:1.65;max-height:none">vy = va * vx + vy;            // per-lane: W multiply-adds at once
+
+// better — one fused instruction, no intermediate rounding:
+vy = xsimd::fma(va, vx, vy);</pre></div></div>
+    <div class="body reveal" style="margin-top:22px;max-width:60ch">Operator overloads make vector code read like scalar code. <code>fma</code> folds the multiply and the add into a single instruction.</div>
+  </div>
+</section>
+
+<!-- step 5 · the vector body -->
+<section class="slide">
+  <div class="counter"></div><div class="toprule"></div>
+  <div class="slide-inner">
+    <div class="screen-head"><h2 class="h2 reveal">Step 5 — the vector body</h2><div class="screen-sub reveal">stride by W over the largest multiple of W</div></div>
+    <div class="term reveal"><div class="term-bar"><span class="dot r"></span><span class="dot y"></span><span class="dot g"></span><span class="term-tab"><b>saxpy.cpp</b> — vector body</span></div>
+    <div class="term-body"><pre class="code" data-lang="cpp" style="font-size:28px;line-height:1.6;max-height:none">const std::size_t n_simd = N &amp; ~(W - 1);   // largest multiple of W
+batch va(a);
+std::size_t i = 0;
+for (; i &lt; n_simd; i += W) {
+  batch vy = xsimd::fma(va, batch::load_unaligned(x + i),
+                            batch::load_unaligned(y + i));
+  vy.store_unaligned(y + i);
+}</pre></div></div>
+  </div>
+</section>
+
+<!-- step 6 · the scalar tail -->
+<section class="slide">
+  <div class="counter"></div><div class="toprule"></div>
+  <div class="slide-inner">
+    <div class="screen-head"><h2 class="h2 reveal">Step 6 — the scalar tail</h2><div class="screen-sub reveal">the leftover &lt; W elements, handled like Step 0</div></div>
+    <div class="term reveal"><div class="term-bar"><span class="dot r"></span><span class="dot y"></span><span class="dot g"></span><span class="term-tab"><b>saxpy.cpp</b> — tail</span></div>
+    <div class="term-body"><pre class="code" data-lang="cpp" style="font-size:29px;line-height:1.65;max-height:none">for (; i &lt; N; ++i)          // i picks up where the vector body stopped
+  y[i] = a * x[i] + y[i];</pre></div></div>
+    <div class="body reveal" style="margin-top:24px;max-width:60ch">The same scalar code we started with — now just for the final handful of elements that don't fill a register.</div>
+  </div>
+</section>
+
+<!-- step 7 · reductions -->
+<section class="slide">
+  <div class="counter"></div><div class="toprule"></div>
+  <div class="slide-inner">
+    <div class="screen-head"><h2 class="h2 reveal">Step 7 — reductions need one more move</h2><div class="screen-sub reveal">sums (dot products, type-2 interpolation) accumulate across lanes</div></div>
+    <div class="term reveal"><div class="term-bar"><span class="dot r"></span><span class="dot y"></span><span class="dot g"></span><span class="term-tab"><b>norm.cpp</b> — reduce_add</span></div>
+    <div class="term-body"><pre class="code" data-lang="cpp" style="font-size:28px;line-height:1.6;max-height:none">batch acc(0.0f);                              // W partial sums
+for (; i &lt; n_simd; i += W) {
+  batch v = batch::load_unaligned(x + i);
+  acc = xsimd::fma(v, v, acc);                // Σ xᵢ²
+}
+float s = xsimd::reduce_add(acc);             // collapse W lanes → 1
+for (; i &lt; N; ++i) s += x[i] * x[i];          // scalar tail</pre></div></div>
+    <div class="actions reveal">
+      <a class="btn gh" href="https://github.com/xtensor-stack/xsimd" target="_blank" rel="noopener">xsimd on GitHub ↗</a>
+      <span class="hint">reduce_add is exactly what interpolation (type-2) needs</span>
+    </div>
+  </div>
+</section>
 
 <!-- ===================== 23 · map the math to the CPU ===================== -->
 <section class="slide">
@@ -985,131 +1285,6 @@ for (uint8_t dx = 0; dx &lt; regular_part; dx += 2*simd_size) {
   </div>
 </section>
 
-<!-- ===================== Aside · SIMD primer (standalone topic, pre-conclusion) ===================== -->
-<section class="slide">
-  <svg class="scope" viewBox="0 0 1920 1080" preserveAspectRatio="none"><path d="M0,540 L820,540 L840,300 L860,780 L880,540 L1040,540 L1060,300 L1080,780 L1100,540 L1920,540"/></svg>
-  <div class="slide-inner">
-    <div class="kicker reveal"><span class="blip"></span>Aside · a 60-second primer</div>
-    <h2 class="h-display reveal" style="font-size:108px">How to<br><span class="ac">vectorize</span> a loop</h2>
-  </div>
-</section>
-
-<!-- step 0 · scalar -->
-<section class="slide">
-  <div class="counter"></div><div class="toprule"></div>
-  <div class="slide-inner">
-    <div class="screen-head"><h2 class="h2 reveal">Step 0 — the scalar loop</h2><div class="screen-sub reveal">SAXPY: y ← a·x + y, one element per iteration</div></div>
-    <div class="term reveal"><div class="term-bar"><span class="dot r"></span><span class="dot y"></span><span class="dot g"></span><span class="term-tab"><b>saxpy.cpp</b></span></div>
-    <div class="term-body"><pre class="code" data-lang="cpp" style="font-size:29px;line-height:1.65;max-height:none">void saxpy(std::size_t N, float a, const float* x, float* y) {
-  for (std::size_t i = 0; i &lt; N; ++i)
-    y[i] = a * x[i] + y[i];
-}</pre></div></div>
-    <div class="body reveal" style="margin-top:24px;max-width:60ch">Each iteration touches one element. A SIMD register holds many — let's rewrite this to work a whole register at a time.</div>
-  </div>
-</section>
-
-<!-- step 1 · the register width -->
-<section class="slide">
-  <div class="counter"></div><div class="toprule"></div>
-  <div class="slide-inner">
-    <div class="screen-head"><h2 class="h2 reveal">Step 1 — one register, many lanes</h2><div class="screen-sub reveal">a batch is W elements wide, fixed at compile time</div></div>
-    <div class="term reveal"><div class="term-bar"><span class="dot r"></span><span class="dot y"></span><span class="dot g"></span><span class="term-tab"><b>saxpy.cpp</b> — xsimd</span></div>
-    <div class="term-body"><pre class="code" data-lang="cpp" style="font-size:29px;line-height:1.65;max-height:none">using batch = xsimd::batch&lt;float&gt;;
-constexpr std::size_t W = batch::size;   // 8 on AVX2, 16 on AVX-512</pre></div></div>
-    <div class="body reveal" style="margin-top:24px;max-width:62ch">The plan: a <b>vector body</b> that strides by W, then a <b>scalar tail</b> for the leftover elements.</div>
-  </div>
-</section>
-
-<!-- step 2 · load / store -->
-<section class="slide">
-  <div class="counter"></div><div class="toprule"></div>
-  <div class="slide-inner">
-    <div class="screen-head"><h2 class="h2 reveal">Step 2 — load &amp; store a register</h2><div class="screen-sub reveal">one instruction moves W contiguous elements</div></div>
-    <div class="term reveal"><div class="term-bar"><span class="dot r"></span><span class="dot y"></span><span class="dot g"></span><span class="term-tab"><b>saxpy.cpp</b> — load / store</span></div>
-    <div class="term-body"><pre class="code" data-lang="cpp" style="font-size:29px;line-height:1.65;max-height:none">batch vx = batch::load_unaligned(x + i);   // x[i] … x[i+W-1]
-batch vy = batch::load_unaligned(y + i);
-
-//            ... compute on vx, vy ...
-
-vy.store_unaligned(y + i);                 // write all W back</pre></div></div>
-    <div class="body reveal" style="margin-top:22px;max-width:60ch"><code>load_unaligned</code> / <code>store_unaligned</code> are the primitives that move data between memory and a register.</div>
-  </div>
-</section>
-
-<!-- step 3 · broadcast -->
-<section class="slide">
-  <div class="counter"></div><div class="toprule"></div>
-  <div class="slide-inner">
-    <div class="screen-head"><h2 class="h2 reveal">Step 3 — broadcast the scalar</h2><div class="screen-sub reveal">the same a multiplies every lane</div></div>
-    <div class="term reveal"><div class="term-bar"><span class="dot r"></span><span class="dot y"></span><span class="dot g"></span><span class="term-tab"><b>saxpy.cpp</b> — splat</span></div>
-    <div class="term-body"><pre class="code" data-lang="cpp" style="font-size:30px;line-height:1.65;max-height:none">batch va(a);   // [a, a, a, a, a, a, a, a]</pre></div></div>
-    <div class="body reveal" style="margin-top:24px;max-width:60ch">A scalar becomes a register with that value in every lane — so one multiply hits all W elements with the same a.</div>
-  </div>
-</section>
-
-<!-- step 4 · arithmetic / fma -->
-<section class="slide">
-  <div class="counter"></div><div class="toprule"></div>
-  <div class="slide-inner">
-    <div class="screen-head"><h2 class="h2 reveal">Step 4 — arithmetic is just operators</h2><div class="screen-sub reveal">+ − × ÷ are overloaded lane-wise; fuse the multiply-add</div></div>
-    <div class="term reveal"><div class="term-bar"><span class="dot r"></span><span class="dot y"></span><span class="dot g"></span><span class="term-tab"><b>saxpy.cpp</b> — fma</span></div>
-    <div class="term-body"><pre class="code" data-lang="cpp" style="font-size:29px;line-height:1.65;max-height:none">vy = va * vx + vy;            // per-lane: W multiply-adds at once
-
-// better — one fused instruction, no intermediate rounding:
-vy = xsimd::fma(va, vx, vy);</pre></div></div>
-    <div class="body reveal" style="margin-top:22px;max-width:60ch">Operator overloads make vector code read like scalar code. <code>fma</code> folds the multiply and the add into a single instruction.</div>
-  </div>
-</section>
-
-<!-- step 5 · the vector body -->
-<section class="slide">
-  <div class="counter"></div><div class="toprule"></div>
-  <div class="slide-inner">
-    <div class="screen-head"><h2 class="h2 reveal">Step 5 — the vector body</h2><div class="screen-sub reveal">stride by W over the largest multiple of W</div></div>
-    <div class="term reveal"><div class="term-bar"><span class="dot r"></span><span class="dot y"></span><span class="dot g"></span><span class="term-tab"><b>saxpy.cpp</b> — vector body</span></div>
-    <div class="term-body"><pre class="code" data-lang="cpp" style="font-size:28px;line-height:1.6;max-height:none">const std::size_t n_simd = N &amp; ~(W - 1);   // largest multiple of W
-batch va(a);
-std::size_t i = 0;
-for (; i &lt; n_simd; i += W) {
-  batch vy = xsimd::fma(va, batch::load_unaligned(x + i),
-                            batch::load_unaligned(y + i));
-  vy.store_unaligned(y + i);
-}</pre></div></div>
-  </div>
-</section>
-
-<!-- step 6 · the scalar tail -->
-<section class="slide">
-  <div class="counter"></div><div class="toprule"></div>
-  <div class="slide-inner">
-    <div class="screen-head"><h2 class="h2 reveal">Step 6 — the scalar tail</h2><div class="screen-sub reveal">the leftover &lt; W elements, handled like Step 0</div></div>
-    <div class="term reveal"><div class="term-bar"><span class="dot r"></span><span class="dot y"></span><span class="dot g"></span><span class="term-tab"><b>saxpy.cpp</b> — tail</span></div>
-    <div class="term-body"><pre class="code" data-lang="cpp" style="font-size:29px;line-height:1.65;max-height:none">for (; i &lt; N; ++i)          // i picks up where the vector body stopped
-  y[i] = a * x[i] + y[i];</pre></div></div>
-    <div class="body reveal" style="margin-top:24px;max-width:60ch">The same scalar code we started with — now just for the final handful of elements that don't fill a register.</div>
-  </div>
-</section>
-
-<!-- step 7 · reductions -->
-<section class="slide">
-  <div class="counter"></div><div class="toprule"></div>
-  <div class="slide-inner">
-    <div class="screen-head"><h2 class="h2 reveal">Step 7 — reductions need one more move</h2><div class="screen-sub reveal">sums (dot products, type-2 interpolation) accumulate across lanes</div></div>
-    <div class="term reveal"><div class="term-bar"><span class="dot r"></span><span class="dot y"></span><span class="dot g"></span><span class="term-tab"><b>norm.cpp</b> — reduce_add</span></div>
-    <div class="term-body"><pre class="code" data-lang="cpp" style="font-size:28px;line-height:1.6;max-height:none">batch acc(0.0f);                              // W partial sums
-for (; i &lt; n_simd; i += W) {
-  batch v = batch::load_unaligned(x + i);
-  acc = xsimd::fma(v, v, acc);                // Σ xᵢ²
-}
-float s = xsimd::reduce_add(acc);             // collapse W lanes → 1
-for (; i &lt; N; ++i) s += x[i] * x[i];          // scalar tail</pre></div></div>
-    <div class="actions reveal">
-      <a class="btn gh" href="https://github.com/xtensor-stack/xsimd" target="_blank" rel="noopener">xsimd on GitHub ↗</a>
-      <span class="hint">reduce_add is exactly what interpolation (type-2) needs</span>
-    </div>
-  </div>
-</section>
-
 <!-- ===================== 34 · closing statement ===================== -->
 <section class="slide">
   <div class="counter"></div><div class="toprule"></div>
@@ -1132,18 +1307,6 @@ for (; i &lt; N; ++i) s += x[i] * x[i];          // scalar tail</pre></div></div
   </div>
 </section>
 
-<!-- ===================== Appendix · references (SIMD-in-depth slides removed) ===================== -->
-<section class="slide">
-  <div class="counter"></div><div class="toprule"></div>
-  <div class="slide-inner">
-    <div class="kicker reveal"><span class="blip"></span>Further</div>
-    <ul class="bul reveal">
-      <li><b>Horizontal reductions</b> — xsimd::reduce_add finalizes partial-lane sums (interpolation / type-2)</li>
-      <li><b>ES-kernel error</b> — \(\varepsilon = \mathcal{O}\!\left(\sqrt{w}\,e^{-\pi w\sqrt{1-1/\sigma}}\right)\) &nbsp;<small>Barnett et al. 2020, arXiv:2001.09405</small></li>
-      <li><b>Future</b> — better swizzle, runtime kernel fitting via treeweave</li>
-    </ul>
-  </div>
-</section>
 
 </main>
 </div>
@@ -1193,35 +1356,89 @@ const demos={};
   function spread(){const b=new Float64Array(Nf),w=5,h=2*Math.PI/Nf;
     for(const p of pts){const c=Math.round(p.x/h);for(let d=-w;d<=w;d++){const idx=((c+d)%Nf+Nf)%Nf;const dx=(c+d)*h-p.x;b[idx]+=p.c*Math.exp(-.5*(dx/h/1.5)**2);}}return b;}
   function dft(b){const m=new Float64Array(Nf);for(let k=0;k<Nf;k++){let r=0,im=0;for(let n=0;n<Nf;n++){const a=-2*Math.PI*k*n/Nf;r+=b[n]*Math.cos(a);im+=b[n]*Math.sin(a);}m[k]=Math.hypot(r,im);}return m;}
+  // φ̂(k): Fourier transform of the (Gaussian) spreading kernel — what deconvolution divides out
+  const phih=kk=>Math.exp(-0.5*Math.pow(1.5*2*Math.PI/Nf*kk,2));
   function draw(){const W=cv.width,H=cv.height,pad=40;ctx.clearRect(0,0,W,H);
     ctx.strokeStyle=COL.grid;ctx.beginPath();ctx.moveTo(pad,H-pad);ctx.lineTo(W-pad,H-pad);ctx.stroke();
-    ctx.font="20px JetBrains Mono";ctx.fillStyle=COL.dim;const ro=document.getElementById("nufftReadout");
+    ctx.font="20px JetBrains Mono";ctx.fillStyle=COL.dim;ctx.textAlign="left";const ro=document.getElementById("nufftReadout");
+    const bw=(W-2*pad)/Nf,barX=k=>pad+k*bw-(bw-2)/2;   // bars centered on their grid node / mode
     if(step===0){ctx.fillText("nonuniform points on [0, 2π) with complex strengths",pad,30);
       for(const p of pts){const X=pad+p.x/(2*Math.PI)*(W-2*pad),Y=H-pad-p.c*(H-2*pad)/1.6;ctx.strokeStyle=COL.blue;ctx.lineWidth=3;ctx.beginPath();ctx.moveTo(X,H-pad);ctx.lineTo(X,Y);ctx.stroke();ctx.fillStyle=COL.blue;ctx.beginPath();ctx.arc(X,Y,5,0,7);ctx.fill();}
       ro.innerHTML="<b>"+pts.length+"</b> points";}
-    else if(step===1){const b=spread(),mx=Math.max(...b),bw=(W-2*pad)/Nf,h=2*Math.PI/Nf;ctx.fillText("overlay the kernel at each point — values add where they overlap",pad,30);
+    else if(step===1){const b=spread(),mx=Math.max(...b),h=2*Math.PI/Nf;ctx.fillText("overlay the kernel at each point — values add where they overlap",pad,30);
       const Xx=x=>pad+x/(2*Math.PI)*(W-2*pad),Hy=v=>v/mx*(H-2*pad)/1.4;
       // each nonuniform point contributes one real kernel bump; they sum on the grid
       for(const p of pts){ctx.strokeStyle="rgba(227,179,65,.7)";ctx.lineWidth=2;ctx.beginPath();let pen=false;
         for(let s=-7;s<=7;s+=0.2){const x=p.x+s*h;if(x<0||x>2*Math.PI){pen=false;continue;}const py=H-pad-Hy(p.c*Math.exp(-.5*(s/1.5)**2));pen?ctx.lineTo(Xx(x),py):ctx.moveTo(Xx(x),py);pen=true;}ctx.stroke();
         ctx.fillStyle=COL.blue;ctx.beginPath();ctx.arc(Xx(p.x),H-pad,4,0,7);ctx.fill();}
-      // resulting summed fine grid
-      ctx.fillStyle=COL.cyan;for(let k=0;k<Nf;k++){const hb=Hy(b[k]);ctx.fillRect(pad+k*bw+1,H-pad-hb,bw-2,hb);}ro.innerHTML="fine grid: <b>"+Nf+"</b> cells";}
-    else if(step===2){const m=dft(spread()),sh=[...m.slice(Nf/2),...m.slice(0,Nf/2)],mx=Math.max(...sh),bw=(W-2*pad)/Nf;ctx.fillText("FFT of the fine grid → full spectrum",pad,30);
-      ctx.fillStyle=COL.green;for(let k=0;k<Nf;k++){const hb=sh[k]/mx*(H-2*pad)/1.3;ctx.fillRect(pad+k*bw+1,H-pad-hb,bw-2,hb);}ro.innerHTML="size-<b>"+Nf+"</b> FFT";}
-    else{const m=dft(spread()),sh=[...m.slice(Nf/2),...m.slice(0,Nf/2)],mx=Math.max(...sh),bw=(W-2*pad)/Nf,lo=Nf/4,hi=3*Nf/4;
-      ctx.fillText("deconvolve & keep the target band  −N/2 ≤ k < N/2",pad,30);
+      // resulting summed fine grid — bars centered on their nodes (aligned with the kernel peaks)
+      ctx.fillStyle=COL.cyan;for(let k=0;k<Nf;k++){const hb=Hy(b[k]);ctx.fillRect(barX(k),H-pad-hb,bw-2,hb);}ro.innerHTML="fine grid: <b>"+Nf+"</b> cells";}
+    else if(step===2){const m=dft(spread()),sh=[...m.slice(Nf/2),...m.slice(0,Nf/2)],mx=Math.max(...sh);ctx.fillText("FFT of the fine grid → full spectrum",pad,30);
+      ctx.fillStyle=COL.green;for(let k=0;k<Nf;k++){const hb=sh[k]/mx*(H-2*pad)/1.3;ctx.fillRect(barX(k),H-pad-hb,bw-2,hb);}ro.innerHTML="size-<b>"+Nf+"</b> FFT";}
+    else if(step===3){const m=dft(spread()),sh=[...m.slice(Nf/2),...m.slice(0,Nf/2)],mx=Math.max(...sh),lo=Nf/4,hi=3*Nf/4;
+      ctx.fillText("truncate — keep the target band  −N/2 ≤ k < N/2",pad,30);
       ctx.fillStyle="rgba(47,243,224,.10)";ctx.fillRect(pad+lo*bw,pad,(hi-lo)*bw,H-2*pad);
-      for(let k=0;k<Nf;k++){const hb=sh[k]/mx*(H-2*pad)/1.3;ctx.fillStyle=(k>=lo&&k<hi)?COL.cyan:COL.dimbar;ctx.fillRect(pad+k*bw+1,H-pad-hb,bw-2,hb);}ro.innerHTML="kept <b>"+(hi-lo)+"</b> modes · the output";}
+      for(let k=0;k<Nf;k++){const hb=sh[k]/mx*(H-2*pad)/1.3;ctx.fillStyle=(k>=lo&&k<hi)?COL.cyan:COL.dimbar;ctx.fillRect(barX(k),H-pad-hb,bw-2,hb);}ro.innerHTML="kept <b>"+(hi-lo)+"</b> modes";}
+    else{const m=dft(spread()),sh=[...m.slice(Nf/2),...m.slice(0,Nf/2)],lo=Nf/4,hi=3*Nf/4;
+      // deconvolve: divide each kept mode by the kernel transform φ̂(k) to undo the smear
+      const dec=sh.map((v,j)=>v/phih(j-Nf/2)),mx=Math.max(...dec.slice(lo,hi));
+      ctx.fillText("deconvolve — divide the kept band by φ̂(k)",pad,30);
+      ctx.fillStyle="rgba(47,243,224,.10)";ctx.fillRect(pad+lo*bw,pad,(hi-lo)*bw,H-2*pad);
+      for(let k=lo;k<hi;k++){const hb=dec[k]/mx*(H-2*pad)/1.3;ctx.fillStyle=COL.cyan;ctx.fillRect(barX(k),H-pad-hb,bw-2,hb);}
+      // φ̂(k) rolloff drawn over the band (dashed) — small at the edges, so it boosts them
+      ctx.strokeStyle="rgba(227,179,65,.85)";ctx.lineWidth=2;ctx.setLineDash([6,5]);ctx.beginPath();
+      for(let k=lo;k<=hi;k++){const y=H-pad-phih(k-Nf/2)*(H-2*pad)/1.3;k===lo?ctx.moveTo(pad+k*bw,y):ctx.lineTo(pad+k*bw,y);}ctx.stroke();ctx.setLineDash([]);
+      ctx.fillStyle="rgba(227,179,65,.9)";ctx.font="17px JetBrains Mono";ctx.fillText("φ̂(k)",pad+hi*bw-58,H-pad-phih(hi-Nf/2)*(H-2*pad)/1.3-12);
+      ro.innerHTML="÷ φ̂ · <b>"+(hi-lo)+"</b> modes — the output";}
     // axis labels (per step)
-    const XL=["position  x ∈ [0, 2π)","fine grid  x ∈ [0, 2π)","mode index  k  (−N/2 … N/2)","mode index  k  (−N/2 … N/2)"][step];
-    const YL=["strength","grid value","|spectrum|","|spectrum|"][step];
+    const XL=["position  x ∈ [0, 2π)","fine grid  x ∈ [0, 2π)","mode index  k  (−N/2 … N/2)","mode index  k  (−N/2 … N/2)","mode index  k  (−N/2 … N/2)"][step];
+    const YL=["strength","grid value","|spectrum|","|spectrum|","f̂ₖ  (÷ φ̂)"][step];
     ctx.textAlign="center";ctx.font="17px JetBrains Mono";ctx.fillStyle="#dbeef0";ctx.fillText(XL,W/2,H-10);
     ctx.save();ctx.translate(15,H/2);ctx.rotate(-Math.PI/2);ctx.textAlign="center";ctx.fillStyle=COL.dim;ctx.font="16px JetBrains Mono";ctx.fillText(YL,0,0);ctx.restore();
   }
   document.querySelectorAll("#nufftSteps button").forEach(b=>b.addEventListener("click",()=>{document.querySelectorAll("#nufftSteps button").forEach(x=>x.classList.remove("on"));b.classList.add("on");step=+b.dataset.step;draw();}));
   document.getElementById("nufftShuffle").addEventListener("click",()=>{shuffle();draw();});
   shuffle();demos.nufft=draw;
+})();
+
+/* --- prolate0: order-0 PSWF via power iteration on the sinc (prolate) operator --- */
+(function(){const cv=document.getElementById("prolateCanvas");if(!cv)return;const ctx=cv.getContext("2d");
+  const n=240,c=6,dt=2/n,T=Array.from({length:n},(_,i)=>-1+(i+0.5)*dt);
+  // sinc kernel: eigenfunctions are the prolate spheroidal wavefunctions. A symmetric start
+  // stays in the even subspace, so power iteration lands on the even ground state ψ₀.
+  const K=(x,t)=>{const d=x-t;return Math.abs(d)<1e-9?c/Math.PI:Math.sin(c*d)/(Math.PI*d);};
+  let v=T.map(()=>1);
+  for(let it=0;it<140;it++){const w=new Array(n).fill(0);
+    for(let i=0;i<n;i++){let s=0;for(let j=0;j<n;j++)s+=K(T[i],T[j])*v[j];w[i]=s*dt;}
+    const nrm=Math.sqrt(w.reduce((a,b)=>a+b*b,0));v=w.map(x=>x/nrm);}
+  if(v[n>>1]<0)v=v.map(x=>-x);
+  const pk=Math.max(...v.map(Math.abs));v=v.map(x=>x/pk);
+  function draw(){const W=cv.width,H=cv.height,pad=46;ctx.clearRect(0,0,W,H);
+    const Xx=t=>pad+(t+1)/2*(W-2*pad),Yy=y=>H-pad-y*(H-2*pad)*0.9;
+    ctx.strokeStyle=COL.grid;ctx.lineWidth=1;ctx.beginPath();ctx.moveTo(pad,H-pad);ctx.lineTo(W-pad,H-pad);ctx.moveTo(W/2,pad-4);ctx.lineTo(W/2,H-pad);ctx.stroke();
+    ctx.strokeStyle=COL.cyan;ctx.lineWidth=3;ctx.shadowColor="rgba(47,243,224,.55)";ctx.shadowBlur=10;ctx.beginPath();
+    for(let i=0;i<n;i++){const X=Xx(T[i]),Y=Yy(v[i]);i?ctx.lineTo(X,Y):ctx.moveTo(X,Y);}ctx.stroke();ctx.shadowBlur=0;
+    ctx.fillStyle="#dbeef0";ctx.font="17px JetBrains Mono";ctx.textAlign="center";
+    ctx.fillText("−1",Xx(-1),H-pad+24);ctx.fillText("0",Xx(0),H-pad+24);ctx.fillText("1",Xx(1),H-pad+24);ctx.fillText("t",W-pad+14,H-pad+5);
+    ctx.fillStyle=COL.cyansoft;ctx.textAlign="left";ctx.fillText("ψ₀(t)",Xx(0)+14,Yy(1)+4);}
+  demos.prolate=draw;draw();
+})();
+
+/* --- φ̂: the kernel's Fourier transform over the target band --- */
+(function(){const cv=document.getElementById("phihatCanvas");if(!cv)return;const ctx=cv.getContext("2d");
+  const Kmax=22,Nb=16,phih=k=>Math.exp(-0.5*Math.pow(0.092*k,2));   // smooth kernel transform, ~1 at k=0
+  function draw(){const W=cv.width,H=cv.height,pad=46;ctx.clearRect(0,0,W,H);
+    const Xx=k=>pad+(k+Kmax)/(2*Kmax)*(W-2*pad),Yy=y=>H-pad-y*(H-2*pad)*0.86;
+    ctx.fillStyle="rgba(47,243,224,.10)";ctx.fillRect(Xx(-Nb),pad,Xx(Nb)-Xx(-Nb),H-2*pad);
+    ctx.strokeStyle=COL.grid;ctx.lineWidth=1;ctx.beginPath();ctx.moveTo(pad,H-pad);ctx.lineTo(W-pad,H-pad);ctx.stroke();
+    ctx.strokeStyle=COL.cyan;ctx.lineWidth=3;ctx.shadowColor="rgba(47,243,224,.55)";ctx.shadowBlur=10;ctx.beginPath();
+    for(let k=-Kmax;k<=Kmax;k+=0.2){const X=Xx(k),Y=Yy(phih(k));k===-Kmax?ctx.moveTo(X,Y):ctx.lineTo(X,Y);}ctx.stroke();ctx.shadowBlur=0;
+    ctx.strokeStyle="rgba(227,179,65,.7)";ctx.setLineDash([5,5]);ctx.beginPath();ctx.moveTo(Xx(-Nb),pad);ctx.lineTo(Xx(-Nb),H-pad);ctx.moveTo(Xx(Nb),pad);ctx.lineTo(Xx(Nb),H-pad);ctx.stroke();ctx.setLineDash([]);
+    ctx.fillStyle="#dbeef0";ctx.font="17px JetBrains Mono";ctx.textAlign="center";
+    ctx.fillText("−N/2",Xx(-Nb),H-pad+24);ctx.fillText("0",Xx(0),H-pad+24);ctx.fillText("N/2",Xx(Nb),H-pad+24);ctx.fillText("k",W-pad+12,H-pad+5);
+    ctx.fillStyle=COL.cyansoft;ctx.textAlign="left";ctx.fillText("φ̂(k)",Xx(0)+12,Yy(1)+2);
+    ctx.fillStyle=COL.dim;ctx.textAlign="center";ctx.fillText("attenuated at the edges",Xx(Nb)-150,Yy(phih(Nb))-14);}
+  demos.phihat=draw;draw();
 })();
 
 /* --- shared interpolation helpers --- */
@@ -1283,7 +1500,7 @@ function baryEval(x,xs,fs,w){let num=0,den=0;for(let j=0;j<xs.length;j++){if(x==
     document.getElementById("vanderReadout").innerHTML="n=<b>"+n+"</b> · max|cₖ| <b>"+cTxt+"</b> · err <b>"+errTxt+"</b>"+verdict;
   }
   document.getElementById("vanderN").addEventListener("input",draw);
-  demos.vander=draw;
+  demos.vander=()=>{const s=document.getElementById("vanderN");s.value=s.min;document.getElementById("vanderNval").textContent=s.min;draw();};
 })();
 
 /* --- function-approximation playground --- */
@@ -1415,6 +1632,71 @@ function baryEval(x,xs,fs,w){let num=0,den=0;for(let j=0;j<xs.length;j++){if(x==
   setN();demos.race=()=>draw(null);
 })();
 
+/* --- live treeweave WASM: fit ζ(s) in the browser, race vs native JS ---
+   Imports the real @flatironinstitute/treeweave build from a CDN (unpkg serves
+   the emscripten glue + .wasm unmodified). Needs an HTTPS/HTTP origin — works on
+   GitHub Pages; falls back to the published numbers if the CDN can't be reached. */
+(function(){const btn=document.getElementById("wasmRun");if(!btn)return;
+  const out=document.getElementById("wasmOut"),nEl=document.getElementById("wasmN"),nVal=document.getElementById("wasmNval");
+  const fmt=n=>n.toLocaleString();const setN=()=>nVal.textContent=fmt(+nEl.value);nEl.addEventListener("input",setN);setN();
+  // brute-force ζ(s) = Σ k⁻ˢ, ≤160 terms, early-stop (matches the README baseline)
+  const zetaJS=s=>{let a=0;for(let k=1;k<=160;k++){const t=Math.pow(k,-s);a+=t;if(t<1e-10*a)break;}return a;};
+  const FALLBACK="couldn't reach the WASM CDN — showing published numbers:\n\n"+
+    "fit time         one-off (ms), amortized over every call\n"+
+    "treeweave        ~3,700 Mevals/s   (Python batch)\n"+
+    "speedup          up to 10,900× vs. native ζ(s)  (sorted batch)\n"+
+    "max rel error    ≤ 1e-10  across [2, 10]";
+  let busy=false;
+  btn.addEventListener("click",async()=>{if(busy)return;busy=true;btn.style.opacity=".6";
+    const log=s=>out.textContent=s;
+    try{
+      log("loading treeweave WASM from unpkg…");
+      const mod=await import("https://unpkg.com/@flatironinstitute/treeweave@0.0.0/dist/index.js");
+      const Treeweave=mod.Treeweave||mod.default;
+      log("fitting ζ(s) on [2, 10] to 1e-10…");
+      const t0=performance.now();
+      const approx=await Treeweave.fit(x=>zetaJS(x[0]),2,10,1e-10,{backend:"wasm"});
+      const fitMs=performance.now()-t0;
+      const N=+nEl.value,xs=new Float64Array(N),ys=new Float64Array(N);
+      for(let i=0;i<N;i++)xs[i]=2+8*Math.random();
+      approx.batch(xs.subarray(0,2000),{out:ys.subarray(0,2000)});         // warm
+      let t=performance.now();approx.batch(xs,{out:ys});const twMs=performance.now()-t;
+      t=performance.now();let acc=0;for(let i=0;i<N;i++)acc+=zetaJS(xs[i]);const jsMs=performance.now()-t;
+      let maxerr=0;for(let i=0;i<5000;i++){const z=zetaJS(xs[i]);maxerr=Math.max(maxerr,Math.abs(ys[i]-z)/Math.abs(z));}
+      const twM=N/twMs/1e3,jsM=N/jsMs/1e3;
+      log("fit time         "+fitMs.toFixed(1)+" ms   (one-off)\n"+
+          "points           "+fmt(N)+"\n"+
+          "treeweave WASM   "+twMs.toFixed(1)+" ms   ·  "+twM.toFixed(0)+" Mevals/s\n"+
+          "native JS ζ(s)   "+jsMs.toFixed(1)+" ms   ·  "+jsM.toFixed(1)+" Mevals/s\n"+
+          "speedup          "+(jsMs/twMs).toFixed(0)+"×\n"+
+          "max rel error    "+maxerr.toExponential(2)+"   (acc "+acc.toFixed(2)+")");
+      approx.free();
+    }catch(e){log(FALLBACK);console.warn("treeweave WASM demo failed:",e);}
+    finally{busy=false;btn.style.opacity="";}
+  });
+})();
+
+/* --- treeweave benchmark: per-language batch speedup (log-scale bars) --- */
+(function(){const cv=document.getElementById("twbenchCanvas");if(!cv)return;const ctx=cv.getContext("2d");
+  // GitHub ubuntu-24.04 runners · ζ(s)=Σk⁻ˢ on [2,10] · tol 1e-10 · ≤1e-10 max error
+  const data=[["C++",244],["C",325],["Fortran",219],["Python",3712],["Julia",719],["Octave",991],["JS",925]];
+  function draw(){const W=cv.width,H=cv.height,padL=70,padR=30,padT=24,padB=64;ctx.clearRect(0,0,W,H);
+    const plotW=W-padL-padR,plotH=H-padT-padB,n=data.length,gap=26,bw=(plotW-gap*(n-1))/n;
+    const lo=100,hi=5000,ly=Math.log10(lo),hyy=Math.log10(hi);
+    const Y=v=>padT+plotH-(Math.log10(v)-ly)/(hyy-ly)*plotH;
+    // log gridlines
+    ctx.font="14px JetBrains Mono";ctx.textAlign="right";
+    for(const g of[100,200,500,1000,2000,5000]){const y=Y(g);ctx.strokeStyle="#11242a";ctx.lineWidth=1;ctx.beginPath();ctx.moveTo(padL,y);ctx.lineTo(W-padR,y);ctx.stroke();
+      ctx.fillStyle=COL.dim;ctx.fillText(g+"×",padL-10,y+5);}
+    data.forEach((d,i)=>{const x=padL+i*(bw+gap),v=d[1],y=Y(v),hb=padT+plotH-y;
+      const grad=ctx.createLinearGradient(0,y,0,padT+plotH);grad.addColorStop(0,COL.cyan);grad.addColorStop(1,COL.cyandeep||"#0e8c84");
+      ctx.fillStyle=grad;ctx.fillRect(x,y,bw,hb);
+      ctx.fillStyle=COL.cyansoft;ctx.font="bold 19px JetBrains Mono";ctx.textAlign="center";ctx.fillText(v.toLocaleString()+"×",x+bw/2,y-10);
+      ctx.fillStyle="#dbeef0";ctx.font="17px JetBrains Mono";ctx.fillText(d[0],x+bw/2,padT+plotH+26);});
+    ctx.fillStyle=COL.dim;ctx.font="14px JetBrains Mono";ctx.textAlign="center";ctx.fillText("plain batch · speedup vs. native ζ(s), log scale",W/2,H-12);}
+  demos.twbench=draw;draw();
+})();
+
 /* ===========================================================================
    SLIDE CONTROLLER — fixed-stage scaling + nav + per-slide demo init + editing
    =========================================================================== */
@@ -1438,6 +1720,7 @@ class Deck{
   }
   scale(){const f=Math.min(innerWidth/1920,innerHeight/1080);this.stage.style.transform=`translate(${(innerWidth-1920*f)/2}px,${(innerHeight-1080*f)/2}px) scale(${f})`;}
   go(n){this.i=Math.max(0,Math.min(n,this.slides.length-1));
+    if(typeof closeExpandPanels==="function")closeExpandPanels();
     this.slides.forEach((s,k)=>{s.classList.toggle("active",k===this.i);s.classList.toggle("visible",k===this.i);});
     this.bar.style.width=((this.i+1)/this.slides.length*100)+"%";history.replaceState(null,"","#"+(this.i+1));
     const d=this.slides[this.i].dataset.demo;if(d&&demos[d])requestAnimationFrame(()=>demos[d]());}
@@ -1463,6 +1746,22 @@ document.getElementById("editToggle").addEventListener("click",()=>editor.toggle
     img.addEventListener("click",e=>{e.stopPropagation();open(img.currentSrc||img.src,img.alt);});});
   lb.addEventListener("click",close);
   addEventListener("keydown",e=>{if(e.key==="Escape"&&lb.classList.contains("open")){e.preventDefault();close();}});
+})();
+/* click-to-expand: inline answers (data-toggle) + full-slide panels (data-expand).
+   Opening a panel that carries data-demo draws its canvas via the demos registry. */
+function closeExpandPanels(){document.querySelectorAll(".expand-panel.open").forEach(p=>p.classList.remove("open"));
+  document.querySelectorAll(".answer.open").forEach(a=>a.classList.remove("open"));}
+(function(){
+  document.addEventListener("click",e=>{
+    const tog=e.target.closest("[data-toggle]");
+    if(tog){const t=document.getElementById(tog.dataset.toggle);if(t)t.classList.toggle("open");return;}
+    if(e.target.closest(".panel-close")){closeExpandPanels();return;}
+    const exp=e.target.closest("[data-expand]");
+    if(exp){const p=document.getElementById(exp.dataset.expand);if(p){
+      document.querySelectorAll(".expand-panel.open").forEach(x=>x.classList.remove("open"));
+      p.classList.add("open");const d=p.dataset.demo;if(d&&demos[d])requestAnimationFrame(()=>demos[d]());}return;}
+  });
+  addEventListener("keydown",e=>{if(e.key==="Escape"&&document.querySelector(".expand-panel.open")){e.preventDefault();closeExpandPanels();}});
 })();
 addEventListener("DOMContentLoaded",()=>{
   window.deck=new Deck();
