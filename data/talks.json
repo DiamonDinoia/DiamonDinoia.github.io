@@ -1,7 +1,7 @@
 {
   "talks": [
     {
-      "title": "Practical HPC NUFFTs",
+      "title": "Practical HPC: NUFFTs, function evaluation, SIMD & abstractions",
       "date": "June 26, 2026",
       "year": 2026,
       "type": "talk",
