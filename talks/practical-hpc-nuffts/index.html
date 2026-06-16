@@ -312,6 +312,11 @@ img.zoomable:hover{filter:brightness(1.04)}
 .lang-btn .arrow{font-family:var(--mono);font-size:20px;color:var(--cyan)}
 .install-line{font-family:var(--mono);font-size:23px;color:var(--cyan-soft);letter-spacing:.02em;margin-top:6px}
 .install-line .lbl{color:var(--cyan);text-transform:uppercase;letter-spacing:.14em;font-size:18px;margin-right:14px}
+/* live code editor: highlight layer under a transparent textarea */
+.hl .c-kw{color:var(--s-kw)} .hl .c-ty{color:var(--s-ty)} .hl .c-fn{color:var(--s-fn)}
+.hl .c-str{color:var(--s-str)} .hl .c-num{color:var(--s-num)} .hl .c-com{color:var(--s-com);font-style:italic}
+.hl .c-pp{color:var(--s-pp)}
+.code-edit textarea::selection{background:rgba(47,243,224,.25)}
 </style>
 </head>
 <body>
@@ -836,10 +841,12 @@ delete(obj);</pre></div></div>
 <section class="slide">
   <div class="counter"></div><div class="toprule"></div>
   <div class="slide-inner">
-    <div class="screen-head"><h2 class="h2 reveal">Run it live</h2><div class="screen-sub reveal">edit the code → it really runs · the treeweave WASM build is fetched from a CDN</div></div>
+    <div class="screen-head"><h2 class="h2 reveal">Run it live</h2><div class="screen-sub reveal">edit the code → it really runs</div></div>
     <div class="two reveal" style="grid-template-columns:1fr 1fr;gap:40px;height:auto;align-items:stretch;margin-top:4px">
       <div class="term"><div class="term-bar"><span class="dot r"></span><span class="dot y"></span><span class="dot g"></span><span class="term-tab"><b>demo.js</b> — editable · runs for real</span></div>
-      <div class="term-body" style="padding:0"><textarea id="wasmSrc" spellcheck="false" style="display:block;width:100%;height:440px;resize:none;border:0;outline:none;background:transparent;color:var(--cyan-soft);font-family:var(--mono);font-size:20px;line-height:1.5;padding:24px 30px;white-space:pre;overflow:auto;tab-size:2">import { Treeweave } from
+      <div class="term-body" style="padding:0"><div class="code-edit" style="position:relative;height:460px">
+        <pre class="hl" id="wasmHLpre" aria-hidden="true" style="position:absolute;inset:0;margin:0;box-sizing:border-box;font-family:var(--mono);font-size:20px;line-height:1.5;padding:24px 30px;white-space:pre;overflow:hidden;color:var(--ink);pointer-events:none;tab-size:2"><code id="wasmHL"></code></pre>
+        <textarea id="wasmSrc" spellcheck="false" wrap="off" style="position:absolute;inset:0;margin:0;width:100%;height:100%;box-sizing:border-box;resize:none;border:0;outline:none;background:transparent;color:transparent;-webkit-text-fill-color:transparent;caret-color:var(--cyan-soft);font-family:var(--mono);font-size:20px;line-height:1.5;padding:24px 30px;white-space:pre;overflow:auto;tab-size:2">import { Treeweave } from
   "https://unpkg.com/@flatironinstitute/treeweave";
 
 // edit me — the function to approximate on [a, b)
@@ -854,7 +861,7 @@ export const f = s =&gt; {
 };
 
 export const domain = [2, 10];   // [a, b)
-export const tol    = 1e-10;     // fit tolerance</textarea></div></div>
+export const tol    = 1e-10;     // fit tolerance</textarea></div></div></div>
       <div class="term"><div class="term-bar"><span class="dot r"></span><span class="dot y"></span><span class="dot g"></span><span class="term-tab"><b>output</b> — ζ(s) fit · WASM vs native JS</span></div>
       <div class="term-body"><pre class="code" id="wasmOut" style="font-size:23px;max-height:none;min-height:440px;white-space:pre-wrap">edit demo.js on the left, then press “Run” — your code is compiled and executed live…</pre></div></div>
     </div>
@@ -862,7 +869,7 @@ export const tol    = 1e-10;     // fit tolerance</textarea></div></div>
       <button class="btn" id="wasmRun"><span class="dot-run"></span>▶ Run demo.js (fit + race, WASM)</button>
       <button class="btn" id="wasmReset">↺ reset code</button>
       <label style="font-family:var(--mono);font-size:18px;color:var(--dim);display:flex;align-items:center;gap:12px">points <input type="range" id="wasmN" min="100000" max="1000000" value="500000" step="100000"><span class="readout" id="wasmNval">500,000</span></label>
-      <span class="hint">your edits to f / domain / tol run for real · treeweave fetched from unpkg (needs an online origin)</span>
+      <span class="hint">your edits to f / domain / tol run for real</span>
     </div>
   </div>
 </section>
@@ -1617,10 +1624,15 @@ function baryEval(x,xs,fs,w){let num=0,den=0;for(let j=0;j<xs.length;j++){if(x==
    hosted locally; falls back to published numbers if the CDN can't be reached. */
 (function(){const btn=document.getElementById("wasmRun");if(!btn)return;
   const out=document.getElementById("wasmOut"),src=document.getElementById("wasmSrc");
+  const hl=document.getElementById("wasmHL"),hlPre=document.getElementById("wasmHLpre");
   const nEl=document.getElementById("wasmN"),nVal=document.getElementById("wasmNval"),reset=document.getElementById("wasmReset");
   const fmt=n=>n.toLocaleString();const setN=()=>nVal.textContent=fmt(+nEl.value);nEl.addEventListener("input",setN);setN();
+  // keep the highlight layer mirroring the textarea (content + scroll)
+  const paint=()=>{hl.innerHTML=highlight(src.value+"\n","cpp");};
+  const syncScroll=()=>{hlPre.scrollTop=src.scrollTop;hlPre.scrollLeft=src.scrollLeft;};
+  src.addEventListener("input",paint);src.addEventListener("scroll",syncScroll);paint();
   const DEFAULT=src.value;
-  if(reset)reset.addEventListener("click",()=>{src.value=DEFAULT;out.textContent="code reset — press “Run” to execute it.";});
+  if(reset)reset.addEventListener("click",()=>{src.value=DEFAULT;paint();syncScroll();out.textContent="code reset — press “Run” to execute it.";});
   const FALLBACK="couldn't reach the WASM CDN — showing published numbers:\n\n"+
     "fit time         one-off (ms), amortized over every call\n"+
     "treeweave        ~3,700 Mevals/s   (Python batch)\n"+
