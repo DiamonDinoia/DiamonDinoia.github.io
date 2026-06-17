@@ -90,7 +90,7 @@
         "C++"
       ],
       "description": "C++ tensors with broadcasting and lazy computing",
-      "stars": 3745
+      "stars": 3748
     },
     {
       "name": "CaImAn",
@@ -234,7 +234,7 @@
         "C++"
       ],
       "description": "xtensor plugin to read and write images, audio files, numpy (compressed) npz and HDF5",
-      "stars": 93
+      "stars": 94
     },
     {
       "name": "xtensor-r",
@@ -300,6 +300,15 @@
       "stars": 52
     },
     {
+      "name": "walnuts",
+      "url": "https://github.com/flatironinstitute/walnuts",
+      "langs": [
+        "C++"
+      ],
+      "description": "Within-orbit Adaptive Leapfrog No-U-Turn Sampler",
+      "stars": 48
+    },
+    {
       "name": "nifty-ls",
       "url": "https://github.com/flatironinstitute/nifty-ls",
       "langs": [
@@ -325,15 +334,6 @@
       ],
       "description": "FFTW bindings for the xtensor C++14 multi-dimensional array library",
       "stars": 48
-    },
-    {
-      "name": "walnuts",
-      "url": "https://github.com/flatironinstitute/walnuts",
-      "langs": [
-        "C++"
-      ],
-      "description": "Within-orbit Adaptive Leapfrog No-U-Turn Sampler",
-      "stars": 47
     },
     {
       "name": "xtensor-zarr",
@@ -525,6 +525,15 @@
       "stars": 25
     },
     {
+      "name": "dmk",
+      "url": "https://github.com/flatironinstitute/dmk",
+      "langs": [
+        "C++"
+      ],
+      "description": "A Dual-space Multilevel Kernel-splitting (DMK) Framework for Discrete and Continuous Convolution",
+      "stars": 24
+    },
+    {
       "name": "catvae",
       "url": "https://github.com/flatironinstitute/catvae",
       "langs": [
@@ -559,15 +568,6 @@
       ],
       "description": "Easy to use benchmarks for linear algebra frameworks",
       "stars": 24
-    },
-    {
-      "name": "dmk",
-      "url": "https://github.com/flatironinstitute/dmk",
-      "langs": [
-        "C++"
-      ],
-      "description": "A Dual-space Multilevel Kernel-splitting (DMK) Framework for Discrete and Continuous Convolution",
-      "stars": 23
     },
     {
       "name": "kachery-cloud",
@@ -1727,21 +1727,21 @@
       "stars": 2
     },
     {
-      "name": "dftkit",
-      "url": "https://github.com/TRIQS/dftkit",
-      "langs": [
-        "Python"
-      ],
-      "description": "Toolkit connecting TRIQS to DFT codes",
-      "stars": 2
-    },
-    {
       "name": "TRIQS.github.io",
       "url": "https://github.com/TRIQS/TRIQS.github.io",
       "langs": [
         "HTML"
       ],
       "description": "top github pages site",
+      "stars": 2
+    },
+    {
+      "name": "dftkit",
+      "url": "https://github.com/TRIQS/dftkit",
+      "langs": [
+        "Python"
+      ],
+      "description": "Toolkit connecting TRIQS to DFT codes",
       "stars": 2
     },
     {
@@ -1799,6 +1799,15 @@
       "stars": 1
     },
     {
+      "name": "neuroRSE",
+      "url": "https://github.com/flatironinstitute/neuroRSE",
+      "langs": [
+        "CSS"
+      ],
+      "description": "Website for CCN's neuroRSE group",
+      "stars": 1
+    },
+    {
       "name": "awi",
       "url": "https://github.com/flatironinstitute/awi",
       "langs": [
@@ -1814,15 +1823,6 @@
         "Python"
       ],
       "description": "Graphical interface for editing a lineage and viewing related microscopy images",
-      "stars": 1
-    },
-    {
-      "name": "neuroRSE",
-      "url": "https://github.com/flatironinstitute/neuroRSE",
-      "langs": [
-        "CSS"
-      ],
-      "description": "Website for CCN's neuroRSE group",
       "stars": 1
     },
     {
@@ -2108,21 +2108,21 @@
       "stars": 1
     },
     {
-      "name": "treeweave",
-      "url": "https://github.com/DiamonDinoia/treeweave",
-      "langs": [
-        "C++"
-      ],
-      "description": "treeweave — fast N-dimensional function approximation via adaptive polynomial fitting (baobzi rebuilt on polyfit + POET)",
-      "stars": 0
-    },
-    {
       "name": "DiamonDinoia.github.io",
       "url": "https://github.com/DiamonDinoia/DiamonDinoia.github.io",
       "langs": [
         "HTML"
       ],
       "description": "",
+      "stars": 0
+    },
+    {
+      "name": "treeweave",
+      "url": "https://github.com/DiamonDinoia/treeweave",
+      "langs": [
+        "C++"
+      ],
+      "description": "treeweave — fast N-dimensional function approximation via adaptive polynomial fitting (baobzi rebuilt on polyfit + POET)",
       "stars": 0
     },
     {
@@ -2405,15 +2405,6 @@
       "stars": 0
     },
     {
-      "name": "jenkins-template",
-      "url": "https://github.com/flatironinstitute/jenkins-template",
-      "langs": [
-        "Groovy"
-      ],
-      "description": "Example and test repository for jenkins builds",
-      "stars": 0
-    },
-    {
       "name": "neurorse-workshops",
       "url": "https://github.com/flatironinstitute/neurorse-workshops",
       "langs": [
@@ -2429,6 +2420,15 @@
         "Python"
       ],
       "description": "Materials for CCN software workshop at FENS, July 2026",
+      "stars": 0
+    },
+    {
+      "name": "jenkins-template",
+      "url": "https://github.com/flatironinstitute/jenkins-template",
+      "langs": [
+        "Groovy"
+      ],
+      "description": "Example and test repository for jenkins builds",
       "stars": 0
     },
     {
