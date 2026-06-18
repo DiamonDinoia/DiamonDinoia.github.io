@@ -90,7 +90,7 @@
         "C++"
       ],
       "description": "C++ tensors with broadcasting and lazy computing",
-      "stars": 3748
+      "stars": 3746
     },
     {
       "name": "CaImAn",
@@ -288,7 +288,7 @@
         "Cuda"
       ],
       "description": "JAXMg: A multi-GPU linear solver in JAX",
-      "stars": 54
+      "stars": 55
     },
     {
       "name": "nixpack",
@@ -300,21 +300,21 @@
       "stars": 52
     },
     {
-      "name": "walnuts",
-      "url": "https://github.com/flatironinstitute/walnuts",
-      "langs": [
-        "C++"
-      ],
-      "description": "Within-orbit Adaptive Leapfrog No-U-Turn Sampler",
-      "stars": 48
-    },
-    {
       "name": "nifty-ls",
       "url": "https://github.com/flatironinstitute/nifty-ls",
       "langs": [
         "Python"
       ],
       "description": "A fast Lomb-Scargle periodogram. It's nifty, and uses a NUFFT!",
+      "stars": 48
+    },
+    {
+      "name": "walnuts",
+      "url": "https://github.com/flatironinstitute/walnuts",
+      "langs": [
+        "C++"
+      ],
+      "description": "Within-orbit Adaptive Leapfrog No-U-Turn Sampler",
       "stars": 48
     },
     {
@@ -462,6 +462,15 @@
       "stars": 31
     },
     {
+      "name": "fmm2d",
+      "url": "https://github.com/flatironinstitute/fmm2d",
+      "langs": [
+        "Fortran"
+      ],
+      "description": "This codebase is a set of libraries to compute N-body interactions governed by the Laplace and Helmholtz equations, to a specified precision, in two dimensions, on a multi-core shared-memory machine.",
+      "stars": 30
+    },
+    {
       "name": "SkellySim",
       "url": "https://github.com/flatironinstitute/SkellySim",
       "langs": [
@@ -478,15 +487,6 @@
       ],
       "description": "Spike sorting software being developed at Flatiron Institute, based on JRCLUST (Janelia Rocket Cluster)",
       "stars": 30
-    },
-    {
-      "name": "fmm2d",
-      "url": "https://github.com/flatironinstitute/fmm2d",
-      "langs": [
-        "Fortran"
-      ],
-      "description": "This codebase is a set of libraries to compute N-body interactions governed by the Laplace and Helmholtz equations, to a specified precision, in two dimensions, on a multi-core shared-memory machine.",
-      "stars": 29
     },
     {
       "name": "cpp2py",
@@ -1198,6 +1198,15 @@
       "stars": 5
     },
     {
+      "name": "gem",
+      "url": "https://github.com/TRIQS/gem",
+      "langs": [
+        "Python"
+      ],
+      "description": "Ghost Gutzwiller Approximation implemented in TRIQS",
+      "stars": 5
+    },
+    {
       "name": "mpi",
       "url": "https://github.com/TRIQS/mpi",
       "langs": [
@@ -1339,15 +1348,6 @@
         "TeX"
       ],
       "description": "Notes on metrics and datasets for community spike sorting comparison and validation",
-      "stars": 4
-    },
-    {
-      "name": "gem",
-      "url": "https://github.com/TRIQS/gem",
-      "langs": [
-        "Python"
-      ],
-      "description": "Ghost Gutzwiller Approximation implemented in TRIQS",
       "stars": 4
     },
     {
