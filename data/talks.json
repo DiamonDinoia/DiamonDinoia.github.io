@@ -2,7 +2,8 @@
   "talks": [
     {
       "title": "Practical HPC: NUFFTs, function evaluation, SIMD & abstractions",
-      "date": "June 26, 2026",
+      "org": "Polytechnique Montréal",
+      "date": "June 18, 2026",
       "year": 2026,
       "type": "talk",
       "links": [
