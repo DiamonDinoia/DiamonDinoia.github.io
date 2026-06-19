@@ -117,7 +117,7 @@
         "Python"
       ],
       "description": "Deep functional residue identification",
-      "stars": 351
+      "stars": 352
     },
     {
       "name": "xframe",
@@ -297,7 +297,7 @@
         "Nix"
       ],
       "description": "nix+spack = nixpack (spanix?)",
-      "stars": 52
+      "stars": 53
     },
     {
       "name": "nifty-ls",
