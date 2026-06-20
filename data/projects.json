@@ -90,7 +90,7 @@
         "C++"
       ],
       "description": "C++ tensors with broadcasting and lazy computing",
-      "stars": 3746
+      "stars": 3747
     },
     {
       "name": "CaImAn",
@@ -1378,6 +1378,15 @@
       "stars": 3
     },
     {
+      "name": "ParticleMeshEwald.jl",
+      "url": "https://github.com/flatironinstitute/ParticleMeshEwald.jl",
+      "langs": [
+        "Julia"
+      ],
+      "description": "Particle mesh Ewald via NonuniformFFTs.jl",
+      "stars": 3
+    },
+    {
       "name": "poet",
       "url": "https://github.com/flatironinstitute/poet",
       "langs": [
@@ -1562,15 +1571,6 @@
         "Python"
       ],
       "description": "Calculate dynamic (time-dependent) latent parameters from single-cell expression data",
-      "stars": 2
-    },
-    {
-      "name": "ParticleMeshEwald.jl",
-      "url": "https://github.com/flatironinstitute/ParticleMeshEwald.jl",
-      "langs": [
-        "Julia"
-      ],
-      "description": "Particle mesh Ewald via NonuniformFFTs.jl",
       "stars": 2
     },
     {
