@@ -198,7 +198,7 @@
         "C++"
       ],
       "description": "JAX bindings to the Flatiron Institute Non-uniform Fast Fourier Transform (FINUFFT) library",
-      "stars": 134
+      "stars": 135
     },
     {
       "name": "cufinufft",
@@ -255,6 +255,15 @@
       "stars": 64
     },
     {
+      "name": "stan-playground",
+      "url": "https://github.com/flatironinstitute/stan-playground",
+      "langs": [
+        "TypeScript"
+      ],
+      "description": "Run Stan models in the browser",
+      "stars": 60
+    },
+    {
       "name": "mountainsort5",
       "url": "https://github.com/flatironinstitute/mountainsort5",
       "langs": [
@@ -262,15 +271,6 @@
       ],
       "description": "MountainSort spike sorting algorithm, version 5",
       "stars": 60
-    },
-    {
-      "name": "stan-playground",
-      "url": "https://github.com/flatironinstitute/stan-playground",
-      "langs": [
-        "TypeScript"
-      ],
-      "description": "Run Stan models in the browser",
-      "stars": 59
     },
     {
       "name": "inferelator",
@@ -432,7 +432,7 @@
         "Python"
       ],
       "description": "SpikeForest -- spike sorting analysis for website -- version 2",
-      "stars": 35
+      "stars": 36
     },
     {
       "name": "spikeforest",
