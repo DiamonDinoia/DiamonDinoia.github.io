@@ -90,7 +90,7 @@
         "C++"
       ],
       "description": "C++ tensors with broadcasting and lazy computing",
-      "stars": 3748
+      "stars": 3747
     },
     {
       "name": "CaImAn",
@@ -108,7 +108,7 @@
         "C++"
       ],
       "description": "Python bindings for xtensor",
-      "stars": 368
+      "stars": 367
     },
     {
       "name": "DeepFRI",
@@ -1252,6 +1252,15 @@
       "stars": 4
     },
     {
+      "name": "poet",
+      "url": "https://github.com/flatironinstitute/poet",
+      "langs": [
+        "C++"
+      ],
+      "description": "Perfectly Over Engineered Templates",
+      "stars": 4
+    },
+    {
       "name": "spikeforest_recordings",
       "url": "https://github.com/flatironinstitute/spikeforest_recordings",
       "langs": [
@@ -1369,6 +1378,15 @@
       "stars": 4
     },
     {
+      "name": "treeweave",
+      "url": "https://github.com/DiamonDinoia/treeweave",
+      "langs": [
+        "C++"
+      ],
+      "description": "treeweave — fast N-dimensional function approximation via adaptive polynomial fitting (baobzi rebuilt on polyfit + POET)",
+      "stars": 3
+    },
+    {
       "name": "Chebyshev",
       "url": "https://github.com/DiamonDinoia/Chebyshev",
       "langs": [
@@ -1384,15 +1402,6 @@
         "Julia"
       ],
       "description": "Particle mesh Ewald via NonuniformFFTs.jl",
-      "stars": 3
-    },
-    {
-      "name": "poet",
-      "url": "https://github.com/flatironinstitute/poet",
-      "langs": [
-        "C++"
-      ],
-      "description": "Perfectly Over Engineered Templates",
       "stars": 3
     },
     {
@@ -2108,6 +2117,15 @@
       "stars": 1
     },
     {
+      "name": "juno-drivers-debian",
+      "url": "https://github.com/DiamonDinoia/juno-drivers-debian",
+      "langs": [
+        "Shell"
+      ],
+      "description": "Fork of junocomp/juno-drivers-debian with local fixes",
+      "stars": 0
+    },
+    {
       "name": "DiamonDinoia.github.io",
       "url": "https://github.com/DiamonDinoia/DiamonDinoia.github.io",
       "langs": [
@@ -2117,30 +2135,12 @@
       "stars": 0
     },
     {
-      "name": "treeweave",
-      "url": "https://github.com/DiamonDinoia/treeweave",
-      "langs": [
-        "C++"
-      ],
-      "description": "treeweave — fast N-dimensional function approximation via adaptive polynomial fitting (baobzi rebuilt on polyfit + POET)",
-      "stars": 0
-    },
-    {
       "name": "juno-grub",
       "url": "https://github.com/DiamonDinoia/juno-grub",
       "langs": [
         "Shell"
       ],
       "description": "Fork of junocomp/juno-grub with local fixes",
-      "stars": 0
-    },
-    {
-      "name": "juno-drivers-debian",
-      "url": "https://github.com/DiamonDinoia/juno-drivers-debian",
-      "langs": [
-        "Shell"
-      ],
-      "description": "Fork of junocomp/juno-drivers-debian with local fixes",
       "stars": 0
     },
     {
@@ -2405,6 +2405,15 @@
       "stars": 0
     },
     {
+      "name": "jenkins-template",
+      "url": "https://github.com/flatironinstitute/jenkins-template",
+      "langs": [
+        "Groovy"
+      ],
+      "description": "Example and test repository for jenkins builds",
+      "stars": 0
+    },
+    {
       "name": "neurorse-workshops",
       "url": "https://github.com/flatironinstitute/neurorse-workshops",
       "langs": [
@@ -2420,15 +2429,6 @@
         "Python"
       ],
       "description": "Materials for CCN software workshop at FENS, July 2026",
-      "stars": 0
-    },
-    {
-      "name": "jenkins-template",
-      "url": "https://github.com/flatironinstitute/jenkins-template",
-      "langs": [
-        "Groovy"
-      ],
-      "description": "Example and test repository for jenkins builds",
       "stars": 0
     },
     {
