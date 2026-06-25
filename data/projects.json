@@ -99,7 +99,7 @@
         "Python"
       ],
       "description": "Computational toolbox for large scale Calcium Imaging Analysis, including movie handling, motion correction, source extraction, spike deconvolution and result visualization.",
-      "stars": 723
+      "stars": 722
     },
     {
       "name": "xtensor-python",
@@ -180,7 +180,7 @@
         "Python"
       ],
       "description": "Neural Networks for Protein Sequence Alignment",
-      "stars": 138
+      "stars": 139
     },
     {
       "name": "nemos",
@@ -306,7 +306,7 @@
         "Python"
       ],
       "description": "A fast Lomb-Scargle periodogram. It's nifty, and uses a NUFFT!",
-      "stars": 48
+      "stars": 49
     },
     {
       "name": "walnuts",
@@ -453,6 +453,15 @@
       "stars": 32
     },
     {
+      "name": "fmm2d",
+      "url": "https://github.com/flatironinstitute/fmm2d",
+      "langs": [
+        "Fortran"
+      ],
+      "description": "This codebase is a set of libraries to compute N-body interactions governed by the Laplace and Helmholtz equations, to a specified precision, in two dimensions, on a multi-core shared-memory machine.",
+      "stars": 31
+    },
+    {
       "name": "xtensor-python-cookiecutter",
       "url": "https://github.com/xtensor-stack/xtensor-python-cookiecutter",
       "langs": [
@@ -460,15 +469,6 @@
       ],
       "description": "Cookiecutter for a Python project making use of xtensor",
       "stars": 31
-    },
-    {
-      "name": "fmm2d",
-      "url": "https://github.com/flatironinstitute/fmm2d",
-      "langs": [
-        "Fortran"
-      ],
-      "description": "This codebase is a set of libraries to compute N-body interactions governed by the Laplace and Helmholtz equations, to a specified precision, in two dimensions, on a multi-core shared-memory machine.",
-      "stars": 30
     },
     {
       "name": "SkellySim",
@@ -1772,6 +1772,15 @@
       "stars": 2
     },
     {
+      "name": "cuda-span",
+      "url": "https://github.com/DiamonDinoia/cuda-span",
+      "langs": [
+        "C++"
+      ],
+      "description": "Implementation of c++20 span for c++11 onwards, but cuda compatible",
+      "stars": 1
+    },
+    {
       "name": "cpp-learning",
       "url": "https://github.com/DiamonDinoia/cpp-learning",
       "langs": [
@@ -2117,21 +2126,21 @@
       "stars": 1
     },
     {
-      "name": "juno-drivers-debian",
-      "url": "https://github.com/DiamonDinoia/juno-drivers-debian",
-      "langs": [
-        "Shell"
-      ],
-      "description": "Fork of junocomp/juno-drivers-debian with local fixes",
-      "stars": 0
-    },
-    {
       "name": "DiamonDinoia.github.io",
       "url": "https://github.com/DiamonDinoia/DiamonDinoia.github.io",
       "langs": [
         "HTML"
       ],
       "description": "",
+      "stars": 0
+    },
+    {
+      "name": "juno-drivers-debian",
+      "url": "https://github.com/DiamonDinoia/juno-drivers-debian",
+      "langs": [
+        "Shell"
+      ],
+      "description": "Fork of junocomp/juno-drivers-debian with local fixes",
       "stars": 0
     },
     {
@@ -2177,15 +2186,6 @@
         "Jupyter Notebook"
       ],
       "description": "This repository contains the code to test GPU memory",
-      "stars": 0
-    },
-    {
-      "name": "cuda-span",
-      "url": "https://github.com/DiamonDinoia/cuda-span",
-      "langs": [
-        "C++"
-      ],
-      "description": "Implementation of c++20 span for c++11 onwards, but cuda compatible",
       "stars": 0
     },
     {
