@@ -768,6 +768,15 @@
       "stars": 13
     },
     {
+      "name": "cppdlr",
+      "url": "https://github.com/flatironinstitute/cppdlr",
+      "langs": [
+        "C++"
+      ],
+      "description": "Discrete Lehmann representation of imaginary time Green's functions",
+      "stars": 12
+    },
+    {
       "name": "Cryo-EM-Heterogeneity-Challenge-1",
       "url": "https://github.com/flatironinstitute/Cryo-EM-Heterogeneity-Challenge-1",
       "langs": [
@@ -783,15 +792,6 @@
         "Python"
       ],
       "description": "Pose regression with new algebraic representation on ModelNet dataset (ICCV 2023)",
-      "stars": 12
-    },
-    {
-      "name": "cppdlr",
-      "url": "https://github.com/flatironinstitute/cppdlr",
-      "langs": [
-        "C++"
-      ],
-      "description": "Discrete Lehmann representation of imaginary time Green's functions",
       "stars": 12
     },
     {
@@ -876,13 +876,13 @@
       "stars": 10
     },
     {
-      "name": "numbl",
-      "url": "https://github.com/flatironinstitute/numbl",
+      "name": "modest",
+      "url": "https://github.com/TRIQS/modest",
       "langs": [
-        "TypeScript"
+        "C++"
       ],
-      "description": "Numerical computing environment that aims to be compatible with Matlab",
-      "stars": 9
+      "description": "Modular Electronic Structure Toolkit. Supported by the Flatiron Institute.",
+      "stars": 10
     },
     {
       "name": "masala_public",
@@ -891,6 +891,15 @@
         "C++"
       ],
       "description": "The public repository for the Core library of the Masala software suite.  Masala is a set of free and open-source tools for biomolecular modelling, with a plugin-based infrastructure that makes it easy to extend other software.",
+      "stars": 9
+    },
+    {
+      "name": "numbl",
+      "url": "https://github.com/flatironinstitute/numbl",
+      "langs": [
+        "TypeScript"
+      ],
+      "description": "Numerical computing environment that aims to be compatible with Matlab",
       "stars": 9
     },
     {
@@ -930,15 +939,6 @@
       "stars": 9
     },
     {
-      "name": "modest",
-      "url": "https://github.com/TRIQS/modest",
-      "langs": [
-        "C++"
-      ],
-      "description": "Modular Electronic Structure Toolkit. Supported by the Flatiron Institute.",
-      "stars": 9
-    },
-    {
       "name": "ctseg",
       "url": "https://github.com/TRIQS/ctseg",
       "langs": [
@@ -966,21 +966,21 @@
       "stars": 9
     },
     {
-      "name": "capture_lock",
-      "url": "https://github.com/flatironinstitute/capture_lock",
-      "langs": [
-        "C++"
-      ],
-      "description": "Modular Visual-Odometry research platform built on COLMAP for testing our algebraic solvers (e.g., DRaM-LHM, ICCV 2025) in multiview geometry.",
-      "stars": 8
-    },
-    {
       "name": "cryojax-ensemble-optimization",
       "url": "https://github.com/flatironinstitute/cryojax-ensemble-optimization",
       "langs": [
         "Jupyter Notebook"
       ],
       "description": "",
+      "stars": 8
+    },
+    {
+      "name": "capture_lock",
+      "url": "https://github.com/flatironinstitute/capture_lock",
+      "langs": [
+        "C++"
+      ],
+      "description": "Modular Visual-Odometry research platform built on COLMAP for testing our algebraic solvers (e.g., DRaM-LHM, ICCV 2025) in multiview geometry.",
       "stars": 8
     },
     {
@@ -1198,6 +1198,15 @@
       "stars": 5
     },
     {
+      "name": "xca",
+      "url": "https://github.com/TRIQS/xca",
+      "langs": [
+        "C++"
+      ],
+      "description": "TRIQS arbitrary Crossing Approximation (XCA) impurity solver",
+      "stars": 5
+    },
+    {
       "name": "gem",
       "url": "https://github.com/TRIQS/gem",
       "langs": [
@@ -1213,15 +1222,6 @@
         "C++"
       ],
       "description": "A high-level C++ interface to the Message Passing Interface. Supported by the Flatiron Institute.",
-      "stars": 5
-    },
-    {
-      "name": "xca",
-      "url": "https://github.com/TRIQS/xca",
-      "langs": [
-        "C++"
-      ],
-      "description": "Sum-Of-Exponentials bold HYBridization expansion impurity solver",
       "stars": 5
     },
     {
@@ -2405,15 +2405,6 @@
       "stars": 0
     },
     {
-      "name": "jenkins-template",
-      "url": "https://github.com/flatironinstitute/jenkins-template",
-      "langs": [
-        "Groovy"
-      ],
-      "description": "Example and test repository for jenkins builds",
-      "stars": 0
-    },
-    {
       "name": "neurorse-workshops",
       "url": "https://github.com/flatironinstitute/neurorse-workshops",
       "langs": [
@@ -2429,6 +2420,15 @@
         "Python"
       ],
       "description": "Materials for CCN software workshop at FENS, July 2026",
+      "stars": 0
+    },
+    {
+      "name": "jenkins-template",
+      "url": "https://github.com/flatironinstitute/jenkins-template",
+      "langs": [
+        "Groovy"
+      ],
+      "description": "Example and test repository for jenkins builds",
       "stars": 0
     },
     {
