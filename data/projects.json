@@ -99,7 +99,7 @@
         "Python"
       ],
       "description": "Computational toolbox for large scale Calcium Imaging Analysis, including movie handling, motion correction, source extraction, spike deconvolution and result visualization.",
-      "stars": 722
+      "stars": 723
     },
     {
       "name": "xtensor-python",
@@ -162,7 +162,7 @@
         "MATLAB"
       ],
       "description": "Matlab routines for online non-rigid motion correction of calcium imaging data",
-      "stars": 158
+      "stars": 159
     },
     {
       "name": "FMM3D",
@@ -171,7 +171,7 @@
         "Fortran"
       ],
       "description": "Flatiron Institute Fast Multipole Libraries --- This codebase is a set of libraries to compute N-body interactions governed by the Laplace and Helmholtz equations, to a specified precision, in three dimensions, on a multi-core shared-memory machine. ",
-      "stars": 155
+      "stars": 156
     },
     {
       "name": "deepblast",
@@ -1198,6 +1198,15 @@
       "stars": 5
     },
     {
+      "name": "Nevanlinna",
+      "url": "https://github.com/TRIQS/Nevanlinna",
+      "langs": [
+        "C++"
+      ],
+      "description": "Nevanlinna analytical continuation using TRIQS. Supported by the Flatiron Institute.",
+      "stars": 5
+    },
+    {
       "name": "xca",
       "url": "https://github.com/TRIQS/xca",
       "langs": [
@@ -1222,15 +1231,6 @@
         "C++"
       ],
       "description": "A high-level C++ interface to the Message Passing Interface. Supported by the Flatiron Institute.",
-      "stars": 5
-    },
-    {
-      "name": "Nevanlinna",
-      "url": "https://github.com/TRIQS/Nevanlinna",
-      "langs": [
-        "C++"
-      ],
-      "description": "Nevanlinna analytical continuation using TRIQS. Supported by the Flatiron Institute.",
       "stars": 5
     },
     {
@@ -1363,7 +1363,7 @@
       "name": "nrgljubljana_interface",
       "url": "https://github.com/TRIQS/nrgljubljana_interface",
       "langs": [
-        "Python"
+        "C++"
       ],
       "description": "An Interface to the Open-Source Code NRGLjubliana. Supported by the Flatiron Institute.",
       "stars": 4
@@ -1745,21 +1745,21 @@
       "stars": 2
     },
     {
-      "name": "dftkit",
-      "url": "https://github.com/TRIQS/dftkit",
-      "langs": [
-        "Python"
-      ],
-      "description": "Toolkit connecting TRIQS to DFT codes",
-      "stars": 2
-    },
-    {
       "name": "omegamaxent_interface",
       "url": "https://github.com/TRIQS/omegamaxent_interface",
       "langs": [
         "Jupyter Notebook"
       ],
       "description": "TRIQS Interface to the OmegaMaxEnt Code. Supported by the Flatiron Institute.",
+      "stars": 2
+    },
+    {
+      "name": "dftkit",
+      "url": "https://github.com/TRIQS/dftkit",
+      "langs": [
+        "Python"
+      ],
+      "description": "Toolkit connecting TRIQS to DFT codes",
       "stars": 2
     },
     {
@@ -2072,6 +2072,15 @@
       "stars": 1
     },
     {
+      "name": "hartree_fock",
+      "url": "https://github.com/TRIQS/hartree_fock",
+      "langs": [
+        "Python"
+      ],
+      "description": "Hartree-Fock lattice and impurity solvers based on the TRIQS library. Supported by the Flatiron Institute.",
+      "stars": 1
+    },
+    {
       "name": "cthyb_matrix",
       "url": "https://github.com/TRIQS/cthyb_matrix",
       "langs": [
@@ -2096,15 +2105,6 @@
         "Python"
       ],
       "description": "TRIQS Interface to the w2dynamics Code",
-      "stars": 1
-    },
-    {
-      "name": "hartree_fock",
-      "url": "https://github.com/TRIQS/hartree_fock",
-      "langs": [
-        "Python"
-      ],
-      "description": "Hartree-Fock lattice and impurity solvers based on the TRIQS library. Supported by the Flatiron Institute.",
       "stars": 1
     },
     {
