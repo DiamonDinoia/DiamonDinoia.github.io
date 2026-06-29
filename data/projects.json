@@ -273,6 +273,15 @@
       "stars": 60
     },
     {
+      "name": "jaxmg",
+      "url": "https://github.com/flatironinstitute/jaxmg",
+      "langs": [
+        "Cuda"
+      ],
+      "description": "JAXMg: A multi-GPU linear solver in JAX",
+      "stars": 56
+    },
+    {
       "name": "inferelator",
       "url": "https://github.com/flatironinstitute/inferelator",
       "langs": [
@@ -280,15 +289,6 @@
       ],
       "description": "Task-based gene regulatory network inference using single-cell or bulk gene expression data conditioned on a prior network.",
       "stars": 56
-    },
-    {
-      "name": "jaxmg",
-      "url": "https://github.com/flatironinstitute/jaxmg",
-      "langs": [
-        "Cuda"
-      ],
-      "description": "JAXMg: A multi-GPU linear solver in JAX",
-      "stars": 55
     },
     {
       "name": "nixpack",
@@ -1128,6 +1128,15 @@
       "stars": 6
     },
     {
+      "name": "gem",
+      "url": "https://github.com/TRIQS/gem",
+      "langs": [
+        "Python"
+      ],
+      "description": "Ghost Gutzwiller Approximation implemented in TRIQS",
+      "stars": 6
+    },
+    {
       "name": "h5",
       "url": "https://github.com/TRIQS/h5",
       "langs": [
@@ -1198,6 +1207,15 @@
       "stars": 5
     },
     {
+      "name": "mpi",
+      "url": "https://github.com/TRIQS/mpi",
+      "langs": [
+        "C++"
+      ],
+      "description": "A high-level C++ interface to the Message Passing Interface. Supported by the Flatiron Institute.",
+      "stars": 5
+    },
+    {
       "name": "Nevanlinna",
       "url": "https://github.com/TRIQS/Nevanlinna",
       "langs": [
@@ -1213,24 +1231,6 @@
         "C++"
       ],
       "description": "TRIQS arbitrary Crossing Approximation (XCA) impurity solver",
-      "stars": 5
-    },
-    {
-      "name": "gem",
-      "url": "https://github.com/TRIQS/gem",
-      "langs": [
-        "Python"
-      ],
-      "description": "Ghost Gutzwiller Approximation implemented in TRIQS",
-      "stars": 5
-    },
-    {
-      "name": "mpi",
-      "url": "https://github.com/TRIQS/mpi",
-      "langs": [
-        "C++"
-      ],
-      "description": "A high-level C++ interface to the Message Passing Interface. Supported by the Flatiron Institute.",
       "stars": 5
     },
     {
@@ -1504,21 +1504,21 @@
       "stars": 3
     },
     {
-      "name": "app4triqs",
-      "url": "https://github.com/TRIQS/app4triqs",
-      "langs": [
-        "CMake"
-      ],
-      "description": "A skeleton for TRIQS-based applications",
-      "stars": 3
-    },
-    {
       "name": "itertools",
       "url": "https://github.com/TRIQS/itertools",
       "langs": [
         "C++"
       ],
       "description": "A C++ library that provides functionality to create and adapt C++ ranges. Supported by the Flatiron Institute.",
+      "stars": 3
+    },
+    {
+      "name": "app4triqs",
+      "url": "https://github.com/TRIQS/app4triqs",
+      "langs": [
+        "CMake"
+      ],
+      "description": "A skeleton for TRIQS-based applications",
       "stars": 3
     },
     {
@@ -2405,6 +2405,15 @@
       "stars": 0
     },
     {
+      "name": "2026-flatiron-cmb-summer-school",
+      "url": "https://github.com/flatironinstitute/2026-flatiron-cmb-summer-school",
+      "langs": [
+        "Jupyter Notebook"
+      ],
+      "description": "GitHub Repository for 2026 Flatiron CMB Summer School",
+      "stars": 0
+    },
+    {
       "name": "neurorse-workshops",
       "url": "https://github.com/flatironinstitute/neurorse-workshops",
       "langs": [
@@ -2429,15 +2438,6 @@
         "Groovy"
       ],
       "description": "Example and test repository for jenkins builds",
-      "stars": 0
-    },
-    {
-      "name": "2026-flatiron-cmb-summer-school",
-      "url": "https://github.com/flatironinstitute/2026-flatiron-cmb-summer-school",
-      "langs": [
-        "Jupyter Notebook"
-      ],
-      "description": "GitHub Repository for 2026 Flatiron CMB Summer School",
       "stars": 0
     },
     {
