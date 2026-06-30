@@ -651,21 +651,21 @@
       "stars": 17
     },
     {
-      "name": "cryoSBI",
-      "url": "https://github.com/flatironinstitute/cryoSBI",
-      "langs": [
-        "Python"
-      ],
-      "description": "",
-      "stars": 16
-    },
-    {
       "name": "figpack",
       "url": "https://github.com/flatironinstitute/figpack",
       "langs": [
         "TypeScript"
       ],
       "description": "A Python package for creating shareable, interactive, browser-based visualizations",
+      "stars": 16
+    },
+    {
+      "name": "cryoSBI",
+      "url": "https://github.com/flatironinstitute/cryoSBI",
+      "langs": [
+        "Python"
+      ],
+      "description": "",
       "stars": 16
     },
     {
@@ -1155,6 +1155,15 @@
       "stars": 6
     },
     {
+      "name": "simdref",
+      "url": "https://github.com/DiamonDinoia/simdref",
+      "langs": [
+        "Python"
+      ],
+      "description": "Searchable SIMD intrinsic and instruction reference — CLI, TUI, LSP, manpages, and static web UI",
+      "stars": 5
+    },
+    {
       "name": "fwam2025",
       "url": "https://github.com/DiamonDinoia/fwam2025",
       "langs": [
@@ -1234,12 +1243,12 @@
       "stars": 5
     },
     {
-      "name": "simdref",
-      "url": "https://github.com/DiamonDinoia/simdref",
+      "name": "treeweave",
+      "url": "https://github.com/DiamonDinoia/treeweave",
       "langs": [
-        "Python"
+        "C++"
       ],
-      "description": "Searchable SIMD intrinsic and instruction reference — CLI, TUI, LSP, manpages, and static web UI",
+      "description": "treeweave — fast N-dimensional function approximation via adaptive polynomial fitting (baobzi rebuilt on polyfit + POET)",
       "stars": 4
     },
     {
@@ -1376,15 +1385,6 @@
       ],
       "description": "STL-like algorithms vectorized with xsimd",
       "stars": 4
-    },
-    {
-      "name": "treeweave",
-      "url": "https://github.com/DiamonDinoia/treeweave",
-      "langs": [
-        "C++"
-      ],
-      "description": "treeweave — fast N-dimensional function approximation via adaptive polynomial fitting (baobzi rebuilt on polyfit + POET)",
-      "stars": 3
     },
     {
       "name": "Chebyshev",
@@ -1745,21 +1745,21 @@
       "stars": 2
     },
     {
-      "name": "omegamaxent_interface",
-      "url": "https://github.com/TRIQS/omegamaxent_interface",
-      "langs": [
-        "Jupyter Notebook"
-      ],
-      "description": "TRIQS Interface to the OmegaMaxEnt Code. Supported by the Flatiron Institute.",
-      "stars": 2
-    },
-    {
       "name": "dftkit",
       "url": "https://github.com/TRIQS/dftkit",
       "langs": [
         "Python"
       ],
       "description": "Toolkit connecting TRIQS to DFT codes",
+      "stars": 2
+    },
+    {
+      "name": "omegamaxent_interface",
+      "url": "https://github.com/TRIQS/omegamaxent_interface",
+      "langs": [
+        "Jupyter Notebook"
+      ],
+      "description": "TRIQS Interface to the OmegaMaxEnt Code. Supported by the Flatiron Institute.",
       "stars": 2
     },
     {
