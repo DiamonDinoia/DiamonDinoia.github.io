@@ -306,7 +306,7 @@
         "Python"
       ],
       "description": "A fast Lomb-Scargle periodogram. It's nifty, and uses a NUFFT!",
-      "stars": 50
+      "stars": 51
     },
     {
       "name": "xtensor-fftw",
@@ -858,6 +858,15 @@
       "stars": 11
     },
     {
+      "name": "numbl",
+      "url": "https://github.com/flatironinstitute/numbl",
+      "langs": [
+        "TypeScript"
+      ],
+      "description": "Numerical computing environment that aims to be compatible with Matlab",
+      "stars": 10
+    },
+    {
       "name": "ExEnDiff",
       "url": "https://github.com/flatironinstitute/ExEnDiff",
       "langs": [
@@ -883,15 +892,6 @@
       ],
       "description": "Modular Electronic Structure Toolkit. Supported by the Flatiron Institute.",
       "stars": 10
-    },
-    {
-      "name": "numbl",
-      "url": "https://github.com/flatironinstitute/numbl",
-      "langs": [
-        "TypeScript"
-      ],
-      "description": "Numerical computing environment that aims to be compatible with Matlab",
-      "stars": 9
     },
     {
       "name": "masala_public",
@@ -1504,21 +1504,21 @@
       "stars": 3
     },
     {
-      "name": "itertools",
-      "url": "https://github.com/TRIQS/itertools",
-      "langs": [
-        "C++"
-      ],
-      "description": "A C++ library that provides functionality to create and adapt C++ ranges. Supported by the Flatiron Institute.",
-      "stars": 3
-    },
-    {
       "name": "app4triqs",
       "url": "https://github.com/TRIQS/app4triqs",
       "langs": [
         "CMake"
       ],
       "description": "A skeleton for TRIQS-based applications",
+      "stars": 3
+    },
+    {
+      "name": "itertools",
+      "url": "https://github.com/TRIQS/itertools",
+      "langs": [
+        "C++"
+      ],
+      "description": "A C++ library that provides functionality to create and adapt C++ ranges. Supported by the Flatiron Institute.",
       "stars": 3
     },
     {
