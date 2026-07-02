@@ -90,7 +90,7 @@
         "C++"
       ],
       "description": "C++ tensors with broadcasting and lazy computing",
-      "stars": 3746
+      "stars": 3745
     },
     {
       "name": "CaImAn",
@@ -309,6 +309,15 @@
       "stars": 51
     },
     {
+      "name": "walnuts",
+      "url": "https://github.com/flatironinstitute/walnuts",
+      "langs": [
+        "C++"
+      ],
+      "description": "Within-orbit Adaptive Leapfrog No-U-Turn Sampler",
+      "stars": 49
+    },
+    {
       "name": "xtensor-fftw",
       "url": "https://github.com/xtensor-stack/xtensor-fftw",
       "langs": [
@@ -316,15 +325,6 @@
       ],
       "description": "FFTW bindings for the xtensor C++14 multi-dimensional array library",
       "stars": 49
-    },
-    {
-      "name": "walnuts",
-      "url": "https://github.com/flatironinstitute/walnuts",
-      "langs": [
-        "C++"
-      ],
-      "description": "Within-orbit Adaptive Leapfrog No-U-Turn Sampler",
-      "stars": 48
     },
     {
       "name": "disBatch",
@@ -1173,6 +1173,15 @@
       "stars": 5
     },
     {
+      "name": "poet",
+      "url": "https://github.com/flatironinstitute/poet",
+      "langs": [
+        "C++"
+      ],
+      "description": "Perfectly Over Engineered Templates",
+      "stars": 5
+    },
+    {
       "name": "psyphy",
       "url": "https://github.com/flatironinstitute/psyphy",
       "langs": [
@@ -1258,15 +1267,6 @@
         "C++"
       ],
       "description": "",
-      "stars": 4
-    },
-    {
-      "name": "poet",
-      "url": "https://github.com/flatironinstitute/poet",
-      "langs": [
-        "C++"
-      ],
-      "description": "Perfectly Over Engineered Templates",
       "stars": 4
     },
     {
@@ -1814,6 +1814,15 @@
         "C++"
       ],
       "description": " I'm testing the differences between gcc/llvm with various optimization flags. Both performance and assembly are analyzed.",
+      "stars": 1
+    },
+    {
+      "name": "ccn-software-fens-2026",
+      "url": "https://github.com/flatironinstitute/ccn-software-fens-2026",
+      "langs": [
+        "Python"
+      ],
+      "description": "Materials for CCN software workshop at FENS, July 2026",
       "stars": 1
     },
     {
@@ -2423,15 +2432,6 @@
       "stars": 0
     },
     {
-      "name": "ccn-software-fens-2026",
-      "url": "https://github.com/flatironinstitute/ccn-software-fens-2026",
-      "langs": [
-        "Python"
-      ],
-      "description": "Materials for CCN software workshop at FENS, July 2026",
-      "stars": 0
-    },
-    {
       "name": "jenkins-template",
       "url": "https://github.com/flatironinstitute/jenkins-template",
       "langs": [
@@ -2778,6 +2778,15 @@
         "Fortran"
       ],
       "description": "This repository is a comparison tool for quadrature methods for evaluating layer potentials on surfaces in three dimensions",
+      "stars": 0
+    },
+    {
+      "name": "inchworm",
+      "url": "https://github.com/TRIQS/inchworm",
+      "langs": [
+        "C++"
+      ],
+      "description": "A generic impurity solver using the inchworm scheme for the hybridization expansion",
       "stars": 0
     },
     {
