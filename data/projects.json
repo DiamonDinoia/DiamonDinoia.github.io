@@ -315,7 +315,7 @@
         "C++"
       ],
       "description": "Within-orbit Adaptive Leapfrog No-U-Turn Sampler",
-      "stars": 49
+      "stars": 50
     },
     {
       "name": "xtensor-fftw",
@@ -2414,6 +2414,15 @@
       "stars": 0
     },
     {
+      "name": "neurorse-workshops",
+      "url": "https://github.com/flatironinstitute/neurorse-workshops",
+      "langs": [
+        "Jupyter Notebook"
+      ],
+      "description": "Built workshop materials for the NeuroRSE packages",
+      "stars": 0
+    },
+    {
       "name": "2026-flatiron-cmb-summer-school",
       "url": "https://github.com/flatironinstitute/2026-flatiron-cmb-summer-school",
       "langs": [
@@ -2423,12 +2432,12 @@
       "stars": 0
     },
     {
-      "name": "neurorse-workshops",
-      "url": "https://github.com/flatironinstitute/neurorse-workshops",
+      "name": "CyclicCAE_public",
+      "url": "https://github.com/flatironinstitute/CyclicCAE_public",
       "langs": [
-        "Jupyter Notebook"
+        "Python"
       ],
-      "description": "Built workshop materials for the NeuroRSE packages",
+      "description": "The public repository for the CyclicCAE conformational autoencoder.  CyclicCAE encodes peptide macrocycle conformations in a low-dimensional latent space, useful for rapid sampling, structural refinement, or denoising.",
       "stars": 0
     },
     {
@@ -2778,15 +2787,6 @@
         "Fortran"
       ],
       "description": "This repository is a comparison tool for quadrature methods for evaluating layer potentials on surfaces in three dimensions",
-      "stars": 0
-    },
-    {
-      "name": "inchworm",
-      "url": "https://github.com/TRIQS/inchworm",
-      "langs": [
-        "C++"
-      ],
-      "description": "A generic impurity solver using the inchworm scheme for the hybridization expansion",
       "stars": 0
     },
     {
