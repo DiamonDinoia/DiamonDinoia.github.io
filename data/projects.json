@@ -183,6 +183,15 @@
       "stars": 139
     },
     {
+      "name": "jax-finufft",
+      "url": "https://github.com/flatironinstitute/jax-finufft",
+      "langs": [
+        "C++"
+      ],
+      "description": "JAX bindings to the Flatiron Institute Non-uniform Fast Fourier Transform (FINUFFT) library",
+      "stars": 136
+    },
+    {
       "name": "nemos",
       "url": "https://github.com/flatironinstitute/nemos",
       "langs": [
@@ -190,15 +199,6 @@
       ],
       "description": "NEural MOdelS, a statistical modeling framework for neuroscience.",
       "stars": 136
-    },
-    {
-      "name": "jax-finufft",
-      "url": "https://github.com/flatironinstitute/jax-finufft",
-      "langs": [
-        "C++"
-      ],
-      "description": "JAX bindings to the Flatiron Institute Non-uniform Fast Fourier Transform (FINUFFT) library",
-      "stars": 135
     },
     {
       "name": "cufinufft",
@@ -1817,6 +1817,15 @@
       "stars": 1
     },
     {
+      "name": "CyclicCAE_public",
+      "url": "https://github.com/flatironinstitute/CyclicCAE_public",
+      "langs": [
+        "Python"
+      ],
+      "description": "The public repository for the CyclicCAE conformational autoencoder.  CyclicCAE encodes peptide macrocycle conformations in a low-dimensional latent space, useful for rapid sampling, structural refinement, or denoising.",
+      "stars": 1
+    },
+    {
       "name": "ccn-software-fens-2026",
       "url": "https://github.com/flatironinstitute/ccn-software-fens-2026",
       "langs": [
@@ -2414,15 +2423,6 @@
       "stars": 0
     },
     {
-      "name": "neurorse-workshops",
-      "url": "https://github.com/flatironinstitute/neurorse-workshops",
-      "langs": [
-        "Jupyter Notebook"
-      ],
-      "description": "Built workshop materials for the NeuroRSE packages",
-      "stars": 0
-    },
-    {
       "name": "2026-flatiron-cmb-summer-school",
       "url": "https://github.com/flatironinstitute/2026-flatiron-cmb-summer-school",
       "langs": [
@@ -2432,12 +2432,12 @@
       "stars": 0
     },
     {
-      "name": "CyclicCAE_public",
-      "url": "https://github.com/flatironinstitute/CyclicCAE_public",
+      "name": "neurorse-workshops",
+      "url": "https://github.com/flatironinstitute/neurorse-workshops",
       "langs": [
-        "Python"
+        "Jupyter Notebook"
       ],
-      "description": "The public repository for the CyclicCAE conformational autoencoder.  CyclicCAE encodes peptide macrocycle conformations in a low-dimensional latent space, useful for rapid sampling, structural refinement, or denoising.",
+      "description": "Built workshop materials for the NeuroRSE packages",
       "stars": 0
     },
     {
