@@ -90,7 +90,7 @@
         "C++"
       ],
       "description": "C++ tensors with broadcasting and lazy computing",
-      "stars": 3745
+      "stars": 3747
     },
     {
       "name": "CaImAn",
@@ -216,7 +216,7 @@
         "HTML"
       ],
       "description": "Learning materials for scientific software development",
-      "stars": 95
+      "stars": 96
     },
     {
       "name": "sparse_dot",
@@ -1065,6 +1065,15 @@
       "stars": 7
     },
     {
+      "name": "gem",
+      "url": "https://github.com/TRIQS/gem",
+      "langs": [
+        "Python"
+      ],
+      "description": "Ghost Gutzwiller Approximation implemented in TRIQS",
+      "stars": 7
+    },
+    {
       "name": "xtensor-julia-cookiecutter",
       "url": "https://github.com/xtensor-stack/xtensor-julia-cookiecutter",
       "langs": [
@@ -1125,15 +1134,6 @@
         "Jupyter Notebook"
       ],
       "description": "A qiime2 plugin for case-control differential abundance analysis",
-      "stars": 6
-    },
-    {
-      "name": "gem",
-      "url": "https://github.com/TRIQS/gem",
-      "langs": [
-        "Python"
-      ],
-      "description": "Ghost Gutzwiller Approximation implemented in TRIQS",
       "stars": 6
     },
     {
@@ -1817,21 +1817,21 @@
       "stars": 1
     },
     {
-      "name": "CyclicCAE_public",
-      "url": "https://github.com/flatironinstitute/CyclicCAE_public",
-      "langs": [
-        "Python"
-      ],
-      "description": "The public repository for the CyclicCAE conformational autoencoder.  CyclicCAE encodes peptide macrocycle conformations in a low-dimensional latent space, useful for rapid sampling, structural refinement, or denoising.",
-      "stars": 1
-    },
-    {
       "name": "ccn-software-fens-2026",
       "url": "https://github.com/flatironinstitute/ccn-software-fens-2026",
       "langs": [
         "Python"
       ],
       "description": "Materials for CCN software workshop at FENS, July 2026",
+      "stars": 1
+    },
+    {
+      "name": "CyclicCAE_public",
+      "url": "https://github.com/flatironinstitute/CyclicCAE_public",
+      "langs": [
+        "Python"
+      ],
+      "description": "The public repository for the CyclicCAE conformational autoencoder.  CyclicCAE encodes peptide macrocycle conformations in a low-dimensional latent space, useful for rapid sampling, structural refinement, or denoising.",
       "stars": 1
     },
     {
