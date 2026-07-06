@@ -108,7 +108,7 @@
         "C++"
       ],
       "description": "Python bindings for xtensor",
-      "stars": 367
+      "stars": 368
     },
     {
       "name": "DeepFRI",
@@ -144,7 +144,7 @@
         "C++"
       ],
       "description": "The x template library",
-      "stars": 233
+      "stars": 234
     },
     {
       "name": "xtensor-blas",
@@ -153,7 +153,7 @@
         "C++"
       ],
       "description": "BLAS extension to xtensor",
-      "stars": 172
+      "stars": 173
     },
     {
       "name": "NoRMCorre",
@@ -219,21 +219,21 @@
       "stars": 96
     },
     {
-      "name": "sparse_dot",
-      "url": "https://github.com/flatironinstitute/sparse_dot",
-      "langs": [
-        "Python"
-      ],
-      "description": "Python wrapper for Intel Math Kernel Library (MKL) matrix multiplication",
-      "stars": 95
-    },
-    {
       "name": "xtensor-io",
       "url": "https://github.com/xtensor-stack/xtensor-io",
       "langs": [
         "C++"
       ],
       "description": "xtensor plugin to read and write images, audio files, numpy (compressed) npz and HDF5",
+      "stars": 96
+    },
+    {
+      "name": "sparse_dot",
+      "url": "https://github.com/flatironinstitute/sparse_dot",
+      "langs": [
+        "Python"
+      ],
+      "description": "Python wrapper for Intel Math Kernel Library (MKL) matrix multiplication",
       "stars": 95
     },
     {
@@ -255,21 +255,21 @@
       "stars": 64
     },
     {
-      "name": "stan-playground",
-      "url": "https://github.com/flatironinstitute/stan-playground",
-      "langs": [
-        "TypeScript"
-      ],
-      "description": "Run Stan models in the browser",
-      "stars": 60
-    },
-    {
       "name": "mountainsort5",
       "url": "https://github.com/flatironinstitute/mountainsort5",
       "langs": [
         "Python"
       ],
       "description": "MountainSort spike sorting algorithm, version 5",
+      "stars": 61
+    },
+    {
+      "name": "stan-playground",
+      "url": "https://github.com/flatironinstitute/stan-playground",
+      "langs": [
+        "TypeScript"
+      ],
+      "description": "Run Stan models in the browser",
       "stars": 60
     },
     {
@@ -324,7 +324,7 @@
         "Jupyter Notebook"
       ],
       "description": "FFTW bindings for the xtensor C++14 multi-dimensional array library",
-      "stars": 49
+      "stars": 50
     },
     {
       "name": "disBatch",
@@ -1002,6 +1002,15 @@
       "stars": 8
     },
     {
+      "name": "gem",
+      "url": "https://github.com/TRIQS/gem",
+      "langs": [
+        "Python"
+      ],
+      "description": "Ghost Gutzwiller Approximation implemented in TRIQS",
+      "stars": 8
+    },
+    {
       "name": "hubbardI",
       "url": "https://github.com/TRIQS/hubbardI",
       "langs": [
@@ -1062,15 +1071,6 @@
         "JavaScript"
       ],
       "description": "System for sharing data for scientific research",
-      "stars": 7
-    },
-    {
-      "name": "gem",
-      "url": "https://github.com/TRIQS/gem",
-      "langs": [
-        "Python"
-      ],
-      "description": "Ghost Gutzwiller Approximation implemented in TRIQS",
       "stars": 7
     },
     {
@@ -1252,6 +1252,15 @@
       "stars": 5
     },
     {
+      "name": "xsimd-algorithm",
+      "url": "https://github.com/xtensor-stack/xsimd-algorithm",
+      "langs": [
+        "C++"
+      ],
+      "description": "STL-like algorithms vectorized with xsimd",
+      "stars": 5
+    },
+    {
       "name": "treeweave",
       "url": "https://github.com/DiamonDinoia/treeweave",
       "langs": [
@@ -1375,15 +1384,6 @@
         "C++"
       ],
       "description": "An Interface to the Open-Source Code NRGLjubliana. Supported by the Flatiron Institute.",
-      "stars": 4
-    },
-    {
-      "name": "xsimd-algorithm",
-      "url": "https://github.com/xtensor-stack/xsimd-algorithm",
-      "langs": [
-        "C++"
-      ],
-      "description": "STL-like algorithms vectorized with xsimd",
       "stars": 4
     },
     {
@@ -1814,6 +1814,15 @@
         "C++"
       ],
       "description": " I'm testing the differences between gcc/llvm with various optimization flags. Both performance and assembly are analyzed.",
+      "stars": 1
+    },
+    {
+      "name": "2026-flatiron-cmb-summer-school",
+      "url": "https://github.com/flatironinstitute/2026-flatiron-cmb-summer-school",
+      "langs": [
+        "Jupyter Notebook"
+      ],
+      "description": "GitHub Repository for 2026 Flatiron CMB Summer School",
       "stars": 1
     },
     {
@@ -2420,15 +2429,6 @@
         "Java"
       ],
       "description": "",
-      "stars": 0
-    },
-    {
-      "name": "2026-flatiron-cmb-summer-school",
-      "url": "https://github.com/flatironinstitute/2026-flatiron-cmb-summer-school",
-      "langs": [
-        "Jupyter Notebook"
-      ],
-      "description": "GitHub Repository for 2026 Flatiron CMB Summer School",
       "stars": 0
     },
     {
