@@ -90,7 +90,7 @@
         "C++"
       ],
       "description": "C++ tensors with broadcasting and lazy computing",
-      "stars": 3749
+      "stars": 3750
     },
     {
       "name": "CaImAn",
@@ -99,7 +99,7 @@
         "Python"
       ],
       "description": "Computational toolbox for large scale Calcium Imaging Analysis, including movie handling, motion correction, source extraction, spike deconvolution and result visualization.",
-      "stars": 723
+      "stars": 724
     },
     {
       "name": "xtensor-python",
@@ -183,21 +183,21 @@
       "stars": 139
     },
     {
-      "name": "jax-finufft",
-      "url": "https://github.com/flatironinstitute/jax-finufft",
-      "langs": [
-        "C++"
-      ],
-      "description": "JAX bindings to the Flatiron Institute Non-uniform Fast Fourier Transform (FINUFFT) library",
-      "stars": 136
-    },
-    {
       "name": "nemos",
       "url": "https://github.com/flatironinstitute/nemos",
       "langs": [
         "Python"
       ],
       "description": "NEural MOdelS, a statistical modeling framework for neuroscience.",
+      "stars": 136
+    },
+    {
+      "name": "jax-finufft",
+      "url": "https://github.com/flatironinstitute/jax-finufft",
+      "langs": [
+        "C++"
+      ],
+      "description": "JAX bindings to the Flatiron Institute Non-uniform Fast Fourier Transform (FINUFFT) library",
       "stars": 136
     },
     {
@@ -279,7 +279,7 @@
         "Cuda"
       ],
       "description": "JAXMg: A multi-GPU linear solver in JAX",
-      "stars": 56
+      "stars": 57
     },
     {
       "name": "inferelator",
@@ -300,6 +300,15 @@
       "stars": 53
     },
     {
+      "name": "walnuts",
+      "url": "https://github.com/flatironinstitute/walnuts",
+      "langs": [
+        "C++"
+      ],
+      "description": "Within-orbit Adaptive Leapfrog No-U-Turn Sampler",
+      "stars": 51
+    },
+    {
       "name": "nifty-ls",
       "url": "https://github.com/flatironinstitute/nifty-ls",
       "langs": [
@@ -307,15 +316,6 @@
       ],
       "description": "A fast Lomb-Scargle periodogram. It's nifty, and uses a NUFFT!",
       "stars": 51
-    },
-    {
-      "name": "walnuts",
-      "url": "https://github.com/flatironinstitute/walnuts",
-      "langs": [
-        "C++"
-      ],
-      "description": "Within-orbit Adaptive Leapfrog No-U-Turn Sampler",
-      "stars": 50
     },
     {
       "name": "xtensor-fftw",
@@ -1549,6 +1549,15 @@
       "stars": 2
     },
     {
+      "name": "2026-flatiron-cmb-summer-school",
+      "url": "https://github.com/flatironinstitute/2026-flatiron-cmb-summer-school",
+      "langs": [
+        "Jupyter Notebook"
+      ],
+      "description": "GitHub Repository for 2026 Flatiron CMB Summer School",
+      "stars": 2
+    },
+    {
       "name": "sciware-intern-mentors",
       "url": "https://github.com/flatironinstitute/sciware-intern-mentors",
       "langs": [],
@@ -1814,15 +1823,6 @@
         "C++"
       ],
       "description": " I'm testing the differences between gcc/llvm with various optimization flags. Both performance and assembly are analyzed.",
-      "stars": 1
-    },
-    {
-      "name": "2026-flatiron-cmb-summer-school",
-      "url": "https://github.com/flatironinstitute/2026-flatiron-cmb-summer-school",
-      "langs": [
-        "Jupyter Notebook"
-      ],
-      "description": "GitHub Repository for 2026 Flatiron CMB Summer School",
       "stars": 1
     },
     {
