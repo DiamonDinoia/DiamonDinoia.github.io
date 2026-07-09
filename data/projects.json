@@ -90,7 +90,7 @@
         "C++"
       ],
       "description": "C++ tensors with broadcasting and lazy computing",
-      "stars": 3750
+      "stars": 3752
     },
     {
       "name": "CaImAn",
@@ -144,7 +144,7 @@
         "C++"
       ],
       "description": "The x template library",
-      "stars": 234
+      "stars": 235
     },
     {
       "name": "xtensor-blas",
@@ -279,7 +279,7 @@
         "Cuda"
       ],
       "description": "JAXMg: A multi-GPU linear solver in JAX",
-      "stars": 57
+      "stars": 58
     },
     {
       "name": "inferelator",
@@ -1396,6 +1396,15 @@
       "stars": 3
     },
     {
+      "name": "2026-flatiron-cmb-summer-school",
+      "url": "https://github.com/flatironinstitute/2026-flatiron-cmb-summer-school",
+      "langs": [
+        "Jupyter Notebook"
+      ],
+      "description": "GitHub Repository for 2026 Flatiron CMB Summer School",
+      "stars": 3
+    },
+    {
       "name": "ParticleMeshEwald.jl",
       "url": "https://github.com/flatironinstitute/ParticleMeshEwald.jl",
       "langs": [
@@ -1546,15 +1555,6 @@
         "C++"
       ],
       "description": "",
-      "stars": 2
-    },
-    {
-      "name": "2026-flatiron-cmb-summer-school",
-      "url": "https://github.com/flatironinstitute/2026-flatiron-cmb-summer-school",
-      "langs": [
-        "Jupyter Notebook"
-      ],
-      "description": "GitHub Repository for 2026 Flatiron CMB Summer School",
       "stars": 2
     },
     {
