@@ -813,6 +813,15 @@
       "stars": 11
     },
     {
+      "name": "numbl",
+      "url": "https://github.com/flatironinstitute/numbl",
+      "langs": [
+        "TypeScript"
+      ],
+      "description": "Numerical computing environment that aims to be compatible with Matlab",
+      "stars": 11
+    },
+    {
       "name": "nix-modules",
       "url": "https://github.com/flatironinstitute/nix-modules",
       "langs": [
@@ -856,15 +865,6 @@
       ],
       "description": "DEPRECATED -- This is the repository of the older versions of TRIQS",
       "stars": 11
-    },
-    {
-      "name": "numbl",
-      "url": "https://github.com/flatironinstitute/numbl",
-      "langs": [
-        "TypeScript"
-      ],
-      "description": "Numerical computing environment that aims to be compatible with Matlab",
-      "stars": 10
     },
     {
       "name": "ExEnDiff",
@@ -1155,6 +1155,15 @@
       "stars": 6
     },
     {
+      "name": "treeweave",
+      "url": "https://github.com/DiamonDinoia/treeweave",
+      "langs": [
+        "C++"
+      ],
+      "description": "treeweave — fast N-dimensional function approximation via adaptive polynomial fitting (baobzi rebuilt on polyfit + POET)",
+      "stars": 5
+    },
+    {
       "name": "simdref",
       "url": "https://github.com/DiamonDinoia/simdref",
       "langs": [
@@ -1259,15 +1268,6 @@
       ],
       "description": "STL-like algorithms vectorized with xsimd",
       "stars": 5
-    },
-    {
-      "name": "treeweave",
-      "url": "https://github.com/DiamonDinoia/treeweave",
-      "langs": [
-        "C++"
-      ],
-      "description": "treeweave — fast N-dimensional function approximation via adaptive polynomial fitting (baobzi rebuilt on polyfit + POET)",
-      "stars": 4
     },
     {
       "name": "mcss",
@@ -1826,6 +1826,24 @@
       "stars": 1
     },
     {
+      "name": "lineage_viewer",
+      "url": "https://github.com/flatironinstitute/lineage_viewer",
+      "langs": [
+        "Python"
+      ],
+      "description": "Graphical interface for editing a lineage and viewing related microscopy images",
+      "stars": 1
+    },
+    {
+      "name": "neuroRSE",
+      "url": "https://github.com/flatironinstitute/neuroRSE",
+      "langs": [
+        "CSS"
+      ],
+      "description": "Website for CCN's neuroRSE group",
+      "stars": 1
+    },
+    {
       "name": "ccn-software-fens-2026",
       "url": "https://github.com/flatironinstitute/ccn-software-fens-2026",
       "langs": [
@@ -1844,30 +1862,12 @@
       "stars": 1
     },
     {
-      "name": "neuroRSE",
-      "url": "https://github.com/flatironinstitute/neuroRSE",
-      "langs": [
-        "CSS"
-      ],
-      "description": "Website for CCN's neuroRSE group",
-      "stars": 1
-    },
-    {
       "name": "awi",
       "url": "https://github.com/flatironinstitute/awi",
       "langs": [
         "Python"
       ],
       "description": "Rigid-body protein thermodynamics at a flat air–water interface. Predicts single-protein PMFs in (z, θ, ψ) and orientation distributions p(θ, ψ | c) for cryo-EM grid preparation.",
-      "stars": 1
-    },
-    {
-      "name": "lineage_viewer",
-      "url": "https://github.com/flatironinstitute/lineage_viewer",
-      "langs": [
-        "Python"
-      ],
-      "description": "Graphical interface for editing a lineage and viewing related microscopy images",
       "stars": 1
     },
     {
