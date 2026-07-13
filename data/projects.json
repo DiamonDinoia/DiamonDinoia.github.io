@@ -651,6 +651,15 @@
       "stars": 17
     },
     {
+      "name": "ManifoldEM",
+      "url": "https://github.com/flatironinstitute/ManifoldEM",
+      "langs": [
+        "Jupyter Notebook"
+      ],
+      "description": "Python package for determination of conformational continua of macromolecules from single-particle cryo-EM data",
+      "stars": 16
+    },
+    {
       "name": "figpack",
       "url": "https://github.com/flatironinstitute/figpack",
       "langs": [
@@ -676,15 +685,6 @@
       ],
       "description": "Pytorch wrappers for the FINUFFT library",
       "stars": 16
-    },
-    {
-      "name": "ManifoldEM",
-      "url": "https://github.com/flatironinstitute/ManifoldEM",
-      "langs": [
-        "Jupyter Notebook"
-      ],
-      "description": "Python package for determination of conformational continua of macromolecules from single-particle cryo-EM data",
-      "stars": 15
     },
     {
       "name": "inverse-obstacle-scattering2d",
