@@ -90,7 +90,7 @@
         "C++"
       ],
       "description": "C++ tensors with broadcasting and lazy computing",
-      "stars": 3752
+      "stars": 3753
     },
     {
       "name": "CaImAn",
@@ -180,7 +180,7 @@
         "Python"
       ],
       "description": "NEural MOdelS, a statistical modeling framework for neuroscience.",
-      "stars": 140
+      "stars": 141
     },
     {
       "name": "deepblast",
@@ -1092,6 +1092,15 @@
       "stars": 6
     },
     {
+      "name": "2026-flatiron-cmb-summer-school",
+      "url": "https://github.com/flatironinstitute/2026-flatiron-cmb-summer-school",
+      "langs": [
+        "Jupyter Notebook"
+      ],
+      "description": "GitHub Repository for 2026 Flatiron CMB Summer School",
+      "stars": 6
+    },
+    {
       "name": "c2py",
       "url": "https://github.com/flatironinstitute/c2py",
       "langs": [
@@ -1276,15 +1285,6 @@
         "C++"
       ],
       "description": "",
-      "stars": 4
-    },
-    {
-      "name": "2026-flatiron-cmb-summer-school",
-      "url": "https://github.com/flatironinstitute/2026-flatiron-cmb-summer-school",
-      "langs": [
-        "Jupyter Notebook"
-      ],
-      "description": "GitHub Repository for 2026 Flatiron CMB Summer School",
       "stars": 4
     },
     {
@@ -1826,21 +1826,21 @@
       "stars": 1
     },
     {
-      "name": "lineage_viewer",
-      "url": "https://github.com/flatironinstitute/lineage_viewer",
-      "langs": [
-        "Python"
-      ],
-      "description": "Graphical interface for editing a lineage and viewing related microscopy images",
-      "stars": 1
-    },
-    {
       "name": "neuroRSE",
       "url": "https://github.com/flatironinstitute/neuroRSE",
       "langs": [
         "CSS"
       ],
       "description": "Website for CCN's neuroRSE group",
+      "stars": 1
+    },
+    {
+      "name": "lineage_viewer",
+      "url": "https://github.com/flatironinstitute/lineage_viewer",
+      "langs": [
+        "Python"
+      ],
+      "description": "Graphical interface for editing a lineage and viewing related microscopy images",
       "stars": 1
     },
     {
