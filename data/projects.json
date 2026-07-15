@@ -153,7 +153,7 @@
         "C++"
       ],
       "description": "BLAS extension to xtensor",
-      "stars": 173
+      "stars": 174
     },
     {
       "name": "NoRMCorre",
@@ -306,7 +306,7 @@
         "C++"
       ],
       "description": "Within-orbit Adaptive Leapfrog No-U-Turn Sampler",
-      "stars": 51
+      "stars": 52
     },
     {
       "name": "nifty-ls",
@@ -894,6 +894,15 @@
       "stars": 10
     },
     {
+      "name": "cryojax-ensemble-optimization",
+      "url": "https://github.com/flatironinstitute/cryojax-ensemble-optimization",
+      "langs": [
+        "Jupyter Notebook"
+      ],
+      "description": "",
+      "stars": 9
+    },
+    {
       "name": "masala_public",
       "url": "https://github.com/flatironinstitute/masala_public",
       "langs": [
@@ -964,15 +973,6 @@
       ],
       "description": "An interactive demo of the xtensor language bindings.",
       "stars": 9
-    },
-    {
-      "name": "cryojax-ensemble-optimization",
-      "url": "https://github.com/flatironinstitute/cryojax-ensemble-optimization",
-      "langs": [
-        "Jupyter Notebook"
-      ],
-      "description": "",
-      "stars": 8
     },
     {
       "name": "capture_lock",
