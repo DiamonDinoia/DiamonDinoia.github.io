@@ -441,7 +441,7 @@
         "Python"
       ],
       "description": "Spike sorting benchmarking system",
-      "stars": 34
+      "stars": 33
     },
     {
       "name": "xtensor-sparse",
@@ -1092,15 +1092,6 @@
       "stars": 6
     },
     {
-      "name": "2026-flatiron-cmb-summer-school",
-      "url": "https://github.com/flatironinstitute/2026-flatiron-cmb-summer-school",
-      "langs": [
-        "Jupyter Notebook"
-      ],
-      "description": "GitHub Repository for 2026 Flatiron CMB Summer School",
-      "stars": 6
-    },
-    {
       "name": "c2py",
       "url": "https://github.com/flatironinstitute/c2py",
       "langs": [
@@ -1188,6 +1179,15 @@
         "Jupyter Notebook"
       ],
       "description": "Fast Numerics, Small Changes: The Minimal Playbook",
+      "stars": 5
+    },
+    {
+      "name": "2026-flatiron-cmb-summer-school",
+      "url": "https://github.com/flatironinstitute/2026-flatiron-cmb-summer-school",
+      "langs": [
+        "Jupyter Notebook"
+      ],
+      "description": "GitHub Repository for 2026 Flatiron CMB Summer School",
       "stars": 5
     },
     {
@@ -2099,6 +2099,15 @@
       "stars": 1
     },
     {
+      "name": "docker",
+      "url": "https://github.com/TRIQS/docker",
+      "langs": [
+        "Dockerfile"
+      ],
+      "description": "docker image for TRIQS",
+      "stars": 1
+    },
+    {
       "name": "hartree_fock",
       "url": "https://github.com/TRIQS/hartree_fock",
       "langs": [
@@ -2132,15 +2141,6 @@
         "Python"
       ],
       "description": "TRIQS Interface to the w2dynamics Code",
-      "stars": 1
-    },
-    {
-      "name": "docker",
-      "url": "https://github.com/TRIQS/docker",
-      "langs": [
-        "Dockerfile"
-      ],
-      "description": "docker image for TRIQS",
       "stars": 1
     },
     {
