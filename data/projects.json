@@ -1092,6 +1092,15 @@
       "stars": 6
     },
     {
+      "name": "2026-flatiron-cmb-summer-school",
+      "url": "https://github.com/flatironinstitute/2026-flatiron-cmb-summer-school",
+      "langs": [
+        "Jupyter Notebook"
+      ],
+      "description": "GitHub Repository for 2026 Flatiron CMB Summer School",
+      "stars": 6
+    },
+    {
       "name": "c2py",
       "url": "https://github.com/flatironinstitute/c2py",
       "langs": [
@@ -1179,15 +1188,6 @@
         "Jupyter Notebook"
       ],
       "description": "Fast Numerics, Small Changes: The Minimal Playbook",
-      "stars": 5
-    },
-    {
-      "name": "2026-flatiron-cmb-summer-school",
-      "url": "https://github.com/flatironinstitute/2026-flatiron-cmb-summer-school",
-      "langs": [
-        "Jupyter Notebook"
-      ],
-      "description": "GitHub Repository for 2026 Flatiron CMB Summer School",
       "stars": 5
     },
     {
@@ -2432,6 +2432,15 @@
       "stars": 0
     },
     {
+      "name": "aLENS_analysis",
+      "url": "https://github.com/flatironinstitute/aLENS_analysis",
+      "langs": [
+        "Jupyter Notebook"
+      ],
+      "description": "Postprocessing & analysis scripts for aLENS data",
+      "stars": 0
+    },
+    {
       "name": "neurorse-workshops",
       "url": "https://github.com/flatironinstitute/neurorse-workshops",
       "langs": [
@@ -2456,15 +2465,6 @@
         "Python"
       ],
       "description": "Flatiron Institute mip channel",
-      "stars": 0
-    },
-    {
-      "name": "aLENS_analysis",
-      "url": "https://github.com/flatironinstitute/aLENS_analysis",
-      "langs": [
-        "Jupyter Notebook"
-      ],
-      "description": "Postprocessing & analysis scripts for aLENS data",
       "stars": 0
     },
     {
@@ -2787,6 +2787,15 @@
         "Fortran"
       ],
       "description": "This repository is a comparison tool for quadrature methods for evaluating layer potentials on surfaces in three dimensions",
+      "stars": 0
+    },
+    {
+      "name": "inchworm",
+      "url": "https://github.com/TRIQS/inchworm",
+      "langs": [
+        "C++"
+      ],
+      "description": "A generic impurity solver using the inchworm scheme for the hybridization expansion",
       "stars": 0
     },
     {
