@@ -90,7 +90,7 @@
         "C++"
       ],
       "description": "C++ tensors with broadcasting and lazy computing",
-      "stars": 3753
+      "stars": 3752
     },
     {
       "name": "CaImAn",
@@ -126,7 +126,7 @@
         "C++"
       ],
       "description": "C++ multi-dimensional labeled arrays and dataframe based on xtensor",
-      "stars": 326
+      "stars": 325
     },
     {
       "name": "CaImAn-MATLAB",
@@ -525,6 +525,15 @@
       "stars": 25
     },
     {
+      "name": "kachery-cloud",
+      "url": "https://github.com/flatironinstitute/kachery-cloud",
+      "langs": [
+        "Python"
+      ],
+      "description": "",
+      "stars": 24
+    },
+    {
       "name": "dmk",
       "url": "https://github.com/flatironinstitute/dmk",
       "langs": [
@@ -568,15 +577,6 @@
       ],
       "description": "Easy to use benchmarks for linear algebra frameworks",
       "stars": 24
-    },
-    {
-      "name": "kachery-cloud",
-      "url": "https://github.com/flatironinstitute/kachery-cloud",
-      "langs": [
-        "Python"
-      ],
-      "description": "",
-      "stars": 23
     },
     {
       "name": "online_psp_matlab",
@@ -1092,21 +1092,21 @@
       "stars": 6
     },
     {
-      "name": "2026-flatiron-cmb-summer-school",
-      "url": "https://github.com/flatironinstitute/2026-flatiron-cmb-summer-school",
-      "langs": [
-        "Jupyter Notebook"
-      ],
-      "description": "GitHub Repository for 2026 Flatiron CMB Summer School",
-      "stars": 6
-    },
-    {
       "name": "c2py",
       "url": "https://github.com/flatironinstitute/c2py",
       "langs": [
         "C++"
       ],
       "description": "Clair/c2py low level library",
+      "stars": 6
+    },
+    {
+      "name": "2026-flatiron-cmb-summer-school",
+      "url": "https://github.com/flatironinstitute/2026-flatiron-cmb-summer-school",
+      "langs": [
+        "Jupyter Notebook"
+      ],
+      "description": "GitHub Repository for 2026 Flatiron CMB Summer School",
       "stars": 6
     },
     {
@@ -2429,6 +2429,15 @@
         "Java"
       ],
       "description": "",
+      "stars": 0
+    },
+    {
+      "name": "fiem",
+      "url": "https://github.com/flatironinstitute/fiem",
+      "langs": [
+        "TeX"
+      ],
+      "description": "test",
       "stars": 0
     },
     {
