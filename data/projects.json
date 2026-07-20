@@ -90,7 +90,7 @@
         "C++"
       ],
       "description": "C++ tensors with broadcasting and lazy computing",
-      "stars": 3752
+      "stars": 3753
     },
     {
       "name": "CaImAn",
@@ -768,6 +768,15 @@
       "stars": 13
     },
     {
+      "name": "numbl",
+      "url": "https://github.com/flatironinstitute/numbl",
+      "langs": [
+        "TypeScript"
+      ],
+      "description": "Numerical computing environment that aims to be compatible with Matlab",
+      "stars": 12
+    },
+    {
       "name": "cppdlr",
       "url": "https://github.com/flatironinstitute/cppdlr",
       "langs": [
@@ -810,15 +819,6 @@
         "C++"
       ],
       "description": "Testing different implementation of Atan2",
-      "stars": 11
-    },
-    {
-      "name": "numbl",
-      "url": "https://github.com/flatironinstitute/numbl",
-      "langs": [
-        "TypeScript"
-      ],
-      "description": "Numerical computing environment that aims to be compatible with Matlab",
       "stars": 11
     },
     {
@@ -1826,6 +1826,15 @@
       "stars": 1
     },
     {
+      "name": "fiem",
+      "url": "https://github.com/flatironinstitute/fiem",
+      "langs": [
+        "TeX"
+      ],
+      "description": "test",
+      "stars": 1
+    },
+    {
       "name": "neuroRSE",
       "url": "https://github.com/flatironinstitute/neuroRSE",
       "langs": [
@@ -2429,15 +2438,6 @@
         "Java"
       ],
       "description": "",
-      "stars": 0
-    },
-    {
-      "name": "fiem",
-      "url": "https://github.com/flatironinstitute/fiem",
-      "langs": [
-        "TeX"
-      ],
-      "description": "test",
       "stars": 0
     },
     {
