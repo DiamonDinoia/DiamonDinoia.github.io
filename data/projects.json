@@ -1029,6 +1029,15 @@
       "stars": 8
     },
     {
+      "name": "2026-flatiron-cmb-summer-school",
+      "url": "https://github.com/flatironinstitute/2026-flatiron-cmb-summer-school",
+      "langs": [
+        "Jupyter Notebook"
+      ],
+      "description": "GitHub Repository for 2026 Flatiron CMB Summer School",
+      "stars": 7
+    },
+    {
       "name": "inverse-volume-scattering2d",
       "url": "https://github.com/flatironinstitute/inverse-volume-scattering2d",
       "langs": [
@@ -1098,15 +1107,6 @@
         "C++"
       ],
       "description": "Clair/c2py low level library",
-      "stars": 6
-    },
-    {
-      "name": "2026-flatiron-cmb-summer-school",
-      "url": "https://github.com/flatironinstitute/2026-flatiron-cmb-summer-school",
-      "langs": [
-        "Jupyter Notebook"
-      ],
-      "description": "GitHub Repository for 2026 Flatiron CMB Summer School",
       "stars": 6
     },
     {
