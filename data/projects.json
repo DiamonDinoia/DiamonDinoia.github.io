@@ -822,6 +822,15 @@
       "stars": 11
     },
     {
+      "name": "2026-flatiron-cmb-summer-school",
+      "url": "https://github.com/flatironinstitute/2026-flatiron-cmb-summer-school",
+      "langs": [
+        "Jupyter Notebook"
+      ],
+      "description": "GitHub Repository for 2026 Flatiron CMB Summer School",
+      "stars": 11
+    },
+    {
       "name": "nix-modules",
       "url": "https://github.com/flatironinstitute/nix-modules",
       "langs": [
@@ -1002,6 +1011,15 @@
       "stars": 8
     },
     {
+      "name": "ctint",
+      "url": "https://github.com/TRIQS/ctint",
+      "langs": [
+        "Jupyter Notebook"
+      ],
+      "description": "Continuous-time interaction expansion quantum Monte-Carlo code based on TRIQS. Supported by the Flatiron Institute.",
+      "stars": 8
+    },
+    {
       "name": "gem",
       "url": "https://github.com/TRIQS/gem",
       "langs": [
@@ -1018,24 +1036,6 @@
       ],
       "description": "Hubbard I solver. Supported by the Flatiron Institute.",
       "stars": 8
-    },
-    {
-      "name": "ctint",
-      "url": "https://github.com/TRIQS/ctint",
-      "langs": [
-        "Jupyter Notebook"
-      ],
-      "description": "Continuous-time interaction expansion quantum Monte-Carlo code based on TRIQS. Supported by the Flatiron Institute.",
-      "stars": 8
-    },
-    {
-      "name": "2026-flatiron-cmb-summer-school",
-      "url": "https://github.com/flatironinstitute/2026-flatiron-cmb-summer-school",
-      "langs": [
-        "Jupyter Notebook"
-      ],
-      "description": "GitHub Repository for 2026 Flatiron CMB Summer School",
-      "stars": 7
     },
     {
       "name": "inverse-volume-scattering2d",
