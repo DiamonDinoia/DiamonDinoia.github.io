@@ -306,7 +306,7 @@
         "C++"
       ],
       "description": "Within-orbit Adaptive Leapfrog No-U-Turn Sampler",
-      "stars": 52
+      "stars": 53
     },
     {
       "name": "nifty-ls",
@@ -1011,21 +1011,21 @@
       "stars": 8
     },
     {
-      "name": "ctint",
-      "url": "https://github.com/TRIQS/ctint",
-      "langs": [
-        "Jupyter Notebook"
-      ],
-      "description": "Continuous-time interaction expansion quantum Monte-Carlo code based on TRIQS. Supported by the Flatiron Institute.",
-      "stars": 8
-    },
-    {
       "name": "gem",
       "url": "https://github.com/TRIQS/gem",
       "langs": [
         "Python"
       ],
       "description": "Ghost Gutzwiller Approximation implemented in TRIQS",
+      "stars": 8
+    },
+    {
+      "name": "ctint",
+      "url": "https://github.com/TRIQS/ctint",
+      "langs": [
+        "Jupyter Notebook"
+      ],
+      "description": "Continuous-time interaction expansion quantum Monte-Carlo code based on TRIQS. Supported by the Flatiron Institute.",
       "stars": 8
     },
     {
@@ -1090,6 +1090,15 @@
       ],
       "description": "Cookiecutter for a Julia project making use of xtensor",
       "stars": 7
+    },
+    {
+      "name": "treeweave",
+      "url": "https://github.com/DiamonDinoia/treeweave",
+      "langs": [
+        "C++"
+      ],
+      "description": "treeweave — fast N-dimensional function approximation via adaptive polynomial fitting (baobzi rebuilt on polyfit + POET)",
+      "stars": 6
     },
     {
       "name": "cpu-performance-tests",
@@ -1162,15 +1171,6 @@
       ],
       "description": "WebApp for electronic structure visualization and phenomenology",
       "stars": 6
-    },
-    {
-      "name": "treeweave",
-      "url": "https://github.com/DiamonDinoia/treeweave",
-      "langs": [
-        "C++"
-      ],
-      "description": "treeweave — fast N-dimensional function approximation via adaptive polynomial fitting (baobzi rebuilt on polyfit + POET)",
-      "stars": 5
     },
     {
       "name": "simdref",
@@ -1558,6 +1558,15 @@
       "stars": 2
     },
     {
+      "name": "fiem",
+      "url": "https://github.com/flatironinstitute/fiem",
+      "langs": [
+        "TeX"
+      ],
+      "description": "test",
+      "stars": 2
+    },
+    {
       "name": "sciware-intern-mentors",
       "url": "https://github.com/flatironinstitute/sciware-intern-mentors",
       "langs": [],
@@ -1823,15 +1832,6 @@
         "C++"
       ],
       "description": " I'm testing the differences between gcc/llvm with various optimization flags. Both performance and assembly are analyzed.",
-      "stars": 1
-    },
-    {
-      "name": "fiem",
-      "url": "https://github.com/flatironinstitute/fiem",
-      "langs": [
-        "TeX"
-      ],
-      "description": "test",
       "stars": 1
     },
     {
