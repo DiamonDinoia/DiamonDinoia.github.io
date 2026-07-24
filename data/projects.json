@@ -90,7 +90,7 @@
         "C++"
       ],
       "description": "C++ tensors with broadcasting and lazy computing",
-      "stars": 3753
+      "stars": 3754
     },
     {
       "name": "CaImAn",
@@ -99,7 +99,7 @@
         "Python"
       ],
       "description": "Computational toolbox for large scale Calcium Imaging Analysis, including movie handling, motion correction, source extraction, spike deconvolution and result visualization.",
-      "stars": 724
+      "stars": 725
     },
     {
       "name": "xtensor-python",
@@ -171,7 +171,7 @@
         "Fortran"
       ],
       "description": "Flatiron Institute Fast Multipole Libraries --- This codebase is a set of libraries to compute N-body interactions governed by the Laplace and Helmholtz equations, to a specified precision, in three dimensions, on a multi-core shared-memory machine. ",
-      "stars": 157
+      "stars": 158
     },
     {
       "name": "nemos",
@@ -1155,6 +1155,15 @@
       "stars": 6
     },
     {
+      "name": "xca",
+      "url": "https://github.com/TRIQS/xca",
+      "langs": [
+        "C++"
+      ],
+      "description": "TRIQS arbitrary Crossing Approximation (XCA) impurity solver",
+      "stars": 6
+    },
+    {
       "name": "h5",
       "url": "https://github.com/TRIQS/h5",
       "langs": [
@@ -1258,15 +1267,6 @@
         "C++"
       ],
       "description": "Nevanlinna analytical continuation using TRIQS. Supported by the Flatiron Institute.",
-      "stars": 5
-    },
-    {
-      "name": "xca",
-      "url": "https://github.com/TRIQS/xca",
-      "langs": [
-        "C++"
-      ],
-      "description": "TRIQS arbitrary Crossing Approximation (XCA) impurity solver",
       "stars": 5
     },
     {
