@@ -90,7 +90,7 @@
         "C++"
       ],
       "description": "C++ tensors with broadcasting and lazy computing",
-      "stars": 3754
+      "stars": 3753
     },
     {
       "name": "CaImAn",
@@ -180,7 +180,7 @@
         "Python"
       ],
       "description": "NEural MOdelS, a statistical modeling framework for neuroscience.",
-      "stars": 141
+      "stars": 142
     },
     {
       "name": "deepblast",
@@ -651,21 +651,21 @@
       "stars": 17
     },
     {
-      "name": "ManifoldEM",
-      "url": "https://github.com/flatironinstitute/ManifoldEM",
-      "langs": [
-        "Jupyter Notebook"
-      ],
-      "description": "Python package for determination of conformational continua of macromolecules from single-particle cryo-EM data",
-      "stars": 16
-    },
-    {
       "name": "figpack",
       "url": "https://github.com/flatironinstitute/figpack",
       "langs": [
         "TypeScript"
       ],
       "description": "A Python package for creating shareable, interactive, browser-based visualizations",
+      "stars": 16
+    },
+    {
+      "name": "ManifoldEM",
+      "url": "https://github.com/flatironinstitute/ManifoldEM",
+      "langs": [
+        "Jupyter Notebook"
+      ],
+      "description": "Python package for determination of conformational continua of macromolecules from single-particle cryo-EM data",
       "stars": 16
     },
     {
@@ -768,21 +768,21 @@
       "stars": 13
     },
     {
-      "name": "numbl",
-      "url": "https://github.com/flatironinstitute/numbl",
-      "langs": [
-        "TypeScript"
-      ],
-      "description": "Numerical computing environment that aims to be compatible with Matlab",
-      "stars": 12
-    },
-    {
       "name": "cppdlr",
       "url": "https://github.com/flatironinstitute/cppdlr",
       "langs": [
         "C++"
       ],
       "description": "Discrete Lehmann representation of imaginary time Green's functions",
+      "stars": 12
+    },
+    {
+      "name": "numbl",
+      "url": "https://github.com/flatironinstitute/numbl",
+      "langs": [
+        "TypeScript"
+      ],
+      "description": "Numerical computing environment that aims to be compatible with Matlab",
       "stars": 12
     },
     {
@@ -1011,12 +1011,12 @@
       "stars": 8
     },
     {
-      "name": "gem",
-      "url": "https://github.com/TRIQS/gem",
+      "name": "hubbardI",
+      "url": "https://github.com/TRIQS/hubbardI",
       "langs": [
         "Python"
       ],
-      "description": "Ghost Gutzwiller Approximation implemented in TRIQS",
+      "description": "Hubbard I solver. Supported by the Flatiron Institute.",
       "stars": 8
     },
     {
@@ -1029,12 +1029,12 @@
       "stars": 8
     },
     {
-      "name": "hubbardI",
-      "url": "https://github.com/TRIQS/hubbardI",
+      "name": "gem",
+      "url": "https://github.com/TRIQS/gem",
       "langs": [
         "Python"
       ],
-      "description": "Hubbard I solver. Supported by the Flatiron Institute.",
+      "description": "Ghost Gutzwiller Approximation implemented in TRIQS",
       "stars": 8
     },
     {
@@ -1252,21 +1252,21 @@
       "stars": 5
     },
     {
-      "name": "mpi",
-      "url": "https://github.com/TRIQS/mpi",
-      "langs": [
-        "C++"
-      ],
-      "description": "A high-level C++ interface to the Message Passing Interface. Supported by the Flatiron Institute.",
-      "stars": 5
-    },
-    {
       "name": "Nevanlinna",
       "url": "https://github.com/TRIQS/Nevanlinna",
       "langs": [
         "C++"
       ],
       "description": "Nevanlinna analytical continuation using TRIQS. Supported by the Flatiron Institute.",
+      "stars": 5
+    },
+    {
+      "name": "mpi",
+      "url": "https://github.com/TRIQS/mpi",
+      "langs": [
+        "C++"
+      ],
+      "description": "A high-level C++ interface to the Message Passing Interface. Supported by the Flatiron Institute.",
       "stars": 5
     },
     {
@@ -1763,21 +1763,21 @@
       "stars": 2
     },
     {
-      "name": "dftkit",
-      "url": "https://github.com/TRIQS/dftkit",
-      "langs": [
-        "Python"
-      ],
-      "description": "Toolkit connecting TRIQS to DFT codes",
-      "stars": 2
-    },
-    {
       "name": "omegamaxent_interface",
       "url": "https://github.com/TRIQS/omegamaxent_interface",
       "langs": [
         "Jupyter Notebook"
       ],
       "description": "TRIQS Interface to the OmegaMaxEnt Code. Supported by the Flatiron Institute.",
+      "stars": 2
+    },
+    {
+      "name": "dftkit",
+      "url": "https://github.com/TRIQS/dftkit",
+      "langs": [
+        "Python"
+      ],
+      "description": "Toolkit connecting TRIQS to DFT codes",
       "stars": 2
     },
     {
@@ -2108,21 +2108,21 @@
       "stars": 1
     },
     {
-      "name": "docker",
-      "url": "https://github.com/TRIQS/docker",
-      "langs": [
-        "Dockerfile"
-      ],
-      "description": "docker image for TRIQS",
-      "stars": 1
-    },
-    {
       "name": "hartree_fock",
       "url": "https://github.com/TRIQS/hartree_fock",
       "langs": [
         "Python"
       ],
       "description": "Hartree-Fock lattice and impurity solvers based on the TRIQS library. Supported by the Flatiron Institute.",
+      "stars": 1
+    },
+    {
+      "name": "docker",
+      "url": "https://github.com/TRIQS/docker",
+      "langs": [
+        "Dockerfile"
+      ],
+      "description": "docker image for TRIQS",
       "stars": 1
     },
     {
