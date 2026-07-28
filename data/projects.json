@@ -291,21 +291,21 @@
       "stars": 56
     },
     {
-      "name": "nixpack",
-      "url": "https://github.com/flatironinstitute/nixpack",
-      "langs": [
-        "Nix"
-      ],
-      "description": "nix+spack = nixpack (spanix?)",
-      "stars": 53
-    },
-    {
       "name": "walnuts",
       "url": "https://github.com/flatironinstitute/walnuts",
       "langs": [
         "C++"
       ],
       "description": "Within-orbit Adaptive Leapfrog No-U-Turn Sampler",
+      "stars": 53
+    },
+    {
+      "name": "nixpack",
+      "url": "https://github.com/flatironinstitute/nixpack",
+      "langs": [
+        "Nix"
+      ],
+      "description": "nix+spack = nixpack (spanix?)",
       "stars": 53
     },
     {
@@ -333,7 +333,7 @@
         "Python"
       ],
       "description": "Dynamic dispatch of a list of command-line tasks, locally or on a cluster. Supports retrying failed tasks, and adding/removing compute resources on-the-fly. ",
-      "stars": 48
+      "stars": 49
     },
     {
       "name": "xtensor-zarr",
@@ -525,21 +525,21 @@
       "stars": 25
     },
     {
-      "name": "kachery-cloud",
-      "url": "https://github.com/flatironinstitute/kachery-cloud",
-      "langs": [
-        "Python"
-      ],
-      "description": "",
-      "stars": 24
-    },
-    {
       "name": "dmk",
       "url": "https://github.com/flatironinstitute/dmk",
       "langs": [
         "C++"
       ],
       "description": "A Dual-space Multilevel Kernel-splitting (DMK) Framework for Discrete and Continuous Convolution",
+      "stars": 24
+    },
+    {
+      "name": "kachery-cloud",
+      "url": "https://github.com/flatironinstitute/kachery-cloud",
+      "langs": [
+        "Python"
+      ],
+      "description": "",
       "stars": 24
     },
     {
@@ -768,6 +768,15 @@
       "stars": 13
     },
     {
+      "name": "2026-flatiron-cmb-summer-school",
+      "url": "https://github.com/flatironinstitute/2026-flatiron-cmb-summer-school",
+      "langs": [
+        "Jupyter Notebook"
+      ],
+      "description": "GitHub Repository for 2026 Flatiron CMB Summer School",
+      "stars": 12
+    },
+    {
       "name": "cppdlr",
       "url": "https://github.com/flatironinstitute/cppdlr",
       "langs": [
@@ -819,15 +828,6 @@
         "C++"
       ],
       "description": "Testing different implementation of Atan2",
-      "stars": 11
-    },
-    {
-      "name": "2026-flatiron-cmb-summer-school",
-      "url": "https://github.com/flatironinstitute/2026-flatiron-cmb-summer-school",
-      "langs": [
-        "Jupyter Notebook"
-      ],
-      "description": "GitHub Repository for 2026 Flatiron CMB Summer School",
       "stars": 11
     },
     {
@@ -1011,6 +1011,15 @@
       "stars": 8
     },
     {
+      "name": "gem",
+      "url": "https://github.com/TRIQS/gem",
+      "langs": [
+        "Python"
+      ],
+      "description": "Ghost Gutzwiller Approximation implemented in TRIQS",
+      "stars": 8
+    },
+    {
       "name": "hubbardI",
       "url": "https://github.com/TRIQS/hubbardI",
       "langs": [
@@ -1026,15 +1035,6 @@
         "Jupyter Notebook"
       ],
       "description": "Continuous-time interaction expansion quantum Monte-Carlo code based on TRIQS. Supported by the Flatiron Institute.",
-      "stars": 8
-    },
-    {
-      "name": "gem",
-      "url": "https://github.com/TRIQS/gem",
-      "langs": [
-        "Python"
-      ],
-      "description": "Ghost Gutzwiller Approximation implemented in TRIQS",
       "stars": 8
     },
     {
@@ -1763,21 +1763,21 @@
       "stars": 2
     },
     {
-      "name": "omegamaxent_interface",
-      "url": "https://github.com/TRIQS/omegamaxent_interface",
-      "langs": [
-        "Jupyter Notebook"
-      ],
-      "description": "TRIQS Interface to the OmegaMaxEnt Code. Supported by the Flatiron Institute.",
-      "stars": 2
-    },
-    {
       "name": "dftkit",
       "url": "https://github.com/TRIQS/dftkit",
       "langs": [
         "Python"
       ],
       "description": "Toolkit connecting TRIQS to DFT codes",
+      "stars": 2
+    },
+    {
+      "name": "omegamaxent_interface",
+      "url": "https://github.com/TRIQS/omegamaxent_interface",
+      "langs": [
+        "Jupyter Notebook"
+      ],
+      "description": "TRIQS Interface to the OmegaMaxEnt Code. Supported by the Flatiron Institute.",
       "stars": 2
     },
     {
