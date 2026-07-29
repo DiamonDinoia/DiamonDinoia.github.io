@@ -198,7 +198,7 @@
         "C++"
       ],
       "description": "JAX bindings to the Flatiron Institute Non-uniform Fast Fourier Transform (FINUFFT) library",
-      "stars": 136
+      "stars": 137
     },
     {
       "name": "cufinufft",
@@ -252,7 +252,7 @@
         "TypeScript"
       ],
       "description": "Browser-based NWB visualization and DANDI exploration",
-      "stars": 64
+      "stars": 65
     },
     {
       "name": "mountainsort5",
@@ -687,6 +687,15 @@
       "stars": 16
     },
     {
+      "name": "neuropixels-data-sep-2020",
+      "url": "https://github.com/flatironinstitute/neuropixels-data-sep-2020",
+      "langs": [
+        "Python"
+      ],
+      "description": "Example neuropixels datasets for purposes of developing spike sorting algorithms",
+      "stars": 15
+    },
+    {
       "name": "inverse-obstacle-scattering2d",
       "url": "https://github.com/flatironinstitute/inverse-obstacle-scattering2d",
       "langs": [
@@ -711,15 +720,6 @@
         "Python"
       ],
       "description": "",
-      "stars": 14
-    },
-    {
-      "name": "neuropixels-data-sep-2020",
-      "url": "https://github.com/flatironinstitute/neuropixels-data-sep-2020",
-      "langs": [
-        "Python"
-      ],
-      "description": "Example neuropixels datasets for purposes of developing spike sorting algorithms",
       "stars": 14
     },
     {
@@ -1011,6 +1011,15 @@
       "stars": 8
     },
     {
+      "name": "ctint",
+      "url": "https://github.com/TRIQS/ctint",
+      "langs": [
+        "Jupyter Notebook"
+      ],
+      "description": "Continuous-time interaction expansion quantum Monte-Carlo code based on TRIQS. Supported by the Flatiron Institute.",
+      "stars": 8
+    },
+    {
       "name": "gem",
       "url": "https://github.com/TRIQS/gem",
       "langs": [
@@ -1029,13 +1038,13 @@
       "stars": 8
     },
     {
-      "name": "ctint",
-      "url": "https://github.com/TRIQS/ctint",
+      "name": "fi-slurm-utils",
+      "url": "https://github.com/flatironinstitute/fi-slurm-utils",
       "langs": [
-        "Jupyter Notebook"
+        "Rust"
       ],
-      "description": "Continuous-time interaction expansion quantum Monte-Carlo code based on TRIQS. Supported by the Flatiron Institute.",
-      "stars": 8
+      "description": "Command-line utilities for Slurm HPC clusters",
+      "stars": 7
     },
     {
       "name": "inverse-volume-scattering2d",
@@ -1044,15 +1053,6 @@
         "MATLAB"
       ],
       "description": "This repository contains beta MATLAB codes for data generation of forward medium problems using a hybrid HPS-HBS solver, and an inverse medium solver",
-      "stars": 7
-    },
-    {
-      "name": "fi-slurm-utils",
-      "url": "https://github.com/flatironinstitute/fi-slurm-utils",
-      "langs": [
-        "Rust"
-      ],
-      "description": "Command-line utilities for Slurm HPC clusters",
       "stars": 7
     },
     {
