@@ -90,7 +90,7 @@
         "C++"
       ],
       "description": "C++ tensors with broadcasting and lazy computing",
-      "stars": 3753
+      "stars": 3755
     },
     {
       "name": "CaImAn",
@@ -291,21 +291,21 @@
       "stars": 56
     },
     {
-      "name": "walnuts",
-      "url": "https://github.com/flatironinstitute/walnuts",
-      "langs": [
-        "C++"
-      ],
-      "description": "Within-orbit Adaptive Leapfrog No-U-Turn Sampler",
-      "stars": 53
-    },
-    {
       "name": "nixpack",
       "url": "https://github.com/flatironinstitute/nixpack",
       "langs": [
         "Nix"
       ],
       "description": "nix+spack = nixpack (spanix?)",
+      "stars": 53
+    },
+    {
+      "name": "walnuts",
+      "url": "https://github.com/flatironinstitute/walnuts",
+      "langs": [
+        "C++"
+      ],
+      "description": "Within-orbit Adaptive Leapfrog No-U-Turn Sampler",
       "stars": 53
     },
     {
@@ -1011,6 +1011,15 @@
       "stars": 8
     },
     {
+      "name": "gem",
+      "url": "https://github.com/TRIQS/gem",
+      "langs": [
+        "Python"
+      ],
+      "description": "Ghost Gutzwiller Approximation implemented in TRIQS",
+      "stars": 8
+    },
+    {
       "name": "ctint",
       "url": "https://github.com/TRIQS/ctint",
       "langs": [
@@ -1026,15 +1035,6 @@
         "Python"
       ],
       "description": "Hubbard I solver. Supported by the Flatiron Institute.",
-      "stars": 8
-    },
-    {
-      "name": "gem",
-      "url": "https://github.com/TRIQS/gem",
-      "langs": [
-        "Python"
-      ],
-      "description": "Ghost Gutzwiller Approximation implemented in TRIQS",
       "stars": 8
     },
     {
@@ -1531,15 +1531,6 @@
       "stars": 3
     },
     {
-      "name": "simdrng",
-      "url": "https://github.com/DiamonDinoia/simdrng",
-      "langs": [
-        "C++"
-      ],
-      "description": "Header-only C++20 SIMD random number generators (Xoshiro / SplitMix / ChaCha / Philox) with a numpy.random.Generator-compatible Python API",
-      "stars": 2
-    },
-    {
       "name": "jacobi",
       "url": "https://github.com/DiamonDinoia/jacobi",
       "langs": [
@@ -1549,12 +1540,30 @@
       "stars": 2
     },
     {
+      "name": "simdrng",
+      "url": "https://github.com/DiamonDinoia/simdrng",
+      "langs": [
+        "C++"
+      ],
+      "description": "Header-only C++20 SIMD random number generators (Xoshiro / SplitMix / ChaCha / Philox) with a numpy.random.Generator-compatible Python API",
+      "stars": 2
+    },
+    {
       "name": "lru-cache",
       "url": "https://github.com/DiamonDinoia/lru-cache",
       "langs": [
         "C++"
       ],
       "description": "",
+      "stars": 2
+    },
+    {
+      "name": "CyclicCAE_public",
+      "url": "https://github.com/flatironinstitute/CyclicCAE_public",
+      "langs": [
+        "Python"
+      ],
+      "description": "The public repository for the CyclicCAE conformational autoencoder.  CyclicCAE encodes peptide macrocycle conformations in a low-dimensional latent space, useful for rapid sampling, structural refinement, or denoising.",
       "stars": 2
     },
     {
@@ -1862,15 +1871,6 @@
       "stars": 1
     },
     {
-      "name": "CyclicCAE_public",
-      "url": "https://github.com/flatironinstitute/CyclicCAE_public",
-      "langs": [
-        "Python"
-      ],
-      "description": "The public repository for the CyclicCAE conformational autoencoder.  CyclicCAE encodes peptide macrocycle conformations in a low-dimensional latent space, useful for rapid sampling, structural refinement, or denoising.",
-      "stars": 1
-    },
-    {
       "name": "awi",
       "url": "https://github.com/flatironinstitute/awi",
       "langs": [
@@ -2162,39 +2162,12 @@
       "stars": 1
     },
     {
-      "name": "DiamonDinoia.github.io",
-      "url": "https://github.com/DiamonDinoia/DiamonDinoia.github.io",
+      "name": "TensorScriptPP",
+      "url": "https://github.com/DiamonDinoia/TensorScriptPP",
       "langs": [
-        "HTML"
+        "C++"
       ],
-      "description": "",
-      "stars": 0
-    },
-    {
-      "name": "juno-drivers-debian",
-      "url": "https://github.com/DiamonDinoia/juno-drivers-debian",
-      "langs": [
-        "Shell"
-      ],
-      "description": "Fork of junocomp/juno-drivers-debian with local fixes",
-      "stars": 0
-    },
-    {
-      "name": "juno-grub",
-      "url": "https://github.com/DiamonDinoia/juno-grub",
-      "langs": [
-        "Shell"
-      ],
-      "description": "Fork of junocomp/juno-grub with local fixes",
-      "stars": 0
-    },
-    {
-      "name": "mip-core-test",
-      "url": "https://github.com/DiamonDinoia/mip-core-test",
-      "langs": [
-        "Python"
-      ],
-      "description": "",
+      "description": "TensorScript++: C++ BLAS/LAPACK-style linear algebra compiled to WebAssembly with benchmarking and Numbl/MIP packaging.",
       "stars": 0
     },
     {
@@ -2207,12 +2180,39 @@
       "stars": 0
     },
     {
-      "name": "TensorScriptPP",
-      "url": "https://github.com/DiamonDinoia/TensorScriptPP",
+      "name": "mip-core-test",
+      "url": "https://github.com/DiamonDinoia/mip-core-test",
       "langs": [
-        "C++"
+        "Python"
       ],
-      "description": "TensorScript++: C++ BLAS/LAPACK-style linear algebra compiled to WebAssembly with benchmarking and Numbl/MIP packaging.",
+      "description": "",
+      "stars": 0
+    },
+    {
+      "name": "juno-grub",
+      "url": "https://github.com/DiamonDinoia/juno-grub",
+      "langs": [
+        "Shell"
+      ],
+      "description": "Fork of junocomp/juno-grub with local fixes",
+      "stars": 0
+    },
+    {
+      "name": "juno-drivers-debian",
+      "url": "https://github.com/DiamonDinoia/juno-drivers-debian",
+      "langs": [
+        "Shell"
+      ],
+      "description": "Fork of junocomp/juno-drivers-debian with local fixes",
+      "stars": 0
+    },
+    {
+      "name": "DiamonDinoia.github.io",
+      "url": "https://github.com/DiamonDinoia/DiamonDinoia.github.io",
+      "langs": [
+        "HTML"
+      ],
+      "description": "",
       "stars": 0
     },
     {
