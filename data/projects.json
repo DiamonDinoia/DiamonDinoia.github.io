@@ -90,7 +90,7 @@
         "C++"
       ],
       "description": "C++ tensors with broadcasting and lazy computing",
-      "stars": 3755
+      "stars": 3756
     },
     {
       "name": "CaImAn",
@@ -261,7 +261,7 @@
         "Python"
       ],
       "description": "MountainSort spike sorting algorithm, version 5",
-      "stars": 61
+      "stars": 62
     },
     {
       "name": "stan-playground",
@@ -276,7 +276,7 @@
       "name": "jaxmg",
       "url": "https://github.com/flatironinstitute/jaxmg",
       "langs": [
-        "Cuda"
+        "C++"
       ],
       "description": "JAXMg: A multi-GPU linear solver in JAX",
       "stars": 58
@@ -291,21 +291,21 @@
       "stars": 56
     },
     {
-      "name": "nixpack",
-      "url": "https://github.com/flatironinstitute/nixpack",
-      "langs": [
-        "Nix"
-      ],
-      "description": "nix+spack = nixpack (spanix?)",
-      "stars": 53
-    },
-    {
       "name": "walnuts",
       "url": "https://github.com/flatironinstitute/walnuts",
       "langs": [
         "C++"
       ],
       "description": "Within-orbit Adaptive Leapfrog No-U-Turn Sampler",
+      "stars": 54
+    },
+    {
+      "name": "nixpack",
+      "url": "https://github.com/flatironinstitute/nixpack",
+      "langs": [
+        "Nix"
+      ],
+      "description": "nix+spack = nixpack (spanix?)",
       "stars": 53
     },
     {
@@ -687,6 +687,15 @@
       "stars": 16
     },
     {
+      "name": "isosplit5",
+      "url": "https://github.com/flatironinstitute/isosplit5",
+      "langs": [
+        "C++"
+      ],
+      "description": "ISO-SPLIT clustering (stand-alone version)",
+      "stars": 15
+    },
+    {
       "name": "neuropixels-data-sep-2020",
       "url": "https://github.com/flatironinstitute/neuropixels-data-sep-2020",
       "langs": [
@@ -720,15 +729,6 @@
         "Python"
       ],
       "description": "",
-      "stars": 14
-    },
-    {
-      "name": "isosplit5",
-      "url": "https://github.com/flatironinstitute/isosplit5",
-      "langs": [
-        "C++"
-      ],
-      "description": "ISO-SPLIT clustering (stand-alone version)",
       "stars": 14
     },
     {
@@ -2162,6 +2162,15 @@
       "stars": 1
     },
     {
+      "name": "DiamonDinoia.github.io",
+      "url": "https://github.com/DiamonDinoia/DiamonDinoia.github.io",
+      "langs": [
+        "HTML"
+      ],
+      "description": "",
+      "stars": 0
+    },
+    {
       "name": "TensorScriptPP",
       "url": "https://github.com/DiamonDinoia/TensorScriptPP",
       "langs": [
@@ -2204,15 +2213,6 @@
         "Shell"
       ],
       "description": "Fork of junocomp/juno-drivers-debian with local fixes",
-      "stars": 0
-    },
-    {
-      "name": "DiamonDinoia.github.io",
-      "url": "https://github.com/DiamonDinoia/DiamonDinoia.github.io",
-      "langs": [
-        "HTML"
-      ],
-      "description": "",
       "stars": 0
     },
     {
