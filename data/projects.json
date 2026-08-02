@@ -315,7 +315,7 @@
         "Python"
       ],
       "description": "A fast Lomb-Scargle periodogram. It's nifty, and uses a NUFFT!",
-      "stars": 51
+      "stars": 52
     },
     {
       "name": "xtensor-fftw",
