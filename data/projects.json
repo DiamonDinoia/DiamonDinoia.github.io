@@ -291,8 +291,8 @@
       "stars": 56
     },
     {
-      "name": "walnuts",
-      "url": "https://github.com/flatironinstitute/walnuts",
+      "name": "walnutpie",
+      "url": "https://github.com/flatironinstitute/walnutpie",
       "langs": [
         "C++"
       ],
@@ -984,6 +984,15 @@
       "stars": 9
     },
     {
+      "name": "fi-slurm-utils",
+      "url": "https://github.com/flatironinstitute/fi-slurm-utils",
+      "langs": [
+        "Rust"
+      ],
+      "description": "Command-line utilities for Slurm HPC clusters",
+      "stars": 8
+    },
+    {
       "name": "capture_lock",
       "url": "https://github.com/flatironinstitute/capture_lock",
       "langs": [
@@ -1036,15 +1045,6 @@
       ],
       "description": "Hubbard I solver. Supported by the Flatiron Institute.",
       "stars": 8
-    },
-    {
-      "name": "fi-slurm-utils",
-      "url": "https://github.com/flatironinstitute/fi-slurm-utils",
-      "langs": [
-        "Rust"
-      ],
-      "description": "Command-line utilities for Slurm HPC clusters",
-      "stars": 7
     },
     {
       "name": "inverse-volume-scattering2d",
@@ -2438,6 +2438,13 @@
         "Java"
       ],
       "description": "",
+      "stars": 0
+    },
+    {
+      "name": "nemos-documentation",
+      "url": "https://github.com/flatironinstitute/nemos-documentation",
+      "langs": [],
+      "description": "Host nemos docs build",
       "stars": 0
     },
     {
