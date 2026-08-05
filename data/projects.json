@@ -1,6 +1,6 @@
 {
   "github_url": "https://github.com/DiamonDinoia",
-  "total_repos": 89,
+  "total_repos": 91,
   "projects": [
     {
       "name": "FINUFFT",
@@ -297,7 +297,7 @@
         "C++"
       ],
       "description": "Within-orbit Adaptive Leapfrog No-U-Turn Sampler",
-      "stars": 54
+      "stars": 55
     },
     {
       "name": "nixpack",
@@ -1020,12 +1020,12 @@
       "stars": 8
     },
     {
-      "name": "gem",
-      "url": "https://github.com/TRIQS/gem",
+      "name": "hubbardI",
+      "url": "https://github.com/TRIQS/hubbardI",
       "langs": [
         "Python"
       ],
-      "description": "Ghost Gutzwiller Approximation implemented in TRIQS",
+      "description": "Hubbard I solver. Supported by the Flatiron Institute.",
       "stars": 8
     },
     {
@@ -1038,12 +1038,12 @@
       "stars": 8
     },
     {
-      "name": "hubbardI",
-      "url": "https://github.com/TRIQS/hubbardI",
+      "name": "gem",
+      "url": "https://github.com/TRIQS/gem",
       "langs": [
         "Python"
       ],
-      "description": "Hubbard I solver. Supported by the Flatiron Institute.",
+      "description": "Ghost Gutzwiller Approximation implemented in TRIQS",
       "stars": 8
     },
     {
@@ -1772,21 +1772,21 @@
       "stars": 2
     },
     {
-      "name": "dftkit",
-      "url": "https://github.com/TRIQS/dftkit",
-      "langs": [
-        "Python"
-      ],
-      "description": "Toolkit connecting TRIQS to DFT codes",
-      "stars": 2
-    },
-    {
       "name": "omegamaxent_interface",
       "url": "https://github.com/TRIQS/omegamaxent_interface",
       "langs": [
         "Jupyter Notebook"
       ],
       "description": "TRIQS Interface to the OmegaMaxEnt Code. Supported by the Flatiron Institute.",
+      "stars": 2
+    },
+    {
+      "name": "dftkit",
+      "url": "https://github.com/TRIQS/dftkit",
+      "langs": [
+        "Python"
+      ],
+      "description": "Toolkit connecting TRIQS to DFT codes",
       "stars": 2
     },
     {
