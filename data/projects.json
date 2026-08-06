@@ -273,6 +273,15 @@
       "stars": 60
     },
     {
+      "name": "walnutpie",
+      "url": "https://github.com/flatironinstitute/walnutpie",
+      "langs": [
+        "C++"
+      ],
+      "description": "Within-orbit Adaptive Leapfrog No-U-Turn Sampler",
+      "stars": 59
+    },
+    {
       "name": "jaxmg",
       "url": "https://github.com/flatironinstitute/jaxmg",
       "langs": [
@@ -289,15 +298,6 @@
       ],
       "description": "Task-based gene regulatory network inference using single-cell or bulk gene expression data conditioned on a prior network.",
       "stars": 56
-    },
-    {
-      "name": "walnutpie",
-      "url": "https://github.com/flatironinstitute/walnutpie",
-      "langs": [
-        "C++"
-      ],
-      "description": "Within-orbit Adaptive Leapfrog No-U-Turn Sampler",
-      "stars": 55
     },
     {
       "name": "nixpack",
@@ -768,6 +768,15 @@
       "stars": 13
     },
     {
+      "name": "numbl",
+      "url": "https://github.com/flatironinstitute/numbl",
+      "langs": [
+        "TypeScript"
+      ],
+      "description": "Numerical computing environment that aims to be compatible with Matlab",
+      "stars": 12
+    },
+    {
       "name": "2026-flatiron-cmb-summer-school",
       "url": "https://github.com/flatironinstitute/2026-flatiron-cmb-summer-school",
       "langs": [
@@ -783,15 +792,6 @@
         "C++"
       ],
       "description": "Discrete Lehmann representation of imaginary time Green's functions",
-      "stars": 12
-    },
-    {
-      "name": "numbl",
-      "url": "https://github.com/flatironinstitute/numbl",
-      "langs": [
-        "TypeScript"
-      ],
-      "description": "Numerical computing environment that aims to be compatible with Matlab",
       "stars": 12
     },
     {
@@ -1020,6 +1020,15 @@
       "stars": 8
     },
     {
+      "name": "gem",
+      "url": "https://github.com/TRIQS/gem",
+      "langs": [
+        "Python"
+      ],
+      "description": "Ghost Gutzwiller Approximation implemented in TRIQS",
+      "stars": 8
+    },
+    {
       "name": "hubbardI",
       "url": "https://github.com/TRIQS/hubbardI",
       "langs": [
@@ -1035,15 +1044,6 @@
         "Jupyter Notebook"
       ],
       "description": "Continuous-time interaction expansion quantum Monte-Carlo code based on TRIQS. Supported by the Flatiron Institute.",
-      "stars": 8
-    },
-    {
-      "name": "gem",
-      "url": "https://github.com/TRIQS/gem",
-      "langs": [
-        "Python"
-      ],
-      "description": "Ghost Gutzwiller Approximation implemented in TRIQS",
       "stars": 8
     },
     {
