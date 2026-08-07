@@ -264,6 +264,15 @@
       "stars": 62
     },
     {
+      "name": "walnutpie",
+      "url": "https://github.com/flatironinstitute/walnutpie",
+      "langs": [
+        "C++"
+      ],
+      "description": "Within-orbit Adaptive Leapfrog No-U-Turn Sampler",
+      "stars": 61
+    },
+    {
       "name": "stan-playground",
       "url": "https://github.com/flatironinstitute/stan-playground",
       "langs": [
@@ -271,15 +280,6 @@
       ],
       "description": "Run Stan models in the browser",
       "stars": 60
-    },
-    {
-      "name": "walnutpie",
-      "url": "https://github.com/flatironinstitute/walnutpie",
-      "langs": [
-        "C++"
-      ],
-      "description": "Within-orbit Adaptive Leapfrog No-U-Turn Sampler",
-      "stars": 59
     },
     {
       "name": "jaxmg",
@@ -768,6 +768,15 @@
       "stars": 13
     },
     {
+      "name": "cppdlr",
+      "url": "https://github.com/flatironinstitute/cppdlr",
+      "langs": [
+        "C++"
+      ],
+      "description": "Discrete Lehmann representation of imaginary time Green's functions",
+      "stars": 12
+    },
+    {
       "name": "numbl",
       "url": "https://github.com/flatironinstitute/numbl",
       "langs": [
@@ -783,15 +792,6 @@
         "Jupyter Notebook"
       ],
       "description": "GitHub Repository for 2026 Flatiron CMB Summer School",
-      "stars": 12
-    },
-    {
-      "name": "cppdlr",
-      "url": "https://github.com/flatironinstitute/cppdlr",
-      "langs": [
-        "C++"
-      ],
-      "description": "Discrete Lehmann representation of imaginary time Green's functions",
       "stars": 12
     },
     {
@@ -2448,6 +2448,15 @@
       "stars": 0
     },
     {
+      "name": "jenkins-template",
+      "url": "https://github.com/flatironinstitute/jenkins-template",
+      "langs": [
+        "Groovy"
+      ],
+      "description": "Example and test repository for jenkins builds",
+      "stars": 0
+    },
+    {
       "name": "aLENS_analysis",
       "url": "https://github.com/flatironinstitute/aLENS_analysis",
       "langs": [
@@ -2463,15 +2472,6 @@
         "Jupyter Notebook"
       ],
       "description": "Built workshop materials for the NeuroRSE packages",
-      "stars": 0
-    },
-    {
-      "name": "jenkins-template",
-      "url": "https://github.com/flatironinstitute/jenkins-template",
-      "langs": [
-        "Groovy"
-      ],
-      "description": "Example and test repository for jenkins builds",
       "stars": 0
     },
     {
