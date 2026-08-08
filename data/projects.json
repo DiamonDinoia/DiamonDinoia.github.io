@@ -99,7 +99,7 @@
         "Python"
       ],
       "description": "Computational toolbox for large scale Calcium Imaging Analysis, including movie handling, motion correction, source extraction, spike deconvolution and result visualization.",
-      "stars": 726
+      "stars": 727
     },
     {
       "name": "xtensor-python",
@@ -255,6 +255,15 @@
       "stars": 65
     },
     {
+      "name": "walnutpie",
+      "url": "https://github.com/flatironinstitute/walnutpie",
+      "langs": [
+        "C++"
+      ],
+      "description": "Within-orbit Adaptive Leapfrog No-U-Turn Sampler",
+      "stars": 62
+    },
+    {
       "name": "mountainsort5",
       "url": "https://github.com/flatironinstitute/mountainsort5",
       "langs": [
@@ -262,15 +271,6 @@
       ],
       "description": "MountainSort spike sorting algorithm, version 5",
       "stars": 62
-    },
-    {
-      "name": "walnutpie",
-      "url": "https://github.com/flatironinstitute/walnutpie",
-      "langs": [
-        "C++"
-      ],
-      "description": "Within-orbit Adaptive Leapfrog No-U-Turn Sampler",
-      "stars": 61
     },
     {
       "name": "stan-playground",
@@ -732,6 +732,15 @@
       "stars": 14
     },
     {
+      "name": "2026-flatiron-cmb-summer-school",
+      "url": "https://github.com/flatironinstitute/2026-flatiron-cmb-summer-school",
+      "langs": [
+        "Jupyter Notebook"
+      ],
+      "description": "GitHub Repository for 2026 Flatiron CMB Summer School",
+      "stars": 13
+    },
+    {
       "name": "Ensemble-reweighting-using-Cryo-EM-particles",
       "url": "https://github.com/flatironinstitute/Ensemble-reweighting-using-Cryo-EM-particles",
       "langs": [
@@ -783,15 +792,6 @@
         "TypeScript"
       ],
       "description": "Numerical computing environment that aims to be compatible with Matlab",
-      "stars": 12
-    },
-    {
-      "name": "2026-flatiron-cmb-summer-school",
-      "url": "https://github.com/flatironinstitute/2026-flatiron-cmb-summer-school",
-      "langs": [
-        "Jupyter Notebook"
-      ],
-      "description": "GitHub Repository for 2026 Flatiron CMB Summer School",
       "stars": 12
     },
     {
@@ -1020,21 +1020,21 @@
       "stars": 8
     },
     {
-      "name": "gem",
-      "url": "https://github.com/TRIQS/gem",
-      "langs": [
-        "Python"
-      ],
-      "description": "Ghost Gutzwiller Approximation implemented in TRIQS",
-      "stars": 8
-    },
-    {
       "name": "hubbardI",
       "url": "https://github.com/TRIQS/hubbardI",
       "langs": [
         "Python"
       ],
       "description": "Hubbard I solver. Supported by the Flatiron Institute.",
+      "stars": 8
+    },
+    {
+      "name": "gem",
+      "url": "https://github.com/TRIQS/gem",
+      "langs": [
+        "Python"
+      ],
+      "description": "Ghost Gutzwiller Approximation implemented in TRIQS",
       "stars": 8
     },
     {
