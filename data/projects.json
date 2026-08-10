@@ -180,7 +180,7 @@
         "Python"
       ],
       "description": "NEural MOdelS, a statistical modeling framework for neuroscience.",
-      "stars": 142
+      "stars": 143
     },
     {
       "name": "deepblast",
@@ -261,7 +261,7 @@
         "C++"
       ],
       "description": "Within-orbit Adaptive Leapfrog No-U-Turn Sampler",
-      "stars": 62
+      "stars": 63
     },
     {
       "name": "mountainsort5",
@@ -462,15 +462,6 @@
       "stars": 32
     },
     {
-      "name": "ironclust",
-      "url": "https://github.com/flatironinstitute/ironclust",
-      "langs": [
-        "Jupyter Notebook"
-      ],
-      "description": "Spike sorting software being developed at Flatiron Institute, based on JRCLUST (Janelia Rocket Cluster)",
-      "stars": 31
-    },
-    {
       "name": "xtensor-python-cookiecutter",
       "url": "https://github.com/xtensor-stack/xtensor-python-cookiecutter",
       "langs": [
@@ -478,6 +469,15 @@
       ],
       "description": "Cookiecutter for a Python project making use of xtensor",
       "stars": 31
+    },
+    {
+      "name": "ironclust",
+      "url": "https://github.com/flatironinstitute/ironclust",
+      "langs": [
+        "Jupyter Notebook"
+      ],
+      "description": "Spike sorting software being developed at Flatiron Institute, based on JRCLUST (Janelia Rocket Cluster)",
+      "stars": 30
     },
     {
       "name": "SkellySim",
