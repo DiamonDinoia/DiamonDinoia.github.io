@@ -99,7 +99,7 @@
         "Python"
       ],
       "description": "Computational toolbox for large scale Calcium Imaging Analysis, including movie handling, motion correction, source extraction, spike deconvolution and result visualization.",
-      "stars": 728
+      "stars": 727
     },
     {
       "name": "xtensor-python",
@@ -117,7 +117,7 @@
         "Python"
       ],
       "description": "Deep functional residue identification",
-      "stars": 352
+      "stars": 353
     },
     {
       "name": "xframe",
@@ -1020,6 +1020,15 @@
       "stars": 8
     },
     {
+      "name": "gem",
+      "url": "https://github.com/TRIQS/gem",
+      "langs": [
+        "Python"
+      ],
+      "description": "Ghost Gutzwiller Approximation implemented in TRIQS",
+      "stars": 8
+    },
+    {
       "name": "ctint",
       "url": "https://github.com/TRIQS/ctint",
       "langs": [
@@ -1035,15 +1044,6 @@
         "Python"
       ],
       "description": "Hubbard I solver. Supported by the Flatiron Institute.",
-      "stars": 8
-    },
-    {
-      "name": "gem",
-      "url": "https://github.com/TRIQS/gem",
-      "langs": [
-        "Python"
-      ],
-      "description": "Ghost Gutzwiller Approximation implemented in TRIQS",
       "stars": 8
     },
     {
@@ -1288,6 +1288,15 @@
       "stars": 4
     },
     {
+      "name": "fiem",
+      "url": "https://github.com/flatironinstitute/fiem",
+      "langs": [
+        "TeX"
+      ],
+      "description": "test",
+      "stars": 4
+    },
+    {
       "name": "spikeforest_recordings",
       "url": "https://github.com/flatironinstitute/spikeforest_recordings",
       "langs": [
@@ -1402,15 +1411,6 @@
         "C++"
       ],
       "description": "",
-      "stars": 3
-    },
-    {
-      "name": "fiem",
-      "url": "https://github.com/flatironinstitute/fiem",
-      "langs": [
-        "TeX"
-      ],
-      "description": "test",
       "stars": 3
     },
     {
@@ -2108,21 +2108,21 @@
       "stars": 1
     },
     {
-      "name": "hartree_fock",
-      "url": "https://github.com/TRIQS/hartree_fock",
-      "langs": [
-        "Python"
-      ],
-      "description": "Hartree-Fock lattice and impurity solvers based on the TRIQS library. Supported by the Flatiron Institute.",
-      "stars": 1
-    },
-    {
       "name": "docker",
       "url": "https://github.com/TRIQS/docker",
       "langs": [
         "Dockerfile"
       ],
       "description": "docker image for TRIQS",
+      "stars": 1
+    },
+    {
+      "name": "hartree_fock",
+      "url": "https://github.com/TRIQS/hartree_fock",
+      "langs": [
+        "Python"
+      ],
+      "description": "Hartree-Fock lattice and impurity solvers based on the TRIQS library. Supported by the Flatiron Institute.",
       "stars": 1
     },
     {
