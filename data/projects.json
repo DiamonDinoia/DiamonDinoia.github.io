@@ -90,7 +90,7 @@
         "C++"
       ],
       "description": "C++ tensors with broadcasting and lazy computing",
-      "stars": 3758
+      "stars": 3759
     },
     {
       "name": "CaImAn",
@@ -99,7 +99,7 @@
         "Python"
       ],
       "description": "Computational toolbox for large scale Calcium Imaging Analysis, including movie handling, motion correction, source extraction, spike deconvolution and result visualization.",
-      "stars": 727
+      "stars": 728
     },
     {
       "name": "xtensor-python",
@@ -156,6 +156,15 @@
       "stars": 174
     },
     {
+      "name": "FMM3D",
+      "url": "https://github.com/flatironinstitute/FMM3D",
+      "langs": [
+        "Fortran"
+      ],
+      "description": "Flatiron Institute Fast Multipole Libraries --- This codebase is a set of libraries to compute N-body interactions governed by the Laplace and Helmholtz equations, to a specified precision, in three dimensions, on a multi-core shared-memory machine. ",
+      "stars": 159
+    },
+    {
       "name": "NoRMCorre",
       "url": "https://github.com/flatironinstitute/NoRMCorre",
       "langs": [
@@ -163,15 +172,6 @@
       ],
       "description": "Matlab routines for online non-rigid motion correction of calcium imaging data",
       "stars": 159
-    },
-    {
-      "name": "FMM3D",
-      "url": "https://github.com/flatironinstitute/FMM3D",
-      "langs": [
-        "Fortran"
-      ],
-      "description": "Flatiron Institute Fast Multipole Libraries --- This codebase is a set of libraries to compute N-body interactions governed by the Laplace and Helmholtz equations, to a specified precision, in three dimensions, on a multi-core shared-memory machine. ",
-      "stars": 158
     },
     {
       "name": "nemos",
@@ -273,6 +273,15 @@
       "stars": 62
     },
     {
+      "name": "jaxmg",
+      "url": "https://github.com/flatironinstitute/jaxmg",
+      "langs": [
+        "C++"
+      ],
+      "description": "JAXMg: A multi-GPU linear solver in JAX",
+      "stars": 60
+    },
+    {
       "name": "stan-playground",
       "url": "https://github.com/flatironinstitute/stan-playground",
       "langs": [
@@ -280,15 +289,6 @@
       ],
       "description": "Run Stan models in the browser",
       "stars": 60
-    },
-    {
-      "name": "jaxmg",
-      "url": "https://github.com/flatironinstitute/jaxmg",
-      "langs": [
-        "C++"
-      ],
-      "description": "JAXMg: A multi-GPU linear solver in JAX",
-      "stars": 59
     },
     {
       "name": "inferelator",
@@ -1288,6 +1288,15 @@
       "stars": 4
     },
     {
+      "name": "ParticleMeshEwald.jl",
+      "url": "https://github.com/flatironinstitute/ParticleMeshEwald.jl",
+      "langs": [
+        "Julia"
+      ],
+      "description": "Particle mesh Ewald via NonuniformFFTs.jl",
+      "stars": 4
+    },
+    {
       "name": "fiem",
       "url": "https://github.com/flatironinstitute/fiem",
       "langs": [
@@ -1411,15 +1420,6 @@
         "C++"
       ],
       "description": "",
-      "stars": 3
-    },
-    {
-      "name": "ParticleMeshEwald.jl",
-      "url": "https://github.com/flatironinstitute/ParticleMeshEwald.jl",
-      "langs": [
-        "Julia"
-      ],
-      "description": "Particle mesh Ewald via NonuniformFFTs.jl",
       "stars": 3
     },
     {
@@ -1850,15 +1850,6 @@
         "CSS"
       ],
       "description": "Website for CCN's neuroRSE group",
-      "stars": 1
-    },
-    {
-      "name": "lineage_viewer",
-      "url": "https://github.com/flatironinstitute/lineage_viewer",
-      "langs": [
-        "Python"
-      ],
-      "description": "Graphical interface for editing a lineage and viewing related microscopy images",
       "stars": 1
     },
     {
@@ -2438,6 +2429,15 @@
         "Java"
       ],
       "description": "",
+      "stars": 0
+    },
+    {
+      "name": "lineage_viewer",
+      "url": "https://github.com/flatironinstitute/lineage_viewer",
+      "langs": [
+        "Python"
+      ],
+      "description": "Graphical interface for editing a lineage and viewing related microscopy images",
       "stars": 0
     },
     {
