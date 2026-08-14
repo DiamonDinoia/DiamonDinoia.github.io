@@ -1,6 +1,6 @@
 {
   "github_url": "https://github.com/DiamonDinoia",
-  "total_repos": 91,
+  "total_repos": 92,
   "projects": [
     {
       "name": "FINUFFT",
@@ -90,7 +90,7 @@
         "C++"
       ],
       "description": "C++ tensors with broadcasting and lazy computing",
-      "stars": 3759
+      "stars": 3760
     },
     {
       "name": "CaImAn",
@@ -117,7 +117,7 @@
         "Python"
       ],
       "description": "Deep functional residue identification",
-      "stars": 353
+      "stars": 354
     },
     {
       "name": "xframe",
@@ -279,7 +279,7 @@
         "C++"
       ],
       "description": "JAXMg: A multi-GPU linear solver in JAX",
-      "stars": 60
+      "stars": 61
     },
     {
       "name": "stan-playground",
@@ -2432,19 +2432,19 @@
       "stars": 0
     },
     {
+      "name": "nemos-documentation",
+      "url": "https://github.com/flatironinstitute/nemos-documentation",
+      "langs": [],
+      "description": "Host nemos docs build",
+      "stars": 0
+    },
+    {
       "name": "lineage_viewer",
       "url": "https://github.com/flatironinstitute/lineage_viewer",
       "langs": [
         "Python"
       ],
       "description": "Graphical interface for editing a lineage and viewing related microscopy images",
-      "stars": 0
-    },
-    {
-      "name": "nemos-documentation",
-      "url": "https://github.com/flatironinstitute/nemos-documentation",
-      "langs": [],
-      "description": "Host nemos docs build",
       "stars": 0
     },
     {
