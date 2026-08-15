@@ -90,7 +90,7 @@
         "C++"
       ],
       "description": "C++ tensors with broadcasting and lazy computing",
-      "stars": 3760
+      "stars": 3761
     },
     {
       "name": "CaImAn",
@@ -234,7 +234,7 @@
         "Python"
       ],
       "description": "Python wrapper for Intel Math Kernel Library (MKL) matrix multiplication",
-      "stars": 95
+      "stars": 93
     },
     {
       "name": "xtensor-r",
