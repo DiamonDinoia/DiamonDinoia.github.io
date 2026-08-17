@@ -90,7 +90,7 @@
         "C++"
       ],
       "description": "C++ tensors with broadcasting and lazy computing",
-      "stars": 3761
+      "stars": 3762
     },
     {
       "name": "CaImAn",
@@ -144,7 +144,7 @@
         "C++"
       ],
       "description": "The x template library",
-      "stars": 235
+      "stars": 236
     },
     {
       "name": "xtensor-blas",
@@ -1110,6 +1110,15 @@
       "stars": 6
     },
     {
+      "name": "poet",
+      "url": "https://github.com/flatironinstitute/poet",
+      "langs": [
+        "C++"
+      ],
+      "description": "Perfectly Over Engineered Templates",
+      "stars": 6
+    },
+    {
       "name": "c2py",
       "url": "https://github.com/flatironinstitute/c2py",
       "langs": [
@@ -1197,15 +1206,6 @@
         "Jupyter Notebook"
       ],
       "description": "Fast Numerics, Small Changes: The Minimal Playbook",
-      "stars": 5
-    },
-    {
-      "name": "poet",
-      "url": "https://github.com/flatironinstitute/poet",
-      "langs": [
-        "C++"
-      ],
-      "description": "Perfectly Over Engineered Templates",
       "stars": 5
     },
     {
@@ -1414,6 +1414,15 @@
       "stars": 4
     },
     {
+      "name": "simdrng",
+      "url": "https://github.com/DiamonDinoia/simdrng",
+      "langs": [
+        "C++"
+      ],
+      "description": "Header-only C++20 SIMD random number generators (Xoshiro / SplitMix / ChaCha / Philox) with a numpy.random.Generator-compatible Python API",
+      "stars": 3
+    },
+    {
       "name": "Chebyshev",
       "url": "https://github.com/DiamonDinoia/Chebyshev",
       "langs": [
@@ -1546,15 +1555,6 @@
         "C++"
       ],
       "description": "This is a parallel implementation of the Jacobi algorithm.",
-      "stars": 2
-    },
-    {
-      "name": "simdrng",
-      "url": "https://github.com/DiamonDinoia/simdrng",
-      "langs": [
-        "C++"
-      ],
-      "description": "Header-only C++20 SIMD random number generators (Xoshiro / SplitMix / ChaCha / Philox) with a numpy.random.Generator-compatible Python API",
       "stars": 2
     },
     {
