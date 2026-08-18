@@ -90,7 +90,7 @@
         "C++"
       ],
       "description": "C++ tensors with broadcasting and lazy computing",
-      "stars": 3762
+      "stars": 3761
     },
     {
       "name": "CaImAn",
@@ -99,7 +99,7 @@
         "Python"
       ],
       "description": "Computational toolbox for large scale Calcium Imaging Analysis, including movie handling, motion correction, source extraction, spike deconvolution and result visualization.",
-      "stars": 730
+      "stars": 731
     },
     {
       "name": "xtensor-python",
@@ -198,7 +198,7 @@
         "C++"
       ],
       "description": "JAX bindings to the Flatiron Institute Non-uniform Fast Fourier Transform (FINUFFT) library",
-      "stars": 137
+      "stars": 138
     },
     {
       "name": "cufinufft",
@@ -264,6 +264,15 @@
       "stars": 64
     },
     {
+      "name": "jaxmg",
+      "url": "https://github.com/flatironinstitute/jaxmg",
+      "langs": [
+        "C++"
+      ],
+      "description": "JAXMg: A multi-GPU linear solver in JAX",
+      "stars": 63
+    },
+    {
       "name": "mountainsort5",
       "url": "https://github.com/flatironinstitute/mountainsort5",
       "langs": [
@@ -271,15 +280,6 @@
       ],
       "description": "MountainSort spike sorting algorithm, version 5",
       "stars": 62
-    },
-    {
-      "name": "jaxmg",
-      "url": "https://github.com/flatironinstitute/jaxmg",
-      "langs": [
-        "C++"
-      ],
-      "description": "JAXMg: A multi-GPU linear solver in JAX",
-      "stars": 61
     },
     {
       "name": "stan-playground",
@@ -894,6 +894,15 @@
       "stars": 10
     },
     {
+      "name": "ctseg",
+      "url": "https://github.com/TRIQS/ctseg",
+      "langs": [
+        "Jupyter Notebook"
+      ],
+      "description": "A segment picture impurity solver with spin-spin interactions. Supported by the Flatiron Institute.",
+      "stars": 10
+    },
+    {
       "name": "modest",
       "url": "https://github.com/TRIQS/modest",
       "langs": [
@@ -954,15 +963,6 @@
         "Fortran"
       ],
       "description": "This repository contains box codes for evaluating volume potentials for Laplace, Helmholtz, Maxwell, and Stokes",
-      "stars": 9
-    },
-    {
-      "name": "ctseg",
-      "url": "https://github.com/TRIQS/ctseg",
-      "langs": [
-        "Jupyter Notebook"
-      ],
-      "description": "A segment picture impurity solver with spin-spin interactions. Supported by the Flatiron Institute.",
       "stars": 9
     },
     {
@@ -2432,6 +2432,15 @@
       "stars": 0
     },
     {
+      "name": "jenkins-template",
+      "url": "https://github.com/flatironinstitute/jenkins-template",
+      "langs": [
+        "Groovy"
+      ],
+      "description": "Example and test repository for jenkins builds",
+      "stars": 0
+    },
+    {
       "name": "nemos-documentation",
       "url": "https://github.com/flatironinstitute/nemos-documentation",
       "langs": [],
@@ -2445,15 +2454,6 @@
         "Python"
       ],
       "description": "Graphical interface for editing a lineage and viewing related microscopy images",
-      "stars": 0
-    },
-    {
-      "name": "jenkins-template",
-      "url": "https://github.com/flatironinstitute/jenkins-template",
-      "langs": [
-        "Groovy"
-      ],
-      "description": "Example and test repository for jenkins builds",
       "stars": 0
     },
     {
