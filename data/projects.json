@@ -180,7 +180,7 @@
         "Python"
       ],
       "description": "NEural MOdelS, a statistical modeling framework for neuroscience.",
-      "stars": 143
+      "stars": 142
     },
     {
       "name": "deepblast",
@@ -255,6 +255,15 @@
       "stars": 65
     },
     {
+      "name": "jaxmg",
+      "url": "https://github.com/flatironinstitute/jaxmg",
+      "langs": [
+        "C++"
+      ],
+      "description": "JAXMg: A multi-GPU linear solver in JAX",
+      "stars": 64
+    },
+    {
       "name": "walnutpie",
       "url": "https://github.com/flatironinstitute/walnutpie",
       "langs": [
@@ -262,15 +271,6 @@
       ],
       "description": "Within-orbit Adaptive Leapfrog No-U-Turn Sampler",
       "stars": 64
-    },
-    {
-      "name": "jaxmg",
-      "url": "https://github.com/flatironinstitute/jaxmg",
-      "langs": [
-        "C++"
-      ],
-      "description": "JAXMg: A multi-GPU linear solver in JAX",
-      "stars": 63
     },
     {
       "name": "mountainsort5",
@@ -777,21 +777,21 @@
       "stars": 13
     },
     {
-      "name": "cppdlr",
-      "url": "https://github.com/flatironinstitute/cppdlr",
-      "langs": [
-        "C++"
-      ],
-      "description": "Discrete Lehmann representation of imaginary time Green's functions",
-      "stars": 12
-    },
-    {
       "name": "numbl",
       "url": "https://github.com/flatironinstitute/numbl",
       "langs": [
         "TypeScript"
       ],
       "description": "Numerical computing environment that aims to be compatible with Matlab",
+      "stars": 12
+    },
+    {
+      "name": "cppdlr",
+      "url": "https://github.com/flatironinstitute/cppdlr",
+      "langs": [
+        "C++"
+      ],
+      "description": "Discrete Lehmann representation of imaginary time Green's functions",
       "stars": 12
     },
     {
@@ -1032,7 +1032,7 @@
       "name": "ctint",
       "url": "https://github.com/TRIQS/ctint",
       "langs": [
-        "Jupyter Notebook"
+        "C++"
       ],
       "description": "Continuous-time interaction expansion quantum Monte-Carlo code based on TRIQS. Supported by the Flatiron Institute.",
       "stars": 8
@@ -1045,6 +1045,15 @@
       ],
       "description": "Hubbard I solver. Supported by the Flatiron Institute.",
       "stars": 8
+    },
+    {
+      "name": "poet",
+      "url": "https://github.com/flatironinstitute/poet",
+      "langs": [
+        "C++"
+      ],
+      "description": "Perfectly Over Engineered Templates",
+      "stars": 7
     },
     {
       "name": "inverse-volume-scattering2d",
@@ -1107,15 +1116,6 @@
         "Jupyter Notebook"
       ],
       "description": "This repository contains the code to benchmark CPU cache miss latency and branch misprediction penalty",
-      "stars": 6
-    },
-    {
-      "name": "poet",
-      "url": "https://github.com/flatironinstitute/poet",
-      "langs": [
-        "C++"
-      ],
-      "description": "Perfectly Over Engineered Templates",
       "stars": 6
     },
     {
