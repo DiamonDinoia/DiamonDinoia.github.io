@@ -1567,6 +1567,15 @@
       "stars": 2
     },
     {
+      "name": "sumac",
+      "url": "https://github.com/flatironinstitute/sumac",
+      "langs": [
+        "Python"
+      ],
+      "description": "Python implementation of subzero matrix completion, a rectified linear factorization of a sparse matrix",
+      "stars": 2
+    },
+    {
       "name": "CyclicCAE_public",
       "url": "https://github.com/flatironinstitute/CyclicCAE_public",
       "langs": [
@@ -2432,19 +2441,19 @@
       "stars": 0
     },
     {
+      "name": "nemos-documentation",
+      "url": "https://github.com/flatironinstitute/nemos-documentation",
+      "langs": [],
+      "description": "Host nemos docs build",
+      "stars": 0
+    },
+    {
       "name": "jenkins-template",
       "url": "https://github.com/flatironinstitute/jenkins-template",
       "langs": [
         "Groovy"
       ],
       "description": "Example and test repository for jenkins builds",
-      "stars": 0
-    },
-    {
-      "name": "nemos-documentation",
-      "url": "https://github.com/flatironinstitute/nemos-documentation",
-      "langs": [],
-      "description": "Host nemos docs build",
       "stars": 0
     },
     {
