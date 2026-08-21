@@ -225,7 +225,7 @@
         "C++"
       ],
       "description": "xtensor plugin to read and write images, audio files, numpy (compressed) npz and HDF5",
-      "stars": 96
+      "stars": 95
     },
     {
       "name": "sparse_dot",
