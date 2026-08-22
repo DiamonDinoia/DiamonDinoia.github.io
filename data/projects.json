@@ -225,7 +225,7 @@
         "C++"
       ],
       "description": "xtensor plugin to read and write images, audio files, numpy (compressed) npz and HDF5",
-      "stars": 95
+      "stars": 96
     },
     {
       "name": "sparse_dot",
@@ -1047,6 +1047,15 @@
       "stars": 8
     },
     {
+      "name": "treeweave",
+      "url": "https://github.com/DiamonDinoia/treeweave",
+      "langs": [
+        "C++"
+      ],
+      "description": "treeweave — fast N-dimensional function approximation via adaptive polynomial fitting (baobzi rebuilt on polyfit + POET)",
+      "stars": 7
+    },
+    {
       "name": "poet",
       "url": "https://github.com/flatironinstitute/poet",
       "langs": [
@@ -1099,15 +1108,6 @@
       ],
       "description": "Cookiecutter for a Julia project making use of xtensor",
       "stars": 7
-    },
-    {
-      "name": "treeweave",
-      "url": "https://github.com/DiamonDinoia/treeweave",
-      "langs": [
-        "C++"
-      ],
-      "description": "treeweave — fast N-dimensional function approximation via adaptive polynomial fitting (baobzi rebuilt on polyfit + POET)",
-      "stars": 6
     },
     {
       "name": "cpu-performance-tests",
