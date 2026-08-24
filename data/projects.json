@@ -99,7 +99,7 @@
         "Python"
       ],
       "description": "Computational toolbox for large scale Calcium Imaging Analysis, including movie handling, motion correction, source extraction, spike deconvolution and result visualization.",
-      "stars": 732
+      "stars": 733
     },
     {
       "name": "xtensor-python",
@@ -864,15 +864,6 @@
         "Python"
       ],
       "description": "Non-linear Matrix Decomposition library",
-      "stars": 11
-    },
-    {
-      "name": "triqs_0.x",
-      "url": "https://github.com/TRIQS/triqs_0.x",
-      "langs": [
-        "C++"
-      ],
-      "description": "DEPRECATED -- This is the repository of the older versions of TRIQS",
       "stars": 11
     },
     {
@@ -2123,15 +2114,6 @@
         "Python"
       ],
       "description": "Hartree-Fock lattice and impurity solvers based on the TRIQS library. Supported by the Flatiron Institute.",
-      "stars": 1
-    },
-    {
-      "name": "cthyb_matrix",
-      "url": "https://github.com/TRIQS/cthyb_matrix",
-      "langs": [
-        "C++"
-      ],
-      "description": "DEPRECATED -- CTQMC Hybridisation expansion ",
       "stars": 1
     },
     {
