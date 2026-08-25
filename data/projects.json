@@ -1,6 +1,6 @@
 {
   "github_url": "https://github.com/DiamonDinoia",
-  "total_repos": 92,
+  "total_repos": 94,
   "projects": [
     {
       "name": "FINUFFT",
@@ -90,7 +90,7 @@
         "C++"
       ],
       "description": "C++ tensors with broadcasting and lazy computing",
-      "stars": 3761
+      "stars": 3762
     },
     {
       "name": "CaImAn",
@@ -99,7 +99,7 @@
         "Python"
       ],
       "description": "Computational toolbox for large scale Calcium Imaging Analysis, including movie handling, motion correction, source extraction, spike deconvolution and result visualization.",
-      "stars": 733
+      "stars": 734
     },
     {
       "name": "xtensor-python",
@@ -246,21 +246,21 @@
       "stars": 90
     },
     {
-      "name": "walnutpie",
-      "url": "https://github.com/flatironinstitute/walnutpie",
-      "langs": [
-        "C++"
-      ],
-      "description": "Within-orbit Adaptive Leapfrog No-U-Turn Sampler",
-      "stars": 65
-    },
-    {
       "name": "neurosift",
       "url": "https://github.com/flatironinstitute/neurosift",
       "langs": [
         "TypeScript"
       ],
       "description": "Browser-based NWB visualization and DANDI exploration",
+      "stars": 66
+    },
+    {
+      "name": "walnutpie",
+      "url": "https://github.com/flatironinstitute/walnutpie",
+      "langs": [
+        "C++"
+      ],
+      "description": "Within-orbit Adaptive Leapfrog No-U-Turn Sampler",
       "stars": 65
     },
     {
@@ -507,6 +507,15 @@
       "stars": 26
     },
     {
+      "name": "catvae",
+      "url": "https://github.com/flatironinstitute/catvae",
+      "langs": [
+        "Jupyter Notebook"
+      ],
+      "description": "Categorical Variational Autoencoders",
+      "stars": 25
+    },
+    {
       "name": "comptools24",
       "url": "https://github.com/flatironinstitute/comptools24",
       "langs": [
@@ -540,15 +549,6 @@
         "Python"
       ],
       "description": "",
-      "stars": 24
-    },
-    {
-      "name": "catvae",
-      "url": "https://github.com/flatironinstitute/catvae",
-      "langs": [
-        "Jupyter Notebook"
-      ],
-      "description": "Categorical Variational Autoencoders",
       "stars": 24
     },
     {
@@ -2142,6 +2142,15 @@
       ],
       "description": "A simple implementation of a single-band interaction-expansion QMC impurity solver",
       "stars": 1
+    },
+    {
+      "name": "admiral",
+      "url": "https://github.com/DiamonDinoia/admiral",
+      "langs": [
+        "C++"
+      ],
+      "description": "yet another fft",
+      "stars": 0
     },
     {
       "name": "DiamonDinoia.github.io",
