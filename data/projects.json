@@ -2144,12 +2144,12 @@
       "stars": 1
     },
     {
-      "name": "admiral",
-      "url": "https://github.com/DiamonDinoia/admiral",
+      "name": "juno-grub",
+      "url": "https://github.com/DiamonDinoia/juno-grub",
       "langs": [
-        "C++"
+        "Shell"
       ],
-      "description": "yet another fft",
+      "description": "Fork of junocomp/juno-grub with local fixes",
       "stars": 0
     },
     {
@@ -2159,6 +2159,15 @@
         "HTML"
       ],
       "description": "",
+      "stars": 0
+    },
+    {
+      "name": "admiral",
+      "url": "https://github.com/DiamonDinoia/admiral",
+      "langs": [
+        "C++"
+      ],
+      "description": "yet another fft",
       "stars": 0
     },
     {
@@ -2186,15 +2195,6 @@
         "Python"
       ],
       "description": "",
-      "stars": 0
-    },
-    {
-      "name": "juno-grub",
-      "url": "https://github.com/DiamonDinoia/juno-grub",
-      "langs": [
-        "Shell"
-      ],
-      "description": "Fork of junocomp/juno-grub with local fixes",
       "stars": 0
     },
     {
