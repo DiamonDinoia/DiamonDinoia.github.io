@@ -246,6 +246,15 @@
       "stars": 90
     },
     {
+      "name": "walnutpie",
+      "url": "https://github.com/flatironinstitute/walnutpie",
+      "langs": [
+        "C++"
+      ],
+      "description": "Within-orbit Adaptive Leapfrog No-U-Turn Sampler",
+      "stars": 66
+    },
+    {
       "name": "neurosift",
       "url": "https://github.com/flatironinstitute/neurosift",
       "langs": [
@@ -261,15 +270,6 @@
         "C++"
       ],
       "description": "JAXMg: A multi-GPU linear solver in JAX",
-      "stars": 65
-    },
-    {
-      "name": "walnutpie",
-      "url": "https://github.com/flatironinstitute/walnutpie",
-      "langs": [
-        "C++"
-      ],
-      "description": "Within-orbit Adaptive Leapfrog No-U-Turn Sampler",
       "stars": 65
     },
     {
