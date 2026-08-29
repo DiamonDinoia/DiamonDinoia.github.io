@@ -1,6 +1,6 @@
 {
   "github_url": "https://github.com/DiamonDinoia",
-  "total_repos": 94,
+  "total_repos": 96,
   "projects": [
     {
       "name": "FINUFFT",
@@ -180,7 +180,7 @@
         "Python"
       ],
       "description": "NEural MOdelS, a statistical modeling framework for neuroscience.",
-      "stars": 142
+      "stars": 143
     },
     {
       "name": "deepblast",
@@ -867,6 +867,15 @@
       "stars": 11
     },
     {
+      "name": "masala_public",
+      "url": "https://github.com/flatironinstitute/masala_public",
+      "langs": [
+        "C++"
+      ],
+      "description": "The public repository for the Core library of the Masala software suite.  Masala is a set of free and open-source tools for biomolecular modelling, with a plugin-based infrastructure that makes it easy to extend other software.",
+      "stars": 10
+    },
+    {
       "name": "ExEnDiff",
       "url": "https://github.com/flatironinstitute/ExEnDiff",
       "langs": [
@@ -909,15 +918,6 @@
         "Jupyter Notebook"
       ],
       "description": "",
-      "stars": 9
-    },
-    {
-      "name": "masala_public",
-      "url": "https://github.com/flatironinstitute/masala_public",
-      "langs": [
-        "C++"
-      ],
-      "description": "The public repository for the Core library of the Masala software suite.  Masala is a set of free and open-source tools for biomolecular modelling, with a plugin-based infrastructure that makes it easy to extend other software.",
       "stars": 9
     },
     {
@@ -2144,12 +2144,21 @@
       "stars": 1
     },
     {
-      "name": "admiral",
-      "url": "https://github.com/DiamonDinoia/admiral",
+      "name": "apt",
+      "url": "https://github.com/DiamonDinoia/apt",
       "langs": [
-        "C++"
+        "Shell"
       ],
-      "description": "yet another fft",
+      "description": "Flat apt repository of installer packages: each postinst fetches the payload from the publisher and verifies a pinned SHA-256",
+      "stars": 0
+    },
+    {
+      "name": "wallpapers",
+      "url": "https://github.com/DiamonDinoia/wallpapers",
+      "langs": [
+        "Python"
+      ],
+      "description": "Generative math/physics wallpapers, 4K (generator script; binaries ship as release assets)",
       "stars": 0
     },
     {
@@ -2159,6 +2168,15 @@
         "HTML"
       ],
       "description": "",
+      "stars": 0
+    },
+    {
+      "name": "admiral",
+      "url": "https://github.com/DiamonDinoia/admiral",
+      "langs": [
+        "C++"
+      ],
+      "description": "yet another fft",
       "stars": 0
     },
     {
