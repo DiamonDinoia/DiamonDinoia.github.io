@@ -12,6 +12,14 @@
       ]
     },
     {
+      "title": "Wallpapers",
+      "content": "Generative math/physics wallpapers I rendered, 4K — generator script and binaries live in the GitHub repo.",
+      "items": [
+        { "type": "link", "url": "https://github.com/DiamonDinoia/wallpapers", "text": "math" },
+        { "type": "quote", "text": "math themed wallpaper" }
+      ]
+    },
+    {
       "title": "Coming Soon",
       "content": "More to come — hobbies, interests, and the things that happen when the compiler isn't running.",
       "items": []
