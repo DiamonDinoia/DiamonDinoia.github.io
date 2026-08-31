@@ -2144,6 +2144,15 @@
       "stars": 1
     },
     {
+      "name": "juno-drivers-debian",
+      "url": "https://github.com/DiamonDinoia/juno-drivers-debian",
+      "langs": [
+        "Shell"
+      ],
+      "description": "Fork of junocomp/juno-drivers-debian with local fixes",
+      "stars": 0
+    },
+    {
       "name": "apt",
       "url": "https://github.com/DiamonDinoia/apt",
       "langs": [
@@ -2153,21 +2162,21 @@
       "stars": 0
     },
     {
-      "name": "wallpapers",
-      "url": "https://github.com/DiamonDinoia/wallpapers",
-      "langs": [
-        "Python"
-      ],
-      "description": "Generative math/physics wallpapers, 4K (generator script; binaries ship as release assets)",
-      "stars": 0
-    },
-    {
       "name": "DiamonDinoia.github.io",
       "url": "https://github.com/DiamonDinoia/DiamonDinoia.github.io",
       "langs": [
         "HTML"
       ],
       "description": "",
+      "stars": 0
+    },
+    {
+      "name": "wallpapers",
+      "url": "https://github.com/DiamonDinoia/wallpapers",
+      "langs": [
+        "Python"
+      ],
+      "description": "Generative math/physics wallpapers, 4K (generator script; binaries ship as release assets)",
       "stars": 0
     },
     {
@@ -2213,15 +2222,6 @@
         "Python"
       ],
       "description": "",
-      "stars": 0
-    },
-    {
-      "name": "juno-drivers-debian",
-      "url": "https://github.com/DiamonDinoia/juno-drivers-debian",
-      "langs": [
-        "Shell"
-      ],
-      "description": "Fork of junocomp/juno-drivers-debian with local fixes",
       "stars": 0
     },
     {
