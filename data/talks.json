@@ -11,6 +11,13 @@
       ]
     },
     {
+      "title": "Practical HPC",
+      "event": "Supercomputing 2025",
+      "org": "Flatiron Institute",
+      "year": 2025,
+      "type": "conference"
+    },
+    {
       "title": "Fast Numerics, Small Changes: The Minimal Playbook",
       "event": "FWAM 2025",
       "org": "Flatiron Institute",
@@ -62,6 +69,16 @@
       "url": "https://indico.global/event/3458/contributions/34404/",
       "links": [
         { "label": "slides", "url": "https://indico.global/event/3458/contributions/34404/attachments/17649/28885/2023-11-07%20CL%20methods.pdf", "type": "pdf" }
+      ]
+    },
+    {
+      "title": "Simulations on FPGA",
+      "event": "SwiftHEP Workshop #3",
+      "year": 2022,
+      "type": "talk",
+      "url": "https://indico.cern.ch/event/1127798/contributions/4746676/",
+      "links": [
+        { "label": "slides", "url": "https://indico.cern.ch/event/1127798/contributions/4746676/subcontributions/373214/attachments/2414641/4131643/SwiftHEP___Simulation-2.pdf", "type": "pdf" }
       ]
     },
     {

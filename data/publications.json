@@ -297,7 +297,13 @@
       "venue_note": "Summer Student Report",
       "year": 2018,
       "url": "https://doi.org/10.5281/zenodo.1438417",
-      "links": []
+      "links": [
+        {
+          "label": "PDF",
+          "url": "https://zenodo.org/records/1438417/files/Report_Marco%20Barbone.pdf?download=1",
+          "type": "pdf"
+        }
+      ]
     }
   ]
 }
