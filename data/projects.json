@@ -1,6 +1,6 @@
 {
   "github_url": "https://github.com/DiamonDinoia",
-  "total_repos": 96,
+  "total_repos": 97,
   "projects": [
     {
       "name": "FINUFFT",
@@ -183,6 +183,15 @@
       "stars": 143
     },
     {
+      "name": "jax-finufft",
+      "url": "https://github.com/flatironinstitute/jax-finufft",
+      "langs": [
+        "C++"
+      ],
+      "description": "JAX bindings to the Flatiron Institute Non-uniform Fast Fourier Transform (FINUFFT) library",
+      "stars": 139
+    },
+    {
       "name": "deepblast",
       "url": "https://github.com/flatironinstitute/deepblast",
       "langs": [
@@ -190,15 +199,6 @@
       ],
       "description": "Neural Networks for Protein Sequence Alignment",
       "stars": 139
-    },
-    {
-      "name": "jax-finufft",
-      "url": "https://github.com/flatironinstitute/jax-finufft",
-      "langs": [
-        "C++"
-      ],
-      "description": "JAX bindings to the Flatiron Institute Non-uniform Fast Fourier Transform (FINUFFT) library",
-      "stars": 138
     },
     {
       "name": "cufinufft",
@@ -1423,6 +1423,15 @@
       "stars": 3
     },
     {
+      "name": "cephdu",
+      "url": "https://github.com/flatironinstitute/cephdu",
+      "langs": [
+        "Rust"
+      ],
+      "description": "A ncdu-like TUI for the Ceph File System, using xattrs instead of crawling",
+      "stars": 3
+    },
+    {
       "name": "CyclicCAE_public",
       "url": "https://github.com/flatironinstitute/CyclicCAE_public",
       "langs": [
@@ -1438,15 +1447,6 @@
         "Fortran"
       ],
       "description": "",
-      "stars": 3
-    },
-    {
-      "name": "cephdu",
-      "url": "https://github.com/flatironinstitute/cephdu",
-      "langs": [
-        "Rust"
-      ],
-      "description": "A ncdu-like TUI for the Ceph File System, using xattrs instead of crawling",
       "stars": 3
     },
     {
@@ -2144,12 +2144,12 @@
       "stars": 1
     },
     {
-      "name": "juno-drivers-debian",
-      "url": "https://github.com/DiamonDinoia/juno-drivers-debian",
+      "name": "admiral",
+      "url": "https://github.com/DiamonDinoia/admiral",
       "langs": [
-        "Shell"
+        "C++"
       ],
-      "description": "Fork of junocomp/juno-drivers-debian with local fixes",
+      "description": "yet another fft",
       "stars": 0
     },
     {
@@ -2162,6 +2162,15 @@
       "stars": 0
     },
     {
+      "name": "juno-kde-fancontrol",
+      "url": "https://github.com/DiamonDinoia/juno-kde-fancontrol",
+      "langs": [
+        "Python"
+      ],
+      "description": "KDE/Qt6 fan-curve editor for Juno (Clevo) laptops — on top of fan-profile + fancontrol.service",
+      "stars": 0
+    },
+    {
       "name": "DiamonDinoia.github.io",
       "url": "https://github.com/DiamonDinoia/DiamonDinoia.github.io",
       "langs": [
@@ -2171,21 +2180,21 @@
       "stars": 0
     },
     {
+      "name": "juno-drivers-debian",
+      "url": "https://github.com/DiamonDinoia/juno-drivers-debian",
+      "langs": [
+        "Shell"
+      ],
+      "description": "Fork of junocomp/juno-drivers-debian with local fixes",
+      "stars": 0
+    },
+    {
       "name": "wallpapers",
       "url": "https://github.com/DiamonDinoia/wallpapers",
       "langs": [
         "Python"
       ],
       "description": "Generative math/physics wallpapers, 4K (generator script; binaries ship as release assets)",
-      "stars": 0
-    },
-    {
-      "name": "admiral",
-      "url": "https://github.com/DiamonDinoia/admiral",
-      "langs": [
-        "C++"
-      ],
-      "description": "yet another fft",
       "stars": 0
     },
     {
