@@ -189,7 +189,7 @@
         "C++"
       ],
       "description": "JAX bindings to the Flatiron Institute Non-uniform Fast Fourier Transform (FINUFFT) library",
-      "stars": 139
+      "stars": 140
     },
     {
       "name": "deepblast",
@@ -1279,6 +1279,15 @@
       "stars": 4
     },
     {
+      "name": "CyclicCAE_public",
+      "url": "https://github.com/flatironinstitute/CyclicCAE_public",
+      "langs": [
+        "Python"
+      ],
+      "description": "The public repository for the CyclicCAE conformational autoencoder.  CyclicCAE encodes peptide macrocycle conformations in a low-dimensional latent space, useful for rapid sampling, structural refinement, or denoising.",
+      "stars": 4
+    },
+    {
       "name": "ParticleMeshEwald.jl",
       "url": "https://github.com/flatironinstitute/ParticleMeshEwald.jl",
       "langs": [
@@ -1429,15 +1438,6 @@
         "Rust"
       ],
       "description": "A ncdu-like TUI for the Ceph File System, using xattrs instead of crawling",
-      "stars": 3
-    },
-    {
-      "name": "CyclicCAE_public",
-      "url": "https://github.com/flatironinstitute/CyclicCAE_public",
-      "langs": [
-        "Python"
-      ],
-      "description": "The public repository for the CyclicCAE conformational autoencoder.  CyclicCAE encodes peptide macrocycle conformations in a low-dimensional latent space, useful for rapid sampling, structural refinement, or denoising.",
       "stars": 3
     },
     {
@@ -2153,21 +2153,21 @@
       "stars": 0
     },
     {
-      "name": "apt",
-      "url": "https://github.com/DiamonDinoia/apt",
-      "langs": [
-        "Shell"
-      ],
-      "description": "Flat apt repository of installer packages: each postinst fetches the payload from the publisher and verifies a pinned SHA-256",
-      "stars": 0
-    },
-    {
       "name": "juno-kde-fancontrol",
       "url": "https://github.com/DiamonDinoia/juno-kde-fancontrol",
       "langs": [
         "Python"
       ],
       "description": "KDE/Qt6 fan-curve editor for Juno (Clevo) laptops — on top of fan-profile + fancontrol.service",
+      "stars": 0
+    },
+    {
+      "name": "apt",
+      "url": "https://github.com/DiamonDinoia/apt",
+      "langs": [
+        "Shell"
+      ],
+      "description": "Flat apt repository of installer packages: each postinst fetches the payload from the publisher and verifies a pinned SHA-256",
       "stars": 0
     },
     {
