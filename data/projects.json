@@ -2153,6 +2153,15 @@
       "stars": 0
     },
     {
+      "name": "DiamonDinoia.github.io",
+      "url": "https://github.com/DiamonDinoia/DiamonDinoia.github.io",
+      "langs": [
+        "HTML"
+      ],
+      "description": "",
+      "stars": 0
+    },
+    {
       "name": "juno-kde-fancontrol",
       "url": "https://github.com/DiamonDinoia/juno-kde-fancontrol",
       "langs": [
@@ -2168,15 +2177,6 @@
         "Shell"
       ],
       "description": "Flat apt repository of installer packages: each postinst fetches the payload from the publisher and verifies a pinned SHA-256",
-      "stars": 0
-    },
-    {
-      "name": "DiamonDinoia.github.io",
-      "url": "https://github.com/DiamonDinoia/DiamonDinoia.github.io",
-      "langs": [
-        "HTML"
-      ],
-      "description": "",
       "stars": 0
     },
     {
