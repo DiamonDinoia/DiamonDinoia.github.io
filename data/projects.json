@@ -90,7 +90,7 @@
         "C++"
       ],
       "description": "C++ tensors with broadcasting and lazy computing",
-      "stars": 3762
+      "stars": 3763
     },
     {
       "name": "CaImAn",
@@ -180,7 +180,7 @@
         "Python"
       ],
       "description": "NEural MOdelS, a statistical modeling framework for neuroscience.",
-      "stars": 143
+      "stars": 144
     },
     {
       "name": "jax-finufft",
@@ -288,7 +288,7 @@
         "TypeScript"
       ],
       "description": "Run Stan models in the browser",
-      "stars": 60
+      "stars": 61
     },
     {
       "name": "inferelator",
@@ -1844,6 +1844,15 @@
       "stars": 1
     },
     {
+      "name": "masala_public_seating_optimization_plugins",
+      "url": "https://github.com/flatironinstitute/masala_public_seating_optimization_plugins",
+      "langs": [
+        "C++"
+      ],
+      "description": "A Masala library demonstrating the use of Masala's plugin CFN optimizers and data representations for a problem different than protein design: wedding reception seating optimization.  Included is a useful benchmark set for testing new optimizers.",
+      "stars": 1
+    },
+    {
       "name": "neuroRSE",
       "url": "https://github.com/flatironinstitute/neuroRSE",
       "langs": [
@@ -2535,15 +2544,6 @@
         "Python"
       ],
       "description": "Template repo to serve as recipient of jenkins documentation build pushes",
-      "stars": 0
-    },
-    {
-      "name": "masala_public_seating_optimization_plugins",
-      "url": "https://github.com/flatironinstitute/masala_public_seating_optimization_plugins",
-      "langs": [
-        "C++"
-      ],
-      "description": "A Masala library demonstrating the use of Masala's plugin CFN optimizers and data representations for a problem different than protein design: wedding reception seating optimization.  Included is a useful benchmark set for testing new optimizers.",
       "stars": 0
     },
     {
