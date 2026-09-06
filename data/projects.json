@@ -1,6 +1,6 @@
 {
   "github_url": "https://github.com/DiamonDinoia",
-  "total_repos": 97,
+  "total_repos": 98,
   "projects": [
     {
       "name": "FINUFFT",
@@ -144,7 +144,7 @@
         "C++"
       ],
       "description": "The x template library",
-      "stars": 236
+      "stars": 234
     },
     {
       "name": "xtensor-blas",
@@ -2153,24 +2153,6 @@
       "stars": 1
     },
     {
-      "name": "admiral",
-      "url": "https://github.com/DiamonDinoia/admiral",
-      "langs": [
-        "C++"
-      ],
-      "description": "yet another fft",
-      "stars": 0
-    },
-    {
-      "name": "apt",
-      "url": "https://github.com/DiamonDinoia/apt",
-      "langs": [
-        "Shell"
-      ],
-      "description": "Flat apt repository of installer packages: each postinst fetches the payload from the publisher and verifies a pinned SHA-256",
-      "stars": 0
-    },
-    {
       "name": "juno-kde-fancontrol",
       "url": "https://github.com/DiamonDinoia/juno-kde-fancontrol",
       "langs": [
@@ -2180,12 +2162,30 @@
       "stars": 0
     },
     {
+      "name": "admiral",
+      "url": "https://github.com/DiamonDinoia/admiral",
+      "langs": [
+        "C++"
+      ],
+      "description": "yet another fft",
+      "stars": 0
+    },
+    {
       "name": "DiamonDinoia.github.io",
       "url": "https://github.com/DiamonDinoia/DiamonDinoia.github.io",
       "langs": [
         "HTML"
       ],
       "description": "",
+      "stars": 0
+    },
+    {
+      "name": "apt",
+      "url": "https://github.com/DiamonDinoia/apt",
+      "langs": [
+        "Shell"
+      ],
+      "description": "Flat apt repository of installer packages: each postinst fetches the payload from the publisher and verifies a pinned SHA-256",
       "stars": 0
     },
     {
