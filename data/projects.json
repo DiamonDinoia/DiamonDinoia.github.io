@@ -126,7 +126,7 @@
         "C++"
       ],
       "description": "C++ multi-dimensional labeled arrays and dataframe based on xtensor",
-      "stars": 325
+      "stars": 324
     },
     {
       "name": "CaImAn-MATLAB",
@@ -2153,6 +2153,15 @@
       "stars": 1
     },
     {
+      "name": "DiamonDinoia.github.io",
+      "url": "https://github.com/DiamonDinoia/DiamonDinoia.github.io",
+      "langs": [
+        "HTML"
+      ],
+      "description": "",
+      "stars": 0
+    },
+    {
       "name": "juno-kde-fancontrol",
       "url": "https://github.com/DiamonDinoia/juno-kde-fancontrol",
       "langs": [
@@ -2168,15 +2177,6 @@
         "C++"
       ],
       "description": "yet another fft",
-      "stars": 0
-    },
-    {
-      "name": "DiamonDinoia.github.io",
-      "url": "https://github.com/DiamonDinoia/DiamonDinoia.github.io",
-      "langs": [
-        "HTML"
-      ],
-      "description": "",
       "stars": 0
     },
     {
