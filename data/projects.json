@@ -99,7 +99,7 @@
         "Python"
       ],
       "description": "Computational toolbox for large scale Calcium Imaging Analysis, including movie handling, motion correction, source extraction, spike deconvolution and result visualization.",
-      "stars": 734
+      "stars": 736
     },
     {
       "name": "xtensor-python",
@@ -255,15 +255,6 @@
       "stars": 66
     },
     {
-      "name": "neurosift",
-      "url": "https://github.com/flatironinstitute/neurosift",
-      "langs": [
-        "TypeScript"
-      ],
-      "description": "Browser-based NWB visualization and DANDI exploration",
-      "stars": 65
-    },
-    {
       "name": "jaxmg",
       "url": "https://github.com/flatironinstitute/jaxmg",
       "langs": [
@@ -273,13 +264,22 @@
       "stars": 65
     },
     {
+      "name": "neurosift",
+      "url": "https://github.com/flatironinstitute/neurosift",
+      "langs": [
+        "TypeScript"
+      ],
+      "description": "Browser-based NWB visualization and DANDI exploration",
+      "stars": 65
+    },
+    {
       "name": "mountainsort5",
       "url": "https://github.com/flatironinstitute/mountainsort5",
       "langs": [
         "Python"
       ],
       "description": "MountainSort spike sorting algorithm, version 5",
-      "stars": 62
+      "stars": 63
     },
     {
       "name": "stan-playground",
@@ -2153,12 +2153,12 @@
       "stars": 1
     },
     {
-      "name": "DiamonDinoia.github.io",
-      "url": "https://github.com/DiamonDinoia/DiamonDinoia.github.io",
+      "name": "apt",
+      "url": "https://github.com/DiamonDinoia/apt",
       "langs": [
-        "HTML"
+        "Python"
       ],
-      "description": "",
+      "description": "Flat apt repository of installer packages: each postinst fetches the payload from the publisher and verifies a pinned SHA-256",
       "stars": 0
     },
     {
@@ -2171,30 +2171,30 @@
       "stars": 0
     },
     {
-      "name": "admiral",
-      "url": "https://github.com/DiamonDinoia/admiral",
-      "langs": [
-        "C++"
-      ],
-      "description": "yet another fft",
-      "stars": 0
-    },
-    {
-      "name": "apt",
-      "url": "https://github.com/DiamonDinoia/apt",
-      "langs": [
-        "Shell"
-      ],
-      "description": "Flat apt repository of installer packages: each postinst fetches the payload from the publisher and verifies a pinned SHA-256",
-      "stars": 0
-    },
-    {
       "name": "juno-drivers-debian",
       "url": "https://github.com/DiamonDinoia/juno-drivers-debian",
       "langs": [
         "Shell"
       ],
       "description": "Fork of junocomp/juno-drivers-debian with local fixes",
+      "stars": 0
+    },
+    {
+      "name": "DiamonDinoia.github.io",
+      "url": "https://github.com/DiamonDinoia/DiamonDinoia.github.io",
+      "langs": [
+        "HTML"
+      ],
+      "description": "",
+      "stars": 0
+    },
+    {
+      "name": "admiral",
+      "url": "https://github.com/DiamonDinoia/admiral",
+      "langs": [
+        "C++"
+      ],
+      "description": "yet another fft",
       "stars": 0
     },
     {
