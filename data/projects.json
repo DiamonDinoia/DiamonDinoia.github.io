@@ -1,6 +1,6 @@
 {
   "github_url": "https://github.com/DiamonDinoia",
-  "total_repos": 98,
+  "total_repos": 99,
   "projects": [
     {
       "name": "FINUFFT",
@@ -246,6 +246,15 @@
       "stars": 90
     },
     {
+      "name": "jaxmg",
+      "url": "https://github.com/flatironinstitute/jaxmg",
+      "langs": [
+        "C++"
+      ],
+      "description": "JAXMg: A multi-GPU linear solver in JAX",
+      "stars": 67
+    },
+    {
       "name": "walnutpie",
       "url": "https://github.com/flatironinstitute/walnutpie",
       "langs": [
@@ -253,15 +262,6 @@
       ],
       "description": "Within-orbit Adaptive Leapfrog No-U-Turn Sampler",
       "stars": 66
-    },
-    {
-      "name": "jaxmg",
-      "url": "https://github.com/flatironinstitute/jaxmg",
-      "langs": [
-        "C++"
-      ],
-      "description": "JAXMg: A multi-GPU linear solver in JAX",
-      "stars": 65
     },
     {
       "name": "neurosift",
@@ -318,6 +318,15 @@
       "stars": 52
     },
     {
+      "name": "disBatch",
+      "url": "https://github.com/flatironinstitute/disBatch",
+      "langs": [
+        "Python"
+      ],
+      "description": "Dynamic dispatch of a list of command-line tasks, locally or on a cluster. Supports retrying failed tasks, and adding/removing compute resources on-the-fly. ",
+      "stars": 50
+    },
+    {
       "name": "xtensor-fftw",
       "url": "https://github.com/xtensor-stack/xtensor-fftw",
       "langs": [
@@ -325,15 +334,6 @@
       ],
       "description": "FFTW bindings for the xtensor C++14 multi-dimensional array library",
       "stars": 50
-    },
-    {
-      "name": "disBatch",
-      "url": "https://github.com/flatironinstitute/disBatch",
-      "langs": [
-        "Python"
-      ],
-      "description": "Dynamic dispatch of a list of command-line tasks, locally or on a cluster. Supports retrying failed tasks, and adding/removing compute resources on-the-fly. ",
-      "stars": 49
     },
     {
       "name": "xtensor-zarr",
@@ -2162,6 +2162,24 @@
       "stars": 0
     },
     {
+      "name": "admiral",
+      "url": "https://github.com/DiamonDinoia/admiral",
+      "langs": [
+        "C++"
+      ],
+      "description": "yet another fft",
+      "stars": 0
+    },
+    {
+      "name": "DiamonDinoia.github.io",
+      "url": "https://github.com/DiamonDinoia/DiamonDinoia.github.io",
+      "langs": [
+        "HTML"
+      ],
+      "description": "",
+      "stars": 0
+    },
+    {
       "name": "juno-kde-fancontrol",
       "url": "https://github.com/DiamonDinoia/juno-kde-fancontrol",
       "langs": [
@@ -2177,24 +2195,6 @@
         "Shell"
       ],
       "description": "Fork of junocomp/juno-drivers-debian with local fixes",
-      "stars": 0
-    },
-    {
-      "name": "DiamonDinoia.github.io",
-      "url": "https://github.com/DiamonDinoia/DiamonDinoia.github.io",
-      "langs": [
-        "HTML"
-      ],
-      "description": "",
-      "stars": 0
-    },
-    {
-      "name": "admiral",
-      "url": "https://github.com/DiamonDinoia/admiral",
-      "langs": [
-        "C++"
-      ],
-      "description": "yet another fft",
       "stars": 0
     },
     {
