@@ -162,7 +162,7 @@
         "Fortran"
       ],
       "description": "Flatiron Institute Fast Multipole Libraries --- This codebase is a set of libraries to compute N-body interactions governed by the Laplace and Helmholtz equations, to a specified precision, in three dimensions, on a multi-core shared-memory machine. ",
-      "stars": 159
+      "stars": 160
     },
     {
       "name": "NoRMCorre",
@@ -183,6 +183,15 @@
       "stars": 144
     },
     {
+      "name": "deepblast",
+      "url": "https://github.com/flatironinstitute/deepblast",
+      "langs": [
+        "Python"
+      ],
+      "description": "Neural Networks for Protein Sequence Alignment",
+      "stars": 140
+    },
+    {
       "name": "jax-finufft",
       "url": "https://github.com/flatironinstitute/jax-finufft",
       "langs": [
@@ -190,15 +199,6 @@
       ],
       "description": "JAX bindings to the Flatiron Institute Non-uniform Fast Fourier Transform (FINUFFT) library",
       "stars": 140
-    },
-    {
-      "name": "deepblast",
-      "url": "https://github.com/flatironinstitute/deepblast",
-      "langs": [
-        "Python"
-      ],
-      "description": "Neural Networks for Protein Sequence Alignment",
-      "stars": 139
     },
     {
       "name": "cufinufft",
@@ -471,21 +471,21 @@
       "stars": 31
     },
     {
-      "name": "ironclust",
-      "url": "https://github.com/flatironinstitute/ironclust",
-      "langs": [
-        "Jupyter Notebook"
-      ],
-      "description": "Spike sorting software being developed at Flatiron Institute, based on JRCLUST (Janelia Rocket Cluster)",
-      "stars": 30
-    },
-    {
       "name": "SkellySim",
       "url": "https://github.com/flatironinstitute/SkellySim",
       "langs": [
         "C++"
       ],
       "description": "Hydrodynamic Cytoskeleton Simulator",
+      "stars": 30
+    },
+    {
+      "name": "ironclust",
+      "url": "https://github.com/flatironinstitute/ironclust",
+      "langs": [
+        "Jupyter Notebook"
+      ],
+      "description": "Spike sorting software being developed at Flatiron Institute, based on JRCLUST (Janelia Rocket Cluster)",
       "stars": 30
     },
     {
@@ -2162,6 +2162,15 @@
       "stars": 0
     },
     {
+      "name": "juno-drivers-debian",
+      "url": "https://github.com/DiamonDinoia/juno-drivers-debian",
+      "langs": [
+        "Shell"
+      ],
+      "description": "Fork of junocomp/juno-drivers-debian with local fixes",
+      "stars": 0
+    },
+    {
       "name": "admiral",
       "url": "https://github.com/DiamonDinoia/admiral",
       "langs": [
@@ -2186,15 +2195,6 @@
         "Python"
       ],
       "description": "KDE/Qt6 fan-curve editor for Juno (Clevo) laptops — on top of fan-profile + fancontrol.service",
-      "stars": 0
-    },
-    {
-      "name": "juno-drivers-debian",
-      "url": "https://github.com/DiamonDinoia/juno-drivers-debian",
-      "langs": [
-        "Shell"
-      ],
-      "description": "Fork of junocomp/juno-drivers-debian with local fixes",
       "stars": 0
     },
     {
