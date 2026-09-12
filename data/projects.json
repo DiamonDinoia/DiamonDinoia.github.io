@@ -99,7 +99,7 @@
         "Python"
       ],
       "description": "Computational toolbox for large scale Calcium Imaging Analysis, including movie handling, motion correction, source extraction, spike deconvolution and result visualization.",
-      "stars": 736
+      "stars": 737
     },
     {
       "name": "xtensor-python",
@@ -252,7 +252,7 @@
         "C++"
       ],
       "description": "JAXMg: A multi-GPU linear solver in JAX",
-      "stars": 67
+      "stars": 68
     },
     {
       "name": "walnutpie",
@@ -2171,6 +2171,15 @@
       "stars": 0
     },
     {
+      "name": "DiamonDinoia.github.io",
+      "url": "https://github.com/DiamonDinoia/DiamonDinoia.github.io",
+      "langs": [
+        "HTML"
+      ],
+      "description": "",
+      "stars": 0
+    },
+    {
       "name": "juno-kde-fancontrol",
       "url": "https://github.com/DiamonDinoia/juno-kde-fancontrol",
       "langs": [
@@ -2186,15 +2195,6 @@
         "Shell"
       ],
       "description": "Fork of junocomp/juno-drivers-debian with local fixes",
-      "stars": 0
-    },
-    {
-      "name": "DiamonDinoia.github.io",
-      "url": "https://github.com/DiamonDinoia/DiamonDinoia.github.io",
-      "langs": [
-        "HTML"
-      ],
-      "description": "",
       "stars": 0
     },
     {
