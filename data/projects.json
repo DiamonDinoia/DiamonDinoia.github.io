@@ -207,7 +207,7 @@
         "Cuda"
       ],
       "description": "Nonuniform fast Fourier transforms of types 1 and 2, in 1D, 2D, and 3D, on the GPU",
-      "stars": 100
+      "stars": 101
     },
     {
       "name": "sciware",
@@ -2162,15 +2162,6 @@
       "stars": 0
     },
     {
-      "name": "admiral",
-      "url": "https://github.com/DiamonDinoia/admiral",
-      "langs": [
-        "C++"
-      ],
-      "description": "yet another fft",
-      "stars": 0
-    },
-    {
       "name": "DiamonDinoia.github.io",
       "url": "https://github.com/DiamonDinoia/DiamonDinoia.github.io",
       "langs": [
@@ -2186,6 +2177,15 @@
         "Python"
       ],
       "description": "KDE/Qt6 fan-curve editor for Juno (Clevo) laptops — on top of fan-profile + fancontrol.service",
+      "stars": 0
+    },
+    {
+      "name": "admiral",
+      "url": "https://github.com/DiamonDinoia/admiral",
+      "langs": [
+        "C++"
+      ],
+      "description": "yet another fft",
       "stars": 0
     },
     {
