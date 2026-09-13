@@ -1,5 +1,19 @@
 {
   "talks": [
+
+    {
+      "title": "Practical HPC: Forcing the Compiler's Hand with Modern C++",
+      "event": "CppCon 2026",
+      "org": "Flatiron Institute",
+      "date": "September 14, 2026",
+      "year": 2026,
+      "type": "conference",
+      "links": [
+        { "label": "page", "url": "https://diamondinoia.com/cppcon26/", "type": "code" },
+        { "label": "slides", "url": "https://diamondinoia.com/cppcon26/slides.html", "type": "slides" },
+        { "label": "code", "url": "https://github.com/DiamonDinoia/cppcon26", "type": "code" }
+      ]
+    },
     {
       "title": "Practical HPC: NUFFTs, function evaluation, SIMD & abstractions",
       "org": "Polytechnique Montréal",
