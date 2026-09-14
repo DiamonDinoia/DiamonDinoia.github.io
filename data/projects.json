@@ -90,7 +90,7 @@
         "C++"
       ],
       "description": "C++ tensors with broadcasting and lazy computing",
-      "stars": 3762
+      "stars": 3761
     },
     {
       "name": "CaImAn",
@@ -117,7 +117,7 @@
         "Python"
       ],
       "description": "Deep functional residue identification",
-      "stars": 354
+      "stars": 356
     },
     {
       "name": "xframe",
@@ -207,7 +207,7 @@
         "Cuda"
       ],
       "description": "Nonuniform fast Fourier transforms of types 1 and 2, in 1D, 2D, and 3D, on the GPU",
-      "stars": 101
+      "stars": 102
     },
     {
       "name": "sciware",
@@ -336,6 +336,15 @@
       "stars": 50
     },
     {
+      "name": "dft_tools",
+      "url": "https://github.com/TRIQS/dft_tools",
+      "langs": [
+        "Python"
+      ],
+      "description": "Interface to DFT codes. Supported by the Flatiron Institute.",
+      "stars": 47
+    },
+    {
       "name": "xtensor-zarr",
       "url": "https://github.com/xtensor-stack/xtensor-zarr",
       "langs": [
@@ -363,15 +372,6 @@
       "stars": 46
     },
     {
-      "name": "dft_tools",
-      "url": "https://github.com/TRIQS/dft_tools",
-      "langs": [
-        "Python"
-      ],
-      "description": "Interface to DFT codes. Supported by the Flatiron Institute.",
-      "stars": 46
-    },
-    {
       "name": "online_psp",
       "url": "https://github.com/flatironinstitute/online_psp",
       "langs": [
@@ -381,6 +381,15 @@
       "stars": 44
     },
     {
+      "name": "solid_dmft",
+      "url": "https://github.com/TRIQS/solid_dmft",
+      "langs": [
+        "Python"
+      ],
+      "description": "solid_dmft is a versatile python wrapper to perform DFT+DMFT calculations utilizing the TRIQS software library.",
+      "stars": 43
+    },
+    {
       "name": "Xtensor.jl",
       "url": "https://github.com/xtensor-stack/Xtensor.jl",
       "langs": [
@@ -388,15 +397,6 @@
       ],
       "description": "Julia package for xtensor-julia",
       "stars": 43
-    },
-    {
-      "name": "solid_dmft",
-      "url": "https://github.com/TRIQS/solid_dmft",
-      "langs": [
-        "Python"
-      ],
-      "description": "solid_dmft is a versatile python wrapper to perform DFT+DMFT calculations utilizing the TRIQS software library.",
-      "stars": 42
     },
     {
       "name": "slurm-prometheus-exporter",
@@ -579,21 +579,21 @@
       "stars": 24
     },
     {
-      "name": "online_psp_matlab",
-      "url": "https://github.com/flatironinstitute/online_psp_matlab",
-      "langs": [
-        "Matlab"
-      ],
-      "description": "Benchmark of online PCA algorithms ",
-      "stars": 22
-    },
-    {
       "name": "cthyb",
       "url": "https://github.com/TRIQS/cthyb",
       "langs": [
         "Jupyter Notebook"
       ],
       "description": "A fast and generic hybridization-expansion solver. Supported by the Flatiron Institute.",
+      "stars": 23
+    },
+    {
+      "name": "online_psp_matlab",
+      "url": "https://github.com/flatironinstitute/online_psp_matlab",
+      "langs": [
+        "Matlab"
+      ],
+      "description": "Benchmark of online PCA algorithms ",
       "stars": 22
     },
     {
@@ -1531,6 +1531,15 @@
       "stars": 3
     },
     {
+      "name": "dftkit",
+      "url": "https://github.com/TRIQS/dftkit",
+      "langs": [
+        "Python"
+      ],
+      "description": "Toolkit connecting TRIQS to DFT codes",
+      "stars": 3
+    },
+    {
       "name": "itertools",
       "url": "https://github.com/TRIQS/itertools",
       "langs": [
@@ -1778,15 +1787,6 @@
         "Jupyter Notebook"
       ],
       "description": "TRIQS Interface to the OmegaMaxEnt Code. Supported by the Flatiron Institute.",
-      "stars": 2
-    },
-    {
-      "name": "dftkit",
-      "url": "https://github.com/TRIQS/dftkit",
-      "langs": [
-        "Python"
-      ],
-      "description": "Toolkit connecting TRIQS to DFT codes",
       "stars": 2
     },
     {
