@@ -108,7 +108,7 @@
         "C++"
       ],
       "description": "Python bindings for xtensor",
-      "stars": 369
+      "stars": 370
     },
     {
       "name": "DeepFRI",
@@ -315,7 +315,7 @@
         "Python"
       ],
       "description": "A fast Lomb-Scargle periodogram. It's nifty, and uses a NUFFT!",
-      "stars": 52
+      "stars": 53
     },
     {
       "name": "disBatch",
@@ -831,6 +831,15 @@
       "stars": 11
     },
     {
+      "name": "flathub",
+      "url": "https://github.com/flatironinstitute/flathub",
+      "langs": [
+        "Haskell"
+      ],
+      "description": "A simple elasticsearch frontend for serving astrophysical simulation catalog data",
+      "stars": 11
+    },
+    {
       "name": "nix-modules",
       "url": "https://github.com/flatironinstitute/nix-modules",
       "langs": [
@@ -846,15 +855,6 @@
         "SCSS"
       ],
       "description": "Basic templates for individual user pages in the public/_www directory",
-      "stars": 11
-    },
-    {
-      "name": "flathub",
-      "url": "https://github.com/flatironinstitute/flathub",
-      "langs": [
-        "Haskell"
-      ],
-      "description": "A simple elasticsearch frontend for serving astrophysical simulation catalog data",
       "stars": 11
     },
     {
