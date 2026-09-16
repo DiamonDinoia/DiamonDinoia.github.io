@@ -1,6 +1,6 @@
 {
   "github_url": "https://github.com/DiamonDinoia",
-  "total_repos": 100,
+  "total_repos": 101,
   "projects": [
     {
       "name": "FINUFFT",
@@ -1279,21 +1279,21 @@
       "stars": 4
     },
     {
-      "name": "CyclicCAE_public",
-      "url": "https://github.com/flatironinstitute/CyclicCAE_public",
-      "langs": [
-        "Python"
-      ],
-      "description": "The public repository for the CyclicCAE conformational autoencoder.  CyclicCAE encodes peptide macrocycle conformations in a low-dimensional latent space, useful for rapid sampling, structural refinement, or denoising.",
-      "stars": 4
-    },
-    {
       "name": "ParticleMeshEwald.jl",
       "url": "https://github.com/flatironinstitute/ParticleMeshEwald.jl",
       "langs": [
         "Julia"
       ],
       "description": "Particle mesh Ewald via NonuniformFFTs.jl",
+      "stars": 4
+    },
+    {
+      "name": "CyclicCAE_public",
+      "url": "https://github.com/flatironinstitute/CyclicCAE_public",
+      "langs": [
+        "Python"
+      ],
+      "description": "The public repository for the CyclicCAE conformational autoencoder.  CyclicCAE encodes peptide macrocycle conformations in a low-dimensional latent space, useful for rapid sampling, structural refinement, or denoising.",
       "stars": 4
     },
     {
@@ -2162,6 +2162,15 @@
       "stars": 0
     },
     {
+      "name": "cppcon26",
+      "url": "https://github.com/DiamonDinoia/cppcon26",
+      "langs": [
+        "HTML"
+      ],
+      "description": "Practical HPC: Forcing the Compiler's Hand with Modern C++ — CppCon 2026 deck and benchmarks",
+      "stars": 0
+    },
+    {
       "name": "DiamonDinoia.github.io",
       "url": "https://github.com/DiamonDinoia/DiamonDinoia.github.io",
       "langs": [
@@ -2472,6 +2481,15 @@
       "url": "https://github.com/flatironinstitute/nemos-documentation",
       "langs": [],
       "description": "Host nemos docs build",
+      "stars": 0
+    },
+    {
+      "name": "cryoSBI_classifier",
+      "url": "https://github.com/flatironinstitute/cryoSBI_classifier",
+      "langs": [
+        "Python"
+      ],
+      "description": "",
       "stars": 0
     },
     {
