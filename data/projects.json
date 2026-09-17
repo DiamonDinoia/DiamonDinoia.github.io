@@ -90,7 +90,7 @@
         "C++"
       ],
       "description": "C++ tensors with broadcasting and lazy computing",
-      "stars": 3761
+      "stars": 3762
     },
     {
       "name": "CaImAn",
@@ -597,6 +597,15 @@
       "stars": 22
     },
     {
+      "name": "clair",
+      "url": "https://github.com/flatironinstitute/clair",
+      "langs": [
+        "C++"
+      ],
+      "description": "Clair (Clang Introspection and Reflection) tools. A set of clang tools developed for Flatiron/CCQ",
+      "stars": 21
+    },
+    {
       "name": "tprf",
       "url": "https://github.com/TRIQS/tprf",
       "langs": [
@@ -604,15 +613,6 @@
       ],
       "description": "TPRF: The Two-Particle Response Function tool box for TRIQS. Supported by the Flatiron Institute.",
       "stars": 21
-    },
-    {
-      "name": "clair",
-      "url": "https://github.com/flatironinstitute/clair",
-      "langs": [
-        "C++"
-      ],
-      "description": "Clair (Clang Introspection and Reflection) tools. A set of clang tools developed for Flatiron/CCQ",
-      "stars": 20
     },
     {
       "name": "Xtensor.R",
@@ -1279,6 +1279,15 @@
       "stars": 4
     },
     {
+      "name": "fgt",
+      "url": "https://github.com/flatironinstitute/fgt",
+      "langs": [
+        "Fortran"
+      ],
+      "description": "",
+      "stars": 4
+    },
+    {
       "name": "ParticleMeshEwald.jl",
       "url": "https://github.com/flatironinstitute/ParticleMeshEwald.jl",
       "langs": [
@@ -1405,6 +1414,15 @@
       "stars": 4
     },
     {
+      "name": "dftkit",
+      "url": "https://github.com/TRIQS/dftkit",
+      "langs": [
+        "Python"
+      ],
+      "description": "Toolkit connecting TRIQS to DFT codes",
+      "stars": 4
+    },
+    {
       "name": "nrgljubljana_interface",
       "url": "https://github.com/TRIQS/nrgljubljana_interface",
       "langs": [
@@ -1438,15 +1456,6 @@
         "Rust"
       ],
       "description": "A ncdu-like TUI for the Ceph File System, using xattrs instead of crawling",
-      "stars": 3
-    },
-    {
-      "name": "fgt",
-      "url": "https://github.com/flatironinstitute/fgt",
-      "langs": [
-        "Fortran"
-      ],
-      "description": "",
       "stars": 3
     },
     {
@@ -1528,15 +1537,6 @@
         "C#"
       ],
       "description": "Playing with quantum computing algorithms for protein and peptide design and structure prediction, with interfaces for the Rosetta software suite.  (Repository created by Vikram K. Mulligan, vmulligan@flatironinstitute.org).",
-      "stars": 3
-    },
-    {
-      "name": "dftkit",
-      "url": "https://github.com/TRIQS/dftkit",
-      "langs": [
-        "Python"
-      ],
-      "description": "Toolkit connecting TRIQS to DFT codes",
       "stars": 3
     },
     {
@@ -2162,30 +2162,12 @@
       "stars": 0
     },
     {
-      "name": "cppcon26",
-      "url": "https://github.com/DiamonDinoia/cppcon26",
+      "name": "juno-drivers-debian",
+      "url": "https://github.com/DiamonDinoia/juno-drivers-debian",
       "langs": [
-        "HTML"
+        "Shell"
       ],
-      "description": "Practical HPC: Forcing the Compiler's Hand with Modern C++ — CppCon 2026 deck and benchmarks",
-      "stars": 0
-    },
-    {
-      "name": "DiamonDinoia.github.io",
-      "url": "https://github.com/DiamonDinoia/DiamonDinoia.github.io",
-      "langs": [
-        "HTML"
-      ],
-      "description": "",
-      "stars": 0
-    },
-    {
-      "name": "juno-kde-fancontrol",
-      "url": "https://github.com/DiamonDinoia/juno-kde-fancontrol",
-      "langs": [
-        "Python"
-      ],
-      "description": "KDE/Qt6 fan-curve editor for Juno (Clevo) laptops — on top of fan-profile + fancontrol.service",
+      "description": "Fork of junocomp/juno-drivers-debian with local fixes",
       "stars": 0
     },
     {
@@ -2198,12 +2180,30 @@
       "stars": 0
     },
     {
-      "name": "juno-drivers-debian",
-      "url": "https://github.com/DiamonDinoia/juno-drivers-debian",
+      "name": "DiamonDinoia.github.io",
+      "url": "https://github.com/DiamonDinoia/DiamonDinoia.github.io",
       "langs": [
-        "Shell"
+        "HTML"
       ],
-      "description": "Fork of junocomp/juno-drivers-debian with local fixes",
+      "description": "",
+      "stars": 0
+    },
+    {
+      "name": "cppcon26",
+      "url": "https://github.com/DiamonDinoia/cppcon26",
+      "langs": [
+        "HTML"
+      ],
+      "description": "Practical HPC: Forcing the Compiler's Hand with Modern C++ — CppCon 2026 deck and benchmarks",
+      "stars": 0
+    },
+    {
+      "name": "juno-kde-fancontrol",
+      "url": "https://github.com/DiamonDinoia/juno-kde-fancontrol",
+      "langs": [
+        "Python"
+      ],
+      "description": "KDE/Qt6 fan-curve editor for Juno (Clevo) laptops — on top of fan-profile + fancontrol.service",
       "stars": 0
     },
     {
