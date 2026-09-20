@@ -90,7 +90,7 @@
         "C++"
       ],
       "description": "C++ tensors with broadcasting and lazy computing",
-      "stars": 3761
+      "stars": 3762
     },
     {
       "name": "CaImAn",
@@ -414,7 +414,7 @@
         "Python"
       ],
       "description": "Shareable, interactive scientific figures in the cloud",
-      "stars": 38
+      "stars": 39
     },
     {
       "name": "mcmc-monitor",
