@@ -2,6 +2,17 @@
   "talks": [
 
     {
+      "title": "Fit Once, Evaluate Forever: smooth functions, singularities, and SIMD",
+      "event": "APPM Seminar",
+      "org": "University of Colorado Boulder",
+      "date": "September 21, 2026",
+      "year": 2026,
+      "type": "seminar",
+      "links": [
+        { "label": "slides", "url": "talks/fit-once-evaluate-forever/index.html", "type": "slides" }
+      ]
+    },
+    {
       "title": "Practical HPC: Forcing the Compiler's Hand with Modern C++",
       "event": "CppCon 2026",
       "org": "Flatiron Institute",
