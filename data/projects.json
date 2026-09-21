@@ -90,7 +90,7 @@
         "C++"
       ],
       "description": "C++ tensors with broadcasting and lazy computing",
-      "stars": 3762
+      "stars": 3763
     },
     {
       "name": "CaImAn",
@@ -732,6 +732,15 @@
       "stars": 14
     },
     {
+      "name": "numbl",
+      "url": "https://github.com/flatironinstitute/numbl",
+      "langs": [
+        "TypeScript"
+      ],
+      "description": "Numerical computing environment that aims to be compatible with Matlab",
+      "stars": 13
+    },
+    {
       "name": "2026-flatiron-cmb-summer-school",
       "url": "https://github.com/flatironinstitute/2026-flatiron-cmb-summer-school",
       "langs": [
@@ -775,15 +784,6 @@
       ],
       "description": "Code for reproducing the experiment from the paper \"A biologically plausible neural network for Slow Feature Analysis\"",
       "stars": 13
-    },
-    {
-      "name": "numbl",
-      "url": "https://github.com/flatironinstitute/numbl",
-      "langs": [
-        "TypeScript"
-      ],
-      "description": "Numerical computing environment that aims to be compatible with Matlab",
-      "stars": 12
     },
     {
       "name": "cppdlr",
