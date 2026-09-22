@@ -30,13 +30,15 @@
       "description": "ANS (Asymmetric Numeral Systems) integer compression with C++ core and Python bindings."
     },
     {
-      "name": "Baobzi",
-      "url": "https://github.com/flatironinstitute/baobzi",
+      "name": "treeweave",
+      "url": "https://github.com/DiamonDinoia/treeweave",
       "langs": [
         "C++",
-        "Python"
+        "Python",
+        "Julia",
+        "MATLAB"
       ],
-      "description": "Adaptive fast function approximation library using Chebyshev polynomials and tree-based domain decomposition."
+      "description": "Fast N-dimensional function approximation via adaptive polynomial fitting on a tree-based domain decomposition. Baobzi rebuilt on Polyfit and POET, with a stable C ABI and bindings for several languages."
     },
     {
       "name": "Polyfit",
@@ -1036,15 +1038,6 @@
       ],
       "description": "Hubbard I solver. Supported by the Flatiron Institute.",
       "stars": 8
-    },
-    {
-      "name": "treeweave",
-      "url": "https://github.com/DiamonDinoia/treeweave",
-      "langs": [
-        "C++"
-      ],
-      "description": "treeweave — fast N-dimensional function approximation via adaptive polynomial fitting (baobzi rebuilt on polyfit + POET)",
-      "stars": 7
     },
     {
       "name": "poet",
