@@ -617,6 +617,15 @@
       "stars": 21
     },
     {
+      "name": "baobzi",
+      "url": "https://github.com/flatironinstitute/baobzi",
+      "langs": [
+        "C++"
+      ],
+      "description": "An adaptive fast function approximator based on tree search",
+      "stars": 19
+    },
+    {
       "name": "Xtensor.R",
       "url": "https://github.com/xtensor-stack/Xtensor.R",
       "langs": [
