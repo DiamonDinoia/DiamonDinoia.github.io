@@ -92,7 +92,7 @@
         "C++"
       ],
       "description": "C++ tensors with broadcasting and lazy computing",
-      "stars": 3763
+      "stars": 3764
     },
     {
       "name": "CaImAn",
@@ -254,7 +254,7 @@
         "C++"
       ],
       "description": "JAXMg: A multi-GPU linear solver in JAX",
-      "stars": 69
+      "stars": 70
     },
     {
       "name": "walnutpie",
@@ -743,6 +743,15 @@
       "stars": 14
     },
     {
+      "name": "adapol",
+      "url": "https://github.com/flatironinstitute/adapol",
+      "langs": [
+        "Python"
+      ],
+      "description": "Adaptive Pole Fitting for Quantum Many-Body Physics",
+      "stars": 13
+    },
+    {
       "name": "numbl",
       "url": "https://github.com/flatironinstitute/numbl",
       "langs": [
@@ -767,15 +776,6 @@
         "Jupyter Notebook"
       ],
       "description": "",
-      "stars": 13
-    },
-    {
-      "name": "adapol",
-      "url": "https://github.com/flatironinstitute/adapol",
-      "langs": [
-        "Jupyter Notebook"
-      ],
-      "description": "Adaptive Pole Fitting for Quantum Many-Body Physics",
       "stars": 13
     },
     {
@@ -1281,6 +1281,15 @@
       "stars": 4
     },
     {
+      "name": "CyclicCAE_public",
+      "url": "https://github.com/flatironinstitute/CyclicCAE_public",
+      "langs": [
+        "Python"
+      ],
+      "description": "The public repository for the CyclicCAE conformational autoencoder.  CyclicCAE encodes peptide macrocycle conformations in a low-dimensional latent space, useful for rapid sampling, structural refinement, or denoising.",
+      "stars": 4
+    },
+    {
       "name": "fgt",
       "url": "https://github.com/flatironinstitute/fgt",
       "langs": [
@@ -1296,15 +1305,6 @@
         "Julia"
       ],
       "description": "Particle mesh Ewald via NonuniformFFTs.jl",
-      "stars": 4
-    },
-    {
-      "name": "CyclicCAE_public",
-      "url": "https://github.com/flatironinstitute/CyclicCAE_public",
-      "langs": [
-        "Python"
-      ],
-      "description": "The public repository for the CyclicCAE conformational autoencoder.  CyclicCAE encodes peptide macrocycle conformations in a low-dimensional latent space, useful for rapid sampling, structural refinement, or denoising.",
       "stars": 4
     },
     {
