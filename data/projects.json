@@ -1,6 +1,6 @@
 {
   "github_url": "https://github.com/DiamonDinoia",
-  "total_repos": 101,
+  "total_repos": 102,
   "projects": [
     {
       "name": "FINUFFT",
@@ -2164,6 +2164,24 @@
       "stars": 0
     },
     {
+      "name": "admiral",
+      "url": "https://github.com/DiamonDinoia/admiral",
+      "langs": [
+        "C++"
+      ],
+      "description": "yet another fft",
+      "stars": 0
+    },
+    {
+      "name": "ste-skill",
+      "url": "https://github.com/DiamonDinoia/ste-skill",
+      "langs": [
+        "Python"
+      ],
+      "description": "",
+      "stars": 0
+    },
+    {
       "name": "juno-drivers-debian",
       "url": "https://github.com/DiamonDinoia/juno-drivers-debian",
       "langs": [
@@ -2179,15 +2197,6 @@
         "HTML"
       ],
       "description": "",
-      "stars": 0
-    },
-    {
-      "name": "admiral",
-      "url": "https://github.com/DiamonDinoia/admiral",
-      "langs": [
-        "C++"
-      ],
-      "description": "yet another fft",
       "stars": 0
     },
     {
