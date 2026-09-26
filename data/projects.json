@@ -1,6 +1,6 @@
 {
   "github_url": "https://github.com/DiamonDinoia",
-  "total_repos": 102,
+  "total_repos": 103,
   "projects": [
     {
       "name": "FINUFFT",
@@ -92,7 +92,7 @@
         "C++"
       ],
       "description": "C++ tensors with broadcasting and lazy computing",
-      "stars": 3764
+      "stars": 3765
     },
     {
       "name": "CaImAn",
@@ -254,7 +254,7 @@
         "C++"
       ],
       "description": "JAXMg: A multi-GPU linear solver in JAX",
-      "stars": 71
+      "stars": 72
     },
     {
       "name": "walnutpie",
@@ -2164,17 +2164,8 @@
       "stars": 0
     },
     {
-      "name": "admiral",
-      "url": "https://github.com/DiamonDinoia/admiral",
-      "langs": [
-        "C++"
-      ],
-      "description": "yet another fft",
-      "stars": 0
-    },
-    {
-      "name": "ste-skill",
-      "url": "https://github.com/DiamonDinoia/ste-skill",
+      "name": "skill-orchestration",
+      "url": "https://github.com/DiamonDinoia/skill-orchestration",
       "langs": [
         "Python"
       ],
@@ -2182,12 +2173,12 @@
       "stars": 0
     },
     {
-      "name": "juno-drivers-debian",
-      "url": "https://github.com/DiamonDinoia/juno-drivers-debian",
+      "name": "skill-ste",
+      "url": "https://github.com/DiamonDinoia/skill-ste",
       "langs": [
-        "Shell"
+        "Python"
       ],
-      "description": "Fork of junocomp/juno-drivers-debian with local fixes",
+      "description": "",
       "stars": 0
     },
     {
@@ -2197,6 +2188,24 @@
         "HTML"
       ],
       "description": "",
+      "stars": 0
+    },
+    {
+      "name": "admiral",
+      "url": "https://github.com/DiamonDinoia/admiral",
+      "langs": [
+        "C++"
+      ],
+      "description": "yet another fft",
+      "stars": 0
+    },
+    {
+      "name": "juno-drivers-debian",
+      "url": "https://github.com/DiamonDinoia/juno-drivers-debian",
+      "langs": [
+        "Shell"
+      ],
+      "description": "Fork of junocomp/juno-drivers-debian with local fixes",
       "stars": 0
     },
     {
@@ -2495,6 +2504,15 @@
       "stars": 0
     },
     {
+      "name": "lineage_viewer",
+      "url": "https://github.com/flatironinstitute/lineage_viewer",
+      "langs": [
+        "Python"
+      ],
+      "description": "Graphical interface for editing a lineage and viewing related microscopy images",
+      "stars": 0
+    },
+    {
       "name": "cryoSBI_classifier",
       "url": "https://github.com/flatironinstitute/cryoSBI_classifier",
       "langs": [
@@ -2510,15 +2528,6 @@
         "Groovy"
       ],
       "description": "Example and test repository for jenkins builds",
-      "stars": 0
-    },
-    {
-      "name": "lineage_viewer",
-      "url": "https://github.com/flatironinstitute/lineage_viewer",
-      "langs": [
-        "Python"
-      ],
-      "description": "Graphical interface for editing a lineage and viewing related microscopy images",
       "stars": 0
     },
     {
