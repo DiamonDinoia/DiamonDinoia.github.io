@@ -585,6 +585,7 @@ function renderStatus(left, rightLabel, rightUrl) {
   left.forEach(s => sl.appendChild(el('span', null, s)));
 
   const sr = el('div', { className: 'status-right' });
+  sr.appendChild(el('a', { href: '/tilt-rush/privacy-policy/' }, 'Tilt Rush privacy'));
   if (rightUrl) {
     sr.appendChild(el('a', { href: rightUrl }, rightLabel));
   } else {
