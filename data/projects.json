@@ -254,7 +254,7 @@
         "C++"
       ],
       "description": "JAXMg: A multi-GPU linear solver in JAX",
-      "stars": 72
+      "stars": 73
     },
     {
       "name": "walnutpie",
@@ -2164,6 +2164,15 @@
       "stars": 0
     },
     {
+      "name": "DiamonDinoia.github.io",
+      "url": "https://github.com/DiamonDinoia/DiamonDinoia.github.io",
+      "langs": [
+        "HTML"
+      ],
+      "description": "",
+      "stars": 0
+    },
+    {
       "name": "skill-orchestration",
       "url": "https://github.com/DiamonDinoia/skill-orchestration",
       "langs": [
@@ -2177,15 +2186,6 @@
       "url": "https://github.com/DiamonDinoia/skill-ste",
       "langs": [
         "Python"
-      ],
-      "description": "",
-      "stars": 0
-    },
-    {
-      "name": "DiamonDinoia.github.io",
-      "url": "https://github.com/DiamonDinoia/DiamonDinoia.github.io",
-      "langs": [
-        "HTML"
       ],
       "description": "",
       "stars": 0
