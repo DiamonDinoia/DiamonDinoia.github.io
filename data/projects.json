@@ -92,7 +92,7 @@
         "C++"
       ],
       "description": "C++ tensors with broadcasting and lazy computing",
-      "stars": 3765
+      "stars": 3766
     },
     {
       "name": "CaImAn",
@@ -2497,6 +2497,15 @@
       "stars": 0
     },
     {
+      "name": "alsous_gigantism_2025",
+      "url": "https://github.com/flatironinstitute/alsous_gigantism_2025",
+      "langs": [
+        "C++"
+      ],
+      "description": "Software supporting Alsous et al. The physical consequences of sperm gigantism, Nat. Phys. 2025",
+      "stars": 0
+    },
+    {
       "name": "nemos-documentation",
       "url": "https://github.com/flatironinstitute/nemos-documentation",
       "langs": [],
@@ -2582,15 +2591,6 @@
         "Python"
       ],
       "description": "Template repo to serve as recipient of jenkins documentation build pushes",
-      "stars": 0
-    },
-    {
-      "name": "alsous_gigantism_2025",
-      "url": "https://github.com/flatironinstitute/alsous_gigantism_2025",
-      "langs": [
-        "C++"
-      ],
-      "description": "Software supporting Alsous et al. The physical consequences of sperm gigantism, Nat. Phys. 2025",
       "stars": 0
     },
     {
