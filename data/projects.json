@@ -1,6 +1,6 @@
 {
   "github_url": "https://github.com/DiamonDinoia",
-  "total_repos": 103,
+  "total_repos": 102,
   "projects": [
     {
       "name": "FINUFFT",
@@ -164,7 +164,7 @@
         "Fortran"
       ],
       "description": "Flatiron Institute Fast Multipole Libraries --- This codebase is a set of libraries to compute N-body interactions governed by the Laplace and Helmholtz equations, to a specified precision, in three dimensions, on a multi-core shared-memory machine. ",
-      "stars": 161
+      "stars": 162
     },
     {
       "name": "NoRMCorre",
@@ -716,6 +716,15 @@
       "stars": 15
     },
     {
+      "name": "numbl",
+      "url": "https://github.com/flatironinstitute/numbl",
+      "langs": [
+        "TypeScript"
+      ],
+      "description": "Numerical computing environment that aims to be compatible with Matlab",
+      "stars": 14
+    },
+    {
       "name": "inverse-obstacle-scattering2d",
       "url": "https://github.com/flatironinstitute/inverse-obstacle-scattering2d",
       "langs": [
@@ -749,15 +758,6 @@
         "Python"
       ],
       "description": "Adaptive Pole Fitting for Quantum Many-Body Physics",
-      "stars": 13
-    },
-    {
-      "name": "numbl",
-      "url": "https://github.com/flatironinstitute/numbl",
-      "langs": [
-        "TypeScript"
-      ],
-      "description": "Numerical computing environment that aims to be compatible with Matlab",
       "stars": 13
     },
     {
@@ -2164,6 +2164,15 @@
       "stars": 0
     },
     {
+      "name": "skill-ste",
+      "url": "https://github.com/DiamonDinoia/skill-ste",
+      "langs": [
+        "Python"
+      ],
+      "description": "",
+      "stars": 0
+    },
+    {
       "name": "DiamonDinoia.github.io",
       "url": "https://github.com/DiamonDinoia/DiamonDinoia.github.io",
       "langs": [
@@ -2175,15 +2184,6 @@
     {
       "name": "skill-orchestration",
       "url": "https://github.com/DiamonDinoia/skill-orchestration",
-      "langs": [
-        "Python"
-      ],
-      "description": "",
-      "stars": 0
-    },
-    {
-      "name": "skill-ste",
-      "url": "https://github.com/DiamonDinoia/skill-ste",
       "langs": [
         "Python"
       ],
@@ -2497,6 +2497,15 @@
       "stars": 0
     },
     {
+      "name": "jenkins-template",
+      "url": "https://github.com/flatironinstitute/jenkins-template",
+      "langs": [
+        "Groovy"
+      ],
+      "description": "Example and test repository for jenkins builds",
+      "stars": 0
+    },
+    {
       "name": "alsous_gigantism_2025",
       "url": "https://github.com/flatironinstitute/alsous_gigantism_2025",
       "langs": [
@@ -2528,15 +2537,6 @@
         "Python"
       ],
       "description": "",
-      "stars": 0
-    },
-    {
-      "name": "jenkins-template",
-      "url": "https://github.com/flatironinstitute/jenkins-template",
-      "langs": [
-        "Groovy"
-      ],
-      "description": "Example and test repository for jenkins builds",
       "stars": 0
     },
     {
