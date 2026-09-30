@@ -1,6 +1,6 @@
 {
   "github_url": "https://github.com/DiamonDinoia",
-  "total_repos": 102,
+  "total_repos": 103,
   "projects": [
     {
       "name": "FINUFFT",
@@ -905,6 +905,15 @@
       "stars": 10
     },
     {
+      "name": "benchmarks",
+      "url": "https://github.com/TRIQS/benchmarks",
+      "langs": [
+        "Jupyter Notebook"
+      ],
+      "description": "A set of impurity solver benchmarks for different physical condensed-matter related systems",
+      "stars": 10
+    },
+    {
       "name": "ctseg",
       "url": "https://github.com/TRIQS/ctseg",
       "langs": [
@@ -965,15 +974,6 @@
         "Fortran"
       ],
       "description": "This repository contains box codes for evaluating volume potentials for Laplace, Helmholtz, Maxwell, and Stokes",
-      "stars": 9
-    },
-    {
-      "name": "benchmarks",
-      "url": "https://github.com/TRIQS/benchmarks",
-      "langs": [
-        "Jupyter Notebook"
-      ],
-      "description": "A set of impurity solver benchmarks for different physical condensed-matter related systems",
       "stars": 9
     },
     {
@@ -1184,15 +1184,6 @@
       "stars": 6
     },
     {
-      "name": "simdref",
-      "url": "https://github.com/DiamonDinoia/simdref",
-      "langs": [
-        "Python"
-      ],
-      "description": "Searchable SIMD intrinsic and instruction reference — CLI, TUI, LSP, manpages, and static web UI",
-      "stars": 5
-    },
-    {
       "name": "fwam2025",
       "url": "https://github.com/DiamonDinoia/fwam2025",
       "langs": [
@@ -1270,6 +1261,15 @@
       ],
       "description": "STL-like algorithms vectorized with xsimd",
       "stars": 5
+    },
+    {
+      "name": "simdref",
+      "url": "https://github.com/DiamonDinoia/simdref",
+      "langs": [
+        "Python"
+      ],
+      "description": "Searchable SIMD intrinsic and instruction reference — CLI, TUI, LSP, manpages, and static web UI",
+      "stars": 4
     },
     {
       "name": "mcss",
@@ -2173,15 +2173,6 @@
       "stars": 0
     },
     {
-      "name": "DiamonDinoia.github.io",
-      "url": "https://github.com/DiamonDinoia/DiamonDinoia.github.io",
-      "langs": [
-        "HTML"
-      ],
-      "description": "",
-      "stars": 0
-    },
-    {
       "name": "skill-orchestration",
       "url": "https://github.com/DiamonDinoia/skill-orchestration",
       "langs": [
@@ -2197,6 +2188,24 @@
         "C++"
       ],
       "description": "yet another fft",
+      "stars": 0
+    },
+    {
+      "name": "testing-wip-simdref-core",
+      "url": "https://github.com/DiamonDinoia/testing-wip-simdref-core",
+      "langs": [
+        "Python"
+      ],
+      "description": "TEMP validation repo for simdref core split (row 10). Owner deletes when done.",
+      "stars": 0
+    },
+    {
+      "name": "DiamonDinoia.github.io",
+      "url": "https://github.com/DiamonDinoia/DiamonDinoia.github.io",
+      "langs": [
+        "HTML"
+      ],
+      "description": "",
       "stars": 0
     },
     {
@@ -2497,24 +2506,6 @@
       "stars": 0
     },
     {
-      "name": "jenkins-template",
-      "url": "https://github.com/flatironinstitute/jenkins-template",
-      "langs": [
-        "Groovy"
-      ],
-      "description": "Example and test repository for jenkins builds",
-      "stars": 0
-    },
-    {
-      "name": "alsous_gigantism_2025",
-      "url": "https://github.com/flatironinstitute/alsous_gigantism_2025",
-      "langs": [
-        "C++"
-      ],
-      "description": "Software supporting Alsous et al. The physical consequences of sperm gigantism, Nat. Phys. 2025",
-      "stars": 0
-    },
-    {
       "name": "nemos-documentation",
       "url": "https://github.com/flatironinstitute/nemos-documentation",
       "langs": [],
@@ -2528,6 +2519,24 @@
         "Python"
       ],
       "description": "Graphical interface for editing a lineage and viewing related microscopy images",
+      "stars": 0
+    },
+    {
+      "name": "alsous_gigantism_2025",
+      "url": "https://github.com/flatironinstitute/alsous_gigantism_2025",
+      "langs": [
+        "C++"
+      ],
+      "description": "Software supporting Alsous et al. The physical consequences of sperm gigantism, Nat. Phys. 2025",
+      "stars": 0
+    },
+    {
+      "name": "jenkins-template",
+      "url": "https://github.com/flatironinstitute/jenkins-template",
+      "langs": [
+        "Groovy"
+      ],
+      "description": "Example and test repository for jenkins builds",
       "stars": 0
     },
     {
