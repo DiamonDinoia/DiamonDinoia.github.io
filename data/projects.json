@@ -101,7 +101,7 @@
         "Python"
       ],
       "description": "Computational toolbox for large scale Calcium Imaging Analysis, including movie handling, motion correction, source extraction, spike deconvolution and result visualization.",
-      "stars": 738
+      "stars": 740
     },
     {
       "name": "xtensor-python",
@@ -173,7 +173,7 @@
         "MATLAB"
       ],
       "description": "Matlab routines for online non-rigid motion correction of calcium imaging data",
-      "stars": 159
+      "stars": 160
     },
     {
       "name": "nemos",
@@ -1157,21 +1157,21 @@
       "stars": 6
     },
     {
-      "name": "h5",
-      "url": "https://github.com/TRIQS/h5",
-      "langs": [
-        "C++"
-      ],
-      "description": "A high-level C++ interface to the hdf5 library. Supported by the Flatiron Institute.",
-      "stars": 6
-    },
-    {
       "name": "xca",
       "url": "https://github.com/TRIQS/xca",
       "langs": [
         "C++"
       ],
       "description": "TRIQS arbitrary Crossing Approximation (XCA) impurity solver",
+      "stars": 6
+    },
+    {
+      "name": "h5",
+      "url": "https://github.com/TRIQS/h5",
+      "langs": [
+        "C++"
+      ],
+      "description": "A high-level C++ interface to the hdf5 library. Supported by the Flatiron Institute.",
       "stars": 6
     },
     {
@@ -2164,6 +2164,15 @@
       "stars": 0
     },
     {
+      "name": "DiamonDinoia.github.io",
+      "url": "https://github.com/DiamonDinoia/DiamonDinoia.github.io",
+      "langs": [
+        "HTML"
+      ],
+      "description": "",
+      "stars": 0
+    },
+    {
       "name": "skill-ste",
       "url": "https://github.com/DiamonDinoia/skill-ste",
       "langs": [
@@ -2197,15 +2206,6 @@
         "Python"
       ],
       "description": "TEMP validation repo for simdref core split (row 10). Owner deletes when done.",
-      "stars": 0
-    },
-    {
-      "name": "DiamonDinoia.github.io",
-      "url": "https://github.com/DiamonDinoia/DiamonDinoia.github.io",
-      "langs": [
-        "HTML"
-      ],
-      "description": "",
       "stars": 0
     },
     {
