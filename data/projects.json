@@ -1,6 +1,6 @@
 {
   "github_url": "https://github.com/DiamonDinoia",
-  "total_repos": 103,
+  "total_repos": 100,
   "projects": [
     {
       "name": "FINUFFT",
@@ -281,7 +281,7 @@
         "Python"
       ],
       "description": "MountainSort spike sorting algorithm, version 5",
-      "stars": 63
+      "stars": 64
     },
     {
       "name": "stan-playground",
@@ -1263,15 +1263,6 @@
       "stars": 5
     },
     {
-      "name": "simdref",
-      "url": "https://github.com/DiamonDinoia/simdref",
-      "langs": [
-        "Python"
-      ],
-      "description": "Searchable SIMD intrinsic and instruction reference — CLI, TUI, LSP, manpages, and static web UI",
-      "stars": 4
-    },
-    {
       "name": "mcss",
       "url": "https://github.com/DiamonDinoia/mcss",
       "langs": [
@@ -1432,15 +1423,6 @@
       ],
       "description": "An Interface to the Open-Source Code NRGLjubliana. Supported by the Flatiron Institute.",
       "stars": 4
-    },
-    {
-      "name": "simdrng",
-      "url": "https://github.com/DiamonDinoia/simdrng",
-      "langs": [
-        "C++"
-      ],
-      "description": "Header-only C++20 SIMD random number generators (Xoshiro / SplitMix / ChaCha / Philox) with a numpy.random.Generator-compatible Python API",
-      "stars": 3
     },
     {
       "name": "Chebyshev",
@@ -2164,6 +2146,24 @@
       "stars": 0
     },
     {
+      "name": "skill-orchestration",
+      "url": "https://github.com/DiamonDinoia/skill-orchestration",
+      "langs": [
+        "Python"
+      ],
+      "description": "",
+      "stars": 0
+    },
+    {
+      "name": "juno-drivers-debian",
+      "url": "https://github.com/DiamonDinoia/juno-drivers-debian",
+      "langs": [
+        "Shell"
+      ],
+      "description": "Fork of junocomp/juno-drivers-debian with local fixes",
+      "stars": 0
+    },
+    {
       "name": "DiamonDinoia.github.io",
       "url": "https://github.com/DiamonDinoia/DiamonDinoia.github.io",
       "langs": [
@@ -2182,39 +2182,12 @@
       "stars": 0
     },
     {
-      "name": "skill-orchestration",
-      "url": "https://github.com/DiamonDinoia/skill-orchestration",
-      "langs": [
-        "Python"
-      ],
-      "description": "",
-      "stars": 0
-    },
-    {
       "name": "admiral",
       "url": "https://github.com/DiamonDinoia/admiral",
       "langs": [
         "C++"
       ],
       "description": "yet another fft",
-      "stars": 0
-    },
-    {
-      "name": "testing-wip-simdref-core",
-      "url": "https://github.com/DiamonDinoia/testing-wip-simdref-core",
-      "langs": [
-        "Python"
-      ],
-      "description": "TEMP validation repo for simdref core split (row 10). Owner deletes when done.",
-      "stars": 0
-    },
-    {
-      "name": "juno-drivers-debian",
-      "url": "https://github.com/DiamonDinoia/juno-drivers-debian",
-      "langs": [
-        "Shell"
-      ],
-      "description": "Fork of junocomp/juno-drivers-debian with local fixes",
       "stars": 0
     },
     {
