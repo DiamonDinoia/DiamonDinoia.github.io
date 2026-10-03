@@ -1,6 +1,6 @@
 {
   "github_url": "https://github.com/DiamonDinoia",
-  "total_repos": 100,
+  "total_repos": 101,
   "projects": [
     {
       "name": "FINUFFT",
@@ -245,7 +245,7 @@
         "C++"
       ],
       "description": "R bindings for xtensor",
-      "stars": 90
+      "stars": 89
     },
     {
       "name": "jaxmg",
@@ -254,7 +254,7 @@
         "C++"
       ],
       "description": "JAXMg: A multi-GPU linear solver in JAX",
-      "stars": 73
+      "stars": 77
     },
     {
       "name": "walnutpie",
@@ -500,6 +500,15 @@
       "stars": 27
     },
     {
+      "name": "dmk",
+      "url": "https://github.com/flatironinstitute/dmk",
+      "langs": [
+        "C++"
+      ],
+      "description": "A Dual-space Multilevel Kernel-splitting (DMK) Framework for Discrete and Continuous Convolution",
+      "stars": 26
+    },
+    {
       "name": "zarray",
       "url": "https://github.com/xtensor-stack/zarray",
       "langs": [
@@ -507,15 +516,6 @@
       ],
       "description": "Dynamically typed N-D expression system based on xtensor",
       "stars": 26
-    },
-    {
-      "name": "dmk",
-      "url": "https://github.com/flatironinstitute/dmk",
-      "langs": [
-        "C++"
-      ],
-      "description": "A Dual-space Multilevel Kernel-splitting (DMK) Framework for Discrete and Continuous Convolution",
-      "stars": 25
     },
     {
       "name": "catvae",
@@ -2146,10 +2146,28 @@
       "stars": 0
     },
     {
+      "name": "skill-cpp",
+      "url": "https://github.com/DiamonDinoia/skill-cpp",
+      "langs": [
+        "Shell"
+      ],
+      "description": "Claude Code skill for writing, reviewing and modernizing C++ against the Core Guidelines",
+      "stars": 0
+    },
+    {
       "name": "skill-orchestration",
       "url": "https://github.com/DiamonDinoia/skill-orchestration",
       "langs": [
         "Python"
+      ],
+      "description": "",
+      "stars": 0
+    },
+    {
+      "name": "DiamonDinoia.github.io",
+      "url": "https://github.com/DiamonDinoia/DiamonDinoia.github.io",
+      "langs": [
+        "HTML"
       ],
       "description": "",
       "stars": 0
@@ -2161,15 +2179,6 @@
         "Shell"
       ],
       "description": "Fork of junocomp/juno-drivers-debian with local fixes",
-      "stars": 0
-    },
-    {
-      "name": "DiamonDinoia.github.io",
-      "url": "https://github.com/DiamonDinoia/DiamonDinoia.github.io",
-      "langs": [
-        "HTML"
-      ],
-      "description": "",
       "stars": 0
     },
     {
