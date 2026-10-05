@@ -92,7 +92,7 @@
         "C++"
       ],
       "description": "C++ tensors with broadcasting and lazy computing",
-      "stars": 3766
+      "stars": 3765
     },
     {
       "name": "CaImAn",
@@ -254,7 +254,7 @@
         "C++"
       ],
       "description": "JAXMg: A multi-GPU linear solver in JAX",
-      "stars": 81
+      "stars": 85
     },
     {
       "name": "walnutpie",
@@ -2146,6 +2146,15 @@
       "stars": 0
     },
     {
+      "name": "skill-orchestration",
+      "url": "https://github.com/DiamonDinoia/skill-orchestration",
+      "langs": [
+        "Python"
+      ],
+      "description": "",
+      "stars": 0
+    },
+    {
       "name": "DiamonDinoia.github.io",
       "url": "https://github.com/DiamonDinoia/DiamonDinoia.github.io",
       "langs": [
@@ -2161,15 +2170,6 @@
         "Shell"
       ],
       "description": "Claude Code skill for writing, reviewing and modernizing C++ against the Core Guidelines",
-      "stars": 0
-    },
-    {
-      "name": "skill-orchestration",
-      "url": "https://github.com/DiamonDinoia/skill-orchestration",
-      "langs": [
-        "Python"
-      ],
-      "description": "",
       "stars": 0
     },
     {
