@@ -182,7 +182,7 @@
         "Python"
       ],
       "description": "NEural MOdelS, a statistical modeling framework for neuroscience.",
-      "stars": 144
+      "stars": 145
     },
     {
       "name": "jax-finufft",
@@ -230,6 +230,15 @@
       "stars": 96
     },
     {
+      "name": "jaxmg",
+      "url": "https://github.com/flatironinstitute/jaxmg",
+      "langs": [
+        "C++"
+      ],
+      "description": "JAXMg: A multi-GPU linear solver in JAX",
+      "stars": 93
+    },
+    {
       "name": "sparse_dot",
       "url": "https://github.com/flatironinstitute/sparse_dot",
       "langs": [
@@ -246,15 +255,6 @@
       ],
       "description": "R bindings for xtensor",
       "stars": 89
-    },
-    {
-      "name": "jaxmg",
-      "url": "https://github.com/flatironinstitute/jaxmg",
-      "langs": [
-        "C++"
-      ],
-      "description": "JAXMg: A multi-GPU linear solver in JAX",
-      "stars": 85
     },
     {
       "name": "walnutpie",
@@ -716,6 +716,15 @@
       "stars": 15
     },
     {
+      "name": "2026-flatiron-cmb-summer-school",
+      "url": "https://github.com/flatironinstitute/2026-flatiron-cmb-summer-school",
+      "langs": [
+        "Jupyter Notebook"
+      ],
+      "description": "GitHub Repository for 2026 Flatiron CMB Summer School",
+      "stars": 14
+    },
+    {
       "name": "numbl",
       "url": "https://github.com/flatironinstitute/numbl",
       "langs": [
@@ -758,15 +767,6 @@
         "Python"
       ],
       "description": "Adaptive Pole Fitting for Quantum Many-Body Physics",
-      "stars": 13
-    },
-    {
-      "name": "2026-flatiron-cmb-summer-school",
-      "url": "https://github.com/flatironinstitute/2026-flatiron-cmb-summer-school",
-      "langs": [
-        "Jupyter Notebook"
-      ],
-      "description": "GitHub Repository for 2026 Flatiron CMB Summer School",
       "stars": 13
     },
     {
