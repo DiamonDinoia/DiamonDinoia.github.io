@@ -209,7 +209,7 @@
         "C++"
       ],
       "description": "JAXMg: A multi-GPU linear solver in JAX",
-      "stars": 105
+      "stars": 106
     },
     {
       "name": "cufinufft",
@@ -245,7 +245,7 @@
         "Python"
       ],
       "description": "Python wrapper for Intel Math Kernel Library (MKL) matrix multiplication",
-      "stars": 93
+      "stars": 94
     },
     {
       "name": "xtensor-r",
@@ -317,7 +317,7 @@
         "Nix"
       ],
       "description": "nix+spack = nixpack (spanix?)",
-      "stars": 54
+      "stars": 53
     },
     {
       "name": "disBatch",
@@ -977,6 +977,15 @@
       "stars": 9
     },
     {
+      "name": "gem",
+      "url": "https://github.com/TRIQS/gem",
+      "langs": [
+        "Python"
+      ],
+      "description": "Ghost Gutzwiller Approximation implemented in TRIQS",
+      "stars": 9
+    },
+    {
       "name": "xtensor-polyglot",
       "url": "https://github.com/xtensor-stack/xtensor-polyglot",
       "langs": [
@@ -1019,15 +1028,6 @@
         "Jupyter Notebook"
       ],
       "description": "Code for reproducing the experiments in the paper \"Bio-NICA: A biologically inspired single-layer network for Nonnegative Independent Component Analysis\"",
-      "stars": 8
-    },
-    {
-      "name": "gem",
-      "url": "https://github.com/TRIQS/gem",
-      "langs": [
-        "Python"
-      ],
-      "description": "Ghost Gutzwiller Approximation implemented in TRIQS",
       "stars": 8
     },
     {
@@ -1783,21 +1783,21 @@
       "stars": 2
     },
     {
-      "name": "cuda-span",
-      "url": "https://github.com/DiamonDinoia/cuda-span",
-      "langs": [
-        "C++"
-      ],
-      "description": "Implementation of c++20 span for c++11 onwards, but cuda compatible",
-      "stars": 1
-    },
-    {
       "name": "cpp-learning",
       "url": "https://github.com/DiamonDinoia/cpp-learning",
       "langs": [
         "Jupyter Notebook"
       ],
       "description": "In this repo, there are random cpp features tested",
+      "stars": 1
+    },
+    {
+      "name": "cuda-span",
+      "url": "https://github.com/DiamonDinoia/cuda-span",
+      "langs": [
+        "C++"
+      ],
+      "description": "Implementation of c++20 span for c++11 onwards, but cuda compatible",
       "stars": 1
     },
     {
@@ -2146,15 +2146,6 @@
       "stars": 0
     },
     {
-      "name": "admiral",
-      "url": "https://github.com/DiamonDinoia/admiral",
-      "langs": [
-        "C++"
-      ],
-      "description": "yet another fft",
-      "stars": 0
-    },
-    {
       "name": "skill-orchestration",
       "url": "https://github.com/DiamonDinoia/skill-orchestration",
       "langs": [
@@ -2173,19 +2164,28 @@
       "stars": 0
     },
     {
-      "name": "skill-ste",
-      "url": "https://github.com/DiamonDinoia/skill-ste",
+      "name": "DiamonDinoia.github.io",
+      "url": "https://github.com/DiamonDinoia/DiamonDinoia.github.io",
       "langs": [
-        "Python"
+        "HTML"
       ],
       "description": "",
       "stars": 0
     },
     {
-      "name": "DiamonDinoia.github.io",
-      "url": "https://github.com/DiamonDinoia/DiamonDinoia.github.io",
+      "name": "admiral",
+      "url": "https://github.com/DiamonDinoia/admiral",
       "langs": [
-        "HTML"
+        "C++"
+      ],
+      "description": "yet another fft",
+      "stars": 0
+    },
+    {
+      "name": "skill-ste",
+      "url": "https://github.com/DiamonDinoia/skill-ste",
+      "langs": [
+        "Python"
       ],
       "description": "",
       "stars": 0
