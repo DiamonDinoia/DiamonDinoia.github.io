@@ -2,6 +2,29 @@
   "scholar_url": "https://scholar.google.com/citations?user=l2dvmUkAAAAJ",
   "papers": [
     {
+      "title": "GPU acceleration of Monte Carlo simulations: particle physics methods applied to medicine",
+      "authors": [
+        "M. Barbone",
+        "R. Brandt",
+        "A. Howard",
+        "M. Novak",
+        "W. Luk",
+        "G. Gaydadjiev",
+        "A. Tapper"
+      ],
+      "venue": "Journal of Physics: Conference Series",
+      "venue_note": "ACAT 2022",
+      "year": 2026,
+      "url": "https://doi.org/10.1088/1742-6596/3206/1/012023",
+      "links": [
+        {
+          "label": "PDF",
+          "url": "https://iopscience.iop.org/article/10.1088/1742-6596/3206/1/012023/pdf",
+          "type": "pdf"
+        }
+      ]
+    },
+    {
       "title": "Application of Computational Modelling to Particle Physics",
       "authors": [
         "M. Barbone",
@@ -156,29 +179,6 @@
         }
       ],
       "venue_note": "CHEP 2024"
-    },
-    {
-      "title": "GPU acceleration of Monte Carlo simulations: particle physics methods applied to medicine",
-      "authors": [
-        "M. Barbone",
-        "R. Brandt",
-        "A. Howard",
-        "M. Novak",
-        "W. Luk",
-        "G. Gaydadjiev",
-        "A. Tapper"
-      ],
-      "venue": "Journal of Physics: Conference Series",
-      "venue_note": "ACAT 2022",
-      "year": 2024,
-      "url": "https://indico.cern.ch/event/1106990/contributions/4991264/",
-      "links": [
-        {
-          "label": "PDF",
-          "url": "https://indico.cern.ch/event/1106990/papers/4991264/files/11605-GPU_acceleration_of_Monte_Carlo_simulations__particle_physics_methods_applied_to_medicine.pdf",
-          "type": "pdf"
-        }
-      ]
     },
     {
       "title": "Accelerating 4D image reconstruction for magnetic resonance-guided radiotherapy",
