@@ -983,7 +983,7 @@ auto params  = std::make_tuple(poet::dispatch_param&lt;NsSeq&gt;{opts.nspread},
 poet::dispatch(spread, params);   // runtime (ns, meth) -> compile-time template args
 // inside the lambda: ns is constexpr — full unroll, constant-folded coeffs, clean vectors.</pre></div></div>
     <div class="actions reveal">
-      <a class="btn gh" href="https://github.com/DiamonDinoia/poet" target="_blank" rel="noopener">POET on GitHub ↗</a>
+      <a class="btn gh" href="https://github.com/flatironinstitute/poet" target="_blank" rel="noopener">POET on GitHub ↗</a>
       <span class="hint">one instantiation per value — keep the range small or compile times explode</span>
     </div>
   </div>
@@ -1002,7 +1002,7 @@ poet::dispatch(spread, params);   // runtime (ns, meth) -> compile-time template
       <figure style="margin:0">
         <div class="term"><div class="term-bar"><span class="dot r"></span><span class="dot y"></span><span class="dot g"></span><span class="term-tab"><b>benchmark</b> — POET dispatch vs runtime loop</span></div>
         <div class="term-body" style="background:#fff;padding:18px"><img class="zoomable" src="assets/poet_dynamic_for.svg" alt="POET dispatch speedup benchmark" style="width:100%;display:block"></div></div>
-        <figcaption style="font-family:var(--mono);font-size:15px;color:var(--dim);margin-top:12px;letter-spacing:.03em">POET microbenchmark · github.com/DiamonDinoia/poet · MIT</figcaption>
+        <figcaption style="font-family:var(--mono);font-size:15px;color:var(--dim);margin-top:12px;letter-spacing:.03em">POET microbenchmark · github.com/flatironinstitute/poet · MIT</figcaption>
       </figure>
     </div>
   </div>
@@ -1313,7 +1313,7 @@ for (uint8_t dx = 0; dx &lt; regular_part; dx += 2*simd_size) {
     <div class="endnav reveal" style="margin-top:30px">
       <a href="https://github.com/flatironinstitute/finufft" target="_blank" rel="noopener"><span class="label">Library</span><span class="title">FINUFFT</span><span class="meta">github.com/flatironinstitute/finufft</span></a>
       <a href="https://github.com/DiamonDinoia/treeweave" target="_blank" rel="noopener"><span class="label">Fast eval</span><span class="title">treeweave</span><span class="meta">github.com/DiamonDinoia/treeweave</span></a>
-      <a href="https://github.com/DiamonDinoia/poet" target="_blank" rel="noopener"><span class="label">Dispatch</span><span class="title">POET</span><span class="meta">github.com/DiamonDinoia/poet</span></a>
+      <a href="https://github.com/flatironinstitute/poet" target="_blank" rel="noopener"><span class="label">Dispatch</span><span class="title">POET</span><span class="meta">github.com/flatironinstitute/poet</span></a>
     </div>
     <div class="note reveal" style="margin-top:44px;font-size:15px">Image credits — M87: EHT Collaboration / ESO (eso1907a), CC&nbsp;BY&nbsp;4.0 · benchmark: POET (MIT) · math typeset with KaTeX.</div>
   </div>

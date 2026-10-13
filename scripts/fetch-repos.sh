@@ -46,6 +46,8 @@ curated_urls=$(echo "$curated" | jq -r '.[].url')
 remaining=$(echo "$repos" | jq --argjson curated "$curated" '
   [($curated | .[].url | ascii_downcase)] as $urls |
   [ .[] | select(.fork == false and .archived == false) |
+    # excluded: org repo not part of this portfolio (never appears in output)
+    select((.full_name | ascii_downcase) != "flatironinstitute/baobzi.jl") |
     select((.html_url | ascii_downcase) as $u | ($urls | index($u)) == null) |
     {
       name: .name,
