@@ -50,20 +50,21 @@
     },
     {
       "name": "POET",
-      "url": "https://github.com/DiamonDinoia/poet",
+      "url": "https://github.com/flatironinstitute/poet",
       "langs": [
         "C++"
       ],
       "description": "Perfectly Over-Engineered Templates. C++ template metaprogramming utilities for high-performance computing."
     },
     {
-      "name": "VectorXoshiro",
-      "url": "https://github.com/DiamonDinoia/VectorXoshiro",
+      "name": "simdrng",
+      "url": "https://github.com/simd-labs/simdrng",
       "langs": [
         "C++",
-        "SIMD"
+        "SIMD",
+        "Python"
       ],
-      "description": "Vectorized (SIMD) implementation of the xoshiro random number generator family for maximum throughput."
+      "description": "Header-only SIMD random number generators with a numpy-compatible Python API."
     },
     {
       "name": "XSIMD",
@@ -82,6 +83,38 @@
         "MATLAB"
       ],
       "description": "MATLAB/Octave MEX gateway generator to wrap C/C++/Fortran libraries."
+    },
+    {
+      "name": "simdref",
+      "url": "https://github.com/simd-labs/simdref",
+      "langs": [
+        "Python"
+      ],
+      "description": "Searchable SIMD intrinsic reference with CLI, TUI, LSP, and web interfaces."
+    },
+    {
+      "name": "numbl",
+      "url": "https://github.com/flatironinstitute/numbl",
+      "langs": [
+        "TypeScript"
+      ],
+      "description": "Matlab-compatible numerical computing environment."
+    },
+    {
+      "name": "MIP",
+      "url": "https://github.com/mip-org/mip",
+      "langs": [
+        "MATLAB"
+      ],
+      "description": "pip-style package manager for MATLAB."
+    },
+    {
+      "name": "admiral",
+      "url": "https://github.com/DiamonDinoia/admiral",
+      "langs": [
+        "C++"
+      ],
+      "description": "Fast Fourier Transform library in C++."
     }
   ],
   "other_repos": [
