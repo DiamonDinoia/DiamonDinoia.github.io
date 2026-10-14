@@ -125,7 +125,7 @@
         "C++"
       ],
       "description": "C++ tensors with broadcasting and lazy computing",
-      "stars": 3765
+      "stars": 3766
     },
     {
       "name": "CaImAn",
@@ -278,7 +278,7 @@
         "Python"
       ],
       "description": "Python wrapper for Intel Math Kernel Library (MKL) matrix multiplication",
-      "stars": 94
+      "stars": 95
     },
     {
       "name": "xtensor-r",
@@ -758,15 +758,6 @@
       "stars": 14
     },
     {
-      "name": "numbl",
-      "url": "https://github.com/flatironinstitute/numbl",
-      "langs": [
-        "TypeScript"
-      ],
-      "description": "Numerical computing environment that aims to be compatible with Matlab",
-      "stars": 14
-    },
-    {
       "name": "inverse-obstacle-scattering2d",
       "url": "https://github.com/flatironinstitute/inverse-obstacle-scattering2d",
       "langs": [
@@ -938,6 +929,15 @@
       "stars": 10
     },
     {
+      "name": "gem",
+      "url": "https://github.com/TRIQS/gem",
+      "langs": [
+        "Python"
+      ],
+      "description": "Ghost Gutzwiller Approximation implemented in TRIQS",
+      "stars": 10
+    },
+    {
       "name": "benchmarks",
       "url": "https://github.com/TRIQS/benchmarks",
       "langs": [
@@ -1010,15 +1010,6 @@
       "stars": 9
     },
     {
-      "name": "gem",
-      "url": "https://github.com/TRIQS/gem",
-      "langs": [
-        "Python"
-      ],
-      "description": "Ghost Gutzwiller Approximation implemented in TRIQS",
-      "stars": 9
-    },
-    {
       "name": "xtensor-polyglot",
       "url": "https://github.com/xtensor-stack/xtensor-polyglot",
       "langs": [
@@ -1080,15 +1071,6 @@
       ],
       "description": "Hubbard I solver. Supported by the Flatiron Institute.",
       "stars": 8
-    },
-    {
-      "name": "poet",
-      "url": "https://github.com/flatironinstitute/poet",
-      "langs": [
-        "C++"
-      ],
-      "description": "Perfectly Over Engineered Templates",
-      "stars": 7
     },
     {
       "name": "inverse-volume-scattering2d",
@@ -1536,15 +1518,6 @@
         "Jupyter Notebook"
       ],
       "description": "Code accompanying the paper \"A linear discriminant analysis model of imbalanced associative learning in the mushroom body compartment\"",
-      "stars": 3
-    },
-    {
-      "name": "Baobzi.jl",
-      "url": "https://github.com/flatironinstitute/Baobzi.jl",
-      "langs": [
-        "Julia"
-      ],
-      "description": "Wrapper library for Baobzi interpolator library",
       "stars": 3
     },
     {
@@ -2197,6 +2170,15 @@
       "stars": 0
     },
     {
+      "name": "juno-drivers-debian",
+      "url": "https://github.com/DiamonDinoia/juno-drivers-debian",
+      "langs": [
+        "Shell"
+      ],
+      "description": "Fork of junocomp/juno-drivers-debian with local fixes",
+      "stars": 0
+    },
+    {
       "name": "skill-orchestration",
       "url": "https://github.com/DiamonDinoia/skill-orchestration",
       "langs": [
@@ -2215,30 +2197,12 @@
       "stars": 0
     },
     {
-      "name": "admiral",
-      "url": "https://github.com/DiamonDinoia/admiral",
-      "langs": [
-        "C++"
-      ],
-      "description": "yet another fft",
-      "stars": 0
-    },
-    {
       "name": "skill-ste",
       "url": "https://github.com/DiamonDinoia/skill-ste",
       "langs": [
         "Python"
       ],
       "description": "",
-      "stars": 0
-    },
-    {
-      "name": "juno-drivers-debian",
-      "url": "https://github.com/DiamonDinoia/juno-drivers-debian",
-      "langs": [
-        "Shell"
-      ],
-      "description": "Fork of junocomp/juno-drivers-debian with local fixes",
       "stars": 0
     },
     {
