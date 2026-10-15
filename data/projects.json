@@ -224,7 +224,7 @@
         "C++"
       ],
       "description": "JAX bindings to the Flatiron Institute Non-uniform Fast Fourier Transform (FINUFFT) library",
-      "stars": 141
+      "stars": 142
     },
     {
       "name": "deepblast",
@@ -495,6 +495,15 @@
       ],
       "description": "",
       "stars": 32
+    },
+    {
+      "name": "software-citation-station",
+      "url": "https://github.com/flatironinstitute/software-citation-station",
+      "langs": [
+        "TeX"
+      ],
+      "description": "A website for making citing software used in your research quick and easy",
+      "stars": 31
     },
     {
       "name": "xtensor-python-cookiecutter",
