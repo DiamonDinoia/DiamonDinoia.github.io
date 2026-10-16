@@ -34,7 +34,7 @@
     }
   ],
   "experience": [
-    { "role": "Software Engineer", "org": "Simons Foundation / Flatiron Institute", "location": "New York, US", "years": "2024–present", "desc": "Performance optimization of FINUFFT" },
+    { "role": "Software Engineer", "org": "Simons Foundation / Flatiron Institute", "location": "New York, US", "years": "2024–present", "desc": "Performance engineering (CPU, GPU), maintenance and releases of scientific software" },
     { "role": "Software Engineer", "org": "Optiver", "location": "Amsterdam, NL", "years": "2023", "desc": "Performance optimisation of option pricing" },
     { "role": "Software Engineer", "org": "Intel", "location": "Munich, DE", "years": "2022", "desc": "Hardware simulation in SIMICS" },
     { "role": "Member, CRUK Convergence Science Centre Training Committee", "org": "Imperial College London", "location": "London, UK", "years": "2021–2024", "desc": "Representative of the convergence science PhD cohort" },
