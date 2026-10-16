@@ -224,7 +224,7 @@
         "C++"
       ],
       "description": "JAX bindings to the Flatiron Institute Non-uniform Fast Fourier Transform (FINUFFT) library",
-      "stars": 142
+      "stars": 143
     },
     {
       "name": "deepblast",
@@ -377,7 +377,7 @@
         "Python"
       ],
       "description": "Interface to DFT codes. Supported by the Flatiron Institute.",
-      "stars": 47
+      "stars": 48
     },
     {
       "name": "xtensor-zarr",
@@ -533,6 +533,15 @@
       "stars": 30
     },
     {
+      "name": "dmk",
+      "url": "https://github.com/flatironinstitute/dmk",
+      "langs": [
+        "C++"
+      ],
+      "description": "A Dual-space Multilevel Kernel-splitting (DMK) Framework for Discrete and Continuous Convolution",
+      "stars": 27
+    },
+    {
       "name": "cpp2py",
       "url": "https://github.com/TRIQS/cpp2py",
       "langs": [
@@ -540,15 +549,6 @@
       ],
       "description": "Reflection tools based on clang",
       "stars": 27
-    },
-    {
-      "name": "dmk",
-      "url": "https://github.com/flatironinstitute/dmk",
-      "langs": [
-        "C++"
-      ],
-      "description": "A Dual-space Multilevel Kernel-splitting (DMK) Framework for Discrete and Continuous Convolution",
-      "stars": 26
     },
     {
       "name": "zarray",
@@ -2170,24 +2170,6 @@
       "stars": 0
     },
     {
-      "name": "DiamonDinoia.github.io",
-      "url": "https://github.com/DiamonDinoia/DiamonDinoia.github.io",
-      "langs": [
-        "HTML"
-      ],
-      "description": "",
-      "stars": 0
-    },
-    {
-      "name": "juno-drivers-debian",
-      "url": "https://github.com/DiamonDinoia/juno-drivers-debian",
-      "langs": [
-        "Shell"
-      ],
-      "description": "Fork of junocomp/juno-drivers-debian with local fixes",
-      "stars": 0
-    },
-    {
       "name": "skill-orchestration",
       "url": "https://github.com/DiamonDinoia/skill-orchestration",
       "langs": [
@@ -2210,6 +2192,24 @@
       "url": "https://github.com/DiamonDinoia/skill-ste",
       "langs": [
         "Python"
+      ],
+      "description": "",
+      "stars": 0
+    },
+    {
+      "name": "juno-drivers-debian",
+      "url": "https://github.com/DiamonDinoia/juno-drivers-debian",
+      "langs": [
+        "Shell"
+      ],
+      "description": "Fork of junocomp/juno-drivers-debian with local fixes",
+      "stars": 0
+    },
+    {
+      "name": "DiamonDinoia.github.io",
+      "url": "https://github.com/DiamonDinoia/DiamonDinoia.github.io",
+      "langs": [
+        "HTML"
       ],
       "description": "",
       "stars": 0
