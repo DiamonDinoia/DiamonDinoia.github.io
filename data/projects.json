@@ -242,7 +242,7 @@
         "C++"
       ],
       "description": "JAXMg: A multi-GPU linear solver in JAX",
-      "stars": 106
+      "stars": 107
     },
     {
       "name": "cufinufft",
@@ -335,6 +335,15 @@
       "stars": 56
     },
     {
+      "name": "nixpack",
+      "url": "https://github.com/flatironinstitute/nixpack",
+      "langs": [
+        "Nix"
+      ],
+      "description": "nix+spack = nixpack (spanix?)",
+      "stars": 54
+    },
+    {
       "name": "nifty-ls",
       "url": "https://github.com/flatironinstitute/nifty-ls",
       "langs": [
@@ -342,15 +351,6 @@
       ],
       "description": "A fast Lomb-Scargle periodogram. It's nifty, and uses a NUFFT!",
       "stars": 54
-    },
-    {
-      "name": "nixpack",
-      "url": "https://github.com/flatironinstitute/nixpack",
-      "langs": [
-        "Nix"
-      ],
-      "description": "nix+spack = nixpack (spanix?)",
-      "stars": 53
     },
     {
       "name": "disBatch",
