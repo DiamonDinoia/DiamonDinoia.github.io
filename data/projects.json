@@ -125,7 +125,7 @@
         "C++"
       ],
       "description": "C++ tensors with broadcasting and lazy computing",
-      "stars": 3767
+      "stars": 3768
     },
     {
       "name": "CaImAn",
@@ -242,7 +242,7 @@
         "C++"
       ],
       "description": "JAXMg: A multi-GPU linear solver in JAX",
-      "stars": 109
+      "stars": 111
     },
     {
       "name": "cufinufft",
@@ -686,6 +686,15 @@
       "stars": 19
     },
     {
+      "name": "figpack",
+      "url": "https://github.com/flatironinstitute/figpack",
+      "langs": [
+        "TypeScript"
+      ],
+      "description": "A Python package for creating shareable, interactive, browser-based visualizations",
+      "stars": 17
+    },
+    {
       "name": "aLENS",
       "url": "https://github.com/flatironinstitute/aLENS",
       "langs": [
@@ -702,15 +711,6 @@
       ],
       "description": "Maximum Entropy Codes. Supported by the Flatiron Institute.",
       "stars": 17
-    },
-    {
-      "name": "figpack",
-      "url": "https://github.com/flatironinstitute/figpack",
-      "langs": [
-        "TypeScript"
-      ],
-      "description": "A Python package for creating shareable, interactive, browser-based visualizations",
-      "stars": 16
     },
     {
       "name": "ManifoldEM",
@@ -1861,21 +1861,21 @@
       "stars": 1
     },
     {
-      "name": "masala_public_seating_optimization_plugins",
-      "url": "https://github.com/flatironinstitute/masala_public_seating_optimization_plugins",
-      "langs": [
-        "C++"
-      ],
-      "description": "A Masala library demonstrating the use of Masala's plugin CFN optimizers and data representations for a problem different than protein design: wedding reception seating optimization.  Included is a useful benchmark set for testing new optimizers.",
-      "stars": 1
-    },
-    {
       "name": "neuroRSE",
       "url": "https://github.com/flatironinstitute/neuroRSE",
       "langs": [
         "CSS"
       ],
       "description": "Website for CCN's neuroRSE group",
+      "stars": 1
+    },
+    {
+      "name": "masala_public_seating_optimization_plugins",
+      "url": "https://github.com/flatironinstitute/masala_public_seating_optimization_plugins",
+      "langs": [
+        "C++"
+      ],
+      "description": "A Masala library demonstrating the use of Masala's plugin CFN optimizers and data representations for a problem different than protein design: wedding reception seating optimization.  Included is a useful benchmark set for testing new optimizers.",
       "stars": 1
     },
     {
@@ -2179,6 +2179,15 @@
       "stars": 0
     },
     {
+      "name": "wallpapers",
+      "url": "https://github.com/DiamonDinoia/wallpapers",
+      "langs": [
+        "Python"
+      ],
+      "description": "Generative math/physics wallpapers, 4K (generator script; binaries ship as release assets)",
+      "stars": 0
+    },
+    {
       "name": "DiamonDinoia.github.io",
       "url": "https://github.com/DiamonDinoia/DiamonDinoia.github.io",
       "langs": [
@@ -2239,15 +2248,6 @@
         "Python"
       ],
       "description": "KDE/Qt6 fan-curve editor for Juno (Clevo) laptops — on top of fan-profile + fancontrol.service",
-      "stars": 0
-    },
-    {
-      "name": "wallpapers",
-      "url": "https://github.com/DiamonDinoia/wallpapers",
-      "langs": [
-        "Python"
-      ],
-      "description": "Generative math/physics wallpapers, 4K (generator script; binaries ship as release assets)",
       "stars": 0
     },
     {
