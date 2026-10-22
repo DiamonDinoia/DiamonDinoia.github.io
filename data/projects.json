@@ -1,6 +1,6 @@
 {
   "github_url": "https://github.com/DiamonDinoia",
-  "total_repos": 102,
+  "total_repos": 103,
   "projects": [
     {
       "name": "FINUFFT",
@@ -539,7 +539,7 @@
         "C++"
       ],
       "description": "A Dual-space Multilevel Kernel-splitting (DMK) Framework for Discrete and Continuous Convolution",
-      "stars": 27
+      "stars": 28
     },
     {
       "name": "cpp2py",
@@ -1217,6 +1217,15 @@
       "stars": 5
     },
     {
+      "name": "CyclicCAE_public",
+      "url": "https://github.com/flatironinstitute/CyclicCAE_public",
+      "langs": [
+        "Python"
+      ],
+      "description": "The public repository for the CyclicCAE conformational autoencoder.  CyclicCAE encodes peptide macrocycle conformations in a low-dimensional latent space, useful for rapid sampling, structural refinement, or denoising.",
+      "stars": 5
+    },
+    {
       "name": "psyphy",
       "url": "https://github.com/flatironinstitute/psyphy",
       "langs": [
@@ -1293,15 +1302,6 @@
         "C++"
       ],
       "description": "",
-      "stars": 4
-    },
-    {
-      "name": "CyclicCAE_public",
-      "url": "https://github.com/flatironinstitute/CyclicCAE_public",
-      "langs": [
-        "Python"
-      ],
-      "description": "The public repository for the CyclicCAE conformational autoencoder.  CyclicCAE encodes peptide macrocycle conformations in a low-dimensional latent space, useful for rapid sampling, structural refinement, or denoising.",
       "stars": 4
     },
     {
