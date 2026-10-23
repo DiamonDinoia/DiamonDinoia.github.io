@@ -152,7 +152,7 @@
         "Python"
       ],
       "description": "Deep functional residue identification",
-      "stars": 355
+      "stars": 354
     },
     {
       "name": "xframe",
@@ -215,7 +215,7 @@
         "Python"
       ],
       "description": "NEural MOdelS, a statistical modeling framework for neuroscience.",
-      "stars": 145
+      "stars": 146
     },
     {
       "name": "jax-finufft",
@@ -299,21 +299,21 @@
       "stars": 66
     },
     {
-      "name": "mountainsort5",
-      "url": "https://github.com/flatironinstitute/mountainsort5",
-      "langs": [
-        "Python"
-      ],
-      "description": "MountainSort spike sorting algorithm, version 5",
-      "stars": 65
-    },
-    {
       "name": "neurosift",
       "url": "https://github.com/flatironinstitute/neurosift",
       "langs": [
         "TypeScript"
       ],
       "description": "Browser-based NWB visualization and DANDI exploration",
+      "stars": 65
+    },
+    {
+      "name": "mountainsort5",
+      "url": "https://github.com/flatironinstitute/mountainsort5",
+      "langs": [
+        "Python"
+      ],
+      "description": "MountainSort spike sorting algorithm, version 5",
       "stars": 65
     },
     {
