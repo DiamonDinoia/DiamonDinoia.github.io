@@ -1,6 +1,6 @@
 {
   "github_url": "https://github.com/DiamonDinoia",
-  "total_repos": 103,
+  "total_repos": 104,
   "projects": [
     {
       "name": "FINUFFT",
@@ -197,7 +197,7 @@
         "Fortran"
       ],
       "description": "Flatiron Institute Fast Multipole Libraries --- This codebase is a set of libraries to compute N-body interactions governed by the Laplace and Helmholtz equations, to a specified precision, in three dimensions, on a multi-core shared-memory machine. ",
-      "stars": 163
+      "stars": 164
     },
     {
       "name": "NoRMCorre",
@@ -1458,6 +1458,15 @@
       "stars": 3
     },
     {
+      "name": "wasmlets",
+      "url": "https://github.com/flatironinstitute/wasmlets",
+      "langs": [
+        "TypeScript"
+      ],
+      "description": "",
+      "stars": 3
+    },
+    {
       "name": "sumac",
       "url": "https://github.com/flatironinstitute/sumac",
       "langs": [
@@ -1667,15 +1676,6 @@
       "url": "https://github.com/flatironinstitute/OpenMM_FI_2025",
       "langs": [
         "Jupyter Notebook"
-      ],
-      "description": "",
-      "stars": 2
-    },
-    {
-      "name": "wasmlets",
-      "url": "https://github.com/flatironinstitute/wasmlets",
-      "langs": [
-        "TypeScript"
       ],
       "description": "",
       "stars": 2
@@ -2179,12 +2179,12 @@
       "stars": 0
     },
     {
-      "name": "wallpapers",
-      "url": "https://github.com/DiamonDinoia/wallpapers",
+      "name": "juno-drivers-debian",
+      "url": "https://github.com/DiamonDinoia/juno-drivers-debian",
       "langs": [
-        "Python"
+        "Shell"
       ],
-      "description": "Generative math/physics wallpapers, 4K (generator script; binaries ship as release assets)",
+      "description": "Fork of junocomp/juno-drivers-debian with local fixes",
       "stars": 0
     },
     {
@@ -2197,12 +2197,12 @@
       "stars": 0
     },
     {
-      "name": "juno-drivers-debian",
-      "url": "https://github.com/DiamonDinoia/juno-drivers-debian",
+      "name": "wallpapers",
+      "url": "https://github.com/DiamonDinoia/wallpapers",
       "langs": [
-        "Shell"
+        "Python"
       ],
-      "description": "Fork of junocomp/juno-drivers-debian with local fixes",
+      "description": "Generative math/physics wallpapers, 4K (generator script; binaries ship as release assets)",
       "stars": 0
     },
     {
