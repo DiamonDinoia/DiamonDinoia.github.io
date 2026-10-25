@@ -125,7 +125,7 @@
         "C++"
       ],
       "description": "C++ tensors with broadcasting and lazy computing",
-      "stars": 3768
+      "stars": 3770
     },
     {
       "name": "CaImAn",
@@ -497,6 +497,15 @@
       "stars": 32
     },
     {
+      "name": "SkellySim",
+      "url": "https://github.com/flatironinstitute/SkellySim",
+      "langs": [
+        "C++"
+      ],
+      "description": "Hydrodynamic Cytoskeleton Simulator",
+      "stars": 31
+    },
+    {
       "name": "software-citation-station",
       "url": "https://github.com/flatironinstitute/software-citation-station",
       "langs": [
@@ -513,15 +522,6 @@
       ],
       "description": "Cookiecutter for a Python project making use of xtensor",
       "stars": 31
-    },
-    {
-      "name": "SkellySim",
-      "url": "https://github.com/flatironinstitute/SkellySim",
-      "langs": [
-        "C++"
-      ],
-      "description": "Hydrodynamic Cytoskeleton Simulator",
-      "stars": 30
     },
     {
       "name": "ironclust",
@@ -1593,6 +1593,15 @@
       "stars": 2
     },
     {
+      "name": "ccn-software-fens-2026",
+      "url": "https://github.com/flatironinstitute/ccn-software-fens-2026",
+      "langs": [
+        "Python"
+      ],
+      "description": "Materials for CCN software workshop at FENS, July 2026",
+      "stars": 2
+    },
+    {
       "name": "cooling_fast_and_slow_2026",
       "url": "https://github.com/flatironinstitute/cooling_fast_and_slow_2026",
       "langs": [
@@ -1876,15 +1885,6 @@
         "C++"
       ],
       "description": "A Masala library demonstrating the use of Masala's plugin CFN optimizers and data representations for a problem different than protein design: wedding reception seating optimization.  Included is a useful benchmark set for testing new optimizers.",
-      "stars": 1
-    },
-    {
-      "name": "ccn-software-fens-2026",
-      "url": "https://github.com/flatironinstitute/ccn-software-fens-2026",
-      "langs": [
-        "Python"
-      ],
-      "description": "Materials for CCN software workshop at FENS, July 2026",
       "stars": 1
     },
     {
@@ -2179,21 +2179,21 @@
       "stars": 0
     },
     {
-      "name": "juno-drivers-debian",
-      "url": "https://github.com/DiamonDinoia/juno-drivers-debian",
-      "langs": [
-        "Shell"
-      ],
-      "description": "Fork of junocomp/juno-drivers-debian with local fixes",
-      "stars": 0
-    },
-    {
       "name": "DiamonDinoia.github.io",
       "url": "https://github.com/DiamonDinoia/DiamonDinoia.github.io",
       "langs": [
         "HTML"
       ],
       "description": "",
+      "stars": 0
+    },
+    {
+      "name": "juno-drivers-debian",
+      "url": "https://github.com/DiamonDinoia/juno-drivers-debian",
+      "langs": [
+        "Shell"
+      ],
+      "description": "Fork of junocomp/juno-drivers-debian with local fixes",
       "stars": 0
     },
     {
