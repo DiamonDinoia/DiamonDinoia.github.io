@@ -215,7 +215,7 @@
         "Python"
       ],
       "description": "NEural MOdelS, a statistical modeling framework for neuroscience.",
-      "stars": 146
+      "stars": 145
     },
     {
       "name": "jax-finufft",
@@ -242,7 +242,7 @@
         "C++"
       ],
       "description": "JAXMg: A multi-GPU linear solver in JAX",
-      "stars": 111
+      "stars": 112
     },
     {
       "name": "cufinufft",
@@ -641,21 +641,21 @@
       "stars": 22
     },
     {
-      "name": "clair",
-      "url": "https://github.com/flatironinstitute/clair",
-      "langs": [
-        "C++"
-      ],
-      "description": "Clair (Clang Introspection and Reflection) tools. A set of clang tools developed for Flatiron/CCQ",
-      "stars": 21
-    },
-    {
       "name": "tprf",
       "url": "https://github.com/TRIQS/tprf",
       "langs": [
         "Python"
       ],
       "description": "TPRF: The Two-Particle Response Function tool box for TRIQS. Supported by the Flatiron Institute.",
+      "stars": 22
+    },
+    {
+      "name": "clair",
+      "url": "https://github.com/flatironinstitute/clair",
+      "langs": [
+        "C++"
+      ],
+      "description": "Clair (Clang Introspection and Reflection) tools. A set of clang tools developed for Flatiron/CCQ",
       "stars": 21
     },
     {
@@ -713,15 +713,6 @@
       "stars": 17
     },
     {
-      "name": "ManifoldEM",
-      "url": "https://github.com/flatironinstitute/ManifoldEM",
-      "langs": [
-        "Jupyter Notebook"
-      ],
-      "description": "Python package for determination of conformational continua of macromolecules from single-particle cryo-EM data",
-      "stars": 16
-    },
-    {
       "name": "cryoSBI",
       "url": "https://github.com/flatironinstitute/cryoSBI",
       "langs": [
@@ -738,6 +729,15 @@
       ],
       "description": "Pytorch wrappers for the FINUFFT library",
       "stars": 16
+    },
+    {
+      "name": "ManifoldEM",
+      "url": "https://github.com/flatironinstitute/ManifoldEM",
+      "langs": [
+        "Jupyter Notebook"
+      ],
+      "description": "Python package for determination of conformational continua of macromolecules from single-particle cryo-EM data",
+      "stars": 15
     },
     {
       "name": "isosplit5",
@@ -1136,6 +1136,15 @@
       "stars": 6
     },
     {
+      "name": "CyclicCAE_public",
+      "url": "https://github.com/flatironinstitute/CyclicCAE_public",
+      "langs": [
+        "Python"
+      ],
+      "description": "The public repository for the CyclicCAE conformational autoencoder.  CyclicCAE encodes peptide macrocycle conformations in a low-dimensional latent space, useful for rapid sampling, structural refinement, or denoising.",
+      "stars": 6
+    },
+    {
       "name": "c2py",
       "url": "https://github.com/flatironinstitute/c2py",
       "langs": [
@@ -1214,15 +1223,6 @@
         "Jupyter Notebook"
       ],
       "description": "Fast Numerics, Small Changes: The Minimal Playbook",
-      "stars": 5
-    },
-    {
-      "name": "CyclicCAE_public",
-      "url": "https://github.com/flatironinstitute/CyclicCAE_public",
-      "langs": [
-        "Python"
-      ],
-      "description": "The public repository for the CyclicCAE conformational autoencoder.  CyclicCAE encodes peptide macrocycle conformations in a low-dimensional latent space, useful for rapid sampling, structural refinement, or denoising.",
       "stars": 5
     },
     {
