@@ -1,6 +1,6 @@
 {
   "github_url": "https://github.com/DiamonDinoia",
-  "total_repos": 104,
+  "total_repos": 105,
   "projects": [
     {
       "name": "FINUFFT",
@@ -1028,6 +1028,15 @@
       "stars": 9
     },
     {
+      "name": "inverse-volume-scattering2d",
+      "url": "https://github.com/flatironinstitute/inverse-volume-scattering2d",
+      "langs": [
+        "MATLAB"
+      ],
+      "description": "This repository contains beta MATLAB codes for data generation of forward medium problems using a hybrid HPS-HBS solver, and an inverse medium solver",
+      "stars": 8
+    },
+    {
       "name": "fi-slurm-utils",
       "url": "https://github.com/flatironinstitute/fi-slurm-utils",
       "langs": [
@@ -1080,15 +1089,6 @@
       ],
       "description": "Hubbard I solver. Supported by the Flatiron Institute.",
       "stars": 8
-    },
-    {
-      "name": "inverse-volume-scattering2d",
-      "url": "https://github.com/flatironinstitute/inverse-volume-scattering2d",
-      "langs": [
-        "MATLAB"
-      ],
-      "description": "This repository contains beta MATLAB codes for data generation of forward medium problems using a hybrid HPS-HBS solver, and an inverse medium solver",
-      "stars": 7
     },
     {
       "name": "bio-cca",
