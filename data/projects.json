@@ -1,6 +1,6 @@
 {
   "github_url": "https://github.com/DiamonDinoia",
-  "total_repos": 105,
+  "total_repos": 110,
   "projects": [
     {
       "name": "FINUFFT",
@@ -215,7 +215,7 @@
         "Python"
       ],
       "description": "NEural MOdelS, a statistical modeling framework for neuroscience.",
-      "stars": 145
+      "stars": 146
     },
     {
       "name": "jax-finufft",
@@ -224,7 +224,7 @@
         "C++"
       ],
       "description": "JAX bindings to the Flatiron Institute Non-uniform Fast Fourier Transform (FINUFFT) library",
-      "stars": 143
+      "stars": 144
     },
     {
       "name": "deepblast",
@@ -2179,6 +2179,58 @@
       "stars": 0
     },
     {
+      "name": "skill-hermes-agent",
+      "url": "https://github.com/DiamonDinoia/skill-hermes-agent",
+      "langs": [
+        "JavaScript"
+      ],
+      "description": "One skill to run the whole machine.",
+      "stars": 0
+    },
+    {
+      "name": "skill-ste",
+      "url": "https://github.com/DiamonDinoia/skill-ste",
+      "langs": [
+        "Python"
+      ],
+      "description": "",
+      "stars": 0
+    },
+    {
+      "name": "skill-comment-length",
+      "url": "https://github.com/DiamonDinoia/skill-comment-length",
+      "langs": [
+        "Python"
+      ],
+      "description": "Reject comment lines over MAX_LEN = 100 chars when an agent writes or edits code.",
+      "stars": 0
+    },
+    {
+      "name": "skill-hermes-local-patches",
+      "url": "https://github.com/DiamonDinoia/skill-hermes-local-patches",
+      "langs": [],
+      "description": "Rebase and roll out the local Hermes patches.",
+      "stars": 0
+    },
+    {
+      "name": "skill-dedup",
+      "url": "https://github.com/DiamonDinoia/skill-dedup",
+      "langs": [
+        "Python"
+      ],
+      "description": "Find duplicated code and text in agent work before review: a CLI and Stop hook for Claude Code, Codex and Hermes",
+      "stars": 0
+    },
+    {
+      "name": "skill-orchestration",
+      "url": "https://github.com/DiamonDinoia/skill-orchestration",
+      "langs": [
+        "Python"
+      ],
+      "description": "",
+      "stars": 0
+    },
+    {
       "name": "DiamonDinoia.github.io",
       "url": "https://github.com/DiamonDinoia/DiamonDinoia.github.io",
       "langs": [
@@ -2203,33 +2255,6 @@
         "Python"
       ],
       "description": "Generative math/physics wallpapers, 4K (generator script; binaries ship as release assets)",
-      "stars": 0
-    },
-    {
-      "name": "skill-dedup",
-      "url": "https://github.com/DiamonDinoia/skill-dedup",
-      "langs": [
-        "Python"
-      ],
-      "description": "Find duplicated code and text in agent work before review: a CLI and Stop hook for Claude Code, Codex and Hermes",
-      "stars": 0
-    },
-    {
-      "name": "skill-orchestration",
-      "url": "https://github.com/DiamonDinoia/skill-orchestration",
-      "langs": [
-        "Python"
-      ],
-      "description": "",
-      "stars": 0
-    },
-    {
-      "name": "skill-ste",
-      "url": "https://github.com/DiamonDinoia/skill-ste",
-      "langs": [
-        "Python"
-      ],
-      "description": "",
       "stars": 0
     },
     {
