@@ -1,6 +1,6 @@
 {
   "github_url": "https://github.com/DiamonDinoia",
-  "total_repos": 110,
+  "total_repos": 111,
   "projects": [
     {
       "name": "FINUFFT",
@@ -2179,6 +2179,33 @@
       "stars": 0
     },
     {
+      "name": "skill-orchestration",
+      "url": "https://github.com/DiamonDinoia/skill-orchestration",
+      "langs": [
+        "Python"
+      ],
+      "description": "",
+      "stars": 0
+    },
+    {
+      "name": "skill-self-improvement",
+      "url": "https://github.com/DiamonDinoia/skill-self-improvement",
+      "langs": [
+        "Python"
+      ],
+      "description": "Non-destructive skill self-improvement for coding-agent harnesses, adapted from google-research/harness2",
+      "stars": 0
+    },
+    {
+      "name": "DiamonDinoia.github.io",
+      "url": "https://github.com/DiamonDinoia/DiamonDinoia.github.io",
+      "langs": [
+        "HTML"
+      ],
+      "description": "",
+      "stars": 0
+    },
+    {
       "name": "skill-hermes-agent",
       "url": "https://github.com/DiamonDinoia/skill-hermes-agent",
       "langs": [
@@ -2219,24 +2246,6 @@
         "Python"
       ],
       "description": "Find duplicated code and text in agent work before review: a CLI and Stop hook for Claude Code, Codex and Hermes",
-      "stars": 0
-    },
-    {
-      "name": "skill-orchestration",
-      "url": "https://github.com/DiamonDinoia/skill-orchestration",
-      "langs": [
-        "Python"
-      ],
-      "description": "",
-      "stars": 0
-    },
-    {
-      "name": "DiamonDinoia.github.io",
-      "url": "https://github.com/DiamonDinoia/DiamonDinoia.github.io",
-      "langs": [
-        "HTML"
-      ],
-      "description": "",
       "stars": 0
     },
     {
