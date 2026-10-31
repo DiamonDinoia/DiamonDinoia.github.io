@@ -2179,6 +2179,33 @@
       "stars": 0
     },
     {
+      "name": "skill-self-improvement",
+      "url": "https://github.com/DiamonDinoia/skill-self-improvement",
+      "langs": [
+        "Python"
+      ],
+      "description": "Non-destructive skill self-improvement for coding-agent harnesses, adapted from google-research/harness2",
+      "stars": 0
+    },
+    {
+      "name": "skill-orchestration",
+      "url": "https://github.com/DiamonDinoia/skill-orchestration",
+      "langs": [
+        "Python"
+      ],
+      "description": "",
+      "stars": 0
+    },
+    {
+      "name": "DiamonDinoia.github.io",
+      "url": "https://github.com/DiamonDinoia/DiamonDinoia.github.io",
+      "langs": [
+        "HTML"
+      ],
+      "description": "",
+      "stars": 0
+    },
+    {
       "name": "skill-dedup",
       "url": "https://github.com/DiamonDinoia/skill-dedup",
       "langs": [
@@ -2192,33 +2219,6 @@
       "url": "https://github.com/DiamonDinoia/skill-hermes-local-patches",
       "langs": [],
       "description": "Rebase and roll out the local Hermes patches.",
-      "stars": 0
-    },
-    {
-      "name": "DiamonDinoia.github.io",
-      "url": "https://github.com/DiamonDinoia/DiamonDinoia.github.io",
-      "langs": [
-        "HTML"
-      ],
-      "description": "",
-      "stars": 0
-    },
-    {
-      "name": "skill-orchestration",
-      "url": "https://github.com/DiamonDinoia/skill-orchestration",
-      "langs": [
-        "Python"
-      ],
-      "description": "",
-      "stars": 0
-    },
-    {
-      "name": "skill-self-improvement",
-      "url": "https://github.com/DiamonDinoia/skill-self-improvement",
-      "langs": [
-        "Python"
-      ],
-      "description": "Non-destructive skill self-improvement for coding-agent harnesses, adapted from google-research/harness2",
       "stars": 0
     },
     {
