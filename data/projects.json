@@ -2179,6 +2179,15 @@
       "stars": 0
     },
     {
+      "name": "DiamonDinoia.github.io",
+      "url": "https://github.com/DiamonDinoia/DiamonDinoia.github.io",
+      "langs": [
+        "HTML"
+      ],
+      "description": "",
+      "stars": 0
+    },
+    {
       "name": "skill-self-improvement",
       "url": "https://github.com/DiamonDinoia/skill-self-improvement",
       "langs": [
@@ -2192,15 +2201,6 @@
       "url": "https://github.com/DiamonDinoia/skill-orchestration",
       "langs": [
         "Python"
-      ],
-      "description": "",
-      "stars": 0
-    },
-    {
-      "name": "DiamonDinoia.github.io",
-      "url": "https://github.com/DiamonDinoia/DiamonDinoia.github.io",
-      "langs": [
-        "HTML"
       ],
       "description": "",
       "stars": 0
