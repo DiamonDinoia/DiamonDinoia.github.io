@@ -341,7 +341,7 @@
         "Nix"
       ],
       "description": "nix+spack = nixpack (spanix?)",
-      "stars": 54
+      "stars": 55
     },
     {
       "name": "nifty-ls",
@@ -458,7 +458,7 @@
         "TypeScript"
       ],
       "description": "Monitor MCMC runs in the browser",
-      "stars": 37
+      "stars": 38
     },
     {
       "name": "spikeforest2",
@@ -587,21 +587,21 @@
       "stars": 25
     },
     {
-      "name": "kachery-cloud",
-      "url": "https://github.com/flatironinstitute/kachery-cloud",
-      "langs": [
-        "Python"
-      ],
-      "description": "",
-      "stars": 24
-    },
-    {
       "name": "nda",
       "url": "https://github.com/TRIQS/nda",
       "langs": [
         "C++"
       ],
       "description": "C++ library for multi-dimensional arrays. Supported by the Flatiron Institute.",
+      "stars": 25
+    },
+    {
+      "name": "kachery-cloud",
+      "url": "https://github.com/flatironinstitute/kachery-cloud",
+      "langs": [
+        "Python"
+      ],
+      "description": "",
       "stars": 24
     },
     {
