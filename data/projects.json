@@ -1,6 +1,6 @@
 {
   "github_url": "https://github.com/DiamonDinoia",
-  "total_repos": 112,
+  "total_repos": 114,
   "projects": [
     {
       "name": "FINUFFT",
@@ -125,7 +125,7 @@
         "C++"
       ],
       "description": "C++ tensors with broadcasting and lazy computing",
-      "stars": 3771
+      "stars": 3772
     },
     {
       "name": "CaImAn",
@@ -1458,6 +1458,15 @@
       "stars": 3
     },
     {
+      "name": "cephdu",
+      "url": "https://github.com/flatironinstitute/cephdu",
+      "langs": [
+        "Rust"
+      ],
+      "description": "A ncdu-like TUI for the Ceph File System, using xattrs instead of crawling",
+      "stars": 3
+    },
+    {
       "name": "wasmlets",
       "url": "https://github.com/flatironinstitute/wasmlets",
       "langs": [
@@ -1473,15 +1482,6 @@
         "Python"
       ],
       "description": "Python implementation of subzero matrix completion, a rectified linear factorization of a sparse matrix",
-      "stars": 3
-    },
-    {
-      "name": "cephdu",
-      "url": "https://github.com/flatironinstitute/cephdu",
-      "langs": [
-        "Rust"
-      ],
-      "description": "A ncdu-like TUI for the Ceph File System, using xattrs instead of crawling",
       "stars": 3
     },
     {
@@ -1814,6 +1814,15 @@
       ],
       "description": "Organization and project management for xtensor and related projects https://xtensor-stack.github.io",
       "stars": 2
+    },
+    {
+      "name": "skill-dedup",
+      "url": "https://github.com/DiamonDinoia/skill-dedup",
+      "langs": [
+        "Python"
+      ],
+      "description": "Find duplicated code and text in agent work before review: a CLI and Stop hook for Claude Code, Codex and Hermes",
+      "stars": 1
     },
     {
       "name": "skill-cpp",
@@ -2179,6 +2188,15 @@
       "stars": 0
     },
     {
+      "name": "skill-agent-comms",
+      "url": "https://github.com/DiamonDinoia/skill-agent-comms",
+      "langs": [
+        "Shell"
+      ],
+      "description": "",
+      "stars": 0
+    },
+    {
       "name": "DiamonDinoia.github.io",
       "url": "https://github.com/DiamonDinoia/DiamonDinoia.github.io",
       "langs": [
@@ -2203,15 +2221,6 @@
         "Python"
       ],
       "description": "",
-      "stars": 0
-    },
-    {
-      "name": "skill-dedup",
-      "url": "https://github.com/DiamonDinoia/skill-dedup",
-      "langs": [
-        "Python"
-      ],
-      "description": "Find duplicated code and text in agent work before review: a CLI and Stop hook for Claude Code, Codex and Hermes",
       "stars": 0
     },
     {
