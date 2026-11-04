@@ -16,11 +16,12 @@ async function initGlobalSearch() {
   if (!input || !resultsEl) return;
 
   // Load all data
-  const [profile, pubs, projects, talks] = await Promise.all([
+  const [profile, pubs, projects, talks, posts] = await Promise.all([
     loadJSON('data/profile.json').catch(() => null),
     loadJSON('data/publications.json').catch(() => null),
     loadJSON('data/projects.json').catch(() => null),
     loadJSON('data/talks.json').catch(() => null),
+    loadJSON('data/blog.json').catch(() => null),
   ]);
 
   function search(query) {
@@ -72,7 +73,7 @@ async function initGlobalSearch() {
       const matches = allTalks.filter(t =>
         t.title.toLowerCase().includes(query) ||
         (t.event || '').toLowerCase().includes(query) ||
-        t.org.toLowerCase().includes(query)
+        t.org && t.org.toLowerCase().includes(query)
       );
       if (matches.length) {
         hasResults = true;
@@ -80,6 +81,20 @@ async function initGlobalSearch() {
         matches.slice(0, 8).forEach(t => {
           const a = el('a', { className: 'search-result-item', href: 'talks.html' });
           a.innerHTML = `<div class="sr-title">${t.title}</div><div class="sr-detail">${t.event || t.org}</div>`;
+          resultsEl.appendChild(a);
+        });
+      }
+    }
+
+    // Search blog posts
+    if (posts) {
+      const matches = posts.filter(p => p.title.toLowerCase().includes(query));
+      if (matches.length) {
+        hasResults = true;
+        resultsEl.appendChild(el('div', { className: 'search-group-title' }, 'blog.hpp'));
+        matches.slice(0, 8).forEach(p => {
+          const a = el('a', { className: 'search-result-item', href: `blog.html?post=${p.slug}` });
+          a.innerHTML = `<div class="sr-title">${p.title}</div><div class="sr-detail">${p.date}</div>`;
           resultsEl.appendChild(a);
         });
       }
@@ -176,9 +191,9 @@ function cppSection(title) {
 
 function cppField(name, value, isLink) {
   if (isLink) {
-    return `&nbsp;&nbsp;.${name} = <span class="str">"<a href="${value.url}">${value.text}</a>"</span>,`;
+    return `<span class="fld"><span class="fk">&nbsp;&nbsp;.${name} = </span><span class="fv"><span class="str">"<a href="${value.url}">${value.text}</a>"</span>,</span></span>`;
   }
-  return `&nbsp;&nbsp;.${name} = <span class="str">"${value}"</span>,`;
+  return `<span class="fld"><span class="fk">&nbsp;&nbsp;.${name} = </span><span class="fv"><span class="str">"${value}"</span>,</span></span>`;
 }
 
 function cppComment(text) {

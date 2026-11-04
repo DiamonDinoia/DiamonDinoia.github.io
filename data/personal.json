@@ -5,9 +5,10 @@
       "title": "Investing & Trading",
       "content": "A short series of educational talks I gave to friends and colleagues on how to think about investing. Educational only — not financial advice.",
       "items": [
-        { "type": "link", "url": "personal/2025_05_08/index.html", "text": "2025-05-08 · Investing & Trading — foundations" },
-        { "type": "link", "url": "personal/2025_05_22/index.html", "text": "2025-05-22 · Assets — from safer to riskier" },
-        { "type": "link", "url": "personal/2025_06_12/index.html", "text": "2025-06-12 · Equity allocation — geography, size, factors" },
+        { "type": "struct", "struct": "Deck", "fields": [ { "name": "name", "value": "Investing & Trading — foundations" }, { "name": "date", "value": "2025-05-08" }, { "name": "link", "value": "diamondinoia.com/personal/2025_05_08/", "url": "personal/2025_05_08/index.html" } ] },
+        { "type": "struct", "struct": "Deck", "fields": [ { "name": "name", "value": "Assets — from safer to riskier" }, { "name": "date", "value": "2025-05-22" }, { "name": "link", "value": "diamondinoia.com/personal/2025_05_22/", "url": "personal/2025_05_22/index.html" } ] },
+        { "type": "struct", "struct": "Deck", "fields": [ { "name": "name", "value": "Equity allocation — geography, size, factors" }, { "name": "date", "value": "2025-06-12" }, { "name": "link", "value": "diamondinoia.com/personal/2025_06_12/", "url": "personal/2025_06_12/index.html" } ] },
+        { "type": "struct", "struct": "Deck", "fields": [ { "name": "name", "value": "Indexing, Liquidity, and the SpaceX Question" }, { "name": "date", "value": "2026-04-25" }, { "name": "link", "value": "diamondinoia.com/personal/2026_04_25/", "url": "personal/2026_04_25/index.html" } ] },
         { "type": "quote", "text": "Use ←/→ to navigate. Each deck opens in a new tab as a self-contained HTML presentation." }
       ]
     },
