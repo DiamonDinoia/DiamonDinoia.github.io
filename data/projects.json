@@ -125,7 +125,7 @@
         "C++"
       ],
       "description": "C++ tensors with broadcasting and lazy computing",
-      "stars": 3772
+      "stars": 3770
     },
     {
       "name": "CaImAn",
@@ -2179,6 +2179,24 @@
       "stars": 1
     },
     {
+      "name": "DiamonDinoia.github.io",
+      "url": "https://github.com/DiamonDinoia/DiamonDinoia.github.io",
+      "langs": [
+        "HTML"
+      ],
+      "description": "",
+      "stars": 0
+    },
+    {
+      "name": "skill-orchestration",
+      "url": "https://github.com/DiamonDinoia/skill-orchestration",
+      "langs": [
+        "Python"
+      ],
+      "description": "",
+      "stars": 0
+    },
+    {
       "name": "apt",
       "url": "https://github.com/DiamonDinoia/apt",
       "langs": [
@@ -2197,30 +2215,12 @@
       "stars": 0
     },
     {
-      "name": "DiamonDinoia.github.io",
-      "url": "https://github.com/DiamonDinoia/DiamonDinoia.github.io",
-      "langs": [
-        "HTML"
-      ],
-      "description": "",
-      "stars": 0
-    },
-    {
       "name": "skill-self-improvement",
       "url": "https://github.com/DiamonDinoia/skill-self-improvement",
       "langs": [
         "Python"
       ],
       "description": "Non-destructive skill self-improvement for coding-agent harnesses, adapted from google-research/harness2",
-      "stars": 0
-    },
-    {
-      "name": "skill-orchestration",
-      "url": "https://github.com/DiamonDinoia/skill-orchestration",
-      "langs": [
-        "Python"
-      ],
-      "description": "",
       "stars": 0
     },
     {
@@ -2555,6 +2555,15 @@
       "stars": 0
     },
     {
+      "name": "jenkins-template",
+      "url": "https://github.com/flatironinstitute/jenkins-template",
+      "langs": [
+        "Groovy"
+      ],
+      "description": "Example and test repository for jenkins builds",
+      "stars": 0
+    },
+    {
       "name": "nemos-documentation",
       "url": "https://github.com/flatironinstitute/nemos-documentation",
       "langs": [],
@@ -2577,15 +2586,6 @@
         "C++"
       ],
       "description": "Software supporting Alsous et al. The physical consequences of sperm gigantism, Nat. Phys. 2025",
-      "stars": 0
-    },
-    {
-      "name": "jenkins-template",
-      "url": "https://github.com/flatironinstitute/jenkins-template",
-      "langs": [
-        "Groovy"
-      ],
-      "description": "Example and test repository for jenkins builds",
       "stars": 0
     },
     {
