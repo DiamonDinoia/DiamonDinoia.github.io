@@ -4,7 +4,7 @@
    ========================================================== */
 
 /* --- Fonts --- */
-@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;500;700&display=swap');
+@import url('fonts/site.css');
 
 /* --- CSS Variables --- */
 :root {
@@ -1033,4 +1033,75 @@ code {
   content: '';
   display: table;
   clear: both;
+}
+
+/* --- Rendered blog article (markdown) --- */
+.article {
+  font-family: var(--font-ui);
+  max-width: var(--content-max-width);
+}
+.article h1 {
+  font-family: var(--font-mono);
+  font-size: 1.75rem;
+  margin: 1.25rem 0 0.75rem;
+}
+.article h2 {
+  font-family: var(--font-mono);
+  font-size: 1.25rem;
+  color: var(--blue);
+  margin: 1.75rem 0 0.5rem;
+}
+.article p {
+  margin: 0.85rem 0;
+}
+.article a {
+  color: var(--blue);
+  text-decoration: underline;
+}
+.article code {
+  font-family: var(--font-mono);
+  font-size: 0.9em;
+  background: var(--chrome);
+  border: 1px solid var(--border);
+  border-radius: 3px;
+  padding: 0.1em 0.35em;
+}
+.article pre {
+  background: var(--chrome);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 1rem;
+  overflow-x: auto;
+  margin: 1rem 0;
+}
+.article pre code {
+  background: none;
+  border: none;
+  padding: 0;
+}
+.article ul,
+.article ol {
+  margin: 0.85rem 0;
+  padding-left: 1.5rem;
+}
+.article li {
+  margin: 0.3rem 0;
+}
+.article img {
+  max-width: 100%;
+  box-sizing: border-box;
+  height: auto;
+  display: block;
+  margin: 1.25rem auto;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  cursor: zoom-in;
+}
+@media (min-width: 641px) {
+  /* full content-area width: break out of the line-number gutter (3.5rem) + .line gap (1rem) */
+  .article img {
+    width: calc(100% + var(--line-number-width) + 1rem);
+    max-width: none;
+    margin: 1.25rem 0 1.25rem calc(-1 * (var(--line-number-width) + 1rem));
+  }
 }

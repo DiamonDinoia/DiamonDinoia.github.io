@@ -4,13 +4,11 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Practical HPC: NUFFTs, function evaluation, SIMD &amp; abstractions · Marco Barbone</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700;800&display=swap" rel="stylesheet">
-<!-- KaTeX — proper LaTeX math rendering (CDN, zero build) -->
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css" crossorigin="anonymous">
-<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js" crossorigin="anonymous"></script>
-<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js" crossorigin="anonymous"></script>
+<link rel="stylesheet" href="../../assets/fonts/talk-nuffts.css">
+<!-- KaTeX — proper LaTeX math rendering (self-hosted) -->
+<link rel="stylesheet" href="../../assets/vendor/katex/katex.min.css" crossorigin="anonymous">
+<script defer src="../../assets/vendor/katex/katex.min.js" crossorigin="anonymous"></script>
+<script defer src="../../assets/vendor/katex/contrib/auto-render.min.js" crossorigin="anonymous"></script>
 <style>
 /* ===========================================================================
    THEME — "Signal Lab × Terminal"  (oscilloscope atmosphere + code windows)
@@ -837,7 +835,7 @@ delete(obj);</pre></div></div>
   </div>
 </section>
 
-<!-- treeweave · live WASM demo (real build, fetched from a CDN) -->
+<!-- treeweave · live WASM demo (real build, self-hosted) -->
 <section class="slide">
   <div class="counter"></div><div class="toprule"></div>
   <div class="slide-inner">
@@ -847,7 +845,7 @@ delete(obj);</pre></div></div>
       <div class="term-body" style="padding:0"><div class="code-edit" style="position:relative;height:460px">
         <pre class="hl" id="wasmHLpre" aria-hidden="true" style="position:absolute;inset:0;margin:0;box-sizing:border-box;font-family:var(--mono);font-size:20px;line-height:1.5;padding:24px 30px;white-space:pre;overflow:hidden;color:var(--ink);pointer-events:none;tab-size:2"><code id="wasmHL"></code></pre>
         <textarea id="wasmSrc" spellcheck="false" wrap="off" style="position:absolute;inset:0;margin:0;width:100%;height:100%;box-sizing:border-box;resize:none;border:0;outline:none;background:transparent;color:transparent;-webkit-text-fill-color:transparent;caret-color:var(--cyan-soft);font-family:var(--mono);font-size:20px;line-height:1.5;padding:24px 30px;white-space:pre;overflow:auto;tab-size:2">import { Treeweave } from
-  "https://unpkg.com/@flatironinstitute/treeweave";
+  "TREEWEAVE_URL";
 
 // edit me — the function to approximate on [a, b)
 // here: ζ(s) = Σ_{k=1..160} k⁻ˢ   (early-stop)
@@ -1619,10 +1617,10 @@ function baryEval(x,xs,fs,w){let num=0,den=0;for(let j=0;j<xs.length;j++){if(x==
 /* --- live, EDITABLE treeweave WASM demo ---
    The demo.js textarea is real source: on Run we compile it to an ES module via a
    Blob URL, import it, and use its exported f / domain / tol to drive a genuine
-   treeweave WASM fit + race. The package is fetched from a CDN (unpkg serves the
-   emscripten glue + .wasm unmodified), so it works on GitHub Pages with nothing
-   hosted locally; falls back to published numbers if the CDN can't be reached. */
+   treeweave WASM fit + race. The package is self-hosted under assets/vendor/treeweave.
+   FALLBACK text and behavior unchanged. */
 (function(){const btn=document.getElementById("wasmRun");if(!btn)return;
+  const LIB=new URL("../../assets/vendor/treeweave/index.js",location.href).href;
   const out=document.getElementById("wasmOut"),src=document.getElementById("wasmSrc");
   const hl=document.getElementById("wasmHL"),hlPre=document.getElementById("wasmHLpre");
   const nEl=document.getElementById("wasmN"),nVal=document.getElementById("wasmNval"),reset=document.getElementById("wasmReset");
@@ -1630,10 +1628,11 @@ function baryEval(x,xs,fs,w){let num=0,den=0;for(let j=0;j<xs.length;j++){if(x==
   // keep the highlight layer mirroring the textarea (content + scroll)
   const paint=()=>{hl.innerHTML=highlight(src.value+"\n","cpp");};
   const syncScroll=()=>{hlPre.scrollTop=src.scrollTop;hlPre.scrollLeft=src.scrollLeft;};
+  src.value=src.value.replace("TREEWEAVE_URL",LIB);  // blob modules need an absolute URL
   src.addEventListener("input",paint);src.addEventListener("scroll",syncScroll);paint();
   const DEFAULT=src.value;
   if(reset)reset.addEventListener("click",()=>{src.value=DEFAULT;paint();syncScroll();out.textContent="code reset — press “Run” to execute it.";});
-  const FALLBACK="couldn't reach the WASM CDN — showing published numbers:\n\n"+
+  const FALLBACK="couldn't load the self-hosted WASM build — showing published numbers:\n\n"+
     "fit time         one-off (ms), amortized over every call\n"+
     "treeweave        ~3,700 Mevals/s   (Python batch)\n"+
     "speedup          up to 10,900× vs. native f  (sorted batch)\n"+
@@ -1648,7 +1647,7 @@ function baryEval(x,xs,fs,w){let num=0,den=0;for(let j=0;j<xs.length;j++){if(x==
       const mod=await import(blobUrl);
       const f=mod.f, dom=(Array.isArray(mod.domain)&&mod.domain.length===2)?mod.domain:[2,10], tol=(typeof mod.tol==="number")?mod.tol:1e-10;
       if(typeof f!=="function")throw new Error('demo.js must `export const f = x => …`');
-      const lib=await import("https://unpkg.com/@flatironinstitute/treeweave@0.0.0/dist/index.js");
+      const lib=await import(LIB);
       const Treeweave=lib.Treeweave||lib.default;
       log("fitting f on ["+dom[0]+", "+dom[1]+") to "+tol+" …");
       const t0=performance.now();

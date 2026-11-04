@@ -457,6 +457,7 @@ async function renderProjects() {
   d.projects.forEach(proj => {
     lines.appendChild(line(cppOpen(null, 'Project')));
     lines.appendChild(line(cppField('name', { url: proj.url, text: proj.name }, true)));
+    lines.appendChild(line(cppField('link', { url: proj.url, text: proj.url.replace(/^https?:\/\//, '') }, true)));
     lines.appendChild(line(cppField('desc', proj.description)));
     const langsStr = proj.langs.map(l => `<span class="str">"${l}"</span>`).join(', ');
     lines.appendChild(line(`&nbsp;&nbsp;.langs = <span class="ty">std::array</span><span class="sep">{</span>${langsStr}<span class="sep">}</span>,`));
@@ -563,6 +564,10 @@ async function renderPersonal() {
         lines.appendChild(line(`<img src="${item.src}" alt="${item.alt || ''}" style="max-width:100%;border-radius:6px;border:1px solid var(--border);">`));
       } else if (item.type === 'link') {
         lines.appendChild(line(`<span class="kw">#include</span> <span class="str">&lt;<a href="${item.url}">${item.text}</a>&gt;</span>`));
+      } else if (item.type === 'struct') {
+        lines.appendChild(line(cppOpen(null, item.struct)));
+        item.fields.forEach(f => lines.appendChild(line(cppField(f.name, f.url ? { url: f.url, text: f.value } : f.value, !!f.url))));
+        lines.appendChild(line(cppClose()));
       }
     });
 
@@ -573,6 +578,59 @@ async function renderPersonal() {
 
   renderStatus(['marco_barbone', 'main', 'UTF-8'], 'work in progress', '');
   setTitlePath('~/personal.hpp');
+}
+
+/* --- Blog Page --- */
+async function renderBlog() {
+  const posts = await loadJSON('data/blog.json');
+  const container = document.getElementById('content');
+  if (!container) return;
+
+  const lines = el('div', { className: 'lines' });
+  lines.appendChild(line(`<span class="kw">#pragma once</span>`));
+  lines.appendChild(line(null));
+  lines.appendChild(line(cppSection('Blog')));
+  setTitlePath('~/blog.hpp');
+
+  const slug = new URLSearchParams(location.search).get('post');
+  if (!slug) {
+    posts.forEach(p => {
+      lines.appendChild(line(cppOpen(null, 'Post')));
+      lines.appendChild(line(cppField('title', { url: `blog.html?post=${p.slug}`, text: p.title }, true)));
+      lines.appendChild(line(cppField('date', p.date)));
+      lines.appendChild(line(cppClose()));
+    });
+  } else {
+    const post = posts.find(p => p.slug === slug);
+    if (!post) {
+      lines.appendChild(line(`<span class="cm">// post not found: ${slug}</span>`));
+    } else {
+      const res = await fetch(post.md);
+      // Strip the YAML front matter: the block between the first two '---' lines.
+      const body = (await res.text()).replace(/^---\r?\n[\s\S]*?\r?\n---\r?\n/, '');
+      const article = el('div', { className: 'article', html: marked.parse(body) });
+      // Relative URLs in the markdown are relative to the md file's folder.
+      const base = post.md.slice(0, post.md.lastIndexOf('/') + 1);
+      article.querySelectorAll('img, a').forEach(node => {
+        const attr = node.tagName === 'IMG' ? 'src' : 'href';
+        const url = node.getAttribute(attr);
+        if (url && !/^(https?:|#|\/|mailto:)/.test(url)) node.setAttribute(attr, base + url);
+      });
+      // A click on a figure opens the full-size SVG.
+      article.querySelectorAll('img').forEach(img => {
+        if (img.closest('a')) return;
+        const a = el('a', { href: img.getAttribute('src'), target: '_blank', rel: 'noopener' });
+        img.replaceWith(a);
+        a.appendChild(img);
+      });
+      lines.appendChild(line(article));
+      setTitlePath('~/blog/' + slug + '.md');
+    }
+  }
+
+  lines.appendChild(line(cppSectionClose('Blog')));
+  container.appendChild(lines);
+  renderStatus(['marco_barbone', 'main', 'UTF-8'], '', '');
 }
 
 /* --- Status Bar --- */

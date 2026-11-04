@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Blog — Marco Barbone</title>
+  <link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+
+  <div class="title-bar">
+    <div class="traffic-lights">
+      <span class="red"></span><span class="yellow"></span><span class="green"></span>
+    </div>
+    <span class="path" id="title-path">marco_barbone — ~/blog.hpp</span>
+  </div>
+
+  <nav class="tab-bar">
+    <a href="index.html">about.hpp</a>
+    <a href="publications.html">papers.hpp</a>
+    <a href="talks.html">talks.hpp</a>
+    <a href="projects.html">projects.hpp</a>
+    <a href="blog.html" class="active">blog.hpp</a>
+    <a href="personal.html">personal.hpp</a>
+    <a href="index.html?intro=1" class="tab-intro">intro.sh</a>
+    <div class="tab-search">
+      <span class="tab-search-icon">grep</span>
+      <input type="text" id="global-search" placeholder="search all..." autocomplete="off">
+    </div>
+  </nav>
+  <div class="search-results" id="search-results"></div>
+
+  <main class="editor">
+
+    <div class="editor-content" id="content"></div>
+  </main>
+
+  <footer class="status-bar" id="status-bar"></footer>
+
+  <!-- vendored marked v15.0.12 (npm tarball marked-15.0.12.tgz, lib/marked.umd.js), sha256 d7931d1cd7bf727dd756c871637edcc9e0f8538003b927368400ec1ee47a9dd9 -->
+  <script src="assets/vendor/marked.min.js"></script>
+  <script src="assets/render.js"></script>
+  <script>renderBlog();</script>
+</body>
+</html>

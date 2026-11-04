@@ -13,10 +13,12 @@
     },
     {
       "title": "Wallpapers",
-      "content": "Generative math/physics wallpapers I rendered, 4K — generator script and binaries live in the GitHub repo.",
       "items": [
-        { "type": "link", "url": "https://diamondinoia.com/wallpapers/", "text": "math" },
-        { "type": "quote", "text": "math themed wallpaper" }
+        { "type": "struct", "struct": "Wallpaper", "fields": [
+          { "name": "name", "value": "Math wallpapers" },
+          { "name": "desc", "value": "Generative math/physics wallpapers I rendered, 4K — generator script and binaries live in the GitHub repo." },
+          { "name": "link", "value": "diamondinoia.com/wallpapers/", "url": "https://diamondinoia.com/wallpapers/" }
+        ] }
       ]
     },
     {
