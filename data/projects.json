@@ -2197,19 +2197,19 @@
       "stars": 0
     },
     {
-      "name": "skill-hermes-local-patches",
-      "url": "https://github.com/DiamonDinoia/skill-hermes-local-patches",
-      "langs": [],
-      "description": "Rebase and roll out the local Hermes patches.",
-      "stars": 0
-    },
-    {
       "name": "DiamonDinoia.github.io",
       "url": "https://github.com/DiamonDinoia/DiamonDinoia.github.io",
       "langs": [
         "HTML"
       ],
       "description": "",
+      "stars": 0
+    },
+    {
+      "name": "skill-hermes-local-patches",
+      "url": "https://github.com/DiamonDinoia/skill-hermes-local-patches",
+      "langs": [],
+      "description": "Rebase and roll out the local Hermes patches.",
       "stars": 0
     },
     {
