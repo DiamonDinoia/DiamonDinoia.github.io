@@ -1575,6 +1575,15 @@
       "stars": 3
     },
     {
+      "name": "skill-cpp",
+      "url": "https://github.com/DiamonDinoia/skill-cpp",
+      "langs": [
+        "Shell"
+      ],
+      "description": "Claude Code skill for writing, reviewing and modernizing C++ against the Core Guidelines",
+      "stars": 2
+    },
+    {
       "name": "jacobi",
       "url": "https://github.com/DiamonDinoia/jacobi",
       "langs": [
@@ -1831,15 +1840,6 @@
         "Python"
       ],
       "description": "Find duplicated code and text in agent work before review: a CLI and Stop hook for Claude Code, Codex and Hermes",
-      "stars": 1
-    },
-    {
-      "name": "skill-cpp",
-      "url": "https://github.com/DiamonDinoia/skill-cpp",
-      "langs": [
-        "Shell"
-      ],
-      "description": "Claude Code skill for writing, reviewing and modernizing C++ against the Core Guidelines",
       "stars": 1
     },
     {
