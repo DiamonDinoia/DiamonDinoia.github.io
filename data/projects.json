@@ -242,7 +242,7 @@
         "Python"
       ],
       "description": "JAXMg: A multi-GPU linear solver in JAX",
-      "stars": 113
+      "stars": 114
     },
     {
       "name": "cufinufft",
@@ -758,6 +758,15 @@
       "stars": 15
     },
     {
+      "name": "Ensemble-reweighting-using-Cryo-EM-particles",
+      "url": "https://github.com/flatironinstitute/Ensemble-reweighting-using-Cryo-EM-particles",
+      "langs": [
+        "Jupyter Notebook"
+      ],
+      "description": "",
+      "stars": 14
+    },
+    {
       "name": "adapol",
       "url": "https://github.com/flatironinstitute/adapol",
       "langs": [
@@ -801,15 +810,6 @@
       ],
       "description": "",
       "stars": 14
-    },
-    {
-      "name": "Ensemble-reweighting-using-Cryo-EM-particles",
-      "url": "https://github.com/flatironinstitute/Ensemble-reweighting-using-Cryo-EM-particles",
-      "langs": [
-        "Jupyter Notebook"
-      ],
-      "description": "",
-      "stars": 13
     },
     {
       "name": "sf_benchmarks",
@@ -2197,6 +2197,24 @@
       "stars": 0
     },
     {
+      "name": "skill-orchestration",
+      "url": "https://github.com/DiamonDinoia/skill-orchestration",
+      "langs": [
+        "Python"
+      ],
+      "description": "",
+      "stars": 0
+    },
+    {
+      "name": "skill-agent-comms",
+      "url": "https://github.com/DiamonDinoia/skill-agent-comms",
+      "langs": [
+        "Python"
+      ],
+      "description": "",
+      "stars": 0
+    },
+    {
       "name": "DiamonDinoia.github.io",
       "url": "https://github.com/DiamonDinoia/DiamonDinoia.github.io",
       "langs": [
@@ -2210,24 +2228,6 @@
       "url": "https://github.com/DiamonDinoia/skill-hermes-local-patches",
       "langs": [],
       "description": "Rebase and roll out the local Hermes patches.",
-      "stars": 0
-    },
-    {
-      "name": "skill-orchestration",
-      "url": "https://github.com/DiamonDinoia/skill-orchestration",
-      "langs": [
-        "Python"
-      ],
-      "description": "",
-      "stars": 0
-    },
-    {
-      "name": "skill-agent-comms",
-      "url": "https://github.com/DiamonDinoia/skill-agent-comms",
-      "langs": [
-        "Shell"
-      ],
-      "description": "",
       "stars": 0
     },
     {
