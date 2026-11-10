@@ -143,7 +143,7 @@
         "C++"
       ],
       "description": "Python bindings for xtensor",
-      "stars": 370
+      "stars": 371
     },
     {
       "name": "DeepFRI",
@@ -161,7 +161,7 @@
         "C++"
       ],
       "description": "C++ multi-dimensional labeled arrays and dataframe based on xtensor",
-      "stars": 324
+      "stars": 325
     },
     {
       "name": "CaImAn-MATLAB",
@@ -233,7 +233,7 @@
         "Python"
       ],
       "description": "Neural Networks for Protein Sequence Alignment",
-      "stars": 141
+      "stars": 142
     },
     {
       "name": "jaxmg",
@@ -299,21 +299,21 @@
       "stars": 66
     },
     {
-      "name": "neurosift",
-      "url": "https://github.com/flatironinstitute/neurosift",
-      "langs": [
-        "TypeScript"
-      ],
-      "description": "Browser-based NWB visualization and DANDI exploration",
-      "stars": 65
-    },
-    {
       "name": "mountainsort5",
       "url": "https://github.com/flatironinstitute/mountainsort5",
       "langs": [
         "Python"
       ],
       "description": "MountainSort spike sorting algorithm, version 5",
+      "stars": 65
+    },
+    {
+      "name": "neurosift",
+      "url": "https://github.com/flatironinstitute/neurosift",
+      "langs": [
+        "TypeScript"
+      ],
+      "description": "Browser-based NWB visualization and DANDI exploration",
       "stars": 65
     },
     {
@@ -2206,19 +2206,19 @@
       "stars": 0
     },
     {
-      "name": "skill-agent-comms",
-      "url": "https://github.com/DiamonDinoia/skill-agent-comms",
+      "name": "DiamonDinoia.github.io",
+      "url": "https://github.com/DiamonDinoia/DiamonDinoia.github.io",
       "langs": [
-        "Python"
+        "HTML"
       ],
       "description": "",
       "stars": 0
     },
     {
-      "name": "DiamonDinoia.github.io",
-      "url": "https://github.com/DiamonDinoia/DiamonDinoia.github.io",
+      "name": "skill-agent-comms",
+      "url": "https://github.com/DiamonDinoia/skill-agent-comms",
       "langs": [
-        "HTML"
+        "Python"
       ],
       "description": "",
       "stars": 0
