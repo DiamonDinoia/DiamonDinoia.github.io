@@ -2188,15 +2188,6 @@
       "stars": 1
     },
     {
-      "name": "apt",
-      "url": "https://github.com/DiamonDinoia/apt",
-      "langs": [
-        "Python"
-      ],
-      "description": "Flat apt repository of installer packages: each postinst fetches the payload from the publisher and verifies a pinned SHA-256",
-      "stars": 0
-    },
-    {
       "name": "skill-orchestration",
       "url": "https://github.com/DiamonDinoia/skill-orchestration",
       "langs": [
@@ -2212,6 +2203,15 @@
         "HTML"
       ],
       "description": "",
+      "stars": 0
+    },
+    {
+      "name": "apt",
+      "url": "https://github.com/DiamonDinoia/apt",
+      "langs": [
+        "Python"
+      ],
+      "description": "Flat apt repository of installer packages: each postinst fetches the payload from the publisher and verifies a pinned SHA-256",
       "stars": 0
     },
     {
