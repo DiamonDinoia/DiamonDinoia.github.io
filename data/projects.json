@@ -188,7 +188,7 @@
         "C++"
       ],
       "description": "BLAS extension to xtensor",
-      "stars": 174
+      "stars": 173
     },
     {
       "name": "FMM3D",
@@ -299,21 +299,21 @@
       "stars": 66
     },
     {
-      "name": "mountainsort5",
-      "url": "https://github.com/flatironinstitute/mountainsort5",
-      "langs": [
-        "Python"
-      ],
-      "description": "MountainSort spike sorting algorithm, version 5",
-      "stars": 65
-    },
-    {
       "name": "neurosift",
       "url": "https://github.com/flatironinstitute/neurosift",
       "langs": [
         "TypeScript"
       ],
       "description": "Browser-based NWB visualization and DANDI exploration",
+      "stars": 65
+    },
+    {
+      "name": "mountainsort5",
+      "url": "https://github.com/flatironinstitute/mountainsort5",
+      "langs": [
+        "Python"
+      ],
+      "description": "MountainSort spike sorting algorithm, version 5",
       "stars": 65
     },
     {
@@ -2188,12 +2188,12 @@
       "stars": 1
     },
     {
-      "name": "skill-orchestration",
-      "url": "https://github.com/DiamonDinoia/skill-orchestration",
+      "name": "apt",
+      "url": "https://github.com/DiamonDinoia/apt",
       "langs": [
         "Python"
       ],
-      "description": "",
+      "description": "Flat apt repository of installer packages: each postinst fetches the payload from the publisher and verifies a pinned SHA-256",
       "stars": 0
     },
     {
@@ -2206,12 +2206,12 @@
       "stars": 0
     },
     {
-      "name": "apt",
-      "url": "https://github.com/DiamonDinoia/apt",
+      "name": "skill-orchestration",
+      "url": "https://github.com/DiamonDinoia/skill-orchestration",
       "langs": [
         "Python"
       ],
-      "description": "Flat apt repository of installer packages: each postinst fetches the payload from the publisher and verifies a pinned SHA-256",
+      "description": "",
       "stars": 0
     },
     {
