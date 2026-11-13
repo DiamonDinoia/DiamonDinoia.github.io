@@ -1,6 +1,6 @@
 {
   "github_url": "https://github.com/DiamonDinoia",
-  "total_repos": 114,
+  "total_repos": 115,
   "projects": [
     {
       "name": "FINUFFT",
@@ -296,7 +296,7 @@
         "C++"
       ],
       "description": "Within-orbit Adaptive Leapfrog No-U-Turn Sampler",
-      "stars": 66
+      "stars": 67
     },
     {
       "name": "neurosift",
@@ -2188,21 +2188,21 @@
       "stars": 1
     },
     {
-      "name": "apt",
-      "url": "https://github.com/DiamonDinoia/apt",
-      "langs": [
-        "Python"
-      ],
-      "description": "Flat apt repository of installer packages: each postinst fetches the payload from the publisher and verifies a pinned SHA-256",
-      "stars": 0
-    },
-    {
       "name": "DiamonDinoia.github.io",
       "url": "https://github.com/DiamonDinoia/DiamonDinoia.github.io",
       "langs": [
         "HTML"
       ],
       "description": "",
+      "stars": 0
+    },
+    {
+      "name": "apt",
+      "url": "https://github.com/DiamonDinoia/apt",
+      "langs": [
+        "Python"
+      ],
+      "description": "Flat apt repository of installer packages: each postinst fetches the payload from the publisher and verifies a pinned SHA-256",
       "stars": 0
     },
     {
