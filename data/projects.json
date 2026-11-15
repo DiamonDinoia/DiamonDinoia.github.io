@@ -143,7 +143,7 @@
         "C++"
       ],
       "description": "Python bindings for xtensor",
-      "stars": 371
+      "stars": 372
     },
     {
       "name": "DeepFRI",
@@ -152,7 +152,7 @@
         "Python"
       ],
       "description": "Deep functional residue identification",
-      "stars": 355
+      "stars": 356
     },
     {
       "name": "xframe",
@@ -326,6 +326,15 @@
       "stars": 61
     },
     {
+      "name": "nixpack",
+      "url": "https://github.com/flatironinstitute/nixpack",
+      "langs": [
+        "Nix"
+      ],
+      "description": "nix+spack = nixpack (spanix?)",
+      "stars": 56
+    },
+    {
       "name": "inferelator",
       "url": "https://github.com/flatironinstitute/inferelator",
       "langs": [
@@ -333,15 +342,6 @@
       ],
       "description": "Task-based gene regulatory network inference using single-cell or bulk gene expression data conditioned on a prior network.",
       "stars": 56
-    },
-    {
-      "name": "nixpack",
-      "url": "https://github.com/flatironinstitute/nixpack",
-      "langs": [
-        "Nix"
-      ],
-      "description": "nix+spack = nixpack (spanix?)",
-      "stars": 55
     },
     {
       "name": "nifty-ls",
