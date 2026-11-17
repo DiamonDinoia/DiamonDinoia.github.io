@@ -125,7 +125,7 @@
         "C++"
       ],
       "description": "C++ tensors with broadcasting and lazy computing",
-      "stars": 3770
+      "stars": 3771
     },
     {
       "name": "CaImAn",
@@ -359,7 +359,7 @@
         "Python"
       ],
       "description": "Dynamic dispatch of a list of command-line tasks, locally or on a cluster. Supports retrying failed tasks, and adding/removing compute resources on-the-fly. ",
-      "stars": 51
+      "stars": 52
     },
     {
       "name": "xtensor-fftw",
@@ -1449,6 +1449,15 @@
       "stars": 4
     },
     {
+      "name": "skill-cpp",
+      "url": "https://github.com/DiamonDinoia/skill-cpp",
+      "langs": [
+        "Shell"
+      ],
+      "description": "Claude Code skill for writing, reviewing and modernizing C++ against the Core Guidelines",
+      "stars": 3
+    },
+    {
       "name": "Chebyshev",
       "url": "https://github.com/DiamonDinoia/Chebyshev",
       "langs": [
@@ -1573,15 +1582,6 @@
       ],
       "description": "A skeleton for TRIQS-based applications",
       "stars": 3
-    },
-    {
-      "name": "skill-cpp",
-      "url": "https://github.com/DiamonDinoia/skill-cpp",
-      "langs": [
-        "Shell"
-      ],
-      "description": "Claude Code skill for writing, reviewing and modernizing C++ against the Core Guidelines",
-      "stars": 2
     },
     {
       "name": "jacobi",
