@@ -1145,6 +1145,15 @@
       "stars": 6
     },
     {
+      "name": "psyphy",
+      "url": "https://github.com/flatironinstitute/psyphy",
+      "langs": [
+        "Python"
+      ],
+      "description": "Active-learning-driven adaptive experiments in psychophysics.",
+      "stars": 6
+    },
+    {
       "name": "c2py",
       "url": "https://github.com/flatironinstitute/c2py",
       "langs": [
@@ -1223,15 +1232,6 @@
         "Jupyter Notebook"
       ],
       "description": "Fast Numerics, Small Changes: The Minimal Playbook",
-      "stars": 5
-    },
-    {
-      "name": "psyphy",
-      "url": "https://github.com/flatironinstitute/psyphy",
-      "langs": [
-        "Python"
-      ],
-      "description": "Active-learning-driven adaptive experiments in psychophysics.",
       "stars": 5
     },
     {
@@ -2552,6 +2552,15 @@
         "Java"
       ],
       "description": "",
+      "stars": 0
+    },
+    {
+      "name": "pme_kernels",
+      "url": "https://github.com/flatironinstitute/pme_kernels",
+      "langs": [
+        "Python"
+      ],
+      "description": "C^2 splitting kernels and optimized spreading/interpolation kernels for particle mesh Ewald methods",
       "stars": 0
     },
     {
