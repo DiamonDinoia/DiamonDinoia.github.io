@@ -1296,6 +1296,15 @@
       "stars": 5
     },
     {
+      "name": "skill-cpp",
+      "url": "https://github.com/DiamonDinoia/skill-cpp",
+      "langs": [
+        "Shell"
+      ],
+      "description": "Claude Code skill for writing, reviewing and modernizing C++ against the Core Guidelines",
+      "stars": 4
+    },
+    {
       "name": "mcss",
       "url": "https://github.com/DiamonDinoia/mcss",
       "langs": [
@@ -1447,15 +1456,6 @@
       ],
       "description": "An Interface to the Open-Source Code NRGLjubliana. Supported by the Flatiron Institute.",
       "stars": 4
-    },
-    {
-      "name": "skill-cpp",
-      "url": "https://github.com/DiamonDinoia/skill-cpp",
-      "langs": [
-        "Shell"
-      ],
-      "description": "Claude Code skill for writing, reviewing and modernizing C++ against the Core Guidelines",
-      "stars": 3
     },
     {
       "name": "Chebyshev",
