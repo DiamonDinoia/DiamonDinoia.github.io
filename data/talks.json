@@ -1,5 +1,15 @@
 {
   "talks": [
+    {
+      "title": "Fit Once, Evaluate Forever: fast interpolation of functions in scientific computing",
+      "org": "Fermilab",
+      "date": "November 19, 2026",
+      "year": 2026,
+      "type": "seminar",
+      "links": [
+        { "label": "slides", "url": "talks/fermilab-2026/index.html", "type": "slides" }
+      ]
+    },
 
     {
       "title": "Fit Once, Evaluate Forever: smooth functions, singularities, and SIMD",
