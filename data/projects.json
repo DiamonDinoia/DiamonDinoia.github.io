@@ -125,7 +125,7 @@
         "C++"
       ],
       "description": "C++ tensors with broadcasting and lazy computing",
-      "stars": 3771
+      "stars": 3772
     },
     {
       "name": "CaImAn",
@@ -143,7 +143,7 @@
         "C++"
       ],
       "description": "Python bindings for xtensor",
-      "stars": 372
+      "stars": 371
     },
     {
       "name": "DeepFRI",
@@ -152,7 +152,7 @@
         "Python"
       ],
       "description": "Deep functional residue identification",
-      "stars": 356
+      "stars": 355
     },
     {
       "name": "xframe",
@@ -161,7 +161,7 @@
         "C++"
       ],
       "description": "C++ multi-dimensional labeled arrays and dataframe based on xtensor",
-      "stars": 325
+      "stars": 324
     },
     {
       "name": "CaImAn-MATLAB",
@@ -296,7 +296,7 @@
         "C++"
       ],
       "description": "Within-orbit Adaptive Leapfrog No-U-Turn Sampler",
-      "stars": 67
+      "stars": 68
     },
     {
       "name": "neurosift",
@@ -731,6 +731,15 @@
       "stars": 16
     },
     {
+      "name": "CryoLike",
+      "url": "https://github.com/flatironinstitute/CryoLike",
+      "langs": [
+        "Python"
+      ],
+      "description": "",
+      "stars": 15
+    },
+    {
       "name": "ManifoldEM",
       "url": "https://github.com/flatironinstitute/ManifoldEM",
       "langs": [
@@ -800,15 +809,6 @@
         "Shell"
       ],
       "description": "CCQ software build scripts",
-      "stars": 14
-    },
-    {
-      "name": "CryoLike",
-      "url": "https://github.com/flatironinstitute/CryoLike",
-      "langs": [
-        "Python"
-      ],
-      "description": "",
       "stars": 14
     },
     {
