@@ -242,7 +242,7 @@
         "Python"
       ],
       "description": "JAXMg: A multi-GPU linear solver in JAX",
-      "stars": 114
+      "stars": 115
     },
     {
       "name": "cufinufft",
@@ -551,6 +551,15 @@
       "stars": 27
     },
     {
+      "name": "catvae",
+      "url": "https://github.com/flatironinstitute/catvae",
+      "langs": [
+        "Jupyter Notebook"
+      ],
+      "description": "Categorical Variational Autoencoders",
+      "stars": 26
+    },
+    {
       "name": "zarray",
       "url": "https://github.com/xtensor-stack/zarray",
       "langs": [
@@ -558,15 +567,6 @@
       ],
       "description": "Dynamically typed N-D expression system based on xtensor",
       "stars": 26
-    },
-    {
-      "name": "catvae",
-      "url": "https://github.com/flatironinstitute/catvae",
-      "langs": [
-        "Jupyter Notebook"
-      ],
-      "description": "Categorical Variational Autoencoders",
-      "stars": 25
     },
     {
       "name": "comptools24",
