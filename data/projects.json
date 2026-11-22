@@ -125,7 +125,7 @@
         "C++"
       ],
       "description": "C++ tensors with broadcasting and lazy computing",
-      "stars": 3772
+      "stars": 3773
     },
     {
       "name": "CaImAn",
@@ -197,7 +197,7 @@
         "Fortran"
       ],
       "description": "Flatiron Institute Fast Multipole Libraries --- This codebase is a set of libraries to compute N-body interactions governed by the Laplace and Helmholtz equations, to a specified precision, in three dimensions, on a multi-core shared-memory machine. ",
-      "stars": 166
+      "stars": 167
     },
     {
       "name": "NoRMCorre",
@@ -470,6 +470,15 @@
       "stars": 36
     },
     {
+      "name": "fmm2d",
+      "url": "https://github.com/flatironinstitute/fmm2d",
+      "langs": [
+        "Fortran"
+      ],
+      "description": "This codebase is a set of libraries to compute N-body interactions governed by the Laplace and Helmholtz equations, to a specified precision, in two dimensions, on a multi-core shared-memory machine.",
+      "stars": 33
+    },
+    {
       "name": "spikeforest",
       "url": "https://github.com/flatironinstitute/spikeforest",
       "langs": [
@@ -477,15 +486,6 @@
       ],
       "description": "Spike sorting benchmarking system",
       "stars": 33
-    },
-    {
-      "name": "fmm2d",
-      "url": "https://github.com/flatironinstitute/fmm2d",
-      "langs": [
-        "Fortran"
-      ],
-      "description": "This codebase is a set of libraries to compute N-body interactions governed by the Laplace and Helmholtz equations, to a specified precision, in two dimensions, on a multi-core shared-memory machine.",
-      "stars": 32
     },
     {
       "name": "xtensor-sparse",
