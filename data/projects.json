@@ -857,6 +857,15 @@
       "stars": 12
     },
     {
+      "name": "gem",
+      "url": "https://github.com/TRIQS/gem",
+      "langs": [
+        "Python"
+      ],
+      "description": "Ghost Gutzwiller Approximation implemented in TRIQS",
+      "stars": 12
+    },
+    {
       "name": "xtensor-signal",
       "url": "https://github.com/xtensor-stack/xtensor-signal",
       "langs": [
@@ -908,15 +917,6 @@
         "Python"
       ],
       "description": "Non-linear Matrix Decomposition library",
-      "stars": 11
-    },
-    {
-      "name": "gem",
-      "url": "https://github.com/TRIQS/gem",
-      "langs": [
-        "Python"
-      ],
-      "description": "Ghost Gutzwiller Approximation implemented in TRIQS",
       "stars": 11
     },
     {
