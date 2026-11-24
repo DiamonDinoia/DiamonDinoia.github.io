@@ -1,6 +1,6 @@
 {
   "github_url": "https://github.com/DiamonDinoia",
-  "total_repos": 115,
+  "total_repos": 116,
   "projects": [
     {
       "name": "FINUFFT",
@@ -197,7 +197,7 @@
         "Fortran"
       ],
       "description": "Flatiron Institute Fast Multipole Libraries --- This codebase is a set of libraries to compute N-body interactions governed by the Laplace and Helmholtz equations, to a specified precision, in three dimensions, on a multi-core shared-memory machine. ",
-      "stars": 167
+      "stars": 168
     },
     {
       "name": "NoRMCorre",
@@ -1226,6 +1226,15 @@
       "stars": 6
     },
     {
+      "name": "skill-cpp",
+      "url": "https://github.com/DiamonDinoia/skill-cpp",
+      "langs": [
+        "Shell"
+      ],
+      "description": "Claude Code skill for writing, reviewing and modernizing C++ against the Core Guidelines",
+      "stars": 5
+    },
+    {
       "name": "fwam2025",
       "url": "https://github.com/DiamonDinoia/fwam2025",
       "langs": [
@@ -1294,15 +1303,6 @@
       ],
       "description": "STL-like algorithms vectorized with xsimd",
       "stars": 5
-    },
-    {
-      "name": "skill-cpp",
-      "url": "https://github.com/DiamonDinoia/skill-cpp",
-      "langs": [
-        "Shell"
-      ],
-      "description": "Claude Code skill for writing, reviewing and modernizing C++ against the Core Guidelines",
-      "stars": 4
     },
     {
       "name": "mcss",
@@ -2186,6 +2186,15 @@
       ],
       "description": "A simple implementation of a single-band interaction-expansion QMC impurity solver",
       "stars": 1
+    },
+    {
+      "name": "skill-learn-anything",
+      "url": "https://github.com/DiamonDinoia/skill-learn-anything",
+      "langs": [
+        "Python"
+      ],
+      "description": "Agent skill: teach any topic to a tested level with diagnostics, evidence-graded tests and FSRS spaced review",
+      "stars": 0
     },
     {
       "name": "DiamonDinoia.github.io",
