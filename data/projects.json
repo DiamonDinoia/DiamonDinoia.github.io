@@ -323,7 +323,7 @@
         "TypeScript"
       ],
       "description": "Run Stan models in the browser",
-      "stars": 61
+      "stars": 62
     },
     {
       "name": "nixpack",
