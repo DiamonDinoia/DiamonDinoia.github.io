@@ -161,7 +161,7 @@
         "C++"
       ],
       "description": "C++ multi-dimensional labeled arrays and dataframe based on xtensor",
-      "stars": 324
+      "stars": 325
     },
     {
       "name": "CaImAn-MATLAB",
@@ -188,7 +188,7 @@
         "C++"
       ],
       "description": "BLAS extension to xtensor",
-      "stars": 173
+      "stars": 174
     },
     {
       "name": "FMM3D",
@@ -386,7 +386,7 @@
         "C++"
       ],
       "description": "Implementation of the Zarr core protocol (version 2 and 3) based on xtensor.",
-      "stars": 47
+      "stars": 48
     },
     {
       "name": "mountainlab-js",
@@ -1235,6 +1235,15 @@
       "stars": 6
     },
     {
+      "name": "xsimd-algorithm",
+      "url": "https://github.com/xtensor-stack/xsimd-algorithm",
+      "langs": [
+        "C++"
+      ],
+      "description": "STL-like algorithms vectorized with xsimd",
+      "stars": 6
+    },
+    {
       "name": "fwam2025",
       "url": "https://github.com/DiamonDinoia/fwam2025",
       "langs": [
@@ -1293,15 +1302,6 @@
         "C++"
       ],
       "description": "A high-level C++ interface to the Message Passing Interface. Supported by the Flatiron Institute.",
-      "stars": 5
-    },
-    {
-      "name": "xsimd-algorithm",
-      "url": "https://github.com/xtensor-stack/xsimd-algorithm",
-      "langs": [
-        "C++"
-      ],
-      "description": "STL-like algorithms vectorized with xsimd",
       "stars": 5
     },
     {
